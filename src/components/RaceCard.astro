@@ -6,21 +6,26 @@ const d = race.data;
 
 const raceUrl = `${base}races/${race.id}/`;
 
-const mapImageUrl = d.mapImage
-  ? `${base}${d.mapImage.replace(/^\//, '')}`
-  : '';
+const imagePath = d.thumbnailImage ?? d.mapImage;
 
-const mapFocus = d.mapFocus ?? 'center';
+const mapImageUrl = imagePath
+  ? `${base}${imagePath.replace(/^\//, '')}`
+  : '';
 
 const distance =
   typeof d.distanceKm === 'number'
-    ? `${d.distanceKm.toFixed(1)} km`
+    ? `${d.distanceKm.toFixed(2)} km`
     : '–';
 
 const position =
   typeof d.position === 'number'
     ? `${d.position}:a`
     : '–';
+
+const placementWithStarters =
+  typeof d.position === 'number' && typeof d.starters === 'number'
+    ? `${d.position}:a av ${d.starters}`
+    : position;
 ---
 
 <article class="race-card">
@@ -32,7 +37,6 @@ const position =
           alt={`Karta från ${d.title}`}
           class="race-image"
           loading="lazy"
-          style={`object-position: ${mapFocus};`}
         />
       )
     }
@@ -54,8 +58,16 @@ const position =
     </div>
 
     <p class="muted">
-      {d.location} · {d.class}
+      {d.location} · {d.raceClass}
     </p>
+
+    {
+      d.discipline && (
+        <p class="race-discipline">
+          {d.discipline}
+        </p>
+      )
+    }
 
     <div class="race-meta">
       <div>
@@ -70,7 +82,7 @@ const position =
 
       <div>
         <span>Placering</span>
-        <strong>{position}</strong>
+        <strong>{placementWithStarters}</strong>
       </div>
     </div>
 
