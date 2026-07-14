@@ -9,8 +9,8 @@ const races = (await getCollection('races')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
-/* Visa endast den senaste tävlingen */
-const recent = races.slice(0, 1);
+/* Visa endast de senaste tävlingarna */
+const recent = races.slice(0, 3);
 
 /* Omvandlar 58:18 eller 1:05:42 till sekunder */
 const timeToSeconds = (time) => {
@@ -129,11 +129,11 @@ const mapRaces = races.flatMap((race) => {
   <section class="dashboard-grid page-shell">
     <div class="panel latest-panel">
       <div class="panel-heading">
-        <h2>SENASTE TÄVLINGEN</h2>
+        <h2>SENASTE TÄVLINGARNA</h2>
         <a href={`${base}races/`}>Visa alla ›</a>
       </div>
 
-      <div class="race-grid latest-race-grid">
+      <div class="race-grid">
         {recent.map((race) => <RaceCard race={race} />)}
       </div>
     </div>
@@ -177,10 +177,6 @@ const mapRaces = races.flatMap((race) => {
     <div class="panel map-panel map-panel-wide">
       <div class="panel-heading">
         <h2>TÄVLINGSPLATSER</h2>
-
-        <span class="panel-subtitle">
-          {mapRaces.length} lopp på kartan
-        </span>
       </div>
 
       <OverviewMap races={mapRaces} />
