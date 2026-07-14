@@ -5,77 +5,185 @@ import RaceCard from '../components/RaceCard.astro';
 import OverviewMap from '../components/OverviewMap.astro';
 import { getRaceLocation } from '../utils/raceLocation';
 
-const races = (await getCollection('races')).sort((a,b) => b.data.date.getTime() - a.data.date.getTime());
-const recent = races.slice(0,5);
-const totalMistakes = races.reduce((sum,r) => sum + r.data.mistakeSeconds, 0);
-const avgMistake = races.length ? Math.round(totalMistakes/races.length) : 0;
-const bestPosition = races.length ? Math.min(...races.map(r=>r.data.position)) : 0;
-const controls = races.reduce((sum,r)=>sum+(r.data.controls ?? 0),0);
-const topThree = races.filter(r => r.data.position <= 3).length;
-const topTen = races.filter(r => r.data.position <= 10).length;
-const years = [...new Set(races.map(r=>r.data.date.getFullYear()))];
-const fmt = (s) => `${Math.floor(s/3600)}:${String(Math.floor((s%3600)/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+const races = (await getCollection('races')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+/* Visa endast den senaste tävlingen */
+const recent = races.slice(0, 1);
+
+/* Omvandlar 58:18 eller 1:05:42 till sekunder */
+const timeToSeconds = (time) => {
+  if (!time) return 0;
+
+  const parts = String(time).split(':').map(Number);
+
+  if (parts.some(Number.isNaN)) {
+    return 0;
+  }
+
+  return parts.reduce((total, part) => total * 60 + part, 0);
+};
+
+/* Formaterar sekunder som H:MM:SS */
+const formatDuration = (seconds) => {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const remainingSeconds = seconds % 60;
+
+  return `${hours}:${String(minutes).padStart(2, '0')}:${String(
+    remainingSeconds
+  ).padStart(2, '0')}`;
+};
+
+/* Formaterar sekunder som M:SS */
+const formatMinutesAndSeconds = (seconds) => {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+
+  return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
+};
+
+const totalRaceSeconds = races.reduce(
+  (sum, race) => sum + timeToSeconds(race.data.time),
+  0
+);
+
+const totalMistakes = races.reduce(
+  (sum, race) => sum + (race.data.mistakeSeconds ?? 0),
+  0
+);
+
+const averageMistake = races.length
+  ? Math.round(totalMistakes / races.length)
+  : 0;
+
+const controls = races.reduce(
+  (sum, race) => sum + (race.data.controls ?? 0),
+  0
+);
+
+const topThree = races.filter(
+  (race) => race.data.position <= 3
+).length;
+
+const years = [
+  ...new Set(races.map((race) => race.data.date.getFullYear()))
+];
+
 const base = import.meta.env.BASE_URL;
 
 const mapRaces = races.flatMap((race) => {
   const location = getRaceLocation(race.data);
+
   if (!location) return [];
-  return [{
-    id: race.id,
-    title: race.data.title,
-    date: race.data.date.toLocaleDateString('sv-SE'),
-    location: race.data.location,
-    latitude: location.latitude,
-    longitude: location.longitude
-  }];
+
+  return [
+    {
+      id: race.id,
+      title: race.data.title,
+      date: race.data.date.toLocaleDateString('sv-SE'),
+      location: race.data.location,
+      latitude: location.latitude,
+      longitude: location.longitude
+    }
+  ];
 });
 ---
+
 <BaseLayout>
-  <section class="hero" style={`--hero-image: url('${base}/images/Erik_Hero_III.png')`}>
+  <section
+    class="hero"
+    style={`--hero-image: url('${base}images/Erik_Hero_III.png')`}
+  >
     <div class="hero-overlay"></div>
+
     <div class="hero-content">
       <p class="eyebrow">VÄLKOMMEN TILL ERIK MARTINSSONS</p>
       <h1>KARTARKIV</h1>
+
       <div class="hero-stats">
-        <div><strong>{races.length}</strong><span>KARTOR</span></div>
-        <div><strong>{races.length}</strong><span>TÄVLINGAR</span></div>
-        <div><strong>{years.length}</strong><span>ÅR</span></div>
-        <div><strong>{controls}</strong><span>KONTROLLER</span></div>
+        <div>
+          <strong>{races.length}</strong>
+          <span>KARTOR</span>
+        </div>
+
+        <div>
+          <strong>{races.length}</strong>
+          <span>TÄVLINGAR</span>
+        </div>
+
+        <div>
+          <strong>{years.length}</strong>
+          <span>ÅR</span>
+        </div>
+
+        <div>
+          <strong>{controls}</strong>
+          <span>KONTROLLER</span>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="dashboard-grid page-shell">
     <div class="panel latest-panel">
-      <div class="panel-heading"><h2>SENASTE KARTORNA</h2><a href={`${base}races/`}>Visa alla ›</a></div>
-      <div class="race-grid">{recent.map(race => <RaceCard race={race} />)}</div>
+      <div class="panel-heading">
+        <h2>SENASTE TÄVLINGEN</h2>
+        <a href={`${base}races/`}>Visa alla ›</a>
+      </div>
+
+      <div class="race-grid latest-race-grid">
+        {recent.map((race) => <RaceCard race={race} />)}
+      </div>
     </div>
 
     <aside class="panel stats-panel" id="statistik">
       <h2>STATISTIKÖVERSIKT</h2>
+
       <div class="stat-grid">
-        <div><span>Total bomtid</span><strong>{fmt(totalMistakes)}</strong></div>
-        <div><span>Gen. bomtid/lopp</span><strong>{Math.floor(avgMistake/60)}:{String(avgMistake%60).padStart(2,'0')}</strong></div>
-        <div><span>Bästa placering</span><strong>{bestPosition ? `${bestPosition}:a` : '–'}</strong></div>
-        <div><span>Topp 3</span><strong>{topThree}</strong></div>
-        <div><span>Topp 10</span><strong>{topTen}</strong></div>
-        <div><span>Kontroller</span><strong>{controls}</strong></div>
+        <div>
+          <span>Antal tävlingar</span>
+          <strong>{races.length}</strong>
+        </div>
+
+        <div>
+          <span>Total tävlingstid</span>
+          <strong>{formatDuration(totalRaceSeconds)}</strong>
+        </div>
+
+        <div>
+          <span>Antal kontroller</span>
+          <strong>{controls}</strong>
+        </div>
+
+        <div>
+          <span>Total bomtid</span>
+          <strong>{formatDuration(totalMistakes)}</strong>
+        </div>
+
+        <div>
+          <span>Gen. bomtid/lopp</span>
+          <strong>{formatMinutesAndSeconds(averageMistake)}</strong>
+        </div>
+
+        <div>
+          <span>Topp-3 placeringar</span>
+          <strong>{topThree}</strong>
+        </div>
       </div>
     </aside>
 
     <div class="panel map-panel map-panel-wide">
       <div class="panel-heading">
         <h2>TÄVLINGSPLATSER</h2>
-        <span class="panel-subtitle">{mapRaces.length} lopp på kartan</span>
-      </div>
-      <OverviewMap races={mapRaces} />
-    </div>
 
-    <div class="panel chart-panel chart-panel-wide">
-      <h2>BOMTID PER LOPP</h2>
-      <div class="bars">
-        {races.slice().reverse().map(r => <div class="bar-item" title={`${r.data.title}: ${Math.round(r.data.mistakeSeconds/60)} min`}><div class="bar" style={`height:${Math.max(8, Math.min(100, r.data.mistakeSeconds/6))}%`}></div><span>{r.data.date.toLocaleDateString('sv-SE', { month: 'short', year: '2-digit' })}</span></div>)}
+        <span class="panel-subtitle">
+          {mapRaces.length} lopp på kartan
+        </span>
       </div>
+
+      <OverviewMap races={mapRaces} />
     </div>
   </section>
 </BaseLayout>
