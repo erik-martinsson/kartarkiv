@@ -751,13 +751,3 @@ footer {
     height: 420px;
   }
 }
-@media (max-width: 620px) {
-  .latest-race-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.latest-race-grid {
-  display: grid;
-  grid-template-columns: 320px;
-  justify-content: start;
-}
