@@ -95,12 +95,12 @@ img {
 /* Hero */
 
 .hero {
-  min-height: 440px;
+  min-height: 560px;
   position: relative;
   display: flex;
   align-items: center;
   background-image: var(--hero-image);
-  background-position: center;
+  background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -749,5 +749,11 @@ footer {
 
   .overview-map {
     height: 420px;
+  }
+}
+@media (max-width: 620px) {
+  .hero {
+    min-height: 520px;
+    background-position: 70% top;
   }
 }
