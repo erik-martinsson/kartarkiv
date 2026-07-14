@@ -281,7 +281,12 @@ img {
   font-size: 0.72rem;
   margin: 0;
 }
-
+.race-discipline {
+  margin: 5px 0 0;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
 .race-meta {
   display: flex;
   justify-content: space-between;
