@@ -10,25 +10,25 @@ const races = defineCollection({
   schema: z.object({
     title: z.string(),
     event: z.string().optional(),
-    stage: z.number().optional(),
+    stage: z.number().int().positive().optional(),
 
     date: z.coerce.date(),
 
     club: z.string(),
-    country: z.string(),
+    country: z.string().length(2),
     location: z.string(),
 
     discipline: z.string(),
     raceClass: z.string(),
 
-    distanceKm: z.number(),
+    distanceKm: z.number().nonnegative(),
     time: z.string(),
 
-    position: z.number(),
-    starters: z.number().optional(),
+    position: z.number().int().positive(),
+    starters: z.number().int().positive().optional(),
 
-    mistakeSeconds: z.number().default(0),
-    controls: z.number().optional(),
+    controls: z.number().int().nonnegative().optional(),
+    mistakeSeconds: z.number().int().nonnegative().default(0),
 
     mapImage: z.string(),
     thumbnailImage: z.string().optional(),
@@ -36,14 +36,14 @@ const races = defineCollection({
     gpsFile: z.string().optional(),
 
     mapScale: z.string().optional(),
-    climb: z.number().optional(),
+    climb: z.number().nonnegative().optional(),
+
+    latitude: z.number().optional(),
+    longitude: z.number().optional(),
 
     livelox: z.string().url().optional(),
     winsplits: z.string().url().optional(),
     results: z.string().url().optional(),
-
-    latitude: z.number().optional(),
-    longitude: z.number().optional(),
 
     featured: z.boolean().default(false)
   })

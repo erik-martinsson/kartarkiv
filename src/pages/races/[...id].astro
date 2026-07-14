@@ -1,0 +1,133 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const races = await getCollection('races');
+
+  return races.map((race) => ({
+    params: {
+      id: race.id
+    },
+    props: {
+      race
+    }
+  }));
+}
+
+const { race } = Astro.props;
+const { Content } = await render(race);
+
+const base = import.meta.env.BASE_URL;
+const cleanBase = base.replace(/\/$/, '');
+
+const mapImageUrl = race.data.mapImage
+  ? `${cleanBase}/${race.data.mapImage.replace(/^\/+/, '')}`
+  : '';
+
+const distance =
+  typeof race.data.distanceKm === 'number'
+    ? `${race.data.distanceKm.toFixed(1)} km`
+    : '–';
+
+const position =
+  typeof race.data.position === 'number'
+    ? `${race.data.position}:a`
+    : '–';
+---
+
+<BaseLayout>
+  <main class="detail-page page-shell">
+    <a href={`${cleanBase}/races/`} class="back-link">
+      ← Alla kartor
+    </a>
+
+    <div class="detail-header">
+      <div>
+        <p class="eyebrow">
+          {race.data.date.toLocaleDateString('sv-SE')}
+        </p>
+
+        <h1>{race.data.title}</h1>
+
+        <p class="muted">
+          {race.data.location} · {race.data.raceClass}
+        </p>
+      </div>
+
+      <div class="detail-stats">
+        <span>
+          <strong>{race.data.time}</strong>
+          Tid
+        </span>
+
+        <span>
+          <strong>{position}</strong>
+          Placering
+        </span>
+
+        <span>
+          <strong>{distance}</strong>
+          Distans
+        </span>
+      </div>
+    </div>
+
+    {
+      mapImageUrl && (
+        <img
+          src={mapImageUrl}
+          alt={`Orienteringskarta från ${race.data.title}`}
+          class="detail-map"
+        />
+      )
+    }
+
+    <div class="detail-grid">
+      <section class="panel prose">
+        <h2>Analys</h2>
+        <Content />
+      </section>
+
+      <aside class="panel link-panel">
+        <h2>Länkar</h2>
+
+        {
+          race.data.livelox && (
+            <a
+              href={race.data.livelox}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Öppna Livelox
+            </a>
+          )
+        }
+
+        {
+          race.data.winsplits && (
+            <a
+              href={race.data.winsplits}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Öppna Winsplits
+            </a>
+          )
+        }
+
+        {
+          race.data.results && (
+            <a
+              href={race.data.results}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Öppna resultat
+            </a>
+          )
+        }
+      </aside>
+    </div>
+  </main>
+</BaseLayout>

@@ -2,14 +2,15 @@
 const { race } = Astro.props;
 
 const base = import.meta.env.BASE_URL;
+const cleanBase = base.replace(/\/$/, '');
 const d = race.data;
 
-const raceUrl = `${base}races/${race.id}/`;
+const raceUrl = `${cleanBase}/races/${race.id}/`;
 
 const imagePath = d.thumbnailImage ?? d.mapImage;
 
 const mapImageUrl = imagePath
-  ? `${base}${imagePath.replace(/^\//, '')}`
+  ? `${cleanBase}/${String(imagePath).replace(/^\/+/, '')}`
   : '';
 
 const distance =
@@ -138,4 +139,4 @@ const placementWithStarters =
       }
     </div>
   </div>
-</article>
+</article>  
