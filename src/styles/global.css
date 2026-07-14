@@ -752,17 +752,12 @@ footer {
   }
 }
 @media (max-width: 620px) {
-  .hero {
-    min-height: 520px;
-
-    /* Flytta motivet lite åt höger så du syns bättre */
-    background-position: 75% 8%;
-  }
-}
   .latest-race-grid {
     grid-template-columns: 1fr;
   }
 }
 .latest-race-grid {
-  grid-template-columns: minmax(280px, 420px);
+  display: grid;
+  grid-template-columns: 320px;
+  justify-content: start;
 }
