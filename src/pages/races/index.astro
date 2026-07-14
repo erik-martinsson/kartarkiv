@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RaceCard from '../../components/RaceCard.astro';
+const races = (await getCollection('races')).sort((a,b)=>b.data.date.getTime()-a.data.date.getTime());
+---
+<BaseLayout title="Kartor – Erik Orientering">
+  <section class="page-shell archive-page">
+    <div class="archive-header"><div><p class="eyebrow">ARKIV</p><h1>Alla kartor</h1></div><input id="search" type="search" placeholder="Sök tävling, plats eller år…" /></div>
+    <div class="race-grid archive-grid" id="race-grid">
+      {races.map(race => <div class="search-item" data-search={`${race.data.title} ${race.data.location} ${race.data.date.getFullYear()} ${race.data.class}`.toLowerCase()}><RaceCard race={race} /></div>)}
+    </div>
+  </section>
+  <script>
+    const input = document.querySelector('#search');
+    const items = [...document.querySelectorAll('.search-item')];
+    input?.addEventListener('input', () => {
+      const q = input.value.toLowerCase().trim();
+      items.forEach(item => item.toggleAttribute('hidden', !item.dataset.search.includes(q)));
+    });
+  </script>
+</BaseLayout>
