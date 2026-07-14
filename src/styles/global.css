@@ -100,7 +100,7 @@ img {
   display: flex;
   align-items: center;
   background-image: var(--hero-image);
-  background-position: center 10%;
+  background-position: center 30%;
   background-size: cover;
   background-repeat: no-repeat;
 }
