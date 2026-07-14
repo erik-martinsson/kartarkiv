@@ -1,30 +1,55 @@
-# Kartarkiv – startpaket
+# Erik Martinssons kartarkiv – version 2
 
-Detta är en Astro-webbplats för GitHub Pages.
+Astro-webbplats för GitHub Pages med kartarkiv, statistik och interaktiv översiktskarta.
 
-## Publicera första gången
+## Nytt i version 2
 
-1. Ladda upp **alla filer och mappar** i detta paket till roten av repositoryt `kartarkiv`.
-2. Kontrollera att den dolda mappen `.github/workflows` också följer med.
-3. Gör en commit till grenen `main`.
-4. Öppna fliken **Actions** i GitHub. Arbetsflödet `Deploy Astro site to GitHub Pages` ska starta.
-5. När det är klart finns sidan på `https://erik-martinsson.github.io/kartarkiv/`.
+- Interaktiv översiktskarta med OpenStreetMap/Leaflet.
+- Tävlingsposition hämtas automatiskt från GPX när `gpsFile` anges.
+- Manuell `latitude` och `longitude` används som reserv.
+- Introtext: “Välkommen till Erik Martinssons kartarkiv.”
+- Förbättrad statistik med topp 3 och topp 10.
+- Bildvägar fungerar oavsett GitHub Pages-repots namn.
 
-## Lägg till en tävling
+## Uppdatera det befintliga GitHub-repot
 
-1. Lägg kartbilden i `public/images/`, exempelvis `2026-07-14-oringen-e1.jpg`.
-2. Lägg PDF-filen i `public/maps/`, exempelvis `2026-07-14-oringen-e1.pdf`.
-3. Kopiera en av filerna i `src/content/races/` och döp den enligt `YYYY-MM-DD-namn.md`.
-4. Ändra uppgifterna mellan `---` och skriv analysen under det andra `---`.
-5. Commit. Sidan uppdateras automatiskt.
+Packa upp ZIP-filen och ladda upp samtliga filer till roten av `kartarkiv`. Tillåt GitHub att skriva över filer med samma namn. Behåll din fungerande `.github/workflows/deploy.yml` om GitHub frågar.
 
-## Testa lokalt (valfritt)
+Commit-meddelande:
 
-```bash
-npm install
-npm run dev
+```text
+Add interactive overview map and GPX support
 ```
 
-## Viktigt
+## Lägg till en riktig tävling
 
-Exempelkartorna är SVG-platshållare. Byt dem mot dina egna JPG- eller PNG-bilder. PDF-fältet är valfritt.
+1. Lägg kartbilden i `public/maps/`, exempelvis `public/maps/2026-07-14-oringen.jpg`.
+2. Lägg PDF-kartan i samma mapp om du har en.
+3. Lägg GPX-spåret i `public/gps/`.
+4. Kopiera en fil i `src/content/races/` och ändra uppgifterna.
+
+Exempel:
+
+```yaml
+---
+title: "O-Ringen Etapp 1"
+date: 2026-07-14
+location: "Jönköping"
+class: "H40"
+distanceKm: 7.8
+time: "58:18"
+position: 4
+participants: 126
+mistakeSeconds: 155
+controls: 23
+mapImage: "/maps/2026-07-14-oringen.jpg"
+mapPdf: "/maps/2026-07-14-oringen.pdf"
+gpsFile: "/gps/2026-07-14-oringen.gpx"
+livelox: "https://www.livelox.com/..."
+winsplits: "https://obasen.orientering.se/winsplits/..."
+results: "https://eventor.orientering.se/..."
+---
+Kort analys av loppet.
+```
+
+När en ändring sparas bygger GitHub Actions om webbplatsen automatiskt.

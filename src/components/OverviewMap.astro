@@ -1,0 +1,86 @@
+---
+const { races } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const mapId = `overview-map-${Math.random().toString(36).slice(2)}`;
+const mapData = races.map((race) => ({
+  ...race,
+  url: `${base}races/${race.id}/`
+}));
+---
+<div class="overview-map-wrap">
+  <div id={mapId} class="overview-map" aria-label="Översiktskarta över tävlingsplatser"></div>
+  <p class="map-note">Klicka på en markör för att öppna tävlingen. Positionen hämtas i första hand från GPX-spåret.</p>
+</div>
+
+<script is:inline define:vars={{ mapId, mapData }}>
+  const loadLeaflet = async () => {
+    if (!document.querySelector('link[data-leaflet]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      link.dataset.leaflet = 'true';
+      document.head.appendChild(link);
+    }
+
+    if (!window.L) {
+      await new Promise((resolve, reject) => {
+        const existing = document.querySelector('script[data-leaflet]');
+        if (existing) {
+          existing.addEventListener('load', resolve, { once: true });
+          existing.addEventListener('error', reject, { once: true });
+          return;
+        }
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+        script.dataset.leaflet = 'true';
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+  };
+
+  const init = async () => {
+    const element = document.getElementById(mapId);
+    if (!element || !Array.isArray(mapData) || mapData.length === 0) return;
+
+    try {
+      await loadLeaflet();
+      const map = L.map(element, { scrollWheelZoom: false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      const controlIcon = L.divIcon({
+        className: 'control-marker-shell',
+        html: '<span class="control-marker"></span>',
+        iconSize: [26, 26],
+        iconAnchor: [13, 13]
+      });
+
+      const bounds = [];
+      for (const race of mapData) {
+        const point = [race.latitude, race.longitude];
+        bounds.push(point);
+        const marker = L.marker(point, { icon: controlIcon }).addTo(map);
+        marker.bindPopup(`
+          <div class="race-popup">
+            <strong>${race.title}</strong>
+            <span>${race.date}</span>
+            <span>${race.location}</span>
+            <a href="${race.url}">Öppna tävlingen →</a>
+          </div>
+        `);
+      }
+
+      if (bounds.length === 1) map.setView(bounds[0], 11);
+      else map.fitBounds(bounds, { padding: [35, 35], maxZoom: 11 });
+    } catch (error) {
+      element.innerHTML = '<p class="map-error">Kartan kunde inte laddas. Kontrollera internetanslutningen.</p>';
+      console.error(error);
+    }
+  };
+
+  init();
+</script>

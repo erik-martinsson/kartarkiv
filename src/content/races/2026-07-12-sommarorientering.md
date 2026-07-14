@@ -15,6 +15,7 @@ winsplits: "https://obasen.orientering.se/winsplits/"
 results: "https://eventor.orientering.se/"
 latitude: 58.4108
 longitude: 15.6214
+gpsFile: "/gps/2026-07-12-sommarorientering.gpx"
 featured: true
 ---
 Bra genomförande under första halvan. Tappade ungefär två minuter på vägvalet till kontroll 12 men avslutade stabilt.

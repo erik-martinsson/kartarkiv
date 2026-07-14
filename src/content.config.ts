@@ -21,6 +21,7 @@ const races = defineCollection({
     results: z.string().url().optional(),
     latitude: z.number().optional(),
     longitude: z.number().optional(),
+    gpsFile: z.string().optional(),
     featured: z.boolean().default(false)
   })
 });
