@@ -9,7 +9,7 @@ const races = (await getCollection('races')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
-/* Visa endast de senaste tävlingarna */
+/* Visa de tre senaste tävlingarna */
 const recent = races.slice(0, 3);
 
 /* Omvandlar 58:18 eller 1:05:42 till sekunder */
@@ -58,6 +58,11 @@ const averageMistake = races.length
   ? Math.round(totalMistakes / races.length)
   : 0;
 
+const totalDistance = races.reduce(
+  (sum, race) => sum + (race.data.distance ?? 0),
+  0
+);
+
 const controls = races.reduce(
   (sum, race) => sum + (race.data.controls ?? 0),
   0
@@ -66,6 +71,14 @@ const controls = races.reduce(
 const topThree = races.filter(
   (race) => race.data.position <= 3
 ).length;
+
+const countries = [
+  ...new Set(
+    races
+      .map((race) => race.data.country)
+      .filter(Boolean)
+  )
+].length;
 
 const years = [
   ...new Set(races.map((race) => race.data.date.getFullYear()))
@@ -153,6 +166,11 @@ const mapRaces = races.flatMap((race) => {
         </div>
 
         <div>
+          <span>Total distans</span>
+          <strong>{totalDistance.toFixed(1)} km</strong>
+        </div>
+
+        <div>
           <span>Antal kontroller</span>
           <strong>{controls}</strong>
         </div>
@@ -170,6 +188,11 @@ const mapRaces = races.flatMap((race) => {
         <div>
           <span>Topp-3 placeringar</span>
           <strong>{topThree}</strong>
+        </div>
+
+        <div>
+          <span>Antal länder</span>
+          <strong>{countries}</strong>
         </div>
       </div>
     </aside>
