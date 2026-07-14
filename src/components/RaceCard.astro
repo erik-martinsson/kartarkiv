@@ -1,21 +1,129 @@
 ---
 const { race } = Astro.props;
+
 const base = import.meta.env.BASE_URL;
 const d = race.data;
+
+const raceUrl = `${base}races/${race.id}/`;
+
+const mapImageUrl = d.mapImage
+  ? `${base}${d.mapImage.replace(/^\//, '')}`
+  : '';
+
+const mapFocus = d.mapFocus ?? 'center';
+
+const distance =
+  typeof d.distanceKm === 'number'
+    ? `${d.distanceKm.toFixed(1)} km`
+    : '–';
+
+const position =
+  typeof d.position === 'number'
+    ? `${d.position}:a`
+    : '–';
 ---
+
 <article class="race-card">
-  <a href={`${base}races/${race.id}/`} class="race-image-wrap">
-    <img src={`${base}${d.mapImage.replace(/^\//, '')}`} alt={`Karta från ${d.title}`} class="race-image" loading="lazy" />
-    <span class="date-pill">{d.date.toLocaleDateString('sv-SE')}</span>
+  <a href={raceUrl} class="race-image-wrap">
+    {
+      mapImageUrl && (
+        <img
+          src={mapImageUrl}
+          alt={`Karta från ${d.title}`}
+          class="race-image"
+          loading="lazy"
+          style={`object-position: ${mapFocus};`}
+        />
+      )
+    }
+
+    <span class="date-pill">
+      {d.date.toLocaleDateString('sv-SE')}
+    </span>
   </a>
+
   <div class="race-body">
-    <h3><a href={`${base}races/${race.id}/`}>{d.title}</a></h3>
-    <p class="muted">{d.location} · {d.class}</p>
-    <div class="race-meta"><span>{d.distanceKm.toFixed(1)} km</span><span>{d.time}</span><span>{d.position}:a</span></div>
+    <div class="race-card-heading">
+      <h3>
+        <a href={raceUrl}>{d.title}</a>
+      </h3>
+
+      <span class="race-position">
+        {position}
+      </span>
+    </div>
+
+    <p class="muted">
+      {d.location} · {d.class}
+    </p>
+
+    <div class="race-meta">
+      <div>
+        <span>Distans</span>
+        <strong>{distance}</strong>
+      </div>
+
+      <div>
+        <span>Tid</span>
+        <strong>{d.time ?? '–'}</strong>
+      </div>
+
+      <div>
+        <span>Placering</span>
+        <strong>{position}</strong>
+      </div>
+    </div>
+
     <div class="race-actions">
-      <a href={`${base}races/${race.id}/`} aria-label="Öppna lopp">🗺</a>
-      {d.winsplits && <a href={d.winsplits} target="_blank" rel="noreferrer" aria-label="Winsplits">↗</a>}
-      {d.livelox && <a href={d.livelox} target="_blank" rel="noreferrer" aria-label="Livelox">◎</a>}
+      <a
+        href={raceUrl}
+        class="race-action-primary"
+        aria-label={`Öppna ${d.title}`}
+      >
+        Visa lopp
+      </a>
+
+      {
+        d.winsplits && (
+          <a
+            href={d.winsplits}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Öppna Winsplits"
+            title="Winsplits"
+          >
+            W
+          </a>
+        )
+      }
+
+      {
+        d.livelox && (
+          <a
+            href={d.livelox}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Öppna Livelox"
+            title="Livelox"
+          >
+            L
+          </a>
+        )
+      }
+
+      {
+        d.results && (
+          <a
+            href={d.results}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Öppna resultat"
+            title="Resultat"
+          >
+            R
+          </a>
+        )
+      }
     </div>
   </div>
 </article>
