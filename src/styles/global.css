@@ -895,3 +895,13 @@ footer {
   .map-lightbox-actions { gap: 4px; }
   .map-lightbox-actions button { min-width: 34px; height: 36px; padding: 0 8px; }
 }
+.map-lightbox-variant-toggle {
+  min-width: 130px !important;
+  padding: 0 14px !important;
+}
+
+.map-lightbox-variant-toggle.is-active {
+  background: rgba(255, 122, 0, 0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+}

@@ -80,6 +80,25 @@ const raceTimeSeconds = timeToSeconds(race.data.time);
 const mistakePercent =
   raceTimeSeconds > 0 ? (mistakeSeconds / raceTimeSeconds) * 100 : 0;
 const mistakePercentText = `${mistakePercent.toFixed(1)} %`;
+
+const paceSecondsPerKm =
+  raceTimeSeconds > 0 && gpsDistance > 0
+    ? Math.round(raceTimeSeconds / gpsDistance)
+    : null;
+
+const paceText =
+  paceSecondsPerKm !== null
+    ? `${Math.floor(paceSecondsPerKm / 60)}:${String(
+        paceSecondsPerKm % 60
+      ).padStart(2, '0')}`
+    : '–';
+
+const climbText =
+  typeof race.data.gpsClimb === 'number'
+    ? `${Math.round(race.data.gpsClimb)} m`
+    : '–';
+
+
 ---
 
 <BaseLayout>
@@ -140,16 +159,57 @@ const mistakePercentText = `${mistakePercent.toFixed(1)} %`;
       <aside class="panel race-detail-stats">
         <h2>STATISTIK</h2>
 
-        <div class="detail-stat-grid">
-          <div><span>Tävlingstid</span><strong>{race.data.time}</strong></div>
-          <div><span>Placering</span><strong>{placementText}</strong></div>
-          <div><span>Banlängd</span><strong>{courseDistanceText}</strong></div>
-          <div><span>Löpt distans</span><strong>{gpsDistanceText}</strong></div>
-          <div><span>Extra löpt distans</span><strong>{extraDistancePercentText}</strong></div>
-          <div><span>Bomtid</span><strong>{mistakeTimeText}</strong></div>
-          <div><span>Bomtid (%)</span><strong>{mistakePercentText}</strong></div>
-          <div><span>Kontroller</span><strong>{race.data.controls ?? '–'}</strong></div>
-        </div>
+<div class="detail-stat-grid">
+  <div>
+    <span>Tävlingstid</span>
+    <strong>{race.data.time}</strong>
+  </div>
+
+  <div>
+    <span>Placering</span>
+    <strong>{placementText}</strong>
+  </div>
+
+  <div>
+    <span>Banlängd</span>
+    <strong>{courseDistanceText}</strong>
+  </div>
+
+  <div>
+    <span>Löpt distans</span>
+    <strong>{gpsDistanceText}</strong>
+  </div>
+
+  <div>
+    <span>Extra löpt distans</span>
+    <strong>{extraDistancePercentText}</strong>
+  </div>
+
+  <div>
+    <span>Tempo (min/km)</span>
+    <strong>{paceText}</strong>
+  </div>
+
+  <div>
+    <span>Bomtid</span>
+    <strong>{mistakeTimeText}</strong>
+  </div>
+
+  <div>
+    <span>Bomtid (%)</span>
+    <strong>{mistakePercentText}</strong>
+  </div>
+
+  <div>
+    <span>Kontroller</span>
+    <strong>{race.data.controls ?? '–'}</strong>
+  </div>
+
+  <div>
+    <span>Höjdmeter</span>
+    <strong>{climbText}</strong>
+  </div>
+</div>
       </aside>
     </div>
 
@@ -178,11 +238,52 @@ const mistakePercentText = `${mistakePercent.toFixed(1)} %`;
           </div>
 
           <div class="map-lightbox-actions">
-            <button type="button" id="map-zoom-out" aria-label="Zooma ut">−</button>
-            <button type="button" id="map-zoom-reset" aria-label="Återställ zoom">100 %</button>
-            <button type="button" id="map-zoom-in" aria-label="Zooma in">+</button>
-            <button type="button" id="close-map-lightbox" class="map-lightbox-close" aria-label="Stäng kartan">×</button>
-          </div>
+  {
+    routeImageUrl && (
+      <button
+        type="button"
+        id="map-lightbox-variant-toggle"
+        class="map-lightbox-variant-toggle is-active"
+        aria-pressed="true"
+      >
+        Visa blank karta
+      </button>
+    )
+  }
+
+  <button
+    type="button"
+    id="map-zoom-out"
+    aria-label="Zooma ut"
+  >
+    −
+  </button>
+
+  <button
+    type="button"
+    id="map-zoom-reset"
+    aria-label="Återställ zoom"
+  >
+    100 %
+  </button>
+
+  <button
+    type="button"
+    id="map-zoom-in"
+    aria-label="Zooma in"
+  >
+    +
+  </button>
+
+  <button
+    type="button"
+    id="close-map-lightbox"
+    class="map-lightbox-close"
+    aria-label="Stäng kartan"
+  >
+    ×
+  </button>
+</div>
         </div>
 
         <div class="map-lightbox-stage" id="map-lightbox-stage">
@@ -213,6 +314,9 @@ const mistakePercentText = `${mistakePercent.toFixed(1)} %`;
     const lightboxImage = document.querySelector('#map-lightbox-image');
     const detailMapImage = document.querySelector('#detail-map-image');
     const mapVariantToggle = document.querySelector('#map-variant-toggle');
+    const lightboxVariantToggle = document.querySelector(
+      '#map-lightbox-variant-toggle'
+    );
 
     if (
       openButton instanceof HTMLButtonElement &&
@@ -318,21 +422,54 @@ const mistakePercentText = `${mistakePercent.toFixed(1)} %`;
     ) {
       let showingRoute = Boolean(detailMapImage.dataset.routeSrc);
 
+      const updateToggleButton = (button) => {
+        if (!(button instanceof HTMLButtonElement)) return;
+
+        button.textContent = showingRoute
+          ? 'Visa blank karta'
+          : 'Visa GPS-rutt';
+
+        button.setAttribute(
+          'aria-pressed',
+          showingRoute ? 'true' : 'false'
+        );
+
+        button.classList.toggle('is-active', showingRoute);
+      };
+
       const updateMapVariant = () => {
         const blankSrc = detailMapImage.dataset.blankSrc ?? '';
         const routeSrc = detailMapImage.dataset.routeSrc ?? '';
-        const nextSrc = showingRoute && routeSrc ? routeSrc : blankSrc;
+
+        const nextSrc =
+          showingRoute && routeSrc
+            ? routeSrc
+            : blankSrc;
+
         detailMapImage.src = nextSrc;
         lightboxImage.src = nextSrc;
-        mapVariantToggle.textContent = showingRoute ? 'Visa blank karta' : 'Visa GPS-rutt';
-        mapVariantToggle.setAttribute('aria-pressed', showingRoute ? 'true' : 'false');
-        mapVariantToggle.classList.toggle('is-active', showingRoute);
+
+        updateToggleButton(mapVariantToggle);
+        updateToggleButton(lightboxVariantToggle);
       };
 
-      mapVariantToggle.addEventListener('click', () => {
+      const toggleMapVariant = () => {
         showingRoute = !showingRoute;
         updateMapVariant();
-      });
+      };
+
+      mapVariantToggle.addEventListener(
+        'click',
+        toggleMapVariant
+      );
+
+      if (lightboxVariantToggle instanceof HTMLButtonElement) {
+        lightboxVariantToggle.addEventListener(
+          'click',
+          toggleMapVariant
+        );
+      }
+
       updateMapVariant();
     }
   </script>

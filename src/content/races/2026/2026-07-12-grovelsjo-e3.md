@@ -13,6 +13,7 @@ raceClass: "H40"
 
 distanceKm: 4.04
 gpsDistanceKm: 4.62
+gpsClimb: 112
 time: "35:18"
 
 position: 2
@@ -21,7 +22,8 @@ starters: 14
 controls: 15
 mistakeSeconds: 40
 
-mapImage: "/maps/2026/2026-07-12-grovelsjo-e3.png"
+mapImage: "/maps/2026/2026-07-12-grovelsjo-e3_blank.png"
+routeImage: "/maps/2026/2026-07-12-grovelsjo-e3_rutt.png"
 gpsFile: "/gps/2026/2026-07-12-grovelsjo-e3.gpx"
 
 latitude: 62.004257
