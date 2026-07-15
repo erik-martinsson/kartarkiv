@@ -13,7 +13,7 @@ const mapImageUrl = imagePath
   ? `${cleanBase}/${String(imagePath).replace(/^\/+/, '')}`
   : '';
 
-const distance =
+const courseDistance =
   typeof d.distanceKm === 'number'
     ? `${d.distanceKm.toFixed(2)} km`
     : '–';
@@ -70,32 +70,24 @@ const placementWithStarters =
       )
     }
 
-    <div class="race-meta">
-      <div>
-        <span>Distans</span>
-        <strong>{distance}</strong>
-      </div>
+<div class="race-meta">
+  <div>
+    <span>Distans</span>
+    <strong>{courseDistance}</strong>
+  </div>
 
-      <div>
-        <span>Tid</span>
-        <strong>{d.time ?? '–'}</strong>
-      </div>
+  <div>
+    <span>Tid</span>
+    <strong>{d.time ?? '–'}</strong>
+  </div>
 
-      <div>
-        <span>Placering</span>
-        <strong>{placementWithStarters}</strong>
-      </div>
-    </div>
+  <div>
+    <span>Placering</span>
+    <strong>{placementWithStarters}</strong>
+  </div>
+</div>
 
     <div class="race-actions">
-      <a
-        href={raceUrl}
-        class="race-action-primary"
-        aria-label={`Öppna ${d.title}`}
-      >
-        Visa lopp
-      </a>
-
       {
         d.winsplits && (
           <a

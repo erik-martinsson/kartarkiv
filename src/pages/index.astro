@@ -59,7 +59,7 @@ const averageMistake = races.length
   : 0;
 
 const totalDistance = races.reduce(
-  (sum, race) => sum + (race.data.distance ?? 0),
+  (sum, race) => sum + (race.data.gpsDistanceKm ?? 0),
   0
 );
 

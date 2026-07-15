@@ -22,6 +22,7 @@ const races = defineCollection({
     raceClass: z.string(),
 
     distanceKm: z.number().nonnegative(),
+    gpsDistanceKm: z.number().nonnegative().optional(),
     time: z.string(),
 
     position: z.number().int().positive(),
@@ -31,6 +32,7 @@ const races = defineCollection({
     mistakeSeconds: z.number().int().nonnegative().default(0),
 
     mapImage: z.string(),
+    routeImage: z.string().optional(),
     thumbnailImage: z.string().optional(),
     mapPdf: z.string().optional(),
     gpsFile: z.string().optional(),

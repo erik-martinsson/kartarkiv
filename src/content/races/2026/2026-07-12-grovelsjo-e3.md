@@ -12,6 +12,7 @@ discipline: "Medel"
 raceClass: "H40"
 
 distanceKm: 4.04
+gpsDistanceKm: 4.62
 time: "35:18"
 
 position: 2
