@@ -25,7 +25,7 @@ const races = defineCollection({
     gpsDistanceKm: z.number().nonnegative().optional(),
     gpsClimb: z.number().nonnegative().optional(),
     time: z.string(),
-
+    
     position: z.number().int().positive(),
     starters: z.number().int().positive().optional(),
 

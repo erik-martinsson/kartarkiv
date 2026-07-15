@@ -691,7 +691,7 @@ body.lightbox-open { overflow: hidden; }
   overflow: hidden;
   background: #111;
   cursor: zoom-in;
-  touch-action: none;
+  touch-action: pan-x pan-y;
   user-select: none;
 }
 .map-lightbox-stage.is-zoomed { cursor: grab; }
