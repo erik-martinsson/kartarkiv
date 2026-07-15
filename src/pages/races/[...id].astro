@@ -304,283 +304,148 @@ const climbText =
   }
 
   <script>
-  const openButton = document.querySelector('#open-map-lightbox');
-  const dialog = document.querySelector('#map-lightbox');
-  const closeButton = document.querySelector('#close-map-lightbox');
-  const zoomInButton = document.querySelector('#map-zoom-in');
-  const zoomOutButton = document.querySelector('#map-zoom-out');
-  const resetButton = document.querySelector('#map-zoom-reset');
-  const stage = document.querySelector('#map-lightbox-stage');
-  const lightboxImage = document.querySelector('#map-lightbox-image');
-  const detailMapImage = document.querySelector('#detail-map-image');
-  const mapVariantToggle = document.querySelector('#map-variant-toggle');
-  const lightboxVariantToggle = document.querySelector(
-    '#map-lightbox-variant-toggle'
-  );
-
-  if (
-    openButton instanceof HTMLButtonElement &&
-    dialog instanceof HTMLDialogElement &&
-    closeButton instanceof HTMLButtonElement &&
-    zoomInButton instanceof HTMLButtonElement &&
-    zoomOutButton instanceof HTMLButtonElement &&
-    resetButton instanceof HTMLButtonElement &&
-    stage instanceof HTMLElement &&
-    lightboxImage instanceof HTMLImageElement
-  ) {
-    let scale = 1;
-    let translateX = 0;
-    let translateY = 0;
-
-    const minimumScale = 1;
-    const maximumScale = 5;
-    const zoomStep = 0.25;
-
-    /*
-      Aktiva mus- och touchpunkter.
-      Två punkter används för pinch-zoom.
-    */
-    const activePointers = new Map();
-
-    let isDragging = false;
-    let dragPointerId = null;
-    let dragStartX = 0;
-    let dragStartY = 0;
-    let startTranslateX = 0;
-    let startTranslateY = 0;
-
-    let pinchStartDistance = 0;
-    let pinchStartScale = 1;
-    let pinchStartTranslateX = 0;
-    let pinchStartTranslateY = 0;
-    let pinchStartCenterX = 0;
-    let pinchStartCenterY = 0;
-
-    const clampScale = (value) =>
-      Math.min(maximumScale, Math.max(minimumScale, value));
-
-    const applyTransform = () => {
-      lightboxImage.style.transform =
-        `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-
-      resetButton.textContent = `${Math.round(scale * 100)} %`;
-
-      stage.classList.toggle(
-        'is-zoomed',
-        scale > minimumScale
-      );
-    };
-
-    const resetView = () => {
-      scale = 1;
-      translateX = 0;
-      translateY = 0;
-
-      activePointers.clear();
-      isDragging = false;
-      dragPointerId = null;
-
-      stage.classList.remove('is-dragging');
-
-      applyTransform();
-    };
-
-    const changeZoom = (change) => {
-      scale = clampScale(scale + change);
-
-      if (scale === minimumScale) {
-        translateX = 0;
-        translateY = 0;
-      }
-
-      applyTransform();
-    };
-
-    const getPointerValues = () =>
-      Array.from(activePointers.values());
-
-    const getDistance = (first, second) =>
-      Math.hypot(
-        second.x - first.x,
-        second.y - first.y
-      );
-
-    const getCenter = (first, second) => ({
-      x: (first.x + second.x) / 2,
-      y: (first.y + second.y) / 2
-    });
-
-    const beginPinch = () => {
-      const pointers = getPointerValues();
-
-      if (pointers.length < 2) return;
-
-      const first = pointers[0];
-      const second = pointers[1];
-      const center = getCenter(first, second);
-
-      pinchStartDistance = getDistance(first, second);
-      pinchStartScale = scale;
-      pinchStartTranslateX = translateX;
-      pinchStartTranslateY = translateY;
-      pinchStartCenterX = center.x;
-      pinchStartCenterY = center.y;
-
-      isDragging = false;
-      dragPointerId = null;
-
-      stage.classList.add('is-dragging');
-    };
-
-    const updatePinch = () => {
-      const pointers = getPointerValues();
-
-      if (
-        pointers.length < 2 ||
-        pinchStartDistance <= 0
-      ) {
-        return;
-      }
-
-      const first = pointers[0];
-      const second = pointers[1];
-
-      const currentDistance = getDistance(first, second);
-      const currentCenter = getCenter(first, second);
-
-      const distanceRatio =
-        currentDistance / pinchStartDistance;
-
-      scale = clampScale(
-        pinchStartScale * distanceRatio
-      );
-
-      /*
-        Följ även tvåfingersrörelsen i sid- och höjdled.
-      */
-      translateX =
-        pinchStartTranslateX +
-        currentCenter.x -
-        pinchStartCenterX;
-
-      translateY =
-        pinchStartTranslateY +
-        currentCenter.y -
-        pinchStartCenterY;
-
-      if (scale === minimumScale) {
-        translateX = 0;
-        translateY = 0;
-      }
-
-      applyTransform();
-    };
-
-    const openLightbox = () => {
-      resetView();
-      dialog.showModal();
-      document.body.classList.add('lightbox-open');
-    };
-
-    const closeLightbox = () => {
-      dialog.close();
-      document.body.classList.remove('lightbox-open');
-      resetView();
-    };
-
-    openButton.addEventListener('click', openLightbox);
-    closeButton.addEventListener('click', closeLightbox);
-
-    zoomInButton.addEventListener('click', () => {
-      changeZoom(zoomStep);
-    });
-
-    zoomOutButton.addEventListener('click', () => {
-      changeZoom(-zoomStep);
-    });
-
-    resetButton.addEventListener('click', resetView);
-
-    dialog.addEventListener('click', (event) => {
-      if (event.target === dialog) {
-        closeLightbox();
-      }
-    });
-
-    dialog.addEventListener('close', () => {
-      document.body.classList.remove('lightbox-open');
-      resetView();
-    });
-
-    stage.addEventListener(
-      'wheel',
-      (event) => {
-        event.preventDefault();
-
-        changeZoom(
-          event.deltaY < 0
-            ? zoomStep
-            : -zoomStep
-        );
-      },
-      { passive: false }
+    const openButton = document.querySelector('#open-map-lightbox');
+    const dialog = document.querySelector('#map-lightbox');
+    const closeButton = document.querySelector('#close-map-lightbox');
+    const zoomInButton = document.querySelector('#map-zoom-in');
+    const zoomOutButton = document.querySelector('#map-zoom-out');
+    const resetButton = document.querySelector('#map-zoom-reset');
+    const stage = document.querySelector('#map-lightbox-stage');
+    const lightboxImage = document.querySelector('#map-lightbox-image');
+    const detailMapImage = document.querySelector('#detail-map-image');
+    const mapVariantToggle = document.querySelector('#map-variant-toggle');
+    const lightboxVariantToggle = document.querySelector(
+      '#map-lightbox-variant-toggle'
     );
 
-    stage.addEventListener('dblclick', resetView);
+    if (
+      openButton instanceof HTMLButtonElement &&
+      dialog instanceof HTMLDialogElement &&
+      closeButton instanceof HTMLButtonElement &&
+      zoomInButton instanceof HTMLButtonElement &&
+      zoomOutButton instanceof HTMLButtonElement &&
+      resetButton instanceof HTMLButtonElement &&
+      stage instanceof HTMLElement &&
+      lightboxImage instanceof HTMLImageElement
+    ) {
+      let scale = 1;
+      let translateX = 0;
+      let translateY = 0;
 
-    stage.addEventListener('pointerdown', (event) => {
-      event.preventDefault();
+      let isDragging = false;
+      let dragStartX = 0;
+      let dragStartY = 0;
+      let startTranslateX = 0;
+      let startTranslateY = 0;
 
-      activePointers.set(event.pointerId, {
-        x: event.clientX,
-        y: event.clientY
+      const minimumScale = 1;
+      const maximumScale = 5;
+      const zoomStep = 0.25;
+
+      const applyTransform = () => {
+        lightboxImage.style.transform =
+          `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+        resetButton.textContent = `${Math.round(scale * 100)} %`;
+        stage.classList.toggle('is-zoomed', scale > minimumScale);
+      };
+
+      const resetView = () => {
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+        isDragging = false;
+        stage.classList.remove('is-dragging');
+        applyTransform();
+      };
+
+      const changeZoom = (change) => {
+        scale = Math.min(
+          maximumScale,
+          Math.max(minimumScale, scale + change)
+        );
+
+        if (scale === minimumScale) {
+          translateX = 0;
+          translateY = 0;
+        }
+
+        applyTransform();
+      };
+
+      const openLightbox = () => {
+        resetView();
+        dialog.showModal();
+        document.body.classList.add('lightbox-open');
+      };
+
+      const closeLightbox = () => {
+        dialog.close();
+        document.body.classList.remove('lightbox-open');
+        resetView();
+      };
+
+      openButton.addEventListener('click', openLightbox);
+      closeButton.addEventListener('click', closeLightbox);
+
+      zoomInButton.addEventListener('click', () => {
+        changeZoom(zoomStep);
       });
 
-      stage.setPointerCapture(event.pointerId);
+      zoomOutButton.addEventListener('click', () => {
+        changeZoom(-zoomStep);
+      });
 
-      if (activePointers.size === 2) {
-        beginPinch();
-        return;
-      }
+      resetButton.addEventListener('click', resetView);
 
-      if (
-        activePointers.size === 1 &&
-        scale > minimumScale
-      ) {
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) {
+          closeLightbox();
+        }
+      });
+
+      dialog.addEventListener('cancel', (event) => {
+        event.preventDefault();
+        closeLightbox();
+      });
+
+      dialog.addEventListener('close', () => {
+        document.body.classList.remove('lightbox-open');
+        resetView();
+      });
+
+      stage.addEventListener(
+        'wheel',
+        (event) => {
+          event.preventDefault();
+
+          changeZoom(
+            event.deltaY < 0
+              ? zoomStep
+              : -zoomStep
+          );
+        },
+        { passive: false }
+      );
+
+      stage.addEventListener('dblclick', resetView);
+
+      stage.addEventListener('pointerdown', (event) => {
+        if (scale <= minimumScale) return;
+
         isDragging = true;
-        dragPointerId = event.pointerId;
-
         dragStartX = event.clientX;
         dragStartY = event.clientY;
-
         startTranslateX = translateX;
         startTranslateY = translateY;
 
+        stage.setPointerCapture(event.pointerId);
         stage.classList.add('is-dragging');
-      }
-    });
-
-    stage.addEventListener('pointermove', (event) => {
-      if (!activePointers.has(event.pointerId)) {
-        return;
-      }
-
-      event.preventDefault();
-
-      activePointers.set(event.pointerId, {
-        x: event.clientX,
-        y: event.clientY
       });
 
-      if (activePointers.size >= 2) {
-        updatePinch();
-        return;
-      }
+      stage.addEventListener('pointermove', (event) => {
+        if (!isDragging) return;
 
-      if (
-        isDragging &&
-        dragPointerId === event.pointerId
-      ) {
         translateX =
           startTranslateX +
           event.clientX -
@@ -592,133 +457,86 @@ const climbText =
           dragStartY;
 
         applyTransform();
-      }
-    });
+      });
 
-    const stopPointer = (event) => {
-      activePointers.delete(event.pointerId);
+      const stopDragging = (event) => {
+        if (!isDragging) return;
 
-      if (stage.hasPointerCapture(event.pointerId)) {
-        stage.releasePointerCapture(event.pointerId);
-      }
-
-      /*
-        Om ett finger återstår efter pinch kan användaren
-        fortsätta panorera utan att lyfta det.
-      */
-      if (
-        activePointers.size === 1 &&
-        scale > minimumScale
-      ) {
-        const [remainingPointer] =
-          activePointers.entries().next().value;
-
-        const [remainingPointerId, point] =
-          remainingPointer;
-
-        isDragging = true;
-        dragPointerId = remainingPointerId;
-
-        dragStartX = point.x;
-        dragStartY = point.y;
-
-        startTranslateX = translateX;
-        startTranslateY = translateY;
-
-        stage.classList.add('is-dragging');
-      } else {
         isDragging = false;
-        dragPointerId = null;
+        stage.classList.remove('is-dragging');
 
-        if (activePointers.size === 0) {
-          stage.classList.remove('is-dragging');
+        if (stage.hasPointerCapture(event.pointerId)) {
+          stage.releasePointerCapture(event.pointerId);
         }
-      }
+      };
 
-      pinchStartDistance = 0;
-    };
-
-    stage.addEventListener('pointerup', stopPointer);
-    stage.addEventListener('pointercancel', stopPointer);
-    stage.addEventListener('pointerleave', (event) => {
-      if (event.pointerType === 'mouse') {
-        stopPointer(event);
-      }
-    });
-  }
-
-  /*
-    Synkronisera blank karta och GPS-karta mellan
-    detaljsidan och lightboxen.
-  */
-  if (
-    mapVariantToggle instanceof HTMLButtonElement &&
-    detailMapImage instanceof HTMLImageElement &&
-    lightboxImage instanceof HTMLImageElement
-  ) {
-    let showingRoute =
-      Boolean(detailMapImage.dataset.routeSrc);
-
-    const updateToggleButton = (button) => {
-      if (!(button instanceof HTMLButtonElement)) {
-        return;
-      }
-
-      button.textContent = showingRoute
-        ? 'Visa blank karta'
-        : 'Visa GPS-rutt';
-
-      button.setAttribute(
-        'aria-pressed',
-        showingRoute ? 'true' : 'false'
-      );
-
-      button.classList.toggle(
-        'is-active',
-        showingRoute
-      );
-    };
-
-    const updateMapVariant = () => {
-      const blankSrc =
-        detailMapImage.dataset.blankSrc ?? '';
-
-      const routeSrc =
-        detailMapImage.dataset.routeSrc ?? '';
-
-      const nextSrc =
-        showingRoute && routeSrc
-          ? routeSrc
-          : blankSrc;
-
-      detailMapImage.src = nextSrc;
-      lightboxImage.src = nextSrc;
-
-      updateToggleButton(mapVariantToggle);
-      updateToggleButton(lightboxVariantToggle);
-    };
-
-    const toggleMapVariant = () => {
-      showingRoute = !showingRoute;
-      updateMapVariant();
-    };
-
-    mapVariantToggle.addEventListener(
-      'click',
-      toggleMapVariant
-    );
+      stage.addEventListener('pointerup', stopDragging);
+      stage.addEventListener('pointercancel', stopDragging);
+    }
 
     if (
-      lightboxVariantToggle instanceof
-      HTMLButtonElement
+      mapVariantToggle instanceof HTMLButtonElement &&
+      detailMapImage instanceof HTMLImageElement &&
+      lightboxImage instanceof HTMLImageElement
     ) {
-      lightboxVariantToggle.addEventListener(
+      let showingRoute = Boolean(detailMapImage.dataset.routeSrc);
+
+      const updateToggleButton = (button) => {
+        if (!(button instanceof HTMLButtonElement)) {
+          return;
+        }
+
+        button.textContent = showingRoute
+          ? 'Visa blank karta'
+          : 'Visa GPS-rutt';
+
+        button.setAttribute(
+          'aria-pressed',
+          showingRoute ? 'true' : 'false'
+        );
+
+        button.classList.toggle('is-active', showingRoute);
+      };
+
+      const updateMapVariant = () => {
+        const blankSrc =
+          detailMapImage.dataset.blankSrc ?? '';
+
+        const routeSrc =
+          detailMapImage.dataset.routeSrc ?? '';
+
+        const nextSrc =
+          showingRoute && routeSrc
+            ? routeSrc
+            : blankSrc;
+
+        detailMapImage.src = nextSrc;
+        lightboxImage.src = nextSrc;
+
+        updateToggleButton(mapVariantToggle);
+        updateToggleButton(lightboxVariantToggle);
+      };
+
+      const toggleMapVariant = () => {
+        showingRoute = !showingRoute;
+        updateMapVariant();
+      };
+
+      mapVariantToggle.addEventListener(
         'click',
         toggleMapVariant
       );
-    }
 
-    updateMapVariant();
-  }
-</script>
+      if (
+        lightboxVariantToggle instanceof HTMLButtonElement
+      ) {
+        lightboxVariantToggle.addEventListener(
+          'click',
+          toggleMapVariant
+        );
+      }
+
+      updateMapVariant();
+    }
+  </script>
 </BaseLayout>
