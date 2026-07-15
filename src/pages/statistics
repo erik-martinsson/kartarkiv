@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Statistik · Erik Martinssons Kartarkiv">
+  <main class="archive-page page-shell">
+    <p class="eyebrow">KARTARKIV</p>
+
+    <h1>Statistik</h1>
+
+    <section class="panel prose">
+      <h2>Mer statistik kommer snart</h2>
+
+      <p>
+        Här kommer mer utförlig statistik över tävlingar,
+        distanser, tider, placeringar, bomtid och utveckling
+        över tid att visas.
+      </p>
+    </section>
+  </main>
+</BaseLayout>

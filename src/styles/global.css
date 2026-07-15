@@ -874,29 +874,63 @@ footer {
 }
 
 @media (max-width: 620px) {
+  /* Mobil header och meny */
+
   .site-header {
-    height: auto;
     min-height: 72px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
   }
 
-  .site-header nav {
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  .brand {
+    flex: 0 1 auto;
+    min-width: 0;
+    gap: 7px;
   }
 
-  .site-header nav a {
-    font-size: 0.8rem;
+  .brand-mark {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
   }
 
-  .site-header nav a:nth-child(3) {
-    display: none;
+  .brand span:last-child {
+    min-width: 0;
   }
 
   .brand strong {
-    font-size: 0.8rem;
+    display: block;
+    overflow: hidden;
+    font-size: 0.68rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
+
+  .brand small {
+    font-size: 0.55rem;
+  }
+
+  .site-header nav {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .site-header nav a {
+    display: inline-block;
+    padding: 8px 0;
+    font-size: 0.72rem;
+  }
+
+  /* Övrig mobil layout */
 
   .hero {
     min-height: 520px;
@@ -939,6 +973,8 @@ footer {
   .map-enlarge-hint {
     display: none;
   }
+
+  /* Mobil lightbox */
 
   .map-lightbox {
     position: fixed;
