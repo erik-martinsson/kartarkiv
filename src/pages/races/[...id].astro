@@ -333,14 +333,27 @@ const climbText =
       let translateY = 0;
 
       let isDragging = false;
+      let dragPointerId = null;
       let dragStartX = 0;
       let dragStartY = 0;
       let startTranslateX = 0;
       let startTranslateY = 0;
 
+      const activePointers = new Map();
+
+      let pinchStartDistance = 0;
+      let pinchStartScale = 1;
+      let pinchStartTranslateX = 0;
+      let pinchStartTranslateY = 0;
+      let pinchStartCenterX = 0;
+      let pinchStartCenterY = 0;
+
       const minimumScale = 1;
       const maximumScale = 5;
       const zoomStep = 0.25;
+
+      const clampScale = (value) =>
+        Math.min(maximumScale, Math.max(minimumScale, value));
 
       const applyTransform = () => {
         lightboxImage.style.transform =
@@ -354,16 +367,92 @@ const climbText =
         scale = 1;
         translateX = 0;
         translateY = 0;
+
         isDragging = false;
+        dragPointerId = null;
+        activePointers.clear();
+        pinchStartDistance = 0;
+
         stage.classList.remove('is-dragging');
         applyTransform();
       };
 
       const changeZoom = (change) => {
-        scale = Math.min(
-          maximumScale,
-          Math.max(minimumScale, scale + change)
+        scale = clampScale(scale + change);
+
+        if (scale === minimumScale) {
+          translateX = 0;
+          translateY = 0;
+        }
+
+        applyTransform();
+      };
+
+      const getPointerValues = () =>
+        Array.from(activePointers.values());
+
+      const getDistance = (first, second) =>
+        Math.hypot(
+          second.x - first.x,
+          second.y - first.y
         );
+
+      const getCenter = (first, second) => ({
+        x: (first.x + second.x) / 2,
+        y: (first.y + second.y) / 2
+      });
+
+      const beginPinch = () => {
+        const pointers = getPointerValues();
+
+        if (pointers.length < 2) return;
+
+        const first = pointers[0];
+        const second = pointers[1];
+        const center = getCenter(first, second);
+
+        pinchStartDistance = getDistance(first, second);
+        pinchStartScale = scale;
+        pinchStartTranslateX = translateX;
+        pinchStartTranslateY = translateY;
+        pinchStartCenterX = center.x;
+        pinchStartCenterY = center.y;
+
+        isDragging = false;
+        dragPointerId = null;
+        stage.classList.add('is-dragging');
+      };
+
+      const updatePinch = () => {
+        const pointers = getPointerValues();
+
+        if (
+          pointers.length < 2 ||
+          pinchStartDistance <= 0
+        ) {
+          return;
+        }
+
+        const first = pointers[0];
+        const second = pointers[1];
+
+        const currentDistance = getDistance(first, second);
+        const currentCenter = getCenter(first, second);
+
+        scale = clampScale(
+          pinchStartScale *
+          (currentDistance / pinchStartDistance)
+        );
+
+        translateX =
+          pinchStartTranslateX +
+          currentCenter.x -
+          pinchStartCenterX;
+
+        translateY =
+          pinchStartTranslateY +
+          currentCenter.y -
+          pinchStartCenterY;
 
         if (scale === minimumScale) {
           translateX = 0;
@@ -418,12 +507,7 @@ const climbText =
         'wheel',
         (event) => {
           event.preventDefault();
-
-          changeZoom(
-            event.deltaY < 0
-              ? zoomStep
-              : -zoomStep
-          );
+          changeZoom(event.deltaY < 0 ? zoomStep : -zoomStep);
         },
         { passive: false }
       );
@@ -431,47 +515,110 @@ const climbText =
       stage.addEventListener('dblclick', resetView);
 
       stage.addEventListener('pointerdown', (event) => {
-        if (scale <= minimumScale) return;
+        event.preventDefault();
 
-        isDragging = true;
-        dragStartX = event.clientX;
-        dragStartY = event.clientY;
-        startTranslateX = translateX;
-        startTranslateY = translateY;
+        activePointers.set(event.pointerId, {
+          x: event.clientX,
+          y: event.clientY
+        });
 
         stage.setPointerCapture(event.pointerId);
-        stage.classList.add('is-dragging');
+
+        if (activePointers.size === 2) {
+          beginPinch();
+          return;
+        }
+
+        if (
+          activePointers.size === 1 &&
+          scale > minimumScale
+        ) {
+          isDragging = true;
+          dragPointerId = event.pointerId;
+
+          dragStartX = event.clientX;
+          dragStartY = event.clientY;
+          startTranslateX = translateX;
+          startTranslateY = translateY;
+
+          stage.classList.add('is-dragging');
+        }
       });
 
       stage.addEventListener('pointermove', (event) => {
-        if (!isDragging) return;
+        if (!activePointers.has(event.pointerId)) {
+          return;
+        }
 
-        translateX =
-          startTranslateX +
-          event.clientX -
-          dragStartX;
+        event.preventDefault();
 
-        translateY =
-          startTranslateY +
-          event.clientY -
-          dragStartY;
+        activePointers.set(event.pointerId, {
+          x: event.clientX,
+          y: event.clientY
+        });
 
-        applyTransform();
+        if (activePointers.size >= 2) {
+          updatePinch();
+          return;
+        }
+
+        if (
+          isDragging &&
+          dragPointerId === event.pointerId
+        ) {
+          translateX =
+            startTranslateX +
+            event.clientX -
+            dragStartX;
+
+          translateY =
+            startTranslateY +
+            event.clientY -
+            dragStartY;
+
+          applyTransform();
+        }
       });
 
-      const stopDragging = (event) => {
-        if (!isDragging) return;
-
-        isDragging = false;
-        stage.classList.remove('is-dragging');
+      const stopPointer = (event) => {
+        activePointers.delete(event.pointerId);
 
         if (stage.hasPointerCapture(event.pointerId)) {
           stage.releasePointerCapture(event.pointerId);
         }
+
+        if (
+          activePointers.size === 1 &&
+          scale > minimumScale
+        ) {
+          const iterator = activePointers.entries().next();
+
+          if (!iterator.done) {
+            const [remainingPointerId, point] = iterator.value;
+
+            isDragging = true;
+            dragPointerId = remainingPointerId;
+            dragStartX = point.x;
+            dragStartY = point.y;
+            startTranslateX = translateX;
+            startTranslateY = translateY;
+
+            stage.classList.add('is-dragging');
+          }
+        } else {
+          isDragging = false;
+          dragPointerId = null;
+
+          if (activePointers.size === 0) {
+            stage.classList.remove('is-dragging');
+          }
+        }
+
+        pinchStartDistance = 0;
       };
 
-      stage.addEventListener('pointerup', stopDragging);
-      stage.addEventListener('pointercancel', stopDragging);
+      stage.addEventListener('pointerup', stopPointer);
+      stage.addEventListener('pointercancel', stopPointer);
     }
 
     if (
@@ -479,7 +626,8 @@ const climbText =
       detailMapImage instanceof HTMLImageElement &&
       lightboxImage instanceof HTMLImageElement
     ) {
-      let showingRoute = Boolean(detailMapImage.dataset.routeSrc);
+      let showingRoute =
+        Boolean(detailMapImage.dataset.routeSrc);
 
       const updateToggleButton = (button) => {
         if (!(button instanceof HTMLButtonElement)) {
@@ -495,7 +643,10 @@ const climbText =
           showingRoute ? 'true' : 'false'
         );
 
-        button.classList.toggle('is-active', showingRoute);
+        button.classList.toggle(
+          'is-active',
+          showingRoute
+        );
       };
 
       const updateMapVariant = () => {

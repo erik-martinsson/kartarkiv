@@ -691,7 +691,7 @@ body.lightbox-open { overflow: hidden; }
   overflow: hidden;
   background: #111;
   cursor: zoom-in;
-  touch-action: pan-x pan-y;
+  touch-action: none;
   user-select: none;
 }
 .map-lightbox-stage.is-zoomed { cursor: grab; }
@@ -874,34 +874,172 @@ footer {
 }
 
 @media (max-width: 620px) {
-  .site-header { height: auto; min-height: 72px; padding-top: 10px; padding-bottom: 10px; }
-  .site-header nav { flex-wrap: wrap; justify-content: flex-end; }
-  .site-header nav a { font-size: 0.8rem; }
-  .site-header nav a:nth-child(3) { display: none; }
-  .brand strong { font-size: 0.8rem; }
-  .hero { min-height: 520px; }
-  .hero h1 { font-size: 3.6rem; }
-  .hero-stats { gap: 22px; }
-  .race-grid, .archive-grid { grid-template-columns: 1fr; }
-  .archive-header { align-items: stretch; flex-direction: column; }
-  .detail-header h1 { font-size: 2.7rem; }
-  .detail-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .dashboard-grid { margin-top: 0; }
-  .overview-map { height: 420px; }
-  .map-enlarge-hint { display: none; }
-  .map-lightbox { width: 100vw; height: 100dvh; border: 0; border-radius: 0; }
-  .map-lightbox-toolbar { min-height: 58px; padding: 8px 9px 8px 12px; }
-  .map-lightbox-title { max-width: 42vw; }
-  .map-lightbox-actions { gap: 4px; }
-  .map-lightbox-actions button { min-width: 34px; height: 36px; padding: 0 8px; }
-}
-.map-lightbox-variant-toggle {
-  min-width: 130px !important;
-  padding: 0 14px !important;
-}
+  .site-header {
+    height: auto;
+    min-height: 72px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
-.map-lightbox-variant-toggle.is-active {
-  background: rgba(255, 122, 0, 0.12);
-  border-color: var(--accent);
-  color: var(--accent);
+  .site-header nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .site-header nav a {
+    font-size: 0.8rem;
+  }
+
+  .site-header nav a:nth-child(3) {
+    display: none;
+  }
+
+  .brand strong {
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero h1 {
+    font-size: 3.6rem;
+  }
+
+  .hero-stats {
+    gap: 22px;
+  }
+
+  .race-grid,
+  .archive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .detail-header h1 {
+    font-size: 2.7rem;
+  }
+
+  .detail-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-grid {
+    margin-top: 0;
+  }
+
+  .overview-map {
+    height: 420px;
+  }
+
+  .map-enlarge-hint {
+    display: none;
+  }
+
+  .map-lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    max-width: 100%;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .map-lightbox[open] {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+
+  .map-lightbox-toolbar {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding:
+      max(8px, env(safe-area-inset-top))
+      max(8px, env(safe-area-inset-right))
+      8px
+      max(8px, env(safe-area-inset-left));
+    box-sizing: border-box;
+  }
+
+  .map-lightbox-title {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0 4px;
+  }
+
+  .map-lightbox-title strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .map-lightbox-actions {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 36px 54px 36px 36px;
+    gap: 4px;
+  }
+
+  .map-lightbox-actions button {
+    width: 100%;
+    min-width: 0;
+    height: 38px;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+
+  .map-lightbox-variant-toggle {
+    min-width: 0 !important;
+    padding: 0 7px !important;
+    overflow: hidden;
+    font-size: 0.68rem !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .map-lightbox-actions .map-lightbox-close {
+    margin-left: 0;
+  }
+
+  .map-lightbox-stage {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: contain;
+  }
+
+  .map-lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .map-lightbox-help {
+    width: 100%;
+    min-width: 0;
+    padding:
+      6px
+      max(10px, env(safe-area-inset-right))
+      max(6px, env(safe-area-inset-bottom))
+      max(10px, env(safe-area-inset-left));
+    box-sizing: border-box;
+    font-size: 0.62rem;
+  }
 }

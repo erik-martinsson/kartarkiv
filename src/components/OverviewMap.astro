@@ -1,15 +1,28 @@
 ---
 const { races } = Astro.props;
+
 const base = import.meta.env.BASE_URL;
+const cleanBase = base.replace(/\/$/, '');
+
 const mapId = `overview-map-${Math.random().toString(36).slice(2)}`;
+
 const mapData = races.map((race) => ({
   ...race,
-  url: `${base}races/${race.id}/`
+  url: `${cleanBase}/races/${race.id}/`
 }));
 ---
+
 <div class="overview-map-wrap">
-  <div id={mapId} class="overview-map" aria-label="Översiktskarta över tävlingsplatser"></div>
-  <p class="map-note">Klicka på en markör för att öppna tävlingen. Positionen hämtas i första hand från GPX-spåret.</p>
+  <div
+    id={mapId}
+    class="overview-map"
+    aria-label="Översiktskarta över tävlingsplatser"
+  ></div>
+
+  <p class="map-note">
+    Klicka på en markör för att öppna tävlingen.
+    Positionen hämtas i första hand från GPX-spåret.
+  </p>
 </div>
 
 <script is:inline define:vars={{ mapId, mapData }}>
@@ -17,40 +30,79 @@ const mapData = races.map((race) => ({
     if (!document.querySelector('link[data-leaflet]')) {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      link.href =
+        'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
       link.dataset.leaflet = 'true';
       document.head.appendChild(link);
     }
 
     if (!window.L) {
       await new Promise((resolve, reject) => {
-        const existing = document.querySelector('script[data-leaflet]');
+        const existing = document.querySelector(
+          'script[data-leaflet]'
+        );
+
         if (existing) {
-          existing.addEventListener('load', resolve, { once: true });
-          existing.addEventListener('error', reject, { once: true });
+          existing.addEventListener(
+            'load',
+            resolve,
+            { once: true }
+          );
+
+          existing.addEventListener(
+            'error',
+            reject,
+            { once: true }
+          );
+
           return;
         }
+
         const script = document.createElement('script');
-        script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+        script.src =
+          'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
         script.dataset.leaflet = 'true';
         script.onload = resolve;
         script.onerror = reject;
+
         document.head.appendChild(script);
       });
     }
   };
 
+  const escapeHtml = (value) =>
+    String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+
   const init = async () => {
     const element = document.getElementById(mapId);
-    if (!element || !Array.isArray(mapData) || mapData.length === 0) return;
+
+    if (
+      !element ||
+      !Array.isArray(mapData) ||
+      mapData.length === 0
+    ) {
+      return;
+    }
 
     try {
       await loadLeaflet();
-      const map = L.map(element, { scrollWheelZoom: false });
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; OpenStreetMap contributors'
-      }).addTo(map);
+
+      const map = L.map(element, {
+        scrollWheelZoom: false
+      });
+
+      L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+          maxZoom: 19,
+          attribution: '&copy; OpenStreetMap contributors'
+        }
+      ).addTo(map);
 
       const controlIcon = L.divIcon({
         className: 'control-marker-shell',
@@ -60,24 +112,49 @@ const mapData = races.map((race) => ({
       });
 
       const bounds = [];
+
       for (const race of mapData) {
-        const point = [race.latitude, race.longitude];
+        const latitude = Number(race.latitude);
+        const longitude = Number(race.longitude);
+
+        if (
+          !Number.isFinite(latitude) ||
+          !Number.isFinite(longitude)
+        ) {
+          continue;
+        }
+
+        const point = [latitude, longitude];
         bounds.push(point);
-        const marker = L.marker(point, { icon: controlIcon }).addTo(map);
+
+        const marker = L.marker(point, {
+          icon: controlIcon
+        }).addTo(map);
+
         marker.bindPopup(`
           <div class="race-popup">
-            <strong>${race.title}</strong>
-            <span>${race.date}</span>
-            <span>${race.location}</span>
-            <a href="${race.url}">Öppna tävlingen →</a>
+            <strong>${escapeHtml(race.title)}</strong>
+            <span>${escapeHtml(race.date)}</span>
+            <span>${escapeHtml(race.location)}</span>
+            <a href="${escapeHtml(race.url)}">
+              Öppna tävlingen →
+            </a>
           </div>
         `);
       }
 
-      if (bounds.length === 1) map.setView(bounds[0], 11);
-      else map.fitBounds(bounds, { padding: [35, 35], maxZoom: 11 });
+      if (bounds.length === 1) {
+        map.setView(bounds[0], 11);
+      } else if (bounds.length > 1) {
+        map.fitBounds(bounds, {
+          padding: [35, 35],
+          maxZoom: 11
+        });
+      }
     } catch (error) {
-      element.innerHTML = '<p class="map-error">Kartan kunde inte laddas. Kontrollera internetanslutningen.</p>';
+      element.innerHTML =
+        '<p class="map-error">Kartan kunde inte laddas. Kontrollera internetanslutningen.</p>';
+
       console.error(error);
     }
   };
