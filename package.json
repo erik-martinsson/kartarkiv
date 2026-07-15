@@ -3,14 +3,21 @@
   "private": true,
   "type": "module",
   "version": "0.2.0",
-  "scripts": {
+   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "astro": "astro",
+    "import-race": "node scripts/import-race.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "astro": "^5.0.0",
+    "fast-xml-parser": "^5.10.0",
+    "prompts": "^2.4.2",
+    "slugify": "^1.6.9",
     "typescript": "^5.7.2"
   }
 }
+
