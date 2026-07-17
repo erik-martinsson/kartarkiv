@@ -518,3 +518,29 @@ a {
     justify-self: start;
   }
 }
+.markdown-preview {
+  max-height: 520px;
+  margin: 15px 0;
+  overflow: auto;
+  background: #0d0e0e;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.markdown-preview pre {
+  margin: 0;
+  padding: 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.markdown-preview code {
+  color: #d7d7d2;
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
