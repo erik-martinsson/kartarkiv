@@ -138,9 +138,10 @@ function createWinSplitsClassesUrl(
   databaseId: number,
 ): string {
   const url = new URL(
-    "https://obasen.orientering.se/winsplits/online/sv/classes.asp",
+    "https://obasen.orientering.se/winsplits/online/sv/default.asp",
   );
 
+  url.searchParams.set("page", "classes");
   url.searchParams.set(
     "databaseId",
     String(databaseId),
@@ -167,37 +168,216 @@ async function openPage(
   await page.waitForTimeout(1_000);
 }
 
-function parseWinSplitsHeaderDate(
+type WinSplitsPageSnapshot = {
+  url: string;
+  bodyText: string;
+  documentTitle: string;
+  htmlText: string;
+};
+
+function decodeBasicHtmlEntities(
   value: string,
 ): string {
-  const bracketMatch = value.match(
-    /\[\s*(\d{4}[./-]\d{1,2}[./-]\d{1,2}|\d{1,2}[./-]\d{1,2}[./-]\d{4})\s*\]/,
-  );
-
-  if (!bracketMatch) {
-    return "";
-  }
-
-  return parseDateFromText(
-    bracketMatch[1],
-  );
+  return value
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">");
 }
 
-function parseWinSplitsHeaderTitle(
+function cleanWinSplitsTitle(
   value: string,
+  date: string,
 ): string {
-  const bracketIndex =
-    value.search(
-      /\[\s*(?:\d{4}[./-]\d{1,2}[./-]\d{1,2}|\d{1,2}[./-]\d{1,2}[./-]\d{4})\s*\]/,
-    );
+  let title = normalizeText(
+    decodeBasicHtmlEntities(value)
+      .replace(
+        new RegExp(
+          `\\[?${date.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\]?`,
+          "g",
+        ),
+        " ",
+      )
+      .replace(/>>.*$/i, " ")
+      .replace(/\bKlasser\b.*$/i, " ")
+      .replace(/\bResultat\b.*$/i, " ")
+      .replace(/\bSträcktider\b.*$/i, " "),
+  );
 
-  if (bracketIndex < 0) {
-    return "";
+  const orienteringIndex = title
+    .toLocaleLowerCase("sv-SE")
+    .lastIndexOf("orientering.se");
+
+  if (orienteringIndex >= 0) {
+    title = title.slice(
+      orienteringIndex +
+        "orientering.se".length,
+    );
+  }
+
+  const menuParts = title.split("|");
+
+  if (menuParts.length > 1) {
+    title = menuParts[menuParts.length - 1];
   }
 
   return normalizeText(
-    value.slice(0, bracketIndex),
+    title
+      .replace(/^WinSplits\s+Online\s*/i, "")
+      .replace(/^Online\s*/i, "")
+      .replace(
+        /^(?:Start|Om WinSplits Online|Hjälp)\s*/i,
+        "",
+      )
+      .replace(/^[>:\-|]+/, "")
+      .replace(/[>:\-|]+$/, ""),
   );
+}
+
+function extractWinSplitsInformation(
+  snapshots: WinSplitsPageSnapshot[],
+): {
+  title: string;
+  date: string;
+} | null {
+  const values = snapshots.flatMap(
+    (snapshot) => [
+      snapshot.bodyText,
+      snapshot.documentTitle,
+      snapshot.htmlText,
+    ],
+  );
+
+  for (const value of values) {
+    const normalized = normalizeText(value);
+
+    const match = normalized.match(
+      /(.{2,240}?)\s*\[(\d{4}-\d{2}-\d{2})\]/,
+    );
+
+    if (!match) {
+      continue;
+    }
+
+    const date = match[2];
+    const title = cleanWinSplitsTitle(
+      match[1],
+      date,
+    );
+
+    if (
+      title &&
+      title.toLocaleLowerCase("sv-SE") !==
+        "online"
+    ) {
+      return {
+        title,
+        date,
+      };
+    }
+  }
+
+  for (const snapshot of snapshots) {
+    const lines = snapshot.bodyText
+      .split(/\r?\n/)
+      .map((line) => normalizeText(line))
+      .filter(Boolean);
+
+    for (
+      let lineIndex = 0;
+      lineIndex < lines.length;
+      lineIndex += 1
+    ) {
+      const date = parseDateFromText(
+        lines[lineIndex],
+      );
+
+      if (!date) {
+        continue;
+      }
+
+      const titleCandidates = [
+        lines[lineIndex],
+        lines[lineIndex - 1] ?? "",
+        lines[lineIndex + 1] ?? "",
+        snapshot.documentTitle,
+      ];
+
+      for (const candidate of titleCandidates) {
+        const title = cleanWinSplitsTitle(
+          candidate,
+          date,
+        );
+
+        if (
+          title &&
+          title.length >= 3 &&
+          title.length <= 200 &&
+          title.toLocaleLowerCase("sv-SE") !==
+            "online" &&
+          !/^(?:klasser|resultat|sträcktider)$/i.test(
+            title,
+          )
+        ) {
+          return {
+            title,
+            date,
+          };
+        }
+      }
+    }
+  }
+
+  return null;
+}
+
+async function collectWinSplitsSnapshots(
+  page: Page,
+): Promise<WinSplitsPageSnapshot[]> {
+  const snapshots: WinSplitsPageSnapshot[] = [];
+
+  for (const frame of page.frames()) {
+    try {
+      const snapshot = await frame.evaluate(() => {
+        function clean(
+          value:
+            | string
+            | null
+            | undefined,
+        ): string {
+          return (value ?? "")
+            .replace(/\u00a0/g, " ")
+            .replace(/\r/g, "")
+            .trim();
+        }
+
+        const html =
+          document.documentElement?.innerHTML ??
+          "";
+
+        return {
+          url: window.location.href,
+          bodyText: clean(
+            document.body?.innerText,
+          ),
+          documentTitle: clean(
+            document.title,
+          ),
+          htmlText: clean(
+            html.replace(/<[^>]+>/g, " "),
+          ),
+        };
+      });
+
+      snapshots.push(snapshot);
+    } catch {
+      // En enskild ram kan vara oläsbar.
+    }
+  }
+
+  return snapshots;
 }
 
 async function readWinSplitsInformation(
@@ -207,173 +387,67 @@ async function readWinSplitsInformation(
   const databaseId =
     readDatabaseId(winsplitsUrl);
 
-  /*
-   * classes.asp innehåller tävlingsnamnet och
-   * tävlingsdatumet direkt i sidans innehåll.
-   * Den är stabilare att läsa än default.asp,
-   * som är en ramsida, och top.asp, vars
-   * rubrikformat varierar mellan tävlingar.
-   */
-  const classesUrl =
-    createWinSplitsClassesUrl(
-      databaseId,
-    );
+  const urlsToTry = Array.from(
+    new Set([
+      winsplitsUrl,
+      createWinSplitsClassesUrl(databaseId),
+    ]),
+  );
 
   const page = await context.newPage();
 
   try {
-    await openPage(
-      page,
-      classesUrl,
+    const allSnapshots:
+      WinSplitsPageSnapshot[] = [];
+
+    for (const url of urlsToTry) {
+      try {
+        await openPage(page, url);
+
+        const snapshots =
+          await collectWinSplitsSnapshots(page);
+
+        allSnapshots.push(...snapshots);
+
+        const information =
+          extractWinSplitsInformation(
+            allSnapshots,
+          );
+
+        if (information) {
+          return {
+            databaseId,
+            title: information.title,
+            date: information.date,
+          };
+        }
+      } catch {
+        // Försök nästa WinSplits-vy.
+      }
+    }
+
+    const combinedText = normalizeText(
+      allSnapshots
+        .flatMap((snapshot) => [
+          snapshot.bodyText,
+          snapshot.documentTitle,
+          snapshot.htmlText,
+        ])
+        .join(" "),
     );
 
-    const information =
-      await page.evaluate(() => {
-        function cleanLine(
-          value:
-            | string
-            | null
-            | undefined,
-        ): string {
-          return (value ?? "")
-            .replace(/\u00a0/g, " ")
-            .replace(/[ \t]+/g, " ")
-            .trim();
-        }
-
-        const bodyText =
-          document.body?.innerText ?? "";
-
-        const lines = bodyText
-          .split(/\r?\n/)
-          .map(cleanLine)
-          .filter(Boolean);
-
-        const headingTexts = Array.from(
-          document.querySelectorAll(
-            "h1, h2, h3, caption, strong, b",
-          ),
-        )
-          .map((element) =>
-            cleanLine(element.textContent),
-          )
-          .filter(Boolean);
-
-        return {
-          lines,
-          headingTexts,
-          documentTitle: cleanLine(
-            document.title,
-          ),
-        };
-      });
-
-    const candidates = [
-      ...information.headingTexts,
-      ...information.lines.slice(0, 30),
-      information.documentTitle,
-    ]
-      .map(normalizeText)
-      .filter(Boolean);
-
-    let title = "";
-    let date = "";
-
-    for (const candidate of candidates) {
-      const candidateDate =
-        parseWinSplitsHeaderDate(
-          candidate,
-        );
-
-      if (!candidateDate) {
-        continue;
-      }
-
-      const candidateTitle =
-        parseWinSplitsHeaderTitle(
-          candidate,
-        );
-
-      if (!candidateTitle) {
-        continue;
-      }
-
-      title = candidateTitle;
-      date = candidateDate;
-      break;
-    }
-
-    /*
-     * Reservfall för sidor där rubriken har
-     * brutits över flera rader: en titelrad
-     * följd av en separat rad med [datum].
-     */
-    if (!title || !date) {
-      for (
-        let index = 0;
-        index < information.lines.length;
-        index++
-      ) {
-        const line =
-          information.lines[index];
-
-        const candidateDate =
-          parseWinSplitsHeaderDate(line);
-
-        if (!candidateDate) {
-          continue;
-        }
-
-        const titleOnSameLine =
-          parseWinSplitsHeaderTitle(line);
-
-        const titleOnPreviousLine =
-          index > 0
-            ? normalizeText(
-                information.lines[
-                  index - 1
-                ],
-              )
-            : "";
-
-        const candidateTitle =
-          titleOnSameLine ||
-          titleOnPreviousLine;
-
-        if (!candidateTitle) {
-          continue;
-        }
-
-        title = candidateTitle;
-        date = candidateDate;
-        break;
-      }
-    }
-
-    title = normalizeText(
-      title
-        .replace(/^WinSplits\s+Online\s*/i, "")
-        .replace(/^Online\s*/i, "")
-        .replace(/\s*(?:>>|\|)\s*.*$/i, ""),
-    );
-
-    if (!title) {
-      throw new Error(
-        "Kunde inte läsa tävlingsnamnet från WinSplits classes.asp.",
-      );
-    }
+    const date =
+      parseDateFromText(combinedText);
 
     if (!date) {
       throw new Error(
-        "Kunde inte läsa tävlingsdatumet från WinSplits classes.asp.",
+        "Kunde inte läsa tävlingsdatumet från WinSplits.",
       );
     }
 
-    return {
-      databaseId,
-      title,
-      date,
-    };
+    throw new Error(
+      "Kunde inte läsa tävlingsnamnet från WinSplits.",
+    );
   } finally {
     await page.close();
   }
@@ -841,10 +915,53 @@ async function resolveEventorEvent(
     }
 
     /*
-     * Om ingen databaseId-verifiering lyckades
-     * returneras ingen automatisk träff. Vi vill
-     * inte gissa enbart från tävlingsnamnet.
+     * Eventor visar inte alltid WinSplits-länken i
+     * HTML-källan. Använd därför en försiktig fallback
+     * när namnmatchningen är mycket tydlig.
      */
+    const fallbackCandidate =
+      candidatesToVerify[0];
+
+    const secondBestCandidate =
+      candidatesToVerify[1];
+
+    const fallbackIsUnambiguous =
+      Boolean(fallbackCandidate) &&
+      fallbackCandidate.nameScore >= 90 &&
+      (
+        !secondBestCandidate ||
+        fallbackCandidate.nameScore -
+          secondBestCandidate.nameScore >= 20
+      );
+
+    if (
+      fallbackCandidate &&
+      fallbackIsUnambiguous
+    ) {
+      return {
+        winsplits,
+
+        eventor: {
+          eventId:
+            fallbackCandidate.eventId,
+
+          title:
+            fallbackCandidate.title,
+
+          eventorUrl:
+            fallbackCandidate.eventorUrl,
+
+          resultListUrl:
+            fallbackCandidate.resultListUrl,
+        },
+
+        verified: false,
+
+        candidates:
+          candidatesToVerify.slice(0, 20),
+      };
+    }
+
     return {
       winsplits,
       eventor: null,

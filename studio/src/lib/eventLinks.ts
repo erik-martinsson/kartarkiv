@@ -69,7 +69,176 @@ function normalizeText(value: string): string {
 
 function normalizeName(value: string): string {
   return normalizeText(value)
-    .toLocaleLowerCase("sv-SE");
+    .normalize("NFD")
+    .replace(/\p{M}+/gu, "")
+    .toLocaleLowerCase("sv-SE")
+    .replace(/[’'`´]/g, "")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function getNameTokens(value: string): string[] {
+  return normalizeName(value)
+    .split(" ")
+    .filter(Boolean);
+}
+
+function calculateRunnerNameScore(
+  candidateName: string,
+  wantedName: string,
+): number {
+  const candidate = normalizeName(candidateName);
+  const wanted = normalizeName(wantedName);
+
+  if (!candidate || !wanted) {
+    return 0;
+  }
+
+  if (candidate === wanted) {
+    return 100;
+  }
+
+  const candidateTokens = getNameTokens(candidateName);
+  const wantedTokens = getNameTokens(wantedName);
+
+  if (
+    candidateTokens.length === 0 ||
+    wantedTokens.length === 0
+  ) {
+    return 0;
+  }
+
+  const sortedCandidate = [...candidateTokens]
+    .sort()
+    .join(" ");
+
+  const sortedWanted = [...wantedTokens]
+    .sort()
+    .join(" ");
+
+  if (sortedCandidate === sortedWanted) {
+    return 99;
+  }
+
+  const candidateSet = new Set(candidateTokens);
+  const wantedSet = new Set(wantedTokens);
+
+  const sharedTokens = wantedTokens.filter(
+    (token) => candidateSet.has(token),
+  );
+
+  const sharedSubstantiveTokens = sharedTokens.filter(
+    (token) => token.length > 1,
+  );
+
+  const wantedSubstantiveTokens = wantedTokens.filter(
+    (token) => token.length > 1,
+  );
+
+  const candidateSubstantiveTokens =
+    candidateTokens.filter(
+      (token) => token.length > 1,
+    );
+
+  if (
+    wantedSubstantiveTokens.length >= 2 &&
+    sharedSubstantiveTokens.length < 2
+  ) {
+    return 0;
+  }
+
+  const wantedCoverage =
+    sharedTokens.length / wantedTokens.length;
+
+  const candidateCoverage =
+    sharedTokens.length / candidateTokens.length;
+
+  const wantedFirst = wantedTokens[0];
+  const wantedLast =
+    wantedTokens[wantedTokens.length - 1];
+
+  const candidateFirst = candidateTokens[0];
+  const candidateLast =
+    candidateTokens[candidateTokens.length - 1];
+
+  const sameOuterNames =
+    (wantedFirst === candidateFirst &&
+      wantedLast === candidateLast) ||
+    (wantedFirst === candidateLast &&
+      wantedLast === candidateFirst);
+
+  const allWantedNamesPresent =
+    wantedSubstantiveTokens.every(
+      (token) => candidateSet.has(token),
+    );
+
+  const allCandidateNamesPresent =
+    candidateSubstantiveTokens.every(
+      (token) => wantedSet.has(token),
+    );
+
+  if (
+    sameOuterNames &&
+    (allWantedNamesPresent || allCandidateNamesPresent)
+  ) {
+    return 96;
+  }
+
+  if (allWantedNamesPresent) {
+    return 93;
+  }
+
+  if (allCandidateNamesPresent) {
+    return 91;
+  }
+
+  return Math.round(
+    Math.min(
+      89,
+      wantedCoverage * 55 +
+        candidateCoverage * 30 +
+        (sameOuterNames ? 4 : 0),
+    ),
+  );
+}
+
+function findRunnerByName<
+  T extends { name: string },
+>(
+  runners: T[],
+  runnerName: string,
+): T | null {
+  const ranked = runners
+    .map((runner) => ({
+      runner,
+      score: calculateRunnerNameScore(
+        runner.name,
+        runnerName,
+      ),
+    }))
+    .filter((candidate) => candidate.score > 0)
+    .sort(
+      (left, right) =>
+        right.score - left.score,
+    );
+
+  const best = ranked[0];
+
+  if (!best || best.score < 90) {
+    return null;
+  }
+
+  const secondBest = ranked[1];
+
+  if (
+    secondBest &&
+    secondBest.score === best.score
+  ) {
+    return null;
+  }
+
+  return best.runner;
 }
 
 function normalizeClassName(
@@ -573,6 +742,247 @@ function findWinSplitsLink(
   return null;
 }
 
+
+type WinSplitsCandidate = WinSplitsClassLink & {
+  position: number;
+  classMatch: boolean;
+  distanceFromRunner: number;
+};
+
+function findWinSplitsCandidates(
+  html: string,
+  baseUrl: string,
+  raceClass: string,
+  runnerName: string,
+): WinSplitsCandidate[] {
+  const targetClass =
+    normalizeClassName(raceClass);
+
+  const runnerPosition =
+    findRunnerPosition(
+      html,
+      runnerName,
+    );
+
+  const candidates = new Map<
+    string,
+    WinSplitsCandidate
+  >();
+
+  for (
+    const link of extractHtmlLinks(
+      html,
+      baseUrl,
+    )
+  ) {
+    const searchableValue =
+      `${link.text} ${link.href}`
+        .toLocaleLowerCase("sv-SE");
+
+    if (
+      !searchableValue.includes(
+        "winsplits",
+      ) &&
+      !searchableValue.includes(
+        "obasen.orientering.se",
+      )
+    ) {
+      continue;
+    }
+
+    let url: URL;
+
+    try {
+      url = new URL(link.href);
+    } catch {
+      continue;
+    }
+
+    const databaseId =
+      readPositiveInteger(
+        url,
+        "databaseId",
+      );
+
+    const categoryId =
+      readPositiveInteger(
+        url,
+        "categoryId",
+      );
+
+    if (
+      databaseId === null ||
+      categoryId === null
+    ) {
+      continue;
+    }
+
+    const linkClass =
+      findClassBeforeLink(
+        html,
+        link.position,
+      );
+
+    const candidate: WinSplitsCandidate = {
+      name:
+        normalizeText(linkClass) ||
+        raceClass,
+      url: createWinSplitsUrl(
+        databaseId,
+        categoryId,
+      ),
+      databaseId,
+      categoryId,
+      position: link.position,
+      classMatch:
+        normalizeClassName(
+          linkClass,
+        ) === targetClass,
+      distanceFromRunner:
+        Math.abs(
+          link.position -
+            runnerPosition,
+        ),
+    };
+
+    const key =
+      `${databaseId}:${categoryId}`;
+
+    const existing =
+      candidates.get(key);
+
+    if (
+      !existing ||
+      candidate.distanceFromRunner <
+        existing.distanceFromRunner
+    ) {
+      candidates.set(
+        key,
+        candidate,
+      );
+    }
+  }
+
+  return [...candidates.values()]
+    .sort((left, right) => {
+      if (
+        left.classMatch !==
+        right.classMatch
+      ) {
+        return left.classMatch
+          ? -1
+          : 1;
+      }
+
+      return (
+        left.distanceFromRunner -
+        right.distanceFromRunner
+      );
+    });
+}
+
+async function findWinSplitsRunner(
+  html: string,
+  baseUrl: string,
+  raceClass: string,
+  runnerName: string,
+): Promise<{
+  winsplits: WinSplitsClassLink | null;
+  runner:
+    | Awaited<
+        ReturnType<
+          typeof loadWinSplits
+        >
+      >[number]
+    | null;
+  classInformation: ClassInformation | null;
+}> {
+  const candidates =
+    findWinSplitsCandidates(
+      html,
+      baseUrl,
+      raceClass,
+      runnerName,
+    );
+
+  if (candidates.length === 0) {
+    return {
+      winsplits: null,
+      runner: null,
+      classInformation: null,
+    };
+  }
+
+  const attempts: string[] = [];
+
+  for (const candidate of candidates) {
+    try {
+      const runners =
+        await loadWinSplits(
+          candidate.databaseId,
+          candidate.categoryId,
+        );
+
+      const runner =
+        findRunnerByName(
+          runners,
+          runnerName,
+        );
+
+      attempts.push(
+        `${candidate.databaseId}/${candidate.categoryId}` +
+          ` (${runners.length} löpare)`,
+      );
+
+      if (!runner) {
+        continue;
+      }
+
+      const linkedClassInformation =
+        findLastClassInformation(
+          html.slice(
+            0,
+            candidate.position,
+          ),
+        );
+
+      return {
+        winsplits: {
+          name:
+            linkedClassInformation
+              ?.raceClass ||
+            candidate.name ||
+            raceClass,
+          url:
+            candidate.url,
+          databaseId:
+            candidate.databaseId,
+          categoryId:
+            candidate.categoryId,
+        },
+        runner,
+        classInformation:
+          linkedClassInformation,
+      };
+    } catch (error) {
+      const message =
+        error instanceof Error
+          ? error.message
+          : String(error);
+
+      attempts.push(
+        `${candidate.databaseId}/${candidate.categoryId}` +
+          ` (${message})`,
+      );
+    }
+  }
+
+  throw new Error(
+    `${runnerName} hittades i Eventor men inte i någon WinSplits-klass. ` +
+      `Testade: ${attempts.join("; ")}`,
+  );
+}
+
 function createLiveloxViewerUrl(
   eventorRedirectUrl: string,
 ): string | null {
@@ -981,48 +1391,29 @@ export async function getEventLinks(
         runnerName,
       );
 
-    const winsplits =
-      findWinSplitsLink(
+    const {
+      winsplits,
+      runner,
+      classInformation:
+        winSplitsClassInformation,
+    } =
+      await findWinSplitsRunner(
         resultHtml,
         resultListUrl,
         classInformation.raceClass,
+        runnerName,
       );
+
+    const resolvedClassInformation =
+      winSplitsClassInformation ??
+      classInformation;
 
     const liveloxUrl =
       findLiveloxLink(
         resultHtml,
         resultListUrl,
-        classInformation.raceClass,
+        resolvedClassInformation.raceClass,
       );
-
-    let runner:
-      | Awaited<
-          ReturnType<
-            typeof loadWinSplits
-          >
-        >[number]
-      | null = null;
-
-    if (winsplits) {
-      const runners =
-        await loadWinSplits(
-          winsplits.databaseId,
-          winsplits.categoryId,
-        );
-
-      runner =
-        runners.find(
-          (item) =>
-            normalizeName(item.name) ===
-            normalizeName(runnerName),
-        ) ?? null;
-
-      if (!runner) {
-        throw new Error(
-          `${runnerName} hittades i Eventor men inte i WinSplits.`,
-        );
-      }
-    }
 
     return {
       eventId,
@@ -1044,13 +1435,13 @@ export async function getEventLinks(
         eventInformation.location,
 
       raceClass:
-        classInformation.raceClass,
+        resolvedClassInformation.raceClass,
 
       discipline:
         eventInformation.discipline,
 
       distanceKm:
-        classInformation.distanceKm,
+        resolvedClassInformation.distanceKm,
 
       time:
         normalizeTime(
@@ -1061,7 +1452,7 @@ export async function getEventLinks(
         runner?.place ?? "",
 
       starters:
-        classInformation.starters,
+        resolvedClassInformation.starters,
 
       controls:
         runner

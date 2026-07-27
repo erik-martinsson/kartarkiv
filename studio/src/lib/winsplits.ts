@@ -8,6 +8,8 @@ import * as cheerio from "cheerio";
 const WINSPLITS_URL =
   "https://obasen.orientering.se/winsplits/online/sv/default.asp";
 
+const RUNNER_NAME = "Erik Martinsson";
+
 export interface WinSplitsMistake {
   control: number;
   loss: string;
@@ -43,27 +45,80 @@ function extractMistake(
   )?.[1];
 }
 
+function containsRunnerRows(
+  html: string,
+): boolean {
+  const $ = cheerio.load(html);
+
+  return $("tr[id$='_0']").toArray().some(
+    (rowElement) =>
+      $(rowElement).children("td").length >= 6,
+  );
+}
+
+function looksLikeResultTable(
+  html: string,
+): boolean {
+  const normalizedHtml = html.toLowerCase();
+
+  return (
+    containsRunnerRows(html) ||
+    normalizedHtml.includes(
+      RUNNER_NAME.toLowerCase(),
+    ) ||
+    (
+      normalizedHtml.includes("<table") &&
+      (
+        normalizedHtml.includes("sträcktid") ||
+        normalizedHtml.includes("stracktid") ||
+        normalizedHtml.includes("sluttid")
+      )
+    )
+  );
+}
+
+async function readableFrameHtml(
+  frame: Frame,
+): Promise<string | null> {
+  try {
+    return await frame.content();
+  } catch {
+    return null;
+  }
+}
+
 async function findSettingsFrame(
   page: Page,
 ): Promise<Frame> {
-  for (const frame of page.frames()) {
-    try {
-      const bodyText = await frame
-        .locator("body")
-        .innerText({
-          timeout: 2_000,
-        });
+  const deadline = Date.now() + 20_000;
 
-      if (
-        bodyText
-          .toLowerCase()
-          .includes("utökad information")
-      ) {
-        return frame;
+  while (Date.now() < deadline) {
+    for (const frame of page.frames()) {
+      try {
+        const bodyText = await frame
+          .locator("body")
+          .innerText({ timeout: 1_500 });
+
+        const normalizedText = cleanText(
+          bodyText,
+        ).toLowerCase();
+
+        if (
+          normalizedText.includes(
+            "utökad information",
+          ) ||
+          normalizedText.includes(
+            "utokad information",
+          )
+        ) {
+          return frame;
+        }
+      } catch {
+        // Ramen kan vara under omladdning.
       }
-    } catch {
-      // Ramen var ännu inte färdigladdad.
     }
+
+    await page.waitForTimeout(250);
   }
 
   throw new Error(
@@ -77,9 +132,12 @@ async function enableExtendedInformation(
   const settingsFrame =
     await findSettingsFrame(page);
 
-  const checkboxCount = await settingsFrame
-    .locator('input[type="checkbox"]')
-    .count();
+  const checkboxes = settingsFrame.locator(
+    'input[type="checkbox"]',
+  );
+
+  const checkboxCount =
+    await checkboxes.count();
 
   if (checkboxCount === 0) {
     throw new Error(
@@ -89,7 +147,7 @@ async function enableExtendedInformation(
 
   let checkboxIndex =
     await settingsFrame.evaluate(() => {
-      const checkboxes = Array.from(
+      const inputs = Array.from(
         document.querySelectorAll<HTMLInputElement>(
           'input[type="checkbox"]',
         ),
@@ -97,28 +155,19 @@ async function enableExtendedInformation(
 
       for (
         let index = 0;
-        index < checkboxes.length;
-        index++
+        index < inputs.length;
+        index += 1
       ) {
-        const checkbox = checkboxes[index];
-
-        const parentText =
-          checkbox.parentElement?.textContent ?? "";
-
-        const rowText =
-          checkbox.closest("tr")?.textContent ?? "";
-
-        const nextText =
-          checkbox.nextSibling?.textContent ?? "";
+        const checkbox = inputs[index];
 
         const searchableText = [
           checkbox.name,
           checkbox.id,
           checkbox.value,
           checkbox.title,
-          parentText,
-          rowText,
-          nextText,
+          checkbox.parentElement?.textContent,
+          checkbox.closest("tr")?.textContent,
+          checkbox.nextSibling?.textContent,
         ]
           .filter(Boolean)
           .join(" ")
@@ -140,22 +189,15 @@ async function enableExtendedInformation(
       return -1;
     });
 
-  /*
-   * På den aktuella WinSplits-sidan är
-   * "utökad information" den sista kryssrutan.
-   */
   if (checkboxIndex < 0) {
     checkboxIndex = checkboxCount - 1;
   }
 
-  const checkbox = settingsFrame
-    .locator('input[type="checkbox"]')
-    .nth(checkboxIndex);
+  const checkbox =
+    checkboxes.nth(checkboxIndex);
 
   if (!(await checkbox.isChecked())) {
-    await checkbox.check({
-      force: true,
-    });
+    await checkbox.check({ force: true });
   }
 
   const okButton = settingsFrame.locator(
@@ -172,62 +214,73 @@ async function enableExtendedInformation(
     );
   }
 
-  await okButton.first().click({
-    force: true,
-  });
+  await okButton.first().click({ force: true });
 
-  await page.waitForFunction(
-    () => {
-      const documents: Document[] = [
-        document,
-      ];
+  const deadline = Date.now() + 20_000;
 
-      for (
-        let index = 0;
-        index < window.frames.length;
-        index++
+  while (Date.now() < deadline) {
+    for (const frame of page.frames()) {
+      const html =
+        await readableFrameHtml(frame);
+
+      if (
+        html?.toLowerCase().includes(
+          "bommad tid",
+        )
       ) {
-        try {
-          documents.push(
-            window.frames[index].document,
-          );
-        } catch {
-          // Ignorera ramar från andra domäner.
-        }
+        return;
       }
+    }
 
-      return documents.some((doc) =>
-        doc.documentElement?.innerHTML.includes(
-          "Bommad tid",
-        ),
-      );
-    },
-    undefined,
-    {
-      timeout: 20_000,
-    },
+    await page.waitForTimeout(250);
+  }
+
+  throw new Error(
+    "WinSplits svarade inte efter att utökad information aktiverades.",
   );
 }
 
 async function findTableHtml(
   page: Page,
+  timeoutMs = 20_000,
 ): Promise<string> {
-  for (const frame of page.frames()) {
-    try {
-      const html = await frame.content();
+  const deadline = Date.now() + timeoutMs;
+  let bestFallback: string | null = null;
+  let bestFallbackScore = -1;
 
-      if (
-        html.includes("Erik Martinsson") ||
-        (
-          html.includes("<TABLE") &&
-          html.includes("sträcktid")
-        )
-      ) {
-        return html;
+  while (Date.now() < deadline) {
+    for (const frame of page.frames()) {
+      const html =
+        await readableFrameHtml(frame);
+
+      if (!html) {
+        continue;
       }
-    } catch {
-      // Ignorera ramar som inte kan läsas.
+
+      if (looksLikeResultTable(html)) {
+        if (containsRunnerRows(html)) {
+          return html;
+        }
+
+        const score =
+          html.toLowerCase().includes(
+            RUNNER_NAME.toLowerCase(),
+          )
+            ? 2
+            : 1;
+
+        if (score > bestFallbackScore) {
+          bestFallback = html;
+          bestFallbackScore = score;
+        }
+      }
     }
+
+    await page.waitForTimeout(250);
+  }
+
+  if (bestFallback) {
+    return bestFallback;
   }
 
   throw new Error(
@@ -238,17 +291,6 @@ async function findTableHtml(
 function calculateControls(
   cellCount: number,
 ): number {
-  /*
-   * Cellerna 0–3:
-   * 0 = placering
-   * 1 = namn
-   * 2 = sluttid
-   * 3 = differens
-   *
-   * Därefter finns två celler per sträcka.
-   * Sista sträckan går från sista kontrollen
-   * till mål och ska inte räknas som kontroll.
-   */
   const splitCount = Math.floor(
     (cellCount - 4) / 2,
   );
@@ -326,19 +368,10 @@ function parseRunners(
         mistakes: [],
       };
 
-      /*
-       * Sträcktiderna ligger från cell 4,
-       * varannan cell:
-       *
-       * 4, 6, 8, 10 ...
-       *
-       * Vi läser endast riktiga kontroller,
-       * inte den avslutande sträckan till mål.
-       */
       for (
         let control = 1;
         control <= controls;
-        control++
+        control += 1
       ) {
         const cellIndex =
           4 + (control - 1) * 2;
@@ -397,27 +430,32 @@ export async function loadWinSplits(
       timeout: 30_000,
     });
 
-    /*
-     * Samma väntetid och laddningsflöde som
-     * i den tidigare fungerande versionen.
-     */
-    await page.waitForTimeout(1_500);
+    await page.waitForTimeout(750);
 
     let html =
       await findTableHtml(page);
 
-    if (!html.includes("Bommad tid")) {
+    if (
+      !html.toLowerCase().includes(
+        "bommad tid",
+      )
+    ) {
       await enableExtendedInformation(
         page,
       );
 
-      await page.waitForTimeout(1_000);
-
       html =
-        await findTableHtml(page);
+        await findTableHtml(
+          page,
+          20_000,
+        );
     }
 
-    if (!html.includes("Bommad tid")) {
+    if (
+      !html.toLowerCase().includes(
+        "bommad tid",
+      )
+    ) {
       await page.screenshot({
         path: "winsplits-fel.png",
         fullPage: true,
