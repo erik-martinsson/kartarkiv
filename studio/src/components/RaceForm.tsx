@@ -5,6 +5,9 @@ import type { RaceFormData } from "@/types/race";
 
 type Props = {
   form: RaceFormData;
+  eventorId: string;
+  isImportingEventor: boolean;
+  eventorMessage: string | null;
   onChange: (
     event: ChangeEvent<
       | HTMLInputElement
@@ -12,18 +15,32 @@ type Props = {
       | HTMLTextAreaElement
     >,
   ) => void;
+  onEventorIdChange: (
+    event: ChangeEvent<HTMLInputElement>,
+  ) => void;
+  onImportEventor: () => void;
 };
 
 export default function RaceForm({
   form,
+  eventorId,
+  isImportingEventor,
+  eventorMessage,
   onChange,
+  onEventorIdChange,
+  onImportEventor,
 }: Props) {
   return (
     <section className="panel form-panel">
       <div className="panel-heading">
         <div>
-          <p className="step-label">STEG 2</p>
-          <h2>Tävlingsinformation</h2>
+          <p className="step-label">
+            STEG 2
+          </p>
+
+          <h2>
+            Tävlingsinformation
+          </h2>
         </div>
 
         <span className="panel-note">
@@ -32,8 +49,112 @@ export default function RaceForm({
       </div>
 
       <div className="form-grid">
+        <div className="field field-wide">
+          <span>
+            Importera tävling
+          </span>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              gap: "0.75rem",
+            }}
+          >
+            <label
+              style={{
+                flex: 1,
+                display: "grid",
+                gap: "0.4rem",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "0.85rem",
+                }}
+              >
+                Eventor-ID, Eventor-länk
+                eller WinSplits-länk
+              </span>
+
+              <input
+                name="eventorId"
+                type="text"
+                value={eventorId}
+                onChange={
+                  onEventorIdChange
+                }
+                placeholder="50594 eller klistra in en Eventor-/WinSplits-länk"
+                autoComplete="off"
+                spellCheck={false}
+              />
+            </label>
+
+            <button
+              type="button"
+              onClick={
+                onImportEventor
+              }
+              disabled={
+                isImportingEventor
+              }
+              style={{
+                minHeight: "2.75rem",
+                padding:
+                  "0.75rem 1.2rem",
+                border:
+                  "1px solid #ff9b22",
+                borderRadius: "8px",
+                background:
+                  isImportingEventor
+                    ? "#8a570f"
+                    : "#ff8a00",
+                color: "#111111",
+                fontWeight: 800,
+                cursor:
+                  isImportingEventor
+                    ? "wait"
+                    : "pointer",
+                opacity:
+                  isImportingEventor
+                    ? 0.7
+                    : 1,
+                whiteSpace: "nowrap",
+              }}
+            >
+              {isImportingEventor
+                ? "Hämtar..."
+                : "Hämta tävling"}
+            </button>
+          </div>
+
+          <small>
+            Du kan ange ett Eventor-ID,
+            klistra in en Eventor-länk
+            eller använda en WinSplits-länk.
+            Klassen hittas automatiskt från
+            Erik Martinssons resultat.
+          </small>
+
+          {eventorMessage ? (
+            <p
+              role="status"
+              aria-live="polite"
+              style={{
+                margin:
+                  "0.35rem 0 0",
+              }}
+            >
+              {eventorMessage}
+            </p>
+          ) : null}
+        </div>
+
         <label className="field field-wide">
-          <span>Tävling *</span>
+          <span>
+            Tävling *
+          </span>
+
           <input
             name="title"
             value={form.title}
@@ -44,7 +165,10 @@ export default function RaceForm({
         </label>
 
         <label className="field">
-          <span>Datum *</span>
+          <span>
+            Datum *
+          </span>
+
           <input
             name="date"
             type="date"
@@ -55,7 +179,10 @@ export default function RaceForm({
         </label>
 
         <label className="field">
-          <span>Land</span>
+          <span>
+            Land
+          </span>
+
           <input
             name="country"
             value={form.country}
@@ -65,7 +192,10 @@ export default function RaceForm({
         </label>
 
         <label className="field field-wide">
-          <span>Arrangör *</span>
+          <span>
+            Arrangör *
+          </span>
+
           <input
             name="club"
             value={form.club}
@@ -76,7 +206,10 @@ export default function RaceForm({
         </label>
 
         <label className="field field-wide">
-          <span>Plats *</span>
+          <span>
+            Plats *
+          </span>
+
           <input
             name="location"
             value={form.location}
@@ -87,34 +220,64 @@ export default function RaceForm({
         </label>
 
         <label className="field">
-          <span>Klass *</span>
+          <span>
+            Klass *
+          </span>
+
           <input
             name="raceClass"
             value={form.raceClass}
             onChange={onChange}
+            placeholder="H21"
             required
           />
         </label>
 
         <label className="field">
-          <span>Disciplin *</span>
+          <span>
+            Disciplin *
+          </span>
+
           <select
             name="discipline"
             value={form.discipline}
             onChange={onChange}
           >
-            <option>Lång</option>
-            <option>Medel</option>
-            <option>Sprint</option>
-            <option>Natt</option>
-            <option>Stafett</option>
-            <option>Ultralång</option>
-            <option>Annat</option>
+            <option>
+              Lång
+            </option>
+
+            <option>
+              Medel
+            </option>
+
+            <option>
+              Sprint
+            </option>
+
+            <option>
+              Natt
+            </option>
+
+            <option>
+              Stafett
+            </option>
+
+            <option>
+              Ultralång
+            </option>
+
+            <option>
+              Annat
+            </option>
           </select>
         </label>
 
         <label className="field">
-          <span>Banlängd (km) *</span>
+          <span>
+            Banlängd (km) *
+          </span>
+
           <input
             name="distanceKm"
             type="number"
@@ -128,7 +291,10 @@ export default function RaceForm({
         </label>
 
         <label className="field">
-          <span>Tävlingstid *</span>
+          <span>
+            Tävlingstid *
+          </span>
+
           <input
             name="time"
             value={form.time}
@@ -139,7 +305,10 @@ export default function RaceForm({
         </label>
 
         <label className="field">
-          <span>Placering *</span>
+          <span>
+            Placering *
+          </span>
+
           <input
             name="position"
             type="number"
@@ -151,7 +320,10 @@ export default function RaceForm({
         </label>
 
         <label className="field">
-          <span>Antal startande</span>
+          <span>
+            Antal startande
+          </span>
+
           <input
             name="starters"
             type="number"
@@ -162,7 +334,10 @@ export default function RaceForm({
         </label>
 
         <label className="field">
-          <span>Kontroller</span>
+          <span>
+            Kontroller
+          </span>
+
           <input
             name="controls"
             type="number"
@@ -173,7 +348,10 @@ export default function RaceForm({
         </label>
 
         <label className="field">
-          <span>Bomtid</span>
+          <span>
+            Bomtid
+          </span>
+
           <input
             name="mistakeTime"
             value={form.mistakeTime}
@@ -183,40 +361,52 @@ export default function RaceForm({
         </label>
 
         <label className="field field-wide">
-          <span>Livelox-länk</span>
+          <span>
+            Livelox-länk
+          </span>
+
           <input
             name="livelox"
             type="url"
             value={form.livelox}
             onChange={onChange}
-            placeholder="https://..."
+            placeholder="https://www.livelox.com/Viewer?..."
           />
         </label>
 
         <label className="field field-wide">
-          <span>Winsplits-länk</span>
+          <span>
+            WinSplits-länk
+          </span>
+
           <input
             name="winsplits"
             type="url"
             value={form.winsplits}
             onChange={onChange}
-            placeholder="https://..."
+            placeholder="https://obasen.orientering.se/..."
           />
         </label>
 
         <label className="field field-wide">
-          <span>Resultatlänk</span>
+          <span>
+            Resultatlänk
+          </span>
+
           <input
             name="results"
             type="url"
             value={form.results}
             onChange={onChange}
-            placeholder="https://..."
+            placeholder="https://eventor.orientering.se/..."
           />
         </label>
 
         <label className="field field-wide">
-          <span>Kommentar</span>
+          <span>
+            Kommentar
+          </span>
+
           <textarea
             name="comment"
             value={form.comment}
