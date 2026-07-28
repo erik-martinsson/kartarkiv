@@ -1,4 +1,3 @@
-import axios from "axios";
 import {
   chromium,
   type Page,
@@ -861,10 +860,17 @@ function findLiveloxLink(
 async function fetchHtml(
   url: string,
 ): Promise<string> {
-  const response =
-    await axios.get<string>(url, {
-      responseType: "text",
-      timeout: 30_000,
+  const controller = new AbortController();
+
+  const timeout = setTimeout(
+    () => controller.abort(),
+    30_000,
+  );
+
+  try {
+    const response = await fetch(url, {
+      redirect: "follow",
+      signal: controller.signal,
       headers: {
         "User-Agent":
           "Mozilla/5.0 KartarkivStudio EventLinks",
@@ -875,7 +881,28 @@ async function fetchHtml(
       },
     });
 
-  return response.data;
+    if (!response.ok) {
+      throw new Error(
+        `Eventor svarade med HTTP ${response.status} ` +
+          `${response.statusText}.`,
+      );
+    }
+
+    return await response.text();
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      error.name === "AbortError"
+    ) {
+      throw new Error(
+        "Hämtningen från Eventor tog för lång tid.",
+      );
+    }
+
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 async function openPage(
