@@ -11,6 +11,7 @@ import type {
   EnrichedDomaCompetition,
   MigrationReviewStatus,
   ReviewedDomaCompetition,
+  MigrationQueueItem,
 } from "@/types/migration";
 
 const DEFAULT_MAP_ID = "356";
@@ -21,21 +22,6 @@ function valueOrDash(value: unknown): string {
   }
 
   return String(value);
-}
-
-function downloadJson(fileName: string, data: unknown): void {
-  const blob = new Blob([JSON.stringify(data, null, 2)], {
-    type: "application/json;charset=utf-8",
-  });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-
-  link.href = url;
-  link.download = fileName;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
 }
 
 function externalLink(url: string | null, label: string) {
@@ -64,6 +50,8 @@ export default function MigrationReview() {
     useState<MigrationReviewStatus>("pending");
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [queue, setQueue] = useState<MigrationQueueItem[]>([]);
+  const [isSaving, setIsSaving] = useState(false);
 
   const verificationLabel = useMemo(() => {
     const match = competition?.eventorMatch;
@@ -82,6 +70,63 @@ export default function MigrationReview() {
 
     return "Entydig titel";
   }, [competition]);
+
+  const loadQueue = async (): Promise<void> => {
+    try {
+      const response = await fetch("/api/migration/doma", { cache: "no-store" });
+      const data = (await response.json()) as {
+        items?: MigrationQueueItem[];
+        error?: string;
+      };
+
+      if (!response.ok) {
+        throw new Error(data.error ?? "Migrationskön kunde inte läsas.");
+      }
+
+      setQueue(data.items ?? []);
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Migrationskön kunde inte läsas.",
+      );
+    }
+  };
+
+  const loadReview = async (mapId: string): Promise<void> => {
+    try {
+      const response = await fetch(
+        `/api/migration/doma/${encodeURIComponent(mapId)}/review`,
+        { cache: "no-store" },
+      );
+
+      if (response.status === 404) {
+        setStatus("pending");
+        return;
+      }
+
+      const data = (await response.json()) as
+        | ReviewedDomaCompetition
+        | { error?: string };
+
+      if (!response.ok) {
+        throw new Error(
+          "error" in data && data.error
+            ? data.error
+            : "Granskningsstatus kunde inte läsas.",
+        );
+      }
+
+      setStatus((data as ReviewedDomaCompetition).status);
+    } catch (error) {
+      setStatus("pending");
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Granskningsstatus kunde inte läsas.",
+      );
+    }
+  };
 
   const loadMap = async (mapId: string): Promise<void> => {
     const normalizedMapId = mapId.trim();
@@ -113,8 +158,8 @@ export default function MigrationReview() {
 
       setCompetition(data as EnrichedDomaCompetition);
       setMapIdInput(normalizedMapId);
-      setStatus("pending");
       setMessage(null);
+      await loadReview(normalizedMapId);
     } catch (error) {
       setCompetition(null);
       setMessage(
@@ -128,6 +173,7 @@ export default function MigrationReview() {
   };
 
   useEffect(() => {
+    void loadQueue();
     void loadMap(DEFAULT_MAP_ID);
   }, []);
 
@@ -204,31 +250,62 @@ export default function MigrationReview() {
     );
   };
 
-  const saveReview = (nextStatus: MigrationReviewStatus): void => {
-    if (!competition) {
+  const saveReview = async (
+    nextStatus: MigrationReviewStatus,
+  ): Promise<void> => {
+    if (!competition || nextStatus === "pending") {
       return;
     }
 
-    setStatus(nextStatus);
+    setIsSaving(true);
+    setMessage("Sparar granskningen…");
 
-    const reviewed: ReviewedDomaCompetition = {
-      schemaVersion: 1,
-      status: nextStatus,
-      reviewedAt: new Date().toISOString(),
-      competition,
-    };
+    try {
+      const response = await fetch(
+        `/api/migration/doma/${competition.doma.mapId}/review`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ status: nextStatus, competition }),
+        },
+      );
+      const data = (await response.json()) as {
+        review?: ReviewedDomaCompetition;
+        savedTo?: string;
+        error?: string;
+      };
 
-    downloadJson(
-      `doma-${competition.doma.mapId}-reviewed.json`,
-      reviewed,
-    );
+      if (!response.ok || !data.review) {
+        throw new Error(data.error ?? "Granskningen kunde inte sparas.");
+      }
 
-    setMessage(
-      nextStatus === "approved"
-        ? "Posten godkändes och en granskad JSON-fil laddades ned."
-        : "Posten markerades för manuell granskning och sparades som JSON.",
-    );
+      setStatus(data.review.status);
+      setMessage(
+        nextStatus === "approved"
+          ? `Godkänd och sparad i ${data.savedTo ?? "migration/reviewed"}.`
+          : `Markerad för manuell granskning i ${data.savedTo ?? "migration/reviewed"}.`,
+      );
+      await loadQueue();
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Granskningen kunde inte sparas.",
+      );
+    } finally {
+      setIsSaving(false);
+    }
   };
+
+  const currentQueueIndex = queue.findIndex(
+    (item) => String(item.mapId) === mapIdInput,
+  );
+  const previousItem =
+    currentQueueIndex > 0 ? queue[currentQueueIndex - 1] : null;
+  const nextItem =
+    currentQueueIndex >= 0 && currentQueueIndex < queue.length - 1
+      ? queue[currentQueueIndex + 1]
+      : null;
 
   const match = competition?.eventorMatch;
   const eventor = competition?.eventor;
@@ -307,6 +384,50 @@ export default function MigrationReview() {
               : "Ej granskad"}
         </div>
       </section>
+
+      {queue.length ? (
+        <section className="panel migration-queue-bar" aria-label="Migrationskö">
+          <button
+            className="button secondary"
+            type="button"
+            disabled={!previousItem || isLoading}
+            onClick={() => previousItem && void loadMap(String(previousItem.mapId))}
+          >
+            ← Föregående
+          </button>
+
+          <div>
+            <strong>
+              {currentQueueIndex >= 0 ? currentQueueIndex + 1 : "—"} av {queue.length}
+            </strong>
+            <span>
+              {queue.filter((item) => item.status === "approved").length} godkända · {queue.filter((item) => item.status === "needs-review").length} manuella
+            </span>
+          </div>
+
+          <select
+            aria-label="Välj tävling i migrationskön"
+            value={currentQueueIndex >= 0 ? mapIdInput : ""}
+            onChange={(event) => void loadMap(event.target.value)}
+          >
+            <option value="" disabled>Välj DOMA-post</option>
+            {queue.map((item) => (
+              <option key={item.mapId} value={item.mapId}>
+                {item.status === "approved" ? "✓" : item.status === "needs-review" ? "!" : "○"} DOMA {item.mapId} — {item.title ?? "Utan titel"}
+              </option>
+            ))}
+          </select>
+
+          <button
+            className="button secondary"
+            type="button"
+            disabled={!nextItem || isLoading}
+            onClick={() => nextItem && void loadMap(String(nextItem.mapId))}
+          >
+            Nästa →
+          </button>
+        </section>
+      ) : null}
 
       {message ? (
         <p className="migration-message" role="status">
@@ -508,22 +629,24 @@ export default function MigrationReview() {
               <p className="step-label">BESLUT</p>
               <h2>Slutför granskningen</h2>
               <p>
-                Beslutet laddas ned som en granskad JSON-post. Själva
-                publiceringen kopplas in i nästa steg.
+                Beslutet sparas direkt i repots migration/reviewed-mapp.
+                Ändringar i titel, datum och disciplin följer med.
               </p>
 
               <div className="button-stack">
                 <button
                   className="button primary"
                   type="button"
-                  onClick={() => saveReview("approved")}
+                  disabled={isSaving}
+                  onClick={() => void saveReview("approved")}
                 >
-                  Godkänn testkartan
+                  {isSaving ? "Sparar…" : "Godkänn testkartan"}
                 </button>
                 <button
                   className="button secondary"
                   type="button"
-                  onClick={() => saveReview("needs-review")}
+                  disabled={isSaving}
+                  onClick={() => void saveReview("needs-review")}
                 >
                   Kräver manuell granskning
                 </button>

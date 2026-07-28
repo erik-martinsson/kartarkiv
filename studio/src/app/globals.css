@@ -930,3 +930,59 @@ a {
     min-height: 240px;
   }
 }
+
+.migration-queue-bar {
+  display: grid;
+  grid-template-columns: auto minmax(170px, 1fr) minmax(260px, 1.5fr) auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.migration-queue-bar > div {
+  display: grid;
+  gap: 3px;
+  text-align: center;
+}
+
+.migration-queue-bar strong {
+  font-size: 0.88rem;
+}
+
+.migration-queue-bar span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.migration-queue-bar select {
+  min-width: 0;
+  padding: 10px 12px;
+  background: #0e0f10;
+  border: 1px solid var(--border-light);
+  border-radius: 9px;
+  color: var(--text);
+  outline: none;
+}
+
+.migration-queue-bar select:focus {
+  border-color: var(--accent);
+}
+
+@media (max-width: 750px) {
+  .migration-queue-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .migration-queue-bar > div,
+  .migration-queue-bar select {
+    grid-column: 1 / -1;
+  }
+
+  .migration-queue-bar > div {
+    grid-row: 1;
+  }
+
+  .migration-queue-bar select {
+    grid-row: 2;
+  }
+}

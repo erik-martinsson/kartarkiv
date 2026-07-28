@@ -104,3 +104,12 @@ export type ReviewedDomaCompetition = {
   reviewedAt: string;
   competition: EnrichedDomaCompetition;
 };
+
+export type MigrationQueueItem = {
+  mapId: number;
+  title: string | null;
+  date: string | null;
+  status: MigrationReviewStatus;
+  confidence: "high" | "medium" | null;
+  warningCount: number;
+};

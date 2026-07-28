@@ -1,80 +1,21 @@
-import { access, readFile } from "node:fs/promises";
-import path from "node:path";
+import { readFile } from "node:fs/promises";
 import { NextResponse } from "next/server";
 
+import { findEnrichedCompetitionFile } from "@/lib/migrationPaths";
 import type { EnrichedDomaCompetition } from "@/types/migration";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-const API_VERSION = "doma-migration-route-2026-07-28-v3";
+const API_VERSION = "doma-migration-route-2026-07-28-v4";
 
 type RouteContext = {
-  params: Promise<{
-    mapId: string;
-  }>;
+  params: Promise<{ mapId: string }>;
 };
 
 function isPositiveInteger(value: string): boolean {
   return /^\d+$/.test(value) && Number(value) > 0;
-}
-
-async function pathExists(candidate: string): Promise<boolean> {
-  try {
-    await access(candidate);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-function createSearchRoots(): string[] {
-  const roots: string[] = [];
-  let current = path.resolve(process.cwd());
-
-  for (let level = 0; level < 6; level += 1) {
-    roots.push(current);
-
-    const parent = path.dirname(current);
-
-    if (parent === current) {
-      break;
-    }
-
-    current = parent;
-  }
-
-  return [...new Set(roots)];
-}
-
-async function findMigrationFile(mapId: string): Promise<{
-  filePath: string | null;
-  searchedPaths: string[];
-}> {
-  const searchedPaths = createSearchRoots().map((root) =>
-    path.join(
-      root,
-      "migration",
-      "test",
-      `doma-${mapId}`,
-      "competition-enriched.json",
-    ),
-  );
-
-  for (const candidate of searchedPaths) {
-    if (await pathExists(candidate)) {
-      return {
-        filePath: candidate,
-        searchedPaths,
-      };
-    }
-  }
-
-  return {
-    filePath: null,
-    searchedPaths,
-  };
 }
 
 export async function GET(
@@ -85,15 +26,12 @@ export async function GET(
 
   if (!isPositiveInteger(mapId)) {
     return NextResponse.json(
-      {
-        apiVersion: API_VERSION,
-        error: "Ogiltigt DOMA map-ID.",
-      },
+      { apiVersion: API_VERSION, error: "Ogiltigt DOMA map-ID." },
       { status: 400 },
     );
   }
 
-  const { filePath, searchedPaths } = await findMigrationFile(mapId);
+  const { filePath, searchedPaths } = await findEnrichedCompetitionFile(mapId);
 
   if (!filePath) {
     return NextResponse.json(
@@ -103,12 +41,7 @@ export async function GET(
         currentWorkingDirectory: process.cwd(),
         searchedPaths,
       },
-      {
-        status: 404,
-        headers: {
-          "Cache-Control": "no-store, no-cache, must-revalidate",
-        },
-      },
+      { status: 404, headers: { "Cache-Control": "no-store" } },
     );
   }
 
@@ -119,20 +52,12 @@ export async function GET(
     return NextResponse.json(
       {
         ...competition,
-        _migrationApi: {
-          apiVersion: API_VERSION,
-          sourceFile: filePath,
-        },
+        _migrationApi: { apiVersion: API_VERSION, sourceFile: filePath },
       },
-      {
-        headers: {
-          "Cache-Control": "no-store, no-cache, must-revalidate",
-        },
-      },
+      { headers: { "Cache-Control": "no-store" } },
     );
   } catch (error) {
     console.error("Kunde inte läsa migrationsfil:", filePath, error);
-
     return NextResponse.json(
       {
         apiVersion: API_VERSION,
