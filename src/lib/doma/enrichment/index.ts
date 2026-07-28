@@ -151,7 +151,7 @@ export async function readEnrichedDomaCompetition(
    * tävlingens titel eller datum. DOMA är facit
    * för båda värdena.
    */
-  const [runners, eventorMatch] =
+  const [runners, eventorResolution] =
     await Promise.all([
       loadWinSplits(
         ids.databaseId,
@@ -175,6 +175,9 @@ export async function readEnrichedDomaCompetition(
   }
 
   const warnings = [...doma.warnings];
+
+  const eventorMatch =
+    eventorResolution.match;
 
   const eventor =
     eventorMatch
@@ -265,6 +268,8 @@ export async function readEnrichedDomaCompetition(
 
     eventor,
     eventorMatch,
+    eventorResolverDebug:
+      eventorResolution.debug,
     liveloxUrl:
       eventor?.liveloxUrl ?? null,
     warnings,

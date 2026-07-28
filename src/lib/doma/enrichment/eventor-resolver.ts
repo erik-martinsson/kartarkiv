@@ -17,33 +17,131 @@ type Candidate = {
   eventorUrl: string;
   resultListUrl: string;
   score: number;
+  discoveredFrom: string;
 };
 
-function createCalendarUrl(
-  date: string,
+export type EventorResolverDebug = {
+  wantedTitle: string;
+  domaDate: string;
+  databaseId: number;
+  searchedDates: string[];
+  calendarUrls: string[];
+  candidates: Array<{
+    eventId: number;
+    title: string;
+    score: number;
+    discoveredFrom: string;
+    verifiedByWinSplitsId: boolean;
+  }>;
+};
+
+export type EventorResolverResult = {
+  match: EventorMatch | null;
+  debug: EventorResolverDebug;
+};
+
+function shiftIsoDate(
+  isoDate: string,
+  days: number,
 ): string {
-  const url = new URL(
-    "/Events",
-    EVENTOR_BASE_URL,
+  const date = new Date(
+    `${isoDate}T12:00:00Z`,
   );
 
-  url.searchParams.set("startDate", date);
-  url.searchParams.set("endDate", date);
-  url.searchParams.set("mode", "List");
+  if (Number.isNaN(date.getTime())) {
+    throw new Error(
+      `Ogiltigt DOMA-datum: ${isoDate}`,
+    );
+  }
 
-  return url.toString();
+  date.setUTCDate(
+    date.getUTCDate() + days,
+  );
+
+  return date
+    .toISOString()
+    .slice(0, 10);
+}
+
+function createCalendarUrls(
+  date: string,
+): string[] {
+  const urls: string[] = [];
+
+  /*
+   * Eventors kalender har ändrat beteende och
+   * parameterkrav över tid. Vi provar därför ett
+   * litet antal explicita listvyer.
+   */
+  for (const path of [
+    "/events",
+    "/Events",
+  ]) {
+    const normal = new URL(
+      path,
+      EVENTOR_BASE_URL,
+    );
+
+    normal.searchParams.set(
+      "startDate",
+      date,
+    );
+
+    normal.searchParams.set(
+      "endDate",
+      date,
+    );
+
+    normal.searchParams.set(
+      "mode",
+      "List",
+    );
+
+    normal.searchParams.set(
+      "map",
+      "false",
+    );
+
+    urls.push(normal.toString());
+
+    const print = new URL(
+      normal.toString(),
+    );
+
+    print.searchParams.set(
+      "layout",
+      "print",
+    );
+
+    urls.push(print.toString());
+
+    const searchPanel = new URL(
+      normal.toString(),
+    );
+
+    searchPanel.searchParams.set(
+      "searchPanel",
+      "true",
+    );
+
+    urls.push(searchPanel.toString());
+  }
+
+  return [...new Set(urls)];
 }
 
 function parseEventId(
-  href: string,
+  value: string,
 ): number | null {
   const patterns = [
     /\/Events\/Show\/(\d+)/i,
+    /\/events\/show\/(\d+)/i,
     /[?&]eventId=(\d+)/i,
+    /\beventId["']?\s*[:=]\s*["']?(\d+)/i,
   ];
 
   for (const pattern of patterns) {
-    const match = href.match(pattern);
+    const match = value.match(pattern);
 
     if (!match) {
       continue;
@@ -62,79 +160,148 @@ function parseEventId(
   return null;
 }
 
+function addCandidate(
+  candidates: Map<number, Candidate>,
+  eventId: number,
+  title: string,
+  wantedTitle: string,
+  discoveredFrom: string,
+): void {
+  const cleanedTitle =
+    normalizeText(title) ||
+    `Eventor ${eventId}`;
+
+  const candidate: Candidate = {
+    eventId,
+    title: cleanedTitle,
+    eventorUrl:
+      `${EVENTOR_BASE_URL}/Events/Show/${eventId}`,
+    resultListUrl:
+      `${EVENTOR_BASE_URL}/Events/ResultList` +
+      `?eventId=${eventId}`,
+    score: titleScore(
+      wantedTitle,
+      cleanedTitle,
+    ),
+    discoveredFrom,
+  };
+
+  const previous =
+    candidates.get(eventId);
+
+  if (
+    !previous ||
+    candidate.score > previous.score
+  ) {
+    candidates.set(
+      eventId,
+      candidate,
+    );
+  }
+}
+
 function extractCandidates(
   html: string,
   wantedTitle: string,
+  discoveredFrom: string,
 ): Candidate[] {
   const $ = cheerio.load(html);
-  const candidates = new Map<
-    number,
-    Candidate
-  >();
+  const candidates =
+    new Map<number, Candidate>();
 
   $("a[href]").each((_index, element) => {
-    const href = $(element).attr("href");
+    const href =
+      $(element).attr("href") ?? "";
 
-    if (!href) {
-      return;
-    }
-
-    const eventId = parseEventId(href);
+    const eventId =
+      parseEventId(href);
 
     if (eventId === null) {
       return;
     }
 
+    const row = $(element).closest(
+      "tr, li, article, div",
+    );
+
     const title =
       normalizeText($(element).text()) ||
       normalizeText(
-        $(element)
-          .closest("tr, li, article")
+        row
           .find("a[href]")
           .first()
           .text(),
-      );
+      ) ||
+      normalizeText(row.text());
 
-    if (!title) {
-      return;
-    }
-
-    const eventorUrl =
-      `${EVENTOR_BASE_URL}/Events/Show/${eventId}`;
-
-    const resultListUrl =
-      `${EVENTOR_BASE_URL}/Events/ResultList` +
-      `?eventId=${eventId}`;
-
-    const candidate: Candidate = {
+    addCandidate(
+      candidates,
       eventId,
       title,
-      eventorUrl,
-      resultListUrl,
-      score: titleScore(
-        wantedTitle,
-        title,
-      ),
-    };
-
-    const previous =
-      candidates.get(eventId);
-
-    if (
-      !previous ||
-      candidate.score > previous.score
-    ) {
-      candidates.set(
-        eventId,
-        candidate,
-      );
-    }
+      wantedTitle,
+      discoveredFrom,
+    );
   });
 
-  return [...candidates.values()].sort(
-    (left, right) =>
-      right.score - left.score,
-  );
+  /*
+   * Vissa Eventor-vyer bygger länkar med
+   * JavaScript eller data-attribut. Läs därför
+   * även event-id:n direkt ur hela HTML-källan.
+   */
+  const patterns = [
+    /\/Events\/Show\/(\d+)/gi,
+    /\/events\/show\/(\d+)/gi,
+    /[?&]eventId=(\d+)/gi,
+    /\beventId["']?\s*[:=]\s*["']?(\d+)/gi,
+  ];
+
+  for (const pattern of patterns) {
+    let match: RegExpExecArray | null;
+
+    while (
+      (match = pattern.exec(html)) !==
+      null
+    ) {
+      const eventId = Number(match[1]);
+
+      if (
+        !Number.isInteger(eventId) ||
+        eventId <= 0
+      ) {
+        continue;
+      }
+
+      const start = Math.max(
+        0,
+        match.index - 250,
+      );
+
+      const end = Math.min(
+        html.length,
+        match.index + 350,
+      );
+
+      const contextHtml =
+        html.slice(start, end);
+
+      const contextText =
+        normalizeText(
+          cheerio
+            .load(contextHtml)
+            .text(),
+        );
+
+      addCandidate(
+        candidates,
+        eventId,
+        contextText,
+        wantedTitle,
+        discoveredFrom,
+      );
+    }
+  }
+
+  return [...candidates.values()];
 }
 
 async function resultPageUsesWinSplitsId(
@@ -145,11 +312,18 @@ async function resultPageUsesWinSplitsId(
     const html =
       await fetchText(resultListUrl);
 
-    const compact = html
-      .replace(/&amp;/gi, "&")
-      .replace(/\s+/g, "");
+    const decoded = cheerio
+      .load(`<textarea>${html}</textarea>`)(
+        "textarea",
+      )
+      .text();
 
-    return compact.includes(
+    const searchable =
+      `${html} ${decoded}`
+        .replace(/&amp;/gi, "&")
+        .replace(/\s+/g, "");
+
+    return searchable.includes(
       `databaseId=${databaseId}`,
     );
   } catch {
@@ -157,61 +331,198 @@ async function resultPageUsesWinSplitsId(
   }
 }
 
+async function discoverCandidates(
+  title: string,
+  searchedDates: string[],
+  calendarUrls: string[],
+): Promise<Candidate[]> {
+  const candidates =
+    new Map<number, Candidate>();
+
+  for (const date of searchedDates) {
+    for (
+      const url of createCalendarUrls(date)
+    ) {
+      calendarUrls.push(url);
+
+      try {
+        const html =
+          await fetchText(url);
+
+        for (
+          const candidate of
+            extractCandidates(
+              html,
+              title,
+              url,
+            )
+        ) {
+          const previous =
+            candidates.get(
+              candidate.eventId,
+            );
+
+          if (
+            !previous ||
+            candidate.score >
+              previous.score
+          ) {
+            candidates.set(
+              candidate.eventId,
+              candidate,
+            );
+          }
+        }
+      } catch {
+        /*
+         * En misslyckad kalendervariant får inte
+         * stoppa de övriga varianterna.
+         */
+      }
+    }
+  }
+
+  return [...candidates.values()].sort(
+    (left, right) =>
+      right.score - left.score,
+  );
+}
+
 export async function resolveEventorEvent(
   title: string,
   date: string,
   databaseId: number,
-): Promise<EventorMatch | null> {
-  const calendarHtml = await fetchText(
-    createCalendarUrl(date),
-  );
+): Promise<EventorResolverResult> {
+  /*
+   * DOMA-datumet kan vara uppladdningsdatum,
+   * nattsträckans datum eller dagen före
+   * huvudtävlingen. Sök därför inom ±2 dagar.
+   */
+  const searchedDates = [
+    shiftIsoDate(date, -2),
+    shiftIsoDate(date, -1),
+    date,
+    shiftIsoDate(date, 1),
+    shiftIsoDate(date, 2),
+  ];
+
+  const calendarUrls: string[] = [];
 
   const candidates =
-    extractCandidates(
-      calendarHtml,
+    await discoverCandidates(
       title,
-    ).filter(
-      (candidate) =>
-        candidate.score >= 45,
+      searchedDates,
+      calendarUrls,
     );
 
-  if (candidates.length === 0) {
-    return null;
-  }
+  const debugCandidates:
+    EventorResolverDebug["candidates"] = [];
 
-  for (
-    const candidate of candidates.slice(0, 20)
-  ) {
+  /*
+   * databaseId är den starkaste nyckeln.
+   * Kontrollera alla upptäckta tävlingar, inte
+   * bara de bästa titelmatchningarna.
+   */
+  for (const candidate of candidates) {
     const verified =
       await resultPageUsesWinSplitsId(
         candidate.resultListUrl,
         databaseId,
       );
 
+    debugCandidates.push({
+      eventId: candidate.eventId,
+      title: candidate.title,
+      score: candidate.score,
+      discoveredFrom:
+        candidate.discoveredFrom,
+      verifiedByWinSplitsId:
+        verified,
+    });
+
     if (verified) {
       return {
-        ...candidate,
-        verifiedByWinSplitsId: true,
+        match: {
+          eventId:
+            candidate.eventId,
+          title:
+            candidate.title,
+          eventorUrl:
+            candidate.eventorUrl,
+          resultListUrl:
+            candidate.resultListUrl,
+          score:
+            candidate.score,
+          verifiedByWinSplitsId:
+            true,
+        },
+        debug: {
+          wantedTitle: title,
+          domaDate: date,
+          databaseId,
+          searchedDates,
+          calendarUrls,
+          candidates:
+            debugCandidates,
+        },
       };
     }
   }
 
+  /*
+   * Fallback används bara när titeln är mycket
+   * tydlig och när ingen nästan lika bra kandidat
+   * finns.
+   */
   const best = candidates[0];
   const second = candidates[1];
 
   const unambiguous =
+    Boolean(best) &&
     best.score >= 90 &&
     (
       !second ||
       best.score - second.score >= 15
     );
 
-  if (!unambiguous) {
-    return null;
-  }
-
   return {
-    ...best,
-    verifiedByWinSplitsId: false,
+    match:
+      best && unambiguous
+        ? {
+            eventId: best.eventId,
+            title: best.title,
+            eventorUrl:
+              best.eventorUrl,
+            resultListUrl:
+              best.resultListUrl,
+            score: best.score,
+            verifiedByWinSplitsId:
+              false,
+          }
+        : null,
+    debug: {
+      wantedTitle: title,
+      domaDate: date,
+      databaseId,
+      searchedDates,
+      calendarUrls,
+      candidates:
+        debugCandidates.length > 0
+          ? debugCandidates
+          : candidates.map(
+              (candidate) => ({
+                eventId:
+                  candidate.eventId,
+                title:
+                  candidate.title,
+                score:
+                  candidate.score,
+                discoveredFrom:
+                  candidate.discoveredFrom,
+                verifiedByWinSplitsId:
+                  false,
+              }),
+            ),
+    },
   };
 }

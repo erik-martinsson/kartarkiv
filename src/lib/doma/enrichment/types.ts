@@ -34,6 +34,21 @@ export type EventorMetadata = {
   liveloxUrl: string | null;
 };
 
+export type EventorResolverDebug = {
+  wantedTitle: string;
+  domaDate: string;
+  databaseId: number;
+  searchedDates: string[];
+  calendarUrls: string[];
+  candidates: Array<{
+    eventId: number;
+    title: string;
+    score: number;
+    discoveredFrom: string;
+    verifiedByWinSplitsId: boolean;
+  }>;
+};
+
 export type EnrichedDomaCompetition = {
   doma: {
     mapId: number;
@@ -66,6 +81,7 @@ export type EnrichedDomaCompetition = {
 
   eventor: EventorMetadata | null;
   eventorMatch: EventorMatch | null;
+  eventorResolverDebug: EventorResolverDebug;
   liveloxUrl: string | null;
   warnings: string[];
 };

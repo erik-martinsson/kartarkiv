@@ -1,0 +1,43 @@
+{
+  "doma": {
+    "mapId": 356,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=356",
+    "title": "Smålandskavlen",
+    "date": "2016-10-28",
+    "category": "Tävling",
+    "relayLeg": 2,
+    "runningTime": "80:27",
+    "runningDistanceKm": 14.23,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/356.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/356.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=356&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=45759&categoryId=61"
+  },
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "17",
+    "starters": "48",
+    "controls": 9,
+    "time": "1:20.43",
+    "totalMistakeTime": "2.02",
+    "mistakes": [
+      {
+        "control": 2,
+        "time": "1.29"
+      },
+      {
+        "control": 6,
+        "time": "0.33"
+      }
+    ]
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "liveloxUrl": null,
+  "warnings": [
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}

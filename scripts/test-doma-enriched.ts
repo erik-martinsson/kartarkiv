@@ -161,6 +161,45 @@ async function main(): Promise<void> {
     competition.liveloxUrl,
   );
 
+  console.log("");
+  console.log("Eventor-resolver:");
+
+  display(
+    "Sökta datum",
+    competition.eventorResolverDebug
+      .searchedDates
+      .join(", "),
+  );
+
+  display(
+    "Kalenderanrop",
+    competition.eventorResolverDebug
+      .calendarUrls.length,
+  );
+
+  display(
+    "Kandidater",
+    competition.eventorResolverDebug
+      .candidates.length,
+  );
+
+  for (
+    const candidate of
+      competition.eventorResolverDebug
+        .candidates
+  ) {
+    console.log(
+      `- ${candidate.eventId}: ` +
+        `${candidate.title} ` +
+        `(titelpoäng ${candidate.score}, ` +
+        `databaseId ${
+          candidate.verifiedByWinSplitsId
+            ? "JA"
+            : "NEJ"
+        })`,
+    );
+  }
+
   const outputDirectory =
     path.resolve(
       process.cwd(),
