@@ -8,29 +8,8 @@ import {
 } from "../src/lib/doma/enrichment";
 
 const DEFAULT_MAP_ID = 356;
-const DEFAULT_USER = "erik";
-const DEFAULT_RUNNER = "Erik Martinsson";
-const DOMA_URL =
-  "http://www.lid1.se/erik/doma/show_map.php";
-
-function readMapId(
-  value: string | undefined,
-): number {
-  const mapId = Number(
-    value ?? DEFAULT_MAP_ID,
-  );
-
-  if (
-    !Number.isInteger(mapId) ||
-    mapId <= 0
-  ) {
-    throw new Error(
-      `Ogiltigt map-ID: ${value}`,
-    );
-  }
-
-  return mapId;
-}
+const DEFAULT_RUNNER =
+  "Erik Martinsson";
 
 function display(
   label: string,
@@ -44,24 +23,34 @@ function display(
       : String(value);
 
   console.log(
-    `${label.padEnd(26, ".")}${rendered}`,
+    `${label.padEnd(27, ".")}${rendered}`,
   );
 }
 
 async function main(): Promise<void> {
-  const mapId = readMapId(
-    process.argv[2],
+  const mapId = Number(
+    process.argv[2] ??
+      DEFAULT_MAP_ID,
   );
+
+  if (
+    !Number.isInteger(mapId) ||
+    mapId <= 0
+  ) {
+    throw new Error(
+      `Ogiltigt map-ID: ${process.argv[2]}`,
+    );
+  }
 
   const runnerName =
     process.argv[3] ??
     DEFAULT_RUNNER;
 
-  const url = new URL(DOMA_URL);
-  url.searchParams.set(
-    "user",
-    DEFAULT_USER,
+  const url = new URL(
+    "http://www.lid1.se/erik/doma/show_map.php",
   );
+
+  url.searchParams.set("user", "erik");
   url.searchParams.set(
     "map",
     String(mapId),
@@ -96,10 +85,6 @@ async function main(): Promise<void> {
     competition.doma.relayLeg,
   );
   display(
-    "Klass",
-    competition.result.raceClass,
-  );
-  display(
     "Placering",
     competition.result.position,
   );
@@ -126,7 +111,9 @@ async function main(): Promise<void> {
   if (
     competition.result.mistakes.length === 0
   ) {
-    console.log("- Inga bommar registrerade");
+    console.log(
+      "- Inga bommar registrerade",
+    );
   } else {
     for (
       const mistake of
@@ -146,8 +133,9 @@ async function main(): Promise<void> {
   );
   display(
     "Eventor verifierad",
-    competition.eventor
-      ? competition.eventor.verified
+    competition.eventorMatch
+      ? competition.eventorMatch
+          .verifiedByWinSplitsId
         ? "JA"
         : "NEJ"
       : null,
@@ -155,6 +143,18 @@ async function main(): Promise<void> {
   display(
     "Eventor",
     competition.eventor?.eventorUrl,
+  );
+  display(
+    "Eventor-disciplin",
+    competition.eventor?.rawDiscipline,
+  );
+  display(
+    "Arrangör",
+    competition.eventor?.organiser,
+  );
+  display(
+    "Plats",
+    competition.eventor?.location,
   );
   display(
     "Livelox",

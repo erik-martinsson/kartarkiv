@@ -3,10 +3,17 @@ import {
   loadWinSplits,
   type WinSplitsRunner,
 } from "../../../../studio/src/lib/winsplits";
-import { getEventLinks } from "./eventor-links";
 import {
-  resolveEventorFromWinSplits,
-} from "./resolve-eventor";
+  resolveEventorEvent,
+} from "./eventor-resolver";
+import {
+  readEventorMetadata,
+} from "./eventor-metadata";
+import {
+  cleanOptional,
+  comparableText,
+  normalizeName,
+} from "./text";
 import type {
   CompetitionDiscipline,
   EnrichedDomaCompetition,
@@ -16,40 +23,22 @@ export type {
   CompetitionDiscipline,
   EnrichedDomaCompetition,
   EnrichedMistake,
+  EventorMatch,
+  EventorMetadata,
 } from "./types";
 
-function normalizeName(value: string): string {
-  return value
-    .normalize("NFD")
-    .replace(/\p{M}+/gu, "")
-    .toLocaleLowerCase("sv-SE")
-    .replace(/[^\p{L}\p{N}]+/gu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function findRunner(
-  runners: WinSplitsRunner[],
-  runnerName: string,
-): WinSplitsRunner | null {
-  const wanted = normalizeName(runnerName);
-
-  return (
-    runners.find(
-      (runner) =>
-        normalizeName(runner.name) === wanted,
-    ) ?? null
-  );
-}
-
-function readWinSplitsIds(urlValue: string): {
+function readWinSplitsIds(
+  urlValue: string,
+): {
   databaseId: number;
   categoryId: number;
 } {
   const url = new URL(urlValue);
+
   const databaseId = Number(
     url.searchParams.get("databaseId"),
   );
+
   const categoryId = Number(
     url.searchParams.get("categoryId"),
   );
@@ -61,7 +50,8 @@ function readWinSplitsIds(urlValue: string): {
     categoryId <= 0
   ) {
     throw new Error(
-      "DOMA:s WinSplits-länk saknar giltigt databaseId eller categoryId.",
+      "DOMA:s WinSplits-länk saknar ett giltigt " +
+        "databaseId eller categoryId.",
     );
   }
 
@@ -71,16 +61,19 @@ function readWinSplitsIds(urlValue: string): {
   };
 }
 
-function normalizeDisciplineText(
-  value: string,
-): string {
-  return value
-    .normalize("NFD")
-    .replace(/\p{M}+/gu, "")
-    .toLocaleLowerCase("sv-SE")
-    .replace(/[–—−]/g, "-")
-    .replace(/\s+/g, " ")
-    .trim();
+function findRunner(
+  runners: WinSplitsRunner[],
+  runnerName: string,
+): WinSplitsRunner | null {
+  const wanted = normalizeName(runnerName);
+
+  return (
+    runners.find(
+      (runner) =>
+        normalizeName(runner.name) ===
+        wanted,
+    ) ?? null
+  );
 }
 
 function classifyDiscipline(
@@ -92,7 +85,7 @@ function classifyDiscipline(
     return "Stafett";
   }
 
-  const text = normalizeDisciplineText(
+  const text = comparableText(
     `${eventorDiscipline} ${title ?? ""}`,
   );
 
@@ -120,26 +113,15 @@ function classifyDiscipline(
     return "Lång";
   }
 
-  if (
-    /\b(sprint)\b/.test(text)
-  ) {
+  if (/\bsprint\b/.test(text)) {
     return "Sprint";
   }
 
-  if (
-    /\b(natt|night)\b/.test(text)
-  ) {
+  if (/\b(natt|night)\b/.test(text)) {
     return "Natt";
   }
 
   return text ? "Annan" : "Okänd";
-}
-
-function cleanOptional(
-  value: string | null | undefined,
-): string | null {
-  const normalized = value?.trim() ?? "";
-  return normalized || null;
 }
 
 export async function readEnrichedDomaCompetition(
@@ -149,24 +131,36 @@ export async function readEnrichedDomaCompetition(
   const doma =
     await readDomaCompetition(domaUrl);
 
+  if (!doma.title || !doma.date) {
+    throw new Error(
+      "DOMA-posten saknar titel eller datum.",
+    );
+  }
+
   if (!doma.winsplitsUrl) {
     throw new Error(
-      `DOMA-karta ${doma.mapId} saknar WinSplits-länk. ` +
-        "Eventor-matchning och bomanalys kan därför inte göras automatiskt.",
+      `DOMA-karta ${doma.mapId} saknar WinSplits-länk.`,
     );
   }
 
   const ids =
     readWinSplitsIds(doma.winsplitsUrl);
 
-  const [resolution, runners] =
+  /*
+   * WinSplits behöver inte längre leverera
+   * tävlingens titel eller datum. DOMA är facit
+   * för båda värdena.
+   */
+  const [runners, eventorMatch] =
     await Promise.all([
-      resolveEventorFromWinSplits(
-        doma.winsplitsUrl,
-      ),
       loadWinSplits(
         ids.databaseId,
         ids.categoryId,
+      ),
+      resolveEventorEvent(
+        doma.title,
+        doma.date,
+        ids.databaseId,
       ),
     ]);
 
@@ -181,54 +175,45 @@ export async function readEnrichedDomaCompetition(
   }
 
   const warnings = [...doma.warnings];
-  let eventor:
-    EnrichedDomaCompetition["eventor"] = null;
-  let liveloxUrl: string | null = null;
-  let rawEventorDiscipline = "";
 
-  if (resolution.eventor) {
-    const eventLinks =
-      await getEventLinks(
-        resolution.eventor.eventId,
-        runnerName,
-      );
+  const eventor =
+    eventorMatch
+      ? await readEventorMetadata(
+          eventorMatch,
+          "",
+        )
+      : null;
 
-    rawEventorDiscipline =
-      eventLinks.discipline;
-
-    eventor = {
-      eventId: eventLinks.eventId,
-      verified: resolution.verified,
-      eventorUrl: eventLinks.eventorUrl,
-      resultListUrl:
-        eventLinks.resultListUrl,
-      title: eventLinks.title,
-      date: eventLinks.date,
-      organiser: eventLinks.club,
-      location: eventLinks.location,
-      rawDiscipline:
-        eventLinks.discipline,
-    };
-
-    liveloxUrl =
-      eventLinks.liveloxUrl;
-
-    if (!resolution.verified) {
-      warnings.push(
-        "Eventor-träffen bygger på en entydig namnmatchning men kunde inte verifieras via WinSplits databaseId.",
-      );
-    }
-
-    if (!liveloxUrl) {
-      warnings.push(
-        "Ingen klasspecifik Livelox-länk hittades i Eventor.",
-      );
-    }
-  } else {
+  if (!eventorMatch) {
     warnings.push(
       "Ingen tillräckligt säker Eventor-träff hittades.",
     );
+  } else if (
+    !eventorMatch.verifiedByWinSplitsId
+  ) {
+    warnings.push(
+      "Eventor-träffen kunde inte verifieras via " +
+        "WinSplits databaseId och bygger på en " +
+        "entydig titelmatchning.",
+    );
   }
+
+  if (eventor && !eventor.liveloxUrl) {
+    warnings.push(
+      "Ingen Livelox-länk hittades i Eventors resultatlista.",
+    );
+  }
+
+  const raceClass =
+    cleanOptional(
+      /*
+       * WinSplits-löparobjektet innehåller inte
+       * klassnamnet. Klassen hämtas därför från
+       * DOMA-länkens categoryId tills vi lägger till
+       * separat klassrubriksläsning i WinSplits.
+       */
+      null,
+    );
 
   return {
     doma: {
@@ -252,23 +237,18 @@ export async function readEnrichedDomaCompetition(
 
     discipline: classifyDiscipline(
       doma.relayLeg,
-      rawEventorDiscipline,
+      eventor?.rawDiscipline ?? "",
       doma.title,
     ),
 
     result: {
       runnerName,
-      raceClass:
-        cleanOptional(
-          resolution.directImport.raceClass,
-        ),
+      raceClass,
       club: cleanOptional(runner.club),
       position:
         cleanOptional(runner.place),
       starters:
-        cleanOptional(
-          resolution.directImport.starters,
-        ),
+        String(runners.length),
       controls: runner.controls,
       time:
         cleanOptional(runner.totalTime),
@@ -284,7 +264,9 @@ export async function readEnrichedDomaCompetition(
     },
 
     eventor,
-    liveloxUrl,
+    eventorMatch,
+    liveloxUrl:
+      eventor?.liveloxUrl ?? null,
     warnings,
   };
 }

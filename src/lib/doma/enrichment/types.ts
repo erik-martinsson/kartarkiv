@@ -13,6 +13,27 @@ export type EnrichedMistake = {
   time: string;
 };
 
+export type EventorMatch = {
+  eventId: number;
+  eventorUrl: string;
+  resultListUrl: string;
+  title: string;
+  score: number;
+  verifiedByWinSplitsId: boolean;
+};
+
+export type EventorMetadata = {
+  eventId: number;
+  eventorUrl: string;
+  resultListUrl: string;
+  title: string;
+  date: string;
+  organiser: string;
+  location: string;
+  rawDiscipline: string;
+  liveloxUrl: string | null;
+};
+
 export type EnrichedDomaCompetition = {
   doma: {
     mapId: number;
@@ -43,18 +64,8 @@ export type EnrichedDomaCompetition = {
     mistakes: EnrichedMistake[];
   };
 
-  eventor: {
-    eventId: number;
-    verified: boolean;
-    eventorUrl: string;
-    resultListUrl: string;
-    title: string;
-    date: string;
-    organiser: string;
-    location: string;
-    rawDiscipline: string;
-  } | null;
-
+  eventor: EventorMetadata | null;
+  eventorMatch: EventorMatch | null;
   liveloxUrl: string | null;
   warnings: string[];
 };
