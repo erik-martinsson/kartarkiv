@@ -5,9 +5,8 @@ import {
   writeFile,
 } from "node:fs/promises";
 import path from "node:path";
-import {
-  readEnrichedDomaCompetition,
-} from "../src/lib/doma/enrichment";
+import { readDomaCompetition } from "../src/lib/doma";
+import { readEnrichedDomaCompetition } from "../src/lib/doma/enrichment";
 
 const DEFAULT_RUNNER = "Erik Martinsson";
 const DEFAULT_USER = "erik";
@@ -24,10 +23,15 @@ type Options = {
   force: boolean;
 };
 
+type BatchItemStatus = "created" | "skipped" | "failed";
+type BatchSkipReason = "existing" | "training";
+
 type BatchItem = {
   mapId: number;
-  status: "created" | "skipped" | "failed";
+  status: BatchItemStatus;
+  skipReason?: BatchSkipReason;
   title?: string | null;
+  category?: string | null;
   outputPath?: string;
   error?: string;
 };
@@ -41,6 +45,8 @@ type BatchSummary = {
     total: number;
     created: number;
     skipped: number;
+    skippedExisting: number;
+    skippedTraining: number;
     failed: number;
   };
   items: BatchItem[];
@@ -68,9 +74,7 @@ function readArgument(
   name: string,
 ): string | undefined {
   const prefix = `--${name}=`;
-  const inline = args.find((value) =>
-    value.startsWith(prefix),
-  );
+  const inline = args.find((value) => value.startsWith(prefix));
 
   if (inline) {
     return inline.slice(prefix.length);
@@ -108,20 +112,14 @@ function parseOptions(args: string[]): Options {
   return {
     from,
     to,
-    runner:
-      readArgument(args, "runner") ??
-      DEFAULT_RUNNER,
-    user:
-      readArgument(args, "user") ??
-      DEFAULT_USER,
+    runner: readArgument(args, "runner") ?? DEFAULT_RUNNER,
+    user: readArgument(args, "user") ?? DEFAULT_USER,
     delayMs,
     force: args.includes("--force"),
   };
 }
 
-async function fileExists(
-  filePath: string,
-): Promise<boolean> {
+async function fileExists(filePath: string): Promise<boolean> {
   try {
     await access(filePath);
     return true;
@@ -136,18 +134,28 @@ function sleep(milliseconds: number): Promise<void> {
   });
 }
 
-function createDomaUrl(
-  mapId: number,
-  user: string,
-): string {
-  const url = new URL(
-    "http://www.lid1.se/erik/doma/show_map.php",
-  );
+function createDomaUrl(mapId: number, user: string): string {
+  const url = new URL("http://www.lid1.se/erik/doma/show_map.php");
 
   url.searchParams.set("user", user);
   url.searchParams.set("map", String(mapId));
 
   return url.toString();
+}
+
+function normalizeEventType(value: string | null): string {
+  return (value ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLocaleLowerCase("sv-SE");
+}
+
+function isTrainingEvent(category: string | null): boolean {
+  const normalized = normalizeEventType(category);
+
+  return normalized === "traning" || normalized === "training";
 }
 
 async function readExistingTitle(
@@ -172,23 +180,19 @@ async function main(): Promise<void> {
   const total = options.to - options.from + 1;
 
   console.log("DOMA-batch startar");
-  console.log(
-    `Kartor: ${options.from}–${options.to} (${total} st)`,
-  );
+  console.log(`Kartor: ${options.from}–${options.to} (${total} st)`);
   console.log(`Löpare: ${options.runner}`);
   console.log(
     `Befintliga filer: ${
       options.force ? "skrivs över" : "hoppas över"
     }`,
   );
+  console.log("Träningsposter: hoppas över före extern berikning");
   console.log("");
 
-  for (
-    let mapId = options.from;
-    mapId <= options.to;
-    mapId += 1
-  ) {
+  for (let mapId = options.from; mapId <= options.to; mapId += 1) {
     const position = mapId - options.from + 1;
+    const domaUrl = createDomaUrl(mapId, options.user);
     const outputDirectory = path.resolve(
       process.cwd(),
       "migration",
@@ -202,54 +206,69 @@ async function main(): Promise<void> {
 
     console.log(`[${position}/${total}] DOMA ${mapId}`);
 
-    if (!options.force && (await fileExists(outputPath))) {
-      const title = await readExistingTitle(outputPath);
-      console.log(`  Hoppar över: ${title ?? "filen finns"}`);
-      items.push({
-        mapId,
-        status: "skipped",
-        title,
-        outputPath,
-      });
-      continue;
-    }
-
     try {
-      const competition =
-        await readEnrichedDomaCompetition(
-          createDomaUrl(mapId, options.user),
-          options.runner,
+      // Läs endast DOMA först. Kategorin måste kontrolleras innan
+      // WinSplits, Eventor eller Livelox får anropas.
+      const doma = await readDomaCompetition(domaUrl);
+
+      if (isTrainingEvent(doma.category)) {
+        console.log(
+          `  skipped (training): ${doma.title ?? "utan titel"}`,
         );
+        items.push({
+          mapId,
+          status: "skipped",
+          skipReason: "training",
+          title: doma.title,
+          category: doma.category,
+        });
+        continue;
+      }
+
+      if (!options.force && (await fileExists(outputPath))) {
+        const existingTitle = await readExistingTitle(outputPath);
+        const title = existingTitle ?? doma.title;
+
+        console.log(`  skipped (existing): ${title ?? "filen finns"}`);
+        items.push({
+          mapId,
+          status: "skipped",
+          skipReason: "existing",
+          title,
+          category: doma.category,
+          outputPath,
+        });
+        continue;
+      }
+
+      const competition = await readEnrichedDomaCompetition(
+        domaUrl,
+        options.runner,
+      );
 
       await mkdir(outputDirectory, {
         recursive: true,
       });
       await writeFile(
         outputPath,
-        JSON.stringify(competition, null, 2),
+        `${JSON.stringify(competition, null, 2)}\n`,
         "utf8",
       );
 
+      console.log(`  Sparad: ${competition.doma.title ?? "utan titel"}`);
       console.log(
-        `  Sparad: ${competition.doma.title ?? "utan titel"}`,
-      );
-      console.log(
-        `  Matchning: ${
-          competition.eventorMatch?.confidence ?? "ingen"
-        }`,
+        `  Matchning: ${competition.eventorMatch?.confidence ?? "ingen"}`,
       );
 
       items.push({
         mapId,
         status: "created",
         title: competition.doma.title,
+        category: competition.doma.category,
         outputPath,
       });
     } catch (error) {
-      const message =
-        error instanceof Error
-          ? error.message
-          : String(error);
+      const message = error instanceof Error ? error.message : String(error);
 
       console.error(`  Misslyckades: ${message}`);
       items.push({
@@ -257,10 +276,10 @@ async function main(): Promise<void> {
         status: "failed",
         error: message,
       });
-    }
-
-    if (mapId < options.to) {
-      await sleep(options.delayMs);
+    } finally {
+      if (mapId < options.to) {
+        await sleep(options.delayMs);
+      }
     }
   }
 
@@ -271,15 +290,17 @@ async function main(): Promise<void> {
     options,
     counts: {
       total: items.length,
-      created: items.filter(
-        (item) => item.status === "created",
+      created: items.filter((item) => item.status === "created").length,
+      skipped: items.filter((item) => item.status === "skipped").length,
+      skippedExisting: items.filter(
+        (item) =>
+          item.status === "skipped" && item.skipReason === "existing",
       ).length,
-      skipped: items.filter(
-        (item) => item.status === "skipped",
+      skippedTraining: items.filter(
+        (item) =>
+          item.status === "skipped" && item.skipReason === "training",
       ).length,
-      failed: items.filter(
-        (item) => item.status === "failed",
-      ).length,
+      failed: items.filter((item) => item.status === "failed").length,
     },
     items,
   };
@@ -300,7 +321,7 @@ async function main(): Promise<void> {
 
   await writeFile(
     reportPath,
-    JSON.stringify(summary, null, 2),
+    `${JSON.stringify(summary, null, 2)}\n`,
     "utf8",
   );
 
@@ -308,6 +329,8 @@ async function main(): Promise<void> {
   console.log("Batchen är klar");
   console.log(`Skapade: ${summary.counts.created}`);
   console.log(`Överhoppade: ${summary.counts.skipped}`);
+  console.log(`  Befintliga: ${summary.counts.skippedExisting}`);
+  console.log(`  Träning: ${summary.counts.skippedTraining}`);
   console.log(`Misslyckade: ${summary.counts.failed}`);
   console.log(`Rapport: ${reportPath}`);
 
@@ -319,9 +342,7 @@ async function main(): Promise<void> {
 main().catch((error) => {
   console.error("");
   console.error(
-    error instanceof Error
-      ? error.stack ?? error.message
-      : error,
+    error instanceof Error ? error.stack ?? error.message : error,
   );
   process.exitCode = 1;
 });

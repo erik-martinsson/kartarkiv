@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-07-28T19:23:56.267Z",
+  "finishedAt": "2026-07-28T19:26:50.021Z",
+  "options": {
+    "from": 350,
+    "to": 360,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 11,
+    "created": 7,
+    "skipped": 1,
+    "failed": 3
+  },
+  "items": [
+    {
+      "mapId": 350,
+      "status": "created",
+      "title": "Lång-DM",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-350\\competition-enriched.json"
+    },
+    {
+      "mapId": 351,
+      "status": "created",
+      "title": "Medel-DM Östergötland",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-351\\competition-enriched.json"
+    },
+    {
+      "mapId": 352,
+      "status": "created",
+      "title": "DM-Stafett Östergötland",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-352\\competition-enriched.json"
+    },
+    {
+      "mapId": 353,
+      "status": "failed",
+      "error": "DOMA-karta 353 saknar WinSplits-länk."
+    },
+    {
+      "mapId": 354,
+      "status": "created",
+      "title": "Höstracet",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-354\\competition-enriched.json"
+    },
+    {
+      "mapId": 355,
+      "status": "created",
+      "title": "25-Manna str.5",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-355\\competition-enriched.json"
+    },
+    {
+      "mapId": 356,
+      "status": "skipped",
+      "title": "Smålandskavlen",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-356\\competition-enriched.json"
+    },
+    {
+      "mapId": 357,
+      "status": "failed",
+      "error": "DOMA-karta 357 saknar WinSplits-länk."
+    },
+    {
+      "mapId": 358,
+      "status": "created",
+      "title": "TGOK #1",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-358\\competition-enriched.json"
+    },
+    {
+      "mapId": 359,
+      "status": "failed",
+      "error": "DOMA:s WinSplits-länk saknar ett giltigt databaseId eller categoryId."
+    },
+    {
+      "mapId": 360,
+      "status": "created",
+      "title": "Tiomila-12",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-360\\competition-enriched.json"
+    }
+  ]
+}
