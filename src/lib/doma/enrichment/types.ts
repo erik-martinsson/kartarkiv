@@ -13,6 +13,11 @@ export type EnrichedMistake = {
   time: string;
 };
 
+export type EventorVerificationMethod =
+  | "winsplits-database-id"
+  | "title-and-date"
+  | "title-only";
+
 export type EventorMatch = {
   eventId: number;
   eventorUrl: string;
@@ -20,6 +25,8 @@ export type EventorMatch = {
   title: string;
   score: number;
   verifiedByWinSplitsId: boolean;
+  verificationMethod: EventorVerificationMethod;
+  confidence: "high" | "medium";
 };
 
 export type EventorMetadata = {
@@ -46,6 +53,13 @@ export type EventorResolverDebug = {
     score: number;
     discoveredFrom: string;
     verifiedByWinSplitsId: boolean;
+    eventDate: string | null;
+    dateMatches: boolean;
+    verificationMethod:
+      | "winsplits-database-id"
+      | "title-and-date"
+      | "title-only"
+      | null;
   }>;
 };
 

@@ -192,12 +192,13 @@ export async function readEnrichedDomaCompetition(
       "Ingen tillräckligt säker Eventor-träff hittades.",
     );
   } else if (
-    !eventorMatch.verifiedByWinSplitsId
+    eventorMatch.verificationMethod ===
+    "title-only"
   ) {
     warnings.push(
-      "Eventor-träffen kunde inte verifieras via " +
-        "WinSplits databaseId och bygger på en " +
-        "entydig titelmatchning.",
+      "Eventor-träffen bygger på en entydig exakt " +
+        "titelmatchning. Eventor exponerade inget " +
+        "verifierbart WinSplits databaseId.",
     );
   }
 

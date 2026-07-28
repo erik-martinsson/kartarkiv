@@ -134,11 +134,20 @@ async function main(): Promise<void> {
   display(
     "Eventor verifierad",
     competition.eventorMatch
-      ? competition.eventorMatch
-          .verifiedByWinSplitsId
-        ? "JA"
-        : "NEJ"
+      ? "JA"
       : null,
+  );
+
+  display(
+    "Verifieringsmetod",
+    competition.eventorMatch
+      ?.verificationMethod,
+  );
+
+  display(
+    "Matchsäkerhet",
+    competition.eventorMatch
+      ?.confidence,
   );
   display(
     "Eventor",
@@ -192,10 +201,17 @@ async function main(): Promise<void> {
       `- ${candidate.eventId}: ` +
         `${candidate.title} ` +
         `(titelpoäng ${candidate.score}, ` +
-        `databaseId ${
+        `datum ${
+          candidate.dateMatches
+            ? "JA"
+            : candidate.eventDate ?? "OKÄNT"
+        }, databaseId ${
           candidate.verifiedByWinSplitsId
             ? "JA"
             : "NEJ"
+        }, metod ${
+          candidate.verificationMethod ??
+          "—"
         })`,
     );
   }

@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio";
 import { fetchText } from "./http";
 import {
+  comparableText,
   normalizeText,
   titleScore,
 } from "./text";
@@ -18,6 +19,7 @@ type Candidate = {
   resultListUrl: string;
   score: number;
   discoveredFrom: string;
+  eventDate: string | null;
 };
 
 export type EventorResolverDebug = {
@@ -32,6 +34,13 @@ export type EventorResolverDebug = {
     score: number;
     discoveredFrom: string;
     verifiedByWinSplitsId: boolean;
+    eventDate: string | null;
+    dateMatches: boolean;
+    verificationMethod:
+      | "winsplits-database-id"
+      | "title-and-date"
+      | "title-only"
+      | null;
   }>;
 };
 
@@ -130,6 +139,39 @@ function createCalendarUrls(
   return [...new Set(urls)];
 }
 
+function parseEventDate(
+  value: string,
+): string | null {
+  const iso = value.match(
+    /\b(\d{4})-(\d{2})-(\d{2})\b/,
+  );
+
+  if (iso) {
+    return `${iso[1]}-${iso[2]}-${iso[3]}`;
+  }
+
+  const swedish = value.match(
+    /\b(\d{1,2})[./-](\d{1,2})[./-](\d{4})\b/,
+  );
+
+  if (swedish) {
+    return (
+      `${swedish[3]}-` +
+      `${swedish[2].padStart(2, "0")}-` +
+      swedish[1].padStart(2, "0")
+    );
+  }
+
+  return null;
+}
+
+function sameCalendarDay(
+  left: string | null,
+  right: string,
+): boolean {
+  return left === right;
+}
+
 function parseEventId(
   value: string,
 ): number | null {
@@ -166,6 +208,7 @@ function addCandidate(
   title: string,
   wantedTitle: string,
   discoveredFrom: string,
+  eventDate: string | null,
 ): void {
   const cleanedTitle =
     normalizeText(title) ||
@@ -184,6 +227,7 @@ function addCandidate(
       cleanedTitle,
     ),
     discoveredFrom,
+    eventDate,
   };
 
   const previous =
@@ -240,6 +284,7 @@ function extractCandidates(
       title,
       wantedTitle,
       discoveredFrom,
+      parseEventDate(row.text()),
     );
   });
 
@@ -297,6 +342,7 @@ function extractCandidates(
         contextText,
         wantedTitle,
         discoveredFrom,
+        parseEventDate(contextText),
       );
     }
   }
@@ -438,6 +484,17 @@ export async function resolveEventorEvent(
         candidate.discoveredFrom,
       verifiedByWinSplitsId:
         verified,
+      eventDate:
+        candidate.eventDate,
+      dateMatches:
+        sameCalendarDay(
+          candidate.eventDate,
+          date,
+        ),
+      verificationMethod:
+        verified
+          ? "winsplits-database-id"
+          : null,
     });
 
     if (verified) {
@@ -455,6 +512,9 @@ export async function resolveEventorEvent(
             candidate.score,
           verifiedByWinSplitsId:
             true,
+          verificationMethod:
+            "winsplits-database-id",
+          confidence: "high",
         },
         debug: {
           wantedTitle: title,
@@ -470,24 +530,67 @@ export async function resolveEventorEvent(
   }
 
   /*
-   * Fallback används bara när titeln är mycket
-   * tydlig och när ingen nästan lika bra kandidat
-   * finns.
+   * Eventor exponerar inte alltid WinSplits
+   * databaseId i den publika resultatvyn.
+   *
+   * Då godkänns en kandidat med hög säkerhet när:
+   * - titeln är en exakt eller nästan exakt match,
+   * - kandidaten ligger på DOMA-datumet,
+   * - ingen annan kandidat har en nästan lika bra titel.
    */
   const best = candidates[0];
   const second = candidates[1];
 
-  const unambiguous =
+  const exactTitle =
     Boolean(best) &&
-    best.score >= 90 &&
+    comparableText(best.title) ===
+      comparableText(title);
+
+  const titleAndDate =
+    Boolean(best) &&
+    best.score >= 94 &&
+    sameCalendarDay(
+      best.eventDate,
+      date,
+    ) &&
     (
       !second ||
       best.score - second.score >= 15
     );
 
+  const titleOnly =
+    Boolean(best) &&
+    exactTitle &&
+    best.score >= 100 &&
+    (
+      !second ||
+      best.score - second.score >= 25
+    );
+
+  const fallbackMethod =
+    titleAndDate
+      ? "title-and-date"
+      : titleOnly
+        ? "title-only"
+        : null;
+
+  if (best && fallbackMethod) {
+    const existing =
+      debugCandidates.find(
+        (candidate) =>
+          candidate.eventId ===
+          best.eventId,
+      );
+
+    if (existing) {
+      existing.verificationMethod =
+        fallbackMethod;
+    }
+  }
+
   return {
     match:
-      best && unambiguous
+      best && fallbackMethod
         ? {
             eventId: best.eventId,
             title: best.title,
@@ -498,6 +601,13 @@ export async function resolveEventorEvent(
             score: best.score,
             verifiedByWinSplitsId:
               false,
+            verificationMethod:
+              fallbackMethod,
+            confidence:
+              fallbackMethod ===
+              "title-and-date"
+                ? "high"
+                : "medium",
           }
         : null,
     debug: {
@@ -521,6 +631,15 @@ export async function resolveEventorEvent(
                   candidate.discoveredFrom,
                 verifiedByWinSplitsId:
                   false,
+                eventDate:
+                  candidate.eventDate,
+                dateMatches:
+                  sameCalendarDay(
+                    candidate.eventDate,
+                    date,
+                  ),
+                verificationMethod:
+                  null,
               }),
             ),
     },
