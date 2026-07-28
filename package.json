@@ -9,7 +9,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "import-race": "node scripts/import-race.mjs"
+    "import-race": "node scripts/import-race.mjs",
+    "migrate:doma": "tsx scripts/migrate-doma-batch.ts",
+    "migrate:doma:single": "tsx scripts/test-doma-enriched.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "cheerio": "^1.2.0",
-    "playwright": "^1.62.0"
+    "playwright": "^1.62.0",
+    "tsx": "^4.20.3"
   }
 }

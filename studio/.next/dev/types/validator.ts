@@ -74,10 +74,28 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/api/migration/doma/[mapId]/review/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/migration/doma/[mapId]/review">> = Specific
+  const handler = {} as typeof import("../../../src/app/api/migration/doma/[mapId]/review/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/api/migration/doma/[mapId]/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/migration/doma/[mapId]">> = Specific
   const handler = {} as typeof import("../../../src/app/api/migration/doma/[mapId]/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/api/migration/doma/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/migration/doma">> = Specific
+  const handler = {} as typeof import("../../../src/app/api/migration/doma/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
