@@ -14,6 +14,12 @@ export type DomaLink = {
   kind: DomaLinkKind;
 };
 
+export type DomaProperty = {
+  caption: string;
+  value: string | null;
+  url: string | null;
+};
+
 export type DomaCompetition = {
   mapId: number;
   sourceUrl: string;
@@ -21,18 +27,15 @@ export type DomaCompetition = {
   title: string | null;
   date: string | null;
   category: string | null;
-  organiser: string | null;
-  country: string | null;
-  discipline: string | null;
-  mapName: string | null;
 
-  comment: string | null;
+  relayLeg: number | null;
   runningTime: string | null;
   runningDistanceKm: number | null;
 
-  mapImageUrl: string | null;
-  routedMapImageUrl: string | null;
-  thumbnailUrl: string | null;
+  comment: string | null;
+
+  routeMapImageUrl: string | null;
+  blankMapImageUrl: string | null;
   kmlUrl: string | null;
 
   resultUrl: string | null;
@@ -40,10 +43,18 @@ export type DomaCompetition = {
   eventorUrl: string | null;
   liveloxUrl: string | null;
 
-  links: DomaLink[];
+  mapCenter: {
+    latitude: number;
+    longitude: number;
+  } | null;
 
+  imageWidth: number | null;
+  imageHeight: number | null;
+
+  properties: DomaProperty[];
+  links: DomaLink[];
   warnings: string[];
-  rawFields: Record<string, string>;
+
   rawHtml: string;
 };
 

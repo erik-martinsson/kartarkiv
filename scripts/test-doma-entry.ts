@@ -54,7 +54,7 @@ function display(
       : String(value);
 
   console.log(
-    `${label.padEnd(22, ".")}${rendered}`,
+    `${label.padEnd(24, ".")}${rendered}`,
   );
 }
 
@@ -77,23 +77,24 @@ async function main(): Promise<void> {
   display("Titel", competition.title);
   display("Datum", competition.date);
   display("Kategori", competition.category);
-  display("Arrangör", competition.organiser);
-  display("Disciplin", competition.discipline);
-  display("Kartnamn", competition.mapName);
+  display(
+    "Stafettsträcka",
+    competition.relayLeg,
+  );
   display("Tid", competition.runningTime);
   display(
-    "Distans",
+    "Löpt distans",
     competition.runningDistanceKm === null
       ? null
       : `${competition.runningDistanceKm} km`,
   );
   display(
-    "Kartbild",
-    status(competition.mapImageUrl),
+    "Karta med vägval",
+    status(competition.routeMapImageUrl),
   );
   display(
-    "Ritad karta",
-    status(competition.routedMapImageUrl),
+    "Blank karta",
+    status(competition.blankMapImageUrl),
   );
   display("KML", status(competition.kmlUrl));
   display(
@@ -108,6 +109,25 @@ async function main(): Promise<void> {
     "Livelox",
     status(competition.liveloxUrl),
   );
+
+  if (competition.mapCenter) {
+    display(
+      "Kartcentrum",
+      `${competition.mapCenter.latitude}, ` +
+        `${competition.mapCenter.longitude}`,
+    );
+  }
+
+  if (
+    competition.imageWidth !== null &&
+    competition.imageHeight !== null
+  ) {
+    display(
+      "Bildstorlek",
+      `${competition.imageWidth} × ` +
+        `${competition.imageHeight}`,
+    );
+  }
 
   const outputDirectory = path.resolve(
     process.cwd(),

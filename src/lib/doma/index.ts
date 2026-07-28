@@ -9,6 +9,7 @@ export type {
   DomaCompetition,
   DomaLink,
   DomaLinkKind,
+  DomaProperty,
   ReadDomaCompetitionOptions,
 } from "./types";
 
