@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Erik Martinssons digitala kartarkiv</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link rel="icon" type="image/png" href="gfx/favicon.png" />
+  <link rel="stylesheet" href="style.css?v=3.0.10" type="text/css" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.php?user=erik" />
+  <script src="js/jquery/jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=&amp;language=sv" type="text/javascript"></script>
+  <script src="js/overview_map.js?v=3.0.10" type="text/javascript"></script>
+    <script src="js/index.js?v=3.0.10" type="text/javascript"></script>
+  <script src="js/common.js?v=3.0.10" type="text/javascript"></script>
+</head>
+
+<body id="indexBody">
+<div id="wrapper">
+      <div id="topbar">
+        <div class="left">
+          <a href="index.php?user=erik">Digitalt kartarkiv för Erik Martinsson</a>
+          <span class="separator">|</span>
+                      <a href="login.php?user=erik">Logga in</a>
+                  </div>
+        <div class="right">
+          <a href="users.php">Alla användare</a>
+          <span class="separator">|</span>
+          Språk: <span id="currentLanguage"><img src="gfx/flag/sv.png" alt="Svenska" title="Svenska">Svenska<span id="languages"><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=cs"><img src="gfx/flag/cs.png" alt="Česky" title="Česky">Česky</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=da"><img src="gfx/flag/da.png" alt="Dansk" title="Dansk">Dansk</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=de"><img src="gfx/flag/de.png" alt="Deutsch" title="Deutsch">Deutsch</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=et"><img src="gfx/flag/et.png" alt="Eesti" title="Eesti">Eesti</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=en"><img src="gfx/flag/en.png" alt="English" title="English">English</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=es"><img src="gfx/flag/es.png" alt="Español" title="Español">Español</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=fr"><img src="gfx/flag/fr.png" alt="Français" title="Français">Français</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=it"><img src="gfx/flag/it.png" alt="Italiano" title="Italiano">Italiano</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=hu"><img src="gfx/flag/hu.png" alt="Magyar" title="Magyar">Magyar</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=nb"><img src="gfx/flag/nb.png" alt="Norsk" title="Norsk">Norsk</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=pl"><img src="gfx/flag/pl.png" alt="Polski" title="Polski">Polski</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=pt"><img src="gfx/flag/pt.png" alt="Português" title="Português">Português</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=ru"><img src="gfx/flag/ru.png" alt="Русский" title="Русский">Русский</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=sv"><img src="gfx/flag/sv.png" alt="Svenska" title="Svenska">Svenska</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=tr"><img src="gfx/flag/tr.png" alt="Türkçe" title="Türkçe">Türkçe</a><a href="?user=erik&categoryID=6&year=2013&filter=&displayMode=list&lang=ua"><img src="gfx/flag/ua.png" alt="Український" title="Український">Український</a></span></span>            <span class="separator">|</span>
+                    <a href="https://www.matstroeng.se/doma/?version=3.0.10">DOMA 3.0.10</a>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div id="content">
+<form method="get" action="/erik/doma/index.php?user=erik">
+<input type="hidden" name="user" value="erik"/>
+
+<div>
+  <img id="logo" src="gfx/book.png" alt="" />
+</div>
+
+<div id="rssIcon"><a href="rss.php?user=erik"><img src="gfx/feed-icon-28x28.png" alt="RSS-flöde" title="RSS-flöde" /></a></div>
+
+<div id="intro">
+<h1>Välkommen till Erik Martinssons kartarkiv!</h1>
+<p>På denna sida lägger jag in kartor, banor och vägval från mina orienteringslopp.</p>
+
+<div id="selectCategoryAndYear">
+  <label for="categoryID">Kategori:</label>
+  <select name="categoryID" id="categoryID">
+  <option value="0">[alla kategorier]</option><option value="5">Träning</option><option value="6" selected="selected">Tävling</option>  </select>
+
+  <label for="year">År:</label>
+  <select name="year" id="year">
+  <option value="0">[alla år]</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013" selected="selected">2013</option><option value="2012">2012</option><option value="2011">2011</option>  </select>
+
+  <label for="filter">Filter:</label>
+  <input type="text" name="filter" id="filter" value=""/>
+
+      <label for="displayMode">Visningsläge:</label>
+    <select name="displayMode" id="displayMode">
+      <option value="list" selected="selected">Lista</option>
+      <option value="overviewMap">Översiktskarta</option>
+    </select>
+  </div>
+</div>
+
+<div id="maps">
+
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=192"><img src="/erik/doma/map_images/192.thumbnail.jpg" alt="Novembersprinten, str6 (2013-11-02)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 2 november 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=192">Novembersprinten, str6</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+      Sträcka 6      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="192" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=192&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=191"><img src="/erik/doma/map_images/191.thumbnail.jpg" alt="Smålandskavlen, öppen, str3 (2013-10-27)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 27 oktober 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=191">Smålandskavlen, öppen, str3</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="191" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=191&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=190"><img src="/erik/doma/map_images/190.thumbnail.jpg" alt="Smålandskavlen, str2 (2013-10-26)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 26 oktober 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=190">Smålandskavlen, str2</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="190" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=190&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="comment">Nattsträcka.
+Helt ok. Onödiga misstag på två ställen (k3 och k7).</div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=189"><img src="/erik/doma/map_images/189.thumbnail.jpg" alt="Tranåsträffen (2013-10-19)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 19 oktober 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=189">Tranåsträffen</a>      </div>
+                  <div class="organiser">
+        SOL Tranås      </div>
+            <div class="discipline">
+      <a href="http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=28289&categoryId=2">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="189" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=189&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="comment">Miss på k6, k8 och k16 annars ok, fast långsamt.</div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=188"><img src="/erik/doma/map_images/188.thumbnail.jpg" alt="25-Manna, sträcka 24 (2013-10-12)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 12 oktober 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=188">25-Manna, sträcka 24</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+      Sträcka 24      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="188" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=188&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Bedrövlig insats!
+Framförallt partiet k10-13 då jag inte fokuserade på säker och stabil orientering. Tappade väldigt mycket...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Bedrövlig insats!<br />
+Framförallt partiet k10-13 då jag inte fokuserade på säker och stabil orientering. Tappade väldigt mycket tid samt placeringar och förstörde lagets chanser att komma topp-10.<br />
+Fan..</div>
+            </div>
+          </div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=187"><img src="/erik/doma/map_images/187.thumbnail.jpg" alt="Stafett-DM (2013-09-14)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 14 september 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=187">Stafett-DM</a>      </div>
+                  <div class="organiser">
+        Finspångs SOK      </div>
+            <div class="discipline">
+      Sträcka 1      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="187" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=187&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="comment">In som tvåa några sekunder efter Edvin. Fint vägval förbi TC på långsträckan till 11:an</div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=186"><img src="/erik/doma/map_images/186.thumbnail.jpg" alt="Medel-DM (2013-09-13)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 13 september 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=186">Medel-DM</a>      </div>
+                  <div class="organiser">
+        Finspång      </div>
+            <div class="discipline">
+      <a href="http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=27678&categoryId=1">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="186" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=186&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=185"><img src="/erik/doma/map_images/185.thumbnail.jpg" alt="O-ringen Etapp 5 H21L (2013-07-25)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        torsdag 25 juli 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=185">O-ringen Etapp 5 H21L</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="185" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=185&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="comment">En godkänd avslutning iallafall.</div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=184"><img src="/erik/doma/map_images/184.thumbnail.jpg" alt="O-ringen Etapp 4 H21L (2013-07-24)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        onsdag 24 juli 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=184">O-ringen Etapp 4 H21L</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="184" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=184&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=183"><img src="/erik/doma/map_images/183.thumbnail.jpg" alt="O-ringen Etapp 3 H21L (2013-07-23)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        tisdag 23 juli 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=183">O-ringen Etapp 3 H21L</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="183" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=183&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="comment">Fan vad kass man är...</div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=182"><img src="/erik/doma/map_images/182.thumbnail.jpg" alt="O-ringen Etapp 2 H21L (2013-07-21)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 21 juli 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=182">O-ringen Etapp 2 H21L</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="182" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=182&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=181"><img src="/erik/doma/map_images/181.thumbnail.jpg" alt="O-ringen Etapp 1 H21L (2013-07-20)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 20 juli 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=181">O-ringen Etapp 1 H21L</a>      </div>
+                  <div class="organiser">
+        Rödberget, Boden      </div>
+            <div class="discipline">
+            </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="181" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=181&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="comment">2 min på k1 och 5 min (!) på k4. Resten ok. </div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=177"><img src="/erik/doma/map_images/177.thumbnail.jpg" alt="Tjoget, str20 (2013-07-06)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 6 juli 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=177">Tjoget, str20</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="177" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=177&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="comment">Dåligt till 1,8,9,17 och 18. </div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=176"><img src="/erik/doma/map_images/176.thumbnail.jpg" alt="Tjust 2-dagars, dag 1 (2013-07-01)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        måndag 1 juli 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=176">Tjust 2-dagars, dag 1</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="176" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=176&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=172"><img src="/erik/doma/map_images/172.thumbnail.jpg" alt="Jukola str3 (2013-06-15)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 15 juni 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=172">Jukola str3</a>      </div>
+                  <div class="organiser">
+        Finland      </div>
+            <div class="discipline">
+      Sträcka 3      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="172" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=172&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=170"><img src="/erik/doma/map_images/170.thumbnail.jpg" alt="Lång-KM Linköpings OK (2013-05-31)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 31 maj 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=170">Lång-KM Linköpings OK</a>      </div>
+                  <div class="organiser">
+        Ödeshög      </div>
+            <div class="discipline">
+      <a href="http://www.lok.se/index.php?page=1366">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="170" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=170&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=167"><img src="/erik/doma/map_images/167.thumbnail.jpg" alt="Sprint-KM (2013-05-21)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        tisdag 21 maj 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=167">Sprint-KM</a>      </div>
+                  <div class="organiser">
+        Trädgårdsföreningen, LOK      </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25638&categoryId=1">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="167" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=167&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=166"><img src="/erik/doma/map_images/166.thumbnail.jpg" alt="Silva League och Närkekvartetten dag 4 H21E3 (2013-05-11)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 11 maj 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=166">Silva League och Närkekvartetten dag 4 H21E3</a>      </div>
+                  <div class="organiser">
+        Kilsbergen, Hagaby & KFUM Örebro      </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25421&categoryId=4">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="166" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=166&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=165"><img src="/erik/doma/map_images/165.thumbnail.jpg" alt="Silva League och Närkekvartetten dag 3 H21E2 (2013-05-10)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 10 maj 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=165">Silva League och Närkekvartetten dag 3 H21E2</a>      </div>
+                  <div class="organiser">
+        Kilsbergen, Hagaby & KFUM Örebro      </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25391&categoryId=3">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="165" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=165&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=164"><img src="/erik/doma/map_images/164.thumbnail.jpg" alt="Närkekvartetten dag 2 (2013-05-09)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        torsdag 9 maj 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=164">Närkekvartetten dag 2</a>      </div>
+                  <div class="organiser">
+        OK Tisaren      </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25382&categoryId=2">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="164" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=164&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=163"><img src="/erik/doma/map_images/163.thumbnail.jpg" alt="Närkekvartetten dag 1 (2013-05-08)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        onsdag 8 maj 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=163">Närkekvartetten dag 1</a>      </div>
+                  <div class="organiser">
+        OK Tisaren      </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25365&categoryId=1">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="163" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=163&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=162"><img src="/erik/doma/map_images/162.thumbnail.jpg" alt="Ljungsbrokampen (2013-05-06)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        måndag 6 maj 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=162">Ljungsbrokampen</a>      </div>
+                  <div class="organiser">
+        Flemma, OK Skogsströvarna      </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25328&categoryId=1">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="162" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=162&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=161"><img src="/erik/doma/map_images/161.thumbnail.jpg" alt="10Mila str3 (2013-05-04)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 4 maj 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=161">10Mila str3</a>      </div>
+                  <div class="organiser">
+        Attunda OK m.fl.      </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25270&categoryId=43">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="161" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=161&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=159"><img src="/erik/doma/map_images/159.thumbnail.jpg" alt="Björkforskampen (2013-04-27)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 27 april 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=159">Björkforskampen</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25140&categoryId=2">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="159" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=159&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="comment">Kass GPS.</div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=158"><img src="/erik/doma/map_images/158.thumbnail.jpg" alt="Stigtomtakavlen (2013-04-25)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        torsdag 25 april 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=158">Stigtomtakavlen</a>      </div>
+                  <div class="organiser">
+        OK Hällen      </div>
+            <div class="discipline">
+      Sträcka 1<span class="separator">|</span><a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25118&categoryId=5">Resultat</a>      </div>
+      
+            
+      
+    </div>
+
+              
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=156"><img src="/erik/doma/map_images/156.thumbnail.jpg" alt="SM Ultralång, publiktävling (2013-04-13)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 13 april 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=156">SM Ultralång, publiktävling</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=24898&categoryId=1">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="156" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=156&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="comment">Knapp styrfart pga stelt knä.
+Miss vid 4:an och 7:an, annars OK tekniskt sett.</div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=155"><img src="/erik/doma/map_images/155.thumbnail.jpg" alt="Gudhems vårtävling (2013-04-12)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 12 april 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=155">Gudhems vårtävling</a>      </div>
+                  <div class="organiser">
+        Gudhems IF      </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=24883&categoryId=1">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="155" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=155&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Liten krok till 2:an (30 sek). Till 9:an springer jag fram till en annan kontroll som låg typ 25m från den jag skulle ha. Blir f...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Liten krok till 2:an (30 sek). Till 9:an springer jag fram till en annan kontroll som låg typ 25m från den jag skulle ha. Blir förvånad att kontrollsiffran inte stämmer och lägger sedan bort 2min i ringen. Resten ok, men sakta.</div>
+            </div>
+          </div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=151"><img src="/erik/doma/map_images/151.thumbnail.jpg" alt="Öjetrampen (2013-03-30)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 30 mars 2013      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=151">Öjetrampen</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=24693&categoryId=8">Resultat</a>      </div>
+                <div class="listOverviewMapLink">
+            <input type="hidden" value="151" />
+            <a class="showOverviewMap" href="#">Visa översiktskarta</a>
+            <a class="hideOverviewMap" href="#">Dölj översiktskarta</a>
+            <span class="separator">|</span> 
+            <a href="export_kml.php?id=151&amp;format=kml" title="...för Google Earth...">KML</a>
+          </div>
+          
+            
+      
+    </div>
+
+              <div class="comment">Vanlig H21 pga knät.
+Misstag vid k5,k8 och k15. </div>
+                    <div class="clear"></div>
+      <div class="googleMapsContainer"></div>
+          
+    <div class="clear"></div>
+  </div>
+
+  </div>
+<div class="clear"></div>
+
+<p id="footer"></p>
+
+</form>
+</div>
+</div>
+</body>
+</html>

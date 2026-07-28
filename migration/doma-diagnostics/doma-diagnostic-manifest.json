@@ -1,151 +1,3228 @@
 {
-  "generatedAt": "2026-07-28T06:42:39.348Z",
-  "archiveUrl": "http://www.lid1.se/erik/doma/index.php?user=erik",
-  "index": {
-    "requestedUrl": "http://www.lid1.se/erik/doma/index.php?user=erik",
-    "finalUrl": "http://www.lid1.se/erik/doma/index.php?user=erik",
-    "status": 200,
-    "contentType": "text/html; charset=utf-8",
-    "title": "Erik Martinssons digitala kartarkiv",
-    "bodyText": "Digitalt kartarkiv för Erik Martinsson | Logga in Alla användare | Språk: SvenskaČeskyDanskDeutschEestiEnglishEspañolFrançaisItalianoMagyarNorskPolskiPortuguêsРусскийSvenskaTürkçeУкраїнський | DOMA 3.0.10 Välkommen till Erik Martinssons kartarkiv! På denna sida lägger jag in kartor, banor och vägval från mina orienteringslopp. Kategori: [alla kategorier]TräningTävling År: [alla år]202220212020201920182017201620152014201320122011 Filter: Det finns inga kartor som matchar sökningen.",
-    "links": [
-      {
-        "text": "Digitalt kartarkiv för Erik Martinsson",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
-        "title": ""
-      },
-      {
-        "text": "Logga in",
-        "href": "http://www.lid1.se/erik/doma/login.php?user=erik",
-        "title": ""
-      },
-      {
-        "text": "Alla användare",
-        "href": "http://www.lid1.se/erik/doma/users.php",
-        "title": ""
-      },
-      {
-        "text": "Česky",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=cs",
-        "title": ""
-      },
-      {
-        "text": "Dansk",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=da",
-        "title": ""
-      },
-      {
-        "text": "Deutsch",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=de",
-        "title": ""
-      },
-      {
-        "text": "Eesti",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=et",
-        "title": ""
-      },
-      {
-        "text": "English",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=en",
-        "title": ""
-      },
-      {
-        "text": "Español",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=es",
-        "title": ""
-      },
-      {
-        "text": "Français",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=fr",
-        "title": ""
-      },
-      {
-        "text": "Italiano",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=it",
-        "title": ""
-      },
-      {
-        "text": "Magyar",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=hu",
-        "title": ""
-      },
-      {
-        "text": "Norsk",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=nb",
-        "title": ""
-      },
-      {
-        "text": "Polski",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=pl",
-        "title": ""
-      },
-      {
-        "text": "Português",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=pt",
-        "title": ""
-      },
-      {
-        "text": "Русский",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=ru",
-        "title": ""
-      },
-      {
-        "text": "Svenska",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=sv",
-        "title": ""
-      },
-      {
-        "text": "Türkçe",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=tr",
-        "title": ""
-      },
-      {
-        "text": "Український",
-        "href": "http://www.lid1.se/erik/doma/index.php?user=erik&lang=ua",
-        "title": ""
-      },
-      {
-        "text": "DOMA 3.0.10",
-        "href": "https://www.matstroeng.se/doma/?version=3.0.10",
-        "title": ""
-      },
-      {
-        "text": "",
-        "href": "http://www.lid1.se/erik/doma/rss.php?user=erik",
-        "title": ""
-      }
-    ],
-    "imageUrls": [
-      "http://www.lid1.se/erik/doma/gfx/flag/sv.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/cs.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/da.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/de.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/et.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/en.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/es.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/fr.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/it.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/hu.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/nb.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/pl.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/pt.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/ru.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/tr.png",
-      "http://www.lid1.se/erik/doma/gfx/flag/ua.png",
-      "http://www.lid1.se/erik/doma/gfx/book.png",
-      "http://www.lid1.se/erik/doma/gfx/feed-icon-28x28.png"
-    ],
-    "frameUrls": []
+  "generatedAt": "2026-07-28T07:12:55.340Z",
+  "baseUrl": "http://www.lid1.se/erik/doma/index.php",
+  "user": "erik",
+  "competitionCategoryId": "6",
+  "years": {
+    "first": 2011,
+    "last": 2022
   },
-  "candidates": [],
-  "selectedCompetitionEntries": [],
+  "yearDiagnostics": [
+    {
+      "year": 2011,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2011&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 43,
+      "htmlFile": "doma-index-2011.html"
+    },
+    {
+      "year": 2012,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2012&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 46,
+      "htmlFile": "doma-index-2012.html"
+    },
+    {
+      "year": 2013,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2013&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 28,
+      "htmlFile": "doma-index-2013.html"
+    },
+    {
+      "year": 2014,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2014&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 39,
+      "htmlFile": "doma-index-2014.html"
+    },
+    {
+      "year": 2015,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2015&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 42,
+      "htmlFile": "doma-index-2015.html"
+    },
+    {
+      "year": 2016,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2016&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 36,
+      "htmlFile": "doma-index-2016.html"
+    },
+    {
+      "year": 2017,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2017&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 40,
+      "htmlFile": "doma-index-2017.html"
+    },
+    {
+      "year": 2018,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2018&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 46,
+      "htmlFile": "doma-index-2018.html"
+    },
+    {
+      "year": 2019,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2019&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 27,
+      "htmlFile": "doma-index-2019.html"
+    },
+    {
+      "year": 2020,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2020&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 4,
+      "htmlFile": "doma-index-2020.html"
+    },
+    {
+      "year": 2021,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2021&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 13,
+      "htmlFile": "doma-index-2021.html"
+    },
+    {
+      "year": 2022,
+      "url": "http://www.lid1.se/erik/doma/index.php?user=erik&categoryID=6&year=2022&filter=&displayMode=list",
+      "status": "ok",
+      "candidateCount": 16,
+      "htmlFile": "doma-index-2022.html"
+    }
+  ],
+  "candidates": [
+    {
+      "mapId": "2",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2",
+      "linkText": "JOK Chasing Sprint - Prolog",
+      "year": 2011
+    },
+    {
+      "mapId": "3",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3",
+      "linkText": "JOK Chasing Sprint - Final",
+      "year": 2011
+    },
+    {
+      "mapId": "4",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4",
+      "linkText": "Southern Champs - Del 1",
+      "year": 2011
+    },
+    {
+      "mapId": "5",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5",
+      "linkText": "Southern Champs - Del 2",
+      "year": 2011
+    },
+    {
+      "mapId": "7",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7",
+      "linkText": "Måsenstafetten",
+      "year": 2011
+    },
+    {
+      "mapId": "13",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=13",
+      "linkText": "Karta 13",
+      "year": 2011
+    },
+    {
+      "mapId": "14",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=14",
+      "linkText": "Svartnatta",
+      "year": 2011
+    },
+    {
+      "mapId": "15",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=15",
+      "linkText": "Kolmårdskavlen",
+      "year": 2011
+    },
+    {
+      "mapId": "17",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=17",
+      "linkText": "Elitserien Mora, Lång H21E2",
+      "year": 2011
+    },
+    {
+      "mapId": "19",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=19",
+      "linkText": "Kopparsprinten Stafett, Sträcka 2",
+      "year": 2011
+    },
+    {
+      "mapId": "20",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=20",
+      "linkText": "Kopparsprinten Stafett, Sträcka 4",
+      "year": 2011
+    },
+    {
+      "mapId": "21",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=21",
+      "linkText": "Elitserien Falun, Sprint, H21E2",
+      "year": 2011
+    },
+    {
+      "mapId": "22",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=22",
+      "linkText": "Jukola, str5",
+      "year": 2011
+    },
+    {
+      "mapId": "24",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=24",
+      "linkText": "Croatia Open Day 1",
+      "year": 2011
+    },
+    {
+      "mapId": "25",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=25",
+      "linkText": "Croatia Open Day 3 part 1",
+      "year": 2011
+    },
+    {
+      "mapId": "26",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=26",
+      "linkText": "Croatia Open Day 3 part 2",
+      "year": 2011
+    },
+    {
+      "mapId": "29",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=29",
+      "linkText": "Croatia Open Day 2",
+      "year": 2011
+    },
+    {
+      "mapId": "30",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=30",
+      "linkText": "Croatia Open Day 4",
+      "year": 2011
+    },
+    {
+      "mapId": "31",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=31",
+      "linkText": "Croatia Open Day 5",
+      "year": 2011
+    },
+    {
+      "mapId": "32",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=32",
+      "linkText": "O-ringen E1",
+      "year": 2011
+    },
+    {
+      "mapId": "33",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=33",
+      "linkText": "O-ringen E2",
+      "year": 2011
+    },
+    {
+      "mapId": "34",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=34",
+      "linkText": "O-ringen E3",
+      "year": 2011
+    },
+    {
+      "mapId": "35",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=35",
+      "linkText": "O-ringen E4",
+      "year": 2011
+    },
+    {
+      "mapId": "36",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=36",
+      "linkText": "O-ringen E5",
+      "year": 2011
+    },
+    {
+      "mapId": "37",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=37",
+      "linkText": "Stjärnorpssprinten",
+      "year": 2011
+    },
+    {
+      "mapId": "39",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=39",
+      "linkText": "Bockadubbeln, medel",
+      "year": 2011
+    },
+    {
+      "mapId": "40",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=40",
+      "linkText": "Bockadubbeln, lång",
+      "year": 2011
+    },
+    {
+      "mapId": "41",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=41",
+      "linkText": "Karta 41",
+      "year": 2011
+    },
+    {
+      "mapId": "42",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=42",
+      "linkText": "Karta 42",
+      "year": 2011
+    },
+    {
+      "mapId": "43",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=43",
+      "linkText": "Stafett-DM",
+      "year": 2011
+    },
+    {
+      "mapId": "44",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=44",
+      "linkText": "Bauertrampet, lång",
+      "year": 2011
+    },
+    {
+      "mapId": "45",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=45",
+      "linkText": "Bauertrampet, medel",
+      "year": 2011
+    },
+    {
+      "mapId": "46",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=46",
+      "linkText": "SM medel kval",
+      "year": 2011
+    },
+    {
+      "mapId": "47",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=47",
+      "linkText": "SM medel B-final",
+      "year": 2011
+    },
+    {
+      "mapId": "48",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=48",
+      "linkText": "SM stafett",
+      "year": 2011
+    },
+    {
+      "mapId": "52",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=52",
+      "linkText": "Karta 52",
+      "year": 2011
+    },
+    {
+      "mapId": "53",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=53",
+      "linkText": "Karta 53",
+      "year": 2011
+    },
+    {
+      "mapId": "55",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=55",
+      "linkText": "Smålandskavlen",
+      "year": 2011
+    },
+    {
+      "mapId": "56",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=56",
+      "linkText": "Smålandskavlen, Öppen",
+      "year": 2011
+    },
+    {
+      "mapId": "58",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=58",
+      "linkText": "Novembersprinten",
+      "year": 2011
+    },
+    {
+      "mapId": "59",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=59",
+      "linkText": "Svartåfejden",
+      "year": 2011
+    },
+    {
+      "mapId": "61",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=61",
+      "linkText": "Jättemilen del 1",
+      "year": 2011
+    },
+    {
+      "mapId": "62",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=62",
+      "linkText": "Jättemilen del 2",
+      "year": 2011
+    },
+    {
+      "mapId": "78",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=78",
+      "linkText": "Nyköpingsnatten, del 1",
+      "year": 2012
+    },
+    {
+      "mapId": "79",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=79",
+      "linkText": "Nyköpingsnatten, del 2",
+      "year": 2012
+    },
+    {
+      "mapId": "80",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=80",
+      "linkText": "Måsenstafetten",
+      "year": 2012
+    },
+    {
+      "mapId": "83",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=83",
+      "linkText": "Svartnatta",
+      "year": 2012
+    },
+    {
+      "mapId": "84",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=84",
+      "linkText": "Tibrotrippeln, natt",
+      "year": 2012
+    },
+    {
+      "mapId": "85",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=85",
+      "linkText": "Tibrotrippeln, medel",
+      "year": 2012
+    },
+    {
+      "mapId": "86",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=86",
+      "linkText": "Tibrotrippeln, lång",
+      "year": 2012
+    },
+    {
+      "mapId": "87",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=87",
+      "linkText": "Stigtomtakavlen",
+      "year": 2012
+    },
+    {
+      "mapId": "90",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=90",
+      "linkText": "Karta 90",
+      "year": 2012
+    },
+    {
+      "mapId": "91",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=91",
+      "linkText": "Ljungsbrokampen",
+      "year": 2012
+    },
+    {
+      "mapId": "92",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=92",
+      "linkText": "EOC Tour E1",
+      "year": 2012
+    },
+    {
+      "mapId": "93",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=93",
+      "linkText": "EOC Tour E2",
+      "year": 2012
+    },
+    {
+      "mapId": "94",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=94",
+      "linkText": "EOC Tour E3",
+      "year": 2012
+    },
+    {
+      "mapId": "95",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=95",
+      "linkText": "Karta 95",
+      "year": 2012
+    },
+    {
+      "mapId": "97",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=97",
+      "linkText": "Jukola, str 3",
+      "year": 2012
+    },
+    {
+      "mapId": "98",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=98",
+      "linkText": "Idre 3-Dagars E1",
+      "year": 2012
+    },
+    {
+      "mapId": "99",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=99",
+      "linkText": "Idre 3-Dagars E2",
+      "year": 2012
+    },
+    {
+      "mapId": "100",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=100",
+      "linkText": "Idre 3-Dagars E3",
+      "year": 2012
+    },
+    {
+      "mapId": "101",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=101",
+      "linkText": "Sälen 3+3 Sprint",
+      "year": 2012
+    },
+    {
+      "mapId": "102",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=102",
+      "linkText": "Sälen 3+3 Lång",
+      "year": 2012
+    },
+    {
+      "mapId": "103",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=103",
+      "linkText": "Sälen 3+3 Medel",
+      "year": 2012
+    },
+    {
+      "mapId": "105",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=105",
+      "linkText": "Eskilstuna Weekend E1",
+      "year": 2012
+    },
+    {
+      "mapId": "106",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=106",
+      "linkText": "Eskilstuna Weekend E2",
+      "year": 2012
+    },
+    {
+      "mapId": "107",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=107",
+      "linkText": "Eskilstuna Weekend E3",
+      "year": 2012
+    },
+    {
+      "mapId": "108",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=108",
+      "linkText": "Tjust 2-dagars Dag 1",
+      "year": 2012
+    },
+    {
+      "mapId": "110",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=110",
+      "linkText": "O-ringen H21L E1",
+      "year": 2012
+    },
+    {
+      "mapId": "111",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=111",
+      "linkText": "O-ringen H21L E2",
+      "year": 2012
+    },
+    {
+      "mapId": "112",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=112",
+      "linkText": "O-ringen H21L E3",
+      "year": 2012
+    },
+    {
+      "mapId": "113",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=113",
+      "linkText": "O-ringen H21L E4",
+      "year": 2012
+    },
+    {
+      "mapId": "114",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=114",
+      "linkText": "O-ringen H21L E5",
+      "year": 2012
+    },
+    {
+      "mapId": "115",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=115",
+      "linkText": "Strärnorpssprinten",
+      "year": 2012
+    },
+    {
+      "mapId": "116",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=116",
+      "linkText": "Karta 116",
+      "year": 2012
+    },
+    {
+      "mapId": "117",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=117",
+      "linkText": "Sprint-SM kval H21C",
+      "year": 2012
+    },
+    {
+      "mapId": "118",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=118",
+      "linkText": "Sprint-SM Final",
+      "year": 2012
+    },
+    {
+      "mapId": "119",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=119",
+      "linkText": "Karta 119",
+      "year": 2012
+    },
+    {
+      "mapId": "120",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=120",
+      "linkText": "Karta 120",
+      "year": 2012
+    },
+    {
+      "mapId": "121",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=121",
+      "linkText": "Karta 121",
+      "year": 2012
+    },
+    {
+      "mapId": "122",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=122",
+      "linkText": "Stafett-DM",
+      "year": 2012
+    },
+    {
+      "mapId": "123",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=123",
+      "linkText": "Medel-SM Kval (H21A)",
+      "year": 2012
+    },
+    {
+      "mapId": "124",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=124",
+      "linkText": "Medel-SM Final (H21B)",
+      "year": 2012
+    },
+    {
+      "mapId": "125",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=125",
+      "linkText": "Stafett-SM",
+      "year": 2012
+    },
+    {
+      "mapId": "126",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=126",
+      "linkText": "25-Manna str.25",
+      "year": 2012
+    },
+    {
+      "mapId": "127",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=127",
+      "linkText": "Karta 127",
+      "year": 2012
+    },
+    {
+      "mapId": "130",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=130",
+      "linkText": "Smålandskavlen, natt",
+      "year": 2012
+    },
+    {
+      "mapId": "131",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=131",
+      "linkText": "Smålandskavlen, Öppen",
+      "year": 2012
+    },
+    {
+      "mapId": "132",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=132",
+      "linkText": "Sydsvenska 2-milen",
+      "year": 2012
+    },
+    {
+      "mapId": "151",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=151",
+      "linkText": "Öjetrampen",
+      "year": 2013
+    },
+    {
+      "mapId": "155",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=155",
+      "linkText": "Gudhems vårtävling",
+      "year": 2013
+    },
+    {
+      "mapId": "156",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=156",
+      "linkText": "SM Ultralång, publiktävling",
+      "year": 2013
+    },
+    {
+      "mapId": "158",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=158",
+      "linkText": "Stigtomtakavlen",
+      "year": 2013
+    },
+    {
+      "mapId": "159",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=159",
+      "linkText": "Björkforskampen",
+      "year": 2013
+    },
+    {
+      "mapId": "161",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=161",
+      "linkText": "10Mila str3",
+      "year": 2013
+    },
+    {
+      "mapId": "162",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=162",
+      "linkText": "Ljungsbrokampen",
+      "year": 2013
+    },
+    {
+      "mapId": "163",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=163",
+      "linkText": "Närkekvartetten dag 1",
+      "year": 2013
+    },
+    {
+      "mapId": "164",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=164",
+      "linkText": "Närkekvartetten dag 2",
+      "year": 2013
+    },
+    {
+      "mapId": "165",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=165",
+      "linkText": "Silva League och Närkekvartetten dag 3 H21E2",
+      "year": 2013
+    },
+    {
+      "mapId": "166",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=166",
+      "linkText": "Silva League och Närkekvartetten dag 4 H21E3",
+      "year": 2013
+    },
+    {
+      "mapId": "167",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=167",
+      "linkText": "Karta 167",
+      "year": 2013
+    },
+    {
+      "mapId": "170",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=170",
+      "linkText": "Lång-KM Linköpings OK",
+      "year": 2013
+    },
+    {
+      "mapId": "172",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=172",
+      "linkText": "Jukola str3",
+      "year": 2013
+    },
+    {
+      "mapId": "176",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=176",
+      "linkText": "Tjust 2-dagars, dag 1",
+      "year": 2013
+    },
+    {
+      "mapId": "177",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=177",
+      "linkText": "Tjoget, str20",
+      "year": 2013
+    },
+    {
+      "mapId": "181",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=181",
+      "linkText": "O-ringen Etapp 1 H21L",
+      "year": 2013
+    },
+    {
+      "mapId": "182",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=182",
+      "linkText": "O-ringen Etapp 2 H21L",
+      "year": 2013
+    },
+    {
+      "mapId": "183",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=183",
+      "linkText": "O-ringen Etapp 3 H21L",
+      "year": 2013
+    },
+    {
+      "mapId": "184",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=184",
+      "linkText": "O-ringen Etapp 4 H21L",
+      "year": 2013
+    },
+    {
+      "mapId": "185",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=185",
+      "linkText": "O-ringen Etapp 5 H21L",
+      "year": 2013
+    },
+    {
+      "mapId": "186",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=186",
+      "linkText": "Karta 186",
+      "year": 2013
+    },
+    {
+      "mapId": "187",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=187",
+      "linkText": "Stafett-DM",
+      "year": 2013
+    },
+    {
+      "mapId": "188",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=188",
+      "linkText": "25-Manna, sträcka 24",
+      "year": 2013
+    },
+    {
+      "mapId": "189",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=189",
+      "linkText": "Tranåsträffen",
+      "year": 2013
+    },
+    {
+      "mapId": "190",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=190",
+      "linkText": "Smålandskavlen, str2",
+      "year": 2013
+    },
+    {
+      "mapId": "191",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=191",
+      "linkText": "Smålandskavlen, öppen, str3",
+      "year": 2013
+    },
+    {
+      "mapId": "192",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=192",
+      "linkText": "Novembersprinten, str6",
+      "year": 2013
+    },
+    {
+      "mapId": "202",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=202",
+      "linkText": "Laxträffen",
+      "year": 2014
+    },
+    {
+      "mapId": "203",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=203",
+      "linkText": "Måsenstafetten",
+      "year": 2014
+    },
+    {
+      "mapId": "205",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=205",
+      "linkText": "Tibrotrippeln Natt",
+      "year": 2014
+    },
+    {
+      "mapId": "206",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=206",
+      "linkText": "Tibrotrippeln Lång",
+      "year": 2014
+    },
+    {
+      "mapId": "207",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=207",
+      "linkText": "Tibrotrippeln Medel",
+      "year": 2014
+    },
+    {
+      "mapId": "208",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=208",
+      "linkText": "Karta 208",
+      "year": 2014
+    },
+    {
+      "mapId": "209",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=209",
+      "linkText": "Stigtomtakaveln",
+      "year": 2014
+    },
+    {
+      "mapId": "210",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=210",
+      "linkText": "Kolmårdsmedeln",
+      "year": 2014
+    },
+    {
+      "mapId": "211",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=211",
+      "linkText": "Kolmårdskavlen",
+      "year": 2014
+    },
+    {
+      "mapId": "212",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=212",
+      "linkText": "Karta 212",
+      "year": 2014
+    },
+    {
+      "mapId": "213",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=213",
+      "linkText": "Ljungsbrokampen",
+      "year": 2014
+    },
+    {
+      "mapId": "216",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=216",
+      "linkText": "Peking-Duon - Sprint",
+      "year": 2014
+    },
+    {
+      "mapId": "217",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=217",
+      "linkText": "Peking-Duon - Medel",
+      "year": 2014
+    },
+    {
+      "mapId": "219",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=219",
+      "linkText": "Karta 219",
+      "year": 2014
+    },
+    {
+      "mapId": "220",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=220",
+      "linkText": "Fjällsprinten - JK40",
+      "year": 2014
+    },
+    {
+      "mapId": "221",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=221",
+      "linkText": "Idre 3-dagars Etapp 1",
+      "year": 2014
+    },
+    {
+      "mapId": "222",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=222",
+      "linkText": "Idre 3-dagars Etapp 2",
+      "year": 2014
+    },
+    {
+      "mapId": "223",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=223",
+      "linkText": "Idre 3-dagars Etapp 3",
+      "year": 2014
+    },
+    {
+      "mapId": "224",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=224",
+      "linkText": "Sälen 3+3 Långdistans",
+      "year": 2014
+    },
+    {
+      "mapId": "225",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=225",
+      "linkText": "Sälen 3+3 Etapp 1",
+      "year": 2014
+    },
+    {
+      "mapId": "226",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=226",
+      "linkText": "Sälen 3+3 Etapp 3",
+      "year": 2014
+    },
+    {
+      "mapId": "227",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=227",
+      "linkText": "Karta 227",
+      "year": 2014
+    },
+    {
+      "mapId": "229",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=229",
+      "linkText": "O-ringen E1 H21L",
+      "year": 2014
+    },
+    {
+      "mapId": "230",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=230",
+      "linkText": "O-ringen E2 H21L",
+      "year": 2014
+    },
+    {
+      "mapId": "231",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=231",
+      "linkText": "O-ringen E3 H21L",
+      "year": 2014
+    },
+    {
+      "mapId": "232",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=232",
+      "linkText": "O-ringen E4 H21L",
+      "year": 2014
+    },
+    {
+      "mapId": "233",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=233",
+      "linkText": "O-ringen E5 H21L",
+      "year": 2014
+    },
+    {
+      "mapId": "235",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=235",
+      "linkText": "Stjärnorpssprinten",
+      "year": 2014
+    },
+    {
+      "mapId": "237",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=237",
+      "linkText": "LOKs Medel-KM",
+      "year": 2014
+    },
+    {
+      "mapId": "238",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=238",
+      "linkText": "Kolmårdsträffen",
+      "year": 2014
+    },
+    {
+      "mapId": "240",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=240",
+      "linkText": "Ombergsjakten",
+      "year": 2014
+    },
+    {
+      "mapId": "241",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=241",
+      "linkText": "Karta 241",
+      "year": 2014
+    },
+    {
+      "mapId": "242",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=242",
+      "linkText": "Karta 242",
+      "year": 2014
+    },
+    {
+      "mapId": "243",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=243",
+      "linkText": "Karta 243",
+      "year": 2014
+    },
+    {
+      "mapId": "244",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=244",
+      "linkText": "Stafett-DM",
+      "year": 2014
+    },
+    {
+      "mapId": "245",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=245",
+      "linkText": "Karta 245",
+      "year": 2014
+    },
+    {
+      "mapId": "248",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=248",
+      "linkText": "Smålandskavlen",
+      "year": 2014
+    },
+    {
+      "mapId": "249",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=249",
+      "linkText": "Smålandskavlen_öppen",
+      "year": 2014
+    },
+    {
+      "mapId": "250",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=250",
+      "linkText": "Novembersprinten",
+      "year": 2014
+    },
+    {
+      "mapId": "259",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=259",
+      "linkText": "Måsenstafetten",
+      "year": 2015
+    },
+    {
+      "mapId": "260",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=260",
+      "linkText": "Svartnatta",
+      "year": 2015
+    },
+    {
+      "mapId": "261",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=261",
+      "linkText": "NAIS-träffen lång",
+      "year": 2015
+    },
+    {
+      "mapId": "262",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=262",
+      "linkText": "Kolmårdsmedeln",
+      "year": 2015
+    },
+    {
+      "mapId": "263",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=263",
+      "linkText": "Kolmårdskaveln",
+      "year": 2015
+    },
+    {
+      "mapId": "264",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=264",
+      "linkText": "TibroTrippeln, Natt",
+      "year": 2015
+    },
+    {
+      "mapId": "265",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=265",
+      "linkText": "TibroTrippeln, Lång, del1",
+      "year": 2015
+    },
+    {
+      "mapId": "266",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=266",
+      "linkText": "TibroTrippeln, Lång, del2",
+      "year": 2015
+    },
+    {
+      "mapId": "267",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=267",
+      "linkText": "TibroTrippeln, Medel",
+      "year": 2015
+    },
+    {
+      "mapId": "268",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=268",
+      "linkText": "Stigtomtakavlen",
+      "year": 2015
+    },
+    {
+      "mapId": "269",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=269",
+      "linkText": "Finspångsorienteringen",
+      "year": 2015
+    },
+    {
+      "mapId": "270",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=270",
+      "linkText": "Tisarträffen, medel",
+      "year": 2015
+    },
+    {
+      "mapId": "271",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=271",
+      "linkText": "Ljungsbrokampen",
+      "year": 2015
+    },
+    {
+      "mapId": "272",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=272",
+      "linkText": "10Mila, str 3",
+      "year": 2015
+    },
+    {
+      "mapId": "273",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=273",
+      "linkText": "Silva League #3, sprint",
+      "year": 2015
+    },
+    {
+      "mapId": "274",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=274",
+      "linkText": "Silva League #4, medel H21E2",
+      "year": 2015
+    },
+    {
+      "mapId": "275",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=275",
+      "linkText": "OL-touren E3",
+      "year": 2015
+    },
+    {
+      "mapId": "276",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=276",
+      "linkText": "Silva League #5, Lång H21E2",
+      "year": 2015
+    },
+    {
+      "mapId": "278",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=278",
+      "linkText": "Sprint-DM Östergötland",
+      "year": 2015
+    },
+    {
+      "mapId": "281",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=281",
+      "linkText": "Tjoget, str8",
+      "year": 2015
+    },
+    {
+      "mapId": "282",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=282",
+      "linkText": "Gotland 3-dagars, E1",
+      "year": 2015
+    },
+    {
+      "mapId": "283",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=283",
+      "linkText": "Gotland 3-dagars, E2",
+      "year": 2015
+    },
+    {
+      "mapId": "284",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=284",
+      "linkText": "Gotland 3-dagars, E3",
+      "year": 2015
+    },
+    {
+      "mapId": "287",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=287",
+      "linkText": "O-ringen E1, H21E",
+      "year": 2015
+    },
+    {
+      "mapId": "288",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=288",
+      "linkText": "O-ringen E2, H21E",
+      "year": 2015
+    },
+    {
+      "mapId": "289",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=289",
+      "linkText": "O-ringen E3, H21E",
+      "year": 2015
+    },
+    {
+      "mapId": "290",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=290",
+      "linkText": "O-ringen E4, H21E",
+      "year": 2015
+    },
+    {
+      "mapId": "291",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=291",
+      "linkText": "O-ringen E5, H21E",
+      "year": 2015
+    },
+    {
+      "mapId": "292",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=292",
+      "linkText": "Stjärnorpssprinten",
+      "year": 2015
+    },
+    {
+      "mapId": "293",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=293",
+      "linkText": "Åtvidkampen",
+      "year": 2015
+    },
+    {
+      "mapId": "294",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=294",
+      "linkText": "Tjällmoträffen",
+      "year": 2015
+    },
+    {
+      "mapId": "296",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=296",
+      "linkText": "Medel-DM Östergötland",
+      "year": 2015
+    },
+    {
+      "mapId": "297",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=297",
+      "linkText": "Stafett-DM, Östergötland",
+      "year": 2015
+    },
+    {
+      "mapId": "298",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=298",
+      "linkText": "Natt-DM Östergötland",
+      "year": 2015
+    },
+    {
+      "mapId": "299",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=299",
+      "linkText": "Lång-DM Östergötland",
+      "year": 2015
+    },
+    {
+      "mapId": "300",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=300",
+      "linkText": "Mullsjö SOK",
+      "year": 2015
+    },
+    {
+      "mapId": "302",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=302",
+      "linkText": "SM-stafett H21",
+      "year": 2015
+    },
+    {
+      "mapId": "303",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=303",
+      "linkText": "SM-Medel kval H21B",
+      "year": 2015
+    },
+    {
+      "mapId": "304",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=304",
+      "linkText": "SM-Medel final H21",
+      "year": 2015
+    },
+    {
+      "mapId": "306",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=306",
+      "linkText": "Smålandskavlen",
+      "year": 2015
+    },
+    {
+      "mapId": "307",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=307",
+      "linkText": "Smålandskavlen, öppen",
+      "year": 2015
+    },
+    {
+      "mapId": "308",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=308",
+      "linkText": "Novemberpsprinten",
+      "year": 2015
+    },
+    {
+      "mapId": "315",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=315",
+      "linkText": "Anderstorps OK",
+      "year": 2016
+    },
+    {
+      "mapId": "316",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=316",
+      "linkText": "Gudhems vårtävling",
+      "year": 2016
+    },
+    {
+      "mapId": "317",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=317",
+      "linkText": "Bauernatta",
+      "year": 2016
+    },
+    {
+      "mapId": "319",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=319",
+      "linkText": "Kolmårdskavlen",
+      "year": 2016
+    },
+    {
+      "mapId": "321",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=321",
+      "linkText": "Finspångsorienteringen, medel",
+      "year": 2016
+    },
+    {
+      "mapId": "322",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=322",
+      "linkText": "Finspångsorienteringen, lång",
+      "year": 2016
+    },
+    {
+      "mapId": "323",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=323",
+      "linkText": "Stigtomtakavlen",
+      "year": 2016
+    },
+    {
+      "mapId": "324",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=324",
+      "linkText": "Ljungsbrokampen",
+      "year": 2016
+    },
+    {
+      "mapId": "325",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=325",
+      "linkText": "Ulricehamns OK",
+      "year": 2016
+    },
+    {
+      "mapId": "326",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=326",
+      "linkText": "Hökensåsracet, lång",
+      "year": 2016
+    },
+    {
+      "mapId": "327",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=327",
+      "linkText": "10MILA, str3",
+      "year": 2016
+    },
+    {
+      "mapId": "328",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=328",
+      "linkText": "Pekingduon, sprint",
+      "year": 2016
+    },
+    {
+      "mapId": "329",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=329",
+      "linkText": "Pekingduon, medel",
+      "year": 2016
+    },
+    {
+      "mapId": "330",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=330",
+      "linkText": "Karta 330",
+      "year": 2016
+    },
+    {
+      "mapId": "331",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=331",
+      "linkText": "Sprint-SM Kval",
+      "year": 2016
+    },
+    {
+      "mapId": "332",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=332",
+      "linkText": "Sprint-SM Final",
+      "year": 2016
+    },
+    {
+      "mapId": "333",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=333",
+      "linkText": "SM, sprintstafett",
+      "year": 2016
+    },
+    {
+      "mapId": "335",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=335",
+      "linkText": "O-ringen H21E2 E1",
+      "year": 2016
+    },
+    {
+      "mapId": "336",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=336",
+      "linkText": "O-ringen H21E2 E2",
+      "year": 2016
+    },
+    {
+      "mapId": "337",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=337",
+      "linkText": "O-ringen H21E2 E3",
+      "year": 2016
+    },
+    {
+      "mapId": "338",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=338",
+      "linkText": "O-ringen H21E2 E4",
+      "year": 2016
+    },
+    {
+      "mapId": "339",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=339",
+      "linkText": "O-ringen H21E2 E5",
+      "year": 2016
+    },
+    {
+      "mapId": "341",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=341",
+      "linkText": "TibroTrippeln, sprint",
+      "year": 2016
+    },
+    {
+      "mapId": "342",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=342",
+      "linkText": "TibroTrippeln, medel",
+      "year": 2016
+    },
+    {
+      "mapId": "343",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=343",
+      "linkText": "TibroTrippeln, lång",
+      "year": 2016
+    },
+    {
+      "mapId": "344",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=344",
+      "linkText": "Tjällmoträffen",
+      "year": 2016
+    },
+    {
+      "mapId": "345",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=345",
+      "linkText": "Askersundsträffen",
+      "year": 2016
+    },
+    {
+      "mapId": "346",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=346",
+      "linkText": "Avesta Propagandan",
+      "year": 2016
+    },
+    {
+      "mapId": "347",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=347",
+      "linkText": "Ramunderträffen",
+      "year": 2016
+    },
+    {
+      "mapId": "349",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=349",
+      "linkText": "Karta 349",
+      "year": 2016
+    },
+    {
+      "mapId": "350",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=350",
+      "linkText": "Karta 350",
+      "year": 2016
+    },
+    {
+      "mapId": "351",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=351",
+      "linkText": "Medel-DM Östergötland",
+      "year": 2016
+    },
+    {
+      "mapId": "352",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=352",
+      "linkText": "DM-Stafett Östergötland",
+      "year": 2016
+    },
+    {
+      "mapId": "354",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=354",
+      "linkText": "Karta 354",
+      "year": 2016
+    },
+    {
+      "mapId": "355",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=355",
+      "linkText": "25-Manna str.5",
+      "year": 2016
+    },
+    {
+      "mapId": "356",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=356",
+      "linkText": "Smålandskavlen",
+      "year": 2016
+    },
+    {
+      "mapId": "361",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=361",
+      "linkText": "Västkuststafetten",
+      "year": 2017
+    },
+    {
+      "mapId": "362",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=362",
+      "linkText": "TibroTrippeln - Natt",
+      "year": 2017
+    },
+    {
+      "mapId": "363",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=363",
+      "linkText": "TibroTrippeln - Lång",
+      "year": 2017
+    },
+    {
+      "mapId": "364",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=364",
+      "linkText": "Stigtomtakavlen",
+      "year": 2017
+    },
+    {
+      "mapId": "365",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=365",
+      "linkText": "Kolmårdsmedeln",
+      "year": 2017
+    },
+    {
+      "mapId": "366",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=366",
+      "linkText": "Kolmårdskavlen",
+      "year": 2017
+    },
+    {
+      "mapId": "367",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=367",
+      "linkText": "Karta 367",
+      "year": 2017
+    },
+    {
+      "mapId": "368",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=368",
+      "linkText": "10Mila str 2",
+      "year": 2017
+    },
+    {
+      "mapId": "369",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=369",
+      "linkText": "Ljungsbrokampen",
+      "year": 2017
+    },
+    {
+      "mapId": "370",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=370",
+      "linkText": "Staffans Minne",
+      "year": 2017
+    },
+    {
+      "mapId": "371",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=371",
+      "linkText": "Pekingduon sprint",
+      "year": 2017
+    },
+    {
+      "mapId": "372",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=372",
+      "linkText": "Pekingduon medel",
+      "year": 2017
+    },
+    {
+      "mapId": "373",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=373",
+      "linkText": "IFK Mora Långdistans",
+      "year": 2017
+    },
+    {
+      "mapId": "374",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=374",
+      "linkText": "IFK Mora Medeldistans",
+      "year": 2017
+    },
+    {
+      "mapId": "375",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=375",
+      "linkText": "IFK Mora Sprint",
+      "year": 2017
+    },
+    {
+      "mapId": "376",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=376",
+      "linkText": "Sprint-SM Kval",
+      "year": 2017
+    },
+    {
+      "mapId": "377",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=377",
+      "linkText": "Sprint-SM Final",
+      "year": 2017
+    },
+    {
+      "mapId": "378",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=378",
+      "linkText": "SM Sprintstafett",
+      "year": 2017
+    },
+    {
+      "mapId": "380",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=380",
+      "linkText": "Karta 380",
+      "year": 2017
+    },
+    {
+      "mapId": "381",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=381",
+      "linkText": "Karta 381",
+      "year": 2017
+    },
+    {
+      "mapId": "383",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=383",
+      "linkText": "O-ringen E1 H21L",
+      "year": 2017
+    },
+    {
+      "mapId": "384",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=384",
+      "linkText": "O-ringen E2 H21L",
+      "year": 2017
+    },
+    {
+      "mapId": "385",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=385",
+      "linkText": "O-ringen E3 H21L",
+      "year": 2017
+    },
+    {
+      "mapId": "386",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=386",
+      "linkText": "O-ringen E4 H21L",
+      "year": 2017
+    },
+    {
+      "mapId": "387",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=387",
+      "linkText": "O-ringen E5 H21L",
+      "year": 2017
+    },
+    {
+      "mapId": "388",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=388",
+      "linkText": "Ultraträffen, medel",
+      "year": 2017
+    },
+    {
+      "mapId": "389",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=389",
+      "linkText": "Ultraträffen, lång",
+      "year": 2017
+    },
+    {
+      "mapId": "390",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=390",
+      "linkText": "Kolmårdsträffen",
+      "year": 2017
+    },
+    {
+      "mapId": "391",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=391",
+      "linkText": "Jönköpings OK",
+      "year": 2017
+    },
+    {
+      "mapId": "392",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=392",
+      "linkText": "Karta 392",
+      "year": 2017
+    },
+    {
+      "mapId": "393",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=393",
+      "linkText": "Stafett-DM",
+      "year": 2017
+    },
+    {
+      "mapId": "394",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=394",
+      "linkText": "Karta 394",
+      "year": 2017
+    },
+    {
+      "mapId": "395",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=395",
+      "linkText": "Karta 395",
+      "year": 2017
+    },
+    {
+      "mapId": "397",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=397",
+      "linkText": "Medel-SM, kval H21C",
+      "year": 2017
+    },
+    {
+      "mapId": "398",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=398",
+      "linkText": "Medel-SM, final H21C",
+      "year": 2017
+    },
+    {
+      "mapId": "399",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=399",
+      "linkText": "Stafett-SM",
+      "year": 2017
+    },
+    {
+      "mapId": "400",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=400",
+      "linkText": "Stafett-SM",
+      "year": 2017
+    },
+    {
+      "mapId": "401",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=401",
+      "linkText": "Karta 401",
+      "year": 2017
+    },
+    {
+      "mapId": "402",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=402",
+      "linkText": "Smålandskavlen",
+      "year": 2017
+    },
+    {
+      "mapId": "403",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=403",
+      "linkText": "Kolmårdssprinten",
+      "year": 2017
+    },
+    {
+      "mapId": "405",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=405",
+      "linkText": "Karta 405",
+      "year": 2018
+    },
+    {
+      "mapId": "406",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=406",
+      "linkText": "Svartåfejden",
+      "year": 2018
+    },
+    {
+      "mapId": "407",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=407",
+      "linkText": "Ljungsbrokampen",
+      "year": 2018
+    },
+    {
+      "mapId": "408",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=408",
+      "linkText": "Närkekvartetten, dag 1",
+      "year": 2018
+    },
+    {
+      "mapId": "409",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=409",
+      "linkText": "Närkekvartetten, dag 2",
+      "year": 2018
+    },
+    {
+      "mapId": "410",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=410",
+      "linkText": "Närkekvartetten, dag 3",
+      "year": 2018
+    },
+    {
+      "mapId": "411",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=411",
+      "linkText": "Närkekvartetten, dag 4",
+      "year": 2018
+    },
+    {
+      "mapId": "412",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=412",
+      "linkText": "Staffans minne",
+      "year": 2018
+    },
+    {
+      "mapId": "414",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=414",
+      "linkText": "Pekingduon. sprint",
+      "year": 2018
+    },
+    {
+      "mapId": "415",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=415",
+      "linkText": "Pekingduon, medel",
+      "year": 2018
+    },
+    {
+      "mapId": "416",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=416",
+      "linkText": "Stråkensprinten, E1",
+      "year": 2018
+    },
+    {
+      "mapId": "417",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=417",
+      "linkText": "Stråkensprinten, E2",
+      "year": 2018
+    },
+    {
+      "mapId": "418",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=418",
+      "linkText": "Gällstads sprint",
+      "year": 2018
+    },
+    {
+      "mapId": "419",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=419",
+      "linkText": "Sprint-SM, kval",
+      "year": 2018
+    },
+    {
+      "mapId": "420",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=420",
+      "linkText": "Sprint-SM, final",
+      "year": 2018
+    },
+    {
+      "mapId": "421",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=421",
+      "linkText": "Sprint-SM, stafett",
+      "year": 2018
+    },
+    {
+      "mapId": "422",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=422",
+      "linkText": "Karta 422",
+      "year": 2018
+    },
+    {
+      "mapId": "423",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=423",
+      "linkText": "Karta 423",
+      "year": 2018
+    },
+    {
+      "mapId": "424",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=424",
+      "linkText": "Karta 424",
+      "year": 2018
+    },
+    {
+      "mapId": "425",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=425",
+      "linkText": "Eskilstuna Weekend E1",
+      "year": 2018
+    },
+    {
+      "mapId": "426",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=426",
+      "linkText": "Eskilstuna Weekend E2",
+      "year": 2018
+    },
+    {
+      "mapId": "427",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=427",
+      "linkText": "Eskilstuna Weekend E3",
+      "year": 2018
+    },
+    {
+      "mapId": "428",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=428",
+      "linkText": "O-ringen E1 H21L",
+      "year": 2018
+    },
+    {
+      "mapId": "429",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=429",
+      "linkText": "O-ringen E2 H21L",
+      "year": 2018
+    },
+    {
+      "mapId": "430",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=430",
+      "linkText": "O-ringen E3 H21L",
+      "year": 2018
+    },
+    {
+      "mapId": "431",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=431",
+      "linkText": "O-ringen E4 H21L",
+      "year": 2018
+    },
+    {
+      "mapId": "432",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=432",
+      "linkText": "O-ringen E5 H21L",
+      "year": 2018
+    },
+    {
+      "mapId": "433",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=433",
+      "linkText": "Grövelsjöorienteringen - prologen",
+      "year": 2018
+    },
+    {
+      "mapId": "434",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=434",
+      "linkText": "Grövelsjöorienteringen - E1",
+      "year": 2018
+    },
+    {
+      "mapId": "435",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=435",
+      "linkText": "Grövelsjöorienteringen - E2",
+      "year": 2018
+    },
+    {
+      "mapId": "436",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=436",
+      "linkText": "Grövelsjöorienteringen - E3",
+      "year": 2018
+    },
+    {
+      "mapId": "437",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=437",
+      "linkText": "Tjällmoträffen",
+      "year": 2018
+    },
+    {
+      "mapId": "438",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=438",
+      "linkText": "Kolmårdsträffen, medel",
+      "year": 2018
+    },
+    {
+      "mapId": "439",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=439",
+      "linkText": "Kolmårdsträffen, lång",
+      "year": 2018
+    },
+    {
+      "mapId": "440",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=440",
+      "linkText": "Karta 440",
+      "year": 2018
+    },
+    {
+      "mapId": "441",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=441",
+      "linkText": "DM Stafett",
+      "year": 2018
+    },
+    {
+      "mapId": "442",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=442",
+      "linkText": "Ulrikadubbeln, medel",
+      "year": 2018
+    },
+    {
+      "mapId": "443",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=443",
+      "linkText": "Ulrikadubbeln, lång",
+      "year": 2018
+    },
+    {
+      "mapId": "444",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=444",
+      "linkText": "Ombergsjakten",
+      "year": 2018
+    },
+    {
+      "mapId": "445",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=445",
+      "linkText": "SM Medel Publiktävling",
+      "year": 2018
+    },
+    {
+      "mapId": "446",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=446",
+      "linkText": "SM Stafett",
+      "year": 2018
+    },
+    {
+      "mapId": "447",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=447",
+      "linkText": "Karta 447",
+      "year": 2018
+    },
+    {
+      "mapId": "448",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=448",
+      "linkText": "Karta 448",
+      "year": 2018
+    },
+    {
+      "mapId": "449",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=449",
+      "linkText": "Karta 449",
+      "year": 2018
+    },
+    {
+      "mapId": "450",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=450",
+      "linkText": "Smålandskavlen",
+      "year": 2018
+    },
+    {
+      "mapId": "451",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=451",
+      "linkText": "Ultralång-SM",
+      "year": 2018
+    },
+    {
+      "mapId": "452",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=452",
+      "linkText": "Öjetrampen",
+      "year": 2019
+    },
+    {
+      "mapId": "453",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=453",
+      "linkText": "Anebyorienteringen, lång",
+      "year": 2019
+    },
+    {
+      "mapId": "454",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=454",
+      "linkText": "Svartåfejden",
+      "year": 2019
+    },
+    {
+      "mapId": "457",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=457",
+      "linkText": "Ljungsbrokampen",
+      "year": 2019
+    },
+    {
+      "mapId": "458",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=458",
+      "linkText": "Fäbodloppet, dag 1",
+      "year": 2019
+    },
+    {
+      "mapId": "459",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=459",
+      "linkText": "Fäbodloppet, dag 2",
+      "year": 2019
+    },
+    {
+      "mapId": "460",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=460",
+      "linkText": "Staffans minne",
+      "year": 2019
+    },
+    {
+      "mapId": "461",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=461",
+      "linkText": "Karta 461",
+      "year": 2019
+    },
+    {
+      "mapId": "462",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=462",
+      "linkText": "Pekingduon, sprint",
+      "year": 2019
+    },
+    {
+      "mapId": "463",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=463",
+      "linkText": "Pekingduon, medel",
+      "year": 2019
+    },
+    {
+      "mapId": "464",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=464",
+      "linkText": "Karta 464",
+      "year": 2019
+    },
+    {
+      "mapId": "465",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=465",
+      "linkText": "Karta 465",
+      "year": 2019
+    },
+    {
+      "mapId": "466",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=466",
+      "linkText": "Hallands 3-dagars E1",
+      "year": 2019
+    },
+    {
+      "mapId": "467",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=467",
+      "linkText": "Hallands 3-dagars E2",
+      "year": 2019
+    },
+    {
+      "mapId": "468",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=468",
+      "linkText": "Hallands 3-dagars E3",
+      "year": 2019
+    },
+    {
+      "mapId": "469",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=469",
+      "linkText": "Markdubbeln, medel",
+      "year": 2019
+    },
+    {
+      "mapId": "470",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=470",
+      "linkText": "Markdubbeln, lång",
+      "year": 2019
+    },
+    {
+      "mapId": "471",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=471",
+      "linkText": "Stjärnorpsmedeln",
+      "year": 2019
+    },
+    {
+      "mapId": "472",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=472",
+      "linkText": "Tjällmoträffen",
+      "year": 2019
+    },
+    {
+      "mapId": "473",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=473",
+      "linkText": "Karta 473",
+      "year": 2019
+    },
+    {
+      "mapId": "474",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=474",
+      "linkText": "Karta 474",
+      "year": 2019
+    },
+    {
+      "mapId": "475",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=475",
+      "linkText": "Stafett-DM",
+      "year": 2019
+    },
+    {
+      "mapId": "476",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=476",
+      "linkText": "Leksands OK",
+      "year": 2019
+    },
+    {
+      "mapId": "477",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=477",
+      "linkText": "Karta 477",
+      "year": 2019
+    },
+    {
+      "mapId": "478",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=478",
+      "linkText": "Ulricehamns OK",
+      "year": 2019
+    },
+    {
+      "mapId": "479",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=479",
+      "linkText": "Traneträffen",
+      "year": 2019
+    },
+    {
+      "mapId": "481",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=481",
+      "linkText": "Smålandskavlen",
+      "year": 2019
+    },
+    {
+      "mapId": "489",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=489",
+      "linkText": "Karta 489",
+      "year": 2020
+    },
+    {
+      "mapId": "490",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=490",
+      "linkText": "Karta 490",
+      "year": 2020
+    },
+    {
+      "mapId": "491",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=491",
+      "linkText": "Karta 491",
+      "year": 2020
+    },
+    {
+      "mapId": "492",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=492",
+      "linkText": "Höstmedeln",
+      "year": 2020
+    },
+    {
+      "mapId": "503",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=503",
+      "linkText": "Grövelsjönorienteringen E1",
+      "year": 2021
+    },
+    {
+      "mapId": "504",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=504",
+      "linkText": "Grövelsjönorienteringen E2",
+      "year": 2021
+    },
+    {
+      "mapId": "505",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=505",
+      "linkText": "Grövelsjönorienteringen E3",
+      "year": 2021
+    },
+    {
+      "mapId": "506",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=506",
+      "linkText": "Grövelsjönorienteringen E4",
+      "year": 2021
+    },
+    {
+      "mapId": "507",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=507",
+      "linkText": "Kolmårdsträffen, medel",
+      "year": 2021
+    },
+    {
+      "mapId": "508",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=508",
+      "linkText": "Kolmårdsträffen, lång",
+      "year": 2021
+    },
+    {
+      "mapId": "509",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=509",
+      "linkText": "Stråkendubbeln, medel",
+      "year": 2021
+    },
+    {
+      "mapId": "510",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=510",
+      "linkText": "Stråkendubbeln, lång",
+      "year": 2021
+    },
+    {
+      "mapId": "511",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=511",
+      "linkText": "Karta 511",
+      "year": 2021
+    },
+    {
+      "mapId": "512",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=512",
+      "linkText": "Stafett-DM",
+      "year": 2021
+    },
+    {
+      "mapId": "513",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=513",
+      "linkText": "Karta 513",
+      "year": 2021
+    },
+    {
+      "mapId": "514",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=514",
+      "linkText": "Ramundernatten",
+      "year": 2021
+    },
+    {
+      "mapId": "515",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=515",
+      "linkText": "Smålandskavlen",
+      "year": 2021
+    },
+    {
+      "mapId": "516",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=516",
+      "linkText": "Måsenstafetten",
+      "year": 2022
+    },
+    {
+      "mapId": "517",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=517",
+      "linkText": "Bredaryds SOK, Långdistans",
+      "year": 2022
+    },
+    {
+      "mapId": "518",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=518",
+      "linkText": "Stigtomtakavlen",
+      "year": 2022
+    },
+    {
+      "mapId": "519",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=519",
+      "linkText": "Kolmårdsdubbeln, medel",
+      "year": 2022
+    },
+    {
+      "mapId": "520",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=520",
+      "linkText": "Kolmårdsdubbeln, stafett",
+      "year": 2022
+    },
+    {
+      "mapId": "521",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=521",
+      "linkText": "Zinkegruvemedeln",
+      "year": 2022
+    },
+    {
+      "mapId": "522",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=522",
+      "linkText": "Ljungsbrokampen",
+      "year": 2022
+    },
+    {
+      "mapId": "523",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=523",
+      "linkText": "Karta 523",
+      "year": 2022
+    },
+    {
+      "mapId": "524",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=524",
+      "linkText": "Karta 524",
+      "year": 2022
+    },
+    {
+      "mapId": "525",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=525",
+      "linkText": "WC Borås Publiktävling 2",
+      "year": 2022
+    },
+    {
+      "mapId": "526",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=526",
+      "linkText": "WC Borås Publiktävling 3",
+      "year": 2022
+    },
+    {
+      "mapId": "527",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=527",
+      "linkText": "O-ringen H35 E1",
+      "year": 2022
+    },
+    {
+      "mapId": "528",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=528",
+      "linkText": "O-ringen H35 E2",
+      "year": 2022
+    },
+    {
+      "mapId": "529",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=529",
+      "linkText": "O-ringen H35 E3",
+      "year": 2022
+    },
+    {
+      "mapId": "530",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=530",
+      "linkText": "O-ringen H35 E4",
+      "year": 2022
+    },
+    {
+      "mapId": "531",
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=531",
+      "linkText": "O-ringen H35 E5",
+      "year": 2022
+    }
+  ],
+  "selectedCompetitionEntries": [
+    {
+      "candidate": {
+        "mapId": "2",
+        "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2",
+        "linkText": "JOK Chasing Sprint - Prolog",
+        "year": 2011
+      },
+      "snapshot": {
+        "requestedUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2",
+        "finalUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "title": "Erik Martinssons digitala kartarkiv :: JOK Chasing Sprint - Prolog (2011-03-12)",
+        "bodyText": "Digitalt kartarkiv för Erik Martinsson | Logga in Alla användare | Språk: SvenskaČeskyDanskDeutschEestiEnglishEspañolFrançaisItalianoMagyarNorskPolskiPortuguêsРусскийSvenskaTürkçeУкраїнський | DOMA 3.0.10 Tillbaka |JOK Chasing Sprint - Final (2011-03-12) >> JOK Chasing Sprint - Prolog (2011-03-12) Kategori: Tävling Visa kommentarer Dölj kommentarer (0) Lägg till kommentar Namn: E-post: Spara",
+        "links": [
+          {
+            "text": "Digitalt kartarkiv för Erik Martinsson",
+            "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "Logga in",
+            "href": "http://www.lid1.se/erik/doma/login.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "Alla användare",
+            "href": "http://www.lid1.se/erik/doma/users.php",
+            "title": ""
+          },
+          {
+            "text": "Česky",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=cs",
+            "title": ""
+          },
+          {
+            "text": "Dansk",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=da",
+            "title": ""
+          },
+          {
+            "text": "Deutsch",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=de",
+            "title": ""
+          },
+          {
+            "text": "Eesti",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=et",
+            "title": ""
+          },
+          {
+            "text": "English",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=en",
+            "title": ""
+          },
+          {
+            "text": "Español",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=es",
+            "title": ""
+          },
+          {
+            "text": "Français",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=fr",
+            "title": ""
+          },
+          {
+            "text": "Italiano",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=it",
+            "title": ""
+          },
+          {
+            "text": "Magyar",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=hu",
+            "title": ""
+          },
+          {
+            "text": "Norsk",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=nb",
+            "title": ""
+          },
+          {
+            "text": "Polski",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=pl",
+            "title": ""
+          },
+          {
+            "text": "Português",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=pt",
+            "title": ""
+          },
+          {
+            "text": "Русский",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=ru",
+            "title": ""
+          },
+          {
+            "text": "Svenska",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=sv",
+            "title": ""
+          },
+          {
+            "text": "Türkçe",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=tr",
+            "title": ""
+          },
+          {
+            "text": "Український",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2&lang=ua",
+            "title": ""
+          },
+          {
+            "text": "DOMA 3.0.10",
+            "href": "https://www.matstroeng.se/doma/?version=3.0.10",
+            "title": ""
+          },
+          {
+            "text": "Tillbaka",
+            "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "JOK Chasing Sprint - Final (2011-03-12) >>",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3",
+            "title": ""
+          },
+          {
+            "text": "Visa kommentarer",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2#",
+            "title": ""
+          },
+          {
+            "text": "Dölj kommentarer",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2#",
+            "title": ""
+          },
+          {
+            "text": "Spara",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2#",
+            "title": ""
+          }
+        ],
+        "imageUrls": [
+          "http://www.lid1.se/erik/doma/gfx/flag/sv.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/cs.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/da.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/de.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/et.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/en.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/es.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/fr.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/it.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/hu.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/nb.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/pl.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/pt.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/ru.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/tr.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/ua.png",
+          "http://www.lid1.se/erik/doma/map_images/2.jpg"
+        ]
+      },
+      "htmlFile": "01-2011-map-2-erik-martinssons-digitala-kartarkiv-jok-chasing-sprint-prolog-2011-03-12.html",
+      "jsonFile": "01-2011-map-2-erik-martinssons-digitala-kartarkiv-jok-chasing-sprint-prolog-2011-03-12.json"
+    },
+    {
+      "candidate": {
+        "mapId": "3",
+        "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3",
+        "linkText": "JOK Chasing Sprint - Final",
+        "year": 2011
+      },
+      "snapshot": {
+        "requestedUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3",
+        "finalUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "title": "Erik Martinssons digitala kartarkiv :: JOK Chasing Sprint - Final (2011-03-12)",
+        "bodyText": "Digitalt kartarkiv för Erik Martinsson | Logga in Alla användare | Språk: SvenskaČeskyDanskDeutschEestiEnglishEspañolFrançaisItalianoMagyarNorskPolskiPortuguêsРусскийSvenskaTürkçeУкраїнський | DOMA 3.0.10 Tillbaka << JOK Chasing Sprint - Prolog (2011-03-12) |Southern Champs - Del 1 (2011-03-13) >> JOK Chasing Sprint - Final (2011-03-12) Kategori: Tävling Visa kommentarer Dölj kommentarer (0) Lägg till kommentar Namn: E-post: Spara",
+        "links": [
+          {
+            "text": "Digitalt kartarkiv för Erik Martinsson",
+            "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "Logga in",
+            "href": "http://www.lid1.se/erik/doma/login.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "Alla användare",
+            "href": "http://www.lid1.se/erik/doma/users.php",
+            "title": ""
+          },
+          {
+            "text": "Česky",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=cs",
+            "title": ""
+          },
+          {
+            "text": "Dansk",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=da",
+            "title": ""
+          },
+          {
+            "text": "Deutsch",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=de",
+            "title": ""
+          },
+          {
+            "text": "Eesti",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=et",
+            "title": ""
+          },
+          {
+            "text": "English",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=en",
+            "title": ""
+          },
+          {
+            "text": "Español",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=es",
+            "title": ""
+          },
+          {
+            "text": "Français",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=fr",
+            "title": ""
+          },
+          {
+            "text": "Italiano",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=it",
+            "title": ""
+          },
+          {
+            "text": "Magyar",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=hu",
+            "title": ""
+          },
+          {
+            "text": "Norsk",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=nb",
+            "title": ""
+          },
+          {
+            "text": "Polski",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=pl",
+            "title": ""
+          },
+          {
+            "text": "Português",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=pt",
+            "title": ""
+          },
+          {
+            "text": "Русский",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=ru",
+            "title": ""
+          },
+          {
+            "text": "Svenska",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=sv",
+            "title": ""
+          },
+          {
+            "text": "Türkçe",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=tr",
+            "title": ""
+          },
+          {
+            "text": "Український",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3&lang=ua",
+            "title": ""
+          },
+          {
+            "text": "DOMA 3.0.10",
+            "href": "https://www.matstroeng.se/doma/?version=3.0.10",
+            "title": ""
+          },
+          {
+            "text": "Tillbaka",
+            "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "<< JOK Chasing Sprint - Prolog (2011-03-12)",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=2",
+            "title": ""
+          },
+          {
+            "text": "Southern Champs - Del 1 (2011-03-13) >>",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4",
+            "title": ""
+          },
+          {
+            "text": "Visa kommentarer",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3#",
+            "title": ""
+          },
+          {
+            "text": "Dölj kommentarer",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3#",
+            "title": ""
+          },
+          {
+            "text": "Spara",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3#",
+            "title": ""
+          }
+        ],
+        "imageUrls": [
+          "http://www.lid1.se/erik/doma/gfx/flag/sv.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/cs.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/da.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/de.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/et.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/en.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/es.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/fr.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/it.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/hu.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/nb.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/pl.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/pt.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/ru.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/tr.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/ua.png",
+          "http://www.lid1.se/erik/doma/map_images/3.jpg"
+        ]
+      },
+      "htmlFile": "02-2011-map-3-erik-martinssons-digitala-kartarkiv-jok-chasing-sprint-final-2011-03-12.html",
+      "jsonFile": "02-2011-map-3-erik-martinssons-digitala-kartarkiv-jok-chasing-sprint-final-2011-03-12.json"
+    },
+    {
+      "candidate": {
+        "mapId": "4",
+        "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4",
+        "linkText": "Southern Champs - Del 1",
+        "year": 2011
+      },
+      "snapshot": {
+        "requestedUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4",
+        "finalUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "title": "Erik Martinssons digitala kartarkiv :: Southern Champs - Del 1 (2011-03-13)",
+        "bodyText": "Digitalt kartarkiv för Erik Martinsson | Logga in Alla användare | Språk: SvenskaČeskyDanskDeutschEestiEnglishEspañolFrançaisItalianoMagyarNorskPolskiPortuguêsРусскийSvenskaTürkçeУкраїнський | DOMA 3.0.10 Tillbaka << JOK Chasing Sprint - Final (2011-03-12) |Southern Champs - Del 2 (2011-03-13) >> Southern Champs - Del 1 (2011-03-13) Kategori: Tävling Visa kommentarer Dölj kommentarer (0) Lägg till kommentar Namn: E-post: Spara",
+        "links": [
+          {
+            "text": "Digitalt kartarkiv för Erik Martinsson",
+            "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "Logga in",
+            "href": "http://www.lid1.se/erik/doma/login.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "Alla användare",
+            "href": "http://www.lid1.se/erik/doma/users.php",
+            "title": ""
+          },
+          {
+            "text": "Česky",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=cs",
+            "title": ""
+          },
+          {
+            "text": "Dansk",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=da",
+            "title": ""
+          },
+          {
+            "text": "Deutsch",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=de",
+            "title": ""
+          },
+          {
+            "text": "Eesti",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=et",
+            "title": ""
+          },
+          {
+            "text": "English",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=en",
+            "title": ""
+          },
+          {
+            "text": "Español",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=es",
+            "title": ""
+          },
+          {
+            "text": "Français",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=fr",
+            "title": ""
+          },
+          {
+            "text": "Italiano",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=it",
+            "title": ""
+          },
+          {
+            "text": "Magyar",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=hu",
+            "title": ""
+          },
+          {
+            "text": "Norsk",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=nb",
+            "title": ""
+          },
+          {
+            "text": "Polski",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=pl",
+            "title": ""
+          },
+          {
+            "text": "Português",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=pt",
+            "title": ""
+          },
+          {
+            "text": "Русский",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=ru",
+            "title": ""
+          },
+          {
+            "text": "Svenska",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=sv",
+            "title": ""
+          },
+          {
+            "text": "Türkçe",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=tr",
+            "title": ""
+          },
+          {
+            "text": "Український",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4&lang=ua",
+            "title": ""
+          },
+          {
+            "text": "DOMA 3.0.10",
+            "href": "https://www.matstroeng.se/doma/?version=3.0.10",
+            "title": ""
+          },
+          {
+            "text": "Tillbaka",
+            "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "<< JOK Chasing Sprint - Final (2011-03-12)",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3",
+            "title": ""
+          },
+          {
+            "text": "Southern Champs - Del 2 (2011-03-13) >>",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5",
+            "title": ""
+          },
+          {
+            "text": "Visa kommentarer",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4#",
+            "title": ""
+          },
+          {
+            "text": "Dölj kommentarer",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4#",
+            "title": ""
+          },
+          {
+            "text": "Spara",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4#",
+            "title": ""
+          }
+        ],
+        "imageUrls": [
+          "http://www.lid1.se/erik/doma/gfx/flag/sv.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/cs.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/da.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/de.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/et.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/en.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/es.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/fr.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/it.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/hu.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/nb.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/pl.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/pt.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/ru.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/tr.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/ua.png",
+          "http://www.lid1.se/erik/doma/map_images/4.jpg"
+        ]
+      },
+      "htmlFile": "03-2011-map-4-erik-martinssons-digitala-kartarkiv-southern-champs-del-1-2011-03-13.html",
+      "jsonFile": "03-2011-map-4-erik-martinssons-digitala-kartarkiv-southern-champs-del-1-2011-03-13.json"
+    },
+    {
+      "candidate": {
+        "mapId": "5",
+        "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5",
+        "linkText": "Southern Champs - Del 2",
+        "year": 2011
+      },
+      "snapshot": {
+        "requestedUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5",
+        "finalUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "title": "Erik Martinssons digitala kartarkiv :: Southern Champs - Del 2 (2011-03-13)",
+        "bodyText": "Digitalt kartarkiv för Erik Martinsson | Logga in Alla användare | Språk: SvenskaČeskyDanskDeutschEestiEnglishEspañolFrançaisItalianoMagyarNorskPolskiPortuguêsРусскийSvenskaTürkçeУкраїнський | DOMA 3.0.10 Tillbaka << Southern Champs - Del 1 (2011-03-13) |Måsenstafetten (2011-03-27) >> Southern Champs - Del 2 (2011-03-13) Kategori: Tävling Visa kommentarer Dölj kommentarer (0) Lägg till kommentar Namn: E-post: Spara",
+        "links": [
+          {
+            "text": "Digitalt kartarkiv för Erik Martinsson",
+            "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "Logga in",
+            "href": "http://www.lid1.se/erik/doma/login.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "Alla användare",
+            "href": "http://www.lid1.se/erik/doma/users.php",
+            "title": ""
+          },
+          {
+            "text": "Česky",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=cs",
+            "title": ""
+          },
+          {
+            "text": "Dansk",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=da",
+            "title": ""
+          },
+          {
+            "text": "Deutsch",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=de",
+            "title": ""
+          },
+          {
+            "text": "Eesti",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=et",
+            "title": ""
+          },
+          {
+            "text": "English",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=en",
+            "title": ""
+          },
+          {
+            "text": "Español",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=es",
+            "title": ""
+          },
+          {
+            "text": "Français",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=fr",
+            "title": ""
+          },
+          {
+            "text": "Italiano",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=it",
+            "title": ""
+          },
+          {
+            "text": "Magyar",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=hu",
+            "title": ""
+          },
+          {
+            "text": "Norsk",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=nb",
+            "title": ""
+          },
+          {
+            "text": "Polski",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=pl",
+            "title": ""
+          },
+          {
+            "text": "Português",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=pt",
+            "title": ""
+          },
+          {
+            "text": "Русский",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=ru",
+            "title": ""
+          },
+          {
+            "text": "Svenska",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=sv",
+            "title": ""
+          },
+          {
+            "text": "Türkçe",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=tr",
+            "title": ""
+          },
+          {
+            "text": "Український",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5&lang=ua",
+            "title": ""
+          },
+          {
+            "text": "DOMA 3.0.10",
+            "href": "https://www.matstroeng.se/doma/?version=3.0.10",
+            "title": ""
+          },
+          {
+            "text": "Tillbaka",
+            "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "<< Southern Champs - Del 1 (2011-03-13)",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=4",
+            "title": ""
+          },
+          {
+            "text": "Måsenstafetten (2011-03-27) >>",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7",
+            "title": ""
+          },
+          {
+            "text": "Visa kommentarer",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5#",
+            "title": ""
+          },
+          {
+            "text": "Dölj kommentarer",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5#",
+            "title": ""
+          },
+          {
+            "text": "Spara",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5#",
+            "title": ""
+          }
+        ],
+        "imageUrls": [
+          "http://www.lid1.se/erik/doma/gfx/flag/sv.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/cs.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/da.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/de.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/et.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/en.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/es.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/fr.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/it.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/hu.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/nb.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/pl.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/pt.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/ru.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/tr.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/ua.png",
+          "http://www.lid1.se/erik/doma/map_images/5.jpg"
+        ]
+      },
+      "htmlFile": "04-2011-map-5-erik-martinssons-digitala-kartarkiv-southern-champs-del-2-2011-03-13.html",
+      "jsonFile": "04-2011-map-5-erik-martinssons-digitala-kartarkiv-southern-champs-del-2-2011-03-13.json"
+    },
+    {
+      "candidate": {
+        "mapId": "7",
+        "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7",
+        "linkText": "Måsenstafetten",
+        "year": 2011
+      },
+      "snapshot": {
+        "requestedUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7",
+        "finalUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "title": "Erik Martinssons digitala kartarkiv :: Måsenstafetten (2011-03-27)",
+        "bodyText": "Digitalt kartarkiv för Erik Martinsson | Logga in Alla användare | Språk: SvenskaČeskyDanskDeutschEestiEnglishEspañolFrançaisItalianoMagyarNorskPolskiPortuguêsРусскийSvenskaTürkçeУкраїнський | DOMA 3.0.10 Tillbaka << Southern Champs - Del 2 (2011-03-13) |Sprintträning - 1 (2011-03-29) >> Måsenstafetten (2011-03-27) Kategori: TävlingArrangör: OK MåsenSträcka: 2 Bra lopp fram till 14:onde då jag gjorde en liten krok och tappade tätklungan. Visa kommentarer Dölj kommentarer (0) Lägg till kommentar Namn: E-post: Spara",
+        "links": [
+          {
+            "text": "Digitalt kartarkiv för Erik Martinsson",
+            "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "Logga in",
+            "href": "http://www.lid1.se/erik/doma/login.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "Alla användare",
+            "href": "http://www.lid1.se/erik/doma/users.php",
+            "title": ""
+          },
+          {
+            "text": "Česky",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=cs",
+            "title": ""
+          },
+          {
+            "text": "Dansk",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=da",
+            "title": ""
+          },
+          {
+            "text": "Deutsch",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=de",
+            "title": ""
+          },
+          {
+            "text": "Eesti",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=et",
+            "title": ""
+          },
+          {
+            "text": "English",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=en",
+            "title": ""
+          },
+          {
+            "text": "Español",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=es",
+            "title": ""
+          },
+          {
+            "text": "Français",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=fr",
+            "title": ""
+          },
+          {
+            "text": "Italiano",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=it",
+            "title": ""
+          },
+          {
+            "text": "Magyar",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=hu",
+            "title": ""
+          },
+          {
+            "text": "Norsk",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=nb",
+            "title": ""
+          },
+          {
+            "text": "Polski",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=pl",
+            "title": ""
+          },
+          {
+            "text": "Português",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=pt",
+            "title": ""
+          },
+          {
+            "text": "Русский",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=ru",
+            "title": ""
+          },
+          {
+            "text": "Svenska",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=sv",
+            "title": ""
+          },
+          {
+            "text": "Türkçe",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=tr",
+            "title": ""
+          },
+          {
+            "text": "Український",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7&lang=ua",
+            "title": ""
+          },
+          {
+            "text": "DOMA 3.0.10",
+            "href": "https://www.matstroeng.se/doma/?version=3.0.10",
+            "title": ""
+          },
+          {
+            "text": "Tillbaka",
+            "href": "http://www.lid1.se/erik/doma/index.php?user=erik",
+            "title": ""
+          },
+          {
+            "text": "<< Southern Champs - Del 2 (2011-03-13)",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=5",
+            "title": ""
+          },
+          {
+            "text": "Sprintträning - 1 (2011-03-29) >>",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=8",
+            "title": ""
+          },
+          {
+            "text": "Visa kommentarer",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7#",
+            "title": ""
+          },
+          {
+            "text": "Dölj kommentarer",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7#",
+            "title": ""
+          },
+          {
+            "text": "Spara",
+            "href": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=7#",
+            "title": ""
+          }
+        ],
+        "imageUrls": [
+          "http://www.lid1.se/erik/doma/gfx/flag/sv.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/cs.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/da.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/de.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/et.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/en.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/es.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/fr.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/it.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/hu.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/nb.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/pl.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/pt.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/ru.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/tr.png",
+          "http://www.lid1.se/erik/doma/gfx/flag/ua.png",
+          "http://www.lid1.se/erik/doma/map_images/7.jpg"
+        ]
+      },
+      "htmlFile": "05-2011-map-7-erik-martinssons-digitala-kartarkiv-masenstafetten-2011-03-27.html",
+      "jsonFile": "05-2011-map-7-erik-martinssons-digitala-kartarkiv-masenstafetten-2011-03-27.json"
+    }
+  ],
   "errors": [],
   "summary": {
-    "totalCandidateLinks": 0,
-    "competitions": 0,
-    "trainings": 0,
-    "unknown": 0,
-    "downloadedCompetitionEntries": 0,
+    "yearsScanned": 12,
+    "yearsWithEntries": 12,
+    "totalCompetitionEntries": 380,
+    "savedSampleEntries": 5,
     "errors": 0
   }
 }

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Erik Martinssons digitala kartarkiv :: JOK Chasing Sprint - Prolog (2011-03-12)</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link rel="stylesheet" href="style.css?v=3.0.10" type="text/css" />
+  <link rel="icon" type="image/png" href="gfx/favicon.png" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.php?user=erik" />
+  <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="js/show_map.js?v=3.0.10"></script>
+  <script type="text/javascript" src="js/jquery/jquery.timeago.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery.timeago.sv.js"></script>
+        <script src="js/common.js?v=3.0.10" type="text/javascript"></script>
+    
+
+</head>
+<body id="showMapBody">
+<center>
+<div id="top_menu">
+<div id="wrapper" style="float:center">
+      <div id="topbar">
+        <div class="left">
+          <a href="index.php?user=erik">Digitalt kartarkiv för Erik Martinsson</a>
+          <span class="separator">|</span>
+                      <a href="login.php?user=erik">Logga in</a>
+                  </div>
+        <div class="right">
+          <a href="users.php">Alla användare</a>
+          <span class="separator">|</span>
+          Språk: <span id="currentLanguage"><img src="gfx/flag/sv.png" alt="Svenska" title="Svenska">Svenska<span id="languages"><a href="?user=erik&map=2&lang=cs"><img src="gfx/flag/cs.png" alt="Česky" title="Česky">Česky</a><a href="?user=erik&map=2&lang=da"><img src="gfx/flag/da.png" alt="Dansk" title="Dansk">Dansk</a><a href="?user=erik&map=2&lang=de"><img src="gfx/flag/de.png" alt="Deutsch" title="Deutsch">Deutsch</a><a href="?user=erik&map=2&lang=et"><img src="gfx/flag/et.png" alt="Eesti" title="Eesti">Eesti</a><a href="?user=erik&map=2&lang=en"><img src="gfx/flag/en.png" alt="English" title="English">English</a><a href="?user=erik&map=2&lang=es"><img src="gfx/flag/es.png" alt="Español" title="Español">Español</a><a href="?user=erik&map=2&lang=fr"><img src="gfx/flag/fr.png" alt="Français" title="Français">Français</a><a href="?user=erik&map=2&lang=it"><img src="gfx/flag/it.png" alt="Italiano" title="Italiano">Italiano</a><a href="?user=erik&map=2&lang=hu"><img src="gfx/flag/hu.png" alt="Magyar" title="Magyar">Magyar</a><a href="?user=erik&map=2&lang=nb"><img src="gfx/flag/nb.png" alt="Norsk" title="Norsk">Norsk</a><a href="?user=erik&map=2&lang=pl"><img src="gfx/flag/pl.png" alt="Polski" title="Polski">Polski</a><a href="?user=erik&map=2&lang=pt"><img src="gfx/flag/pt.png" alt="Português" title="Português">Português</a><a href="?user=erik&map=2&lang=ru"><img src="gfx/flag/ru.png" alt="Русский" title="Русский">Русский</a><a href="?user=erik&map=2&lang=sv"><img src="gfx/flag/sv.png" alt="Svenska" title="Svenska">Svenska</a><a href="?user=erik&map=2&lang=tr"><img src="gfx/flag/tr.png" alt="Türkçe" title="Türkçe">Türkçe</a><a href="?user=erik&map=2&lang=ua"><img src="gfx/flag/ua.png" alt="Український" title="Український">Український</a></span></span>            <span class="separator">|</span>
+                    <a href="https://www.matstroeng.se/doma/?version=3.0.10">DOMA 3.0.10</a>
+        </div>
+        <div class="clear"></div>
+      </div>
+      
+<div id="navigation">
+  <div class="left">
+      <a href="index.php?user=erik">Tillbaka</a>
+  </div>
+  <div class="right">
+    <span class="separator">|</span><a href="show_map.php?user=erik&amp;map=3">JOK Chasing Sprint - Final (2011-03-12) &gt;&gt;</a>
+
+    </div>
+  <div class="clear"></div>
+</div>
+
+<div id="content">
+<form id="frm" method="post" action="/erik/doma/show_map.php">
+<div id="mapInfo">
+<div id="name">JOK Chasing Sprint - Prolog (2011-03-12)</div>
+
+<div id="zoomButtonDiv">
+  <div id="zoomIn" class="zoomButton"></div>
+  <div id="zoomOut" class="zoomButton"></div>
+</div>
+
+<div id="propertyContainer">
+<div class="property"><span class="caption">Kategori:</span> Tävling</div></div>
+<div class="clear"></div>
+<a id="showPostedComments" href="#">Visa kommentarer</a>
+<a id="hidePostedComments" class="hidden" href="#">Dölj kommentarer</a>
+(<span id="comments_count">0</span>)
+</div>
+
+<div id="postedComments" class="hidden"">
+  </div>
+
+<div class="commentBox hidden" id="commentBox">
+  <div id="commentBoxHeader">Lägg till kommentar</a></div>
+  <div id="userDetails">
+    <input type="hidden" id="map_user" value="erik">
+    <label for="user_name">Namn:</label>
+    <input type="text" id="user_name" />
+    <label id="userEmailLabel" for="user_email">E-post:</label>
+    <input type="text" id="user_email" />
+  </div>
+  <textarea id="commentMark" name="commentMark"></textarea>
+  <a id="submitComment" href="#" class="small button comment">Spara</a>
+  <input type="hidden" id="missingCommentText" value="Textfälten för namn och kommentar måste fyllas i!"/>
+  <input type="hidden" id="invalidEmailText" value="E-postadressen är ogiltig."/>
+  <input type="hidden" id="commentDeleteConfirmationText" value="Vill du ta bort den här kommentaren?"/>
+  </div>
+
+
+
+
+<div class="clear"></div>
+
+</form>
+</div>
+</div>
+</div>
+<div class="clear">&nbsp;</div>
+
+<div id="overviewMapContainer"></div>
+
+<div>
+  <img id="mapImage" src="/erik/doma/map_images/2.jpg" alt="JOK Chasing Sprint - Prolog (2011-03-12)"/>
+    <input type="hidden" id="id" value="2" />
+  <input type="hidden" id="imageWidth" value="2633" />
+  <input type="hidden" id="imageHeight" value="1927" />
+</div>
+</center>
+</body>
+</html>

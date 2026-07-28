@@ -1,0 +1,1267 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Erik Martinssons digitala kartarkiv</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link rel="icon" type="image/png" href="gfx/favicon.png" />
+  <link rel="stylesheet" href="style.css?v=3.0.10" type="text/css" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.php?user=erik" />
+  <script src="js/jquery/jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=&amp;language=sv" type="text/javascript"></script>
+  <script src="js/overview_map.js?v=3.0.10" type="text/javascript"></script>
+    <script src="js/index.js?v=3.0.10" type="text/javascript"></script>
+  <script src="js/common.js?v=3.0.10" type="text/javascript"></script>
+</head>
+
+<body id="indexBody">
+<div id="wrapper">
+      <div id="topbar">
+        <div class="left">
+          <a href="index.php?user=erik">Digitalt kartarkiv för Erik Martinsson</a>
+          <span class="separator">|</span>
+                      <a href="login.php?user=erik">Logga in</a>
+                  </div>
+        <div class="right">
+          <a href="users.php">Alla användare</a>
+          <span class="separator">|</span>
+          Språk: <span id="currentLanguage"><img src="gfx/flag/sv.png" alt="Svenska" title="Svenska">Svenska<span id="languages"><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=cs"><img src="gfx/flag/cs.png" alt="Česky" title="Česky">Česky</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=da"><img src="gfx/flag/da.png" alt="Dansk" title="Dansk">Dansk</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=de"><img src="gfx/flag/de.png" alt="Deutsch" title="Deutsch">Deutsch</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=et"><img src="gfx/flag/et.png" alt="Eesti" title="Eesti">Eesti</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=en"><img src="gfx/flag/en.png" alt="English" title="English">English</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=es"><img src="gfx/flag/es.png" alt="Español" title="Español">Español</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=fr"><img src="gfx/flag/fr.png" alt="Français" title="Français">Français</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=it"><img src="gfx/flag/it.png" alt="Italiano" title="Italiano">Italiano</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=hu"><img src="gfx/flag/hu.png" alt="Magyar" title="Magyar">Magyar</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=nb"><img src="gfx/flag/nb.png" alt="Norsk" title="Norsk">Norsk</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=pl"><img src="gfx/flag/pl.png" alt="Polski" title="Polski">Polski</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=pt"><img src="gfx/flag/pt.png" alt="Português" title="Português">Português</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=ru"><img src="gfx/flag/ru.png" alt="Русский" title="Русский">Русский</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=sv"><img src="gfx/flag/sv.png" alt="Svenska" title="Svenska">Svenska</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=tr"><img src="gfx/flag/tr.png" alt="Türkçe" title="Türkçe">Türkçe</a><a href="?user=erik&categoryID=6&year=2012&filter=&displayMode=list&lang=ua"><img src="gfx/flag/ua.png" alt="Український" title="Український">Український</a></span></span>            <span class="separator">|</span>
+                    <a href="https://www.matstroeng.se/doma/?version=3.0.10">DOMA 3.0.10</a>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div id="content">
+<form method="get" action="/erik/doma/index.php?user=erik">
+<input type="hidden" name="user" value="erik"/>
+
+<div>
+  <img id="logo" src="gfx/book.png" alt="" />
+</div>
+
+<div id="rssIcon"><a href="rss.php?user=erik"><img src="gfx/feed-icon-28x28.png" alt="RSS-flöde" title="RSS-flöde" /></a></div>
+
+<div id="intro">
+<h1>Välkommen till Erik Martinssons kartarkiv!</h1>
+<p>På denna sida lägger jag in kartor, banor och vägval från mina orienteringslopp.</p>
+
+<div id="selectCategoryAndYear">
+  <label for="categoryID">Kategori:</label>
+  <select name="categoryID" id="categoryID">
+  <option value="0">[alla kategorier]</option><option value="5">Träning</option><option value="6" selected="selected">Tävling</option>  </select>
+
+  <label for="year">År:</label>
+  <select name="year" id="year">
+  <option value="0">[alla år]</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012" selected="selected">2012</option><option value="2011">2011</option>  </select>
+
+  <label for="filter">Filter:</label>
+  <input type="text" name="filter" id="filter" value=""/>
+
+  </div>
+</div>
+
+<div id="maps">
+
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=132"><img src="/erik/doma/map_images/132.thumbnail.jpg" alt="Sydsvenska 2-milen (2012-11-04)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 4 november 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=132">Sydsvenska 2-milen</a>      </div>
+                  <div class="organiser">
+        Hylte OK      </div>
+            <div class="discipline">
+      20 km      </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Lyckades vinna trots att jag orienterade som en kratta.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=131"><img src="/erik/doma/map_images/131.thumbnail.jpg" alt="Smålandskavlen, Öppen (2012-10-28)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 28 oktober 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=131">Smålandskavlen, Öppen</a>      </div>
+                  <div class="organiser">
+        Växjö OK      </div>
+            <div class="discipline">
+      Sträcka 3      </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Bra lopp. Lugnt och beskedligt. 
+Vi vann klassen och jag hade bäst sträcktid.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=130"><img src="/erik/doma/map_images/130.thumbnail.jpg" alt="Smålandskavlen, natt (2012-10-27)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 27 oktober 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=130">Smålandskavlen, natt</a>      </div>
+                  <div class="organiser">
+        Växjö OK      </div>
+            <div class="discipline">
+      Sträcka 2      </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Dåligt nattlopp.
+Knackig inledning. Sjukt dålig långsträcka. OK i mitten och sen dålig avslutning.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=127"><img src="/erik/doma/map_images/127.thumbnail.jpg" alt="Älgfritt (2012-10-14)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 14 oktober 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=127">Älgfritt</a>      </div>
+                  <div class="organiser">
+        OK Motala      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Kasst.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=126"><img src="/erik/doma/map_images/126.thumbnail.jpg" alt="25-Manna str.25 (2012-10-06)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 6 oktober 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=126">25-Manna str.25</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+      8.6 km, sträcka 25      </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">(GPS:n gick inte igång förrän vid 1:an)
+OK tekniskt (vissa vägval kan dock diskuteras), men dåligt fysiskt. Kunde inte häng...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">(GPS:n gick inte igång förrän vid 1:an)<br />
+OK tekniskt (vissa vägval kan dock diskuteras), men dåligt fysiskt. Kunde inte hänga med när kanonerna (Bergman etc.) drog förbi. </div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=125"><img src="/erik/doma/map_images/125.thumbnail.jpg" alt="Stafett-SM (2012-09-23)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 23 september 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=125">Stafett-SM</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+      Sträcka 2      </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Helt ok lopp. Fick gå ut i slutet av den stora andra klungan. Lång gaffel till 1:an gjorde att jag tappade de allra främsta. 
+...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Helt ok lopp. Fick gå ut i slutet av den stora andra klungan. Lång gaffel till 1:an gjorde att jag tappade de allra främsta. <br />
+Några mindre misstag, men inga stora grejer.<br />
+</div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=124"><img src="/erik/doma/map_images/124.thumbnail.jpg" alt="Medel-SM Final (H21B) (2012-09-22)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 22 september 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=124">Medel-SM Final (H21B)</a>      </div>
+                  <div class="organiser">
+        Bärrek      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Dåligt. Ingen motivation.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=123"><img src="/erik/doma/map_images/123.thumbnail.jpg" alt="Medel-SM Kval (H21A) (2012-09-21)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 21 september 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=123">Medel-SM Kval (H21A)</a>      </div>
+                  <div class="organiser">
+        Bärrek      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">OK lopp av mig på en medeldistans. 2 min från A-final</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=122"><img src="/erik/doma/map_images/122.thumbnail.jpg" alt="Stafett-DM (2012-09-09)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 9 september 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=122">Stafett-DM</a>      </div>
+                  <div class="organiser">
+        Ödeshög, Mjölby OK      </div>
+            <div class="discipline">
+      Sträcka 3      </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Misstag vid 3, 11, 12, 19. Vänster till 12:an var snabbare. </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=121"><img src="/erik/doma/map_images/121.thumbnail.jpg" alt="Medel-DM (2012-09-08)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 8 september 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=121">Medel-DM</a>      </div>
+                  <div class="organiser">
+        Skönatorpet, Mjölby OK      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Kasst..</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=120"><img src="/erik/doma/map_images/120.thumbnail.jpg" alt="Lång-DM (2012-09-02)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 2 september 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=120">Lång-DM</a>      </div>
+                  <div class="organiser">
+        OK 64 Torpa      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Många dåliga vägval. Segt i löpningen i skogen, snabb på vägarna.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=119"><img src="/erik/doma/map_images/119.thumbnail.jpg" alt="Medel-KM (2012-08-30)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        torsdag 30 augusti 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=119">Medel-KM</a>      </div>
+                  <div class="organiser">
+        Linköpings OK      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Fet bom till 4:an. Dålig karta...</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=118"><img src="/erik/doma/map_images/118.thumbnail.jpg" alt="Sprint-SM Final (2012-08-26)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 26 augusti 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=118">Sprint-SM Final</a>      </div>
+                  <div class="organiser">
+        Gävle OK      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Först ut i A-finalen.
+Dålig framförhållning hela vägen, vilket ledde till långsam orientering. Dåligt vägval till k7, k10...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Först ut i A-finalen.<br />
+Dålig framförhållning hela vägen, vilket ledde till långsam orientering. Dåligt vägval till k7, k10 och k17. Klantade mig rejält och sprang till k19 före k18 vilket kostade 20 sek.<br />
+Fick iallafall leda finalen en kort stund, då jag kom imål först av alla.</div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=117"><img src="/erik/doma/map_images/117.thumbnail.jpg" alt="Sprint-SM kval H21C (2012-08-25)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 25 augusti 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=117">Sprint-SM kval H21C</a>      </div>
+                  <div class="organiser">
+        Gävle OK      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Som vanligt ganska enkel och löpbetonad kvalbana. Generellt bra lopp förutom till k5, k14 och k15. 
+Blev 12a och gick vidare so...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Som vanligt ganska enkel och löpbetonad kvalbana. Generellt bra lopp förutom till k5, k14 och k15. <br />
+Blev 12a och gick vidare som siste gubbe till A-final. Skoj!</div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=116"><img src="/erik/doma/map_images/116.thumbnail.jpg" alt="Natt-SM (2012-08-24)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 24 augusti 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=116">Natt-SM</a>      </div>
+                  <div class="organiser">
+        Rehns BK      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Dåligt både fysiskt och tekniskt. Ont i fötterna som sjutton. Hatar sten..</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=115"><img src="/erik/doma/map_images/115.thumbnail.jpg" alt="Strärnorpssprinten (2012-08-02)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        torsdag 2 augusti 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=115">Strärnorpssprinten</a>      </div>
+                  <div class="organiser">
+        OK Denseln      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=114"><img src="/erik/doma/map_images/114.thumbnail.jpg" alt="O-ringen H21L E5 (2012-07-27)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 27 juli 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=114">O-ringen H21L E5</a>      </div>
+                  <div class="organiser">
+        Nyårsåsen      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Bra lopp. Ut som 18 in som 11. Femte bästa tid.
+Kände mig riktigt stark i löpningen. </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=113"><img src="/erik/doma/map_images/113.thumbnail.jpg" alt="O-ringen H21L E4 (2012-07-26)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        torsdag 26 juli 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=113">O-ringen H21L E4</a>      </div>
+                  <div class="organiser">
+        Nyårsåsen      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Onödiga misstag vid 10, 16 och framförallt 17. Kände mig stark i löpningen.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=112"><img src="/erik/doma/map_images/112.thumbnail.jpg" alt="O-ringen H21L E3 (2012-07-24)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        tisdag 24 juli 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=112">O-ringen H21L E3</a>      </div>
+                  <div class="organiser">
+        Villshärad      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Helt ok fart, men lite för många småkrokar. Dåligt till 14. Tappar över 1min på sträckan.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=111"><img src="/erik/doma/map_images/111.thumbnail.jpg" alt="O-ringen H21L E2 (2012-07-23)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        måndag 23 juli 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=111">O-ringen H21L E2</a>      </div>
+                  <div class="organiser">
+        Simlångsdalen      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Helt ok lopp. Några småmisstag och snett på sina ställen, men överlag bra.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=110"><img src="/erik/doma/map_images/110.thumbnail.jpg" alt="O-ringen H21L E1 (2012-07-22)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 22 juli 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=110">O-ringen H21L E1</a>      </div>
+                  <div class="organiser">
+        Simlångsdalen      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Mycket små misstag trots ganska enkel orientering.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=108"><img src="/erik/doma/map_images/108.thumbnail.jpg" alt="Tjust 2-dagars Dag 1 (2012-07-10)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        tisdag 10 juli 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=108">Tjust 2-dagars Dag 1</a>      </div>
+                  <div class="organiser">
+        Ankarsrum      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Misärtävling. 
+- Pinne genom skon vid 11:an (som tur var klarade foten sig).
+- Gigantisk bom vid 12:an. Hittade inte den lilla...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Misärtävling. <br />
+- Pinne genom skon vid 11:an (som tur var klarade foten sig).<br />
+- Gigantisk bom vid 12:an. Hittade inte den lilla skrevan som kontrollen satt i.<br />
+- Dunkade i låren rejält i en stock strax innan k20. Ont som satan gjorde det. Gick hem efter det.</div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=107"><img src="/erik/doma/map_images/107.thumbnail.jpg" alt="Eskilstuna Weekend E3 (2012-07-08)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 8 juli 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=107">Eskilstuna Weekend E3</a>      </div>
+                  <div class="organiser">
+        Ärla      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Trött idag med. Tuggade på i lugn fart. Mycket misstag trots låg fart...</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=106"><img src="/erik/doma/map_images/106.thumbnail.jpg" alt="Eskilstuna Weekend E2 (2012-07-07)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 7 juli 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=106">Eskilstuna Weekend E2</a>      </div>
+                  <div class="organiser">
+        Ärla      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Varmt som satan. Gillar verkligen inte att springa när det är så varmt. 
+Tuggade på i en sakta fart. Stor miss vid 8:an. Knap...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Varmt som satan. Gillar verkligen inte att springa när det är så varmt. <br />
+Tuggade på i en sakta fart. Stor miss vid 8:an. Knapp styrfart mot slutet.</div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=105"><img src="/erik/doma/map_images/105.thumbnail.jpg" alt="Eskilstuna Weekend E1 (2012-07-06)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 6 juli 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=105">Eskilstuna Weekend E1</a>      </div>
+                  <div class="organiser">
+        Ärla      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Kontrollplock. 23 kontroller på 5.5 km. 
+Massor med småmissar. Tappar mycket tid från k13 till mål.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=103"><img src="/erik/doma/map_images/103.thumbnail.jpg" alt="Sälen 3+3 Medel (2012-07-01)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 1 juli 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=103">Sälen 3+3 Medel</a>      </div>
+                  <div class="organiser">
+        Lindvallen, Malung      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">2 min bom vid 7:an + några småkrokar, annars ok.
+Drygt 3 min efter Perry som plockade hem det.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=102"><img src="/erik/doma/map_images/102.thumbnail.jpg" alt="Sälen 3+3 Lång (2012-06-30)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 30 juni 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=102">Sälen 3+3 Lång</a>      </div>
+                  <div class="organiser">
+        Lindvallen, Malung      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Tuff långdistans på fjället ovanför Lindvallen. Dålig inledning med misstag på varje kontroll. Långsträckan OK, men jag sk...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Tuff långdistans på fjället ovanför Lindvallen. Dålig inledning med misstag på varje kontroll. Långsträckan OK, men jag skulle gått mer i skogen istället för tagit höjd direkt. Riktigt dåligt på sträckan till 12:an. Först ner i ravinen och sen följde jag fel sänka, vilket resulterade i en rejäl böj.</div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=101"><img src="/erik/doma/map_images/101.thumbnail.jpg" alt="Sälen 3+3 Sprint (2012-06-30)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 30 juni 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=101">Sälen 3+3 Sprint</a>      </div>
+                  <div class="organiser">
+        Lindvallen      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Helt ok sprintlopp. Dåligt till k9 och k11.
+Tunga ben.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=100"><img src="/erik/doma/map_images/100.thumbnail.jpg" alt="Idre 3-Dagars E3 (2012-06-28)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        torsdag 28 juni 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=100">Idre 3-Dagars E3</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Bra fram till 7:an. Sen blev jag trött (syns på hastigheten). 
+Fet bom till 12:an. Alltid kul att vara utanför kartan...</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=99"><img src="/erik/doma/map_images/99.thumbnail.jpg" alt="Idre 3-Dagars E2 (2012-06-27)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        onsdag 27 juni 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=99">Idre 3-Dagars E2</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Årets miss (än så länge...) till 11:an.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=98"><img src="/erik/doma/map_images/98.thumbnail.jpg" alt="Idre 3-Dagars E1 (2012-06-26)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        tisdag 26 juni 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=98">Idre 3-Dagars E1</a>      </div>
+                  <div class="organiser">
+              </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=97"><img src="/erik/doma/map_images/97.thumbnail.jpg" alt="Jukola, str 3 (2012-06-17)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 17 juni 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=97">Jukola, str 3</a>      </div>
+                  <div class="organiser">
+        Finland      </div>
+            <div class="discipline">
+      Sträcka 3      </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Riktigt dåligt lopp. Dålig inledning och avslutning. Trött som satan på slutet. Knapp styrfart.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=95"><img src="/erik/doma/map_images/95.thumbnail.jpg" alt="Lång-KM (2012-06-06)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        onsdag 6 juni 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=95">Lång-KM</a>      </div>
+                  <div class="organiser">
+        Mårn, Linköpings OK      </div>
+            <div class="discipline">
+      <a href="http://www.obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=21447&categoryId=1">Resultat</a>      </div>
+      
+            
+      
+    </div>
+
+              
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=94"><img src="/erik/doma/map_images/94.thumbnail.jpg" alt="EOC Tour E3 (2012-05-20)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 20 maj 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=94">EOC Tour E3</a>      </div>
+                  <div class="organiser">
+        Lugnet, OK Kåre      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=93"><img src="/erik/doma/map_images/93.thumbnail.jpg" alt="EOC Tour E2 (2012-05-18)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 18 maj 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=93">EOC Tour E2</a>      </div>
+                  <div class="organiser">
+        Skattungsbyn, IFK Mora      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=92"><img src="/erik/doma/map_images/92.thumbnail.jpg" alt="EOC Tour E1 (2012-05-17)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        torsdag 17 maj 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=92">EOC Tour E1</a>      </div>
+                  <div class="organiser">
+        Skattungsbyn, IFK Mora      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=91"><img src="/erik/doma/map_images/91.thumbnail.jpg" alt="Ljungsbrokampen (2012-05-10)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        torsdag 10 maj 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=91">Ljungsbrokampen</a>      </div>
+                  <div class="organiser">
+        OK Skogsströvarna      </div>
+            <div class="discipline">
+      <a href="http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=20868&categoryId=1">Resultat</a>      </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Dåligt till 1:an. Miss vid 2 och 6. Annars OK. Trea</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=90"><img src="/erik/doma/map_images/90.thumbnail.jpg" alt="Tiomila (2012-05-05)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 5 maj 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=90">Tiomila</a>      </div>
+                  <div class="organiser">
+        Kvarn      </div>
+            <div class="discipline">
+      Sträcka 3      </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Dåligt utgångsläge. Solorace i princip hela vägen. Löpningen kändes bra men jag orienterade som en kratta. Plockade iallafal...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Dåligt utgångsläge. Solorace i princip hela vägen. Löpningen kändes bra men jag orienterade som en kratta. Plockade iallafall 45 lag.</div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=87"><img src="/erik/doma/map_images/87.thumbnail.jpg" alt="Stigtomtakavlen (2012-04-22)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 22 april 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=87">Stigtomtakavlen</a>      </div>
+                  <div class="organiser">
+        Stavsjö, OK Hällen      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Misstag vid 2, 8 och 17.
+Kändes rätt segt i kroppen.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=86"><img src="/erik/doma/map_images/86.thumbnail.jpg" alt="Tibrotrippeln, lång (2012-04-15)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 15 april 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=86">Tibrotrippeln, lång</a>      </div>
+                  <div class="organiser">
+        Tibro      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Tanken var att jobba med tempoväxlingar och att var noggrann i kontrolltagningen.
+Trots att jag gjorde flera kartstopp blev det ...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Tanken var att jobba med tempoväxlingar och att var noggrann i kontrolltagningen.<br />
+Trots att jag gjorde flera kartstopp blev det en del små svängar. Gjorde många bra sträckor, men även en hel del dåliga (riktigt dåligt vägval till 7:an t.ex.). <br />
+Alltid trevligt med en seger.</div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=85"><img src="/erik/doma/map_images/85.thumbnail.jpg" alt="Tibrotrippeln, medel (2012-04-14)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        lördag 14 april 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=85">Tibrotrippeln, medel</a>      </div>
+                  <div class="organiser">
+        Tibro      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Pinsamt dåligt... Totalt ofokuserad.
+Note: Dålig GPS-täckning i början.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=84"><img src="/erik/doma/map_images/84.thumbnail.jpg" alt="Tibrotrippeln, natt (2012-04-13)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 13 april 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=84">Tibrotrippeln, natt</a>      </div>
+                  <div class="organiser">
+        Tibro      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Dåligt lopp som ändå räckte till seger.
+Kände mig grymt stark i löpningen.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=83"><img src="/erik/doma/map_images/83.thumbnail.jpg" alt="Svartnatta (2012-04-05)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        torsdag 5 april 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=83">Svartnatta</a>      </div>
+                  <div class="organiser">
+        Vingåkers OK      </div>
+            <div class="discipline">
+      Sträcka 2      </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">I lag med Ptr.
+Helt ok lopp. Lång gaffel överallt utom i början gjorde dock att jag inte kunde vara med och kriga om någon to...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">I lag med Ptr.<br />
+Helt ok lopp. Lång gaffel överallt utom i början gjorde dock att jag inte kunde vara med och kriga om någon topplacering. </div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=80"><img src="/erik/doma/map_images/80.thumbnail.jpg" alt="Måsenstafetten (2012-03-25)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        söndag 25 mars 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=80">Måsenstafetten</a>      </div>
+                  <div class="organiser">
+        OK Måsen      </div>
+            <div class="discipline">
+      Sträcka 2      </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Helt ok fram till 10:an. Riktigt dåligt till 11:an. Drar snett och sedan alldeles för långt. Lägger bort 3 min.
+Knackig avslu...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Helt ok fram till 10:an. Riktigt dåligt till 11:an. Drar snett och sedan alldeles för långt. Lägger bort 3 min.<br />
+Knackig avslutning efter det. Tappar mycket tid.</div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=79"><img src="/erik/doma/map_images/79.thumbnail.jpg" alt="Nyköpingsnatten, del 2 (2012-03-23)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 23 mars 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=79">Nyköpingsnatten, del 2</a>      </div>
+                  <div class="organiser">
+        Ryssbergen, Nyköpings OK      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div class="comment">Se del 1.</div>
+                    
+    <div class="clear"></div>
+  </div>
+
+ 
+  <div class="map">
+    <div class="thumbnail">
+      <a href="show_map.php?user=erik&amp;map=78"><img src="/erik/doma/map_images/78.thumbnail.jpg" alt="Nyköpingsnatten, del 1 (2012-03-23)" height="100" width="400" /></a>    </div>
+    <div class="info">
+      <div class="date">
+        fredag 23 mars 2012      </div>
+      <div class="name">
+        <a href="show_map.php?user=erik&amp;map=78">Nyköpingsnatten, del 1</a>      </div>
+                  <div class="organiser">
+        Ryssbergen, Nyköpings OK      </div>
+            <div class="discipline">
+            </div>
+      
+            
+      
+    </div>
+
+              <div>
+            <div class="comment shortComment">
+              <img src="gfx/plus.png" class="button toggleComment" alt="" />
+              <div class="indent">Masstart med två slingor. Fel vägval till 1:an och tappade täten direkt. Försökte jobba ikapp täten men lyckades inte. Varva...</div>
+            </div>
+            <div class="comment longComment hidden">
+              <img src="gfx/minus.png" class="button toggleComment" alt="" />
+              <div class="indent">Masstart med två slingor. Fel vägval till 1:an och tappade täten direkt. Försökte jobba ikapp täten men lyckades inte. Varvade 40 sek efter och tappade sen lamporna. Några krokar på andra varvet gjorde att jag blev 2 min efter på 6:e plats.</div>
+            </div>
+          </div>
+                    
+    <div class="clear"></div>
+  </div>
+
+  </div>
+<div class="clear"></div>
+
+<p id="footer"></p>
+
+</form>
+</div>
+</div>
+</body>
+</html>
