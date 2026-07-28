@@ -5,6 +5,7 @@ import {
   type Page,
 } from "playwright";
 import { NextResponse } from "next/server";
+import { loadWinSplits } from "@/lib/winsplits";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -14,8 +15,27 @@ const EVENTOR_BASE_URL =
 
 type WinSplitsInformation = {
   databaseId: number;
+  categoryId: number;
+  url: string;
   title: string;
   date: string;
+  raceClass: string;
+  distanceKm: string;
+  starters: string;
+};
+
+type DirectWinSplitsImport = {
+  title: string;
+  date: string;
+  club: string;
+  raceClass: string;
+  distanceKm: string;
+  time: string;
+  position: string;
+  starters: string;
+  controls: string;
+  mistakeTime: string;
+  winsplitsUrl: string;
 };
 
 type EventorCandidate = {
@@ -89,9 +109,13 @@ function parseDateFromText(
   return "";
 }
 
-function readDatabaseId(
+function readWinSplitsIds(
   winsplitsUrl: string,
-): number {
+): {
+  databaseId: number;
+  categoryId: number;
+  normalizedUrl: string;
+} {
   let url: URL;
 
   try {
@@ -122,6 +146,10 @@ function readDatabaseId(
     url.searchParams.get("databaseId"),
   );
 
+  const categoryId = Number(
+    url.searchParams.get("categoryId"),
+  );
+
   if (
     !Number.isInteger(databaseId) ||
     databaseId <= 0
@@ -131,7 +159,50 @@ function readDatabaseId(
     );
   }
 
-  return databaseId;
+  if (
+    !Number.isInteger(categoryId) ||
+    categoryId <= 0
+  ) {
+    throw new Error(
+      "WinSplits-länken saknar ett giltigt categoryId.",
+    );
+  }
+
+  url.searchParams.set("page", "table");
+  url.searchParams.set(
+    "databaseId",
+    String(databaseId),
+  );
+  url.searchParams.set(
+    "categoryId",
+    String(categoryId),
+  );
+  url.hash = "";
+
+  return {
+    databaseId,
+    categoryId,
+    normalizedUrl: url.toString(),
+  };
+}
+
+function createWinSplitsHeaderUrl(
+  databaseId: number,
+): string {
+  const url = new URL(
+    "https://obasen.orientering.se/winsplits/online/sv/top.asp",
+  );
+
+  url.searchParams.set(
+    "page",
+    "classes",
+  );
+  url.searchParams.set(
+    "databaseId",
+    String(databaseId),
+  );
+
+  return url.toString();
 }
 
 function createWinSplitsClassesUrl(
@@ -236,6 +307,135 @@ function cleanWinSplitsTitle(
   );
 }
 
+function extractClassInformation(
+  snapshots: WinSplitsPageSnapshot[],
+): {
+  raceClass: string;
+  distanceKm: string;
+  starters: string;
+} {
+  const values = snapshots.flatMap(
+    (snapshot) => [
+      snapshot.bodyText,
+      snapshot.documentTitle,
+      snapshot.htmlText,
+    ],
+  );
+
+  for (const value of values) {
+    const normalized = normalizeText(value);
+
+    const match = normalized.match(
+      /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)\s+(\d[\d\s]*)\s*m(?:\s*,?\s*(\d+)\s+startande)?/i,
+    );
+
+    if (!match) {
+      continue;
+    }
+
+    const meters = Number(
+      match[2].replace(/\s+/g, ""),
+    );
+
+    return {
+      raceClass:
+        normalizeText(match[1]),
+      distanceKm:
+        Number.isFinite(meters) &&
+        meters > 0
+          ? String(
+              Number(
+                (meters / 1_000).toFixed(3),
+              ),
+            )
+          : "",
+      starters: match[3] ?? "",
+    };
+  }
+
+  for (const value of values) {
+    const match =
+      normalizeText(value).match(
+        /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)(?=\s|$)/i,
+      );
+
+    if (match) {
+      return {
+        raceClass:
+          normalizeText(match[1]),
+        distanceKm: "",
+        starters: "",
+      };
+    }
+  }
+
+  return {
+    raceClass: "",
+    distanceKm: "",
+    starters: "",
+  };
+}
+
+function normalizeName(
+  value: string,
+): string {
+  return normalizeText(value)
+    .normalize("NFD")
+    .replace(/\p{M}+/gu, "")
+    .toLocaleLowerCase("sv-SE")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function normalizeTime(
+  value: string | undefined,
+): string {
+  if (!value) {
+    return "";
+  }
+
+  const normalized =
+    normalizeText(value);
+
+  const match = normalized.match(
+    /^(\d{1,3})[.:](\d{2})$/,
+  );
+
+  return match
+    ? `${match[1]}:${match[2]}`
+    : normalized;
+}
+
+function isPlausibleWinSplitsTitle(
+  value: string,
+): boolean {
+  const normalized =
+    normalizeComparableText(value);
+
+  if (
+    !normalized ||
+    normalized.length < 3 ||
+    normalized.length > 200
+  ) {
+    return false;
+  }
+
+  const rejectedTitles = new Set([
+    "online",
+    "ladda upp",
+    "start",
+    "klasser",
+    "resultat",
+    "stracktider",
+    "om winsplits online",
+    "hjalp",
+    "winsplits online",
+  ]);
+
+  return !rejectedTitles.has(normalized);
+}
+
 function extractWinSplitsInformation(
   snapshots: WinSplitsPageSnapshot[],
 ): {
@@ -268,9 +468,7 @@ function extractWinSplitsInformation(
     );
 
     if (
-      title &&
-      title.toLocaleLowerCase("sv-SE") !==
-        "online"
+      isPlausibleWinSplitsTitle(title)
     ) {
       return {
         title,
@@ -312,14 +510,7 @@ function extractWinSplitsInformation(
         );
 
         if (
-          title &&
-          title.length >= 3 &&
-          title.length <= 200 &&
-          title.toLocaleLowerCase("sv-SE") !==
-            "online" &&
-          !/^(?:klasser|resultat|sträcktider)$/i.test(
-            title,
-          )
+          isPlausibleWinSplitsTitle(title)
         ) {
           return {
             title,
@@ -384,11 +575,16 @@ async function readWinSplitsInformation(
   context: BrowserContext,
   winsplitsUrl: string,
 ): Promise<WinSplitsInformation> {
-  const databaseId =
-    readDatabaseId(winsplitsUrl);
+  const {
+    databaseId,
+    categoryId,
+    normalizedUrl,
+  } =
+    readWinSplitsIds(winsplitsUrl);
 
   const urlsToTry = Array.from(
     new Set([
+      createWinSplitsHeaderUrl(databaseId),
       winsplitsUrl,
       createWinSplitsClassesUrl(databaseId),
     ]),
@@ -415,10 +611,23 @@ async function readWinSplitsInformation(
           );
 
         if (information) {
+          const classInformation =
+            extractClassInformation(
+              allSnapshots,
+            );
+
           return {
             databaseId,
+            categoryId,
+            url: normalizedUrl,
             title: information.title,
             date: information.date,
+            raceClass:
+              classInformation.raceClass,
+            distanceKm:
+              classInformation.distanceKm,
+            starters:
+              classInformation.starters,
           };
         }
       } catch {
@@ -832,6 +1041,56 @@ async function candidateUsesDatabaseId(
   }
 }
 
+async function createDirectWinSplitsImport(
+  winsplits: WinSplitsInformation,
+  runnerName = "Erik Martinsson",
+): Promise<DirectWinSplitsImport> {
+  const runners =
+    await loadWinSplits(
+      winsplits.databaseId,
+      winsplits.categoryId,
+    );
+
+  const wantedName =
+    normalizeName(runnerName);
+
+  const runner =
+    runners.find(
+      (candidate) =>
+        normalizeName(candidate.name) ===
+        wantedName,
+    ) ?? null;
+
+  if (!runner) {
+    throw new Error(
+      `${runnerName} hittades inte i den valda WinSplits-klassen.`,
+    );
+  }
+
+  return {
+    title: winsplits.title,
+    date: winsplits.date,
+    club: runner.club,
+    raceClass: winsplits.raceClass,
+    distanceKm: winsplits.distanceKm,
+    time: normalizeTime(
+      runner.totalTime,
+    ),
+    position: runner.place,
+    starters:
+      winsplits.starters ||
+      String(runners.length),
+    controls: String(
+      runner.controls,
+    ),
+    mistakeTime:
+      normalizeTime(
+        runner.totalMistake,
+      ) || "0:00",
+    winsplitsUrl: winsplits.url,
+  };
+}
+
 async function resolveEventorEvent(
   browser: Browser,
   winsplitsUrl: string,
@@ -856,6 +1115,11 @@ async function resolveEventorEvent(
         winsplitsUrl,
       );
 
+    const directImport =
+      await createDirectWinSplitsImport(
+        winsplits,
+      );
+
     const candidates =
       await readEventorCandidates(
         context,
@@ -863,9 +1127,13 @@ async function resolveEventorEvent(
       );
 
     if (candidates.length === 0) {
-      throw new Error(
-        `Inga Eventor-tävlingar hittades för ${winsplits.date}.`,
-      );
+      return {
+        winsplits,
+        directImport,
+        eventor: null,
+        verified: false,
+        candidates: [],
+      };
     }
 
     /*
@@ -891,6 +1159,7 @@ async function resolveEventorEvent(
       if (verified) {
         return {
           winsplits,
+          directImport,
 
           eventor: {
             eventId:
@@ -940,6 +1209,7 @@ async function resolveEventorEvent(
     ) {
       return {
         winsplits,
+        directImport,
 
         eventor: {
           eventId:
@@ -964,6 +1234,7 @@ async function resolveEventorEvent(
 
     return {
       winsplits,
+      directImport,
       eventor: null,
       verified: false,
       candidates:

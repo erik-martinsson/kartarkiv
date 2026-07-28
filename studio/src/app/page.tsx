@@ -30,6 +30,19 @@ type WinSplitsResolverResponse = {
   eventor?: {
     eventId?: number;
   } | null;
+  directImport?: {
+    title?: string;
+    date?: string;
+    club?: string;
+    raceClass?: string;
+    distanceKm?: string;
+    time?: string;
+    position?: string;
+    starters?: string;
+    controls?: string;
+    mistakeTime?: string;
+    winsplitsUrl?: string;
+  };
   error?: string;
 };
 
@@ -234,6 +247,160 @@ export default function Home() {
     }));
   };
 
+  const applyImportedEvent = (
+    imported: EventLinksResponse,
+  ) => {
+    setForm((current) => ({
+      ...current,
+      title: imported.title || current.title,
+      date: imported.date || current.date,
+      club: imported.club || current.club,
+      location: imported.location || current.location,
+      raceClass:
+        imported.raceClass ||
+        current.raceClass,
+      discipline:
+        imported.discipline ||
+        current.discipline,
+      distanceKm:
+        imported.distanceKm ||
+        current.distanceKm,
+      time: imported.time || current.time,
+      position:
+        imported.position ||
+        current.position,
+      starters:
+        imported.starters ||
+        current.starters,
+      controls:
+        imported.controls ||
+        current.controls,
+      mistakeTime:
+        imported.mistakeTime ||
+        current.mistakeTime,
+      livelox:
+        imported.liveloxUrl ||
+        current.livelox,
+      winsplits:
+        imported.winsplits?.url ||
+        current.winsplits,
+      results:
+        imported.resultListUrl ||
+        current.results,
+    }));
+  };
+
+  const applyDirectWinSplitsImport = (
+    imported:
+      NonNullable<
+        WinSplitsResolverResponse[
+          "directImport"
+        ]
+      >,
+  ) => {
+    setForm((current) => ({
+      ...current,
+      title: imported.title || current.title,
+      date: imported.date || current.date,
+      club: imported.club || current.club,
+      raceClass:
+        imported.raceClass ||
+        current.raceClass,
+      distanceKm:
+        imported.distanceKm ||
+        current.distanceKm,
+      time: imported.time || current.time,
+      position:
+        imported.position ||
+        current.position,
+      starters:
+        imported.starters ||
+        current.starters,
+      controls:
+        imported.controls ||
+        current.controls,
+      mistakeTime:
+        imported.mistakeTime ||
+        current.mistakeTime,
+      winsplits:
+        imported.winsplitsUrl ||
+        current.winsplits,
+    }));
+  };
+
+  const applyEventorSupplement = (
+    imported: EventLinksResponse,
+  ) => {
+    setForm((current) => ({
+      ...current,
+      title:
+        imported.title ||
+        current.title,
+      date:
+        imported.date ||
+        current.date,
+      club:
+        imported.club ||
+        current.club,
+      location:
+        imported.location ||
+        current.location,
+      discipline:
+        imported.discipline ||
+        current.discipline,
+      livelox:
+        imported.liveloxUrl ||
+        current.livelox,
+      results:
+        imported.resultListUrl ||
+        current.results,
+
+      /*
+       * Klass- och löparresultat ska alltid komma
+       * från den WinSplits-länk som användaren
+       * faktiskt klistrade in. Eventor används bara
+       * som komplettering.
+       */
+      raceClass: current.raceClass,
+      distanceKm: current.distanceKm,
+      time: current.time,
+      position: current.position,
+      starters: current.starters,
+      controls: current.controls,
+      mistakeTime: current.mistakeTime,
+      winsplits: current.winsplits,
+    }));
+  };
+
+  const fetchEventorImport = async (
+    eventId: number,
+  ): Promise<EventLinksResponse> => {
+    setEventorMessage(
+      `Hämtar tävlingsinformation från Eventor (${eventId})…`,
+    );
+
+    const eventorResponse = await fetch(
+      `/api/eventor-links?eventId=${encodeURIComponent(String(eventId))}`,
+      {
+        method: "GET",
+        cache: "no-store",
+      },
+    );
+
+    if (!eventorResponse.ok) {
+      throw new Error(
+        await readErrorMessage(
+          eventorResponse,
+          "Eventor-importen misslyckades.",
+        ),
+      );
+    }
+
+    return (
+      await eventorResponse.json()
+    ) as EventLinksResponse;
+  };
+
   const handleImportEventor = async () => {
     const input = eventSource.trim();
 
@@ -248,49 +415,112 @@ export default function Home() {
     setEventorMessage("Hämtar tävlingen…");
 
     try {
-      let eventId: number | null = null;
-
       if (isWinSplitsInput(input)) {
         setEventorMessage(
-          "Matchar WinSplits-tävlingen mot Eventor…",
+          "Läser tävling och resultat från WinSplits…",
         );
 
-        const resolverResponse = await fetch(
-          `/api/winsplits-eventor?url=${encodeURIComponent(input)}`,
-          {
-            method: "GET",
-            cache: "no-store",
-          },
-        );
+        const resolverResponse =
+          await fetch(
+            `/api/winsplits-eventor?url=${encodeURIComponent(input)}`,
+            {
+              method: "GET",
+              cache: "no-store",
+            },
+          );
 
         if (!resolverResponse.ok) {
           throw new Error(
             await readErrorMessage(
               resolverResponse,
-              "Kunde inte matcha WinSplits-länken mot Eventor.",
+              "Kunde inte läsa WinSplits-länken.",
             ),
           );
         }
 
         const resolverData =
-          (await resolverResponse.json()) as WinSplitsResolverResponse;
+          (await resolverResponse.json()) as
+            WinSplitsResolverResponse;
 
-        const resolvedEventId = resolverData.eventor?.eventId;
-
-        if (
-          resolverData.verified !== true ||
-          !Number.isInteger(resolvedEventId) ||
-          Number(resolvedEventId) <= 0
-        ) {
+        if (!resolverData.directImport) {
           throw new Error(
-            "WinSplits-tävlingen kunde inte verifieras mot en Eventor-tävling.",
+            "WinSplits-data kunde läsas, men tävlingsuppgifterna saknades i svaret.",
           );
         }
 
-        eventId = Number(resolvedEventId);
-      } else {
-        eventId = readEventorIdFromInput(input);
+        /*
+         * WinSplits är huvudkälla när användaren
+         * klistrar in en WinSplits-länk.
+         */
+        applyDirectWinSplitsImport(
+          resolverData.directImport,
+        );
+
+        setEventSource(
+          resolverData.directImport
+            .winsplitsUrl ||
+            input,
+        );
+
+        const resolvedEventId =
+          resolverData.eventor?.eventId;
+
+        if (
+          resolverData.verified === true &&
+          Number.isInteger(
+            resolvedEventId,
+          ) &&
+          Number(resolvedEventId) > 0
+        ) {
+          const eventId =
+            Number(resolvedEventId);
+
+          try {
+            setEventorMessage(
+              `WinSplits-data hämtad. Kompletterar med Eventor (${eventId})…`,
+            );
+
+            const imported =
+              await fetchEventorImport(
+                eventId,
+              );
+
+            /*
+             * Eventor får bara komplettera metadata
+             * och länkar. Klass, tid, placering,
+             * startande, kontroller och bomtid
+             * behålls från WinSplits.
+             */
+            applyEventorSupplement(
+              imported,
+            );
+
+            setEventorMessage(
+              `Tävlingen hämtades från WinSplits och kompletterades med Eventor (${eventId}). Kontrollera uppgifterna innan du skapar tävlingen.`,
+            );
+          } catch {
+            /*
+             * En Eventor-komplettering får aldrig
+             * göra en fungerande WinSplits-import
+             * till ett misslyckande.
+             */
+            setEventorMessage(
+              `Tävlingen hämtades direkt från WinSplits. Eventor (${eventId}) hittades, men kunde inte användas som komplettering. Klass och resultat kommer från den valda WinSplits-klassen.`,
+            );
+          }
+
+          return;
+        }
+
+        setEventorMessage(
+          "Tävlingen hämtades direkt från WinSplits. Ingen verifierad Eventor-tävling kunde användas, så plats, disciplin och resultatlänk kan behöva fyllas i manuellt.",
+        );
+
+        return;
       }
+
+      const eventId =
+        readEventorIdFromInput(input);
 
       if (eventId === null) {
         throw new Error(
@@ -298,49 +528,12 @@ export default function Home() {
         );
       }
 
-      setEventorMessage(
-        `Hämtar tävlingsinformation från Eventor (${eventId})…`,
-      );
-
-      const eventorResponse = await fetch(
-        `/api/eventor-links?eventId=${encodeURIComponent(String(eventId))}`,
-        {
-          method: "GET",
-          cache: "no-store",
-        },
-      );
-
-      if (!eventorResponse.ok) {
-        throw new Error(
-          await readErrorMessage(
-            eventorResponse,
-            "Eventor-importen misslyckades.",
-          ),
-        );
-      }
-
       const imported =
-        (await eventorResponse.json()) as EventLinksResponse;
+        await fetchEventorImport(
+          eventId,
+        );
 
-      setForm((current) => ({
-        ...current,
-        title: imported.title || current.title,
-        date: imported.date || current.date,
-        club: imported.club || current.club,
-        location: imported.location || current.location,
-        raceClass: imported.raceClass || current.raceClass,
-        discipline: imported.discipline || current.discipline,
-        distanceKm: imported.distanceKm || current.distanceKm,
-        time: imported.time || current.time,
-        position: imported.position || current.position,
-        starters: imported.starters || current.starters,
-        controls: imported.controls || current.controls,
-        mistakeTime: imported.mistakeTime || current.mistakeTime,
-        livelox: imported.liveloxUrl || current.livelox,
-        winsplits: imported.winsplits?.url || current.winsplits,
-        results: imported.resultListUrl || current.results,
-      }));
-
+      applyImportedEvent(imported);
       setEventSource(String(eventId));
       setEventorMessage(
         `Tävlingen hämtades från Eventor (${eventId}). Kontrollera uppgifterna innan du skapar tävlingen.`,
