@@ -986,3 +986,85 @@ a {
     grid-row: 2;
   }
 }
+
+/* Migration review editing */
+.migration-edit-field {
+  position: relative;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.migration-edit-field.is-dirty {
+  background: var(--accent-soft);
+  border-color: rgba(255, 122, 0, 0.38);
+}
+
+.migration-edit-field.is-dirty input,
+.migration-edit-field.is-dirty select {
+  border-color: rgba(255, 122, 0, 0.62);
+}
+
+.migration-field-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.migration-field-heading > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.migration-field-heading em {
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(255, 122, 0, 0.16);
+  color: var(--accent);
+  font-size: 0.58rem;
+  font-style: normal;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.migration-restore-button,
+.migration-dirty-summary button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.66rem;
+  font-weight: 800;
+}
+
+.migration-restore-button:disabled,
+.migration-dirty-summary button:disabled {
+  color: var(--muted);
+  cursor: default;
+  opacity: 0.45;
+}
+
+.migration-dirty-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 750;
+}
+
+.migration-link-fields {
+  display: grid;
+  gap: 10px;
+}
+
+.migration-edit-field input:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
