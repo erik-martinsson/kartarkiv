@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-07-30T20:33:40.110Z",
+  "competition": {
+    "doma": {
+      "mapId": 370,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=370",
+      "title": "Staffans Minne",
+      "date": "2017-05-15",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "15:11",
+      "runningDistanceKm": 3.88,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/370.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/370.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=370&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=48752&categoryId=1"
+    },
+    "discipline": "Sprint",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "2",
+      "starters": "20",
+      "controls": 15,
+      "time": "15.06",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": {
+      "eventId": 17075,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/17075",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=17075",
+      "title": "Staffans minne",
+      "date": "",
+      "organiser": "Boxholms OK",
+      "location": "",
+      "rawDiscipline": "sprint",
+      "liveloxUrl": "https://www.livelox.com/Viewer/Staffans-minne/H21?classId=72675&live=false&tab=player"
+    },
+    "eventorMatch": {
+      "eventId": 17075,
+      "title": "Staffans minne",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/17075",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=17075",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Staffans Minne",
+      "domaDate": "2017-05-15",
+      "databaseId": 48752,
+      "searchedDates": [
+        "2017-05-13",
+        "2017-05-14",
+        "2017-05-15",
+        "2017-05-16",
+        "2017-05-17"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2017-05-13&endDate=2017-05-13&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-05-13&endDate=2017-05-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-05-13&endDate=2017-05-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-05-13&endDate=2017-05-13&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-05-13&endDate=2017-05-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-05-13&endDate=2017-05-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-05-14&endDate=2017-05-14&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-05-14&endDate=2017-05-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-05-14&endDate=2017-05-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-05-14&endDate=2017-05-14&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-05-14&endDate=2017-05-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-05-14&endDate=2017-05-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-05-15&endDate=2017-05-15&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-05-15&endDate=2017-05-15&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-05-15&endDate=2017-05-15&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-05-15&endDate=2017-05-15&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-05-15&endDate=2017-05-15&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-05-15&endDate=2017-05-15&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-05-16&endDate=2017-05-16&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-05-16&endDate=2017-05-16&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-05-16&endDate=2017-05-16&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-05-16&endDate=2017-05-16&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-05-16&endDate=2017-05-16&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-05-16&endDate=2017-05-16&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-05-17&endDate=2017-05-17&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-05-17&endDate=2017-05-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-05-17&endDate=2017-05-17&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-05-17&endDate=2017-05-17&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-05-17&endDate=2017-05-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-05-17&endDate=2017-05-17&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 17075,
+          "title": "Staffans minne",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-05-16&endDate=2017-05-16&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer/Staffans-minne/H21?classId=72675&live=false&tab=player",
+    "warnings": [],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-28-v4",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-370\\competition-enriched.json"
+    }
+  }
+}

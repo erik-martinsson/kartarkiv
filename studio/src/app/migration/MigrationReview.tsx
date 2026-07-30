@@ -50,6 +50,29 @@ function cloneCompetition(value: EnrichedDomaCompetition): EnrichedDomaCompetiti
   return structuredClone(value);
 }
 
+function ensureEventorMetadata(
+  competition: EnrichedDomaCompetition,
+): NonNullable<EnrichedDomaCompetition["eventor"]> {
+  if (!competition.eventor) {
+    competition.eventor = {
+      eventId: competition.eventorMatch?.eventId ?? 0,
+      eventorUrl: competition.eventorMatch?.eventorUrl ?? "",
+      resultListUrl: competition.eventorMatch?.resultListUrl ?? "",
+      title:
+        competition.eventorMatch?.title ??
+        competition.doma.title ??
+        "",
+      date: competition.doma.date ?? "",
+      organiser: "",
+      location: "",
+      rawDiscipline: "",
+      liveloxUrl: competition.liveloxUrl,
+    };
+  }
+
+  return competition.eventor;
+}
+
 function valueOrDash(value: unknown): string {
   return value === null || value === undefined || value === "" ? "—" : String(value);
 }
@@ -354,7 +377,9 @@ export default function MigrationReview() {
         case "date": next.doma.date = nullableText; break;
         case "discipline": next.discipline = value as EnrichedDomaCompetition["discipline"]; break;
         case "eventType": next.doma.category = nullableText; break;
-        case "organiser": if (next.eventor) next.eventor.organiser = value; break;
+        case "organiser":
+          ensureEventorMetadata(next).organiser = value;
+          break;
         case "raceClass": next.result.raceClass = nullableText; break;
         case "club": next.result.club = nullableText; break;
         case "position": next.result.position = nullableText; break;
@@ -363,7 +388,7 @@ export default function MigrationReview() {
         case "distance": next.doma.runningDistanceKm = Number.isFinite(nullableNumber) ? nullableNumber : null; break;
         case "controls": next.result.controls = Number.isFinite(nullableNumber) ? nullableNumber : null; break;
         case "eventorUrl":
-          if (next.eventor) next.eventor.eventorUrl = value;
+          ensureEventorMetadata(next).eventorUrl = value;
           if (next.eventorMatch) next.eventorMatch.eventorUrl = value;
           break;
         case "winsplitsUrl": next.doma.winsplitsUrl = nullableText; break;
@@ -543,7 +568,7 @@ export default function MigrationReview() {
               <EditableFieldRow field="date" dirty={dirtyFields.has("date")} error={validationErrors.date} onRestore={() => restoreField("date")}><input type="date" aria-invalid={Boolean(validationErrors.date)} value={competition.doma.date ?? ""} onChange={(e) => updateField("date", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="discipline" dirty={dirtyFields.has("discipline")} onRestore={() => restoreField("discipline")}><select value={competition.discipline} onChange={(e) => updateField("discipline", e.target.value)}>{["Lång", "Medel", "Stafett", "Sprint", "Natt", "Ultralång", "Annan", "Okänd"].map((x) => <option key={x}>{x}</option>)}</select></EditableFieldRow>
               <EditableFieldRow field="eventType" dirty={dirtyFields.has("eventType")} onRestore={() => restoreField("eventType")}><input value={competition.doma.category ?? ""} onChange={(e) => updateField("eventType", e.target.value)} /></EditableFieldRow>
-              <EditableFieldRow field="organiser" dirty={dirtyFields.has("organiser")} onRestore={() => restoreField("organiser")}><input value={competition.eventor?.organiser ?? ""} disabled={!competition.eventor} title={!competition.eventor ? "Kan inte redigeras eftersom posten saknar Eventor-metadata." : undefined} onChange={(e) => updateField("organiser", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="organiser" dirty={dirtyFields.has("organiser")} onRestore={() => restoreField("organiser")}><input value={competition.eventor?.organiser ?? ""} onChange={(e) => updateField("organiser", e.target.value)} /></EditableFieldRow>
             </div>
           </section>
 
@@ -577,7 +602,7 @@ export default function MigrationReview() {
           <section className="panel">
             <div className="panel-heading"><div><p className="step-label">LÄNKAR</p><h2>Redigera länkar</h2></div></div>
             <div className="migration-link-fields">
-              <EditableFieldRow field="eventorUrl" dirty={dirtyFields.has("eventorUrl")} error={validationErrors.eventorUrl} onRestore={() => restoreField("eventorUrl")}><input type="url" aria-invalid={Boolean(validationErrors.eventorUrl)} value={eventor?.eventorUrl ?? match?.eventorUrl ?? ""} disabled={!eventor && !match} onChange={(e) => updateField("eventorUrl", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="eventorUrl" dirty={dirtyFields.has("eventorUrl")} error={validationErrors.eventorUrl} onRestore={() => restoreField("eventorUrl")}><input type="url" aria-invalid={Boolean(validationErrors.eventorUrl)} value={eventor?.eventorUrl ?? match?.eventorUrl ?? ""} onChange={(e) => updateField("eventorUrl", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="winsplitsUrl" dirty={dirtyFields.has("winsplitsUrl")} error={validationErrors.winsplitsUrl} onRestore={() => restoreField("winsplitsUrl")}><input type="url" aria-invalid={Boolean(validationErrors.winsplitsUrl)} value={competition.doma.winsplitsUrl ?? ""} onChange={(e) => updateField("winsplitsUrl", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="liveloxUrl" dirty={dirtyFields.has("liveloxUrl")} error={validationErrors.liveloxUrl} onRestore={() => restoreField("liveloxUrl")}><input type="url" aria-invalid={Boolean(validationErrors.liveloxUrl)} value={competition.liveloxUrl ?? ""} onChange={(e) => updateField("liveloxUrl", e.target.value)} /></EditableFieldRow>
             </div>

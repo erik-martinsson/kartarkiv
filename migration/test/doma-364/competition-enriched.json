@@ -1,0 +1,520 @@
+{
+  "doma": {
+    "mapId": 364,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=364",
+    "title": "Stigtomtakavlen",
+    "date": "2017-04-13",
+    "category": "Tävling",
+    "relayLeg": 2,
+    "runningTime": "82:41",
+    "runningDistanceKm": 14.45,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/364.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/364.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=364&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47999&categoryId=18"
+  },
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "18",
+    "starters": "67",
+    "controls": 19,
+    "time": "1:22.43",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Stigtomtakavlen",
+    "domaDate": "2017-04-13",
+    "databaseId": 47999,
+    "searchedDates": [
+      "2017-04-11",
+      "2017-04-12",
+      "2017-04-13",
+      "2017-04-14",
+      "2017-04-15"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 14576,
+        "title": "Stigtomtakavlen",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15192,
+        "title": "\"icons\">fre 14/4 - lör 15/4Stigtomtakavlen",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14946,
+        "title": "\"icons\">lör 15/4Stigtomtakavlen, individuella öppna klasser",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17783,
+        "title": "Stigtomtakavlen, individuella öppna klasser",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17908,
+        "title": "Kretsmästerskap natt",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18562,
+        "title": "NOK-träning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17866,
+        "title": "POL-Ryda",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 20442,
+        "title": "Rallybanan",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18037,
+        "title": "Tisdags-OL Bjärsjö",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17981,
+        "title": "Veteran-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18234,
+        "title": "Dala Veteran OL 2017",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16825,
+        "title": "Poängtävling 1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18613,
+        "title": "Motions-OL Rävåsskolan",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18311,
+        "title": "Sörklubbs 1 - 170411",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18738,
+        "title": "Vårspringet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18779,
+        "title": "Målilla OK OL-alliansen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18408,
+        "title": "Motions-OL Marielund",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18796,
+        "title": "Motionsorientering för alla!",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18829,
+        "title": "Sakoträning Onsjö",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18096,
+        "title": "Träning OL-NV",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18071,
+        "title": "Höglandsträning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18555,
+        "title": "Kretsträning Västra Kretsen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17661,
+        "title": "Norrcupen 170411",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-11&endDate=2017-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18756,
+        "title": "test",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15383,
+        "title": "Tiomilarepet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17960,
+        "title": "Veteran OL 3-stad",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18300,
+        "title": "Veteranorientering HOK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17831,
+        "title": "Motionsorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18242,
+        "title": "MTBO-träning Tegera Arena, Leksand",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18191,
+        "title": "ABCD-cupen 2017 #1 Järfälla OK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18374,
+        "title": "Allans Prövelöp",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18777,
+        "title": "Vintercup 6",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-12&endDate=2017-04-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18216,
+        "title": "Veteranorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18781,
+        "title": "Torsdagsträning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18765,
+        "title": "GBG Teknikträning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15486,
+        "title": "Häxjakten, Five-O, #1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18840,
+        "title": "GOK sekretariat testtävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18789,
+        "title": "Långfredags-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17802,
+        "title": "MOL 2, Påskriset",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14839,
+        "title": "Växjö OK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15412,
+        "title": "Kortfredan, Five-O, #2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14816,
+        "title": "Öjetrampen, Five-O, #3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15416,
+        "title": "Nackheträffen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15346,
+        "title": "Nybro OK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}

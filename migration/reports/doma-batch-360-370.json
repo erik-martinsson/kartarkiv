@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-07-30T20:21:39.069Z",
+  "finishedAt": "2026-07-30T20:24:46.224Z",
+  "options": {
+    "from": 360,
+    "to": 370,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 11,
+    "created": 9,
+    "skipped": 1,
+    "skippedExisting": 0,
+    "skippedTraining": 1,
+    "failed": 1
+  },
+  "items": [
+    {
+      "mapId": 360,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Tiomila-12",
+      "category": "Träning"
+    },
+    {
+      "mapId": 361,
+      "status": "created",
+      "title": "Västkuststafetten",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-361\\competition-enriched.json"
+    },
+    {
+      "mapId": 362,
+      "status": "created",
+      "title": "TibroTrippeln - Natt",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-362\\competition-enriched.json"
+    },
+    {
+      "mapId": 363,
+      "status": "created",
+      "title": "TibroTrippeln - Lång",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-363\\competition-enriched.json"
+    },
+    {
+      "mapId": 364,
+      "status": "created",
+      "title": "Stigtomtakavlen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-364\\competition-enriched.json"
+    },
+    {
+      "mapId": 365,
+      "status": "created",
+      "title": "Kolmårdsmedeln",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-365\\competition-enriched.json"
+    },
+    {
+      "mapId": 366,
+      "status": "created",
+      "title": "Kolmårdskavlen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-366\\competition-enriched.json"
+    },
+    {
+      "mapId": 367,
+      "status": "created",
+      "title": "Natt-SM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-367\\competition-enriched.json"
+    },
+    {
+      "mapId": 368,
+      "status": "failed",
+      "error": "DOMA-karta 368 saknar WinSplits-länk."
+    },
+    {
+      "mapId": 369,
+      "status": "created",
+      "title": "Ljungsbrokampen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-369\\competition-enriched.json"
+    },
+    {
+      "mapId": 370,
+      "status": "created",
+      "title": "Staffans Minne",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-370\\competition-enriched.json"
+    }
+  ]
+}

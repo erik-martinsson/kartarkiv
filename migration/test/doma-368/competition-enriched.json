@@ -1,0 +1,43 @@
+{
+  "doma": {
+    "mapId": 368,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=368",
+    "title": "10Mila str 2",
+    "date": "2017-04-28",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "83:00",
+    "runningDistanceKm": 13.11,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/368.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/368.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=368&format=kml",
+    "winsplitsUrl": null
+  },
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": null,
+    "position": null,
+    "starters": null,
+    "controls": null,
+    "time": "83:00",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "10Mila str 2",
+    "domaDate": "2017-04-28",
+    "databaseId": 0,
+    "searchedDates": [],
+    "calendarUrls": [],
+    "candidates": []
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+  ]
+}

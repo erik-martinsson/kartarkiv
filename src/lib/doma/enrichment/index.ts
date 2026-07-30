@@ -138,9 +138,63 @@ export async function readEnrichedDomaCompetition(
   }
 
   if (!doma.winsplitsUrl) {
-    throw new Error(
-      `DOMA-karta ${doma.mapId} saknar WinSplits-länk.`,
-    );
+    const warnings = [
+      ...doma.warnings,
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits.",
+    ];
+
+    return {
+      doma: {
+        mapId: doma.mapId,
+        sourceUrl: doma.sourceUrl,
+        title: doma.title,
+        date: doma.date,
+        category: doma.category,
+        relayLeg: doma.relayLeg,
+        runningTime: doma.runningTime,
+        runningDistanceKm:
+          doma.runningDistanceKm,
+        routeMapImageUrl:
+          doma.routeMapImageUrl,
+        blankMapImageUrl:
+          doma.blankMapImageUrl,
+        kmlUrl: doma.kmlUrl,
+        winsplitsUrl: null,
+      },
+
+      discipline: classifyDiscipline(
+        doma.relayLeg,
+        "",
+        doma.title,
+      ),
+
+      result: {
+        runnerName,
+        raceClass: null,
+        club: null,
+        position: null,
+        starters: null,
+        controls: null,
+        time:
+          cleanOptional(doma.runningTime),
+        totalMistakeTime: "0:00",
+        mistakes: [],
+      },
+
+      eventor: null,
+      eventorMatch: null,
+      eventorResolverDebug: {
+        wantedTitle: doma.title,
+        domaDate: doma.date,
+        databaseId: 0,
+        searchedDates: [],
+        calendarUrls: [],
+        candidates: [],
+      },
+      liveloxUrl: null,
+      warnings,
+    };
   }
 
   const ids =

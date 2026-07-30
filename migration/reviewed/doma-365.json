@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-07-30T20:31:10.043Z",
+  "competition": {
+    "doma": {
+      "mapId": 365,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=365",
+      "title": "Kolmårdsmedeln",
+      "date": "2017-04-15",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "48:49",
+      "runningDistanceKm": 6.8,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/365.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/365.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=365&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47996&categoryId=1"
+    },
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": null,
+      "club": "Linköpings OK",
+      "position": "51",
+      "starters": "70",
+      "controls": 21,
+      "time": "48.45",
+      "totalMistakeTime": "6.21",
+      "mistakes": [
+        {
+          "control": 4,
+          "time": "2.13"
+        },
+        {
+          "control": 9,
+          "time": "1.58"
+        },
+        {
+          "control": 14,
+          "time": "2.10"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 15438,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/15438",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=15438",
+      "title": "Kolmårdsdubbeln Medeldistans",
+      "date": "",
+      "organiser": "OK Kolmården",
+      "location": "",
+      "rawDiscipline": "medel",
+      "liveloxUrl": "https://www.livelox.com/Viewer/Kolmardsdubbeln-Medeldistans/H21E1?classId=63800&live=false&tab=player"
+    },
+    "eventorMatch": {
+      "eventId": 15438,
+      "title": "Kolmårdsdubbeln Medeldistans",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/15438",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=15438",
+      "score": 0,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Kolmårdsmedeln",
+      "domaDate": "2017-04-15",
+      "databaseId": 47996,
+      "searchedDates": [
+        "2017-04-13",
+        "2017-04-14",
+        "2017-04-15",
+        "2017-04-16",
+        "2017-04-17"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-04-17&endDate=2017-04-17&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-04-17&endDate=2017-04-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-04-17&endDate=2017-04-17&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-04-17&endDate=2017-04-17&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-04-17&endDate=2017-04-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-04-17&endDate=2017-04-17&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 18216,
+          "title": "Veteranorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 18781,
+          "title": "Torsdagsträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 18765,
+          "title": "GBG Teknikträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15486,
+          "title": "Häxjakten, Five-O, #1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-13&endDate=2017-04-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15192,
+          "title": "Friskusträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14576,
+          "title": "Stigtomtakavlen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 18840,
+          "title": "GOK sekretariat testtävling",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 18789,
+          "title": "Långfredags-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 17802,
+          "title": "MOL 2, Påskriset",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14839,
+          "title": "Växjö OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15412,
+          "title": "Kortfredan, Five-O, #2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-14&endDate=2017-04-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14946,
+          "title": "OK Torfinns påskjakt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 17783,
+          "title": "Stigtomtakavlen, individuella öppna klasser",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14816,
+          "title": "Öjetrampen, Five-O, #3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15416,
+          "title": "Nackheträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15346,
+          "title": "Nybro OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-15&endDate=2017-04-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14928,
+          "title": "Bruksdubbeln, lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15378,
+          "title": "Enskede/Skogsluffarna, dag 1, medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 16797,
+          "title": "Nässjö OK, lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 18849,
+          "title": "Stafetträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 17062,
+          "title": "Sydsvenska 7-manna/4-dams",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15438,
+          "title": "Kolmårdsdubbeln Medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-04-16&endDate=2017-04-16&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer/Kolmardsdubbeln-Medeldistans/H21E1?classId=63800&live=false&tab=player",
+    "warnings": [],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-28-v4",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-365\\competition-enriched.json"
+    }
+  }
+}
