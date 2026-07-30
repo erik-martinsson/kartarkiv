@@ -140,14 +140,17 @@ export default function MigrationReview() {
     return result;
   }, [competition, originalCompetition]);
 
-  const loadQueue = async (): Promise<void> => {
+  const loadQueue = async (): Promise<MigrationQueueItem[]> => {
     try {
       const response = await fetch("/api/migration/doma", { cache: "no-store" });
       const data = (await response.json()) as { items?: MigrationQueueItem[]; error?: string };
       if (!response.ok) throw new Error(data.error ?? "Migrationskön kunde inte läsas.");
-      setQueue(data.items ?? []);
+      const items = data.items ?? [];
+      setQueue(items);
+      return items;
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Migrationskön kunde inte läsas.");
+      return [];
     }
   };
 
@@ -183,6 +186,11 @@ export default function MigrationReview() {
       setCompetition(cloneCompetition(review?.competition ?? source));
       setStatus(review?.status ?? "pending");
       setMapIdInput(normalizedMapId);
+      try {
+        localStorage.setItem("migration:lastMapId", normalizedMapId);
+      } catch {
+        // localStorage may be unavailable in restricted browser contexts.
+      }
       setMessage(null);
     } catch (error) {
       setCompetition(null);
@@ -196,7 +204,15 @@ export default function MigrationReview() {
 
   useEffect(() => {
     void loadQueue();
-    void loadMap(DEFAULT_MAP_ID);
+
+    let initialMapId = DEFAULT_MAP_ID;
+    try {
+      initialMapId = localStorage.getItem("migration:lastMapId") ?? DEFAULT_MAP_ID;
+    } catch {
+      // Fall back to the default map ID when localStorage is unavailable.
+    }
+
+    void loadMap(initialMapId);
   }, []);
 
   const handleJsonFile = async (event: ChangeEvent<HTMLInputElement>): Promise<void> => {
@@ -275,12 +291,29 @@ export default function MigrationReview() {
       });
       const data = (await response.json()) as { review?: ReviewedDomaCompetition; savedTo?: string; error?: string };
       if (!response.ok || !data.review) throw new Error(data.error ?? "Granskningen kunde inte sparas.");
+      const savedCompetition = cloneCompetition(data.review.competition);
+
       setStatus(data.review.status);
-      setCompetition(cloneCompetition(data.review.competition));
-      setMessage(nextStatus === "approved"
+      setOriginalCompetition(savedCompetition);
+      setCompetition(cloneCompetition(savedCompetition));
+      const savedMessage = nextStatus === "approved"
         ? `Godkänd och sparad i ${data.savedTo ?? "migration/reviewed"}.`
-        : `Markerad för manuell granskning i ${data.savedTo ?? "migration/reviewed"}.`);
-      await loadQueue();
+        : `Markerad för manuell granskning i ${data.savedTo ?? "migration/reviewed"}.`;
+      setMessage(savedMessage);
+
+      const refreshedQueue = await loadQueue();
+      const savedMapId = String(savedCompetition.doma.mapId);
+      const savedIndex = refreshedQueue.findIndex((item) => String(item.mapId) === savedMapId);
+      const orderedCandidates = savedIndex >= 0
+        ? [...refreshedQueue.slice(savedIndex + 1), ...refreshedQueue.slice(0, savedIndex)]
+        : refreshedQueue;
+      const nextPending = orderedCandidates.find((item) => item.status === "pending");
+
+      if (nextPending) {
+        await loadMap(String(nextPending.mapId));
+      } else {
+        setMessage(`${savedMessage} Alla tävlingar är nu granskade.`);
+      }
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Granskningen kunde inte sparas.");
     } finally {
@@ -291,8 +324,51 @@ export default function MigrationReview() {
   const currentQueueIndex = queue.findIndex((item) => String(item.mapId) === mapIdInput);
   const previousItem = currentQueueIndex > 0 ? queue[currentQueueIndex - 1] : null;
   const nextItem = currentQueueIndex >= 0 && currentQueueIndex < queue.length - 1 ? queue[currentQueueIndex + 1] : null;
+  const approvedCount = queue.filter((item) => item.status === "approved").length;
+  const reviewCount = queue.filter((item) => item.status === "needs-review").length;
+  const pendingCount = queue.filter((item) => item.status === "pending").length;
+  const completedCount = approvedCount + reviewCount;
+  const progressPercent = queue.length ? Math.round((completedCount / queue.length) * 100) : 0;
   const match = competition?.eventorMatch;
   const eventor = competition?.eventor;
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent): void => {
+      const target = event.target as HTMLElement | null;
+      const isEditing = Boolean(
+        target &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.tagName === "SELECT" ||
+          target.isContentEditable),
+      );
+
+      if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "s") {
+        event.preventDefault();
+        if (!isSaving && competition) void saveReview("needs-review");
+        return;
+      }
+
+      if (event.ctrlKey && !event.shiftKey && event.key.toLowerCase() === "s") {
+        event.preventDefault();
+        if (!isSaving && competition) void saveReview("approved");
+        return;
+      }
+
+      if (isEditing || isLoading || isSaving) return;
+
+      if (event.key === "ArrowLeft" && previousItem) {
+        event.preventDefault();
+        void loadMap(String(previousItem.mapId));
+      } else if (event.key === "ArrowRight" && nextItem) {
+        event.preventDefault();
+        void loadMap(String(nextItem.mapId));
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [competition, isLoading, isSaving, nextItem, previousItem]);
 
   return (
     <main className="studio-shell migration-shell">
@@ -305,6 +381,11 @@ export default function MigrationReview() {
       </header>
 
       <section className="panel migration-toolbar">
+        <div className="migration-progress-summary">
+          <strong>{progressPercent}% klart</strong>
+          <span>Totalt {queue.length} · Godkända {approvedCount} · Manuella {reviewCount} · Kvar {pendingCount}</span>
+          <progress max={100} value={progressPercent} aria-label={`${progressPercent}% av migrationskön granskad`} />
+        </div>
         <div className="migration-id-control"><label htmlFor="migration-map-id">DOMA map-ID</label><div>
           <input id="migration-map-id" inputMode="numeric" value={mapIdInput} onChange={(event) => setMapIdInput(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") { event.preventDefault(); void loadMap(mapIdInput); } }} />
           <button className="button secondary" type="button" disabled={isLoading} onClick={() => void loadMap(mapIdInput)}>{isLoading ? "Läser…" : "Läs från migration/test"}</button>
