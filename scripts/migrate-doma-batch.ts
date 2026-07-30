@@ -7,6 +7,7 @@ import {
 import path from "node:path";
 import { readDomaCompetition } from "../src/lib/doma";
 import { readEnrichedDomaCompetition } from "../src/lib/doma/enrichment";
+import { isTrainingEvent } from "../src/lib/doma/eventType";
 
 const DEFAULT_RUNNER = "Erik Martinsson";
 const DEFAULT_USER = "erik";
@@ -141,21 +142,6 @@ function createDomaUrl(mapId: number, user: string): string {
   url.searchParams.set("map", String(mapId));
 
   return url.toString();
-}
-
-function normalizeEventType(value: string | null): string {
-  return (value ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\s+/g, " ")
-    .trim()
-    .toLocaleLowerCase("sv-SE");
-}
-
-function isTrainingEvent(category: string | null): boolean {
-  const normalized = normalizeEventType(category);
-
-  return normalized === "traning" || normalized === "training";
 }
 
 async function readExistingTitle(

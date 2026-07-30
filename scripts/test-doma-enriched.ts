@@ -3,9 +3,11 @@ import {
   writeFile,
 } from "node:fs/promises";
 import path from "node:path";
+import { readDomaCompetition } from "../src/lib/doma";
 import {
   readEnrichedDomaCompetition,
 } from "../src/lib/doma/enrichment";
+import { isTrainingEvent } from "../src/lib/doma/eventType";
 
 const DEFAULT_MAP_ID = 356;
 const DEFAULT_RUNNER =
@@ -61,6 +63,14 @@ async function main(): Promise<void> {
   );
   console.log(url.toString());
   console.log("");
+
+  const doma = await readDomaCompetition(url.toString());
+
+  if (isTrainingEvent(doma.category)) {
+    console.log(`Träningspost upptäckt: ${doma.title ?? "utan titel"}`);
+    console.log("Berikning hoppas över.");
+    return;
+  }
 
   const competition =
     await readEnrichedDomaCompetition(
