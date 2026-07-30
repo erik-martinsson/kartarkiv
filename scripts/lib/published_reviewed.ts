@@ -351,7 +351,9 @@ export function buildMarkdown(
     `discipline: ${yamlString(competition.discipline)}`,
     `raceClass: ${yamlNullableString(result.raceClass)}`,
     "",
-    `distanceKm: ${yamlNullableNumber(competition.doma.runningDistanceKm)}`,
+    // Prefer official course length. Fall back for reviews created before
+    // courseLengthKm was added to the migration schema.
+    `distanceKm: ${yamlNullableNumber(competition.doma.courseLengthKm ?? competition.doma.runningDistanceKm)}`,
     "gpsDistanceKm: null",
     "gpsClimb: null",
     "",

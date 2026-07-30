@@ -72,7 +72,10 @@ export type EnrichedDomaCompetition = {
     category: string | null;
     relayLeg: number | null;
     runningTime: string | null;
+    /** GPS-/löpt sträcka från DOMA. */
     runningDistanceKm: number | null;
+    /** Officiell banlängd. Saknas i äldre migrationsfiler. */
+    courseLengthKm?: number | null;
     routeMapImageUrl: string | null;
     blankMapImageUrl: string | null;
     kmlUrl: string | null;

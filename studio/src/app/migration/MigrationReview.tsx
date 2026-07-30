@@ -22,8 +22,10 @@ type EditableField =
   | "position"
   | "starters"
   | "relayLeg"
+  | "courseLength"
   | "distance"
   | "controls"
+  | "mistakes"
   | "eventorUrl"
   | "winsplitsUrl"
   | "liveloxUrl";
@@ -39,8 +41,10 @@ const FIELD_LABELS: Record<EditableField, string> = {
   position: "Placering",
   starters: "Startande",
   relayLeg: "Stafettsträcka",
+  courseLength: "Banlängd (km)",
   distance: "Löpsträcka (km)",
   controls: "Kontroller",
+  mistakes: "Bommar",
   eventorUrl: "Eventor-länk",
   winsplitsUrl: "WinSplits-länk",
   liveloxUrl: "Livelox-länk",
@@ -77,6 +81,59 @@ function valueOrDash(value: unknown): string {
   return value === null || value === undefined || value === "" ? "—" : String(value);
 }
 
+function parseMistakeTime(value: string): number | null {
+  const normalized = value.trim();
+  if (!normalized) return null;
+
+  if (/^\d+$/.test(normalized)) {
+    return Number(normalized);
+  }
+
+  const parts = normalized.split(/[:.]/).map(Number);
+  if (parts.some((part) => !Number.isInteger(part) || part < 0)) return null;
+
+  if (parts.length === 2) {
+    const [minutes, seconds] = parts;
+    if (seconds >= 60) return null;
+    return minutes * 60 + seconds;
+  }
+
+  if (parts.length === 3) {
+    const [hours, minutes, seconds] = parts;
+    if (minutes >= 60 || seconds >= 60) return null;
+    return hours * 3600 + minutes * 60 + seconds;
+  }
+
+  return null;
+}
+
+function formatMistakeTime(totalSeconds: number): string {
+  const safeSeconds = Math.max(0, Math.round(totalSeconds));
+  const hours = Math.floor(safeSeconds / 3600);
+  const minutes = Math.floor((safeSeconds % 3600) / 60);
+  const seconds = safeSeconds % 60;
+
+  return hours > 0
+    ? `${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+    : `${minutes}:${String(seconds).padStart(2, "0")}`;
+}
+
+function recalculateTotalMistakeTime(
+  competition: EnrichedDomaCompetition,
+): void {
+  const totalSeconds = competition.result.mistakes.reduce((sum, mistake) => {
+    return sum + (parseMistakeTime(mistake.time) ?? 0);
+  }, 0);
+
+  competition.result.totalMistakeTime = formatMistakeTime(totalSeconds);
+}
+
+function sortMistakes(
+  mistakes: EnrichedDomaCompetition["result"]["mistakes"],
+): void {
+  mistakes.sort((a, b) => a.control - b.control);
+}
+
 function externalLink(url: string | null, label: string) {
   if (!url) return <span className="migration-empty">—</span>;
 
@@ -99,8 +156,10 @@ function getFieldValue(competition: EnrichedDomaCompetition, field: EditableFiel
     case "position": return competition.result.position;
     case "starters": return competition.result.starters;
     case "relayLeg": return competition.doma.relayLeg;
+    case "courseLength": return competition.doma.courseLengthKm ?? null;
     case "distance": return competition.doma.runningDistanceKm;
     case "controls": return competition.result.controls;
+    case "mistakes": return JSON.stringify(competition.result.mistakes);
     case "eventorUrl": return competition.eventor?.eventorUrl ?? competition.eventorMatch?.eventorUrl ?? null;
     case "winsplitsUrl": return competition.doma.winsplitsUrl;
     case "liveloxUrl": return competition.liveloxUrl;
@@ -150,8 +209,10 @@ function validateCompetition(competition: EnrichedDomaCompetition): ValidationEr
   const title = competition.doma.title?.trim() ?? "";
   const date = competition.doma.date?.trim() ?? "";
   const relayLeg = competition.doma.relayLeg;
+  const courseLength = competition.doma.courseLengthKm ?? null;
   const distance = competition.doma.runningDistanceKm;
   const controls = competition.result.controls;
+  const mistakes = competition.result.mistakes;
   const eventorUrl = competition.eventor?.eventorUrl
     ?? competition.eventorMatch?.eventorUrl
     ?? null;
@@ -171,6 +232,10 @@ function validateCompetition(competition: EnrichedDomaCompetition): ValidationEr
     }
   }
 
+  if (courseLength !== null && courseLength !== undefined && courseLength < 0) {
+    errors.courseLength = "Banlängden kan inte vara negativ.";
+  }
+
   if (distance !== null && distance !== undefined && distance < 0) {
     errors.distance = "Löpsträckan kan inte vara negativ.";
   }
@@ -179,6 +244,15 @@ function validateCompetition(competition: EnrichedDomaCompetition): ValidationEr
     if (!Number.isInteger(controls) || controls < 0) {
       errors.controls = "Antalet kontroller måste vara ett heltal som är 0 eller större.";
     }
+  }
+
+  const invalidMistake = mistakes.find((mistake) => {
+    return !Number.isInteger(mistake.control)
+      || mistake.control < 1
+      || parseMistakeTime(mistake.time) === null;
+  });
+  if (invalidMistake) {
+    errors.mistakes = "Varje bom måste ha ett kontrollnummer på minst 1 och en giltig tid, till exempel 0:34.";
   }
 
   if (eventorUrl?.trim() && !isValidHttpUrl(eventorUrl.trim())) {
@@ -218,6 +292,9 @@ export default function MigrationReview() {
   const [message, setMessage] = useState<string | null>(null);
   const [queue, setQueue] = useState<MigrationQueueItem[]>([]);
   const [isSaving, setIsSaving] = useState(false);
+  const [newMistakeControl, setNewMistakeControl] = useState("");
+  const [newMistakeTime, setNewMistakeTime] = useState("");
+  const [newMistakeError, setNewMistakeError] = useState<string | null>(null);
 
   const verificationLabel = useMemo(() => {
     const method = competition?.eventorMatch?.verificationMethod;
@@ -385,8 +462,10 @@ export default function MigrationReview() {
         case "position": next.result.position = nullableText; break;
         case "starters": next.result.starters = nullableText; break;
         case "relayLeg": next.doma.relayLeg = Number.isFinite(nullableNumber) ? nullableNumber : null; break;
+        case "courseLength": next.doma.courseLengthKm = Number.isFinite(nullableNumber) ? nullableNumber : null; break;
         case "distance": next.doma.runningDistanceKm = Number.isFinite(nullableNumber) ? nullableNumber : null; break;
         case "controls": next.result.controls = Number.isFinite(nullableNumber) ? nullableNumber : null; break;
+        case "mistakes": break;
         case "eventorUrl":
           ensureEventorMetadata(next).eventorUrl = value;
           if (next.eventorMatch) next.eventorMatch.eventorUrl = value;
@@ -399,6 +478,83 @@ export default function MigrationReview() {
       }
       return next;
     });
+  };
+
+  const updateMistake = (
+    index: number,
+    field: "control" | "time",
+    value: string,
+  ): void => {
+    setCompetition((current) => {
+      if (!current) return current;
+      const next = cloneCompetition(current);
+      const mistake = next.result.mistakes[index];
+      if (!mistake) return current;
+
+      if (field === "control") {
+        mistake.control = value.trim() === "" ? 0 : Number(value);
+        sortMistakes(next.result.mistakes);
+      } else {
+        mistake.time = value;
+      }
+
+      recalculateTotalMistakeTime(next);
+      return next;
+    });
+  };
+
+  const addMistake = (): void => {
+    const control = Number(newMistakeControl);
+    const seconds = parseMistakeTime(newMistakeTime);
+
+    if (!Number.isInteger(control) || control < 1) {
+      setNewMistakeError("Ange ett giltigt kontrollnummer på minst 1.");
+      return;
+    }
+    if (seconds === null) {
+      setNewMistakeError("Ange bomtiden som exempelvis 0:34.");
+      return;
+    }
+
+    setCompetition((current) => {
+      if (!current) return current;
+      const next = cloneCompetition(current);
+      next.result.mistakes.push({
+        control,
+        time: formatMistakeTime(seconds),
+      });
+      sortMistakes(next.result.mistakes);
+      recalculateTotalMistakeTime(next);
+      return next;
+    });
+
+    setNewMistakeControl("");
+    setNewMistakeTime("");
+    setNewMistakeError(null);
+  };
+
+  const removeMistake = (index: number): void => {
+    setCompetition((current) => {
+      if (!current) return current;
+      const next = cloneCompetition(current);
+      next.result.mistakes.splice(index, 1);
+      recalculateTotalMistakeTime(next);
+      return next;
+    });
+  };
+
+  const restoreMistakes = (): void => {
+    if (!originalCompetition) return;
+
+    setCompetition((current) => {
+      if (!current) return current;
+      const next = cloneCompetition(current);
+      next.result.mistakes = structuredClone(originalCompetition.result.mistakes);
+      next.result.totalMistakeTime = originalCompetition.result.totalMistakeTime;
+      return next;
+    });
+
+    setNewMistakeError(null);
   };
 
   const restoreField = (field: EditableField): void => {
@@ -580,6 +736,7 @@ export default function MigrationReview() {
               <EditableFieldRow field="position" dirty={dirtyFields.has("position")} onRestore={() => restoreField("position")}><input value={competition.result.position ?? ""} onChange={(e) => updateField("position", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="starters" dirty={dirtyFields.has("starters")} onRestore={() => restoreField("starters")}><input value={competition.result.starters ?? ""} onChange={(e) => updateField("starters", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="relayLeg" dirty={dirtyFields.has("relayLeg")} error={validationErrors.relayLeg} onRestore={() => restoreField("relayLeg")}><input type="number" min="1" step="1" aria-invalid={Boolean(validationErrors.relayLeg)} value={competition.doma.relayLeg ?? ""} onChange={(e) => updateField("relayLeg", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="courseLength" dirty={dirtyFields.has("courseLength")} error={validationErrors.courseLength} onRestore={() => restoreField("courseLength")}><input type="number" min="0" step="0.01" aria-invalid={Boolean(validationErrors.courseLength)} value={competition.doma.courseLengthKm ?? ""} onChange={(e) => updateField("courseLength", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="distance" dirty={dirtyFields.has("distance")} error={validationErrors.distance} onRestore={() => restoreField("distance")}><input type="number" min="0" step="0.01" aria-invalid={Boolean(validationErrors.distance)} value={competition.doma.runningDistanceKm ?? ""} onChange={(e) => updateField("distance", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="controls" dirty={dirtyFields.has("controls")} error={validationErrors.controls} onRestore={() => restoreField("controls")}><input type="number" min="0" step="1" aria-invalid={Boolean(validationErrors.controls)} value={competition.result.controls ?? ""} onChange={(e) => updateField("controls", e.target.value)} /></EditableFieldRow>
             </div>
@@ -587,8 +744,96 @@ export default function MigrationReview() {
           </section>
 
           <section className="panel">
-            <div className="panel-heading"><div><p className="step-label">RESULTATANALYS</p><h2>Bommar per kontroll</h2></div><span className="panel-note">{competition.result.mistakes.length} registrerade</span></div>
-            {competition.result.mistakes.length ? <div className="migration-mistakes">{competition.result.mistakes.map((mistake) => <div key={`${mistake.control}-${mistake.time}`}><span>Kontroll {mistake.control}</span><strong>{mistake.time}</strong></div>)}</div> : <p className="migration-empty-state">Inga bommar registrerade.</p>}
+            <div className="panel-heading">
+              <div><p className="step-label">RESULTATANALYS</p><h2>Bommar per kontroll</h2></div>
+              <div className="migration-dirty-summary">
+                <span>{competition.result.mistakes.length} registrerade</span>
+                <button type="button" disabled={!dirtyFields.has("mistakes")} onClick={restoreMistakes}>Återställ bommar</button>
+              </div>
+            </div>
+
+            {validationErrors.mistakes ? (
+              <p className="migration-field-error" role="alert">{validationErrors.mistakes}</p>
+            ) : null}
+
+            {competition.result.mistakes.length ? (
+              <div className="migration-mistake-editor">
+                <div className="migration-mistake-header" aria-hidden="true">
+                  <span>Kontroll</span><span>Bomtid</span><span />
+                </div>
+                {competition.result.mistakes.map((mistake, index) => (
+                  <div className="migration-mistake-row" key={`${index}-${mistake.control}`}>
+                    <input
+                      type="number"
+                      min="1"
+                      step="1"
+                      aria-label={`Kontrollnummer för bom ${index + 1}`}
+                      value={mistake.control || ""}
+                      onChange={(event) => updateMistake(index, "control", event.target.value)}
+                    />
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      aria-label={`Bomtid för kontroll ${mistake.control || index + 1}`}
+                      placeholder="0:34"
+                      value={mistake.time}
+                      onChange={(event) => updateMistake(index, "time", event.target.value)}
+                    />
+                    <button
+                      type="button"
+                      className="button secondary migration-remove-mistake"
+                      aria-label={`Ta bort bom vid kontroll ${mistake.control || index + 1}`}
+                      onClick={() => removeMistake(index)}
+                    >
+                      Ta bort
+                    </button>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="migration-empty-state">Inga bommar registrerade.</p>
+            )}
+
+            <div className="migration-add-mistake">
+              <label>
+                <span>Kontroll</span>
+                <input
+                  type="number"
+                  min="1"
+                  step="1"
+                  placeholder="12"
+                  value={newMistakeControl}
+                  onChange={(event) => {
+                    setNewMistakeControl(event.target.value);
+                    setNewMistakeError(null);
+                  }}
+                />
+              </label>
+              <label>
+                <span>Bomtid</span>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="0:34"
+                  value={newMistakeTime}
+                  onChange={(event) => {
+                    setNewMistakeTime(event.target.value);
+                    setNewMistakeError(null);
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") {
+                      event.preventDefault();
+                      addMistake();
+                    }
+                  }}
+                />
+              </label>
+              <button type="button" className="button secondary" onClick={addMistake}>+ Lägg till bom</button>
+            </div>
+            {newMistakeError ? <p className="migration-field-error" role="alert">{newMistakeError}</p> : null}
+            <p className="migration-mistake-total">
+              Total bomtid: <strong>{valueOrDash(competition.result.totalMistakeTime)}</strong>
+            </p>
           </section>
         </section>
 
@@ -663,6 +908,71 @@ export default function MigrationReview() {
           border: 1px solid rgba(22, 163, 74, 0.45);
           border-radius: 0.5rem;
           background: rgba(22, 163, 74, 0.08);
+        }
+
+        .migration-mistake-editor {
+          display: grid;
+          gap: 0.55rem;
+        }
+
+        .migration-mistake-header,
+        .migration-mistake-row {
+          display: grid;
+          grid-template-columns: minmax(7rem, 0.7fr) minmax(8rem, 1fr) auto;
+          gap: 0.65rem;
+          align-items: center;
+        }
+
+        .migration-mistake-header {
+          padding: 0 0.15rem;
+          font-size: 0.78rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          opacity: 0.7;
+        }
+
+        .migration-mistake-row input {
+          width: 100%;
+        }
+
+        .migration-remove-mistake {
+          white-space: nowrap;
+        }
+
+        .migration-add-mistake {
+          display: grid;
+          grid-template-columns: minmax(7rem, 0.7fr) minmax(8rem, 1fr) auto;
+          gap: 0.65rem;
+          align-items: end;
+          margin-top: 1rem;
+          padding-top: 1rem;
+          border-top: 1px solid rgba(127, 127, 127, 0.25);
+        }
+
+        .migration-add-mistake label {
+          display: grid;
+          gap: 0.35rem;
+        }
+
+        .migration-add-mistake label > span {
+          font-size: 0.82rem;
+          font-weight: 700;
+        }
+
+        .migration-mistake-total {
+          margin: 1rem 0 0;
+          text-align: right;
+        }
+
+        @media (max-width: 720px) {
+          .migration-mistake-header {
+            display: none;
+          }
+
+          .migration-mistake-row,
+          .migration-add-mistake {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </main>
