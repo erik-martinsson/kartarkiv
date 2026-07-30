@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-28T19:39:15.500Z",
+  "reviewedAt": "2026-07-28T20:53:48.826Z",
   "competition": {
     "doma": {
       "mapId": 355,
@@ -9,7 +9,7 @@
       "title": "25-Manna str.5",
       "date": "2016-10-07",
       "category": "Tävling",
-      "relayLeg": null,
+      "relayLeg": 5,
       "runningTime": "36:29",
       "runningDistanceKm": 7.41,
       "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/355.jpg",
