@@ -1,0 +1,348 @@
+{
+  "doma": {
+    "mapId": 356,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=356",
+    "title": "Smålandskavlen",
+    "date": "2016-10-28",
+    "category": "Tävling",
+    "relayLeg": 2,
+    "runningTime": "80:27",
+    "runningDistanceKm": 14.23,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/356.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/356.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=356&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=45759&categoryId=61"
+  },
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "17",
+    "starters": "48",
+    "controls": 9,
+    "time": "1:20.43",
+    "totalMistakeTime": "2.02",
+    "mistakes": [
+      {
+        "control": 2,
+        "time": "1.29"
+      },
+      {
+        "control": 6,
+        "time": "0.33"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 13904,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/13904",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=13904",
+    "title": "Smålandskavlen",
+    "date": "",
+    "organiser": "Eksjö SOKSOK Aneby",
+    "location": "",
+    "rawDiscipline": "lång",
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:13904-1&classExternalId=248989-1"
+  },
+  "eventorMatch": {
+    "eventId": 13904,
+    "title": "Smålandskavlen",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/13904",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=13904",
+    "score": 100,
+    "verifiedByWinSplitsId": false,
+    "verificationMethod": "title-only",
+    "confidence": "medium"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Smålandskavlen",
+    "domaDate": "2016-10-28",
+    "databaseId": 45759,
+    "searchedDates": [
+      "2016-10-26",
+      "2016-10-27",
+      "2016-10-28",
+      "2016-10-29",
+      "2016-10-30"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-10-28&endDate=2016-10-28&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-10-28&endDate=2016-10-28&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-10-28&endDate=2016-10-28&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-10-28&endDate=2016-10-28&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-10-28&endDate=2016-10-28&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-10-28&endDate=2016-10-28&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-10-30&endDate=2016-10-30&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-10-30&endDate=2016-10-30&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-10-30&endDate=2016-10-30&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-10-30&endDate=2016-10-30&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-10-30&endDate=2016-10-30&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-10-30&endDate=2016-10-30&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 13904,
+        "title": "Smålandskavlen",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "title-only"
+      },
+      {
+        "eventId": 16983,
+        "title": "Närnatt Cup, etapp 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17159,
+        "title": "test",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17070,
+        "title": "Veteran OL 3-stad",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16971,
+        "title": "Veteran-OL nr 6",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16996,
+        "title": "Natt-Sprint-KM 2016",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17124,
+        "title": "GBG Teknikträning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-26&endDate=2016-10-26&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17167,
+        "title": "K3 Klubbmästerskap natt",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16369,
+        "title": "POL i Hjo",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17164,
+        "title": "Bottnaryds IF Veteran finalen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16995,
+        "title": "Roslagsveteranerna",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16980,
+        "title": "Vandrarringen Veteran Skräddartorpet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16986,
+        "title": "KM Natt, OK Kontinent och Malmö OK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17127,
+        "title": "Natt KM ungdom",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-27&endDate=2016-10-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12622,
+        "title": "PreO, Natt-SM, Vänersborgs SK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-28&endDate=2016-10-28&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16941,
+        "title": "Höst Öst Prolog",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-28&endDate=2016-10-28&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16944,
+        "title": "Ungdomskretstävling natt",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-28&endDate=2016-10-28&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16922,
+        "title": "3-Days Ockelbo",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12621,
+        "title": "PreO, TempO-SM, Vänersborgs SK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17014,
+        "title": "Nordcupen deltävling 1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17125,
+        "title": "Solna OK Barometerloppet sprint",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-29&endDate=2016-10-29&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17178,
+        "title": "Jössestugan Rogaining",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-30&endDate=2016-10-30&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12591,
+        "title": "PreO, Dag-SM, Kungälvs OK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-30&endDate=2016-10-30&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16331,
+        "title": "Smålandskaveln, individuella öppna klasser",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-10-30&endDate=2016-10-30&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:13904-1&classExternalId=248989-1",
+  "warnings": [
+    "Eventor-träffen bygger på en entydig exakt titelmatchning. Eventor exponerade inget verifierbart WinSplits databaseId."
+  ]
+}

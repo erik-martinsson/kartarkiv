@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-07-30T09:19:05.580Z",
+  "finishedAt": "2026-07-30T09:19:28.359Z",
+  "options": {
+    "from": 356,
+    "to": 360,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 5,
+    "created": 1,
+    "skipped": 4,
+    "skippedExisting": 0,
+    "skippedTraining": 4,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 356,
+      "status": "created",
+      "title": "Smålandskavlen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-356\\competition-enriched.json"
+    },
+    {
+      "mapId": 357,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "LiU Night",
+      "category": "Träning"
+    },
+    {
+      "mapId": 358,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "TGOK #1",
+      "category": "Träning"
+    },
+    {
+      "mapId": 359,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "TGOK #2",
+      "category": "Träning"
+    },
+    {
+      "mapId": 360,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Tiomila-12",
+      "category": "Träning"
+    }
+  ]
+}

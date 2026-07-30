@@ -290,16 +290,38 @@ export default function MigrationReview() {
   };
 
   useEffect(() => {
-    void loadQueue();
+    const initialize = async (): Promise<void> => {
+      const items = await loadQueue();
 
-    let initialMapId = DEFAULT_MAP_ID;
-    try {
-      initialMapId = localStorage.getItem("migration:lastMapId") ?? DEFAULT_MAP_ID;
-    } catch {
-      // Fall back to the default map ID when localStorage is unavailable.
-    }
+      if (items.length === 0) {
+        setCompetition(null);
+        setOriginalCompetition(null);
+        setStatus("pending");
+        setMessage("Ingen migrationspost hittades i migration/test.");
+        return;
+      }
 
-    void loadMap(initialMapId);
+      let preferredMapId = DEFAULT_MAP_ID;
+
+      try {
+        preferredMapId =
+          localStorage.getItem("migration:lastMapId") ?? DEFAULT_MAP_ID;
+      } catch {
+        // Fall back to the default map ID when localStorage is unavailable.
+      }
+
+      const preferredExists = items.some(
+        (item) => String(item.mapId) === preferredMapId,
+      );
+      const initialMapId = preferredExists
+        ? preferredMapId
+        : String(items[0].mapId);
+
+      setMapIdInput(initialMapId);
+      await loadMap(initialMapId);
+    };
+
+    void initialize();
   }, []);
 
   const handleJsonFile = async (event: ChangeEvent<HTMLInputElement>): Promise<void> => {
