@@ -88,17 +88,92 @@ function valuesEqual(a: unknown, b: unknown): boolean {
   return (a ?? null) === (b ?? null);
 }
 
+type ValidationErrors = Partial<Record<EditableField, string>>;
+
 type EditableFieldRowProps = {
   field: EditableField;
   dirty: boolean;
+  error?: string;
   wide?: boolean;
   children: ReactNode;
   onRestore: () => void;
 };
 
-function EditableFieldRow({ field, dirty, wide, children, onRestore }: EditableFieldRowProps) {
+function isValidCalendarDate(value: string): boolean {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+  if (!match) return false;
+
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const date = new Date(Date.UTC(year, month - 1, day));
+
+  return date.getUTCFullYear() === year
+    && date.getUTCMonth() === month - 1
+    && date.getUTCDate() === day;
+}
+
+function isValidHttpUrl(value: string): boolean {
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
+function validateCompetition(competition: EnrichedDomaCompetition): ValidationErrors {
+  const errors: ValidationErrors = {};
+  const title = competition.doma.title?.trim() ?? "";
+  const date = competition.doma.date?.trim() ?? "";
+  const relayLeg = competition.doma.relayLeg;
+  const distance = competition.doma.runningDistanceKm;
+  const controls = competition.result.controls;
+  const eventorUrl = competition.eventor?.eventorUrl
+    ?? competition.eventorMatch?.eventorUrl
+    ?? null;
+  const winsplitsUrl = competition.doma.winsplitsUrl;
+  const liveloxUrl = competition.liveloxUrl;
+
+  if (!title) errors.title = "Titel måste anges.";
+  if (!date) {
+    errors.date = "Datum måste anges.";
+  } else if (!isValidCalendarDate(date)) {
+    errors.date = "Datumet måste vara ett giltigt datum i formatet ÅÅÅÅ-MM-DD.";
+  }
+
+  if (relayLeg !== null && relayLeg !== undefined) {
+    if (!Number.isInteger(relayLeg) || relayLeg < 1) {
+      errors.relayLeg = "Stafettsträckan måste vara ett heltal som är minst 1.";
+    }
+  }
+
+  if (distance !== null && distance !== undefined && distance < 0) {
+    errors.distance = "Löpsträckan kan inte vara negativ.";
+  }
+
+  if (controls !== null && controls !== undefined) {
+    if (!Number.isInteger(controls) || controls < 0) {
+      errors.controls = "Antalet kontroller måste vara ett heltal som är 0 eller större.";
+    }
+  }
+
+  if (eventorUrl?.trim() && !isValidHttpUrl(eventorUrl.trim())) {
+    errors.eventorUrl = "Eventor-länken måste vara en giltig http- eller https-URL.";
+  }
+  if (winsplitsUrl?.trim() && !isValidHttpUrl(winsplitsUrl.trim())) {
+    errors.winsplitsUrl = "WinSplits-länken måste vara en giltig http- eller https-URL.";
+  }
+  if (liveloxUrl?.trim() && !isValidHttpUrl(liveloxUrl.trim())) {
+    errors.liveloxUrl = "Livelox-länken måste vara en giltig http- eller https-URL.";
+  }
+
+  return errors;
+}
+
+function EditableFieldRow({ field, dirty, error, wide, children, onRestore }: EditableFieldRowProps) {
   return (
-    <label className={`field migration-edit-field${wide ? " field-wide" : ""}${dirty ? " is-dirty" : ""}`}>
+    <label className={`field migration-edit-field${wide ? " field-wide" : ""}${dirty ? " is-dirty" : ""}${error ? " has-error" : ""}`}>
       <span className="migration-field-heading">
         <span>{FIELD_LABELS[field]}{dirty ? <em>Ändrad</em> : null}</span>
         <button type="button" className="migration-restore-button" disabled={!dirty} onClick={onRestore}>
@@ -106,6 +181,7 @@ function EditableFieldRow({ field, dirty, wide, children, onRestore }: EditableF
         </button>
       </span>
       {children}
+      {error ? <span className="migration-field-error" role="alert">{error}</span> : null}
     </label>
   );
 }
@@ -139,6 +215,17 @@ export default function MigrationReview() {
     });
     return result;
   }, [competition, originalCompetition]);
+
+  const validationErrors = useMemo<ValidationErrors>(() => {
+    return competition ? validateCompetition(competition) : {};
+  }, [competition]);
+
+  const validationEntries = useMemo(() => {
+    return (Object.entries(validationErrors) as [EditableField, string][])
+      .map(([field, error]) => ({ field, label: FIELD_LABELS[field], error }));
+  }, [validationErrors]);
+
+  const hasValidationErrors = validationEntries.length > 0;
 
   const loadQueue = async (): Promise<MigrationQueueItem[]> => {
     try {
@@ -281,6 +368,10 @@ export default function MigrationReview() {
 
   const saveReview = async (nextStatus: MigrationReviewStatus): Promise<void> => {
     if (!competition || nextStatus === "pending") return;
+    if (nextStatus === "approved" && hasValidationErrors) {
+      setMessage(`Kan inte godkänna: rätta ${validationEntries.length} valideringsfel först.`);
+      return;
+    }
     setIsSaving(true);
     setMessage("Sparar granskningen…");
     try {
@@ -415,9 +506,19 @@ export default function MigrationReview() {
 
           <section className="panel">
             <div className="panel-heading"><div><p className="step-label">GRANSKNING</p><h2>Tävlingsuppgifter</h2></div><div className="migration-dirty-summary"><span>{dirtyFields.size} ändrade fält</span><button type="button" disabled={!dirtyFields.size} onClick={restoreAll}>Återställ alla</button></div></div>
+            {hasValidationErrors ? (
+              <div className="migration-validation-summary" role="alert" aria-live="polite">
+                <strong>{validationEntries.length} {validationEntries.length === 1 ? "valideringsfel" : "valideringsfel"}</strong>
+                <ul>
+                  {validationEntries.map(({ field, label, error }) => <li key={field}><strong>{label}:</strong> {error}</li>)}
+                </ul>
+              </div>
+            ) : (
+              <p className="migration-validation-ok">Alla obligatoriska och validerade fält är giltiga.</p>
+            )}
             <div className="migration-form-grid">
-              <EditableFieldRow field="title" dirty={dirtyFields.has("title")} wide onRestore={() => restoreField("title")}><input value={competition.doma.title ?? ""} onChange={(e) => updateField("title", e.target.value)} /></EditableFieldRow>
-              <EditableFieldRow field="date" dirty={dirtyFields.has("date")} onRestore={() => restoreField("date")}><input type="date" value={competition.doma.date ?? ""} onChange={(e) => updateField("date", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="title" dirty={dirtyFields.has("title")} error={validationErrors.title} wide onRestore={() => restoreField("title")}><input aria-invalid={Boolean(validationErrors.title)} value={competition.doma.title ?? ""} onChange={(e) => updateField("title", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="date" dirty={dirtyFields.has("date")} error={validationErrors.date} onRestore={() => restoreField("date")}><input type="date" aria-invalid={Boolean(validationErrors.date)} value={competition.doma.date ?? ""} onChange={(e) => updateField("date", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="discipline" dirty={dirtyFields.has("discipline")} onRestore={() => restoreField("discipline")}><select value={competition.discipline} onChange={(e) => updateField("discipline", e.target.value)}>{["Lång", "Medel", "Stafett", "Sprint", "Natt", "Ultralång", "Annan", "Okänd"].map((x) => <option key={x}>{x}</option>)}</select></EditableFieldRow>
               <EditableFieldRow field="eventType" dirty={dirtyFields.has("eventType")} onRestore={() => restoreField("eventType")}><input value={competition.doma.category ?? ""} onChange={(e) => updateField("eventType", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="organiser" dirty={dirtyFields.has("organiser")} onRestore={() => restoreField("organiser")}><input value={competition.eventor?.organiser ?? ""} disabled={!competition.eventor} title={!competition.eventor ? "Kan inte redigeras eftersom posten saknar Eventor-metadata." : undefined} onChange={(e) => updateField("organiser", e.target.value)} /></EditableFieldRow>
@@ -431,9 +532,9 @@ export default function MigrationReview() {
               <EditableFieldRow field="club" dirty={dirtyFields.has("club")} onRestore={() => restoreField("club")}><input value={competition.result.club ?? ""} onChange={(e) => updateField("club", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="position" dirty={dirtyFields.has("position")} onRestore={() => restoreField("position")}><input value={competition.result.position ?? ""} onChange={(e) => updateField("position", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="starters" dirty={dirtyFields.has("starters")} onRestore={() => restoreField("starters")}><input value={competition.result.starters ?? ""} onChange={(e) => updateField("starters", e.target.value)} /></EditableFieldRow>
-              <EditableFieldRow field="relayLeg" dirty={dirtyFields.has("relayLeg")} onRestore={() => restoreField("relayLeg")}><input type="number" min="1" step="1" value={competition.doma.relayLeg ?? ""} onChange={(e) => updateField("relayLeg", e.target.value)} /></EditableFieldRow>
-              <EditableFieldRow field="distance" dirty={dirtyFields.has("distance")} onRestore={() => restoreField("distance")}><input type="number" min="0" step="0.01" value={competition.doma.runningDistanceKm ?? ""} onChange={(e) => updateField("distance", e.target.value)} /></EditableFieldRow>
-              <EditableFieldRow field="controls" dirty={dirtyFields.has("controls")} onRestore={() => restoreField("controls")}><input type="number" min="0" step="1" value={competition.result.controls ?? ""} onChange={(e) => updateField("controls", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="relayLeg" dirty={dirtyFields.has("relayLeg")} error={validationErrors.relayLeg} onRestore={() => restoreField("relayLeg")}><input type="number" min="1" step="1" aria-invalid={Boolean(validationErrors.relayLeg)} value={competition.doma.relayLeg ?? ""} onChange={(e) => updateField("relayLeg", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="distance" dirty={dirtyFields.has("distance")} error={validationErrors.distance} onRestore={() => restoreField("distance")}><input type="number" min="0" step="0.01" aria-invalid={Boolean(validationErrors.distance)} value={competition.doma.runningDistanceKm ?? ""} onChange={(e) => updateField("distance", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="controls" dirty={dirtyFields.has("controls")} error={validationErrors.controls} onRestore={() => restoreField("controls")}><input type="number" min="0" step="1" aria-invalid={Boolean(validationErrors.controls)} value={competition.result.controls ?? ""} onChange={(e) => updateField("controls", e.target.value)} /></EditableFieldRow>
             </div>
             <dl className="migration-facts"><div><dt>Tid</dt><dd>{valueOrDash(competition.result.time)}</dd></div><div className="accent-fact"><dt>Total bomtid</dt><dd>{valueOrDash(competition.result.totalMistakeTime)}</dd></div><div><dt>Löpare</dt><dd>{valueOrDash(competition.result.runnerName)}</dd></div></dl>
           </section>
@@ -454,9 +555,9 @@ export default function MigrationReview() {
           <section className="panel">
             <div className="panel-heading"><div><p className="step-label">LÄNKAR</p><h2>Redigera länkar</h2></div></div>
             <div className="migration-link-fields">
-              <EditableFieldRow field="eventorUrl" dirty={dirtyFields.has("eventorUrl")} onRestore={() => restoreField("eventorUrl")}><input type="url" value={eventor?.eventorUrl ?? match?.eventorUrl ?? ""} disabled={!eventor && !match} onChange={(e) => updateField("eventorUrl", e.target.value)} /></EditableFieldRow>
-              <EditableFieldRow field="winsplitsUrl" dirty={dirtyFields.has("winsplitsUrl")} onRestore={() => restoreField("winsplitsUrl")}><input type="url" value={competition.doma.winsplitsUrl ?? ""} onChange={(e) => updateField("winsplitsUrl", e.target.value)} /></EditableFieldRow>
-              <EditableFieldRow field="liveloxUrl" dirty={dirtyFields.has("liveloxUrl")} onRestore={() => restoreField("liveloxUrl")}><input type="url" value={competition.liveloxUrl ?? ""} onChange={(e) => updateField("liveloxUrl", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="eventorUrl" dirty={dirtyFields.has("eventorUrl")} error={validationErrors.eventorUrl} onRestore={() => restoreField("eventorUrl")}><input type="url" aria-invalid={Boolean(validationErrors.eventorUrl)} value={eventor?.eventorUrl ?? match?.eventorUrl ?? ""} disabled={!eventor && !match} onChange={(e) => updateField("eventorUrl", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="winsplitsUrl" dirty={dirtyFields.has("winsplitsUrl")} error={validationErrors.winsplitsUrl} onRestore={() => restoreField("winsplitsUrl")}><input type="url" aria-invalid={Boolean(validationErrors.winsplitsUrl)} value={competition.doma.winsplitsUrl ?? ""} onChange={(e) => updateField("winsplitsUrl", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="liveloxUrl" dirty={dirtyFields.has("liveloxUrl")} error={validationErrors.liveloxUrl} onRestore={() => restoreField("liveloxUrl")}><input type="url" aria-invalid={Boolean(validationErrors.liveloxUrl)} value={competition.liveloxUrl ?? ""} onChange={(e) => updateField("liveloxUrl", e.target.value)} /></EditableFieldRow>
             </div>
           </section>
 
@@ -464,10 +565,59 @@ export default function MigrationReview() {
 
           <section className="panel migration-actions-panel">
             <p className="step-label">BESLUT</p><h2>Slutför granskningen</h2><p>Beslutet och alla redigeringar sparas i repots migration/reviewed-mapp. Källfilen i migration/test ändras inte.</p>
-            <div className="button-stack"><button className="button primary" type="button" disabled={isSaving} onClick={() => void saveReview("approved")}>{isSaving ? "Sparar…" : "Godkänn testkartan"}</button><button className="button secondary" type="button" disabled={isSaving} onClick={() => void saveReview("needs-review")}>Kräver manuell granskning</button></div>
+            <div className="button-stack"><button className="button primary" type="button" disabled={isSaving || hasValidationErrors} title={hasValidationErrors ? `Rätta ${validationEntries.length} valideringsfel innan posten kan godkännas.` : undefined} onClick={() => void saveReview("approved")}>{isSaving ? "Sparar…" : "Godkänn testkartan"}</button><button className="button secondary" type="button" disabled={isSaving} onClick={() => void saveReview("needs-review")}>Kräver manuell granskning</button></div>
           </section>
         </aside>
       </div> : !isLoading ? <section className="panel migration-empty-panel"><h2>Ingen migrationspost laddad</h2><p>Kör berikningsskriptet eller välj en genererad JSON-fil manuellt.</p><code>npx tsx scripts/test-doma-enriched.ts 356</code></section> : null}
+
+      <style jsx global>{`
+        .migration-edit-field.has-error input,
+        .migration-edit-field.has-error select,
+        .migration-edit-field.has-error textarea {
+          border-color: #dc2626;
+          box-shadow: 0 0 0 1px #dc2626;
+        }
+
+        .migration-field-error {
+          display: block;
+          margin-top: 0.4rem;
+          color: #b91c1c;
+          font-size: 0.82rem;
+          font-weight: 600;
+          line-height: 1.35;
+        }
+
+        .migration-validation-summary {
+          margin-bottom: 1rem;
+          padding: 0.9rem 1rem;
+          border: 1px solid #dc2626;
+          border-radius: 0.5rem;
+          background: rgba(220, 38, 38, 0.08);
+          color: inherit;
+        }
+
+        .migration-validation-summary > strong {
+          display: block;
+          color: #b91c1c;
+        }
+
+        .migration-validation-summary ul {
+          margin: 0.55rem 0 0;
+          padding-left: 1.25rem;
+        }
+
+        .migration-validation-summary li + li {
+          margin-top: 0.3rem;
+        }
+
+        .migration-validation-ok {
+          margin: 0 0 1rem;
+          padding: 0.75rem 0.9rem;
+          border: 1px solid rgba(22, 163, 74, 0.45);
+          border-radius: 0.5rem;
+          background: rgba(22, 163, 74, 0.08);
+        }
+      `}</style>
     </main>
   );
 }
