@@ -1,4 +1,5 @@
 {
+  "/api/migration/doma/[mapId]/review/route": "app/api/migration/doma/[mapId]/review/route.js",
   "/api/migration/doma/[mapId]/route": "app/api/migration/doma/[mapId]/route.js",
   "/api/migration/doma/route": "app/api/migration/doma/route.js",
   "/migration/page": "app/migration/page.js"
