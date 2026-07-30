@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T20:29:53.632Z",
+  "reviewedAt": "2026-07-30T21:34:34.189Z",
   "competition": {
     "doma": {
       "mapId": 364,
@@ -15,7 +15,8 @@
       "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/364.jpg",
       "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/364.blank.jpg",
       "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=364&format=kml",
-      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47999&categoryId=18"
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47999&categoryId=18",
+      "courseLengthKm": 11.96
     },
     "discipline": "Stafett",
     "result": {
@@ -24,7 +25,7 @@
       "club": "Linköpings OK 1",
       "position": "18",
       "starters": "67",
-      "controls": 19,
+      "controls": 26,
       "time": "1:22.43",
       "totalMistakeTime": "0:00",
       "mistakes": []

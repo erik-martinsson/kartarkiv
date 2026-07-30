@@ -27,8 +27,10 @@ const FIELD_LABELS = {
     position: "Placering",
     starters: "Startande",
     relayLeg: "Stafettsträcka",
+    courseLength: "Banlängd (km)",
     distance: "Löpsträcka (km)",
     controls: "Kontroller",
+    mistakes: "Bommar",
     eventorUrl: "Eventor-länk",
     winsplitsUrl: "WinSplits-länk",
     liveloxUrl: "Livelox-länk"
@@ -55,13 +57,49 @@ function ensureEventorMetadata(competition) {
 function valueOrDash(value) {
     return value === null || value === undefined || value === "" ? "—" : String(value);
 }
+function parseMistakeTime(value) {
+    const normalized = value.trim();
+    if (!normalized) return null;
+    if (/^\d+$/.test(normalized)) {
+        return Number(normalized);
+    }
+    const parts = normalized.split(/[:.]/).map(Number);
+    if (parts.some((part)=>!Number.isInteger(part) || part < 0)) return null;
+    if (parts.length === 2) {
+        const [minutes, seconds] = parts;
+        if (seconds >= 60) return null;
+        return minutes * 60 + seconds;
+    }
+    if (parts.length === 3) {
+        const [hours, minutes, seconds] = parts;
+        if (minutes >= 60 || seconds >= 60) return null;
+        return hours * 3600 + minutes * 60 + seconds;
+    }
+    return null;
+}
+function formatMistakeTime(totalSeconds) {
+    const safeSeconds = Math.max(0, Math.round(totalSeconds));
+    const hours = Math.floor(safeSeconds / 3600);
+    const minutes = Math.floor(safeSeconds % 3600 / 60);
+    const seconds = safeSeconds % 60;
+    return hours > 0 ? `${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}` : `${minutes}:${String(seconds).padStart(2, "0")}`;
+}
+function recalculateTotalMistakeTime(competition) {
+    const totalSeconds = competition.result.mistakes.reduce((sum, mistake)=>{
+        return sum + (parseMistakeTime(mistake.time) ?? 0);
+    }, 0);
+    competition.result.totalMistakeTime = formatMistakeTime(totalSeconds);
+}
+function sortMistakes(mistakes) {
+    mistakes.sort((a, b)=>a.control - b.control);
+}
 function externalLink(url, label) {
     if (!url) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
         className: "migration-empty",
         children: "—"
     }, void 0, false, {
         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-        lineNumber: 81,
+        lineNumber: 138,
         columnNumber: 20
     }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -76,13 +114,13 @@ function externalLink(url, label) {
                 children: "↗"
             }, void 0, false, {
                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                lineNumber: 85,
+                lineNumber: 142,
                 columnNumber: 14
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-        lineNumber: 84,
+        lineNumber: 141,
         columnNumber: 5
     }, this);
 }
@@ -108,10 +146,14 @@ function getFieldValue(competition, field) {
             return competition.result.starters;
         case "relayLeg":
             return competition.doma.relayLeg;
+        case "courseLength":
+            return competition.doma.courseLengthKm ?? null;
         case "distance":
             return competition.doma.runningDistanceKm;
         case "controls":
             return competition.result.controls;
+        case "mistakes":
+            return JSON.stringify(competition.result.mistakes);
         case "eventorUrl":
             return competition.eventor?.eventorUrl ?? competition.eventorMatch?.eventorUrl ?? null;
         case "winsplitsUrl":
@@ -145,8 +187,10 @@ function validateCompetition(competition) {
     const title = competition.doma.title?.trim() ?? "";
     const date = competition.doma.date?.trim() ?? "";
     const relayLeg = competition.doma.relayLeg;
+    const courseLength = competition.doma.courseLengthKm ?? null;
     const distance = competition.doma.runningDistanceKm;
     const controls = competition.result.controls;
+    const mistakes = competition.result.mistakes;
     const eventorUrl = competition.eventor?.eventorUrl ?? competition.eventorMatch?.eventorUrl ?? null;
     const winsplitsUrl = competition.doma.winsplitsUrl;
     const liveloxUrl = competition.liveloxUrl;
@@ -161,6 +205,9 @@ function validateCompetition(competition) {
             errors.relayLeg = "Stafettsträckan måste vara ett heltal som är minst 1.";
         }
     }
+    if (courseLength !== null && courseLength !== undefined && courseLength < 0) {
+        errors.courseLength = "Banlängden kan inte vara negativ.";
+    }
     if (distance !== null && distance !== undefined && distance < 0) {
         errors.distance = "Löpsträckan kan inte vara negativ.";
     }
@@ -168,6 +215,12 @@ function validateCompetition(competition) {
         if (!Number.isInteger(controls) || controls < 0) {
             errors.controls = "Antalet kontroller måste vara ett heltal som är 0 eller större.";
         }
+    }
+    const invalidMistake = mistakes.find((mistake)=>{
+        return !Number.isInteger(mistake.control) || mistake.control < 1 || parseMistakeTime(mistake.time) === null;
+    });
+    if (invalidMistake) {
+        errors.mistakes = "Varje bom måste ha ett kontrollnummer på minst 1 och en giltig tid, till exempel 0:34.";
     }
     if (eventorUrl?.trim() && !isValidHttpUrl(eventorUrl.trim())) {
         errors.eventorUrl = "Eventor-länken måste vara en giltig http- eller https-URL.";
@@ -194,13 +247,13 @@ function EditableFieldRow({ field, dirty, error, wide, children, onRestore }) {
                                 children: "Ändrad"
                             }, void 0, false, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 201,
+                                lineNumber: 275,
                                 columnNumber: 45
                             }, this) : null
                         ]
                     }, void 0, true, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 201,
+                        lineNumber: 275,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -211,13 +264,13 @@ function EditableFieldRow({ field, dirty, error, wide, children, onRestore }) {
                         children: "Återställ"
                     }, void 0, false, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 202,
+                        lineNumber: 276,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                lineNumber: 200,
+                lineNumber: 274,
                 columnNumber: 7
             }, this),
             children,
@@ -227,13 +280,13 @@ function EditableFieldRow({ field, dirty, error, wide, children, onRestore }) {
                 children: error
             }, void 0, false, {
                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                lineNumber: 207,
+                lineNumber: 281,
                 columnNumber: 16
             }, this) : null
         ]
     }, void 0, true, {
         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-        lineNumber: 199,
+        lineNumber: 273,
         columnNumber: 5
     }, this);
 }
@@ -246,6 +299,9 @@ function MigrationReview() {
     const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [queue, setQueue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [isSaving, setIsSaving] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [newMistakeControl, setNewMistakeControl] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [newMistakeTime, setNewMistakeTime] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [newMistakeError, setNewMistakeError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const verificationLabel = (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         const method = competition?.eventorMatch?.verificationMethod;
         if (!method) return "Ej verifierad";
@@ -423,11 +479,16 @@ function MigrationReview() {
                 case "relayLeg":
                     next.doma.relayLeg = Number.isFinite(nullableNumber) ? nullableNumber : null;
                     break;
+                case "courseLength":
+                    next.doma.courseLengthKm = Number.isFinite(nullableNumber) ? nullableNumber : null;
+                    break;
                 case "distance":
                     next.doma.runningDistanceKm = Number.isFinite(nullableNumber) ? nullableNumber : null;
                     break;
                 case "controls":
                     next.result.controls = Number.isFinite(nullableNumber) ? nullableNumber : null;
+                    break;
+                case "mistakes":
                     break;
                 case "eventorUrl":
                     ensureEventorMetadata(next).eventorUrl = value;
@@ -443,6 +504,68 @@ function MigrationReview() {
             }
             return next;
         });
+    };
+    const updateMistake = (index, field, value)=>{
+        setCompetition((current)=>{
+            if (!current) return current;
+            const next = cloneCompetition(current);
+            const mistake = next.result.mistakes[index];
+            if (!mistake) return current;
+            if (field === "control") {
+                mistake.control = value.trim() === "" ? 0 : Number(value);
+                sortMistakes(next.result.mistakes);
+            } else {
+                mistake.time = value;
+            }
+            recalculateTotalMistakeTime(next);
+            return next;
+        });
+    };
+    const addMistake = ()=>{
+        const control = Number(newMistakeControl);
+        const seconds = parseMistakeTime(newMistakeTime);
+        if (!Number.isInteger(control) || control < 1) {
+            setNewMistakeError("Ange ett giltigt kontrollnummer på minst 1.");
+            return;
+        }
+        if (seconds === null) {
+            setNewMistakeError("Ange bomtiden som exempelvis 0:34.");
+            return;
+        }
+        setCompetition((current)=>{
+            if (!current) return current;
+            const next = cloneCompetition(current);
+            next.result.mistakes.push({
+                control,
+                time: formatMistakeTime(seconds)
+            });
+            sortMistakes(next.result.mistakes);
+            recalculateTotalMistakeTime(next);
+            return next;
+        });
+        setNewMistakeControl("");
+        setNewMistakeTime("");
+        setNewMistakeError(null);
+    };
+    const removeMistake = (index)=>{
+        setCompetition((current)=>{
+            if (!current) return current;
+            const next = cloneCompetition(current);
+            next.result.mistakes.splice(index, 1);
+            recalculateTotalMistakeTime(next);
+            return next;
+        });
+    };
+    const restoreMistakes = ()=>{
+        if (!originalCompetition) return;
+        setCompetition((current)=>{
+            if (!current) return current;
+            const next = cloneCompetition(current);
+            next.result.mistakes = structuredClone(originalCompetition.result.mistakes);
+            next.result.totalMistakeTime = originalCompetition.result.totalMistakeTime;
+            return next;
+        });
+        setNewMistakeError(null);
     };
     const restoreField = (field)=>{
         if (!originalCompetition) return;
@@ -543,50 +666,50 @@ function MigrationReview() {
         previousItem
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: "jsx-407dc179a260101e" + " " + "studio-shell migration-shell",
+        className: "jsx-507d8441e33eb3f3" + " " + "studio-shell migration-shell",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-                className: "jsx-407dc179a260101e" + " " + "studio-header",
+                className: "jsx-507d8441e33eb3f3" + " " + "studio-header",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-407dc179a260101e",
+                        className: "jsx-507d8441e33eb3f3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "jsx-407dc179a260101e" + " " + "eyebrow",
+                                className: "jsx-507d8441e33eb3f3" + " " + "eyebrow",
                                 children: "KARTARKIV STUDIO"
                             }, void 0, false, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 514,
+                                lineNumber: 670,
                                 columnNumber: 14
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "jsx-407dc179a260101e",
+                                className: "jsx-507d8441e33eb3f3",
                                 children: "MIGRERING"
                             }, void 0, false, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 514,
+                                lineNumber: 670,
                                 columnNumber: 57
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "jsx-407dc179a260101e" + " " + "lead",
+                                className: "jsx-507d8441e33eb3f3" + " " + "lead",
                                 children: "Granska en berikad DOMA-tävling innan den tas vidare till publicering."
                             }, void 0, false, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 514,
+                                lineNumber: 670,
                                 columnNumber: 75
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 514,
+                        lineNumber: 670,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-407dc179a260101e" + " " + "studio-header-actions",
+                        className: "jsx-507d8441e33eb3f3" + " " + "studio-header-actions",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                                 "aria-label": "Studio",
-                                className: "jsx-407dc179a260101e" + " " + "studio-nav",
+                                className: "jsx-507d8441e33eb3f3" + " " + "studio-nav",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         className: "studio-nav-link",
@@ -594,7 +717,7 @@ function MigrationReview() {
                                         children: "Ny tävling"
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 516,
+                                        lineNumber: 672,
                                         columnNumber: 59
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -603,63 +726,63 @@ function MigrationReview() {
                                         children: "Migrering"
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 516,
+                                        lineNumber: 672,
                                         columnNumber: 119
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 516,
+                                lineNumber: 672,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-407dc179a260101e" + " " + "status-badge",
+                                className: "jsx-507d8441e33eb3f3" + " " + "status-badge",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "jsx-407dc179a260101e"
+                                        className: "jsx-507d8441e33eb3f3"
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 517,
+                                        lineNumber: 673,
                                         columnNumber: 41
                                     }, this),
                                     "Lokal utveckling"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 517,
+                                lineNumber: 673,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 515,
+                        lineNumber: 671,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                lineNumber: 513,
+                lineNumber: 669,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "jsx-407dc179a260101e" + " " + "panel migration-toolbar",
+                className: "jsx-507d8441e33eb3f3" + " " + "panel migration-toolbar",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-407dc179a260101e" + " " + "migration-progress-summary",
+                        className: "jsx-507d8441e33eb3f3" + " " + "migration-progress-summary",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                className: "jsx-407dc179a260101e",
+                                className: "jsx-507d8441e33eb3f3",
                                 children: [
                                     progressPercent,
                                     "% klart"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 523,
+                                lineNumber: 679,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "jsx-407dc179a260101e",
+                                className: "jsx-507d8441e33eb3f3",
                                 children: [
                                     "Totalt ",
                                     queue.length,
@@ -672,39 +795,39 @@ function MigrationReview() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 524,
+                                lineNumber: 680,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("progress", {
                                 max: 100,
                                 value: progressPercent,
                                 "aria-label": `${progressPercent}% av migrationskön granskad`,
-                                className: "jsx-407dc179a260101e"
+                                className: "jsx-507d8441e33eb3f3"
                             }, void 0, false, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 525,
+                                lineNumber: 681,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 522,
+                        lineNumber: 678,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-407dc179a260101e" + " " + "migration-id-control",
+                        className: "jsx-507d8441e33eb3f3" + " " + "migration-id-control",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 htmlFor: "migration-map-id",
-                                className: "jsx-407dc179a260101e",
+                                className: "jsx-507d8441e33eb3f3",
                                 children: "DOMA map-ID"
                             }, void 0, false, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 527,
+                                lineNumber: 683,
                                 columnNumber: 47
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-407dc179a260101e",
+                                className: "jsx-507d8441e33eb3f3",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                         id: "migration-map-id",
@@ -717,89 +840,89 @@ function MigrationReview() {
                                                 void loadMap(mapIdInput);
                                             }
                                         },
-                                        className: "jsx-407dc179a260101e"
+                                        className: "jsx-507d8441e33eb3f3"
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 528,
+                                        lineNumber: 684,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         type: "button",
                                         disabled: isLoading,
                                         onClick: ()=>void loadMap(mapIdInput),
-                                        className: "jsx-407dc179a260101e" + " " + "button secondary",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "button secondary",
                                         children: isLoading ? "Läser…" : "Läs från migration/test"
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 529,
+                                        lineNumber: 685,
                                         columnNumber: 11
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 527,
+                                lineNumber: 683,
                                 columnNumber: 100
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 527,
+                        lineNumber: 683,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                        className: "jsx-407dc179a260101e" + " " + "button secondary migration-file-button",
+                        className: "jsx-507d8441e33eb3f3" + " " + "button secondary migration-file-button",
                         children: [
                             "Läs JSON-fil",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                 type: "file",
                                 accept: "application/json,.json",
                                 onChange: (event)=>void handleJsonFile(event),
-                                className: "jsx-407dc179a260101e" + " " + "visually-hidden"
+                                className: "jsx-507d8441e33eb3f3" + " " + "visually-hidden"
                             }, void 0, false, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 531,
+                                lineNumber: 687,
                                 columnNumber: 79
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 531,
+                        lineNumber: 687,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-407dc179a260101e" + " " + `migration-review-state ${status}`,
+                        className: "jsx-507d8441e33eb3f3" + " " + `migration-review-state ${status}`,
                         children: status === "approved" ? "Godkänd" : status === "needs-review" ? "Manuell granskning" : "Ej granskad"
                     }, void 0, false, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 532,
+                        lineNumber: 688,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                lineNumber: 521,
+                lineNumber: 677,
                 columnNumber: 7
             }, this),
             queue.length ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 "aria-label": "Migrationskö",
-                className: "jsx-407dc179a260101e" + " " + "panel migration-queue-bar",
+                className: "jsx-507d8441e33eb3f3" + " " + "panel migration-queue-bar",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         type: "button",
                         disabled: !previousItem || isLoading,
                         onClick: ()=>previousItem && void loadMap(String(previousItem.mapId)),
-                        className: "jsx-407dc179a260101e" + " " + "button secondary",
+                        className: "jsx-507d8441e33eb3f3" + " " + "button secondary",
                         children: "← Föregående"
                     }, void 0, false, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 536,
+                        lineNumber: 692,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "jsx-407dc179a260101e",
+                        className: "jsx-507d8441e33eb3f3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                className: "jsx-407dc179a260101e",
+                                className: "jsx-507d8441e33eb3f3",
                                 children: [
                                     currentQueueIndex >= 0 ? currentQueueIndex + 1 : "—",
                                     " av ",
@@ -807,11 +930,11 @@ function MigrationReview() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 537,
+                                lineNumber: 693,
                                 columnNumber: 14
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "jsx-407dc179a260101e",
+                                className: "jsx-507d8441e33eb3f3",
                                 children: [
                                     queue.filter((item)=>item.status === "approved").length,
                                     " godkända · ",
@@ -820,34 +943,34 @@ function MigrationReview() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 537,
+                                lineNumber: 693,
                                 columnNumber: 103
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 537,
+                        lineNumber: 693,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                         "aria-label": "Välj tävling i migrationskön",
                         value: currentQueueIndex >= 0 ? mapIdInput : "",
                         onChange: (event)=>void loadMap(event.target.value),
-                        className: "jsx-407dc179a260101e",
+                        className: "jsx-507d8441e33eb3f3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                 value: "",
                                 disabled: true,
-                                className: "jsx-407dc179a260101e",
+                                className: "jsx-507d8441e33eb3f3",
                                 children: "Välj DOMA-post"
                             }, void 0, false, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 538,
+                                lineNumber: 694,
                                 columnNumber: 163
                             }, this),
                             queue.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                     value: item.mapId,
-                                    className: "jsx-407dc179a260101e",
+                                    className: "jsx-507d8441e33eb3f3",
                                     children: [
                                         item.status === "approved" ? "✓" : item.status === "needs-review" ? "!" : "○",
                                         " DOMA ",
@@ -857,265 +980,265 @@ function MigrationReview() {
                                     ]
                                 }, item.mapId, true, {
                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                    lineNumber: 538,
+                                    lineNumber: 694,
                                     columnNumber: 233
                                 }, this))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 538,
+                        lineNumber: 694,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         type: "button",
                         disabled: !nextItem || isLoading,
                         onClick: ()=>nextItem && void loadMap(String(nextItem.mapId)),
-                        className: "jsx-407dc179a260101e" + " " + "button secondary",
+                        className: "jsx-507d8441e33eb3f3" + " " + "button secondary",
                         children: "Nästa →"
                     }, void 0, false, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 539,
+                        lineNumber: 695,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                lineNumber: 535,
+                lineNumber: 691,
                 columnNumber: 23
             }, this) : null,
             message ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 role: "status",
-                className: "jsx-407dc179a260101e" + " " + "migration-message",
+                className: "jsx-507d8441e33eb3f3" + " " + "migration-message",
                 children: message
             }, void 0, false, {
                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                lineNumber: 542,
+                lineNumber: 698,
                 columnNumber: 18
             }, this) : null,
             competition ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-407dc179a260101e" + " " + "migration-layout",
+                className: "jsx-507d8441e33eb3f3" + " " + "migration-layout",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                        className: "jsx-407dc179a260101e" + " " + "migration-main",
+                        className: "jsx-507d8441e33eb3f3" + " " + "migration-main",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-407dc179a260101e" + " " + "panel migration-map-panel",
+                                className: "jsx-507d8441e33eb3f3" + " " + "panel migration-map-panel",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "panel-heading",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "panel-heading",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "jsx-407dc179a260101e" + " " + "step-label",
+                                                        className: "jsx-507d8441e33eb3f3" + " " + "step-label",
                                                         children: "KÄLLMATERIAL"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 547,
+                                                        lineNumber: 703,
                                                         columnNumber: 49
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Kartor"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 547,
+                                                        lineNumber: 703,
                                                         columnNumber: 91
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 547,
+                                                lineNumber: 703,
                                                 columnNumber: 44
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "jsx-407dc179a260101e" + " " + "panel-note",
+                                                className: "jsx-507d8441e33eb3f3" + " " + "panel-note",
                                                 children: [
                                                     "DOMA ",
                                                     competition.doma.mapId
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 547,
+                                                lineNumber: 703,
                                                 columnNumber: 112
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 547,
+                                        lineNumber: 703,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-map-grid",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-map-grid",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figure", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figcaption", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Blank karta"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 549,
+                                                        lineNumber: 705,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-407dc179a260101e" + " " + "migration-map-frame",
+                                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-map-frame",
                                                         children: competition.doma.blankMapImageUrl ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                             src: competition.doma.blankMapImageUrl,
                                                             alt: "Blank karta från DOMA",
-                                                            className: "jsx-407dc179a260101e"
+                                                            className: "jsx-507d8441e33eb3f3"
                                                         }, void 0, false, {
                                                             fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                            lineNumber: 549,
+                                                            lineNumber: 705,
                                                             columnNumber: 133
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "jsx-407dc179a260101e",
+                                                            className: "jsx-507d8441e33eb3f3",
                                                             children: "Ingen blank karta"
                                                         }, void 0, false, {
                                                             fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                            lineNumber: 549,
+                                                            lineNumber: 705,
                                                             columnNumber: 211
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 549,
+                                                        lineNumber: 705,
                                                         columnNumber: 59
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 549,
+                                                lineNumber: 705,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figure", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("figcaption", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Karta med rutt"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 550,
+                                                        lineNumber: 706,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-407dc179a260101e" + " " + "migration-map-frame",
+                                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-map-frame",
                                                         children: competition.doma.routeMapImageUrl ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                             src: competition.doma.routeMapImageUrl,
                                                             alt: "Karta med rutt från DOMA",
-                                                            className: "jsx-407dc179a260101e"
+                                                            className: "jsx-507d8441e33eb3f3"
                                                         }, void 0, false, {
                                                             fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                            lineNumber: 550,
+                                                            lineNumber: 706,
                                                             columnNumber: 136
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "jsx-407dc179a260101e",
+                                                            className: "jsx-507d8441e33eb3f3",
                                                             children: "Ingen ruttkarta"
                                                         }, void 0, false, {
                                                             fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                            lineNumber: 550,
+                                                            lineNumber: 706,
                                                             columnNumber: 217
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 550,
+                                                        lineNumber: 706,
                                                         columnNumber: 62
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 550,
+                                                lineNumber: 706,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 548,
+                                        lineNumber: 704,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 546,
+                                lineNumber: 702,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-407dc179a260101e" + " " + "panel",
+                                className: "jsx-507d8441e33eb3f3" + " " + "panel",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "panel-heading",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "panel-heading",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "jsx-407dc179a260101e" + " " + "step-label",
+                                                        className: "jsx-507d8441e33eb3f3" + " " + "step-label",
                                                         children: "GRANSKNING"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 555,
+                                                        lineNumber: 711,
                                                         columnNumber: 49
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Tävlingsuppgifter"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 555,
+                                                        lineNumber: 711,
                                                         columnNumber: 89
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 555,
+                                                lineNumber: 711,
                                                 columnNumber: 44
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e" + " " + "migration-dirty-summary",
+                                                className: "jsx-507d8441e33eb3f3" + " " + "migration-dirty-summary",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: [
                                                             dirtyFields.size,
                                                             " ändrade fält"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 555,
+                                                        lineNumber: 711,
                                                         columnNumber: 162
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         type: "button",
                                                         disabled: !dirtyFields.size,
                                                         onClick: restoreAll,
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Återställ alla"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 555,
+                                                        lineNumber: 711,
                                                         columnNumber: 206
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 555,
+                                                lineNumber: 711,
                                                 columnNumber: 121
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 555,
+                                        lineNumber: 711,
                                         columnNumber: 13
                                     }, this),
                                     hasValidationErrors ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         role: "alert",
                                         "aria-live": "polite",
-                                        className: "jsx-407dc179a260101e" + " " + "migration-validation-summary",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-validation-summary",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     validationEntries.length,
                                                     " ",
@@ -1123,23 +1246,23 @@ function MigrationReview() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 558,
+                                                lineNumber: 714,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: validationEntries.map(({ field, label, error })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                                className: "jsx-407dc179a260101e",
+                                                                className: "jsx-507d8441e33eb3f3",
                                                                 children: [
                                                                     label,
                                                                     ":"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                                lineNumber: 560,
+                                                                lineNumber: 716,
                                                                 columnNumber: 87
                                                             }, this),
                                                             " ",
@@ -1147,29 +1270,29 @@ function MigrationReview() {
                                                         ]
                                                     }, field, true, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 560,
+                                                        lineNumber: 716,
                                                         columnNumber: 71
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 559,
+                                                lineNumber: 715,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 557,
+                                        lineNumber: 713,
                                         columnNumber: 15
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-validation-ok",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-validation-ok",
                                         children: "Alla obligatoriska och validerade fält är giltiga."
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 564,
+                                        lineNumber: 720,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-form-grid",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-form-grid",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
                                                 field: "title",
@@ -1181,15 +1304,15 @@ function MigrationReview() {
                                                     "aria-invalid": Boolean(validationErrors.title),
                                                     value: competition.doma.title ?? "",
                                                     onChange: (e)=>updateField("title", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 567,
+                                                    lineNumber: 723,
                                                     columnNumber: 156
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 567,
+                                                lineNumber: 723,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1202,15 +1325,15 @@ function MigrationReview() {
                                                     "aria-invalid": Boolean(validationErrors.date),
                                                     value: competition.doma.date ?? "",
                                                     onChange: (e)=>updateField("date", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 568,
+                                                    lineNumber: 724,
                                                     columnNumber: 147
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 568,
+                                                lineNumber: 724,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1220,7 +1343,7 @@ function MigrationReview() {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                                     value: competition.discipline,
                                                     onChange: (e)=>updateField("discipline", e.target.value),
-                                                    className: "jsx-407dc179a260101e",
+                                                    className: "jsx-507d8441e33eb3f3",
                                                     children: [
                                                         "Lång",
                                                         "Medel",
@@ -1231,21 +1354,21 @@ function MigrationReview() {
                                                         "Annan",
                                                         "Okänd"
                                                     ].map((x)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                            className: "jsx-407dc179a260101e",
+                                                            className: "jsx-507d8441e33eb3f3",
                                                             children: x
                                                         }, x, false, {
                                                             fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                            lineNumber: 569,
+                                                            lineNumber: 725,
                                                             columnNumber: 324
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 569,
+                                                    lineNumber: 725,
                                                     columnNumber: 135
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 569,
+                                                lineNumber: 725,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1255,15 +1378,15 @@ function MigrationReview() {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     value: competition.doma.category ?? "",
                                                     onChange: (e)=>updateField("eventType", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 570,
+                                                    lineNumber: 726,
                                                     columnNumber: 132
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 570,
+                                                lineNumber: 726,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1273,76 +1396,76 @@ function MigrationReview() {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     value: competition.eventor?.organiser ?? "",
                                                     onChange: (e)=>updateField("organiser", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 571,
+                                                    lineNumber: 727,
                                                     columnNumber: 132
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 571,
+                                                lineNumber: 727,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 566,
+                                        lineNumber: 722,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 554,
+                                lineNumber: 710,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-407dc179a260101e" + " " + "panel",
+                                className: "jsx-507d8441e33eb3f3" + " " + "panel",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "panel-heading",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "panel-heading",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "jsx-407dc179a260101e" + " " + "step-label",
+                                                        className: "jsx-507d8441e33eb3f3" + " " + "step-label",
                                                         children: "RESULTAT OCH BANA"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 576,
+                                                        lineNumber: 732,
                                                         columnNumber: 49
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Resultatuppgifter"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 576,
+                                                        lineNumber: 732,
                                                         columnNumber: 96
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 576,
+                                                lineNumber: 732,
                                                 columnNumber: 44
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "jsx-407dc179a260101e" + " " + "panel-note",
+                                                className: "jsx-507d8441e33eb3f3" + " " + "panel-note",
                                                 children: "Redigerbara fält"
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 576,
+                                                lineNumber: 732,
                                                 columnNumber: 128
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 576,
+                                        lineNumber: 732,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-form-grid",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-form-grid",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
                                                 field: "raceClass",
@@ -1351,15 +1474,15 @@ function MigrationReview() {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     value: competition.result.raceClass ?? "",
                                                     onChange: (e)=>updateField("raceClass", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 578,
+                                                    lineNumber: 734,
                                                     columnNumber: 132
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 578,
+                                                lineNumber: 734,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1369,15 +1492,15 @@ function MigrationReview() {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     value: competition.result.club ?? "",
                                                     onChange: (e)=>updateField("club", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 579,
+                                                    lineNumber: 735,
                                                     columnNumber: 117
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 579,
+                                                lineNumber: 735,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1387,15 +1510,15 @@ function MigrationReview() {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     value: competition.result.position ?? "",
                                                     onChange: (e)=>updateField("position", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 580,
+                                                    lineNumber: 736,
                                                     columnNumber: 129
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 580,
+                                                lineNumber: 736,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1405,15 +1528,15 @@ function MigrationReview() {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     value: competition.result.starters ?? "",
                                                     onChange: (e)=>updateField("starters", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 581,
+                                                    lineNumber: 737,
                                                     columnNumber: 129
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 581,
+                                                lineNumber: 737,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1428,15 +1551,38 @@ function MigrationReview() {
                                                     "aria-invalid": Boolean(validationErrors.relayLeg),
                                                     value: competition.doma.relayLeg ?? "",
                                                     onChange: (e)=>updateField("relayLeg", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 582,
+                                                    lineNumber: 738,
                                                     columnNumber: 163
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 582,
+                                                lineNumber: 738,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
+                                                field: "courseLength",
+                                                dirty: dirtyFields.has("courseLength"),
+                                                error: validationErrors.courseLength,
+                                                onRestore: ()=>restoreField("courseLength"),
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                    type: "number",
+                                                    min: "0",
+                                                    step: "0.01",
+                                                    "aria-invalid": Boolean(validationErrors.courseLength),
+                                                    value: competition.doma.courseLengthKm ?? "",
+                                                    onChange: (e)=>updateField("courseLength", e.target.value),
+                                                    className: "jsx-507d8441e33eb3f3"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                    lineNumber: 739,
+                                                    columnNumber: 179
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                lineNumber: 739,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1451,15 +1597,15 @@ function MigrationReview() {
                                                     "aria-invalid": Boolean(validationErrors.distance),
                                                     value: competition.doma.runningDistanceKm ?? "",
                                                     onChange: (e)=>updateField("distance", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 583,
+                                                    lineNumber: 740,
                                                     columnNumber: 163
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 583,
+                                                lineNumber: 740,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1474,399 +1620,598 @@ function MigrationReview() {
                                                     "aria-invalid": Boolean(validationErrors.controls),
                                                     value: competition.result.controls ?? "",
                                                     onChange: (e)=>updateField("controls", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 584,
+                                                    lineNumber: 741,
                                                     columnNumber: 163
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 584,
+                                                lineNumber: 741,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 577,
+                                        lineNumber: 733,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dl", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-facts",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-facts",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dt", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Tid"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 586,
+                                                        lineNumber: 743,
                                                         columnNumber: 50
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dd", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: valueOrDash(competition.result.time)
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 586,
+                                                        lineNumber: 743,
                                                         columnNumber: 62
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 586,
+                                                lineNumber: 743,
                                                 columnNumber: 45
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e" + " " + "accent-fact",
+                                                className: "jsx-507d8441e33eb3f3" + " " + "accent-fact",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dt", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Total bomtid"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 586,
+                                                        lineNumber: 743,
                                                         columnNumber: 144
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dd", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: valueOrDash(competition.result.totalMistakeTime)
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 586,
+                                                        lineNumber: 743,
                                                         columnNumber: 165
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 586,
+                                                lineNumber: 743,
                                                 columnNumber: 115
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dt", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Löpare"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 586,
+                                                        lineNumber: 743,
                                                         columnNumber: 235
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dd", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: valueOrDash(competition.result.runnerName)
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 586,
+                                                        lineNumber: 743,
                                                         columnNumber: 250
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 586,
+                                                lineNumber: 743,
                                                 columnNumber: 230
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 586,
+                                        lineNumber: 743,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 575,
+                                lineNumber: 731,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-407dc179a260101e" + " " + "panel",
+                                className: "jsx-507d8441e33eb3f3" + " " + "panel",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "panel-heading",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "panel-heading",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "jsx-407dc179a260101e" + " " + "step-label",
+                                                        className: "jsx-507d8441e33eb3f3" + " " + "step-label",
                                                         children: "RESULTATANALYS"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 590,
-                                                        columnNumber: 49
+                                                        lineNumber: 748,
+                                                        columnNumber: 20
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Bommar per kontroll"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 590,
-                                                        columnNumber: 93
+                                                        lineNumber: 748,
+                                                        columnNumber: 64
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 590,
-                                                columnNumber: 44
+                                                lineNumber: 748,
+                                                columnNumber: 15
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "jsx-407dc179a260101e" + " " + "panel-note",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "jsx-507d8441e33eb3f3" + " " + "migration-dirty-summary",
                                                 children: [
-                                                    competition.result.mistakes.length,
-                                                    " registrerade"
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "jsx-507d8441e33eb3f3",
+                                                        children: [
+                                                            competition.result.mistakes.length,
+                                                            " registrerade"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                        lineNumber: 750,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        type: "button",
+                                                        disabled: !dirtyFields.has("mistakes"),
+                                                        onClick: restoreMistakes,
+                                                        className: "jsx-507d8441e33eb3f3",
+                                                        children: "Återställ bommar"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                        lineNumber: 751,
+                                                        columnNumber: 17
+                                                    }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 590,
-                                                columnNumber: 127
+                                                lineNumber: 749,
+                                                columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 590,
+                                        lineNumber: 747,
                                         columnNumber: 13
                                     }, this),
-                                    competition.result.mistakes.length ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-mistakes",
-                                        children: competition.result.mistakes.map((mistake)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-407dc179a260101e",
-                                                        children: [
-                                                            "Kontroll ",
-                                                            mistake.control
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 591,
-                                                        columnNumber: 181
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                        className: "jsx-407dc179a260101e",
-                                                        children: mistake.time
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 591,
-                                                        columnNumber: 220
-                                                    }, this)
-                                                ]
-                                            }, `${mistake.control}-${mistake.time}`, true, {
-                                                fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 591,
-                                                columnNumber: 133
-                                            }, this))
+                                    validationErrors.mistakes ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        role: "alert",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-field-error",
+                                        children: validationErrors.mistakes
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 591,
-                                        columnNumber: 51
+                                        lineNumber: 756,
+                                        columnNumber: 15
+                                    }, this) : null,
+                                    competition.result.mistakes.length ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-mistake-editor",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                "aria-hidden": "true",
+                                                className: "jsx-507d8441e33eb3f3" + " " + "migration-mistake-header",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "jsx-507d8441e33eb3f3",
+                                                        children: "Kontroll"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                        lineNumber: 762,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "jsx-507d8441e33eb3f3",
+                                                        children: "Bomtid"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                        lineNumber: 762,
+                                                        columnNumber: 40
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "jsx-507d8441e33eb3f3"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                        lineNumber: 762,
+                                                        columnNumber: 59
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                lineNumber: 761,
+                                                columnNumber: 17
+                                            }, this),
+                                            competition.result.mistakes.map((mistake, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "jsx-507d8441e33eb3f3" + " " + "migration-mistake-row",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                            type: "number",
+                                                            min: "1",
+                                                            step: "1",
+                                                            "aria-label": `Kontrollnummer för bom ${index + 1}`,
+                                                            value: mistake.control || "",
+                                                            onChange: (event)=>updateMistake(index, "control", event.target.value),
+                                                            className: "jsx-507d8441e33eb3f3"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                            lineNumber: 766,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                            type: "text",
+                                                            inputMode: "numeric",
+                                                            "aria-label": `Bomtid för kontroll ${mistake.control || index + 1}`,
+                                                            placeholder: "0:34",
+                                                            value: mistake.time,
+                                                            onChange: (event)=>updateMistake(index, "time", event.target.value),
+                                                            className: "jsx-507d8441e33eb3f3"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                            lineNumber: 774,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            "aria-label": `Ta bort bom vid kontroll ${mistake.control || index + 1}`,
+                                                            onClick: ()=>removeMistake(index),
+                                                            className: "jsx-507d8441e33eb3f3" + " " + "button secondary migration-remove-mistake",
+                                                            children: "Ta bort"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                            lineNumber: 782,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, `${index}-${mistake.control}`, true, {
+                                                    fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                    lineNumber: 765,
+                                                    columnNumber: 19
+                                                }, this))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                        lineNumber: 760,
+                                        columnNumber: 15
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-empty-state",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-empty-state",
                                         children: "Inga bommar registrerade."
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 591,
-                                        columnNumber: 268
+                                        lineNumber: 794,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-add-mistake",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                className: "jsx-507d8441e33eb3f3",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "jsx-507d8441e33eb3f3",
+                                                        children: "Kontroll"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                        lineNumber: 799,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        type: "number",
+                                                        min: "1",
+                                                        step: "1",
+                                                        placeholder: "12",
+                                                        value: newMistakeControl,
+                                                        onChange: (event)=>{
+                                                            setNewMistakeControl(event.target.value);
+                                                            setNewMistakeError(null);
+                                                        },
+                                                        className: "jsx-507d8441e33eb3f3"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                        lineNumber: 800,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                lineNumber: 798,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                className: "jsx-507d8441e33eb3f3",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "jsx-507d8441e33eb3f3",
+                                                        children: "Bomtid"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                        lineNumber: 813,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        type: "text",
+                                                        inputMode: "numeric",
+                                                        placeholder: "0:34",
+                                                        value: newMistakeTime,
+                                                        onChange: (event)=>{
+                                                            setNewMistakeTime(event.target.value);
+                                                            setNewMistakeError(null);
+                                                        },
+                                                        onKeyDown: (event)=>{
+                                                            if (event.key === "Enter") {
+                                                                event.preventDefault();
+                                                                addMistake();
+                                                            }
+                                                        },
+                                                        className: "jsx-507d8441e33eb3f3"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                        lineNumber: 814,
+                                                        columnNumber: 17
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                lineNumber: 812,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                type: "button",
+                                                onClick: addMistake,
+                                                className: "jsx-507d8441e33eb3f3" + " " + "button secondary",
+                                                children: "+ Lägg till bom"
+                                            }, void 0, false, {
+                                                fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                lineNumber: 831,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                        lineNumber: 797,
+                                        columnNumber: 13
+                                    }, this),
+                                    newMistakeError ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        role: "alert",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-field-error",
+                                        children: newMistakeError
+                                    }, void 0, false, {
+                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                        lineNumber: 833,
+                                        columnNumber: 32
+                                    }, this) : null,
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-mistake-total",
+                                        children: [
+                                            "Total bomtid: ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                className: "jsx-507d8441e33eb3f3",
+                                                children: valueOrDash(competition.result.totalMistakeTime)
+                                            }, void 0, false, {
+                                                fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                                lineNumber: 835,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
+                                        lineNumber: 834,
+                                        columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 589,
+                                lineNumber: 746,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 545,
+                        lineNumber: 701,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
-                        className: "jsx-407dc179a260101e" + " " + "migration-sidebar",
+                        className: "jsx-507d8441e33eb3f3" + " " + "migration-sidebar",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-407dc179a260101e" + " " + "panel migration-verification-panel",
+                                className: "jsx-507d8441e33eb3f3" + " " + "panel migration-verification-panel",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "panel-heading",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "panel-heading",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "jsx-407dc179a260101e" + " " + "step-label",
+                                                        className: "jsx-507d8441e33eb3f3" + " " + "step-label",
                                                         children: "MATCHNING"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 597,
+                                                        lineNumber: 842,
                                                         columnNumber: 49
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Eventor"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 597,
+                                                        lineNumber: 842,
                                                         columnNumber: 88
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 597,
+                                                lineNumber: 842,
                                                 columnNumber: 44
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "jsx-407dc179a260101e" + " " + `confidence-badge ${match?.confidence ?? "none"}`,
+                                                className: "jsx-507d8441e33eb3f3" + " " + `confidence-badge ${match?.confidence ?? "none"}`,
                                                 children: match?.confidence === "high" ? "Hög säkerhet" : match?.confidence === "medium" ? "Medel säkerhet" : "Ingen träff"
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 597,
+                                                lineNumber: 842,
                                                 columnNumber: 110
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 597,
+                                        lineNumber: 842,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dl", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-detail-list",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-detail-list",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dt", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Eventor-ID"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 843,
                                                         columnNumber: 56
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dd", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: valueOrDash(eventor?.eventId)
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 843,
                                                         columnNumber: 75
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 598,
+                                                lineNumber: 843,
                                                 columnNumber: 51
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dt", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Verifiering"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 843,
                                                         columnNumber: 126
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dd", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: verificationLabel
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 843,
                                                         columnNumber: 146
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 598,
+                                                lineNumber: 843,
                                                 columnNumber: 121
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dt", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Titelpoäng"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 843,
                                                         columnNumber: 185
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dd", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: valueOrDash(match?.score)
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 843,
                                                         columnNumber: 204
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 598,
+                                                lineNumber: 843,
                                                 columnNumber: 180
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dt", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Plats"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 843,
                                                         columnNumber: 251
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dd", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: valueOrDash(eventor?.location)
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 843,
                                                         columnNumber: 265
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 598,
+                                                lineNumber: 843,
                                                 columnNumber: 246
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dt", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: "Eventor-disciplin"
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 843,
                                                         columnNumber: 317
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("dd", {
-                                                        className: "jsx-407dc179a260101e",
+                                                        className: "jsx-507d8441e33eb3f3",
                                                         children: valueOrDash(eventor?.rawDiscipline)
                                                     }, void 0, false, {
                                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 843,
                                                         columnNumber: 343
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 598,
+                                                lineNumber: 843,
                                                 columnNumber: 312
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 598,
+                                        lineNumber: 843,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-link-list",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-link-list",
                                         children: [
                                             externalLink(eventor?.eventorUrl ?? match?.eventorUrl ?? null, "Öppna Eventor"),
                                             externalLink(competition.liveloxUrl, "Öppna Livelox"),
@@ -1876,52 +2221,52 @@ function MigrationReview() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 599,
+                                        lineNumber: 844,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 596,
+                                lineNumber: 841,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-407dc179a260101e" + " " + "panel",
+                                className: "jsx-507d8441e33eb3f3" + " " + "panel",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "panel-heading",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "panel-heading",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-407dc179a260101e",
+                                            className: "jsx-507d8441e33eb3f3",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "jsx-407dc179a260101e" + " " + "step-label",
+                                                    className: "jsx-507d8441e33eb3f3" + " " + "step-label",
                                                     children: "LÄNKAR"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 603,
+                                                    lineNumber: 848,
                                                     columnNumber: 49
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                    className: "jsx-407dc179a260101e",
+                                                    className: "jsx-507d8441e33eb3f3",
                                                     children: "Redigera länkar"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 603,
+                                                    lineNumber: 848,
                                                     columnNumber: 85
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                            lineNumber: 603,
+                                            lineNumber: 848,
                                             columnNumber: 44
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 603,
+                                        lineNumber: 848,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-link-fields",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-link-fields",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
                                                 field: "eventorUrl",
@@ -1933,15 +2278,15 @@ function MigrationReview() {
                                                     "aria-invalid": Boolean(validationErrors.eventorUrl),
                                                     value: eventor?.eventorUrl ?? match?.eventorUrl ?? "",
                                                     onChange: (e)=>updateField("eventorUrl", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 605,
+                                                    lineNumber: 850,
                                                     columnNumber: 171
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 605,
+                                                lineNumber: 850,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1954,15 +2299,15 @@ function MigrationReview() {
                                                     "aria-invalid": Boolean(validationErrors.winsplitsUrl),
                                                     value: competition.doma.winsplitsUrl ?? "",
                                                     onChange: (e)=>updateField("winsplitsUrl", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 606,
+                                                    lineNumber: 851,
                                                     columnNumber: 179
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 606,
+                                                lineNumber: 851,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(EditableFieldRow, {
@@ -1975,209 +2320,209 @@ function MigrationReview() {
                                                     "aria-invalid": Boolean(validationErrors.liveloxUrl),
                                                     value: competition.liveloxUrl ?? "",
                                                     onChange: (e)=>updateField("liveloxUrl", e.target.value),
-                                                    className: "jsx-407dc179a260101e"
+                                                    className: "jsx-507d8441e33eb3f3"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 607,
+                                                    lineNumber: 852,
                                                     columnNumber: 171
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 607,
+                                                lineNumber: 852,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 604,
+                                        lineNumber: 849,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 602,
+                                lineNumber: 847,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-407dc179a260101e" + " " + "panel",
+                                className: "jsx-507d8441e33eb3f3" + " " + "panel",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "panel-heading",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "panel-heading",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-407dc179a260101e",
+                                            className: "jsx-507d8441e33eb3f3",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "jsx-407dc179a260101e" + " " + "step-label",
+                                                    className: "jsx-507d8441e33eb3f3" + " " + "step-label",
                                                     children: "KVALITETSKONTROLL"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 611,
+                                                    lineNumber: 856,
                                                     columnNumber: 74
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                    className: "jsx-407dc179a260101e",
+                                                    className: "jsx-507d8441e33eb3f3",
                                                     children: "Varningar"
                                                 }, void 0, false, {
                                                     fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                    lineNumber: 611,
+                                                    lineNumber: 856,
                                                     columnNumber: 121
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                            lineNumber: 611,
+                                            lineNumber: 856,
                                             columnNumber: 69
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 611,
+                                        lineNumber: 856,
                                         columnNumber: 38
                                     }, this),
                                     competition.warnings.length ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-warning-list",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-warning-list",
                                         children: competition.warnings.map((warning)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                className: "jsx-407dc179a260101e",
+                                                className: "jsx-507d8441e33eb3f3",
                                                 children: warning
                                             }, warning, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 611,
+                                                lineNumber: 856,
                                                 columnNumber: 260
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 611,
+                                        lineNumber: 856,
                                         columnNumber: 182
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "jsx-407dc179a260101e" + " " + "migration-ok-message",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "migration-ok-message",
                                         children: "Inga varningar från berikningen."
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 611,
+                                        lineNumber: 856,
                                         columnNumber: 302
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 611,
+                                lineNumber: 856,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                                className: "jsx-407dc179a260101e" + " " + "panel migration-actions-panel",
+                                className: "jsx-507d8441e33eb3f3" + " " + "panel migration-actions-panel",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "jsx-407dc179a260101e" + " " + "step-label",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "step-label",
                                         children: "BESLUT"
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 614,
+                                        lineNumber: 859,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: "jsx-407dc179a260101e",
+                                        className: "jsx-507d8441e33eb3f3",
                                         children: "Slutför granskningen"
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 614,
+                                        lineNumber: 859,
                                         columnNumber: 49
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "jsx-407dc179a260101e",
+                                        className: "jsx-507d8441e33eb3f3",
                                         children: "Beslutet och alla redigeringar sparas i repots migration/reviewed-mapp. Källfilen i migration/test ändras inte."
                                     }, void 0, false, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 614,
+                                        lineNumber: 859,
                                         columnNumber: 78
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-407dc179a260101e" + " " + "button-stack",
+                                        className: "jsx-507d8441e33eb3f3" + " " + "button-stack",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 type: "button",
                                                 disabled: isSaving || hasValidationErrors,
                                                 title: hasValidationErrors ? `Rätta ${validationEntries.length} valideringsfel innan posten kan godkännas.` : undefined,
                                                 onClick: ()=>void saveReview("approved"),
-                                                className: "jsx-407dc179a260101e" + " " + "button primary",
+                                                className: "jsx-507d8441e33eb3f3" + " " + "button primary",
                                                 children: isSaving ? "Sparar…" : "Godkänn testkartan"
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 615,
+                                                lineNumber: 860,
                                                 columnNumber: 43
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 type: "button",
                                                 disabled: isSaving,
                                                 onClick: ()=>void saveReview("needs-review"),
-                                                className: "jsx-407dc179a260101e" + " " + "button secondary",
+                                                className: "jsx-507d8441e33eb3f3" + " " + "button secondary",
                                                 children: "Kräver manuell granskning"
                                             }, void 0, false, {
                                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                                lineNumber: 615,
+                                                lineNumber: 860,
                                                 columnNumber: 354
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                        lineNumber: 615,
+                                        lineNumber: 860,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                                lineNumber: 613,
+                                lineNumber: 858,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 595,
+                        lineNumber: 840,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                lineNumber: 544,
+                lineNumber: 700,
                 columnNumber: 22
             }, this) : !isLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "jsx-407dc179a260101e" + " " + "panel migration-empty-panel",
+                className: "jsx-507d8441e33eb3f3" + " " + "panel migration-empty-panel",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "jsx-407dc179a260101e",
+                        className: "jsx-507d8441e33eb3f3",
                         children: "Ingen migrationspost laddad"
                     }, void 0, false, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 618,
+                        lineNumber: 863,
                         columnNumber: 78
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "jsx-407dc179a260101e",
+                        className: "jsx-507d8441e33eb3f3",
                         children: "Kör berikningsskriptet eller välj en genererad JSON-fil manuellt."
                     }, void 0, false, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 618,
+                        lineNumber: 863,
                         columnNumber: 114
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                        className: "jsx-407dc179a260101e",
+                        className: "jsx-507d8441e33eb3f3",
                         children: "npx tsx scripts/test-doma-enriched.ts 356"
                     }, void 0, false, {
                         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                        lineNumber: 618,
+                        lineNumber: 863,
                         columnNumber: 186
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-                lineNumber: 618,
+                lineNumber: 863,
                 columnNumber: 29
             }, this) : null,
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                id: "407dc179a260101e",
-                children: ".migration-edit-field.has-error input,.migration-edit-field.has-error select,.migration-edit-field.has-error textarea{border-color:#dc2626;box-shadow:0 0 0 1px #dc2626}.migration-field-error{color:#b91c1c;margin-top:.4rem;font-size:.82rem;font-weight:600;line-height:1.35;display:block}.migration-validation-summary{color:inherit;background:#dc262614;border:1px solid #dc2626;border-radius:.5rem;margin-bottom:1rem;padding:.9rem 1rem}.migration-validation-summary>strong{color:#b91c1c;display:block}.migration-validation-summary ul{margin:.55rem 0 0;padding-left:1.25rem}.migration-validation-summary li+li{margin-top:.3rem}.migration-validation-ok{background:#16a34a14;border:1px solid #16a34a73;border-radius:.5rem;margin:0 0 1rem;padding:.75rem .9rem}"
+                id: "507d8441e33eb3f3",
+                children: ".migration-edit-field.has-error input,.migration-edit-field.has-error select,.migration-edit-field.has-error textarea{border-color:#dc2626;box-shadow:0 0 0 1px #dc2626}.migration-field-error{color:#b91c1c;margin-top:.4rem;font-size:.82rem;font-weight:600;line-height:1.35;display:block}.migration-validation-summary{color:inherit;background:#dc262614;border:1px solid #dc2626;border-radius:.5rem;margin-bottom:1rem;padding:.9rem 1rem}.migration-validation-summary>strong{color:#b91c1c;display:block}.migration-validation-summary ul{margin:.55rem 0 0;padding-left:1.25rem}.migration-validation-summary li+li{margin-top:.3rem}.migration-validation-ok{background:#16a34a14;border:1px solid #16a34a73;border-radius:.5rem;margin:0 0 1rem;padding:.75rem .9rem}.migration-mistake-editor{gap:.55rem;display:grid}.migration-mistake-header,.migration-mistake-row{grid-template-columns:minmax(7rem,.7fr) minmax(8rem,1fr) auto;align-items:center;gap:.65rem;display:grid}.migration-mistake-header{text-transform:uppercase;opacity:.7;padding:0 .15rem;font-size:.78rem;font-weight:700}.migration-mistake-row input{width:100%}.migration-remove-mistake{white-space:nowrap}.migration-add-mistake{border-top:1px solid #7f7f7f40;grid-template-columns:minmax(7rem,.7fr) minmax(8rem,1fr) auto;align-items:end;gap:.65rem;margin-top:1rem;padding-top:1rem;display:grid}.migration-add-mistake label{gap:.35rem;display:grid}.migration-add-mistake label>span{font-size:.82rem;font-weight:700}.migration-mistake-total{text-align:right;margin:1rem 0 0}@media (width<=720px){.migration-mistake-header{display:none}.migration-mistake-row,.migration-add-mistake{grid-template-columns:1fr}}"
             }, void 0, false, void 0, this)
         ]
     }, void 0, true, {
         fileName: "[project]/studio/src/app/migration/MigrationReview.tsx",
-        lineNumber: 512,
+        lineNumber: 668,
         columnNumber: 5
     }, this);
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T20:33:40.110Z",
+  "reviewedAt": "2026-07-30T21:38:19.564Z",
   "competition": {
     "doma": {
       "mapId": 370,
@@ -15,7 +15,8 @@
       "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/370.jpg",
       "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/370.blank.jpg",
       "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=370&format=kml",
-      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=48752&categoryId=1"
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=48752&categoryId=1",
+      "courseLengthKm": 2.98
     },
     "discipline": "Sprint",
     "result": {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T20:12:41.729Z",
+  "reviewedAt": "2026-07-30T21:32:22.216Z",
   "competition": {
     "doma": {
       "mapId": 356,
@@ -15,7 +15,8 @@
       "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/356.jpg",
       "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/356.blank.jpg",
       "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=356&format=kml",
-      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=45759&categoryId=61"
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=45759&categoryId=61",
+      "courseLengthKm": 11.24
     },
     "discipline": "Stafett",
     "result": {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T20:31:10.043Z",
+  "reviewedAt": "2026-07-30T21:35:05.042Z",
   "competition": {
     "doma": {
       "mapId": 365,
@@ -15,7 +15,8 @@
       "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/365.jpg",
       "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/365.blank.jpg",
       "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=365&format=kml",
-      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47996&categoryId=1"
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47996&categoryId=1",
+      "courseLengthKm": 5.49
     },
     "discipline": "Medel",
     "result": {

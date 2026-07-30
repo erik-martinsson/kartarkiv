@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "status": "needs-review",
-  "reviewedAt": "2026-07-30T20:55:09.033Z",
+  "status": "approved",
+  "reviewedAt": "2026-07-30T21:31:38.000Z",
   "competition": {
     "doma": {
       "mapId": 368,
@@ -15,7 +15,8 @@
       "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/368.jpg",
       "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/368.blank.jpg",
       "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=368&format=kml",
-      "winsplitsUrl": null
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=48384&categoryId=81",
+      "courseLengthKm": 11.86
     },
     "discipline": "Stafett",
     "result": {
@@ -26,10 +27,25 @@
       "starters": "315",
       "controls": 20,
       "time": "83:00",
-      "totalMistakeTime": "0:00",
-      "mistakes": []
+      "totalMistakeTime": "0:34",
+      "mistakes": [
+        {
+          "control": 12,
+          "time": "0:34"
+        }
+      ]
     },
-    "eventor": null,
+    "eventor": {
+      "eventId": 0,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/14802",
+      "resultListUrl": "",
+      "title": "10Mila str 2",
+      "date": "2017-04-28",
+      "organiser": "",
+      "location": "",
+      "rawDiscipline": "",
+      "liveloxUrl": "https://www.livelox.com/Viewer/Tiomila-i-Goteborg-Partille-10Milakavlen/H2?classId=70021&live=false"
+    },
     "eventorMatch": null,
     "eventorResolverDebug": {
       "wantedTitle": "10Mila str 2",
@@ -39,7 +55,7 @@
       "calendarUrls": [],
       "candidates": []
     },
-    "liveloxUrl": null,
+    "liveloxUrl": "https://www.livelox.com/Viewer/Tiomila-i-Goteborg-Partille-10Milakavlen/H2?classId=70021&live=false",
     "warnings": [
       "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
       "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."

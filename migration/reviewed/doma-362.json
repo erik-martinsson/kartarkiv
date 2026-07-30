@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T20:28:12.194Z",
+  "reviewedAt": "2026-07-30T21:33:17.242Z",
   "competition": {
     "doma": {
       "mapId": 362,
@@ -15,7 +15,8 @@
       "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/362.jpg",
       "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/362.blank.jpg",
       "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=362&format=kml",
-      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47849&categoryId=2"
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47849&categoryId=2",
+      "courseLengthKm": 8.61
     },
     "discipline": "Lång",
     "result": {

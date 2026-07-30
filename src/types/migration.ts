@@ -69,6 +69,7 @@ export type EnrichedDomaCompetition = {
     relayLeg: number | null;
     runningTime: string | null;
     runningDistanceKm: number | null;
+    courseLengthKm?: number | null;
     routeMapImageUrl: string | null;
     blankMapImageUrl: string | null;
     kmlUrl: string | null;
@@ -104,3 +105,4 @@ export type ReviewedDomaCompetition = {
   reviewedAt: string;
   competition: EnrichedDomaCompetition;
 };
+

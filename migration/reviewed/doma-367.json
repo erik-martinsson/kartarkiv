@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T20:32:33.838Z",
+  "reviewedAt": "2026-07-30T21:37:14.110Z",
   "competition": {
     "doma": {
       "mapId": 367,
@@ -11,11 +11,12 @@
       "category": "Tävling",
       "relayLeg": null,
       "runningTime": null,
-      "runningDistanceKm": null,
+      "runningDistanceKm": 16.88,
       "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/367.jpg",
       "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/367.blank.jpg",
       "kmlUrl": null,
-      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=48093&categoryId=1"
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=48093&categoryId=1",
+      "courseLengthKm": 12.98
     },
     "discipline": "Lång",
     "result": {
