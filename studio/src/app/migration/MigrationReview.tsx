@@ -283,6 +283,7 @@ export default function MigrationReview() {
   const [message, setMessage] = useState<string | null>(null);
   const [queue, setQueue] = useState<MigrationQueueItem[]>([]);
   const [isSaving, setIsSaving] = useState(false);
+  const [isPublishing, setIsPublishing] = useState(false);
 
   const verificationLabel = useMemo(() => {
     const method = competition?.eventorMatch?.verificationMethod;
@@ -536,6 +537,140 @@ export default function MigrationReview() {
     }
   };
 
+  const saveAndPublish = async (): Promise<void> => {
+    if (!competition) return;
+
+    if (hasValidationErrors) {
+      setMessage(
+        `Kan inte publicera: rätta ${validationEntries.length} valideringsfel först.`,
+      );
+      return;
+    }
+
+    setIsPublishing(true);
+    setMessage("Godkänner och publicerar tävlingen…");
+
+    try {
+      const reviewResponse = await fetch(
+        `/api/migration/doma/${competition.doma.mapId}/review`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            status: "approved",
+            competition,
+          }),
+        },
+      );
+
+      const reviewData = (await reviewResponse.json()) as {
+        review?: ReviewedDomaCompetition;
+        savedTo?: string;
+        error?: string;
+      };
+
+      if (!reviewResponse.ok || !reviewData.review) {
+        throw new Error(
+          reviewData.error ?? "Granskningen kunde inte sparas.",
+        );
+      }
+
+      const publish = async (force: boolean) => {
+        const response = await fetch(
+          `/api/migration/doma/${competition.doma.mapId}/publish`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ force }),
+          },
+        );
+
+        const data = (await response.json()) as {
+          ok?: boolean;
+          error?: string;
+          code?: string;
+          existingTargets?: string[];
+          markdown?: string;
+          assets?: Array<{
+            kind: string;
+            path: string;
+            byteLength: number;
+          }>;
+          warnings?: string[];
+        };
+
+        return { response, data };
+      };
+
+      let publishResult = await publish(false);
+
+      if (
+        publishResult.response.status === 409 &&
+        publishResult.data.code === "target-exists"
+      ) {
+        const targets =
+          publishResult.data.existingTargets?.join("\n") ??
+          "Befintliga publiceringsfiler";
+
+        const overwrite = window.confirm(
+          `Tävlingen verkar redan vara publicerad:\n\n${targets}\n\nVill du skriva över filerna?`,
+        );
+
+        if (!overwrite) {
+          const savedCompetition = cloneCompetition(
+            reviewData.review.competition,
+          );
+          setStatus("approved");
+          setOriginalCompetition(savedCompetition);
+          setCompetition(cloneCompetition(savedCompetition));
+          setMessage(
+            "Tävlingen godkändes, men publiceringen avbröts.",
+          );
+          return;
+        }
+
+        publishResult = await publish(true);
+      }
+
+      if (!publishResult.response.ok || !publishResult.data.ok) {
+        throw new Error(
+          publishResult.data.error ?? "Publiceringen misslyckades.",
+        );
+      }
+
+      const savedCompetition = cloneCompetition(
+        reviewData.review.competition,
+      );
+
+      setStatus("approved");
+      setOriginalCompetition(savedCompetition);
+      setCompetition(cloneCompetition(savedCompetition));
+
+      const assetCount =
+        publishResult.data.assets?.length ?? 0;
+      const warningCount =
+        publishResult.data.warnings?.length ?? 0;
+
+      setMessage(
+        `Publicerad: ${publishResult.data.markdown ?? "Markdown skapad"} · ` +
+          `${assetCount} filer hämtade` +
+          (warningCount > 0
+            ? ` · ${warningCount} varningar`
+            : ""),
+      );
+
+      await loadQueue();
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Godkännande och publicering misslyckades.",
+      );
+    } finally {
+      setIsPublishing(false);
+    }
+  };
+
   const currentQueueIndex = queue.findIndex((item) => String(item.mapId) === mapIdInput);
   const previousItem = currentQueueIndex > 0 ? queue[currentQueueIndex - 1] : null;
   const nextItem = currentQueueIndex >= 0 && currentQueueIndex < queue.length - 1 ? queue[currentQueueIndex + 1] : null;
@@ -560,17 +695,17 @@ export default function MigrationReview() {
 
       if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "s") {
         event.preventDefault();
-        if (!isSaving && competition) void saveReview("needs-review");
+        if (!isSaving && !isPublishing && competition) void saveReview("needs-review");
         return;
       }
 
       if (event.ctrlKey && !event.shiftKey && event.key.toLowerCase() === "s") {
         event.preventDefault();
-        if (!isSaving && competition) void saveReview("approved");
+        if (!isSaving && !isPublishing && competition) void saveReview("approved");
         return;
       }
 
-      if (isEditing || isLoading || isSaving) return;
+      if (isEditing || isLoading || isSaving || isPublishing) return;
 
       if (event.key === "ArrowLeft" && previousItem) {
         event.preventDefault();
@@ -583,7 +718,7 @@ export default function MigrationReview() {
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [competition, isLoading, isSaving, nextItem, previousItem]);
+  }, [competition, isLoading, isPublishing, isSaving, nextItem, previousItem]);
 
   return (
     <main className="studio-shell migration-shell">
@@ -692,8 +827,35 @@ export default function MigrationReview() {
           <section className="panel"><div className="panel-heading"><div><p className="step-label">KVALITETSKONTROLL</p><h2>Varningar</h2></div></div>{competition.warnings.length ? <ul className="migration-warning-list">{competition.warnings.map((warning) => <li key={warning}>{warning}</li>)}</ul> : <p className="migration-ok-message">Inga varningar från berikningen.</p>}</section>
 
           <section className="panel migration-actions-panel">
-            <p className="step-label">BESLUT</p><h2>Slutför granskningen</h2><p>Beslutet och alla redigeringar sparas i repots migration/reviewed-mapp. Källfilen i migration/test ändras inte.</p>
-            <div className="button-stack"><button className="button primary" type="button" disabled={isSaving || hasValidationErrors} title={hasValidationErrors ? `Rätta ${validationEntries.length} valideringsfel innan posten kan godkännas.` : undefined} onClick={() => void saveReview("approved")}>{isSaving ? "Sparar…" : "Godkänn testkartan"}</button><button className="button secondary" type="button" disabled={isSaving} onClick={() => void saveReview("needs-review")}>Kräver manuell granskning</button></div>
+            <p className="step-label">BESLUT</p><h2>Slutför granskningen</h2><p>Du kan spara granskningen eller godkänna och publicera tävlingen direkt i Kartarkivet.</p>
+            <div className="button-stack">
+              <button
+                className="button primary"
+                type="button"
+                disabled={isSaving || isPublishing || hasValidationErrors}
+                title={hasValidationErrors ? `Rätta ${validationEntries.length} valideringsfel innan posten kan publiceras.` : undefined}
+                onClick={() => void saveAndPublish()}
+              >
+                {isPublishing ? "Publicerar…" : "Godkänn & publicera"}
+              </button>
+              <button
+                className="button secondary"
+                type="button"
+                disabled={isSaving || isPublishing || hasValidationErrors}
+                title={hasValidationErrors ? `Rätta ${validationEntries.length} valideringsfel innan posten kan godkännas.` : undefined}
+                onClick={() => void saveReview("approved")}
+              >
+                {isSaving ? "Sparar…" : "Godkänn utan publicering"}
+              </button>
+              <button
+                className="button secondary"
+                type="button"
+                disabled={isSaving || isPublishing}
+                onClick={() => void saveReview("needs-review")}
+              >
+                Kräver manuell granskning
+              </button>
+            </div>
           </section>
         </aside>
       </div> : !isLoading ? <section className="panel migration-empty-panel"><h2>Ingen migrationspost laddad</h2><p>Kör berikningsskriptet eller välj en genererad JSON-fil manuellt.</p><code>npx tsx scripts/test-doma-enriched.ts 356</code></section> : null}

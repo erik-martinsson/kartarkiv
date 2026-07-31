@@ -161,7 +161,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$src$2f$lib$2f$migr
 const runtime = "nodejs";
 const dynamic = "force-dynamic";
 const revalidate = 0;
-const API_VERSION = "doma-migration-route-2026-07-28-v4";
 function isPositiveInteger(value) {
     return /^\d+$/.test(value) && Number(value) > 0;
 }
@@ -169,7 +168,6 @@ async function GET(_request, context) {
     const { mapId } = await context.params;
     if (!isPositiveInteger(mapId)) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            apiVersion: API_VERSION,
             error: "Ogiltigt DOMA map-ID."
         }, {
             status: 400
@@ -178,24 +176,26 @@ async function GET(_request, context) {
     const { filePath, searchedPaths } = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$src$2f$lib$2f$migrationPaths$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["findEnrichedCompetitionFile"])(mapId);
     if (!filePath) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            apiVersion: API_VERSION,
-            error: `Ingen testmigrering hittades för DOMA ${mapId}.`,
-            currentWorkingDirectory: process.cwd(),
+            error: `Kunde inte hitta competition-enriched.json för DOMA ${mapId}.`,
             searchedPaths
         }, {
-            status: 404,
-            headers: {
-                "Cache-Control": "no-store"
-            }
+            status: 404
         });
     }
     try {
         const content = await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$fs$2f$promises__$5b$external$5d$__$28$node$3a$fs$2f$promises$2c$__cjs$29$__["readFile"])(filePath, "utf8");
         const competition = JSON.parse(content);
+        if (String(competition.doma?.mapId) !== mapId) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: "DOMA map-ID i filen stämmer inte överens med URL:en."
+            }, {
+                status: 409
+            });
+        }
         return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             ...competition,
             _migrationApi: {
-                apiVersion: API_VERSION,
+                apiVersion: "doma-migration-route-2026-07-31-v5",
                 sourceFile: filePath
             }
         }, {
@@ -204,11 +204,9 @@ async function GET(_request, context) {
             }
         });
     } catch (error) {
-        console.error("Kunde inte läsa migrationsfil:", filePath, error);
+        console.error(`Kunde inte läsa migrationspost för DOMA ${mapId}:`, filePath, error);
         return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            apiVersion: API_VERSION,
-            error: "Migrationsfilen hittades men kunde inte läsas.",
-            sourceFile: filePath
+            error: "Migrationsposten kunde inte läsas eller innehåller ogiltig JSON."
         }, {
             status: 500
         });

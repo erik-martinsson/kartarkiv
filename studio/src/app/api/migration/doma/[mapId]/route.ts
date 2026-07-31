@@ -1,4 +1,5 @@
 import { readFile } from "node:fs/promises";
+
 import { NextResponse } from "next/server";
 
 import { findEnrichedCompetitionFile } from "@/lib/migrationPaths";
@@ -7,8 +8,6 @@ import type { EnrichedDomaCompetition } from "@/types/migration";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-const API_VERSION = "doma-migration-route-2026-07-28-v4";
 
 type RouteContext = {
   params: Promise<{ mapId: string }>;
@@ -26,43 +25,66 @@ export async function GET(
 
   if (!isPositiveInteger(mapId)) {
     return NextResponse.json(
-      { apiVersion: API_VERSION, error: "Ogiltigt DOMA map-ID." },
+      { error: "Ogiltigt DOMA map-ID." },
       { status: 400 },
     );
   }
 
-  const { filePath, searchedPaths } = await findEnrichedCompetitionFile(mapId);
+  const { filePath, searchedPaths } =
+    await findEnrichedCompetitionFile(mapId);
 
   if (!filePath) {
     return NextResponse.json(
       {
-        apiVersion: API_VERSION,
-        error: `Ingen testmigrering hittades för DOMA ${mapId}.`,
-        currentWorkingDirectory: process.cwd(),
+        error:
+          `Kunde inte hitta competition-enriched.json för DOMA ${mapId}.`,
         searchedPaths,
       },
-      { status: 404, headers: { "Cache-Control": "no-store" } },
+      { status: 404 },
     );
   }
 
   try {
     const content = await readFile(filePath, "utf8");
-    const competition = JSON.parse(content) as EnrichedDomaCompetition;
+    const competition =
+      JSON.parse(content) as EnrichedDomaCompetition;
+
+    if (String(competition.doma?.mapId) !== mapId) {
+      return NextResponse.json(
+        {
+          error:
+            "DOMA map-ID i filen stämmer inte överens med URL:en.",
+        },
+        { status: 409 },
+      );
+    }
 
     return NextResponse.json(
       {
         ...competition,
-        _migrationApi: { apiVersion: API_VERSION, sourceFile: filePath },
+        _migrationApi: {
+          apiVersion:
+            "doma-migration-route-2026-07-31-v5",
+          sourceFile: filePath,
+        },
       },
-      { headers: { "Cache-Control": "no-store" } },
+      {
+        headers: {
+          "Cache-Control": "no-store",
+        },
+      },
     );
   } catch (error) {
-    console.error("Kunde inte läsa migrationsfil:", filePath, error);
+    console.error(
+      `Kunde inte läsa migrationspost för DOMA ${mapId}:`,
+      filePath,
+      error,
+    );
+
     return NextResponse.json(
       {
-        apiVersion: API_VERSION,
-        error: "Migrationsfilen hittades men kunde inte läsas.",
-        sourceFile: filePath,
+        error:
+          "Migrationsposten kunde inte läsas eller innehåller ogiltig JSON.",
       },
       { status: 500 },
     );
