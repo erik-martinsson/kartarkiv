@@ -314,7 +314,8 @@ export function buildMarkdown(
   const competition = reviewed.competition;
   const result = competition.result;
   const eventor = competition.eventor;
-  const location = eventor?.location?.trim() || "";
+  const location =
+    competition.location?.trim() || eventor?.location?.trim() || "";
   const club = result.club?.trim() || eventor?.organiser?.trim() || "";
   const raceTime = normalizeRaceTime(result.time ?? competition.doma.runningTime);
   const position = parseInteger(result.position);
@@ -354,7 +355,7 @@ export function buildMarkdown(
     // Prefer official course length. Fall back for reviews created before
     // courseLengthKm was added to the migration schema.
     `distanceKm: ${yamlNullableNumber(competition.doma.courseLengthKm ?? competition.doma.runningDistanceKm)}`,
-    "gpsDistanceKm: null",
+    `gpsDistanceKm: ${yamlNullableNumber(competition.doma.runningDistanceKm)}`,
     "gpsClimb: null",
     "",
     `time: ${yamlNullableString(raceTime)}`,
@@ -370,8 +371,8 @@ export function buildMarkdown(
     "",
     `gpsFile: ${yamlNullableString(gpsFile)}`,
     "",
-    "latitude: null",
-    "longitude: null",
+    `latitude: ${yamlNullableNumber(competition.latitude)}`,
+    `longitude: ${yamlNullableNumber(competition.longitude)}`,
     "",
     `livelox: ${yamlNullableString(livelox)}`,
     `winsplits: ${yamlNullableString(winsplits)}`,
@@ -659,8 +660,17 @@ function collectPublishWarnings(
   if (!reviewed.competition.doma.kmlUrl) {
     warnings.push("DOMA saknar KML/GPX-URL; gpsFile blir null.");
   }
-  if (!reviewed.competition.eventor?.location?.trim()) {
-    warnings.push("Eventor saknar plats; location blir en tom sträng.");
+  if (
+    !reviewed.competition.location?.trim() &&
+    !reviewed.competition.eventor?.location?.trim()
+  ) {
+    warnings.push("Plats saknas; location blir en tom sträng.");
+  }
+  if (
+    reviewed.competition.latitude === null ||
+    reviewed.competition.longitude === null
+  ) {
+    warnings.push("DOMA saknar kartcentrum; latitude/longitude blir null.");
   }
   if (!reviewed.competition.result.raceClass?.trim()) {
     warnings.push("Resultatet saknar klass; raceClass blir null.");

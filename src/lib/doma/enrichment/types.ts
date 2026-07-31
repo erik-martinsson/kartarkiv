@@ -55,11 +55,7 @@ export type EventorResolverDebug = {
     verifiedByWinSplitsId: boolean;
     eventDate: string | null;
     dateMatches: boolean;
-    verificationMethod:
-      | "winsplits-database-id"
-      | "title-and-date"
-      | "title-only"
-      | null;
+    verificationMethod: EventorVerificationMethod | null;
   }>;
 };
 
@@ -72,18 +68,14 @@ export type EnrichedDomaCompetition = {
     category: string | null;
     relayLeg: number | null;
     runningTime: string | null;
-    /** GPS-/löpt sträcka från DOMA. */
     runningDistanceKm: number | null;
-    /** Officiell banlängd. Saknas i äldre migrationsfiler. */
     courseLengthKm?: number | null;
     routeMapImageUrl: string | null;
     blankMapImageUrl: string | null;
     kmlUrl: string | null;
     winsplitsUrl: string | null;
   };
-
   discipline: CompetitionDiscipline;
-
   result: {
     runnerName: string;
     raceClass: string | null;
@@ -95,7 +87,11 @@ export type EnrichedDomaCompetition = {
     totalMistakeTime: string;
     mistakes: EnrichedMistake[];
   };
-
+  /** Reviewed/published place. Eventor is preferred when available. */
+  location: string | null;
+  /** DOMA map centre coordinates. */
+  latitude: number | null;
+  longitude: number | null;
   eventor: EventorMetadata | null;
   eventorMatch: EventorMatch | null;
   eventorResolverDebug: EventorResolverDebug;
