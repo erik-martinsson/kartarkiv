@@ -68,7 +68,9 @@ export type EnrichedDomaCompetition = {
     category: string | null;
     relayLeg: number | null;
     runningTime: string | null;
+    /** GPS-/löpt sträcka från DOMA. */
     runningDistanceKm: number | null;
+    /** Officiell banlängd. Saknas i äldre migrationsfiler. */
     courseLengthKm?: number | null;
     routeMapImageUrl: string | null;
     blankMapImageUrl: string | null;
@@ -109,4 +111,13 @@ export type ReviewedDomaCompetition = {
   status: MigrationReviewStatus;
   reviewedAt: string;
   competition: EnrichedDomaCompetition;
+};
+
+export type MigrationQueueItem = {
+  mapId: number;
+  title: string | null;
+  date: string | null;
+  status: MigrationReviewStatus;
+  confidence: "high" | "medium" | null;
+  warningCount: number;
 };

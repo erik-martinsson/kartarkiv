@@ -163,6 +163,10 @@ export async function readEnrichedDomaCompetition(
         winsplitsUrl: null,
       },
 
+      location: null,
+      latitude: doma.mapCenter?.latitude ?? null,
+      longitude: doma.mapCenter?.longitude ?? null,
+
       discipline: classifyDiscipline(
         doma.relayLeg,
         "",
@@ -292,6 +296,10 @@ export async function readEnrichedDomaCompetition(
       winsplitsUrl:
         doma.winsplitsUrl,
     },
+
+    location: cleanOptional(eventor?.location) ?? null,
+    latitude: doma.mapCenter?.latitude ?? null,
+    longitude: doma.mapCenter?.longitude ?? null,
 
     discipline: classifyDiscipline(
       doma.relayLeg,

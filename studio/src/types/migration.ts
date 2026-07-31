@@ -89,6 +89,11 @@ export type EnrichedDomaCompetition = {
     totalMistakeTime: string;
     mistakes: EnrichedMistake[];
   };
+  /** Reviewed/published place. Eventor is preferred when available. */
+  location: string | null;
+  /** DOMA map centre coordinates. */
+  latitude: number | null;
+  longitude: number | null;
   eventor: EventorMetadata | null;
   eventorMatch: EventorMatch | null;
   eventorResolverDebug: EventorResolverDebug;
