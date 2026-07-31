@@ -138,7 +138,7 @@ const mapRaces = races.flatMap((race) => {
     <div class="panel latest-panel">
       <div class="panel-heading">
         <h2>SENASTE TÄVLINGARNA</h2>
-        <a href={`${base}races/`}>Visa alla ›</a>
+        <a href={`${base.replace(/\/$/, "")}/races/`}>Visa alla ›</a>
       </div>
 
       <div class="race-grid">

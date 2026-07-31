@@ -317,10 +317,19 @@ export function buildMarkdown(
   const location =
     competition.location?.trim() || eventor?.location?.trim() || "";
   const club = result.club?.trim() || eventor?.organiser?.trim() || "";
-  const raceTime = normalizeRaceTime(result.time ?? competition.doma.runningTime);
+  const raceClass = result.raceClass?.trim() || null;
+  const raceTime = normalizeRaceTime(
+    result.time ?? competition.doma.runningTime,
+  );
   const position = parseInteger(result.position);
   const starters = parseInteger(result.starters);
   const mistakeSeconds = durationToSeconds(result.totalMistakeTime);
+  const distanceKm =
+    competition.doma.courseLengthKm ??
+    competition.doma.runningDistanceKm;
+  const gpsDistanceKm = competition.doma.runningDistanceKm;
+  const latitude = competition.latitude;
+  const longitude = competition.longitude;
   const mapImage = assetByKind.get("blank-map")?.publicPath ?? null;
   const routeImage = assetByKind.get("route-map")?.publicPath ?? null;
   const gpsFile = assetByKind.get("track")?.publicPath ?? null;
@@ -336,9 +345,26 @@ export function buildMarkdown(
     title,
     normalizeDescription(options.description),
   );
-  const country = sanitizeCountryCode(options.country ?? DEFAULT_COUNTRY);
+  const country = sanitizeCountryCode(
+    options.country ?? DEFAULT_COUNTRY,
+  );
 
-  const lines = [
+  if (!raceClass) {
+    throw new Error(
+      "Cannot publish without raceClass. Fill in the class in Studio/Migrate and approve the review again.",
+    );
+  }
+
+  if (
+    typeof distanceKm !== "number" ||
+    !Number.isFinite(distanceKm)
+  ) {
+    throw new Error(
+      "Cannot publish without a valid course distance (distanceKm).",
+    );
+  }
+
+  const lines: string[] = [
     "---",
     `title: ${yamlString(title)}`,
     `event: ${yamlString(title)}`,
@@ -350,13 +376,21 @@ export function buildMarkdown(
     `location: ${yamlString(location)}`,
     "",
     `discipline: ${yamlString(competition.discipline)}`,
-    `raceClass: ${yamlNullableString(result.raceClass)}`,
+    `raceClass: ${yamlString(raceClass)}`,
     "",
-    // Prefer official course length. Fall back for reviews created before
-    // courseLengthKm was added to the migration schema.
-    `distanceKm: ${yamlNullableNumber(competition.doma.courseLengthKm ?? competition.doma.runningDistanceKm)}`,
-    `gpsDistanceKm: ${yamlNullableNumber(competition.doma.runningDistanceKm)}`,
-    "gpsClimb: null",
+    `distanceKm: ${distanceKm}`,
+  ];
+
+  if (
+    typeof gpsDistanceKm === "number" &&
+    Number.isFinite(gpsDistanceKm)
+  ) {
+    lines.push(`gpsDistanceKm: ${gpsDistanceKm}`);
+  }
+
+  // gpsClimb is intentionally omitted until actual climb data exists.
+
+  lines.push(
     "",
     `time: ${yamlNullableString(raceTime)}`,
     "",
@@ -365,25 +399,69 @@ export function buildMarkdown(
     "",
     `controls: ${yamlNullableNumber(result.controls)}`,
     `mistakeSeconds: ${yamlNullableNumber(mistakeSeconds)}`,
-    "",
-    `mapImage: ${yamlNullableString(mapImage)}`,
-    `routeImage: ${yamlNullableString(routeImage)}`,
-    "",
-    `gpsFile: ${yamlNullableString(gpsFile)}`,
-    "",
-    `latitude: ${yamlNullableNumber(competition.latitude)}`,
-    `longitude: ${yamlNullableNumber(competition.longitude)}`,
-    "",
-    `livelox: ${yamlNullableString(livelox)}`,
-    `winsplits: ${yamlNullableString(winsplits)}`,
-    `results: ${yamlNullableString(results)}`,
+  );
+
+  if (mapImage) {
+    lines.push("", `mapImage: ${yamlString(mapImage)}`);
+  }
+
+  if (routeImage) {
+    if (!mapImage) lines.push("");
+    lines.push(`routeImage: ${yamlString(routeImage)}`);
+  }
+
+  if (gpsFile) {
+    lines.push("", `gpsFile: ${yamlString(gpsFile)}`);
+  }
+
+  if (
+    typeof latitude === "number" &&
+    Number.isFinite(latitude)
+  ) {
+    lines.push("", `latitude: ${latitude}`);
+  }
+
+  if (
+    typeof longitude === "number" &&
+    Number.isFinite(longitude)
+  ) {
+    if (
+      !(
+        typeof latitude === "number" &&
+        Number.isFinite(latitude)
+      )
+    ) {
+      lines.push("");
+    }
+    lines.push(`longitude: ${longitude}`);
+  }
+
+  const externalLinks: string[] = [];
+
+  if (livelox) {
+    externalLinks.push(`livelox: ${yamlString(livelox)}`);
+  }
+
+  if (winsplits) {
+    externalLinks.push(`winsplits: ${yamlString(winsplits)}`);
+  }
+
+  if (results) {
+    externalLinks.push(`results: ${yamlString(results)}`);
+  }
+
+  if (externalLinks.length > 0) {
+    lines.push("", ...externalLinks);
+  }
+
+  lines.push(
     "",
     `featured: ${options.featured ? "true" : "false"}`,
     "---",
     "",
     description,
     "",
-  ];
+  );
 
   return lines.join("\n");
 }

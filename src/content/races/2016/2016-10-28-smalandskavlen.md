@@ -9,11 +9,10 @@ country: "SE"
 location: ""
 
 discipline: "Stafett"
-raceClass: null
+raceClass: "H21"
 
-distanceKm: 14.23
-gpsDistanceKm: null
-gpsClimb: null
+distanceKm: 11.24
+gpsDistanceKm: 14.23
 
 time: "1:20:43"
 
@@ -28,8 +27,8 @@ routeImage: "/maps/2016/2016-10-28-smalandskavlen_rutt.jpg"
 
 gpsFile: "/gps/2016/2016-10-28-smalandskavlen.kml"
 
-latitude: null
-longitude: null
+latitude: 57.726373333333
+longitude: 14.954137083333
 
 livelox: "https://www.livelox.com/Viewer?eventExternalIdentifier=0:13904-1&classExternalId=248989-1"
 winsplits: "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=45759&categoryId=61"

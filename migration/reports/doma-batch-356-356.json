@@ -1,28 +1,27 @@
 {
   "schemaVersion": 1,
-  "startedAt": "2026-07-30T20:20:15.524Z",
-  "finishedAt": "2026-07-30T20:20:15.751Z",
+  "startedAt": "2026-07-31T19:00:54.408Z",
+  "finishedAt": "2026-07-31T19:01:11.311Z",
   "options": {
     "from": 356,
     "to": 356,
     "runner": "Erik Martinsson",
     "user": "erik",
     "delayMs": 1500,
-    "force": false
+    "force": true
   },
   "counts": {
     "total": 1,
-    "created": 0,
-    "skipped": 1,
-    "skippedExisting": 1,
+    "created": 1,
+    "skipped": 0,
+    "skippedExisting": 0,
     "skippedTraining": 0,
     "failed": 0
   },
   "items": [
     {
       "mapId": 356,
-      "status": "skipped",
-      "skipReason": "existing",
+      "status": "created",
       "title": "Smålandskavlen",
       "category": "Tävling",
       "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-356\\competition-enriched.json"
