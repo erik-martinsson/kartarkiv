@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-31T10:47:25.130Z",
+  "reviewedAt": "2026-07-31T21:01:02.901Z",
   "competition": {
     "doma": {
       "mapId": 363,
@@ -18,13 +18,13 @@
       "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47860&categoryId=2",
       "courseLengthKm": 10.08
     },
-    "location": null,
+    "location": "Tibro kommun",
     "latitude": 58.4760325,
     "longitude": 14.366695138889,
     "discipline": "Lång",
     "result": {
       "runnerName": "Erik Martinsson",
-      "raceClass": null,
+      "raceClass": "H21",
       "club": "Linköpings OK",
       "position": "2",
       "starters": "18",

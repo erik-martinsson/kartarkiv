@@ -346,7 +346,7 @@
   },
   "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:13904-1&classExternalId=248989-1",
   "warnings": [
-    "Platsen \"Eksjö kommun\" hämtades automatiskt från koordinaterna via Geoapify.",
+    "Platsen hämtades från den lokala reverse-geokodningscachen.",
     "Eventor-träffen bygger på en entydig exakt titelmatchning. Eventor exponerade inget verifierbart WinSplits databaseId."
   ]
 }

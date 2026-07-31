@@ -929,6 +929,8 @@ function formatValidationErrorMessage(issues) {
 "use strict";
 
 __turbopack_context__.s([
+    "GET",
+    ()=>GET,
     "POST",
     ()=>POST,
     "dynamic",
@@ -956,6 +958,73 @@ function isPositiveInteger(value) {
 }
 function errorMessage(error) {
     return error instanceof Error ? error.message : String(error);
+}
+async function GET(_request, context) {
+    const { mapId } = await context.params;
+    if (!isPositiveInteger(mapId)) {
+        return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            error: "Ogiltigt DOMA map-ID."
+        }, {
+            status: 400
+        });
+    }
+    const reviewedFile = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$src$2f$lib$2f$migrationPaths$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getReviewedFilePath"])(mapId);
+    const { root: repositoryRoot } = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$src$2f$lib$2f$migrationPaths$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["findRepositoryRoot"])();
+    if (!reviewedFile || !repositoryRoot) {
+        return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            error: "Kunde inte hitta repots reviewed-fil eller projektrot."
+        }, {
+            status: 500
+        });
+    }
+    try {
+        const reviewed = JSON.parse(await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$fs$2f$promises__$5b$external$5d$__$28$node$3a$fs$2f$promises$2c$__cjs$29$__["readFile"])(reviewedFile, "utf8"));
+        if (String(reviewed.competition?.doma?.mapId) !== mapId) {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                error: "DOMA map-ID i granskningsfilen stämmer inte överens med URL:en."
+            }, {
+                status: 400
+            });
+        }
+        const plan = (0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$published_reviewed$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["buildPublishPlan"])(reviewed, {
+            projectRoot: repositoryRoot,
+            sourceFile: reviewedFile
+        });
+        let published = false;
+        try {
+            await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$fs$2f$promises__$5b$external$5d$__$28$node$3a$fs$2f$promises$2c$__cjs$29$__["access"])(plan.markdownPath);
+            published = true;
+        } catch  {
+            published = false;
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            published,
+            markdown: __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$path__$5b$external$5d$__$28$node$3a$path$2c$__cjs$29$__["default"].relative(repositoryRoot, plan.markdownPath),
+            publicId: plan.markdownPublicId
+        }, {
+            headers: {
+                "Cache-Control": "no-store"
+            }
+        });
+    } catch (error) {
+        const code = error && typeof error === "object" && "code" in error ? String(error.code) : "";
+        if (code === "ENOENT") {
+            return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                published: false,
+                markdown: null,
+                publicId: null
+            }, {
+                headers: {
+                    "Cache-Control": "no-store"
+                }
+            });
+        }
+        return __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            error: `Publiceringsstatus kunde inte läsas: ${errorMessage(error)}`
+        }, {
+            status: 500
+        });
+    }
 }
 async function POST(request, context) {
     const { mapId } = await context.params;

@@ -13,6 +13,9 @@
     "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=370&format=kml",
     "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=48752&categoryId=1"
   },
+  "location": "Boxholms kommun",
+  "latitude": 58.194718611111,
+  "longitude": 15.052719305556,
   "discipline": "Sprint",
   "result": {
     "runnerName": "Erik Martinsson",
@@ -103,5 +106,7 @@
     ]
   },
   "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:17075-1&classExternalId=265974-1",
-  "warnings": []
+  "warnings": [
+    "Platsen \"Boxholms kommun\" hämtades automatiskt från koordinaterna via Geoapify."
+  ]
 }

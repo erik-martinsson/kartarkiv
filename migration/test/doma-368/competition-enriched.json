@@ -13,6 +13,9 @@
     "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=368&format=kml",
     "winsplitsUrl": null
   },
+  "location": "Partille kommun",
+  "latitude": 57.763425138889,
+  "longitude": 12.123203194444,
   "discipline": "Annan",
   "result": {
     "runnerName": "Erik Martinsson",
@@ -37,6 +40,7 @@
   },
   "liveloxUrl": null,
   "warnings": [
+    "Platsen \"Partille kommun\" hämtades automatiskt från koordinaterna via Geoapify.",
     "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
     "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
   ]

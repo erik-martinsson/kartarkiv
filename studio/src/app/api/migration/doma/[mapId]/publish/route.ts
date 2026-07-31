@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 
 import { NextResponse } from "next/server";
@@ -12,6 +12,7 @@ import type { ReviewedDomaCompetition } from "@/types/migration";
 import {
   PublishTargetExistsError,
   PublishValidationError,
+  buildPublishPlan,
   publishReviewed,
 } from "../../../../../../../../scripts/lib/published_reviewed";
 
@@ -35,6 +36,110 @@ function errorMessage(error: unknown): string {
   return error instanceof Error
     ? error.message
     : String(error);
+}
+
+export async function GET(
+  _request: Request,
+  context: RouteContext,
+): Promise<NextResponse> {
+  const { mapId } = await context.params;
+
+  if (!isPositiveInteger(mapId)) {
+    return NextResponse.json(
+      { error: "Ogiltigt DOMA map-ID." },
+      { status: 400 },
+    );
+  }
+
+  const reviewedFile = await getReviewedFilePath(mapId);
+  const { root: repositoryRoot } =
+    await findRepositoryRoot();
+
+  if (!reviewedFile || !repositoryRoot) {
+    return NextResponse.json(
+      {
+        error:
+          "Kunde inte hitta repots reviewed-fil eller projektrot.",
+      },
+      { status: 500 },
+    );
+  }
+
+  try {
+    const reviewed = JSON.parse(
+      await readFile(reviewedFile, "utf8"),
+    ) as ReviewedDomaCompetition;
+
+    if (String(reviewed.competition?.doma?.mapId) !== mapId) {
+      return NextResponse.json(
+        {
+          error:
+            "DOMA map-ID i granskningsfilen stämmer inte överens med URL:en.",
+        },
+        { status: 400 },
+      );
+    }
+
+    const plan = buildPublishPlan(reviewed, {
+      projectRoot: repositoryRoot,
+      sourceFile: reviewedFile,
+    });
+
+    let published = false;
+
+    try {
+      await access(plan.markdownPath);
+      published = true;
+    } catch {
+      published = false;
+    }
+
+    return NextResponse.json(
+      {
+        published,
+        markdown: path.relative(
+          repositoryRoot,
+          plan.markdownPath,
+        ),
+        publicId: plan.markdownPublicId,
+      },
+      {
+        headers: {
+          "Cache-Control": "no-store",
+        },
+      },
+    );
+  } catch (error) {
+    const code =
+      error &&
+      typeof error === "object" &&
+      "code" in error
+        ? String(error.code)
+        : "";
+
+    if (code === "ENOENT") {
+      return NextResponse.json(
+        {
+          published: false,
+          markdown: null,
+          publicId: null,
+        },
+        {
+          headers: {
+            "Cache-Control": "no-store",
+          },
+        },
+      );
+    }
+
+    return NextResponse.json(
+      {
+        error:
+          `Publiceringsstatus kunde inte läsas: ${errorMessage(error)}`,
+      },
+      { status: 500 },
+    );
+  }
 }
 
 export async function POST(

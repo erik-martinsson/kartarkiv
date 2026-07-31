@@ -13,6 +13,9 @@
     "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=365&format=kml",
     "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47996&categoryId=1"
   },
+  "location": "Norrköpings kommun",
+  "latitude": 58.716441666667,
+  "longitude": 16.334140833333,
   "discipline": "Medel",
   "result": {
     "runnerName": "Erik Martinsson",
@@ -326,5 +329,7 @@
     ]
   },
   "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:15438-1&classExternalId=266505-1",
-  "warnings": []
+  "warnings": [
+    "Platsen \"Norrköpings kommun\" hämtades automatiskt från koordinaterna via Geoapify."
+  ]
 }

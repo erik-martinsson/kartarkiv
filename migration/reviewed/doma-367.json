@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T21:37:14.110Z",
+  "reviewedAt": "2026-07-31T21:32:27.017Z",
   "competition": {
     "doma": {
       "mapId": 367,
@@ -18,6 +18,9 @@
       "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=48093&categoryId=1",
       "courseLengthKm": 12.98
     },
+    "location": "Hallsbergs kommun",
+    "latitude": 59.02623289001815,
+    "longitude": 14.978098542487004,
     "discipline": "Lång",
     "result": {
       "runnerName": "Erik Martinsson",

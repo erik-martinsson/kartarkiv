@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T21:31:38.000Z",
+  "reviewedAt": "2026-07-31T21:02:51.334Z",
   "competition": {
     "doma": {
       "mapId": 368,
@@ -18,6 +18,9 @@
       "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=48384&categoryId=81",
       "courseLengthKm": 11.86
     },
+    "location": "Partille kommun",
+    "latitude": 57.763425138889,
+    "longitude": 12.123203194444,
     "discipline": "Stafett",
     "result": {
       "runnerName": "Erik Martinsson",

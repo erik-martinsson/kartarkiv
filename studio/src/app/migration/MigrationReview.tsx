@@ -284,6 +284,7 @@ export default function MigrationReview() {
   const [queue, setQueue] = useState<MigrationQueueItem[]>([]);
   const [isSaving, setIsSaving] = useState(false);
   const [isPublishing, setIsPublishing] = useState(false);
+  const [isPublished, setIsPublished] = useState(false);
 
   const verificationLabel = useMemo(() => {
     const method = competition?.eventorMatch?.verificationMethod;
@@ -340,6 +341,26 @@ export default function MigrationReview() {
     return data as ReviewedDomaCompetition;
   };
 
+  const readPublishedStatus = async (mapId: string): Promise<boolean> => {
+    const response = await fetch(
+      `/api/migration/doma/${encodeURIComponent(mapId)}/publish`,
+      { cache: "no-store" },
+    );
+
+    const data = (await response.json()) as {
+      published?: boolean;
+      error?: string;
+    };
+
+    if (!response.ok) {
+      throw new Error(
+        data.error ?? "Publiceringsstatus kunde inte läsas.",
+      );
+    }
+
+    return data.published === true;
+  };
+
   const loadMap = async (mapId: string): Promise<void> => {
     const normalizedMapId = mapId.trim();
     if (!/^\d+$/.test(normalizedMapId) || Number(normalizedMapId) <= 0) {
@@ -357,9 +378,13 @@ export default function MigrationReview() {
       }
 
       const source = data as EnrichedDomaCompetition;
-      const review = await readReview(normalizedMapId);
+      const [review, published] = await Promise.all([
+        readReview(normalizedMapId),
+        readPublishedStatus(normalizedMapId),
+      ]);
       const mergedCompetition = mergeCompetition(source, review?.competition);
 
+      setIsPublished(published);
       setOriginalCompetition(cloneCompetition(source));
       setCompetition(cloneCompetition(mergedCompetition));
       setStatus(review?.status ?? "pending");
@@ -374,6 +399,7 @@ export default function MigrationReview() {
       setCompetition(null);
       setOriginalCompetition(null);
       setStatus("pending");
+      setIsPublished(false);
       setMessage(error instanceof Error ? error.message : "Migrationsposten kunde inte läsas.");
     } finally {
       setIsLoading(false);
@@ -425,6 +451,7 @@ export default function MigrationReview() {
       setCompetition(cloneCompetition(parsed));
       setMapIdInput(String(parsed.doma.mapId));
       setStatus("pending");
+      setIsPublished(false);
       setMessage(`Läste ${file.name}.`);
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "JSON-filen kunde inte läsas.");
@@ -643,6 +670,7 @@ export default function MigrationReview() {
       );
 
       setStatus("approved");
+      setIsPublished(true);
       setOriginalCompetition(savedCompetition);
       setCompetition(cloneCompetition(savedCompetition));
 
@@ -741,7 +769,15 @@ export default function MigrationReview() {
           <button className="button secondary" type="button" disabled={isLoading} onClick={() => void loadMap(mapIdInput)}>{isLoading ? "Läser…" : "Läs från migration/test"}</button>
         </div></div>
         <label className="button secondary migration-file-button">Läs JSON-fil<input className="visually-hidden" type="file" accept="application/json,.json" onChange={(event) => void handleJsonFile(event)} /></label>
-        <div className={`migration-review-state ${status}`}>{status === "approved" ? "Godkänd" : status === "needs-review" ? "Manuell granskning" : "Ej granskad"}</div>
+        <div className={`migration-review-state ${isPublished ? "approved" : status}`}>
+          {isPublished
+            ? "Publicerad"
+            : status === "approved"
+              ? "Godkänd"
+              : status === "needs-review"
+                ? "Manuell granskning"
+                : "Ej granskad"}
+        </div>
       </section>
 
       {queue.length ? <section className="panel migration-queue-bar" aria-label="Migrationskö">

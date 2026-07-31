@@ -6,10 +6,10 @@ date: 2017-04-07
 
 club: "Linköpings OK"
 country: "SE"
-location: ""
+location: "Tibro kommun"
 
 discipline: "Lång"
-raceClass: H21
+raceClass: "H21"
 
 distanceKm: 10.08
 gpsDistanceKm: 11.32

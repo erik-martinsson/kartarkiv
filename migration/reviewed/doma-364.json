@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T21:34:34.189Z",
+  "reviewedAt": "2026-07-31T21:01:18.696Z",
   "competition": {
     "doma": {
       "mapId": 364,
@@ -18,6 +18,9 @@
       "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47999&categoryId=18",
       "courseLengthKm": 11.96
     },
+    "location": "Nyköpings kommun",
+    "latitude": 58.727200416667,
+    "longitude": 16.527547777778,
     "discipline": "Stafett",
     "result": {
       "runnerName": "Erik Martinsson",

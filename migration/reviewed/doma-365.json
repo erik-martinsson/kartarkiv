@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T21:35:05.042Z",
+  "reviewedAt": "2026-07-31T21:01:47.557Z",
   "competition": {
     "doma": {
       "mapId": 365,
@@ -18,10 +18,13 @@
       "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47996&categoryId=1",
       "courseLengthKm": 5.49
     },
+    "location": "Norrköpings kommun",
+    "latitude": 58.716441666667,
+    "longitude": 16.334140833333,
     "discipline": "Medel",
     "result": {
       "runnerName": "Erik Martinsson",
-      "raceClass": null,
+      "raceClass": "H21",
       "club": "Linköpings OK",
       "position": "51",
       "starters": "70",

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Västkuststafetten (2017-04-01)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/361.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.752370931133</north>
+          <south>57.740835567687</south>
+          <east>12.078396797286</east>
+          <west>12.047014017103</west>
+          <rotation>2.3588485152052</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

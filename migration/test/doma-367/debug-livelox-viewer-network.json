@@ -1,0 +1,256 @@
+{
+  "mapId": 367,
+  "viewerUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:15487-1&classExternalId=266676-1",
+  "finalUrl": "https://www.livelox.com/Viewer/SM-natt-med-Swedish-League-3/D21-Elit?classId=67156&live=false",
+  "title": "Livelox",
+  "center": {
+    "latitude": 60.59840428773431,
+    "longitude": 16.287973478373793
+  },
+  "coordinates": [
+    {
+      "latitude": 59.00732380604571,
+      "longitude": 14.94016195674759,
+      "source": "network-json",
+      "url": "https://www.livelox.com/Data/ClassInfo",
+      "context": "$.general.event.boundingPolygon.vertices[0]"
+    },
+    {
+      "latitude": 59.00728857546863,
+      "longitude": 15.015968707957567,
+      "source": "network-json",
+      "url": "https://www.livelox.com/Data/ClassInfo",
+      "context": "$.general.event.boundingPolygon.vertices[1]"
+    },
+    {
+      "latitude": 59.04514195459119,
+      "longitude": 15.01607687046217,
+      "source": "network-json",
+      "url": "https://www.livelox.com/Data/ClassInfo",
+      "context": "$.general.event.boundingPolygon.vertices[2]"
+    },
+    {
+      "latitude": 59.04517722396706,
+      "longitude": 14.94018663478069,
+      "source": "network-json",
+      "url": "https://www.livelox.com/Data/ClassInfo",
+      "context": "$.general.event.boundingPolygon.vertices[3]"
+    },
+    {
+      "latitude": 59.02623289971784,
+      "longitude": 14.97811941360488,
+      "source": "network-json",
+      "url": "https://www.livelox.com/Data/ClassInfo",
+      "context": "$.general.class.boundingBox.center"
+    },
+    {
+      "latitude": 62.18952,
+      "longitude": 17.635785,
+      "source": "network-json",
+      "url": "https://www.livelox.com/Data/ClassInfo",
+      "context": "$.country.boundingBox.center"
+    },
+    {
+      "latitude": 59.02623289001815,
+      "longitude": 14.978098542487004,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.map.center"
+    },
+    {
+      "latitude": 59.01451031681611,
+      "longitude": 15.010167196349924,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[0].control.position"
+    },
+    {
+      "latitude": 59.01585999256709,
+      "longitude": 15.004354839400314,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[1].control.position"
+    },
+    {
+      "latitude": 59.02076843462791,
+      "longitude": 14.999304165337012,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[2].control.position"
+    },
+    {
+      "latitude": 59.025327234794304,
+      "longitude": 14.961743300819371,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[3].control.position"
+    },
+    {
+      "latitude": 59.024545265667086,
+      "longitude": 14.961429234225289,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[4].control.position"
+    },
+    {
+      "latitude": 59.019476670229885,
+      "longitude": 14.970205019825707,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[5].control.position"
+    },
+    {
+      "latitude": 59.01853299638271,
+      "longitude": 14.973636040047452,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[6].control.position"
+    },
+    {
+      "latitude": 59.0215798568568,
+      "longitude": 14.975181398144812,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[7].control.position"
+    },
+    {
+      "latitude": 59.02224044749939,
+      "longitude": 14.971278656747351,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[8].control.position"
+    },
+    {
+      "latitude": 59.0209866502168,
+      "longitude": 14.971435897293539,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[9].control.position"
+    },
+    {
+      "latitude": 59.02039303182208,
+      "longitude": 14.984400818407677,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[12].control.position"
+    },
+    {
+      "latitude": 59.0238038898601,
+      "longitude": 14.984611435198978,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[13].control.position"
+    },
+    {
+      "latitude": 59.02314374409709,
+      "longitude": 14.974212296428144,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[14].control.position"
+    },
+    {
+      "latitude": 59.03533117102876,
+      "longitude": 14.977304444088263,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[16].control.position"
+    },
+    {
+      "latitude": 59.03636919284927,
+      "longitude": 14.979296046108251,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[17].control.position"
+    },
+    {
+      "latitude": 59.03589717439937,
+      "longitude": 14.982204556777878,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[18].control.position"
+    },
+    {
+      "latitude": 59.040952944481624,
+      "longitude": 14.980030599861216,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[19].control.position"
+    },
+    {
+      "latitude": 59.04213934608053,
+      "longitude": 14.97982115282586,
+      "source": "network-json",
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "context": "$.courses[0].controls[20].control.position"
+    }
+  ],
+  "responses": [
+    {
+      "url": "https://livelox.blob.core.windows.net/class-storage/0000067156_3994432313441",
+      "status": 200,
+      "contentType": "application/json",
+      "byteLength": 269274,
+      "coordinateCount": 19
+    },
+    {
+      "url": "https://www.livelox.com/Data/ClassInfo",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "byteLength": 9053,
+      "coordinateCount": 6
+    },
+    {
+      "url": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:15487-1&classExternalId=266676-1",
+      "status": 302,
+      "contentType": null,
+      "byteLength": null,
+      "coordinateCount": 0
+    },
+    {
+      "url": "https://www.livelox.com/Viewer/SM-natt-med-Swedish-League-3/D21-Elit?classId=67156",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "byteLength": 154654,
+      "coordinateCount": 0
+    },
+    {
+      "url": "https://www.livelox.com/Scripts/General/Viewer/viewer?v=cE5utqOGi2xsba4R0dQmJfKm8lc",
+      "status": 200,
+      "contentType": "text/javascript; charset=UTF-8",
+      "byteLength": 677801,
+      "coordinateCount": 0
+    },
+    {
+      "url": "https://www.livelox.com/Data/CreateViewerVisit",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "byteLength": 187,
+      "coordinateCount": 0
+    },
+    {
+      "url": "https://fundingchoicesmessages.google.com/i/ca-pub-3702105520255513?href=https%3A%2F%2Fwww.livelox.com%2FViewer%2FSM-natt-med-Swedish-League-3%2FD21-Elit&ers=2",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "byteLength": 225494,
+      "coordinateCount": 0
+    },
+    {
+      "url": "https://www.livelox.com/Data/MapImageTileInfo?system=4&id=4197&south=59.005042736174815&north=59.047422916610444&west=14.93580092957379&east=15.020443275049407",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "byteLength": 8875,
+      "coordinateCount": 0
+    },
+    {
+      "url": "https://www.livelox.com/Scripts/General/Viewer/Calculators/Route/calculator-worker",
+      "status": 200,
+      "contentType": "text/javascript; charset=UTF-8",
+      "byteLength": 217334,
+      "coordinateCount": 0
+    }
+  ],
+  "selectedGlobals": {
+    "livelox_GoogleMapLayer_scriptIsLoading": false,
+    "livelox_GoogleMapLayer_scriptHasFinishedLoading": false
+  }
+}

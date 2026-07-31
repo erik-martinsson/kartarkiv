@@ -1,0 +1,2947 @@
+<!DOCTYPE html>
+<html class="full-screen" data-determine-time-zone="true" lang="sv" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#">
+    <head>
+        
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8" />
+<title>Livelox</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="icon" type="image/png" href="/Images/favicon.png" />
+<link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+
+<script type="text/javascript">
+    try {
+        var x = null;
+        new Function("null ?? false;"); 
+        new Function("const y = x?.x"); 
+    } catch (e) {
+        window.location.assign("/Home/ModernJavascriptNotSupported");
+    }
+</script>
+
+<style id="anti-clickjack" type="text/css">
+    body {
+        display: none !important;
+    }
+</style>
+<script type="text/javascript">
+    if (self === top) {
+        const antiClickjack = document.getElementById("anti-clickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+        top.location = self.location;
+    }
+</script>
+
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Livelox" />
+    <meta property="og:description" content="Livelox &#xE4;r en tj&#xE4;nst som l&#xE5;ter dig spela in och j&#xE4;mf&#xF6;ra dina orienteringslopp med v&#xE4;nner, familj och medt&#xE4;vlare." />
+    <meta property="og:image" content="https://www.livelox.com/Images/livelox-icon-512x512-white.png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:locale" content="sv_SE" />
+        <meta property="og:locale:alternate" content="en_US" />
+        <meta property="og:locale:alternate" content="nb_NO" />
+        <meta property="og:locale:alternate" content="zh_HK" />
+        <meta property="og:locale:alternate" content="fi_FI" />
+        <meta property="og:locale:alternate" content="es_ES" />
+        <meta property="og:locale:alternate" content="ja_JP" />
+        <meta property="og:locale:alternate" content="de_DE" />
+        <meta property="og:locale:alternate" content="it_IT" />
+        <meta property="og:locale:alternate" content="pt_PT" />
+        <meta property="og:locale:alternate" content="fr_FR" />
+        <meta property="og:locale:alternate" content="cs_CZ" />
+        <meta property="og:locale:alternate" content="en_NZ" />
+        <meta property="og:locale:alternate" content="en_CA" />
+        <meta property="og:locale:alternate" content="en_GB" />
+        <meta property="og:locale:alternate" content="en_AU" />
+
+
+
+<link rel="stylesheet" href="/Styles/fonts/play-regular/play-regular?v=TP22V7chDFFmkmpmiEPNhHUKxe8" />
+
+<link rel="stylesheet" href="/Styles/lib/core?v=34gHlFyOoe-HRhA2b763I2meL2s" />
+<link rel="stylesheet" href="/Styles/site?v=aglMruHn7nFIemZbwiqMJs3099k" />
+
+
+        
+    <link rel="stylesheet" href="/Styles/General/Viewer/viewer?v=l6SouagcE-r2nEr3PHq0gCFREow" />
+
+    </head>
+
+    <body>
+        <div id="content">
+            
+
+
+
+
+<div id="viewer-data-binding-container">
+    
+<div id="viewer">
+    <div id="top-panel" class="disable-selection" data-bind="with: topPanel">
+    <div id="primary-top-panel" class="bevel">
+        <a id="logotype" href="/">
+            <img src="/Images/livelox-logo-white.png" alt="Livelox" />
+        </a>
+
+        <ul id="tab-buttons">
+            <!-- ko foreach: $root.tabTypes -->
+            <li data-bind="visible: $root.lastParticipantChangeTime() && $root.tabs[$data].isEnabled">
+                <button class="full-height-button"
+                        data-bind="css: { active: $root.tabs[$data].isSelected() }, click: $parent.setTab, attr: { 'data-tab': $data }"
+                        role="tab">
+                    <i data-bind="attr: { 'class': $root.tabs[$data].tabIconClass }"></i>
+                    <span class="tab-title" data-bind="text: s('viewer.' + $data)"></span>
+                </button>
+            </li>
+            <!-- /ko -->
+        </ul>
+
+        <!-- ko if: $root.showRouteAccessReason -->
+        <div class="top-panel-icon"
+             id="route-access-reason-positive"
+             data-bind="visible: $root.selectedTabFeatureLevel() === ll.viewerFeatureLevel.full && ll.routeAccessReason.isPositive($root.classInfo.routeAccessResult), attr: { title: ll.routeAccessReason.getExplanation($root.classInfo.routeAccessResult) }"
+             data-toggle="tooltip" data-placement="bottom">
+            <i class="fa fa-check positive"></i>
+        </div>
+
+        <div class="top-panel-icon"
+             id="route-access-reason-negative"
+             title="Du beh&#xF6;ver en prenumeration f&#xF6;r att f&#xE5; &#xE5;tkomst till alla funktioner i den h&#xE4;r vyn. Klicka f&#xF6;r att l&#xE4;sa mer."
+             data-bind="visible: $root.selectedTabFeatureLevel() !== ll.viewerFeatureLevel.full && $root.classInfo.hasMultipleParticipants(), click: onNegativeRouteAccessIconClicked, attr: { 'data-toggle': ll.uiUtil.isMobile() ? null : 'tooltip' }"
+             data-placement="bottom">
+            <i class="fa fa-times negative"></i>
+        </div>
+        <!-- /ko -->
+        
+        <div class="top-panel-icon hidden-xs" data-bind="visible: $root.liveConnectionFailure()">
+            <i id="live-connection-failure-icon" class="fa fa-warning" title="Anslutningsproblem" data-bind="click: onLiveConnectionFailedButtonClicked"></i>
+        </div>
+
+        <div class="top-panel-icon" data-bind="visible: $root.showFullScreenButton">
+            <!-- ko ifnot: $root.isFullScreen -->
+            <i class="livelox-icon livelox-icon-enter-fullscreen" data-bind="click: onToggleFullScreenButtonClicked"></i>
+            <!-- /ko -->
+            <!-- ko if: $root.isFullScreen -->
+            <i class="livelox-icon livelox-icon-exit-fullscreen" data-bind="click: onToggleFullScreenButtonClicked"></i>
+            <!-- /ko -->
+        </div>
+
+        <ul class="hidden-xs accent-color-buttons">
+            <li data-bind="visible: $root.guideAvailable">
+                <button class="btn btn-default icon-button" title="Visa anv&#xE4;ndarguide f&#xF6;r den h&#xE4;r vyn" data-bind="click: onShowGuideButtonClicked">
+                    <i class="fa fa-question"></i>
+                </button>
+            </li>
+            <li data-bind="visible: northAlignMapButtonVisible">
+                <button class="btn btn-default icon-button" title="Rotera kartan s&#xE5; att norr &#xE4;r upp&#xE5;t" data-bind="click: onNorthAlignMapButtonClicked">
+                    <i class="livelox-icon livelox-icon-north-align"></i>
+                </button>
+            </li>
+            <li data-bind="visible: openMapSelectorButtonVisible">
+                <button class="btn btn-default icon-button" title="Kartor" data-bind="click: onOpenMapSelectorButtonClicked">
+                    <i class="livelox-icon livelox-icon-map"></i>
+                </button>
+            </li>
+        </ul>
+
+        <button type="button" id="top-panel-menu-button" class="full-height-button" data-bind="click: toggleMenu, visible: menuButtonVisible">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+
+    <div id="secondary-top-panel" class="bevel" data-bind="visible: secondaryTopPanelVisible()">
+    </div>
+</div>
+
+    
+    <div id="site-announcements">
+        
+        <div id="viewer-site-announcement" class="site-announcement" data-delays="alwaysShow" data-openatpageload="false">
+    <div class="site-announcement-inner">
+        <div class="site-announcement-content">
+        </div>
+        <button class="site-announcement-close-button">
+            <i class="fa fa-times"></i>
+        </button>
+    </div>
+</div>
+    </div>
+
+    
+<div id="player-toolbar" class="bevel" data-bind="with: tabs.player">
+    <div id="player-toolbar-grid" data-bind="css: { 'mobile-leg-selector-on-separate-line': mobileLegSelectorOnSeparateLine }">
+        <button id="play-button" class="btn btn-default"
+                data-bind="html: playButtonHtml(), visible: modeWhenNotTimeSliding() !== ll.playerMode.live, click: onPlayButtonClicked">
+        </button>
+        
+<div class="replay-speed-display">
+    <div class="hidden-xs" data-bind="text: replaySpeed() + 'x', visible: modeWhenNotTimeSliding() !== ll.playerMode.live"></div>
+
+    <div id="replay-speed-display-dropdown-container" class="btn-group visible-xs dropup keep-inside-container">
+        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+            <span data-bind="text: replaySpeed() + 'x'"></span> <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" data-bind="foreach: availableReplaySpeeds">
+            <li><a data-bind="text: $data + 'x', click: $parent.onReplaySpeedClicked"></a></li>
+        </ul>
+    </div>
+</div>
+
+        <div id="player-button-panel" class="button-panel">
+            <div class="replay-speed-slider-container"
+                 data-bind="visible: modeWhenNotTimeSliding() !== ll.playerMode.live">
+            </div>
+            <button class="btn btn-default btn-text-only"
+                    data-bind="html: liveButtonHtml, visible: liveEnabled, click: onLiveButtonClicked">
+            </button>
+
+            <div class="btn-group keep-inside-container" data-bind="css: { dropup: $root.isSmallScreen }">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false" data-bind="attr: { title: startMode().tooltip }">
+                    <i data-bind="attr: { 'class': 'livelox-icon ' + startMode().iconClass }"></i>
+                </button>
+                <ul class="dropdown-menu" data-bind="foreach: availableStartModes">
+                    <li><a data-bind="click: $parent.onStartModeItemClicked"><i data-bind="attr: { 'class': 'livelox-icon ' + iconClass }"></i> <span data-bind="text: name"></span></a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group keep-inside-container" data-bind="visible: !ll.startMode.isOfControlRestartKind(startMode().type), css: { dropup: $root.isSmallScreen }">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false" data-bind="attr: { title: viewportCalculator() ? viewportCalculator().tooltip : '' }">
+                    <i data-bind="attr: { 'class': viewportCalculator() ? 'livelox-icon ' + viewportCalculator().iconClass : '' }"></i>
+                </button>
+                <ul class="dropdown-menu" data-bind="foreach: availableViewportCalculators">
+                    <li><a data-bind="click: $parent.onViewportCalculatorItemClicked"><i data-bind="attr: { 'class': 'livelox-icon ' + iconClass }"></i> <span data-bind="text: name"></span></a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group keep-inside-container" data-bind="visible: ll.startMode.isOfControlRestartKind(startMode().type), css: { dropup: $root.isSmallScreen }">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false" data-bind="attr: { title: controlRestartAnimationMode() ? controlRestartAnimationMode().tooltip : '' }">
+                    <i data-bind="attr: { 'class': controlRestartAnimationMode() ? 'livelox-icon ' + controlRestartAnimationMode().iconClass : '' }"></i>
+                </button>
+                <ul class="dropdown-menu" data-bind="foreach: availableControlRestartAnimationModes">
+                    <li><a data-bind="click: $parent.onControlRestartAnimationModeItemClicked"><i data-bind="attr: { 'class': 'livelox-icon ' + iconClass }"></i> <span data-bind="text: name"></span></a></li>
+                </ul>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-default toggleable"
+                        data-bind="visible: $parent.virtualRoutesExist,
+                                   click: onIncludeParticipantsWithVirtualRoutesButtonClicked,
+                                   css: { toggled: includeParticipantsWithVirtualRoutes }">
+                    <i class="livelox-icon livelox-icon-virtual-routes" title="Visa virtuella rutter l&#xE4;ngs f&#xE5;gelv&#xE4;gen f&#xF6;r deltagare utan rutter"></i>
+                </button>
+            </div>
+
+            <div id="player-desktop-leg-selector" data-bind="visible: ll.startMode.isOfControlRestartKind(startMode().type)"></div>
+        </div>
+        <div class="time-display"></div>
+        <div class="time-slider">
+            <canvas id="time-slider-canvas"></canvas>
+        </div>
+        <div id="player-mobile-leg-selector" data-bind="visible: ll.startMode.isOfControlRestartKind(startMode().type)"></div>
+    </div>
+</div>
+
+    
+<div id="player" class="tab" data-bind="with: tabs.player">
+    <div id="player-layer-container">
+        <div class="zoom-buttons" data-bind="visible: !$root.isMobile">
+            <button class="zoom-in-button" data-bind="click: onZoomInButtonClicked, event: { touchstart: onZoomInButtonClicked }, clickBubble: false">
+                <i class="fa fa-plus"></i>
+            </button>
+            <button class="zoom-out-button" data-bind="click: onZoomOutButtonClicked, event: { touchstart: onZoomOutButtonClicked }, clickBubble: false">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+
+        <div class="player-viewer-banner"></div>
+
+        <div class="route-time-difference-panel" data-bind="visible: routeTimeDifferencePanelVisible"></div>
+        
+        <div class="context-menu-element"></div>
+    </div>
+</div>
+
+
+    
+<div id="statistics-toolbar" data-bind="with: tabs.statistics">
+    <select data-bind="options: graphs, optionsText: 'name', value: graph"></select>
+
+    <div id="speed-distribution-graph-settings" data-bind="visible: graphKey() == 'speed-distribution-graph'">
+
+    </div>
+</div>
+
+<div id="statistics" class="tab" data-bind="with: tabs.statistics">
+    <div id="statistics-graph-container">
+        <div id="speed-distribution-graph" data-bind="visible: graphKey() == 'speed-distribution-graph'">
+        </div>
+        <div id="speed-graph" data-bind="visible: graphKey() == 'speed-graph'">
+        </div>
+    </div>
+</div>
+
+    <div id="leg-view-toolbar" class="bevel" data-bind="with: tabs.legView">
+    <div id="leg-view-toolbar-inner">
+        <!-- ko if: mobileDuelBoxVisible() -->
+        
+<div id="mobile-duel-box" data-bind="with: duel">
+    <!-- ko if: hasParticipants -->
+
+    <div class="mobile-participant-selector-container">
+        
+<div class="participant-selector participant-selector-dropdown dropdown dropup" data-bind="with: participantSelector">
+    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true" data-bind="css: { 'route-is-hovered': routeIsHovered }">
+        <span class="legend-square" data-bind="visible: legendVisible">
+            <span data-bind="attr: { 'style': legendStyle1 }"></span>
+            <span data-bind="attr: { 'style': legendStyle2 }"></span>
+        </span>
+        <span class="participant-name" data-bind="text: selectedParticipantText"></span>
+        <span class="caret"></span>
+    </a>
+    <ul data-bind="foreach: participants" class="dropdown-menu" role="menu" title="">
+        <li role="presentation" data-bind="attr: { 'data-participant-id': id }, css: { 'selected-participant': id === $parent.selectedParticipant().id }">
+            <a role="menuitem" tabindex="-1" href="#" data-bind="click: $parent.onParticipantClicked"><span data-bind="text: $parent.participantTextRenderer($data)"></span></a>
+        </li>
+    </ul>
+</div>
+
+
+        <div class="participant-leg-statistics">
+            <!-- ko if: validity().valid -->
+            <span data-bind="text: participantLegStatistics"></span>
+            <!-- /ko -->
+        </div>
+    </div>
+
+    <div class="mobile-participant-selector-container mobile-reference-participant-selector-container">
+        <div class="left-container">
+            
+<div class="reference-participant-selector participant-selector-dropdown dropdown dropup" data-bind="with: referenceParticipantSelector">
+    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true" data-bind="css: { 'route-is-hovered': routeIsHovered }">
+        <span class="legend-square" data-bind="visible: legendVisible">
+            <span data-bind="attr: { 'style': legendStyle1 }"></span>
+            <span data-bind="attr: { 'style': legendStyle2 }"></span>
+        </span>
+        <span class="participant-name" data-bind="text: selectedParticipantText"></span>
+        <span class="caret"></span>
+    </a>
+    <ul data-bind="foreach: participants" class="dropdown-menu" role="menu" title="">
+        <li role="presentation" data-bind="attr: { 'data-participant-id': id }, css: { 'selected-participant': id === $parent.selectedParticipant().id }">
+            <a role="menuitem" tabindex="-1" href="#" data-bind="click: $parent.onParticipantClicked"><span data-bind="text: $parent.participantTextRenderer($data)"></span></a>
+        </li>
+    </ul>
+</div>
+
+
+            <div class="button-panel">
+                <button class="btn btn-default toggleable" data-bind="click: onReferenceParticipantModeBestButtonClicked, css: { toggled: referenceParticipantModeBestButtonToggled }">
+                    <i class="livelox-icon livelox-icon-crown" title="J&#xE4;mf&#xF6;r med deltagaren som har b&#xE4;st tid"></i>
+                </button>
+
+                <button class="btn btn-default toggleable" data-bind="click: onReferenceParticipantModeLockButtonClicked, css: { toggled: referenceParticipantModeLockButtonToggled }">
+                    <i class="livelox-icon livelox-icon-padlock" title="J&#xE4;mf&#xF6;r alltid med samma deltagare"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="participant-leg-statistics">
+            <!-- ko if: validity().valid -->
+            <span data-bind="text: referenceParticipantLegStatistics"></span>
+            <!-- /ko -->
+        </div>
+    </div>
+
+    <!-- /ko -->
+</div>
+
+        <!-- /ko -->
+        <div class="button-panel">
+            <button class="btn btn-default toggleable sparkling sparkling-button" data-bind="click: speedEqualization.onButtonClicked, css: { toggled: speedEqualization.buttonToggled }">
+                <i class="livelox-icon livelox-icon-speed-equalization" title="Hastighetsutj&#xE4;mning"></i>
+            </button>
+            <button class="btn btn-default toggleable" data-bind="click: onWholeCourseButtonClicked, css: { toggled: wholeCourseButtonToggled }">
+                <i class="livelox-icon livelox-icon-start-to-finish" title="Hela banan"></i>
+            </button>
+            <button class="btn btn-default toggleable" data-bind="click: onCustomLegButtonClicked, css: { toggled: customLegButtonToggled }">
+                <i class="livelox-icon livelox-icon-custom-leg" title="Egen str&#xE4;cka"></i>
+            </button>
+            <button id="duel-chart-button" class="btn btn-default" data-bind="visible: isDuel(), click: onDuelChartButtonClicked, enable: !showLongestLegOnlyRestrictionBox()">
+                <i class="fa fa-area-chart"></i>
+            </button>
+            <div id="leg-view-leg-selector"></div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="leg-view" class="tab" data-bind="with: tabs.legView">
+    <div id="leg-view-layer-container">
+        <div class="zoom-buttons" data-bind="visible: !$root.isMobile">
+            <button class="zoom-in-button" data-bind="click: onZoomInButtonClicked, event: { touchstart: onZoomInButtonClicked }, clickBubble: false">
+                <i class="fa fa-plus"></i>
+            </button>
+            <button class="zoom-out-button" data-bind="click: onZoomOutButtonClicked, event: { touchstart: onZoomOutButtonClicked }, clickBubble: false">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+
+        <div id="leg-view-navigate-backward-button" class="leg-view-navigation-button" data-bind="click: onNavigateBackward, event: { touchstart: onNavigateBackward }, enable: !animatingNow(), visible: navigateBackwardButtonVisible">
+            <i class="fa fa-chevron-left fa-4x"></i>
+        </div>
+
+        <div id="leg-view-navigate-forward-button" class="leg-view-navigation-button" data-bind="click: onNavigateForward, event: { touchstart: onNavigateForward }, enable: !animatingNow(), visible: navigateForwardButtonVisible">
+            <i class="fa fa-chevron-right fa-4x"></i>
+        </div>
+
+        <div id="leg-view-box-container">
+            <div id="leg-view-leg-title-box" data-bind="fadeTo: { value: !animatingNow(), duration: 150 }">
+                <h2 data-bind="text: legTitle, attr: { style: 'zoom: ' + legTitleZoom() }"></h2>
+                <div id="leg-view-leg-title-box-leg-distance" data-bind="visible: legDistanceString() !== ''">
+                    Sträcklängd: <span data-bind="text: legDistanceString"></span>
+                </div>
+                <div id="leg-view-leg-title-box-total-distance" data-bind="visible: totalDistanceString">
+                    <span data-bind="visible: leg() === ll.specialLeg.wholeCourse">Banlängd: </span>
+                    <span data-bind="visible: leg() !== ll.specialLeg.wholeCourse">Längd från start: </span>
+                    <span data-bind="text: totalDistanceString"></span>
+                </div>
+
+                <div data-bind="visible: desktopDuelBoxVisible()">
+                    
+<div id="desktop-duel-box" data-bind="with: duel">
+    <!-- ko if: hasParticipants -->
+    <div class="duel-participant-label">
+        Deltagare
+    </div>
+    
+    
+<div class="participant-selector participant-selector-dropdown dropdown " data-bind="with: participantSelector">
+    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true" data-bind="css: { 'route-is-hovered': routeIsHovered }">
+        <span class="legend-square" data-bind="visible: legendVisible">
+            <span data-bind="attr: { 'style': legendStyle1 }"></span>
+            <span data-bind="attr: { 'style': legendStyle2 }"></span>
+        </span>
+        <span class="participant-name" data-bind="text: selectedParticipantText"></span>
+        <span class="caret"></span>
+    </a>
+    <ul data-bind="foreach: participants" class="dropdown-menu" role="menu" title="">
+        <li role="presentation" data-bind="attr: { 'data-participant-id': id }, css: { 'selected-participant': id === $parent.selectedParticipant().id }">
+            <a role="menuitem" tabindex="-1" href="#" data-bind="click: $parent.onParticipantClicked"><span data-bind="text: $parent.participantTextRenderer($data)"></span></a>
+        </li>
+    </ul>
+</div>
+
+    
+    <!-- ko if: validity().valid -->
+    <div class="participant-leg-statistics">
+        <span data-bind="text: participantLegStatistics"></span>
+    </div>
+    <!-- /ko -->
+    
+    <div class="duel-chart-container" data-bind="visible: validity().valid, click: onDuelChartClicked, event: { touchend: onDuelChartClicked }">
+        <canvas class="duel-chart"></canvas>
+        <canvas class="duel-chart-hover-markers"></canvas>
+    </div>
+
+
+    <div class="duel-participant-label">
+        Deltagare att jämföra med
+    </div>
+    
+    
+<div class="reference-participant-selector participant-selector-dropdown dropdown " data-bind="with: referenceParticipantSelector">
+    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true" data-bind="css: { 'route-is-hovered': routeIsHovered }">
+        <span class="legend-square" data-bind="visible: legendVisible">
+            <span data-bind="attr: { 'style': legendStyle1 }"></span>
+            <span data-bind="attr: { 'style': legendStyle2 }"></span>
+        </span>
+        <span class="participant-name" data-bind="text: selectedParticipantText"></span>
+        <span class="caret"></span>
+    </a>
+    <ul data-bind="foreach: participants" class="dropdown-menu" role="menu" title="">
+        <li role="presentation" data-bind="attr: { 'data-participant-id': id }, css: { 'selected-participant': id === $parent.selectedParticipant().id }">
+            <a role="menuitem" tabindex="-1" href="#" data-bind="click: $parent.onParticipantClicked"><span data-bind="text: $parent.participantTextRenderer($data)"></span></a>
+        </li>
+    </ul>
+</div>
+
+    
+    <!-- ko if: validity().valid -->
+    <div class="reference-participant-leg-statistics">
+        <span data-bind="text: referenceParticipantLegStatistics"></span>
+    </div>
+    <!-- /ko -->
+
+    <div class="button-panel">
+        <button class="btn btn-default toggleable" data-bind="click: onReferenceParticipantModeBestButtonClicked, event: { touchend: onReferenceParticipantModeBestButtonClicked }, css: { toggled: referenceParticipantModeBestButtonToggled }">
+            <i class="livelox-icon livelox-icon-crown" title="J&#xE4;mf&#xF6;r med deltagaren som har b&#xE4;st tid"></i>
+        </button>
+        <button class="btn btn-default toggleable" data-bind="click: onReferenceParticipantModeLockButtonClicked, event: { touchend: onReferenceParticipantModeLockButtonClicked }, css: { toggled: referenceParticipantModeLockButtonToggled }">
+            <i class="livelox-icon livelox-icon-padlock" title="J&#xE4;mf&#xF6;r alltid med samma deltagare"></i>
+        </button>
+    </div>
+    
+    <!-- /ko -->
+</div>
+
+                </div>
+            </div>
+
+            <div id="leg-view-route-legend-visibility-wrapper" data-bind="visible: isLegView">
+                <div id="leg-view-route-legend-container" data-bind="visible: legendBoxFilledParticipantCount() > 1, fadeVisible: { value: routeLegendVisible() && routeLegendIsValid() && !animatingNow(), duration: 150 }">
+                    <div id="leg-view-route-legend"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="leg-view-longest-leg-restriction-box" class="route-restriction-information-box" data-bind="visible: showLongestLegOnlyRestrictionBox">
+            <div class="route-restriction-information-box-header">
+                <i class="fa fa-times-circle-o"></i>
+                <div>Begränsad åtkomst</div>
+            </div>
+            <div class="route-restriction-information-box-body">
+                <p>
+                    Du behöver en prenumeration för att komma åt den här vyn. För att du ska få en uppfattning om funktionen visas banans längsta sträcka gratis.
+                </p>
+                <p>
+                    <button class="btn btn-default" data-bind="click: onNavigateToLongestLegButtonClicked, event: { touchstart: onNavigateToLongestLegButtonClicked }, clickBubble: false">
+                       <i class="livelox-icon livelox-icon-leg"></i>
+                        Visa den längsta sträckan
+                    </button>
+                </p>
+                
+<div class="route-restriction-links">
+    <a href="/Pricing/Subscriptions" class="btn btn-primary">
+        <i class="fa fa-shopping-cart"></i>
+        Uppgradera
+    </a>
+        <a href="/Authentication/Login?redirectUrl=https%3A%2F%2Fwww.livelox.com%2FViewer%2FSM-natt-med-Swedish-League-3%2FD21-Elit%3FclassId%3D67156" class="no-button">Logga in</a>
+</div>
+
+            </div>
+        </div>
+
+        <div class="leg-view-viewer-banner"></div>
+
+        <div class="route-info-panel" data-bind="visible: routeInfoPanel.visible, html: routeInfoPanel.html"></div>
+
+    </div>
+</div>
+
+    
+<div id="table-toolbar" class="bevel" data-bind="with: tabs.table">
+    <div class="button-panel">
+        <div class="dropdown" data-bind="css: { dropup: $root.isSmallScreen }">
+            <button class="btn btn-default dropdown-toggle" type="button" id="table-type-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span data-bind="text: selectedType()?.name"></span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="table-type-dropdown" data-bind="foreach: types">
+                <li><a href="#" data-bind="text: name, click: $parent.onTypeDropdownItemClicked"></a></li>
+            </ul>
+        </div>
+        <button id="table-copy-to-clipboard" class="btn btn-default" data-bind="click: onCopyToClipboardButtonClicked">
+            <i class="fa fa-copy" title="Kopiera"></i>
+        </button>
+    </div>
+</div>
+    
+<div id="table" class="tab" data-bind="with: tabs.table">
+    <div id="table-container">
+        <div id="table-container-expander">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="accumulated-place-cell">
+                            <span>Pl</span>
+                        </th>
+                        <th class="name-cell">
+                            <span>Namn</span>
+                            <span>Klubb</span>
+                        </th>
+                        <th class="accumulated-time-cell">
+                            <span>Tid</span>
+                        </th>
+                        <th class="accumulated-time-behind-cell">
+                            <span>Tid efter</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+    
+<div id="route-editor-toolbar" class="bevel" data-bind="with: tabs.routeEditor">
+    <div class="button-panel">
+        <span id="route-editor-toolbar-title">Ritar rutt för <span data-bind="text: ownerName"></span></span>
+        <button class="btn btn-default" data-bind="click: onUndoButtonClicked, enable: undoButtonEnabled" title="&#xC5;ngra">
+            <i class="fa fa-undo"></i>
+        </button>
+        <button class="btn btn-default" data-bind="click: onRedoButtonClicked, enable: redoButtonEnabled" title="Upprepa">
+            <i class="fa fa-repeat"></i>
+        </button>
+        <button class="btn btn-default" data-bind="click: onFinalizeFillingButtonClicked, visible: finalizeFillingButtonVisible" title="Slutf&#xF6;r ifyllningen av h&#xE5;let">
+            <i class="fa fa-check"></i>
+        </button>
+
+        <button class="btn btn-default btn-icon-and-text" data-bind="click: onSaveButtonClicked, enable: saveButtonEnabled" title="Spara">
+            <i class="fa fa-save"></i>
+            Spara
+        </button>
+        <button class="btn btn-default btn-icon-and-text" data-bind="click: onCancelButtonClicked" title="Avbryt">
+            <i class="fa fa-times"></i>
+            Avbryt
+        </button>
+    </div>
+</div>
+    
+<div id="route-editor" class="tab" data-bind="with: tabs.routeEditor">
+    <div id="route-editor-layer-container">
+        <div class="zoom-buttons" data-bind="visible: !$root.isMobile">
+            <button class="zoom-in-button" data-bind="click: onZoomInButtonClicked, event: { touchstart: onZoomInButtonClicked }, clickBubble: false">
+                <i class="fa fa-plus"></i>
+            </button>
+            <button class="zoom-out-button" data-bind="click: onZoomOutButtonClicked, event: { touchstart: onZoomOutButtonClicked }, clickBubble: false">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="route-editor-instructions-panel">
+        <span data-bind="if: instructionsText() === 'default'">Klicka för att lägga till punkter på rutten.</span>
+        <span data-bind="if: instructionsText() === 'cut'">Klicka på rutten för att slutföra hålet.</span>
+        <span data-bind="if: instructionsText() === 'fill'"> Klicka för att lägga till punkter som fyller hålet. Avsluta genom att klicka <i class="fa fa-check"></i>.</span>
+        <a href="#" data-bind="click: onFurtherInstructionsLinkClicked">Fler instruktioner</a>
+    </div>
+
+    <div id="route-editor-cancel-modal"
+         class="bootbox-template"
+         data-title="Bekr&#xE4;fta avbrytning"
+         data-message="Vill du avbryta inritningen av rutten?">
+    </div>
+
+    <div id="route-editor-instructions-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h1 class="modal-title">
+                        Instruktioner för att rita rutter för hand
+                    </h1>
+                </div>
+
+                <div class="modal-body">
+                    <p>Klicka i kartbilden för att lägga till punkter på rutten. Du kan ångra en eller flera utsatta punkter genom att klicka på ångra-knappen <i class="fa fa-undo"></i>.</p>
+
+<p>För att ta bort en punkt någonstans på rutten håller du ner Ctrl-knappen och klickar på punkten.</p>
+
+<p>Behöver du rita om ett avsnitt på rutten, håll ner Skift och klicka på den punkt på rutten där omritningen ska börja. Klicka sedan på den punkt där omritningen ska sluta för att klippa bort den delen. Klicka sedan ut punkter på vanligt sätt för att fylla igen det utklippta avsnittet. Avsluta genom att klicka på knappen <i class="fa fa-check"></i>.</p>
+
+<p>För att panorera i kartbilden gör du på samma sätt som i uppspelningsvyn: klicka och dra med musen.</p>
+
+<p>När allt är klart klickar du på Spara-knappen uppe till höger.</p>
+
+
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        <i class="fa fa-times"></i>
+                        Stäng
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <div id="center-panel-left-swipe-hint" class="center-panel-swipe-hint" data-bind="visible: leftPanel.swipeHintVisible, click: leftPanel.onSwipeHintClicked" title="Visa deltagarpanel">
+        <i class="livelox-icon livelox-icon-list"></i>
+    </div>
+    <div id="center-panel-right-swipe-hint" class="center-panel-swipe-hint" data-bind="visible: rightPanel.swipeHintVisible, click: rightPanel.onSwipeHintClicked" title="Visa inst&#xE4;llningspanel">
+        <i class="fa fa-cog"></i>
+    </div>
+
+    <div id="left-panel-swipe-detector" data-bind="visible: !leftPanel.expanded() && !rightPanel.expanded() && $root.isSmallScreen()"></div>
+
+    <div id="right-panel-swipe-detector" data-bind="visible: !leftPanel.expanded() && !rightPanel.expanded() && $root.isSmallScreen()"></div>
+    
+    
+<div id="left-panel" class="bevel" data-bind="visible: leftPanel.visible">
+    <div id="left-panel-inner">
+        <!-- ko if: classInfo.event && classInfo.class -->
+<div id="class-info-panel">
+    <div class="panel-header">
+        <header>
+            Aktivitet
+        </header>
+        <button class="btn btn-default panel-close-button" data-bind="click: leftPanel.onCloseButtonClicked">
+            <i class="fa fa-times"></i>
+        </button>
+    </div>
+    <div id="class-info-panel-body">
+        <div id="event-info-container">
+            <div id="event-info">
+                <div id="event-name" data-bind="text: classInfo.event.name"></div>
+                <div id="event-organiser-and-country" class="hidden-xs">
+                    <div data-bind="visible: classInfo?.event?.country, html: getEventOrganiserAndCountryMarkup()"></div>
+                </div>
+                <div id="event-date" data-bind="html: ll.util.formatTimeInterval(classInfo.event.timeInterval, 'date', 'html')"></div>
+            </div>
+            <!-- ko if: classInfo.event.iconUrl -->
+            <img data-bind="attr: { src: classInfo.event.iconUrl }">
+            <!-- /ko -->
+        </div>
+
+        <div id="class-dropdown" class="dropdown dark-dropdown" data-bind="attr: { title: s('viewer.selectedClass') + ': ' + classInfo.selectedClassName() }" data-boundingContainer="main-panel">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">
+                <span data-bind="text: classInfo.selectedClassName"></span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" title="">
+                <li role="presentation" data-class-id="-1" data-bind="css: { 'selected-item': classInfo.selectedClass() === null }">
+                    <a role="menuitem" tabindex="-1" href="#" data-bind="attr: {href: ll.urlUtil.getClassViewerUrl(classInfo.event, null, null, null, $root.liveEnabled) }"><span>[Alla deltagare]</span><span data-bind="css: { 'participant-count': classInfo.event.participantCount > 0, 'participant-zero-count': classInfo.event.participantCount === 0 }, text: '(' + classInfo.event.participantCount + ')'"></span></a>
+                </li>
+                <!-- ko foreach: classInfo.classesForDropdown -->
+                <li role="presentation" data-bind="attr: { 'data-class-id': id }, css: { 'selected-item': id === ($parent.classInfo.selectedClass() || {}).id }">
+                    <a role="menuitem" tabindex="-1" href="#" data-bind="attr: {href: ll.urlUtil.getClassViewerUrl($parent.classInfo.event, cl, null, null, $root.liveEnabled) }"><span data-bind="text: name"></span><span data-bind="css: { 'participant-count': participantCount > 0, 'participant-zero-count': participantCount === 0 }, text: '(' + participantCount + ')'"></span></a>
+                </li>
+                <!-- /ko -->
+            </ul>
+        </div>
+
+        <!-- ko if: classInfo.relayLegMenuItems.length -->
+        <div id="relay-leg-dropdown" class="dropdown dark-dropdown" data-bind="attr: { title: classInfo.selectedRelayLegTitle }">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">
+                <span data-bind="text: classInfo.selectedRelayLegMenuItem.text"></span>
+                <span class="caret"></span>
+            </a>
+            <ul data-bind="foreach: classInfo.relayLegMenuItems" class="dropdown-menu" role="menu" title="">
+                <!-- ko if: separator -->
+                <li class="menu-item-separator">
+                </li>
+                <!-- /ko -->
+                <li role="presentation" data-bind="attr: { 'data-index': index }, css: { 'selected-menu-item': $data === $parent.classInfo.selectedRelayLegMenuItem }">
+                    <a role="menuitem" tabindex="-1" href="#" data-bind="attr: {href: $parent.classInfo.getRelayUrl($data) }"><span data-bind="text: text"></span><span data-bind="css: { 'participant-count': participantCount > 0, 'participant-zero-count': participantCount === 0 }, text: '(' + participantCount + ')'"></span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /ko -->
+
+        
+<div class="route-restriction-information">
+    <!-- ko if: ll.viewerFeatureLevel.isSingleRoute(selectedTabFeatureLevel()) && classInfo.hasMultipleParticipants() && routeRestrictionInformation.routeRestrictionInformationVisible() -->
+    <div class="route-restriction-information-box">
+        <div class="route-restriction-information-box-header">
+            <div class="route-restriction-information-box-title">
+                <i class="fa fa-times-circle-o"></i>
+                <div>Begränsad åtkomst</div>
+            </div>
+            <button class="btn btn-default route-restriction-information-close-button" data-bind="click: routeRestrictionInformation.onRouteRestrictionInformationCloseButtonClicked">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div class="route-restriction-information-box-body">
+            <p>
+                Endast en enskild deltagares rutt visas åt gången. För att visa flera rutter behöver du en prenumeration.
+                    <span class="try-free-for-x-days">Prova gratis i 14 dagar!</span>
+            </p>
+
+            <!-- ko if: ll.routeAccessReason.isNegative(classInfo.routeAccessResult) && classInfo.routeAccessResult.reason !== ll.routeAccessReason.noSubscription -->
+            <p data-bind="text: ll.routeAccessReason.getExplanation(classInfo.routeAccessResult)"></p>
+            <!-- /ko -->
+            
+<div class="route-restriction-links">
+    <a href="/Pricing/Subscriptions" class="btn btn-primary">
+        <i class="fa fa-shopping-cart"></i>
+        Uppgradera
+    </a>
+        <a href="/Authentication/Login?redirectUrl=https%3A%2F%2Fwww.livelox.com%2FViewer%2FSM-natt-med-Swedish-League-3%2FD21-Elit%3FclassId%3D67156" class="no-button">Logga in</a>
+</div>
+
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: routeRestrictionInformation.routesNotYetPublishedButAccessibleForEventOwnersInformation && routeRestrictionInformation.routesNotYetPublishedButAccessibleForEventOwnersInformationVisible() -->
+    <div class="route-restriction-information-box">
+        <div class="route-restriction-information-box-header">
+            <div class="route-restriction-information-box-title">
+                <i class="fa fa-user-secret"></i>
+                <div>Begränsad åtkomst</div>
+            </div>
+            <button class="btn btn-default route-restriction-information-close-button" data-bind="click: routeRestrictionInformation.onRoutesNotYetPublishedButAccessibleForEventOwnersInformationCloseButtonClicked">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div class="route-restriction-information-box-body" data-bind="text: routeRestrictionInformation.routesNotYetPublishedButAccessibleForEventOwnersInformation">
+        </div>
+    </div>
+    <!-- /ko -->
+
+</div>
+
+    </div>
+</div>
+<!-- /ko -->
+
+
+        
+<div id="participants-panel" data-bind="with: participantsPanel">
+    <div class="panel-header">
+        <header id="participants-panel-header-first-row" data-bind="css: { 'has-close-button': closeButtonVisible }">
+            <div>
+                Deltagare
+            </div>
+
+            <div id="participants-panel-sort-dropdown" class="dropdown dark-dropdown flat-button" data-bind="visible: sortButtonVisible, attr: { title: s('viewer.sort') }">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                    <i class="fa fa-sort-amount-asc"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu" data-bind="foreach: sorters">
+                    <li role="presentation" data-bind="css: { 'selected-item': key === $parent.sortingContext().sorter?.key }">
+                        <a role="menuitem" tabindex="-1" href="#" data-bind="text: title, click: $parent.onSortListItemClicked"></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flat-button" data-bind="click: onFilterButtonClicked, visible: filterButtonVisible, css: { selected: showFilter }" title="Filtrera">
+                <i class="fa fa-filter"></i>
+            </div>
+
+            <div class="flat-button" data-bind="click: onVisibilityButtonClicked, visible: visibilityButtonVisible" title="V&#xE4;lj deltagare att visa">
+                <i class="fa fa-eye"></i>
+            </div>
+
+            <button class="btn btn-default panel-close-button" data-bind="click: $root.leftPanel.onCloseButtonClicked, visible: closeButtonVisible">
+                <i class="fa fa-times"></i>
+            </button>
+        </header>
+        <div id="filter-textbox-container" data-bind="visible: showFilter">
+            <input type="text" id="filter-textbox" class="form-control" data-bind="value: filterText, valueUpdate: 'keyup', attr:{ placeholder: placeholderText }" />
+        </div>
+    </div>
+
+    <div id="participants-wrapper">
+        <p id="participants-panel-no-participants" data-bind="visible: participantInfos().length === 0">
+            <!-- ko if: filterText() -->
+            Inga deltagare matchar filtret.
+            <!-- /ko-->
+            <!-- ko if: !filterText() -->
+            Det finns inga deltagare i den här klassen.
+            <!-- /ko-->
+        </p>
+
+        <div id="participants" class="tablesorter" data-bind="visible: participantInfos().length > 0, css: { 'is-player': $root.tabs.player.isSelected, 'is-leg-view': $root.tabs.legView.isSelected, 'is-full-event': $root.classInfo.isFullEvent }">
+            <div id="participants-header">
+                <div class="participant-legend-cell">
+                    <span id="participants-panel-toggle-all-button" data-bind="visible: toggleAllButtonVisible">
+                        <span data-bind="click: onShowAllButtonClicked, visible: showAllButtonVisible">
+                            <i class="fa fa-circle"></i>
+                        </span>
+                        <span data-bind="click: onHideAllButtonClicked, visible: hideAllButtonVisible">
+                            <i class="fa fa-check-circle"></i>
+                        </span>
+                    </span>
+                </div>
+                <div class="name header" data-bind="click: onSortColumnHeaderClicked" data-sort-key="name">Namn</div>
+                <div class="time header" data-bind="visible: !useSpeedEqualization(), click: onSortColumnHeaderClicked" data-sort-key="legViewTime">Tid</div>
+                <div class="time header" data-bind="visible: useSpeedEqualization(), click: onSortColumnHeaderClicked" data-sort-key="legViewSpeedEqualizedTime">Tid</div>
+                <div class="distance header" data-bind="click: onSortColumnHeaderClicked" data-sort-key="legViewDistance">Sträcka</div>
+                <div class="speed header" data-bind="visible: !useSpeedEqualization(), click: onSortColumnHeaderClicked" data-sort-key="legViewSpeed">Tempo</div>
+                <div class="speed header" data-bind="visible: useSpeedEqualization(), click: onSortColumnHeaderClicked" data-sort-key="legViewSpeedEqualizedSpeed">Tempo</div>
+            </div>
+            <ul id="participants-body" data-bind="foreach: participantInfos">
+                
+<li class="participant" data-bind="css: { selected: selected, highlighted: highlighted, 'legend-box-filled': legendBoxFilled, 'virtual-route': participant().route.isVirtual, 'invalid-route': $parent.isInvalidRoute(participant()) }, event: { click: onClick, mouseover: onMouseOver, mouseout: onMouseOut }, attr: { 'data-participantId': participant().id }">
+    <div class="participant-legend-cell" data-bind="click: onToggleLegendBoxFilledClicked, clickBubble: false">
+        <span class="participant-legend" data-bind="visible: legendBoxFilled, style: { backgroundColor: $parent.color(participant()), backgroundImage: $parent.gradient(participant()) }"></span>
+        <span class="participant-legend hidden-participant-legend" data-bind="visible: !legendBoxFilled()"></span>
+    </div>
+    <!-- ko if: $root.tabs.player.isSelected -->
+    
+<div class="name">
+    <span data-bind="text: $parent.formatParticipantName(participant())"></span>
+    <i data-bind="attr: { 'class': $parent.participantIconClass(participant()), title: $parent.participantIconTooltip(participant()) }"></i>
+</div>
+<div class="short-name darkened" data-bind="text: participant().calculatedShortName"></div>
+<div class="organisation" data-bind="text: $parent.formatParticipantOrganisationName(participant())"></div>
+<div class="rank" data-bind="visible: $parent.showRanks, text: $root.tabs.player.getRankString(participant())"></div>
+<div class="start-time" data-bind="visible: $parent.showStartTimes, text: $root.tabs.player.getStartTimeString(participant())"></div>
+<div class="total-time" data-bind="visible: $parent.showTotalTimes, text: $root.tabs.player.getTimeString(participant()), css: { 'time-without-completed-course': $root.tabs.player.isTimeWithoutCompletedCourse(participant()) }"></div>
+<div class="class-name" data-bind="visible: $root.classInfo.isFullEvent, text: $parent.formatParticipantClassName(participant())"></div>
+
+    <!-- /ko -->
+    <!-- ko if: !$root.tabs.player.isSelected() -->
+    
+<div class="name" data-bind="text: participant().getName()"></div>
+<div class="organisation darkened" data-bind="visible: $parent.formatParticipantOrganisationName(participant()), text: $parent.formatParticipantOrganisationName(participant())"></div>
+<!-- ko if: selected -->
+<div class="selected-participant-panel">
+    <div class="button-panel">
+        <button class="btn btn-default toggleable sparkling sparkling-button" data-bind="visible: $parent.selectedParticipantPanel.usePerformanceColoringButtonVisible(), click: $parent.selectedParticipantPanel.onUsePerformanceColoringButtonClicked, clickBubble: false, css: { toggled: $parent.usePerformanceColoring}">
+            <i class="livelox-icon livelox-icon-bullseye" title="F&#xE4;rgl&#xE4;gg rutt efter prestation"></i>
+        </button>
+        <button class="btn btn-default toggleable sparkling sparkling-button" data-bind="visible: $parent.selectedParticipantPanel.useCouplingColoringButtonVisible(), click: $parent.selectedParticipantPanel.onUseCouplingColoringButtonClicked, clickBubble: false, css: { toggled: $parent.useCouplingColoring}">
+            <i class="livelox-icon livelox-icon-coupling" title="[LegView.CouplingColoring]"></i>
+        </button>
+        <button class="btn btn-default icon-button" title="Visa duell" data-bind="visible: $parent.selectedParticipantPanel.showDuelButtonVisible($data), click: $parent.selectedParticipantPanel.onShowDuelButtonClicked, clickBubble: false">
+            <i class="livelox-icon livelox-icon-duel"></i>
+        </button>
+        <button class="btn btn-default icon-button" title="Ladda ner karta med rutt" data-bind="visible: $parent.selectedParticipantPanel.downloadMapAndRouteImageButtonVisible($data), click: $parent.selectedParticipantPanel.onDownloadMapAndRouteImageButtonClicked, clickBubble: false">
+            <i class="fa fa-download"></i>
+        </button>
+        </div>
+</div>
+<!-- /ko -->
+
+    <!-- /ko -->
+    <div class="time" data-bind="text: $parent.formatElapsedTime(participant())"></div>
+    <div class="distance" data-bind="text: $parent.formatDistance(participant())"></div>
+    <div class="speed" data-bind="text: $parent.formatSpeed(participant())"></div>
+</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+    
+    
+<div id="right-panel" class="bevel disable-selection" data-bind="visible: rightPanel.visible">
+    <div id="settings-panel">
+        <div id="settings-panel-header" class="panel-header">
+            <header>
+                Inställningar
+            </header>
+            <button class="btn btn-default panel-close-button" data-bind="click: rightPanel.onCloseButtonClicked">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div id="settings-panel-body-wrapper">
+            <div id="settings-panel-body">
+                
+<div id="general-settings-panel">
+    <div class="setting">
+        <div class="row">
+            <div class="setting-label col-xs-7">Kartopacitet</div>
+            <div class="setting-value col-xs-5 text-right" data-bind="text: ll.util.formatNumber(100 * mapOpacity(), 0) + ' %'"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="map-opacity-slider-container slider-container">
+                    <div class="map-opacity-slider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ko if: showCourseOpacitySlider -->
+
+    <div class="setting">
+        <div class="row">
+            <div class="setting-label col-xs-7">Banopacitet</div>
+            <div class="setting-value col-xs-5 text-right" data-bind="text: ll.util.formatNumber(100 * courseOpacity(), 0) + ' %'"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="course-opacity-slider-container slider-container">
+                    <div class="course-opacity-slider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- /ko -->
+    
+    <!-- ko if: showControlNumberVisibilityCheckbox -->
+
+    <div class="setting">
+        <div class="row">
+            <div class="col-xs-12 checkbox">
+                <label>
+                    <input type="checkbox" class="checkbox-inline" data-bind="checked: controlNumbersVisible" />
+                    Visa kontrollnummer
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <!-- /ko -->
+
+    <!-- ko if: showForceCalculateSplitTimesCheckbox -->
+
+    <div class="setting">
+        <div class="row">
+            <div class="col-xs-12 checkbox">
+                <label>
+                    <input type="checkbox" class="checkbox-inline" data-bind="checked: forceCalculateSplitTimes" />
+                    Ruttbaserade sträcktider
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <!-- /ko -->
+
+    <div class="setting">
+        <div class="row">
+            <div class="setting-label col-xs-7">Ruttstorlek</div>
+            <div class="setting-value col-xs-5 text-right" data-bind="text: ll.util.formatNumber(100 * participantBaseStyle.size(), 0) + ' %'"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="participant-size-slider-container slider-container">
+                    <div class="participant-size-slider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="setting">
+        <div class="row">
+            <div class="setting-label col-xs-6">Ruttkantbredd</div>
+            <div class="setting-value col-xs-6 text-right" data-bind="text: ll.util.formatNumber(100 * participantBaseStyle.borderWidthPercentage(), 0) + ' %'"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="border-width-percentage-slider-container slider-container">
+                    <div class="border-width-percentage-slider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="setting">
+        <div class="row">
+            <div class="setting-label col-xs-7">Ruttopacitet</div>
+            <div class="setting-value col-xs-5 text-right" data-bind="text: ll.util.formatNumber(100 * participantBaseStyle.opacity(), 0) + ' %'"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="participant-opacity-slider-container slider-container">
+                    <div class="participant-opacity-slider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+                
+<div id="player-settings-panel" data-bind="with: tabs.player, visible: tabs.player.isSelected">
+    <div class="setting">
+        <div class="row">
+            <div class="col-xs-12 checkbox">
+                <label>
+                    <input type="checkbox" class="checkbox-inline" data-bind="checked: $parent.participantBaseStyle.routeTicksEnabled" />
+                    Tidsgradering
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="setting">
+        <div class="row">
+            <div class="setting-label col-xs-12">Svansutseende</div>
+        </div>
+        <div class="row">
+            <div class="setting-value col-xs-12">
+                <select id="selected-route-style" data-bind="options: visibleRouteStyles, optionsText: 'text', optionsValue: 'id', value: routeStyle"></select>
+            </div>
+        </div>
+    </div>
+
+    <div class="setting" data-bind="attr: { style: routeStyle() !== ll.playerRouteStyle.speedColored ? 'height: 0; overflow: hidden; margin: 0' : '' }">
+        <div class="row">
+            <div class="setting-label col-xs-6">Färgskala</div>
+            <div class="setting-value col-xs-6 text-right" data-bind="html: colorRange.startString() + ' &ndash; ' + colorRange.endString()"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="color-range-slider-container slider-container">
+                    <div class="color-range-slider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="setting">
+        <div class="row">
+            <div class="setting-label col-xs-6">Svanslängd</div>
+            <div class="setting-value col-xs-6 text-right" data-bind="html: tailLengthHtml"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="tail-length-slider-container slider-container">
+                    <div class="tail-length-slider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="setting" data-bind="visible: liveEnabled">
+        <div class="row">
+            <div class="setting-label col-xs-6">Fördröjning</div>
+            <div class="setting-value col-xs-6 text-right" data-bind="text: ll.util.formatElapsedTime(liveDelay())"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="live-delay-slider-container slider-container">
+                    <div class="live-delay-slider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-bind="visible: $parent.presentationMode">
+        <div class="setting">
+            <div class="row">
+                <div class="setting-label col-xs-9">Visa deltagarlista</div>
+                <div class="setting-value col-xs-3 text-right">
+                    <input type="checkbox" data-bind="checked: participantsBox.visible" />
+                </div>
+            </div>
+        </div>
+
+        <div class="setting" data-bind="visible: participantsBox.visible">
+            <div class="row">
+                <div class="setting-label col-xs-6">Deltagarlistans storlek</div>
+                <div class="setting-value col-xs-6 text-right" data-bind="text: ll.util.formatNumber(100 * participantsBox.size(), 0) + ' %'"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="participants-box-size-slider-container slider-container">
+                        <div class="participants-box-size-slider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="setting">
+        <div class="row">
+            <div class="col-xs-12 checkbox">
+                <label>
+                    <input type="checkbox" class="checkbox-inline" data-bind="checked: participantShortNamesVisible" />
+                    Visa namn intill markörerna
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+                
+<div id="leg-view-settings-panel" data-bind="with: tabs.legView, visible: tabs.legView.isSelected">
+    <div class="setting">
+        <div class="row">
+            <div class="col-xs-12 checkbox">
+                <label>
+                    <input type="checkbox" class="checkbox-inline" data-bind="checked: $parent.participantBaseStyle.routeTicksEnabled" />
+                    Tidsgradering
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="setting">
+        <div class="row">
+            <div class="setting-label col-xs-12">Ruttutseende</div>
+        </div>
+        <div class="row">
+            <div class="setting-value col-xs-12">
+                <select id="selected-route-style" data-bind="options: routeStyles, optionsText: 'text', optionsValue: 'id', value: routeStyle"></select>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+                <a id="restore-settings-to-default" href="#" data-bind="click: rightPanel.onRestoreSettingsToDefaultLinkClicked">
+                    <i class="fa fa-undo"></i>
+                    <span>
+                        Återställ till standardinställningarna
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <div id="calculation-progress-indicator" data-bind="visible: calculationProgressIndicator.visible">
+    <div id="calculation-progress-indicator-border">
+        <div id="calculation-progress-indicator-background"></div>
+        <div id="calculation-progress-indicator-bar" data-bind="style: { width: calculationProgressIndicator.barWidth }"></div>
+        <div id="calculation-progress-indicator-text">Beräknar &hellip;</div>
+    </div>
+</div>
+
+    <div id="attribution"></div>
+
+    <div id="center-panel-size-indicator"></div>
+
+    <div id="ads-mobile" class="ad">
+    </div>
+
+    <div id="ads-desktop">
+        <div id="ads-desktop-1" class="ad"></div>
+        <div id="ads-desktop-2" class="ad"></div>
+    </div>
+</div>
+
+
+    
+<div id="participant-modal" class="modal fade" tabindex="-1" data-bind="with: participantModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    <span data-bind="visible: isEditable">Redigera deltagare:</span>
+                    <span data-bind="visible: !isEditable()">Deltagarinformation:</span>
+                    <span data-bind="text: originalName"></span>
+                </h1>
+            </div>
+
+            <div class="modal-body">
+                <div data-bind="if: isVirtualRoute">
+                    Det finns ingen rutt kopplad till denna deltagare. En virtuell rutt baserad på sträcktiderna visas längs fågelvägen mellan kontrollerna.
+                </div>
+
+                <div data-bind="if: !isVirtualRoute()">
+
+                    <!-- ko if: participant() && participant().routeHiddenDueToTimeIntervalMismatch() -->
+                    <div class="alert alert-danger">
+                        <i class="fa fa-warning icon-warning"></i>
+                        <span>
+                            Ruttens tidsintervall (<span data-bind="html: formatTimeInterval(participant().sessionTimeInterval)"></span>) överlappar inte tidsintervallet givet av start- och målgångstid i resultatlistan (<span data-bind="html: formatTimeInterval(participant().timeInterval)"></span>). Kontakta arrangören om du anser att resultatlistans tidsintervall är felaktigt.
+                        </span>
+                    </div>
+                    <!-- /ko -->
+
+                    <div class="form-group">
+                        <label>Personkoppling</label>
+                        <div id="participant-modal-person-association">
+                            <div data-bind="visible: person">
+                                <span data-bind="text: connectedToPersonText"></span>
+                                <a data-bind="visible: personAssocationIsEditable, click: onConnectToPersonLinkClicked">Ändra koppling</a>
+                                <a data-bind="visible: personAssocationIsEditable, click: onDisconnectFromPersonLinkClicked">Ta bort koppling</a>
+                            </div>
+                            <div data-bind="visible: !person()">
+                                Deltagaren är inte kopplad till någon person.
+                                <a data-bind="visible: personAssocationIsEditable, click: onConnectToPersonLinkClicked">Lägg till koppling</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="participant-info-item" data-bind="visible: loadingIsEditableNow">
+                        <i class="fa fa-spinner fa-spin"></i> Laddar...
+                    </div>
+
+                    <div data-bind="visible: participantNameIsEditable">
+
+                        <div class="form-group">
+                            <label for="participant-modal-first-name">Förnamn</label>
+                            <input id="participant-modal-first-name" type="text" class="form-control" data-bind="value: participantFirstName" maxlength="64" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="participant-modal-last-name">Efternamn</label>
+                            <input id="participant-modal-last-name" type="text" class="form-control" data-bind="value: participantLastName" maxlength="64" />
+                        </div>
+
+                    </div>
+
+                    <div data-bind="visible: participantShortNameAndColorIsEditable">
+                        <div class="form-group">
+                            <label for="participant-modal-short-name">Namnförkortning</label>
+                            <input id="participant-modal-short-name" type="text" class="form-control" data-bind="value: participantShortName" maxlength="32" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="participant-modal-color">Färg</label>
+                            <input id="participant-modal-color" type="text" class="form-control" data-bind="value: participantColor" maxlength="7" />
+                        </div>
+                    </div>
+
+                    <div data-bind="if: participant">
+                        <span data-bind="if: participant().routeSource === ll.routeSource.device">
+                            Rutten är inspelad med mobilapp.
+                        </span>
+                        <span data-bind="if: participant().routeSource === ll.routeSource.file">
+                            Rutten är importerad från en fil.
+                        </span>
+                        <span data-bind="if: participant().routeSource === ll.routeSource.manual">
+                            Rutten är inritad för hand.
+                        </span>
+                        <span data-bind="if: participant().routeSource === ll.routeSource.external">
+                            Rutten är importerad från en extern applikation.
+                        </span>
+                        <span data-bind="if: participant().modifiedTime">
+                            Senast ändrad <span data-bind="text: ll.util.formatDateTime(participant().modifiedTime, 'dateTime24h')"></span>.
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="visible: isSaveable, click: onSaveButtonClicked">
+                    <i class="fa fa-save"></i>
+                    Spara
+                </button>
+                <button type="button" class="btn btn-primary" data-bind="visible: routeIsCalibratable, click: onCalibrateRouteButtonClicked">
+                    <i class="fa fa-edit"></i>
+                    [Viewer.ParticipantModal.CalibrateRoute]
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    <span data-bind="visible: isSaveable">
+                        Avbryt
+                    </span>
+                    <span data-bind="visible: !isSaveable()">
+                        Stäng
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="map-selector-modal" class="modal fade" tabindex="-1" data-bind="with: mapSelectorModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">Välj karta</h1>
+            </div>
+            <div class="modal-body">
+                <ul class="maps">
+                    <li class="map google-maps" data-bind="css: { 'selected': mapIsSelected(null) }, click: onGoogleMapsClicked">
+                        <div class="thumbnail-wrapper">
+                            <img class="thumbnail" src="/Images/google-maps.png" />
+                        </div>
+                        <div class="info">
+                            <h2>Google Maps</h2>
+                        </div>
+                    </li>
+                    <!-- ko foreach: maps -->
+                    <li class="map" data-bind="css: { 'selected': $parent.mapIsSelected($data) }, click: $parent.onMapClicked">
+                        <div class="thumbnail-wrapper">
+                            <img class="thumbnail" data-bind="attr: { 'data-thumbnail-url': $data.getThumbnailLargerThanOrEqualTo(256, 'url'), 'data-thumbnail-cache-url': $data.getThumbnailLargerThanOrEqualTo(256, 'cacheUrl') }" />
+                            <div class="spinner-wrapper" data-bind="visible: $data.getThumbnailLargerThanOrEqualTo(256, 'url')"><i class="fa fa-spinner fa-spin fa-4x"></i></div>
+                            <img class="thumbnail" data-bind="visible: !$data.getThumbnailLargerThanOrEqualTo(256, 'url')" src="/Images/map.png" style="display: inline;" />
+                        </div>
+                        <div class="info">
+                            <h2 data-bind="text: name"></h2>
+                            <ul>
+                                <li>
+                                    <h3>Storlek</h3>
+                                    <div data-bind="html: width + ' &amp;times; ' + height + ' px'"></div>
+                                </li>
+                                <li>
+                                    <h3>Yta</h3>
+                                    <div data-bind="html: ll.util.formatNumber(area / 1000000, 1) + ' km&amp;sup2;'"></div>
+                                </li>
+                                <li>
+                                    <h3>Skapad</h3>
+                                    <div data-bind="html: ll.util.formatDateTime(createdTime, 'date', 'html')"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- /ko -->
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Avbryt
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="add-route-modal" class="modal fade" tabindex="-1" data-bind="with: addRouteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    Lägg till rutt: välj person
+                </h1>
+            </div>
+
+            <div class="modal-body">
+
+                <ul class="list-unstyled">
+                    <li data-bind="visible: isAuthenticated">
+                        <label>
+                            <input type="radio" name="add-route-modal-participant-type" data-bind="checked: participantType" value="myself" />
+                            Jag själv ()
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="radio" name="add-route-modal-participant-type" data-bind="checked: participantType" value="existingParticipant" />
+                            En befintlig deltagare
+                        </label>
+                        <div id="add-route-modal-existing-participants">
+                            <select class="form-control" data-bind="options: existingParticipants, optionsText: getParticipantName, value: selectedParticipant, optionsCaption: '', enable: participantType() == 'existingParticipant'"></select>
+                        </div>
+                    </li>
+
+                    <li data-bind="visible: isMemberOfOrganisation">
+                        <label>
+                            <input type="radio" name="add-route-modal-participant-type" data-bind="checked: participantType" value="personInMyOrganisation" />
+                            <span data-bind="visible: !personInMyOrganisation()">
+                                En klubbkamrat
+                                (<a data-bind="click: onPersonInMyOrganisationLinkClicked">klicka för att välja</a>)
+                            </span>
+                            <span data-bind="visible: !!personInMyOrganisation()">
+                                <span data-bind="text: personInMyOrganisationName"></span>
+                                (<a data-bind="click: onPersonInMyOrganisationLinkClicked">klicka för att ändra</a>)
+                            </span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="radio" name="add-route-modal-participant-type" data-bind="checked: participantType" value="otherPerson" />
+                            En annan person:
+                        </label>
+
+                        <div id="add-route-modal-other-person-name">
+                            <div class="form-group">
+                                <label for="add-route-modal-other-person-first-name">Förnamn</label>
+                                <div>
+                                    <input type="text" id="add-route-modal-other-person-first-name" data-bind="value: otherPersonFirstName, enable: participantType() == 'otherPerson'" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="add-route-modal-other-person-last-name">Efternamn</label>
+                                <div>
+                                    <input type="text" id="add-route-modal-other-person-last-name" data-bind="value: otherPersonLastName, enable: participantType() == 'otherPerson'" />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="visible: uploadFileButtonVisible, enable: okButtonEnabled, click: onUploadFileButtonClicked">
+                    <i class="fa fa-upload"></i>
+                    Importera rutt från fil
+                </button>
+                <button type="button" class="btn btn-primary" data-bind="visible: drawByHandButtonVisible, enable: okButtonEnabled, click: onDrawByHandButtonClicked">
+                    <i class="fa fa-pencil"></i>
+                    Rita in rutt för hand
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Avbryt
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="add-route-modal-name-sanity-check"
+     class="bootbox-template"
+     data-title="Ogiltig inmatning"
+     data-message="Du m&#xE5;ste ange ett namn f&#xF6;r personen.">
+</div>
+
+<div id="add-route-modal-route-not-editable-by-hand"
+     class="bootbox-template"
+     data-title="Ogiltig inmatning"
+     data-message="Rutten &#xE4;r inte redigerbar. Den &#xE4;r antingen skapad av en annan anv&#xE4;ndare eller inte inritad f&#xF6;r hand. Du kan bara redigera de rutter som &#xE4;r inritade f&#xF6;r hand av dig sj&#xE4;lv.">
+</div>
+
+<div id="add-route-modal-route-not-editable-by-file-upload"
+     class="bootbox-template"
+     data-title="Ogiltig inmatning"
+     data-message="Rutten &#xE4;r inte redigerbar. Den &#xE4;r antingen skapad av en annan anv&#xE4;ndare eller inte importerad fr&#xE5;n en fil. Du kan bara redigera de rutter som &#xE4;r importerade fr&#xE5;n en fil av dig sj&#xE4;lv.">
+</div>
+
+
+    
+<div id="download-map-image-modal" class="modal fade" tabindex="-1" data-bind="with: downloadMapImageModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    Ladda ner karta
+                </h1>
+            </div>
+
+            <div class="modal-body">
+                <!-- ko if: !allowDownloadMapImage -->
+                <p>
+                    Arrangören har inaktiverat nedladdning av den här aktivitetens karta.
+                </p>
+                <!-- /ko -->
+                <!-- ko if: allowDownloadMapImage -->
+                <div class="form-group">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" value="Map" data-bind="attr: { name: 'mode' }, checked: mode" />
+                            Endast kartan
+                        </label>
+                        <label>
+                            <input type="radio" value="MapAndCourse" data-bind="attr: { name: 'mode' }, checked: mode" />
+                            Karta med bana
+                        </label>
+                        <!-- ko if: availableParticipants -->
+                        <label>
+                            <input type="radio" value="MapCourseAndRoute" data-bind="attr: { name: 'mode' }, checked: mode" />
+                            Karta med rutt
+                        </label>
+                        <!-- /ko -->
+                        <!-- ko if: participant() && !availableParticipants() -->
+                        <label>
+                            <input type="radio" value="MapCourseAndRoute" data-bind="attr: { name: 'mode' }, checked: mode"/>
+                            Karta med rutt för <span data-bind="text: participantName"></span>
+                        </label>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                
+                <!-- ko if: availableParticipants() && mode() === 'MapCourseAndRoute' -->
+                <div class="form-group indented-form-group">
+                    <select class="form-control" data-bind="options: availableParticipants, optionsCaption: `--- ${s('common.selectParticipant')} ---`, optionsText: o => o.getName(), value: participant"></select>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: mode() === 'MapCourseAndRoute' -->
+                <div class="form-group indented-form-group">
+                    <label for="route-style">Ruttutseende</label>
+                    <select id="route-style" class="form-control" data-bind="options: routeStyles, value: routeStyle, optionsText: 'title', enable: mode() === 'MapCourseAndRoute'"></select>
+                </div>
+                <!-- /ko -->
+                                
+                <div class="form-group">
+                    <label for="format">Filformat</label>
+                    <select id="format" class="form-control" data-bind="options: fileFormats, value: fileFormat, optionsText: 'title'"></select>
+                </div>
+                <!-- /ko -->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="enable: downloadButtonEnabled, click: onDownloadButtonClicked">
+                    <i class="fa fa-download"></i>
+                    Ladda ner
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Avbryt
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="overview-map-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    Översiktskarta
+                </h1>
+            </div>
+
+            <div class="modal-body">
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Stäng
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="share-participant-modal" class="modal fade" tabindex="-1" data-bind="with: shareParticipantModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    Dela rutt för <span data-bind="text: participantName"></span>
+                </h1>
+            </div>
+
+            <div class="modal-body">
+                <p>
+                    Länken leder till den aktuella vyn med den valda deltagarens rutt markerad.
+                </p>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input class="form-control" disabled data-bind="value: url"/>
+                        <div id="share-participant-modal-copy-to-clipboard" class="input-group-addon" data-bind="click: onCopyToClipboardButtonClicked">
+                            <i class="fa fa-copy" title="Kopiera"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Stäng
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="route-time-modal" class="modal fade" tabindex="-1" data-bind="with: routeTimeModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    Tidsinställningar
+                </h1>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="route-time-modal-start-time">Starttid</label>
+                    <input id="route-time-modal-start-time" type="text" class="form-control" data-bind="value: startTime, event: { blur: onStartTimeBlur }" placeholder="&#xE5;&#xE5;&#xE5;&#xE5;-mm-dd tt:mm:ss" />
+                    <div class="help-block">Datum och tid då passet startade.</div>
+                </div>
+                <div class="form-group">
+                    <label for="route-time-modal-duration">Avverkad tid</label>
+                    <input id="route-time-modal-duration" type="text" class="form-control" data-bind="value: duration, event: { blur: onDurationBlur }" placeholder="t:mm:ss" />
+                    <div class="help-block">Avverkad tid från start till målgång. Ange en tid i timmar, minuter och sekunder.</div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="enable: okButtonEnabled, click: onOkButtonClicked">
+                    <i class="fa fa-check"></i>
+                    Ok
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Avbryt
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="route-time-modal-duration-sanity-check"
+     class="bootbox-template"
+     data-title="Ogiltig inmatning"
+     data-message="Avverkad tid &#xE4;r obligatoriskt att ange.">
+</div>
+
+
+    
+<div id="classes-and-courses-modal" class="modal fade" tabindex="-1" data-bind="with: classesAndCoursesModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    Slå samman klasser/banor
+                </h1>
+            </div>
+
+            <div class="modal-body">
+
+                <p>
+                    Du kan visa deltagare i flera klasser i samma kartbild. Om klasserna har olika banor visas alla banorna på kartan. Välj antingen via klass eller via bana.
+                </p>
+
+                <ul class="list-unstyled" data-bind="visible: !oneCoursePerClass()">
+                    <li>
+                        <label>
+                            <input type="radio" name="classes-and-courses-modal-type" value="courses" data-bind="checked: type"/>
+                            Visa banor
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="classes-and-courses-modal-type" value="classes" data-bind="checked: type"/>
+                            Visa klasser
+                        </label>
+                    </li>
+                </ul>
+
+                <div data-bind="fadeVisible: { value: mergedCourse, duration: 300 }">
+                    <p data-bind="text: formatNumberOfControlsInMergedCourse"></p>
+                    <p data-bind="html: formatMergedCourse"></p>
+                </div>
+
+
+                <table class="table table-striped table-hover" data-bind="visible: !oneCoursePerClass() && courses().length && type() == 'courses'">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Bana</th>
+                        <th>Klasser med denna bana</th>
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: courses">
+                    <tr data-bind="click: $parent.toggleChecked">
+                        <td>
+                            <input type="checkbox" class="checkbox" data-bind="checked: checked, click: $parent.noop, clickBubble: false"/>
+                        </td>
+                        <td data-bind="text: name"></td>
+                        <td data-bind="text: $parent.formatClassesForCourse($data)"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-striped table-hover" data-bind="visible: classes().length && type() == 'classes'">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Klass</th>
+                        <th>Klassens bana</th>
+                        <th>Andra klasser med denna bana</th>
+                    </tr>
+                    </thead>
+                    <tbody data-bind="foreach: classes">
+                    <tr data-bind="click: $parent.toggleChecked">
+                        <td>
+                            <input type="checkbox" class="checkbox" data-bind="checked: checked, click: $parent.noop, clickBubble: false"/>
+                        </td>
+                        <td data-bind="text: $parent.formatClass($data)"></td>
+                        <td data-bind="text: $parent.formatCoursesForClass($data)"></td>
+                        <td data-bind="text: $parent.formatOtherClasses($data)"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="enable: okButtonEnabled, click: onOkButtonClicked">
+                    <i class="fa fa-check"></i>
+                    Ok
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Avbryt
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="create-pseudo-class-modal" class="modal fade" tabindex="-1" data-bind="with: createPseudoClassModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    [Viewer.CreatePseudoClassModal.Title]
+                </h1>
+            </div>
+
+            <div class="modal-body">
+
+                <p>
+                    [Viewer.CreatePseudoClassModal.Information]
+                </p>
+                
+                <div>
+                    [Viewer.CreatePseudoClassModal.SelectByParticipant]
+                </div>
+                <div class="row">
+                    <div class="select2-form-control col-md-9">
+                        <input id="create-pseudo-class-modal-select-by-participant" type="hidden" />
+                    </div>
+                    <button class="col-md-3 btn btn-default" data-bind="click: onAddParticipantButtonClicked">
+                        [Viewer.CreatePseudoClassModal.Add]    
+                    </button>
+                </div>
+
+                <div>
+                    [Viewer.CreatePseudoClassModal.SelectByOrganisation]
+                </div>
+                <div class="row">
+                    <div class="select2-form-control col-md-9">
+                        <input id="create-pseudo-class-modal-select-by-organisation" type="hidden" />
+                    </div>
+                    <button class="col-md-3 btn btn-default" data-bind="click: onAddOrganisationButtonClicked">
+                        [Viewer.CreatePseudoClassModal.Add]
+                    </button>
+                </div>
+
+                <div>
+                    [Viewer.CreatePseudoClassModal.SelectAll]
+                </div>
+                
+                <p></p>
+                
+                <ul data-bind="foreach: listedParticipants">
+                    <li data-bind="text: $parent.formatParticipant($data)"></li>
+                </ul>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="enable: okButtonEnabled, click: onOkButtonClicked">
+                    <i class="fa fa-check"></i>
+                    Ok
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Avbryt
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="guide-modal" class="modal modal-vertically-centered fade" tabindex="-1" data-bind="with: guideModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    <span class="topic topic-player">
+                        <i class="fa fa-play"></i>
+                        Användarguide: Uppspelning
+                    </span>
+                    <span class="topic topic-legView">
+                        <i class="livelox-icon livelox-icon-leg"></i>
+                        Användarguide: Sträckor
+                    </span>
+                    <span class="topic topic-duel">
+                        <i class="livelox-icon livelox-icon-duel"></i>
+                        Användarguide: Duell
+                    </span>
+                    <span class="topic topic-table">
+                        <i class="fa fa-table"></i>
+                        Användarguide: Tabell
+                    </span>
+                </h1>
+            </div>
+
+            <div class="modal-body">
+                <div class="topic topic-player">
+                    <p>Uppspelningsfliken låter dig spela upp ditt lopp från start till mål. Du ser dina GPS-spår och ruttval jämfört med de andra deltagarna. Följ den här guiden för att lära dig mer om funktionerna i uppspelningsläget.</p>
+                </div>
+                <div class="topic topic-player">
+                    <p>Klicka på Play-knappen <button class="inline btn btn-default"><i class="fa fa-play"></i></button> för att starta uppspelningen.</p>
+
+<p>Det orange skjutreglaget längst upp till vänster på skärmen låter dig ändra hastigheten på uppspelningen. Du kan se tidsförloppet i det grå fältet ovanför kartan. Klicka på en position i detta fält för att hoppa till motsvarande tid.</p>
+
+<p><img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/player/sliders.png" class="full-width"/></p>
+                </div>
+                <div class="topic topic-player">
+                    <div class="two-columns">
+<div>
+<p>I den vänstra sidopanelen kan du se listan över deltagare som laddat upp sina rutter till den valda klassen.</p>
+<p>I den övre delen av samma panel kan du växla mellan de olika klasserna i aktiviteten.</p>
+<p>När du klickar på en deltagare i den vänstra panelen, väljs deltagaren och dess bakgrund ändras till orange. Nu kommer den valda deltagaren att följas längs banan under uppspelningen.</p>
+</div>
+<img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/player/participant-list.png"/>
+</div>
+                </div>
+                <div class="topic topic-player">
+                    <div class="two-columns">
+<div>
+<p>Klicka på skärmens högra kant eller på knappen <button class="inline btn btn-default"><i class="fa fa-cog"></i></button> högst upp i det högra hörnet för att fälla ut den högra sidopanelen. Här kan du anpassa utseendet på rutterna. Du kan ändra rutternas markörstorlek, svanslängd och genomskinlighet. Välj <em>Färgkodad</em> i rullgardinsmenyn <em>Svansutseende</em> för att låta färgen på ruttlinjerna variera beroende på den momentana hastigheten.</p>
+</div>
+<img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/player/settings.png"/>
+</div>
+                </div>
+                <div class="topic topic-player">
+                    <p>Det är möjligt att simulera en masstart från valfri position på kartan. Det ger en bra jämförelse mellan löpare på olika delar av banan.</p>
+
+<p>För att starta en masstart på en dator, håll ned <em>Ctrl</em>-tangenten (PC) eller <em>Command</em>-tangenten (Mac) och klicka på den plats där du vill sätta igång masstarten. På telefonen trycker du ner fingret och håller kvar det en stund på önskad startplats.</p>
+
+<p>Med knappen <button class="inline btn btn-default"><i class="livelox-icon livelox-icon-mass-start"></i></button> till höger om hastighetsreglaget högst upp på skärmen kan du växla mellan flera olika alternativ för masstart och individuell start.</p>
+                </div>
+
+                <div class="topic topic-legView">
+                    <p>Utforska detaljerna i din prestation, jämför med andra och förbättra din orienteringsteknik! Under fliken Sträckor kan du titta närmare på varje sträcka på banan. Följ den här guiden för att lära dig mer om funktionerna.</p>
+                </div>
+                <div class="topic topic-legView">
+                    <div class="two-columns">
+<div>Livelox tilldelar färger som varierar från grönt över gult till rött till de olika vägvalen på den aktuella sträckan. Grönt är snabbast och rött är långsammast.</div>
+<img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/leg-view/time-gradient.png"/>
+</div>
+
+<div class="two-columns">
+<div>För att navigera mellan sträckorna, använd sträckväljaren högst upp i fönstret.</div>
+<img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/leg-view/leg-selector.png"/>
+</div>
+
+<p>Du kan också använda navigeringspilarna på vänster och höger sida av skärmen för att växla till föregående eller nästa sträcka.</p>
+
+<p><img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/leg-view/leg-navigation.jpg" class="full-width"/></p>
+                </div>
+                <div class="topic topic-legView">
+                    <div class="two-columns">
+<div>
+<p>Panelen till vänster på skärmen visar deltagarna i ordningsföljd efter prestation på det aktuella sträckan. På mobilen kan du klicka på <i class="livelox-icon livelox-icon-list"></i>-knappen längst ned till vänster på skärmen eller svepa in från skärmens vänstra sida för att visa deltagarpanelen.</p>
+<p>När du klickar på en deltagare väljs den och hover-läget aktiveras. Detta gör att du kan låta muspekaren vila över deltagarens rutt på skärmen och se hur det går jämfört med andra deltagare.</p>
+</div>
+<img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/leg-view/participant-list.png"/>
+</div>
+                </div>
+                <div class="topic topic-legView">
+                    <p>Analysen kan utökas till hela banan genom att klicka på ikonen <button class="inline btn btn-default"><i class="livelox-icon livelox-icon-start-to-finish"></i ></button> längst upp till vänster i verktygsfältet.</p>
+
+<p>Det är också möjligt att analysera flera sträckor samtidigt, eller en del av en sträcka. Håll ned tangenten <em>Ctrl</em> (PC) eller <em>Command</em> (Mac) och dra det segment du vill analysera med musen. På mobilen klickar du först på ikonen <button class="inline btn btn-default"><i class="livelox-icon livelox-icon-custom-leg"></i></button> längst upp till vänster i verktygsfältet. Därefter väljer du start- och slutpunkt för segmentet.</p>
+                </div>
+                <div class="topic topic-legView">
+                    <p>När du aktiverar hastighetsutjämning med knappen <button class="inline btn btn-default"><i class="livelox-icon livelox-icon-speed-equalization"></i></button> i verktygsfältet justeras alla tider som om varje deltagare hade den snabbaste deltagarens fysiska nivå. Det tar bort de rena hastighetsskillnaderna mellan deltagarna men bevarar effekten av faktiska vägval och navigering. Det gör det lättare att avgöra vilket vägval som faktiskt var snabbast.</p>
+
+<p>Justeringen baseras på varje deltagares genomsnittshastighet på de stråk av banan där de presterade konsekvent bra jämfört med andra som sprang samma stråk.</p>
+
+<p>Den första bilden nedan visar en sträcka utan hastighetsutjämning, medan den andra bilden visar samma sträcka med hastighetsutjämning. Det bästa vägvalet framgår tydligare i den andra bilden.</p>
+
+<p><img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/leg-view/speed-equalization-disabled.jpg" class="full-width"/></p>
+
+<p><img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/leg-view/speed-equalization-enabled.jpg" class="full-width"/></p>
+
+<p>Funktionen fungerar bäst i klasser med många deltagare, eftersom fler överlappande rutter ger mer tillförlitliga hastighetsuppskattningar.</p>
+                </div>
+                <div class="topic topic-legView">
+                    <p>Prestationsfärgläggning, som aktiveras genom att välja en deltagare i deltagarpanelen och sedan klicka på den intilliggande knappen <button class="inline btn btn-default"><i class="livelox-icon livelox-icon-bullseye"></i></button>, visar hur deltagarens prestation varierade under loppet i förhållande till den genomsnittliga prestationen. För varje del av rutten beräknas prestationen genom att jämföra deltagarens hastighet med andra deltagares på samma del.</p>
+
+<p>Rutten färgläggs sedan utifrån hur varje del jämförs med deltagarens genomsnittliga prestation:</p>
+
+<ul class="list-unstyled">
+<li><span class="colored-bullet" style="color: #40d840"></span> Grön – över genomsnittet</li>
+<li><span class="colored-bullet" style="color: #ffffff"></span> Vit – nära genomsnittet</li>
+<li><span class="colored-bullet" style="color: #ff4040"></span> Röd – under genomsnittet</li>
+<li><span class="colored-bullet" style="visibility: hidden"></span> Grått raster – otillräckligt underlag</li>
+</ul>
+
+<p><img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/leg-view/performance-coloring.jpg" class="full-width"/></p>
+
+<p>Detta gör det enkelt att se var deltagaren tjänade eller förlorade tid i förhållande till sin normala nivå. Gröna sträckor tyder ofta på stark navigering eller ett bra genomförande av vägvalet, medan röda sträckor kan avslöja misstag eller tvekan.</p>
+
+<p>Färgerna speglar prestation snarare än hastighet. En långsam sträcka blir därför inte automatiskt röd om andra deltagare också saktades ner på samma sätt.</p>
+
+<p>Funktionen fungerar bäst i klasser med många deltagare, eftersom fler överlappande vägval ger mer tillförlitliga prestationsuppskattningar.</p>
+                </div>
+
+                <div class="topic topic-duel">
+                    <p>Duell är ett nytt analysverktyg i Livelox som gör det möjligt att jämföra två löpare man mot man. Följ den här guiden för att upptäcka alla funktioner i Duell-analysläget.</p>
+                </div>
+                <div class="topic topic-duel">
+                    <div class="two-columns">
+<div>
+<p>Fliken Duell visualiserar tidsvinst och tidsförlust på en sträcka för en utvald deltagare jämfört med en annan deltagare.</p>
+<p>Rutterna delas upp i segment beroende på om de två deltagarna har tagit samma vägval (prickade linjer) eller olika vägval (heldragna linjer).</p>
+<p>Den valda deltagarens rutt visas antingen i grönt (bättre tid i förhållande till den andra deltagaren) eller i rött (sämre tid), medan den andra deltagarens rutt alltid visas i grått.</p>
+</div>
+<img data-deferred-src="https://livelox.blob.core.windows.net/documentation-resources/viewer/guides/duel/time-loss-gain.jpg"/>
+</div>
+                </div>
+                <div class="topic topic-duel">
+                    <p>Du kan jämföra valfritt par av deltagare i en klass genom alla banans sträckor. Använd rullgardinsmenyerna för att välja deltagare.</p>
+
+<p>Den valda deltagaren bibehålls när du navigerar mellan sträckorna. Den deltagare som jämförelse görs mot byts antingen automatiskt till den som är snabbast på sträckan (knappen <button class="inline btn btn-default"><i class="livelox-icon livelox-icon-crown"></i></button>), eller behålls konstant (knappen <button class="inline btn btn-default"><i class="livelox-icon livelox-icon-padlock"></i></button>). Det sistnämnda kommer att möjliggöra jämförelse mellan samma två deltagare när du stegar igenom alla banans sträckor.</p>
+                </div>
+                <div class="topic topic-duel">
+                    <p>Navigering mellan sträckor fungerar på samma sätt som i fliken Sträckor. Klicka på ikonen <button class="inline btn btn-default"><i class="livelox-icon livelox-icon-start-to-finish"></i></button> längst upp till vänster i verktygsfältet för att visa hela banan på en gång.</p>
+
+<p>Det är också möjligt att analysera flera sträckor samtidigt, eller en del av en sträcka. Håll ned tangenten <em>Ctrl</em> (PC) eller <em>Command</em> (Mac) och dra det segment du vill analysera med musen. På mobilen klickar du först på ikonen <button class="inline btn btn-default"><i class="livelox-icon livelox-icon-custom-leg"></i></button> längst upp till vänster i verktygsfältet. Därefter väljer du start- och slutpunkt för segmentet.</p>
+                </div>
+                
+                <div class="topic topic-table">
+                    <p>Denna tabell visar alla mellantider för klassen, kontroll för kontroll.</p>
+
+<p>Om arrangören laddat upp en resultatlista direkt till Livelox eller via ett anslutet resultatsystem som Eventor används sträcktiderna från det elektroniska stämplingssystemet. Annars beräknar Livelox sträcktider baserat på rutterna. För varje kontroll skapas en "virtuell stämpling" till den position på rutten som är närmast mitten av kontrollcirkeln.</p>
+
+<p>Deltagare vars sträcktider kommer från elektronisk stämpling indikeras med symbolen <i class="fa fa-check"></i>, medan symbolen <i class="fa fa-calculator"></i > visas intill deltagare där den ruttbaserade algoritmen har använts.</p>
+                </div>
+                <div class="topic topic-table">
+                    <p>En cell i sträcktidstabellen innehåller två rader med information.</p>
+<p>Den första raden visar tid och plats för sträckan, d.v.s. från föregående kontroll till nuvarande kontroll.</p>
+<p>Den andra raden visar tid och plats från start till aktuell kontroll.</p>
+<p>I båda fallen visas den bästa tiden i <span style="color: #f00;">rött</span>. Andra och tredje bästa tid visas i <span style="color: #00f;">blått</span>.</p>
+                </div>
+                <div class="topic topic-table">
+                    <p>Du kan även se andra parametrar än tid.</p>
+<ul>
+<li>Ruttlängder: det faktiska tillryggalagda sträckan till kontrollen</li>
+<li>Rutttempo: genomsnittligt tempo i min/km för den faktiska tillryggalagda sträckan</li>
+<li>Tempo mellan kontrollerna: genomsnittligt tempo i min/km baserat på avståndet fågelvägen mellan kontrollerna</li>
+<li>Ruttlängd jämfört med rakt på: hur mycket längre rutten är i procent jämfört med fågelvägen</li>
+</ul>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default icon-button" data-bind="click: onPreviousButtonClicked">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+
+                <div id="guide-modal-page-navigator" data-bind="foreach: pages">
+                    <i data-bind="attr: { 'class': $parent.getPageCircleClass($data.index) }, click: $parent.onPageClicked($data.index)"></i>
+                </div>
+
+                <button type="button" class="btn btn-default icon-button" data-bind="click: onNextButtonClicked">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+<div id="no-subscription-modal" class="modal modal-vertically-centered fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    En prenumeration krävs
+                </h1>
+            </div>
+
+            <div class="modal-body">
+                <p>
+                    Endast en enskild deltagares rutt visas åt gången. För att visa flera rutter behöver du en prenumeration.
+Prova gratis i 14 dagar!                </p>
+                
+                <!-- ko if: classInfo.routeAccessResult.reason !== ll.routeAccessReason.noSubscription -->
+                <p data-bind="text: ll.routeAccessReason.getExplanation(classInfo.routeAccessResult)"></p>
+                <!-- /ko -->
+            </div>
+
+            <div class="modal-footer">
+                <a href="/Pricing/Subscriptions" class="btn btn-primary">
+                    <i class="fa fa-shopping-cart"></i>
+                    Uppgradera
+                </a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Stäng
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="duel-chart-modal" class="modal modal-vertically-centered fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h1 class="modal-title">
+                    Duellgraf
+                </h1>
+            </div>
+
+            <div class="modal-body">
+                <div class="duel-chart-container">
+                    <canvas class="duel-chart"></canvas>
+                    <canvas class="duel-chart-hover-markers"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+<div id="upload-results-modal" class="modal fade" data-bind="with: uploadResultsModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Inga resultat har laddats upp</h1>
+            </div>
+            <div class="modal-body">
+                <div id="upload-results-modal-icon"><i class="fa fa-upload"></i></div>
+                <p>Vi skulle vilja be dig som administratör för denna aktivitet att ladda upp resultat. Det ger deltagarna en ännu bättre upplevelse.</p>
+                
+                <p>Att ladda upp en resultatlista med sträcktider från ett elektroniskt stämplingssystem har två fördelar. 1) Stämplingssträcktider är mer exakta än sträcktider som beräknas baserat på GPS-rutter. 2) Deltagarnas rutter kopplas automatiskt till rätt klasser i aktiviteten med en högre träffsäkerhet.</p>
+                
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="uploadResultsModalChoice" data-bind="attr: { value: choices.upload }, checked: choice" />
+                        Ladda upp resultat
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="uploadResultsModalChoice" data-bind="attr: { value: choices.later }, checked: choice" />
+                        Kanske senare
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="uploadResultsModalChoice" data-bind="attr: { value: choices.ignore }, checked: choice" />
+                        Fråga mig inte igen för den här aktiviteten
+                    </label>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: onOkButtonClicked">
+                    <i class="fa fa-check"></i>
+                    Ok
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="participant-visibility-modal" class="modal fade" data-bind="with: participantVisibilityModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Välj deltagare att visa</h1>
+            </div>
+            <div class="modal-body" data-bind="with: participantVisibilitySelector">
+                <form class="participant-visibility-selector">
+    <div class="visibility-mode-container">
+        <div class="selectable-item" data-bind="css: { selected: visibilityMode() === 'Restricted' }">
+            <label>
+                <input type="radio" name="visibility-mode" value="Restricted" data-bind="checked: visibilityMode" />
+                <span class="text-container">
+                    <span class="title">Visa ett urval</span>
+                </span>
+            </label>
+        </div>
+        <div class="selectable-item" data-bind="css: { selected: visibilityMode() === 'Full' }">
+            <label>
+                <input type="radio" name="visibility-mode" value="Full" data-bind="checked: visibilityMode" />
+                <span class="text-container">
+                    <span class="title">Visa alla</span>
+                </span>
+            </label>
+        </div>
+    </div>
+
+    <ul class="list-unstyled" data-bind="visible: visibilityMode() === 'Restricted'">
+        <li data-bind="with: options.topX">
+            <label>
+                <span class="checkbox-container">
+                    <input type="checkbox" data-bind="checked: selected" />
+                </span>
+                <span class="interactive-label">
+                    Topp <input type="number" class="form-control limit" data-bind="value: limit"/>
+                </span>
+            </label>
+        </li>
+
+        <li data-bind="with: options.similarResult">
+            <label>
+                <span class="checkbox-container">
+                    <input type="checkbox" data-bind="checked: selected" />
+                </span>
+                <span class="interactive-label">
+                    Deltagare med sluttider i närheten av <a href="javascript: void(0)" data-bind="text: participantName, click: onParticipantNameClicked"></a>
+                 </span>
+            </label>
+        </li>
+
+        <li data-bind="with: options.interactors">
+            <label>
+                <span class="checkbox-container">
+                    <input type="checkbox" data-bind="checked: selected" />
+                </span>
+                <span class="interactive-label">
+                    Deltagare som interagerade med <a href="javascript: void(0)" data-bind="text: participantName, click: onParticipantNameClicked"></a> på banan
+                </span>
+            </label>
+        </li>
+        <!-- ko if: organisationsExist -->
+        <li data-bind="with: options.organisation">
+            <label>
+                <span class="checkbox-container">
+                    <input type="checkbox" data-bind="checked: selected" />
+                </span>
+                <span class="interactive-label">
+                    Deltagare som representerar <a href="javascript: void(0)" data-bind="text: organisationNameOrDefault, click: onOrganisationNameClicked"></a>
+                </span>
+            </label>
+        </li>
+        <!-- /ko -->
+    </ul>
+</form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: onOkButtonClicked">
+                    <i class="fa fa-check"></i>
+                    Ok
+                </button>
+                <button type="button" class="btn btn-primary" data-bind="click: onCancelButtonClicked">
+                    <i class="fa fa-times"></i>
+                    Avbryt
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+<div id="new-feature-information-modal" class="modal modal-vertically-centered fade" data-bind="with: newFeatureInformationModal" tabindex="-1" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">
+                    <span class="sparkling">Ny funktion: <span data-bind="text: title"></span></span>
+                </h1>
+            </div>
+
+            <div class="modal-body" data-bind="html: message">
+            </div>
+
+            <div class="modal-footer">
+                <div>
+                    <label id="new-feature-information-modal-checkbox">
+                        <input type="checkbox" data-bind="checked: dontShowThisMessageAgain" />
+                        Visa inte det här meddelandet igen
+                    </label>
+                    <button type="button" class="btn btn-primary" data-bind="click: onOkButtonClicked">
+                        <i class="fa fa-check"></i>
+                        Ok
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div id="add-route-modal-not-authenticated"
+         class="bootbox-template"
+         data-title="Inloggning kr&#xE4;vs"
+         data-message="Du m&#xE5;ste vara inloggad f&#xF6;r att l&#xE4;gga till en rutt. G&#xE5; till &lt;a href=&quot;/Home/Login&quot;&gt;inloggningssidan&lt;/a&gt; eller &lt;a href=&quot;/Account/Users/Create&quot;&gt;skapa ett anv&#xE4;ndarkonto&lt;/a&gt;.">
+    </div>
+
+
+    <div id="top-panel-menu" data-bind="visible: topPanel.menuVisible()">
+    <ul>
+        <li data-bind="if: topPanel.showAddRouteLink">
+            <a href="#" data-bind="click: topPanel.onAddRouteLinkClicked">
+                Lägg till rutt
+            </a>
+        </li>
+
+        <li data-bind="if: topPanel.showAllClassesHavingThisCourseLink">
+            <a href="#" data-bind="click: topPanel.onShowAllClassesHavingThisCourseLinkClicked">
+                Slå samman alla klasser med denna bana (<span data-bind="text: topPanel.allClassesHavingThisCourseText"></span>)
+            </a>
+        </li>
+        
+        <li data-bind="if: topPanel.showClassesAndCoursesLink">
+            <a href="#" data-bind="click: topPanel.onClassesAndCoursesLinkClicked">
+                Slå samman klasser/banor
+            </a>
+        </li>
+        
+
+        <li data-bind="if: topPanel.showDownloadMapImageLink">
+            <a href="#" data-bind="click: topPanel.onDownloadMapImageLinkClicked">
+                Ladda ner karta
+            </a>
+        </li>
+
+        <li data-bind="if: topPanel.showOverviewMapLink">
+            <a href="#" data-bind="click: topPanel.onShowOverviewMapLinkClicked">
+                Visa översiktskarta
+            </a>
+        </li>
+
+        <!-- ko foreach: topPanel.followableOrganisations -->
+        <li>
+            <a href="#" data-bind="click: $parent.topPanel.onAddFollowedOrganisationConnectionLinkClicked">
+                <span data-bind="text: s('common.followX', name)"></span>
+            </a>
+        </li>
+        <!-- /ko -->
+
+        <li data-bind="if: topPanel.showEventAdminLink">
+            <a data-bind="attr: { href: eventAdminUrl }">
+                Redigera aktivitet
+            </a>
+        </li>
+        
+        <li class="visible-xs" data-bind="if: $root.guideAvailable">
+            <a href="#" data-bind="click: topPanel.onShowGuideButtonClicked">
+                Visa användarguide för den här vyn
+            </a>
+        </li>
+
+        <li class="visible-xs" data-bind="if: topPanel.northAlignMapButtonVisible">
+            <a href="#" data-bind="click: topPanel.onNorthAlignMapButtonClicked">
+                Rotera kartan så att norr är uppåt
+            </a>
+        </li>
+
+        <li class="visible-xs" data-bind="if: topPanel.openMapSelectorButtonVisible">
+            <a href="#" data-bind="click: topPanel.onOpenMapSelectorButtonClicked">
+                Kartor
+            </a>
+        </li>
+        
+        <li data-bind="if: leftPanel.enabled() && leftPanel.expanded()">
+            <a href="#" data-bind="click: topPanel.onToggleLeftPanelButtonClicked">
+                Dölj deltagarpanelen
+            </a>
+        </li>
+        
+        <li data-bind="if: leftPanel.enabled() && !leftPanel.expanded()">
+            <a href="#" data-bind="click: topPanel.onToggleLeftPanelButtonClicked">
+                Visa deltagarpanelen
+            </a>
+        </li>
+        
+        <li data-bind="if: rightPanel.enabled() && rightPanel.expanded()">
+            <a href="#" data-bind="click: topPanel.onToggleRightPanelButtonClicked">
+                Dölj inställningspanelen
+            </a>
+        </li>
+
+        <li data-bind="if: rightPanel.enabled() && !rightPanel.expanded()">
+            <a href="#" data-bind="click: topPanel.onToggleRightPanelButtonClicked">
+                Visa inställningspanelen
+            </a>
+        </li>
+
+    </ul>
+</div>
+</div>
+
+<div id="loading-screen" style="display: none;" data-bind="visible: true">
+    <div id="loading-screen-layout-container">
+        <div id="loading-screen-information-box">
+            <div id="loading-screen-information-box-header">
+                <img id="loading-screen-information-box-logotype" src="/Images/livelox-logo-white.png" alt="Livelox" />
+                <i class="loading-spinner fa fa-spinner fa-spin fa-2x" data-bind="visible: loadingSpinnerVisible"></i>
+                <i class="livelox-icon livelox-icon-padlock fa-2x" data-bind="visible: notYetPublished"></i>
+            </div>
+            
+            <div id="loading-screen-information-box-content">
+                <!-- ko if: eventAndClassInformation.visible -->
+
+<div id="loading-screen-event-and-class-information" class="loading-screen-information" data-bind="with: eventAndClassInformation, css: { 'is-loading': eventAndClassInformation.isLoadingNow } ">
+    <div id="loading-screen-event-and-class-information-wrapper">
+        <div id="loading-screen-event-name" class="loading-placeholder" data-bind="text: formattedEventName"></div>
+        <div id="loading-screen-event-organiser-and-country" class="loading-placeholder" data-bind="html: formattedEventOrganisers"></div>
+        <div id="loading-screen-class-name" class="loading-placeholder" data-bind="visible: classNameVisible, html: formattedClassName"></div>
+    </div>
+    <img id="loading-screen-event-icon" data-bind="attr: { src: eventIconUrl }" />
+    <div id="loading-screen-event-icon-loading-placeholder" class="loading-placeholder"></div>
+</div>
+
+<!-- /ko -->
+
+                <!-- ko if: sessionInformation.visible -->
+
+<div id="loading-screen-session-information" class="loading-screen-information" data-bind="with: sessionInformation, css: { 'is-loading': sessionInformation.isLoadingNow } ">
+    <div id="loading-screen-session-name" class="loading-placeholder" data-bind="text: formattedSessionName"></div>
+    <div id="loading-screen-person-name" class="loading-placeholder" data-bind="text: formattedPersonName"></div>
+</div>
+
+<!-- /ko -->
+
+                <!-- ko if: loadingMessages.visible -->
+
+<ul id="loading-screen-messages" data-bind="foreach: loadingMessages.items">
+    <li data-bind="attr: { class: $root.loadingMessages.getElementClass($data) }">
+        <div class="loading-message-icon">
+            <i data-bind="attr: { class: $root.loadingMessages.getIconClass($data) }"></i>
+        </div>
+        <div class="loading-message-text"><span data-bind="text: text"></span> <span class="ellipsis">&hellip;</span></div>
+        <div class="loading-message-time" data-bind="text: $root.loadingMessages.getElapsedTime($data)"></div>
+    </li>
+</ul>
+
+<!-- /ko -->
+
+                
+<!-- ko if: failedInformation.visible -->
+
+<div id="loading-screen-failed-information" class="loading-screen-bottom-section" data-bind="with: failedInformation">
+
+    <!-- ko if: notYetPublished -->
+    <div>
+        <div>
+            <span data-bind="html: ll.util.format(&#x27;Klassen &amp;#xE4;r inte publicerad &amp;#xE4;n. Publiceringstiden &amp;#xE4;r {0}.&#x27;,ll.uiUtil.htmlEncode(ll.util.formatDateTime(publicationTime(), &#x27;dateTime24h&#x27;)))"></span>
+        </div>
+        
+        <div class="time-left-container">
+            <div class="time-left-label">Tid kvar</div>
+            <div class="time-left" data-bind="text: ll.util.formatElapsedTime(timeLeftUntilPublication(), false, false, true, true)"></div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: delayedAccessForFreeRiders -->
+    <div>
+        <h2>
+            Åtkomst endast för prenumeranter
+        </h2>
+        
+        <div>
+            Just nu är denna aktivitet endast tillgänglig för Livelox Premium-prenumeranter.
+            <span data-bind="html: ll.util.format(&#x27;Aktiviteten kommer att vara tillg&amp;#xE4;nglig f&amp;#xF6;r anv&amp;#xE4;ndare utan prenumeration fr&amp;#xE5;n {0}.&#x27;,ll.uiUtil.htmlEncode(ll.util.formatDateTime(publicationTime(), &#x27;dateTime24h&#x27;)))"></span>
+            <a href="/Documentation/Publishing">Läs mer</a>
+        </div>
+
+        <div class="time-left-container">
+            <div class="time-left-label">Tid kvar</div>
+            <div class="time-left" data-bind="text: ll.util.formatElapsedTime(timeLeftUntilPublication(), false, false, true, true)"></div>
+        </div>
+
+        <a href="/Pricing/Subscriptions" class="btn btn-primary full-width-button">
+            <div>
+                <i class="fa fa-2x fa-shopping-cart"></i>
+            </div>
+            <div>
+                <div>
+                    Prenumerera för att få tillgång nu
+                </div>
+                <div id="loading-screen-trial-subscription-information">
+                    Prova gratis i 14 dagar!
+                </div>
+            </div>
+        </a>
+        
+            <div id="loading-screen-already-a-subscriber">
+                Har du redan en Livelox Premium-prenumeration?
+                <a href="/Authentication/Login?redirectUrl=https%3A%2F%2Fwww.livelox.com%2FViewer%2FSM-natt-med-Swedish-League-3%2FD21-Elit%3FclassId%3D67156" class="no-button">Logga in</a>
+            </div>
+
+    </div>
+    <!-- /ko -->
+
+    <!-- ko if: message -->
+    <div data-bind="text: message"></div>
+    <!-- /ko -->
+
+</div>
+
+<!-- /ko -->
+
+                <!-- ko if: askForPassword.visible -->
+
+<div class="loading-screen-bottom-section" data-bind="with: askForPassword">
+    <h2>Lösenord krävs</h2>
+    
+    <div data-bind="text: label"></div>
+
+    <div class="alert alert-danger" data-bind="visible: passwordIsInvalid">
+        <i class="fa fa-warning icon-warning"></i>
+        Felaktigt lösenord. Var vänlig försök igen.
+    </div>
+                
+    <div>
+        <div id="loading-screen-ask-for-password-input-container">
+            <input
+                type="password"
+                id="loading-screen-ask-for-password-field"
+                class="form-control"
+                autocomplete="off"
+                data-bind="value: password, enable: !validatingPasswordNow(), event: { keypress: onPasswordKeyPress }"
+            />
+            <button type="button" class="btn btn-primary" data-bind="click: onOkButtonClicked, enable: !validatingPasswordNow()">
+                <i class="fa fa-check"></i>
+                Ok
+            </button>
+        </div>
+        <label id="loading-screen-remember-password">
+            <input type="checkbox" data-bind="checked: rememberPassword, enable: !validatingPasswordNow()" />
+            Kom ihåg lösenordet
+        </label>
+        <div class="help-block">Kryssa i rutan för att kunna komma åt den här aktiviteten utan att behöva ange lösenordet igen.</div>
+    </div>
+</div>
+
+<!-- /ko -->
+
+                <!-- ko if: askForLiveEnabled.visible -->
+
+<div id="loading-screen-ask-for-live-enabled" class="loading-screen-bottom-section" data-bind="with: askForLiveEnabled">
+    <h2>
+        Välj visningsläge
+    </h2>
+    <div>
+        Denna aktivitet pågår just nu. Du kan antingen följa deltagarna i realtid eller spela upp rutterna från början.
+    </div>
+    <button type="button" class="btn btn-primary full-width-button" data-bind="click: onLiveButtonClicked">
+        <div>
+            <i class="fa fa-2x fa-bolt"></i>
+        </div>
+        <div>
+            Följ i realtid
+        </div>
+    </button>
+    <button type="button" class="btn btn-primary full-width-button" data-bind="click: onReplayButtonClicked">
+        <div>
+            <i class="fa fa-2x fa-play-circle"></i>
+        </div>
+        <div>
+            Spela upp från början
+        </div>
+    </button>
+</div>
+
+<!-- /ko -->
+
+                <!-- ko if: participantVisibilitySelectorVisible -->
+
+<div id="participant-visibility-selector-wrapper" class="loading-screen-bottom-section">
+    <h2>Välj deltagare att visa</h2>
+    
+    <div>Den här klassen har många deltagare. För ökad tydlighet kan du begränsa vilka som visas.</div>
+    
+    <div data-bind="with: participantVisibilitySelector">
+        <form class="participant-visibility-selector">
+    <div class="visibility-mode-container">
+        <div class="selectable-item" data-bind="css: { selected: visibilityMode() === 'Restricted' }">
+            <label>
+                <input type="radio" name="visibility-mode" value="Restricted" data-bind="checked: visibilityMode" />
+                <span class="text-container">
+                    <span class="title">Visa ett urval</span>
+                </span>
+            </label>
+        </div>
+        <div class="selectable-item" data-bind="css: { selected: visibilityMode() === 'Full' }">
+            <label>
+                <input type="radio" name="visibility-mode" value="Full" data-bind="checked: visibilityMode" />
+                <span class="text-container">
+                    <span class="title">Visa alla</span>
+                </span>
+            </label>
+        </div>
+    </div>
+
+    <ul class="list-unstyled" data-bind="visible: visibilityMode() === 'Restricted'">
+        <li data-bind="with: options.topX">
+            <label>
+                <span class="checkbox-container">
+                    <input type="checkbox" data-bind="checked: selected" />
+                </span>
+                <span class="interactive-label">
+                    Topp <input type="number" class="form-control limit" data-bind="value: limit"/>
+                </span>
+            </label>
+        </li>
+
+        <li data-bind="with: options.similarResult">
+            <label>
+                <span class="checkbox-container">
+                    <input type="checkbox" data-bind="checked: selected" />
+                </span>
+                <span class="interactive-label">
+                    Deltagare med sluttider i närheten av <a href="javascript: void(0)" data-bind="text: participantName, click: onParticipantNameClicked"></a>
+                 </span>
+            </label>
+        </li>
+
+        <li data-bind="with: options.interactors">
+            <label>
+                <span class="checkbox-container">
+                    <input type="checkbox" data-bind="checked: selected" />
+                </span>
+                <span class="interactive-label">
+                    Deltagare som interagerade med <a href="javascript: void(0)" data-bind="text: participantName, click: onParticipantNameClicked"></a> på banan
+                </span>
+            </label>
+        </li>
+        <!-- ko if: organisationsExist -->
+        <li data-bind="with: options.organisation">
+            <label>
+                <span class="checkbox-container">
+                    <input type="checkbox" data-bind="checked: selected" />
+                </span>
+                <span class="interactive-label">
+                    Deltagare som representerar <a href="javascript: void(0)" data-bind="text: organisationNameOrDefault, click: onOrganisationNameClicked"></a>
+                </span>
+            </label>
+        </li>
+        <!-- /ko -->
+    </ul>
+</form>
+    </div>
+    
+    <button type="button" class="btn btn-primary" data-bind="click: onParticipantVisibilitySelectorOk, enable: participantVisibilitySelector.isValid">
+        <i class="fa fa-check"></i>
+        Ok
+    </button>
+</div>
+
+<!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div id="new-viewer-features-site-popup" class="new-viewer-features-site-popup site-popup site-popup-uninitialized" data-openatpageload="false" data-delays="3;3;3;3;3;3;3;3;3;3" data-from=" 2026-07-16 00:00:00" data-to="2026-08-16 00:00:00">
+        <div class="site-popup-header">
+            <div class="site-popup-title">
+                <i class="fa fa-bullhorn"></i>
+                Nya funktioner
+            </div>
+            <button class="site-popup-close-button" data-bind="click: onCloseButtonClicked">
+                <i class="fa fa-times"></i>
+            </button>
+
+        </div>
+        <div class="site-popup-body">
+            <p>Spana in dessa nya spännande funktioner i fliken Sträckor!</p><ul class="list-unstyled">
+                    <li>
+                        <i class="livelox-icon livelox-icon-speed-equalization"></i>
+                        <a href="javascript:void(0)" data-bind="click: () => window.globals.viewer.showGuideModal('legView', 4)">Hastighetsutjämning</a>  </li>
+                    <li>
+                        <i class="livelox-icon livelox-icon-bullseye"></i>
+                        <a href="javascript:void(0)" data-bind="click: () => window.globals.viewer.showGuideModal('legView', 5)">Färglägg rutt efter prestation</a>  </li>
+                </ul><p>Läs mer via länkarna ovan.</p>
+        </div>
+    </div>
+
+
+        </div>
+        
+        <div id="data-bind-modals">
+            
+    
+<div id="session-class-candidates-modal" class="modal fade" tabindex="-1" data-bind="with: sessionClassCandidatesModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">
+                    Koppla rutt till klass
+                </h3>
+            </div>
+
+            <div class="modal-body" data-bind="css: { 'is-relay': isRelay }">
+                <!-- ko if: mode() === ll.SessionClassCandidatesModal.modes.multiEvent -->
+                <div>Den här rutten matchar en aktivitet som den ännu inte har kopplats till.</div>
+                <!-- /ko -->
+                <!-- ko if: mode() === ll.SessionClassCandidatesModal.modes.singleEvent -->
+                <div>Du har en rutt som matchar den här aktiviteten, men som ännu inte är kopplad till den.</div>
+                <!-- /ko -->
+                <!-- ko if: mode() === ll.SessionClassCandidatesModal.modes.singleClass -->
+                <div>Du har en rutt som matchar den här klassen, men som ännu inte är kopplad till den.</div>
+                <!-- /ko -->
+                <!-- ko if: mode() !== ll.SessionClassCandidatesModal.modes.singleClass -->
+                <div class="margin-top">
+                    <!-- ko foreach: sessionClassCandidateOptions -->
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="selectedOption" data-bind="attr: { value: $data.value }, checked: $parent.selectedOption" />
+                            <span>Koppla till <span data-bind="text: $data.label"></span></span>
+                        </label>
+                        <!-- ko if: hasRelayLegs -->
+                        <div data-bind="visible: $data.value === $parent.selectedOption()">
+                            <label class="relay-leg-label">
+                                Stafettsträcka:
+                                <select data-bind="options: relayLegs, optionsValue: 'leg', optionsText: 'name', value: selectedRelayLeg"></select>
+                            </label>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                    <!-- /ko -->
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="selectedOption" data-bind="attr: { value: ll.SessionClassCandidatesModal.options.connectToOtherClass }, checked: selectedOption" />
+                            <span>Koppla till en annan klass</span>
+                        </label>
+                    </div>
+                    <div class="radio" data-bind="visible: includeDoNotConnectOption">
+                        <label>
+                            <input type="radio" name="selectedOption" data-bind="attr: { value: ll.SessionClassCandidatesModal.options.doNotConnect }, checked: selectedOption" />
+                            <span>Koppla inte till någon klass</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click: onOkButtonClicked, enable: okButtonEnabled">
+                    <i class="fa fa-check"></i>
+                    <span data-bind="visible: mode() !== ll.SessionClassCandidatesModal.modes.singleClass">
+                        Ok
+                    </span>
+                    <span data-bind="visible: mode() === ll.SessionClassCandidatesModal.modes.singleClass">
+                        Koppla
+                    </span>
+                </button>
+                <!-- ko if: cancelButtonVisible -->
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    <span data-bind="visible: mode() !== ll.SessionClassCandidatesModal.modes.singleClass">
+                        Avbryt
+                    </span>
+                    <span data-bind="visible: mode() === ll.SessionClassCandidatesModal.modes.singleClass">
+                        Hoppa över
+                    </span>
+                </button>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div id="live-connection-failure-modal"
+         class="bootbox-template"
+         data-title="Anslutningsproblem"
+         data-message="Anslutningen till liveservern misslyckades. Orsaken kan vara en l&#xE5;ngsam internetuppkoppling eller m&#xE5;nga samtidiga bes&#xF6;kare. Anslutningen kommer att f&#xF6;rs&#xF6;ka &#xE5;terupptas per automatik.">
+    </div>
+
+    <div id="map-loading-error-modal"
+         class="bootbox-template"
+         data-title="Ett fel intr&#xE4;ffade"
+         data-message="Kartan kunde inte laddas. Den kan ha tagits bort eller &#xE4;r otillg&#xE4;nglig p&#xE5; grund av n&#xE4;tverksproblem.">
+    </div>
+
+        </div>
+        <div id="selector-modals">
+        
+    
+<div id="person-modal" class="modal fade" tabindex="-1"
+     data-systems="null"
+     data-selected-system-id="null"
+     data-multiple="false"
+     data-show-organisation-icons="false"
+     data-free-text-search="false"
+     data-deferred-loading="true"
+     data-selected-organisation-id="null">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title"></h3>
+            </div>
+            <div class="modal-body">
+
+                <div class="">
+                    
+                    <div class="" id="search-by-organisation-tab">
+
+                            <div class="form-group system-container">
+                                <label>System</label>
+                                <select class="system-selector" data-bind="options: systems, optionsText: 'name', value: selectedSystem"></select>
+                            </div>
+                        <div class="form-group organisation-container">
+                            <label>Organisation</label>
+                            <div class="loading-info"><i class="fa fa-spinner fa-spin"></i> <span class="loading-info-text"></span></div>
+                            <input class="organisation-selector" data-allow-clear="true" data-data-source="local" data-home-organisations-only="true" data-items="[]" data-minimum-input-length="1" data-multiple="false" data-organisations-for-current-user-only="false" data-organisations-that-organised-at-least-one-event-only="false" data-read-only="false" data-show-icons="false" type="hidden" />
+                        </div>
+                        <div class="form-group person-container">
+                            <label>Person</label>
+                            <div class="loading-info"><i class="fa fa-spinner fa-spin"></i> <span class="loading-info-text"></span></div>
+                            <input class="person-selector" data-allow-clear="true" data-data-source="local" data-items="[]" data-minimum-input-length="1" data-multiple="false" data-read-only="false" type="hidden" />
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary ok-button" data-bind="enable: selectedPersons().length > 0 && activeTab() !== 'search-by-free-text-tab', click: onOk"><i class="fa fa-check"></i> Ok</button>
+                <button type="button" class="btn btn-default cancel-button" data-bind="click: onCancel"><i class="fa fa-times"></i> Avbryt</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+    
+<div id="typeahead-selector-modal" class="modal fade" tabindex="-1" data-keyboard="false" data-backdrop="static">
+    <div id="typeahead-selector-modal-dialog-wrapper">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title"></h1>
+                </div>
+                <div class="modal-body">
+                    <input id="typeahead-selector-modal-items" type="text" class="typeahead form-control" data-provide="typeahead" autocomplete="off" />
+                </div>
+                <div class="modal-footer">
+                    <button id="typeahead-selector-modal-ok-button" type="button" class="btn btn-primary">
+                        <i class="fa fa-check"></i>
+                        Ok
+                    </button>
+                    <button id="typeahead-selector-modal-cancel-button" type="button" class="btn btn-primary">
+                        <i class="fa fa-times"></i>
+                        Avbryt
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    
+        <div id="ad-information-modal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Om våra annonser</h3>
+            </div>
+            
+            <div class="modal-body">
+                Livelox är en <em>freemium</em>-tjänst &ndash; vi tillhandahåller en grundläggande uppsättning funktioner gratis, men för att ta del av alla funktioner behövs en betald Premium-prenumeration. För att täcka våra kostnader för dig som icke-betalande användare visar vi annonser på sajten. Vill du inte att de ska ta upp värdefullt skärmutrymme? Uppgradera till en Premium-prenumeration för en annonsfri upplevelse.
+            </div>
+
+            <div class="modal-footer">
+                <a class="btn btn-primary" href="/Account/Orders/PremiumSubscription">
+                    <i class="fa fa-shopping-cart"></i>
+                    Köp en Livelox Premium-prenumeration
+                </a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Stäng
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3702105520255513" crossorigin="anonymous"></script>
+<script src="/Scripts/lib/core?v=0YAEd0IWg-7gbbpH56wj964RZPU"></script>
+<script src="/Home/ResourceScript/sv-SE/450281C9E9E47777B15787022B5C3D4F"></script>
+<script src="/Scripts/site?v=b9KlZBGk3YzJaZSirom8_Ac3eSc"></script>
+
+<script>
+    window.ll.resources = {
+        inlineTranslationEnabled: false,
+        currentCulture: {"code":"sv-SE","nativeNameAndRegion":"svenska (Sverige)"},
+        cultures: null
+    };
+</script>
+
+
+        <script type="text/plain" data-cookiecategory="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-GLM75Y30LE"></script>
+        <script type="text/plain" data-cookiecategory="analytics">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GLM75Y30LE');
+        </script>
+
+
+        <script type="text/plain" data-cookiecategory="analytics">
+            !function(v,y,T){var S=v.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w=(D[b](),"crossOrigin"),N="POST",e="appInsightsSDK",t=T.name||"appInsights",n=((T.name||v[e])&&(v[e]=t),v[t]||function(l){var u=!1,d=!1,g={initialize:!0,queue:[],sv:"6",version:2,config:l};function m(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(g.sv||g.version),{time:(a=new Date).getUTCFullYear()+"-"+i(1+a.getUTCMonth())+"-"+i(a.getUTCDate())+"T"+i(a.getUTCHours())+":"+i(a.getUTCMinutes())+":"+i(a.getUTCSeconds())+"."+(a.getUTCMilliseconds()/1e3).toFixed(3).slice(2,5)+"Z",iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}};function i(e){e=""+e;return 1===e.length?"0"+e:e}}var e,n,f=l.url||T.src;function a(e){var t,n,a,i,o,s,r,c,p;u=!0,g.queue=[],d||(d=!0,i=f,r=(c=function(){var e,t={},n=l.connectionString;if(n)for(var a=n.split(";"),i=0;i<a.length;i++){var o=a[i].split("=");2===o.length&&(t[o[0][b]()]=o[1])}return t[C]||(t[C]="https://"+((e=(n=t.endpointsuffix)?t.location:null)?e+".":"")+"dc."+(n||"services.visualstudio.com")),t}()).instrumentationkey||l[D]||"",c=(c=c[C])?c+"/v2/track":l.endpointUrl,(p=[]).push((t="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",n=i,o=c,(s=(a=m(r,"Exception")).data).baseType="ExceptionData",s.baseData.exceptions=[{typeName:"SDKLoadFailed",message:t.replace(/\./g,"-"),hasFullStack:!1,stack:t+"\nSnippet failed to load ["+n+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+o,parsedStack:[]}],a)),p.push((s=i,t=c,(o=(n=m(r,"Message")).data).baseType="MessageData",(a=o.baseData).message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+s+")").replace(/\"/g,"")+'"',a.properties={endpoint:t},n)),i=p,r=c,JSON&&((o=v.fetch)&&!T.useXhr?o(r,{method:N,body:JSON.stringify(i),mode:"cors"}):XMLHttpRequest&&((s=new XMLHttpRequest).open(N,r),s.setRequestHeader("Content-type","application/json"),s.send(JSON.stringify(i)))))}function i(e,t){d||setTimeout(function(){!t&&g.core||a()},500)}f&&((n=y.createElement(k)).src=f,!(o=T[w])&&""!==o||"undefined"==n[w]||(n[w]=o),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},e=n,T.ld<0?y.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){y.getElementsByTagName(k)[0].parentNode.appendChild(e)},T.ld||0));try{g.cookie=y.cookie}catch(h){}function t(e){for(;e.length;)!function(t){g[t]=function(){var e=arguments;u||g.queue.push(function(){g[t].apply(g,e)})}}(e.pop())}var s,r,o="track",c="TrackPage",p="TrackEvent",o=(t([o+"Event",o+"PageView",o+"Exception",o+"Trace",o+"DependencyData",o+"Metric",o+"PageViewPerformance","start"+c,"stop"+c,"start"+p,"stop"+p,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),g.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},(l.extensionConfig||{}).ApplicationInsightsAnalytics||{});return!0!==l[I]&&!0!==o[I]&&(t(["_"+(s="onerror")]),r=v[s],v[s]=function(e,t,n,a,i){var o=r&&r(e,t,n,a,i);return!0!==o&&g["_"+s]({message:e,url:t,lineNumber:n,columnNumber:a,error:i,evt:v.event}),o},l.autoExceptionInstrumented=!0),g}(T.cfg));function a(){T.onInit&&T.onInit(n)}(v[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+            src: "https://js.monitor.azure.com/scripts/b/ai.2.8.16.min.js",
+            crossOrigin: "anonymous",
+            cfg: {
+                connectionString: "InstrumentationKey=5a5499fb-76ab-46fc-8e2c-c6a6e9d12285;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+                disableAjaxTracking: true
+            },
+            onInit: appInsights => {
+                appInsights.trackPageView();
+                const errorsToIgnore = [
+                    "same-origin policy prevents us from getting the details of this exception",
+                    "ResizeObserver loop",
+                    "Failed to load Application Insights SDK script"
+                ];
+                appInsights.addTelemetryInitializer(item => {
+                    const message =
+                        item.data?.baseData?.exceptions?.[0]?.message ??
+                        item.data?.baseData?.message ??
+                        "";
+
+                    if (errorsToIgnore.some(o => message.includes(o))) {
+                        return false;
+                    }
+                    
+                    return true;
+                });
+                appInsights.addDependencyInitializer(() => false);
+                window.appInsights = appInsights;
+                (window.applicationInsightsEventQueue ?? []).forEach(data => {
+                    window.appInsights.trackEvent(data);
+                });
+                window.applicationInsightsEventQueue = [];
+            }});
+        </script>
+
+<script type="text/javascript">
+    window.applicationInsightsWrapper = window.applicationInsightsWrapper ?? {
+        trackEvent: (data, onlyOnce = false) => {
+            if(onlyOnce && window.applicationInsightsWrapper.trackedEvents[data.name]) {
+                return;
+            }
+            if (window.appInsights?.trackEvent) {
+                window.appInsights.trackEvent(data);
+            } else {
+                window.applicationInsightsEventQueue = window.appInsightsEventQueue ?? [];
+                window.applicationInsightsEventQueue.push(data);
+            }
+            window.applicationInsightsWrapper.trackedEvents[data.name] = true;
+        },
+        trackedEvents: {}
+    };
+</script>
+
+
+        <script>
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "kx36wnux0z");
+        </script>
+        <script type="text/plain" data-cookiecategory="analytics">
+            window.clarity("consent");
+        </script>
+
+
+        
+    <script src="/Scripts/Scroller/scroller?v=h0R1u9oh_HFsXWh7toWSqnGWDeI"></script>
+    <script src="/Scripts/Charts/charts?v=k6WJ2qM2wa81W7fEI6DBXUTIsSA"></script>
+    <script src="/Scripts/General/Viewer/viewer?v=MzYdFG7tGUGvqKAK83KXudm8j48"></script>
+
+    <script>
+        var settings = {"person":null,"sources":{"file":null,"eventId":null,"allParticipants":false,"classIds":[67156],"relayLegGroupIds":null,"relayLegs":null,"courseIds":null,"participantIds":null,"sessionIds":null,"devices":null,"organisationDevicesToken":null,"mapType":0,"mapIdentifier":null,"timeInterval":null,"isUsingDefaultLiveTimeInterval":false},"services":{"routeServiceUrl":"/Data/Routes","liveTransmitterUrl":"https://livelox-engine.azurewebsites.net/api"},"live":{"enabled":null},"selectedTab":"player","initialLeg":0,"initialSelectedParticipantId":null,"initialFilter":null,"targetResolution":null,"diagnosticsEnabled":true,"presentationMode":false,"isSystemAdmin":false,"googleMapsApiUrl":"//maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyDJOqcKxyf0IZWnqRl_y1hwCvLM4N50f5Y&callback=livelox_GoogleMapLayer_onScriptLoaded","overviewMapUrlTemplate":"https://www.google.com/maps/embed/v1/place?key=AIzaSyDJOqcKxyf0IZWnqRl_y1hwCvLM4N50f5Y&q={latitude},{longitude}&zoom={zoom}&maptype=satellite&language=sv","skipCache":false,"activePersonSubscriptionExists":false,"mapOpacity":null,"courseOpacity":null,"participantBaseStyle":{"size":null,"opacity":null,"borderWidthPercentage":null,"routeTicksEnabled":null},"player":{"replaySpeed":null,"startMode":null,"controlRestartFollowCurrentLeg":null,"includeParticipantsWithVirtualRoutes":null,"routeStyle":null,"pacesForColorRange":{"fastest":null,"slowest":null},"tailLength":null,"participantShortNamesVisible":null,"liveDelay":null},"legView":{"routeStyle":null},"duel":{"referenceParticipantMode":null},"table":{"type":null}};
+    </script>
+
+
+    </body>
+</html>

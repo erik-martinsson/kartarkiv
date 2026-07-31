@@ -13,6 +13,9 @@
     "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=366&format=kml",
     "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=48023&categoryId=19"
   },
+  "location": "Norrköpings kommun",
+  "latitude": 58.716183333333,
+  "longitude": 16.326804722222,
   "discipline": "Stafett",
   "result": {
     "runnerName": "Erik Martinsson",
@@ -505,6 +508,7 @@
   },
   "liveloxUrl": null,
   "warnings": [
+    "Platsen \"Norrköpings kommun\" hämtades automatiskt från koordinaterna via Geoapify.",
     "Ingen tillräckligt säker Eventor-träff hittades."
   ]
 }

@@ -13,7 +13,7 @@
     "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=363&format=kml",
     "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47860&categoryId=2"
   },
-  "location": null,
+  "location": "Tibro kommun",
   "latitude": 58.4760325,
   "longitude": 14.366695138889,
   "discipline": "Lång",
@@ -106,5 +106,7 @@
     ]
   },
   "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:15241-1&classExternalId=274954-1",
-  "warnings": []
+  "warnings": [
+    "Platsen \"Tibro kommun\" hämtades automatiskt från koordinaterna via Geoapify."
+  ]
 }

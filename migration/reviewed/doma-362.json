@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T21:33:17.242Z",
+  "reviewedAt": "2026-07-31T21:00:42.647Z",
   "competition": {
     "doma": {
       "mapId": 362,
@@ -18,7 +18,10 @@
       "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47849&categoryId=2",
       "courseLengthKm": 8.61
     },
-    "discipline": "Lång",
+    "location": "Tibro kommun",
+    "latitude": 58.443451944444,
+    "longitude": 14.251138611111,
+    "discipline": "Natt",
     "result": {
       "runnerName": "Erik Martinsson",
       "raceClass": "H21",

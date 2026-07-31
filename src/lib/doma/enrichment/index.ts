@@ -20,6 +20,7 @@ import type {
 } from "./types";
 import { resolveMapCenterFromKml } from "./kml-map-center";
 import { reverseGeocodeLocation } from "./reverse-geocode-location";
+import { resolveMapCenterFromLiveloxViewer } from "./livelox-viewer-map-center";
 
 export type {
   CompetitionDiscipline,
@@ -284,6 +285,28 @@ export async function readEnrichedDomaCompetition(
 
   const eventorLocation =
     cleanOptional(eventor?.location) ?? null;
+
+  if (
+    (latitude === null || longitude === null) &&
+    eventor?.liveloxUrl
+  ) {
+    const liveloxMapCenter =
+      await resolveMapCenterFromLiveloxViewer(
+        eventor.liveloxUrl,
+      );
+
+    if (liveloxMapCenter) {
+      latitude = liveloxMapCenter.latitude;
+      longitude = liveloxMapCenter.longitude;
+      warnings.push(
+        `DOMA och KML saknade kartcentrum. Koordinaterna hämtades från Livelox (${liveloxMapCenter.source}).`,
+      );
+    } else {
+      warnings.push(
+        "DOMA och KML saknade kartcentrum, och något centrum kunde inte läsas från den publika Livelox-visaren.",
+      );
+    }
+  }
 
   const reverseGeocoded =
     eventorLocation
