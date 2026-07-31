@@ -6,7 +6,7 @@ date: 2016-10-28
 
 club: "Linköpings OK 1"
 country: "SE"
-location: ""
+location: "Eksjö kommun"
 
 discipline: "Stafett"
 raceClass: "H21"

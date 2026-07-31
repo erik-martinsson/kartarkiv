@@ -18,6 +18,8 @@ import type {
   CompetitionDiscipline,
   EnrichedDomaCompetition,
 } from "./types";
+import { resolveMapCenterFromKml } from "./kml-map-center";
+import { reverseGeocodeLocation } from "./reverse-geocode-location";
 
 export type {
   CompetitionDiscipline,
@@ -137,9 +139,41 @@ export async function readEnrichedDomaCompetition(
     );
   }
 
+  let latitude = doma.mapCenter?.latitude ?? null;
+  let longitude = doma.mapCenter?.longitude ?? null;
+  let mapCenterWarning: string | null = null;
+
+  if (
+    (latitude === null || longitude === null) &&
+    doma.kmlUrl
+  ) {
+    const kmlMapCenter =
+      await resolveMapCenterFromKml(doma.kmlUrl);
+
+    if (kmlMapCenter) {
+      latitude = kmlMapCenter.latitude;
+      longitude = kmlMapCenter.longitude;
+      mapCenterWarning =
+        "DOMA saknade kartcentrum. Koordinaterna beräknades från GPS-spårets geografiska utbredning i KML-filen.";
+    } else {
+      mapCenterWarning =
+        "DOMA saknade kartcentrum och något giltigt centrum kunde inte beräknas från KML-filen.";
+    }
+  }
+
   if (!doma.winsplitsUrl) {
+    const reverseGeocoded =
+      await reverseGeocodeLocation(
+        latitude,
+        longitude,
+      );
+
     const warnings = [
       ...doma.warnings,
+      ...(mapCenterWarning ? [mapCenterWarning] : []),
+      ...(reverseGeocoded.warning
+        ? [reverseGeocoded.warning]
+        : []),
       "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
       "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits.",
     ];
@@ -163,9 +197,9 @@ export async function readEnrichedDomaCompetition(
         winsplitsUrl: null,
       },
 
-      location: null,
-      latitude: doma.mapCenter?.latitude ?? null,
-      longitude: doma.mapCenter?.longitude ?? null,
+      location: reverseGeocoded.location,
+      latitude,
+      longitude,
 
       discipline: classifyDiscipline(
         doma.relayLeg,
@@ -232,7 +266,10 @@ export async function readEnrichedDomaCompetition(
     );
   }
 
-  const warnings = [...doma.warnings];
+  const warnings = [
+    ...doma.warnings,
+    ...(mapCenterWarning ? [mapCenterWarning] : []),
+  ];
 
   const eventorMatch =
     eventorResolution.match;
@@ -244,6 +281,25 @@ export async function readEnrichedDomaCompetition(
           "",
         )
       : null;
+
+  const eventorLocation =
+    cleanOptional(eventor?.location) ?? null;
+
+  const reverseGeocoded =
+    eventorLocation
+      ? {
+          location: null,
+          warning: null,
+          source: "none" as const,
+        }
+      : await reverseGeocodeLocation(
+          latitude,
+          longitude,
+        );
+
+  if (reverseGeocoded.warning) {
+    warnings.push(reverseGeocoded.warning);
+  }
 
   if (!eventorMatch) {
     warnings.push(
@@ -297,9 +353,12 @@ export async function readEnrichedDomaCompetition(
         doma.winsplitsUrl,
     },
 
-    location: cleanOptional(eventor?.location) ?? null,
-    latitude: doma.mapCenter?.latitude ?? null,
-    longitude: doma.mapCenter?.longitude ?? null,
+    location:
+      eventorLocation ??
+      reverseGeocoded.location ??
+      null,
+    latitude,
+    longitude,
 
     discipline: classifyDiscipline(
       doma.relayLeg,
