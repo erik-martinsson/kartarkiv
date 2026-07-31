@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-07-30T21:47:55.941Z",
+  "reviewedAt": "2026-07-31T09:52:44.451Z",
   "competition": {
     "doma": {
       "mapId": 363,
@@ -15,13 +15,15 @@
       "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/363.jpg",
       "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/363.blank.jpg",
       "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=363&format=kml",
-      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47860&categoryId=2",
-      "courseLengthKm": 10.08
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=47860&categoryId=2"
     },
+    "location": null,
+    "latitude": 58.4760325,
+    "longitude": 14.366695138889,
     "discipline": "Lång",
     "result": {
       "runnerName": "Erik Martinsson",
-      "raceClass": "H21",
+      "raceClass": null,
       "club": "Linköpings OK",
       "position": "2",
       "starters": "18",
@@ -39,7 +41,7 @@
       "organiser": "Tibro OK",
       "location": "",
       "rawDiscipline": "lång",
-      "liveloxUrl": "https://www.livelox.com/Viewer/Tibrotrippeln-lang/H21?classId=64121&live=false&tab=player"
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:15241-1&classExternalId=274954-1"
     },
     "eventorMatch": {
       "eventId": 15241,
@@ -107,7 +109,7 @@
         }
       ]
     },
-    "liveloxUrl": "https://www.livelox.com/Viewer/Tibrotrippeln-lang/H21?classId=64121&live=false&tab=player",
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:15241-1&classExternalId=274954-1",
     "warnings": [],
     "_migrationApi": {
       "apiVersion": "doma-migration-route-2026-07-28-v4",
