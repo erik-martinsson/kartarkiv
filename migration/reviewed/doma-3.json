@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-01T11:22:47.232Z",
+  "competition": {
+    "doma": {
+      "mapId": 3,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=3",
+      "title": "JOK Chasing Sprint - Final",
+      "date": "2011-03-12",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 3.91,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/3.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": null,
+      "courseLengthKm": 3.5
+    },
+    "location": null,
+    "latitude": 51.74744005,
+    "longitude": -1.18524955,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": null,
+      "position": "5",
+      "starters": "70",
+      "controls": null,
+      "time": "18:09",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": {
+      "eventId": 0,
+      "eventorUrl": "https://www.jok.org.uk/chasing_sprint/2011/results",
+      "resultListUrl": "",
+      "title": "JOK Chasing Sprint - Final",
+      "date": "2011-03-12",
+      "organiser": "",
+      "location": "",
+      "rawDiscipline": "",
+      "liveloxUrl": null
+    },
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "JOK Chasing Sprint - Final",
+      "domaDate": "2011-03-12",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-3\\competition-enriched.json"
+    },
+    "country": "GB"
+  }
+}

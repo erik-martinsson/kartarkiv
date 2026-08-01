@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-01T10:48:26.516Z",
+  "finishedAt": "2026-08-01T10:48:33.086Z",
+  "options": {
+    "from": 2,
+    "to": 6,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 5,
+    "created": 4,
+    "skipped": 0,
+    "skippedExisting": 0,
+    "skippedTraining": 0,
+    "failed": 1
+  },
+  "items": [
+    {
+      "mapId": 2,
+      "status": "created",
+      "title": "JOK Chasing Sprint - Prolog",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-2\\competition-enriched.json"
+    },
+    {
+      "mapId": 3,
+      "status": "created",
+      "title": "JOK Chasing Sprint - Final",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-3\\competition-enriched.json"
+    },
+    {
+      "mapId": 4,
+      "status": "created",
+      "title": "Southern Champs - Del 1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-4\\competition-enriched.json"
+    },
+    {
+      "mapId": 5,
+      "status": "created",
+      "title": "Southern Champs - Del 2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-5\\competition-enriched.json"
+    },
+    {
+      "mapId": 6,
+      "status": "failed",
+      "error": "DOMA-posten saknar titel eller datum."
+    }
+  ]
+}

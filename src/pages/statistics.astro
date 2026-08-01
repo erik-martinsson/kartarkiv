@@ -42,7 +42,15 @@ const totalRaceSeconds = races.reduce((sum, race) => sum + timeToSeconds(race.da
 const totalOfficialDistance = races.reduce((sum, race) => sum + (race.data.distanceKm ?? 0), 0);
 const totalGpsDistance = races.reduce((sum, race) => sum + (race.data.gpsDistanceKm ?? 0), 0);
 const totalControls = races.reduce((sum, race) => sum + (race.data.controls ?? 0), 0);
-const totalMistakeSeconds = races.reduce((sum, race) => sum + (race.data.mistakeSeconds ?? 0), 0);
+
+const mistakeRaces = races.filter(
+  (race) => Boolean(race.data.winsplits?.trim())
+);
+const mistakeRaceCount = mistakeRaces.length;
+const totalMistakeSeconds = mistakeRaces.reduce(
+  (sum, race) => sum + (race.data.mistakeSeconds ?? 0),
+  0
+);
 
 const averagePlacement = totalRaces
   ? races.reduce((sum, race) => sum + race.data.position, 0) / totalRaces
@@ -53,10 +61,20 @@ const podiumShare = totalRaces ? (podiums / totalRaces) * 100 : 0;
 const topTen = races.filter((race) => race.data.position <= 10).length;
 const topTenShare = totalRaces ? (topTen / totalRaces) * 100 : 0;
 
-const averageMistakeSeconds = totalRaces ? totalMistakeSeconds / totalRaces : 0;
-const racesWithoutMistakes = races.filter((race) => (race.data.mistakeSeconds ?? 0) === 0).length;
-const mistakeFreeShare = totalRaces ? (racesWithoutMistakes / totalRaces) * 100 : 0;
-const largestMistake = races.reduce((largest, race) => Math.max(largest, race.data.mistakeSeconds ?? 0), 0);
+const averageMistakeSeconds = mistakeRaceCount
+  ? totalMistakeSeconds / mistakeRaceCount
+  : 0;
+const racesWithoutMistakes = mistakeRaces.filter(
+  (race) => (race.data.mistakeSeconds ?? 0) === 0
+).length;
+const mistakeFreeShare = mistakeRaceCount
+  ? (racesWithoutMistakes / mistakeRaceCount) * 100
+  : 0;
+const largestMistake = mistakeRaces.reduce(
+  (largest, race) =>
+    Math.max(largest, race.data.mistakeSeconds ?? 0),
+  0
+);
 
 const racesWithDistance = races.filter(
   (race) => (race.data.distanceKm ?? 0) > 0
@@ -122,12 +140,18 @@ for (const race of races) {
     distanceKm: 0,
     controls: 0,
     mistakeSeconds: 0,
+    mistakeRaces: 0,
     raceSeconds: 0
   };
   current.races += 1;
   current.distanceKm += race.data.gpsDistanceKm ?? race.data.distanceKm ?? 0;
   current.controls += race.data.controls ?? 0;
-  current.mistakeSeconds += race.data.mistakeSeconds ?? 0;
+
+  if (race.data.winsplits?.trim()) {
+    current.mistakeSeconds += race.data.mistakeSeconds ?? 0;
+    current.mistakeRaces += 1;
+  }
+
   current.raceSeconds += timeToSeconds(race.data.time);
   yearMap.set(year, current);
 }
@@ -138,7 +162,9 @@ const maxDistancePerYear = Math.max(1, ...yearly.map((item) => item.distanceKm))
 const maxControlsPerYear = Math.max(1, ...yearly.map((item) => item.controls));
 const yearlyMistakeAverage = yearly.map((item) => ({
   ...item,
-  averageMistakeSeconds: item.races ? item.mistakeSeconds / item.races : 0
+  averageMistakeSeconds: item.mistakeRaces
+    ? item.mistakeSeconds / item.mistakeRaces
+    : 0
 }));
 const maxMistakeAverage = Math.max(1, ...yearlyMistakeAverage.map((item) => item.averageMistakeSeconds));
 const yearlyPace = yearly.map((item) => ({

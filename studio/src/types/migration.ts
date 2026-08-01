@@ -78,6 +78,8 @@ export type EnrichedDomaCompetition = {
     winsplitsUrl: string | null;
   };
   discipline: CompetitionDiscipline;
+  /** Two-letter country code used when publishing, for example SE or GB. */
+  country?: string | null;
   result: {
     runnerName: string;
     raceClass: string | null;

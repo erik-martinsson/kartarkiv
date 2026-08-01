@@ -17,6 +17,7 @@ type EditableField =
   | "discipline"
   | "eventType"
   | "organiser"
+  | "country"
   | "location"
   | "latitude"
   | "longitude"
@@ -28,6 +29,7 @@ type EditableField =
   | "courseLength"
   | "distance"
   | "controls"
+  | "time"
   | "eventorUrl"
   | "winsplitsUrl"
   | "liveloxUrl";
@@ -38,6 +40,7 @@ const FIELD_LABELS: Record<EditableField, string> = {
   discipline: "Disciplin",
   eventType: "Tävlingstyp",
   organiser: "Arrangör",
+  country: "Land",
   location: "Plats",
   latitude: "Latitud",
   longitude: "Longitud",
@@ -49,6 +52,7 @@ const FIELD_LABELS: Record<EditableField, string> = {
   courseLength: "Banlängd (km)",
   distance: "GPS-/löpsträcka (km)",
   controls: "Kontroller",
+  time: "Tid",
   eventorUrl: "Eventor-länk",
   winsplitsUrl: "WinSplits-länk",
   liveloxUrl: "Livelox-länk",
@@ -140,6 +144,7 @@ function getFieldValue(competition: EnrichedDomaCompetition, field: EditableFiel
     case "discipline": return competition.discipline;
     case "eventType": return competition.doma.category;
     case "organiser": return competition.eventor?.organiser ?? null;
+    case "country": return competition.country ?? "SE";
     case "location": return competition.location;
     case "latitude": return competition.latitude;
     case "longitude": return competition.longitude;
@@ -151,6 +156,7 @@ function getFieldValue(competition: EnrichedDomaCompetition, field: EditableFiel
     case "courseLength": return competition.doma.courseLengthKm ?? null;
     case "distance": return competition.doma.runningDistanceKm;
     case "controls": return competition.result.controls;
+    case "time": return competition.result.time ?? competition.doma.runningTime;
     case "eventorUrl": return competition.eventor?.eventorUrl ?? competition.eventorMatch?.eventorUrl ?? null;
     case "winsplitsUrl": return competition.doma.winsplitsUrl;
     case "liveloxUrl": return competition.liveloxUrl;
@@ -186,6 +192,30 @@ function isValidCalendarDate(value: string): boolean {
     && date.getUTCDate() === day;
 }
 
+function isValidRaceTime(value: string): boolean {
+  const trimmed = value.trim();
+
+  if (!trimmed) {
+    return false;
+  }
+
+  const parts = trimmed.split(":");
+
+  if (parts.length !== 2 && parts.length !== 3) {
+    return false;
+  }
+
+  if (!parts.every((part) => /^\d+$/.test(part))) {
+    return false;
+  }
+
+  const numbers = parts.map(Number);
+  const minutes = parts.length === 3 ? numbers[1] : numbers[0];
+  const seconds = parts.length === 3 ? numbers[2] : numbers[1];
+
+  return minutes >= 0 && minutes <= 59 && seconds >= 0 && seconds <= 59;
+}
+
 function isValidHttpUrl(value: string): boolean {
   try {
     const url = new URL(value);
@@ -203,6 +233,11 @@ function validateCompetition(competition: EnrichedDomaCompetition): ValidationEr
   const courseLength = competition.doma.courseLengthKm ?? null;
   const distance = competition.doma.runningDistanceKm;
   const controls = competition.result.controls;
+  const country = (competition.country ?? "SE").trim().toUpperCase();
+  const raceTime =
+    competition.result.time?.trim() ??
+    competition.doma.runningTime?.trim() ??
+    "";
   const latitude = competition.latitude;
   const longitude = competition.longitude;
   const eventorUrl = competition.eventor?.eventorUrl
@@ -236,6 +271,16 @@ function validateCompetition(competition: EnrichedDomaCompetition): ValidationEr
     if (!Number.isInteger(controls) || controls < 0) {
       errors.controls = "Antalet kontroller måste vara ett heltal som är 0 eller större.";
     }
+  }
+
+  if (!/^[A-Z]{2}$/.test(country)) {
+    errors.country = "Land måste vara en tvåställig landskod, till exempel SE eller GB.";
+  }
+
+  if (!raceTime) {
+    errors.time = "Tid måste anges.";
+  } else if (!isValidRaceTime(raceTime)) {
+    errors.time = "Tid måste anges som MM:SS eller H:MM:SS.";
   }
 
   if (latitude !== null && latitude !== undefined && (latitude < -90 || latitude > 90)) {
@@ -475,6 +520,12 @@ export default function MigrationReview() {
         case "organiser":
           ensureEventorMetadata(next).organiser = value;
           break;
+        case "country":
+          next.country =
+            value.trim() === ""
+              ? null
+              : value.trim().toUpperCase();
+          break;
         case "location":
           next.location = nullableText;
           break;
@@ -492,6 +543,9 @@ export default function MigrationReview() {
         case "courseLength": next.doma.courseLengthKm = Number.isFinite(nullableNumber) ? nullableNumber : null; break;
         case "distance": next.doma.runningDistanceKm = Number.isFinite(nullableNumber) ? nullableNumber : null; break;
         case "controls": next.result.controls = Number.isFinite(nullableNumber) ? nullableNumber : null; break;
+        case "time":
+          next.result.time = nullableText;
+          break;
         case "eventorUrl":
           ensureEventorMetadata(next).eventorUrl = value;
           if (next.eventorMatch) next.eventorMatch.eventorUrl = value;
@@ -817,6 +871,7 @@ export default function MigrationReview() {
               <EditableFieldRow field="discipline" dirty={dirtyFields.has("discipline")} onRestore={() => restoreField("discipline")}><select value={competition.discipline} onChange={(e) => updateField("discipline", e.target.value)}>{["Lång", "Medel", "Stafett", "Sprint", "Natt", "Ultralång", "Annan", "Okänd"].map((x) => <option key={x}>{x}</option>)}</select></EditableFieldRow>
               <EditableFieldRow field="eventType" dirty={dirtyFields.has("eventType")} onRestore={() => restoreField("eventType")}><input value={competition.doma.category ?? ""} onChange={(e) => updateField("eventType", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="organiser" dirty={dirtyFields.has("organiser")} onRestore={() => restoreField("organiser")}><input value={competition.eventor?.organiser ?? ""} onChange={(e) => updateField("organiser", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="country" dirty={dirtyFields.has("country")} error={validationErrors.country} onRestore={() => restoreField("country")}><input maxLength={2} aria-invalid={Boolean(validationErrors.country)} value={competition.country ?? "SE"} placeholder="SE" onChange={(e) => updateField("country", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="location" dirty={dirtyFields.has("location")} wide onRestore={() => restoreField("location")}><input value={competition.location ?? competition.eventor?.location ?? ""} placeholder="Ort eller kommun" onChange={(e) => updateField("location", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="latitude" dirty={dirtyFields.has("latitude")} error={validationErrors.latitude} onRestore={() => restoreField("latitude")}><input type="number" step="any" inputMode="decimal" aria-invalid={Boolean(validationErrors.latitude)} value={competition.latitude ?? ""} onChange={(e) => updateField("latitude", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="longitude" dirty={dirtyFields.has("longitude")} error={validationErrors.longitude} onRestore={() => restoreField("longitude")}><input type="number" step="any" inputMode="decimal" aria-invalid={Boolean(validationErrors.longitude)} value={competition.longitude ?? ""} onChange={(e) => updateField("longitude", e.target.value)} /></EditableFieldRow>
@@ -834,8 +889,9 @@ export default function MigrationReview() {
               <EditableFieldRow field="courseLength" dirty={dirtyFields.has("courseLength")} error={validationErrors.courseLength} onRestore={() => restoreField("courseLength")}><input type="number" min="0" step="0.01" aria-invalid={Boolean(validationErrors.courseLength)} value={competition.doma.courseLengthKm ?? ""} onChange={(e) => updateField("courseLength", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="distance" dirty={dirtyFields.has("distance")} error={validationErrors.distance} onRestore={() => restoreField("distance")}><input type="number" min="0" step="0.01" aria-invalid={Boolean(validationErrors.distance)} value={competition.doma.runningDistanceKm ?? ""} onChange={(e) => updateField("distance", e.target.value)} /></EditableFieldRow>
               <EditableFieldRow field="controls" dirty={dirtyFields.has("controls")} error={validationErrors.controls} onRestore={() => restoreField("controls")}><input type="number" min="0" step="1" aria-invalid={Boolean(validationErrors.controls)} value={competition.result.controls ?? ""} onChange={(e) => updateField("controls", e.target.value)} /></EditableFieldRow>
+              <EditableFieldRow field="time" dirty={dirtyFields.has("time")} error={validationErrors.time} onRestore={() => restoreField("time")}><input aria-invalid={Boolean(validationErrors.time)} value={competition.result.time ?? competition.doma.runningTime ?? ""} placeholder="MM:SS eller H:MM:SS" onChange={(e) => updateField("time", e.target.value)} /></EditableFieldRow>
             </div>
-            <dl className="migration-facts"><div><dt>Tid</dt><dd>{valueOrDash(competition.result.time)}</dd></div><div className="accent-fact"><dt>Total bomtid</dt><dd>{valueOrDash(competition.result.totalMistakeTime)}</dd></div><div><dt>Löpare</dt><dd>{valueOrDash(competition.result.runnerName)}</dd></div></dl>
+            <dl className="migration-facts"><div className="accent-fact"><dt>Total bomtid</dt><dd>{valueOrDash(competition.result.totalMistakeTime)}</dd></div><div><dt>Löpare</dt><dd>{valueOrDash(competition.result.runnerName)}</dd></div></dl>
           </section>
 
           <section className="panel">

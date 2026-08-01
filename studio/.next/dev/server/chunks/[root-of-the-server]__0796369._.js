@@ -262,9 +262,10 @@ function validateReviewedCompetition(reviewed) {
             warnings
         };
     }
+    const eventor = asRecord(competition.eventor);
     validateDoma(asRecord(competition.doma), errors, warnings);
-    validateResult(asRecord(competition.result), errors);
-    validateEventor(asRecord(competition.eventor), warnings);
+    validateResult(asRecord(competition.result), eventor, errors);
+    validateEventor(eventor, warnings);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["warnOptionalUrl"])(warnings, competition.liveloxUrl, {
         missingCode: "livelox.missing-url",
         missingMessage: "Livelox-länk saknas.",
@@ -296,7 +297,13 @@ function validateDoma(doma, errors, warnings) {
         errors.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["createIssue"])("error", "doma.training-event", "Träningsposter får inte publiceras.", "competition.doma.category"));
     }
     requireValidUrl(errors, doma.sourceUrl, "doma.invalid-source-url", "DOMA-källänken saknas eller är ogiltig.", "competition.doma.sourceUrl");
-    requireValidUrl(errors, doma.blankMapImageUrl, "doma.invalid-blank-map-url", "Länk till blank karta saknas eller är ogiltig.", "competition.doma.blankMapImageUrl");
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["warnOptionalUrl"])(warnings, doma.blankMapImageUrl, {
+        missingCode: "doma.missing-blank-map-url",
+        missingMessage: "Blank karta saknas. Endast kartan med rutt kommer att publiceras.",
+        invalidCode: "doma.invalid-blank-map-url",
+        invalidMessage: "Länken till blank karta är ogiltig. Endast kartan med rutt kommer att publiceras.",
+        path: "competition.doma.blankMapImageUrl"
+    });
     requireValidUrl(errors, doma.routeMapImageUrl, "doma.invalid-route-map-url", "Länk till karta med rutt saknas eller är ogiltig.", "competition.doma.routeMapImageUrl");
     if (doma.relayLeg !== null && doma.relayLeg !== undefined && !(0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["isPositiveInteger"])(doma.relayLeg)) {
         errors.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["createIssue"])("error", "doma.invalid-relay-leg", "Stafettsträckan måste vara ett positivt heltal när den anges.", "competition.doma.relayLeg"));
@@ -312,13 +319,12 @@ function validateDoma(doma, errors, warnings) {
         path: "competition.doma.winsplitsUrl"
     });
 }
-function validateResult(result, errors) {
+function validateResult(result, eventor, errors) {
     if (!result) {
         errors.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["createIssue"])("error", "result.missing", "Tävlingsdatan saknar resultatuppgifter.", "competition.result"));
         return;
     }
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["requireText"])(errors, result.runnerName, "result.missing-runner", "Löparens namn måste anges.", "competition.result.runnerName");
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["requireText"])(errors, result.club, "result.missing-club", "Klubb måste anges.", "competition.result.club");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["requireText"])(errors, result.time, "result.missing-time", "Resultattid måste anges.", "competition.result.time");
     if (result.controls !== null && result.controls !== undefined && !(0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["isNonNegativeInteger"])(result.controls)) {
         errors.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$scripts$2f$lib$2f$reviewed$2d$utils$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["createIssue"])("error", "result.invalid-controls", "Antalet kontroller måste vara ett heltal som är 0 eller större.", "competition.result.controls"));
@@ -553,7 +559,7 @@ function buildMarkdown(reviewed, options, title, date, assetByKind) {
     const winsplits = normalizeHttpUrl(competition.doma.winsplitsUrl);
     const results = normalizeHttpUrl(eventor?.resultListUrl ?? competition.eventorMatch?.resultListUrl);
     const description = buildDescription(reviewed, title, normalizeDescription(options.description));
-    const country = sanitizeCountryCode(options.country ?? DEFAULT_COUNTRY);
+    const country = sanitizeCountryCode(options.country ?? competition.country ?? DEFAULT_COUNTRY);
     if (!raceClass) {
         throw new Error("Cannot publish without raceClass. Fill in the class in Studio/Migrate and approve the review again.");
     }

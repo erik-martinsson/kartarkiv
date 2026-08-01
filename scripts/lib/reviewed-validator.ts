@@ -77,9 +77,11 @@ export function validateReviewedCompetition(
     return { ok: false, errors, warnings };
   }
 
+  const eventor = asRecord(competition.eventor);
+
   validateDoma(asRecord(competition.doma), errors, warnings);
-  validateResult(asRecord(competition.result), errors);
-  validateEventor(asRecord(competition.eventor), warnings);
+  validateResult(asRecord(competition.result), eventor, errors);
+  validateEventor(eventor, warnings);
 
   warnOptionalUrl(warnings, competition.liveloxUrl, {
     missingCode: "livelox.missing-url",
@@ -164,13 +166,15 @@ function validateDoma(
     "DOMA-källänken saknas eller är ogiltig.",
     "competition.doma.sourceUrl",
   );
-  requireValidUrl(
-    errors,
-    doma.blankMapImageUrl,
-    "doma.invalid-blank-map-url",
-    "Länk till blank karta saknas eller är ogiltig.",
-    "competition.doma.blankMapImageUrl",
-  );
+  warnOptionalUrl(warnings, doma.blankMapImageUrl, {
+    missingCode: "doma.missing-blank-map-url",
+    missingMessage:
+      "Blank karta saknas. Endast kartan med rutt kommer att publiceras.",
+    invalidCode: "doma.invalid-blank-map-url",
+    invalidMessage:
+      "Länken till blank karta är ogiltig. Endast kartan med rutt kommer att publiceras.",
+    path: "competition.doma.blankMapImageUrl",
+  });
   requireValidUrl(
     errors,
     doma.routeMapImageUrl,
@@ -222,6 +226,7 @@ function validateDoma(
 
 function validateResult(
   result: UnknownRecord | null,
+  eventor: UnknownRecord | null,
   errors: ValidationIssue[],
 ): void {
   if (!result) {
@@ -242,13 +247,6 @@ function validateResult(
     "result.missing-runner",
     "Löparens namn måste anges.",
     "competition.result.runnerName",
-  );
-  requireText(
-    errors,
-    result.club,
-    "result.missing-club",
-    "Klubb måste anges.",
-    "competition.result.club",
   );
   requireText(
     errors,

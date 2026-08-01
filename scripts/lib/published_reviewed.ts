@@ -346,7 +346,9 @@ export function buildMarkdown(
     normalizeDescription(options.description),
   );
   const country = sanitizeCountryCode(
-    options.country ?? DEFAULT_COUNTRY,
+    options.country ??
+      competition.country ??
+      DEFAULT_COUNTRY,
   );
 
   if (!raceClass) {

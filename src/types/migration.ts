@@ -78,6 +78,8 @@ export type EnrichedDomaCompetition = {
     winsplitsUrl: string | null;
   };
   discipline: CompetitionDiscipline;
+  /** Two-letter country code used when publishing, for example SE or GB. */
+  country?: string | null;
   result: {
     runnerName: string;
     raceClass: string | null;
@@ -118,6 +120,8 @@ export type MigrationQueueItem = {
   title: string | null;
   date: string | null;
   status: MigrationReviewStatus;
+  /** True when the generated race Markdown file exists in the Kartarkiv. */
+  published: boolean;
   confidence: "high" | "medium" | null;
   warningCount: number;
 };
