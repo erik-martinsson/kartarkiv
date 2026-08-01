@@ -2,39 +2,18 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RaceCard from '../../components/RaceCard.astro';
+import { getCountryLabel, getCountryName } from '../../lib/countries';
 
 const races = (await getCollection('races')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
-const countryNames: Record<string, string> = {
-  SE: 'Sverige',
-  NO: 'Norge',
-  FI: 'Finland',
-  DK: 'Danmark',
-  IS: 'Island',
-  EE: 'Estland',
-  LV: 'Lettland',
-  LT: 'Litauen',
-  CH: 'Schweiz',
-  DE: 'Tyskland',
-  AT: 'Österrike',
-  FR: 'Frankrike',
-  GB: 'Storbritannien',
-  CZ: 'Tjeckien',
-  PL: 'Polen',
-  ES: 'Spanien',
-  IT: 'Italien',
-  PT: 'Portugal',
-  BE: 'Belgien',
-  NL: 'Nederländerna'
-};
-
 const raceItems = races.map((race) => {
   const year = String(race.data.date.getFullYear());
   const discipline = race.data.discipline?.trim() || 'Okänd disciplin';
   const countryCode = race.data.country?.trim().toUpperCase() || '??';
-  const country = countryNames[countryCode] ?? countryCode;
+  const countryName = getCountryName(countryCode);
+  const country = getCountryLabel(countryCode);
 
   const searchText = [
     race.data.title,
@@ -42,6 +21,7 @@ const raceItems = races.map((race) => {
     race.data.location,
     discipline,
     country,
+    countryName,
     countryCode,
     race.data.club,
     race.data.raceClass,

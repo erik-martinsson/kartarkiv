@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "approved",
-  "reviewedAt": "2026-08-01T20:13:26.047Z",
+  "reviewedAt": "2026-08-01T21:03:01.940Z",
   "competition": {
     "doma": {
       "mapId": 22,
@@ -52,6 +52,7 @@
     "_migrationApi": {
       "apiVersion": "doma-migration-route-2026-07-31-v5",
       "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-22\\competition-enriched.json"
-    }
+    },
+    "country": "FI"
   }
 }

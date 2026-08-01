@@ -37,12 +37,19 @@ const formatNumber = (value, decimals = 0) =>
     maximumFractionDigits: decimals
   });
 
+const racesWithReliableMistakeData = races.filter(
+  (race) =>
+    race.data.discipline !== 'Stafett' &&
+    Boolean(race.data.winsplits)
+);
+const reliableMistakeRaceCount = racesWithReliableMistakeData.length;
+
 const totalRaces = races.length;
 const totalRaceSeconds = races.reduce((sum, race) => sum + timeToSeconds(race.data.time), 0);
 const totalOfficialDistance = races.reduce((sum, race) => sum + (race.data.distanceKm ?? 0), 0);
 const totalGpsDistance = races.reduce((sum, race) => sum + (race.data.gpsDistanceKm ?? 0), 0);
 const totalControls = races.reduce((sum, race) => sum + (race.data.controls ?? 0), 0);
-const totalMistakeSeconds = races.reduce((sum, race) => sum + (race.data.mistakeSeconds ?? 0), 0);
+const totalMistakeSeconds = racesWithReliableMistakeData.reduce((sum, race) => sum + (race.data.mistakeSeconds ?? 0), 0);
 
 const averagePlacement = totalRaces
   ? races.reduce((sum, race) => sum + race.data.position, 0) / totalRaces
@@ -53,10 +60,10 @@ const podiumShare = totalRaces ? (podiums / totalRaces) * 100 : 0;
 const topTen = races.filter((race) => race.data.position <= 10).length;
 const topTenShare = totalRaces ? (topTen / totalRaces) * 100 : 0;
 
-const averageMistakeSeconds = totalRaces ? totalMistakeSeconds / totalRaces : 0;
-const racesWithoutMistakes = races.filter((race) => (race.data.mistakeSeconds ?? 0) === 0).length;
-const mistakeFreeShare = totalRaces ? (racesWithoutMistakes / totalRaces) * 100 : 0;
-const largestMistake = races.reduce((largest, race) => Math.max(largest, race.data.mistakeSeconds ?? 0), 0);
+const averageMistakeSeconds = reliableMistakeRaceCount ? totalMistakeSeconds / reliableMistakeRaceCount : 0;
+const racesWithoutMistakes = racesWithReliableMistakeData.filter((race) => (race.data.mistakeSeconds ?? 0) === 0).length;
+const mistakeFreeShare = reliableMistakeRaceCount ? (racesWithoutMistakes / reliableMistakeRaceCount) * 100 : 0;
+const largestMistake = racesWithReliableMistakeData.reduce((largest, race) => Math.max(largest, race.data.mistakeSeconds ?? 0), 0);
 
 const racesWithDistance = races.filter(
   (race) => (race.data.distanceKm ?? 0) > 0
@@ -89,7 +96,7 @@ const mostClimbRace = races.reduce(
       : best,
   null
 );
-const mostMistakeRace = races.reduce(
+const mostMistakeRace = racesWithReliableMistakeData.reduce(
   (best, race) =>
     !best ||
     (race.data.mistakeSeconds ?? 0) >
@@ -127,7 +134,9 @@ for (const race of races) {
   current.races += 1;
   current.distanceKm += race.data.gpsDistanceKm ?? race.data.distanceKm ?? 0;
   current.controls += race.data.controls ?? 0;
-  current.mistakeSeconds += race.data.mistakeSeconds ?? 0;
+  if (race.data.discipline !== 'Stafett' && race.data.winsplits) {
+    current.mistakeSeconds += race.data.mistakeSeconds ?? 0;
+  }
   current.raceSeconds += timeToSeconds(race.data.time);
   yearMap.set(year, current);
 }
@@ -138,7 +147,7 @@ const maxDistancePerYear = Math.max(1, ...yearly.map((item) => item.distanceKm))
 const maxControlsPerYear = Math.max(1, ...yearly.map((item) => item.controls));
 const yearlyMistakeAverage = yearly.map((item) => ({
   ...item,
-  averageMistakeSeconds: item.races ? item.mistakeSeconds / item.races : 0
+  averageMistakeSeconds: item.races ? item.mistakeSeconds / racesWithReliableMistakeData.filter((race)=>race.data.date.getFullYear()===item.year).length || 0 : 0
 }));
 const maxMistakeAverage = Math.max(1, ...yearlyMistakeAverage.map((item) => item.averageMistakeSeconds));
 const yearlyPace = yearly.map((item) => ({

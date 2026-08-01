@@ -12,6 +12,17 @@ const races = (await getCollection('races')).sort(
 /* Visa de tre senaste tävlingarna */
 const recent = races.slice(0, 3);
 
+/*
+ * Bomstatistiken ska bara baseras på individuella tävlingar
+ * med WinSplits-underlag. Stafetter och tävlingar utan
+ * WinSplits-länk räknas därför inte med.
+ */
+const racesWithReliableMistakeData = races.filter(
+  (race) =>
+    race.data.discipline !== 'Stafett' &&
+    Boolean(race.data.winsplits)
+);
+
 /* Omvandlar 58:18 eller 1:05:42 till sekunder */
 const timeToSeconds = (time) => {
   if (!time) return 0;
@@ -49,13 +60,16 @@ const totalRaceSeconds = races.reduce(
   0
 );
 
-const totalMistakes = races.reduce(
+const totalMistakes = racesWithReliableMistakeData.reduce(
   (sum, race) => sum + (race.data.mistakeSeconds ?? 0),
   0
 );
 
-const averageMistake = races.length
-  ? Math.round(totalMistakes / races.length)
+const averageMistake = racesWithReliableMistakeData.length
+  ? Math.round(
+      totalMistakes /
+        racesWithReliableMistakeData.length
+    )
   : 0;
 
 const totalDistance = races.reduce(
