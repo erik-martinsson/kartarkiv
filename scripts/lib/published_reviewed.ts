@@ -265,7 +265,13 @@ export async function publishReviewed(
   );
   const finalMarkdown = buildMarkdown(
     reviewed,
-    normalized,
+    {
+      ...normalized,
+      country:
+        reviewed.competition.country ??
+        normalized.country ??
+        DEFAULT_COUNTRY,
+    },
     plan.title,
     plan.date,
     finalAssetByKind,

@@ -1,0 +1,47 @@
+{
+  "doma": {
+    "mapId": 34,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=34",
+    "title": "O-ringen E3",
+    "date": "2011-07-27",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/34.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": null
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": null,
+    "position": null,
+    "starters": null,
+    "controls": null,
+    "time": null,
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "O-ringen E3",
+    "domaDate": "2011-07-27",
+    "databaseId": 0,
+    "searchedDates": [],
+    "calendarUrls": [],
+    "candidates": []
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+  ]
+}

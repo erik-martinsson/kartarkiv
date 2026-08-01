@@ -1,0 +1,47 @@
+{
+  "doma": {
+    "mapId": 42,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=42",
+    "title": "Lång-DM",
+    "date": "2011-08-28",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/42.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": null
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": null,
+    "position": null,
+    "starters": null,
+    "controls": null,
+    "time": null,
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Lång-DM",
+    "domaDate": "2011-08-28",
+    "databaseId": 0,
+    "searchedDates": [],
+    "calendarUrls": [],
+    "candidates": []
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+  ]
+}

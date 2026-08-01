@@ -5,7 +5,7 @@ event: "JOK Chasing Sprint - Prolog"
 date: 2011-03-12
 
 club: ""
-country: "SE"
+country: "GB"
 location: ""
 
 discipline: "Medel"

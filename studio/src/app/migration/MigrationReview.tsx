@@ -127,6 +127,72 @@ function valueOrDash(value: unknown): string {
   return value === null || value === undefined || value === "" ? "—" : String(value);
 }
 
+function parseMistakeTime(value: string): number | null {
+  const normalized = value.trim();
+  if (!normalized) return null;
+
+  if (/^\d+$/.test(normalized)) {
+    return Number(normalized);
+  }
+
+  const parts = normalized.split(/[:.]/).map(Number);
+
+  if (
+    parts.some(
+      (part) => !Number.isInteger(part) || part < 0,
+    )
+  ) {
+    return null;
+  }
+
+  if (parts.length === 2) {
+    const [minutes, seconds] = parts;
+    if (seconds >= 60) return null;
+    return minutes * 60 + seconds;
+  }
+
+  if (parts.length === 3) {
+    const [hours, minutes, seconds] = parts;
+    if (minutes >= 60 || seconds >= 60) return null;
+    return hours * 3600 + minutes * 60 + seconds;
+  }
+
+  return null;
+}
+
+function formatMistakeTime(totalSeconds: number): string {
+  const safeSeconds = Math.max(0, Math.round(totalSeconds));
+  const hours = Math.floor(safeSeconds / 3600);
+  const minutes = Math.floor((safeSeconds % 3600) / 60);
+  const seconds = safeSeconds % 60;
+
+  return hours > 0
+    ? `${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+    : `${minutes}:${String(seconds).padStart(2, "0")}`;
+}
+
+function recalculateTotalMistakeTime(
+  competition: EnrichedDomaCompetition,
+): void {
+  const totalSeconds = competition.result.mistakes.reduce(
+    (sum, mistake) =>
+      sum + (parseMistakeTime(mistake.time) ?? 0),
+    0,
+  );
+
+  competition.result.totalMistakeTime =
+    formatMistakeTime(totalSeconds);
+}
+
+function sortMistakes(
+  mistakes:
+    EnrichedDomaCompetition["result"]["mistakes"],
+): void {
+  mistakes.sort(
+    (left, right) => left.control - right.control,
+  );
+}
+
 function externalLink(url: string | null, label: string) {
   if (!url) return <span className="migration-empty">—</span>;
 
@@ -330,6 +396,9 @@ export default function MigrationReview() {
   const [isSaving, setIsSaving] = useState(false);
   const [isPublishing, setIsPublishing] = useState(false);
   const [isPublished, setIsPublished] = useState(false);
+  const [newMistakeControl, setNewMistakeControl] = useState("");
+  const [newMistakeTime, setNewMistakeTime] = useState("");
+  const [newMistakeError, setNewMistakeError] = useState<string | null>(null);
 
   const verificationLabel = useMemo(() => {
     const method = competition?.eventorMatch?.verificationMethod;
@@ -361,6 +430,13 @@ export default function MigrationReview() {
   }, [validationErrors]);
 
   const hasValidationErrors = validationEntries.length > 0;
+
+  const mistakesAreDirty = useMemo(() => {
+    if (!competition || !originalCompetition) return false;
+
+    return JSON.stringify(competition.result.mistakes) !==
+      JSON.stringify(originalCompetition.result.mistakes);
+  }, [competition, originalCompetition]);
 
   const loadQueue = async (): Promise<MigrationQueueItem[]> => {
     try {
@@ -558,6 +634,95 @@ export default function MigrationReview() {
       }
       return next;
     });
+  };
+
+  const updateMistake = (
+    index: number,
+    field: "control" | "time",
+    value: string,
+  ): void => {
+    setCompetition((current) => {
+      if (!current) return current;
+
+      const next = cloneCompetition(current);
+      const mistake = next.result.mistakes[index];
+      if (!mistake) return current;
+
+      if (field === "control") {
+        const control = Number(value);
+        mistake.control =
+          value.trim() === "" || !Number.isInteger(control)
+            ? 0
+            : control;
+      } else {
+        mistake.time = value;
+      }
+
+      sortMistakes(next.result.mistakes);
+      recalculateTotalMistakeTime(next);
+      return next;
+    });
+  };
+
+  const addMistake = (): void => {
+    const control = Number(newMistakeControl);
+    const seconds = parseMistakeTime(newMistakeTime);
+
+    if (!Number.isInteger(control) || control < 1) {
+      setNewMistakeError("Ange ett giltigt kontrollnummer på minst 1.");
+      return;
+    }
+
+    if (seconds === null) {
+      setNewMistakeError("Ange bomtiden som exempelvis 0:34.");
+      return;
+    }
+
+    setCompetition((current) => {
+      if (!current) return current;
+
+      const next = cloneCompetition(current);
+      next.result.mistakes.push({
+        control,
+        time: formatMistakeTime(seconds),
+      });
+      sortMistakes(next.result.mistakes);
+      recalculateTotalMistakeTime(next);
+      return next;
+    });
+
+    setNewMistakeControl("");
+    setNewMistakeTime("");
+    setNewMistakeError(null);
+  };
+
+  const removeMistake = (index: number): void => {
+    setCompetition((current) => {
+      if (!current) return current;
+
+      const next = cloneCompetition(current);
+      next.result.mistakes.splice(index, 1);
+      recalculateTotalMistakeTime(next);
+      return next;
+    });
+  };
+
+  const restoreMistakes = (): void => {
+    if (!originalCompetition) return;
+
+    setCompetition((current) => {
+      if (!current) return current;
+
+      const next = cloneCompetition(current);
+      next.result.mistakes = structuredClone(
+        originalCompetition.result.mistakes,
+      );
+      next.result.totalMistakeTime =
+        originalCompetition.result.totalMistakeTime;
+      return next;
+    });
+
+    setNewMistakeError(null);
   };
 
   const restoreField = (field: EditableField): void => {
@@ -895,8 +1060,36 @@ export default function MigrationReview() {
           </section>
 
           <section className="panel">
-            <div className="panel-heading"><div><p className="step-label">RESULTATANALYS</p><h2>Bommar per kontroll</h2></div><span className="panel-note">{competition.result.mistakes.length} registrerade</span></div>
-            {competition.result.mistakes.length ? <div className="migration-mistakes">{competition.result.mistakes.map((mistake) => <div key={`${mistake.control}-${mistake.time}`}><span>Kontroll {mistake.control}</span><strong>{mistake.time}</strong></div>)}</div> : <p className="migration-empty-state">Inga bommar registrerade.</p>}
+            <div className="panel-heading">
+              <div><p className="step-label">RESULTATANALYS</p><h2>Bommar per kontroll</h2></div>
+              <div className="migration-dirty-summary">
+                <span>{competition.result.mistakes.length} registrerade</span>
+                <button type="button" disabled={!mistakesAreDirty} onClick={restoreMistakes}>Återställ bommar</button>
+              </div>
+            </div>
+
+            {competition.result.mistakes.length ? (
+              <div className="migration-mistake-editor">
+                <div className="migration-mistake-header" aria-hidden="true"><span>Kontroll</span><span>Bomtid</span><span /></div>
+                {competition.result.mistakes.map((mistake, index) => (
+                  <div className="migration-mistake-row" key={`${index}-${mistake.control}`}>
+                    <input type="number" min="1" step="1" aria-label={`Kontrollnummer för bom ${index + 1}`} value={mistake.control || ""} onChange={(event) => updateMistake(index, "control", event.target.value)} />
+                    <input type="text" inputMode="numeric" aria-label={`Bomtid för kontroll ${mistake.control || index + 1}`} placeholder="0:34" value={mistake.time} onChange={(event) => updateMistake(index, "time", event.target.value)} />
+                    <button type="button" className="button secondary migration-remove-mistake" aria-label={`Ta bort bom vid kontroll ${mistake.control || index + 1}`} onClick={() => removeMistake(index)}>Ta bort</button>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="migration-empty-state">Inga bommar registrerade.</p>
+            )}
+
+            <div className="migration-add-mistake">
+              <label><span>Kontroll</span><input type="number" min="1" step="1" placeholder="12" value={newMistakeControl} onChange={(event) => { setNewMistakeControl(event.target.value); setNewMistakeError(null); }} /></label>
+              <label><span>Bomtid</span><input type="text" inputMode="numeric" placeholder="0:34" value={newMistakeTime} onChange={(event) => { setNewMistakeTime(event.target.value); setNewMistakeError(null); }} onKeyDown={(event) => { if (event.key === "Enter") { event.preventDefault(); addMistake(); } }} /></label>
+              <button type="button" className="button secondary" onClick={addMistake}>+ Lägg till bom</button>
+            </div>
+            {newMistakeError ? <p className="migration-field-error" role="alert">{newMistakeError}</p> : null}
+            <p className="migration-mistake-total">Total bomtid: <strong>{valueOrDash(competition.result.totalMistakeTime)}</strong></p>
           </section>
         </section>
 
@@ -998,6 +1191,41 @@ export default function MigrationReview() {
           border: 1px solid rgba(22, 163, 74, 0.45);
           border-radius: 0.5rem;
           background: rgba(22, 163, 74, 0.08);
+        }
+
+        .migration-mistake-editor { display: grid; gap: 0.55rem; }
+        .migration-mistake-header,
+        .migration-mistake-row {
+          display: grid;
+          grid-template-columns: minmax(7rem, 0.7fr) minmax(8rem, 1fr) auto;
+          gap: 0.65rem;
+          align-items: center;
+        }
+        .migration-mistake-header {
+          padding: 0 0.15rem;
+          font-size: 0.78rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          opacity: 0.7;
+        }
+        .migration-mistake-row input { width: 100%; }
+        .migration-remove-mistake { white-space: nowrap; }
+        .migration-add-mistake {
+          display: grid;
+          grid-template-columns: minmax(7rem, 0.7fr) minmax(8rem, 1fr) auto;
+          gap: 0.65rem;
+          align-items: end;
+          margin-top: 1rem;
+          padding-top: 1rem;
+          border-top: 1px solid rgba(127, 127, 127, 0.25);
+        }
+        .migration-add-mistake label { display: grid; gap: 0.35rem; }
+        .migration-add-mistake label > span { font-size: 0.82rem; font-weight: 700; }
+        .migration-mistake-total { margin: 1rem 0 0; text-align: right; }
+        @media (max-width: 720px) {
+          .migration-mistake-header { display: none; }
+          .migration-mistake-row,
+          .migration-add-mistake { grid-template-columns: 1fr; }
         }
       `}</style>
     </main>

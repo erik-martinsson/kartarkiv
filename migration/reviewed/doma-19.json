@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-01T20:03:14.516Z",
+  "competition": {
+    "doma": {
+      "mapId": 19,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=19",
+      "title": "Kopparsprinten Stafett, Sträcka 2",
+      "date": "2011-06-05",
+      "category": "Tävling",
+      "relayLeg": 2,
+      "runningTime": null,
+      "runningDistanceKm": 3.25,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/19.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=17426&categoryId=18",
+      "courseLengthKm": 3
+    },
+    "location": "Falun",
+    "latitude": 60.6006697,
+    "longitude": 15.6140484,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": null,
+      "position": "4",
+      "starters": "27",
+      "controls": 13,
+      "time": "14:43",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Kopparsprinten Stafett, Sträcka 2",
+      "domaDate": "2011-06-05",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-19\\competition-enriched.json"
+    }
+  }
+}

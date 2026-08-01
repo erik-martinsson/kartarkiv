@@ -1,0 +1,47 @@
+{
+  "doma": {
+    "mapId": 22,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=22",
+    "title": "Jukola, str5",
+    "date": "2011-06-19",
+    "category": "Tävling",
+    "relayLeg": 5,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/22.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": null
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": null,
+    "position": null,
+    "starters": null,
+    "controls": null,
+    "time": null,
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Jukola, str5",
+    "domaDate": "2011-06-19",
+    "databaseId": 0,
+    "searchedDates": [],
+    "calendarUrls": [],
+    "candidates": []
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+  ]
+}

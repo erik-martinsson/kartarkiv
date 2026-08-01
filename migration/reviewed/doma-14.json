@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-01T19:44:07.031Z",
+  "competition": {
+    "doma": {
+      "mapId": 14,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=14",
+      "title": "Svartnatta",
+      "date": "2011-04-08",
+      "category": "Tävling",
+      "relayLeg": 2,
+      "runningTime": null,
+      "runningDistanceKm": 9.98,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/14.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=16565&categoryId=0",
+      "courseLengthKm": 8.7
+    },
+    "location": "Vingåkers kommun",
+    "latitude": 59.0033811,
+    "longitude": 15.8277689,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": null,
+      "position": "6",
+      "starters": "45",
+      "controls": 13,
+      "time": "49:33",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": {
+      "eventId": 0,
+      "eventorUrl": "",
+      "resultListUrl": "",
+      "title": "Svartnatta",
+      "date": "2011-04-08",
+      "organiser": "Vingåkers OK",
+      "location": "",
+      "rawDiscipline": "",
+      "liveloxUrl": null
+    },
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Svartnatta",
+      "domaDate": "2011-04-08",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-14\\competition-enriched.json"
+    }
+  }
+}

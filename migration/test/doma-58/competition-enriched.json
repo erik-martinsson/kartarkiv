@@ -1,0 +1,227 @@
+{
+  "doma": {
+    "mapId": 58,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=58",
+    "title": "Novembersprinten",
+    "date": "2011-11-06",
+    "category": "Tävling",
+    "relayLeg": 2,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/58.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=19202&categoryId=4"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "6",
+    "starters": "48",
+    "controls": 19,
+    "time": "37.20",
+    "totalMistakeTime": "2.18",
+    "mistakes": [
+      {
+        "control": 8,
+        "time": "1.10"
+      },
+      {
+        "control": 18,
+        "time": "0.29"
+      },
+      {
+        "control": 19,
+        "time": "0.39"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 1310,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/1310",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=1310",
+    "title": "Novembersprinten",
+    "date": "",
+    "organiser": "Mjölby OK",
+    "location": "",
+    "rawDiscipline": "medel",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 1310,
+    "title": "Novembersprinten",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/1310",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=1310",
+    "score": 100,
+    "verifiedByWinSplitsId": false,
+    "verificationMethod": "title-only",
+    "confidence": "medium"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Novembersprinten",
+    "domaDate": "2011-11-06",
+    "databaseId": 19202,
+    "searchedDates": [
+      "2011-11-04",
+      "2011-11-05",
+      "2011-11-06",
+      "2011-11-07",
+      "2011-11-08"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2011-11-04&endDate=2011-11-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-11-04&endDate=2011-11-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-11-04&endDate=2011-11-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-11-04&endDate=2011-11-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-11-04&endDate=2011-11-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-11-04&endDate=2011-11-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-11-06&endDate=2011-11-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-11-06&endDate=2011-11-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-11-06&endDate=2011-11-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-11-06&endDate=2011-11-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-11-06&endDate=2011-11-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-11-06&endDate=2011-11-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-11-07&endDate=2011-11-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-11-07&endDate=2011-11-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-11-07&endDate=2011-11-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-11-07&endDate=2011-11-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-11-07&endDate=2011-11-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-11-07&endDate=2011-11-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-11-08&endDate=2011-11-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-11-08&endDate=2011-11-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-11-08&endDate=2011-11-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-11-08&endDate=2011-11-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-11-08&endDate=2011-11-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-11-08&endDate=2011-11-08&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 1310,
+        "title": "Novembersprinten",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-06&endDate=2011-11-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "title-only"
+      },
+      {
+        "eventId": 1657,
+        "title": "PreO TempO",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1330,
+        "title": "SilvaTrofen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3329,
+        "title": "Kalkonjakten och Kycklingjakten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2954,
+        "title": "Svartåfejden",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1664,
+        "title": "PreO Rodhenloppet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1116,
+        "title": "Rodhenloppet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-05&endDate=2011-11-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 950,
+        "title": "Sydsvenska 2-milen / DM Ultralång Halland",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-06&endDate=2011-11-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1690,
+        "title": "Höstlunken",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-06&endDate=2011-11-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1658,
+        "title": "PreO i Roslagen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-06&endDate=2011-11-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3510,
+        "title": "Löpex Night Extreme deltävling 1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-08&endDate=2011-11-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Eventor-träffen bygger på en entydig exakt titelmatchning. Eventor exponerade inget verifierbart WinSplits databaseId.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

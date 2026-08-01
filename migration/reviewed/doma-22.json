@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-01T20:13:26.047Z",
+  "competition": {
+    "doma": {
+      "mapId": 22,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=22",
+      "title": "Jukola, str5",
+      "date": "2011-06-19",
+      "category": "Tävling",
+      "relayLeg": 5,
+      "runningTime": null,
+      "runningDistanceKm": 9.28,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/22.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": null,
+      "courseLengthKm": 8.45
+    },
+    "location": null,
+    "latitude": 60.534479,
+    "longitude": 27.5425799,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": null,
+      "position": "89",
+      "starters": "1295",
+      "controls": 17,
+      "time": "50:29",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Jukola, str5",
+      "domaDate": "2011-06-19",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-22\\competition-enriched.json"
+    }
+  }
+}

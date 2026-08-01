@@ -5,7 +5,7 @@ event: "Southern Champs"
 date: 2011-03-13
 
 club: ""
-country: "SE"
+country: "GB"
 location: ""
 
 discipline: "Lång"

@@ -1,0 +1,122 @@
+{
+  "doma": {
+    "mapId": 53,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=53",
+    "title": "Älgfritt",
+    "date": "2011-10-16",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/53.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "http://www.obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=19022&categoryId=1"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "5",
+    "starters": "34",
+    "controls": 19,
+    "time": "40.10",
+    "totalMistakeTime": "1.21",
+    "mistakes": [
+      {
+        "control": 5,
+        "time": "0.54"
+      },
+      {
+        "control": 9,
+        "time": "0.27"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 727,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/727",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=727",
+    "title": "Älgfritt",
+    "date": "",
+    "organiser": "OK Motala",
+    "location": "",
+    "rawDiscipline": "medel",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 727,
+    "title": "Älgfritt",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/727",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=727",
+    "score": 100,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Älgfritt",
+    "domaDate": "2011-10-16",
+    "databaseId": 19022,
+    "searchedDates": [
+      "2011-10-14",
+      "2011-10-15",
+      "2011-10-16",
+      "2011-10-17",
+      "2011-10-18"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2011-10-14&endDate=2011-10-14&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-10-14&endDate=2011-10-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-10-14&endDate=2011-10-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-10-14&endDate=2011-10-14&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-10-14&endDate=2011-10-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-10-14&endDate=2011-10-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-10-15&endDate=2011-10-15&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-10-15&endDate=2011-10-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-10-15&endDate=2011-10-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-10-15&endDate=2011-10-15&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-10-15&endDate=2011-10-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-10-15&endDate=2011-10-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-10-16&endDate=2011-10-16&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-10-16&endDate=2011-10-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-10-16&endDate=2011-10-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-10-16&endDate=2011-10-16&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-10-16&endDate=2011-10-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-10-16&endDate=2011-10-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-10-17&endDate=2011-10-17&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-10-17&endDate=2011-10-17&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-10-17&endDate=2011-10-17&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-10-17&endDate=2011-10-17&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-10-17&endDate=2011-10-17&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-10-17&endDate=2011-10-17&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-10-18&endDate=2011-10-18&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-10-18&endDate=2011-10-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-10-18&endDate=2011-10-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-10-18&endDate=2011-10-18&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-10-18&endDate=2011-10-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-10-18&endDate=2011-10-18&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 727,
+        "title": "Älgfritt",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-10-16&endDate=2011-10-16&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

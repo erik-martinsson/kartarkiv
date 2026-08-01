@@ -27,8 +27,24 @@ export async function fetchText(
     });
 
     if (!response.ok) {
+      const hostname =
+        new URL(url).hostname.toLocaleLowerCase("sv-SE");
+
+      /*
+       * Gamla Eventor-länkar kan ha tagits bort.
+       * En 404 från Eventor ska därför behandlas
+       * som att ingen extern Eventor-data hittades,
+       * inte som att hela DOMA-importen misslyckades.
+       */
+      if (
+        response.status === 404 &&
+        hostname === "eventor.orientering.se"
+      ) {
+        return "";
+      }
+
       throw new Error(
-        `${new URL(url).hostname} svarade med HTTP ` +
+        `${hostname} svarade med HTTP ` +
           `${response.status} ${response.statusText}.`,
       );
     }

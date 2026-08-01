@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-01T20:33:23.457Z",
+  "competition": {
+    "doma": {
+      "mapId": 31,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=31",
+      "title": "Croatia Open Day 5",
+      "date": "2011-07-17",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 11.61,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/31.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": null,
+      "courseLengthKm": 8.7
+    },
+    "location": null,
+    "latitude": 45.3906667,
+    "longitude": 14.7866978,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "M21",
+      "club": null,
+      "position": "15",
+      "starters": "34",
+      "controls": 20,
+      "time": "1:25:50",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Croatia Open Day 5",
+      "domaDate": "2011-07-17",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-31\\competition-enriched.json"
+    },
+    "country": "HR"
+  }
+}

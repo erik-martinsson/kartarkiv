@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-01T20:38:45.795Z",
+  "competition": {
+    "doma": {
+      "mapId": 32,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=32",
+      "title": "O-ringen E1",
+      "date": "2011-07-24",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 16.31,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/32.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=17926&categoryId=9",
+      "courseLengthKm": 13.44
+    },
+    "location": null,
+    "latitude": 61.3535357,
+    "longitude": 16.7402311,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21L",
+      "club": null,
+      "position": "24",
+      "starters": "115",
+      "controls": 21,
+      "time": "1:33:53",
+      "totalMistakeTime": "2:02",
+      "mistakes": [
+        {
+          "control": 3,
+          "time": "1:37"
+        },
+        {
+          "control": 4,
+          "time": "0:25"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "O-ringen E1",
+      "domaDate": "2011-07-24",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-32\\competition-enriched.json"
+    }
+  }
+}

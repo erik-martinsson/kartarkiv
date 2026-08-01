@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-01T17:47:35.208Z",
+  "finishedAt": "2026-08-01T17:49:44.971Z",
+  "options": {
+    "from": 7,
+    "to": 61,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 55,
+    "created": 37,
+    "skipped": 17,
+    "skippedExisting": 0,
+    "skippedTraining": 17,
+    "failed": 1
+  },
+  "items": [
+    {
+      "mapId": 7,
+      "status": "created",
+      "title": "Måsenstafetten",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-7\\competition-enriched.json"
+    },
+    {
+      "mapId": 8,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Sprintträning - 1",
+      "category": "Träning"
+    },
+    {
+      "mapId": 9,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Sprintträning - 2",
+      "category": "Träning"
+    },
+    {
+      "mapId": 10,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Korridor",
+      "category": "Träning"
+    },
+    {
+      "mapId": 11,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Natt-OL Mjölby del 1",
+      "category": "Träning"
+    },
+    {
+      "mapId": 12,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Natt-OL Mjölby del 2",
+      "category": "Träning"
+    },
+    {
+      "mapId": 13,
+      "status": "created",
+      "title": "Natt-KM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-13\\competition-enriched.json"
+    },
+    {
+      "mapId": 14,
+      "status": "created",
+      "title": "Svartnatta",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-14\\competition-enriched.json"
+    },
+    {
+      "mapId": 15,
+      "status": "created",
+      "title": "Kolmårdskavlen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-15\\competition-enriched.json"
+    },
+    {
+      "mapId": 16,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Moss-OL",
+      "category": "Träning"
+    },
+    {
+      "mapId": 17,
+      "status": "created",
+      "title": "Elitserien Mora, Lång H21E2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-17\\competition-enriched.json"
+    },
+    {
+      "mapId": 18,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Träningsrace, Vika",
+      "category": "Träning"
+    },
+    {
+      "mapId": 19,
+      "status": "created",
+      "title": "Kopparsprinten Stafett, Sträcka 2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-19\\competition-enriched.json"
+    },
+    {
+      "mapId": 20,
+      "status": "created",
+      "title": "Kopparsprinten Stafett, Sträcka 4",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-20\\competition-enriched.json"
+    },
+    {
+      "mapId": 21,
+      "status": "created",
+      "title": "Elitserien Falun, Sprint, H21E2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-21\\competition-enriched.json"
+    },
+    {
+      "mapId": 22,
+      "status": "created",
+      "title": "Jukola, str5",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-22\\competition-enriched.json"
+    },
+    {
+      "mapId": 23,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Croatia open training - Biljevina",
+      "category": "Träning"
+    },
+    {
+      "mapId": 24,
+      "status": "created",
+      "title": "Croatia Open Day 1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-24\\competition-enriched.json"
+    },
+    {
+      "mapId": 25,
+      "status": "created",
+      "title": "Croatia Open Day 3 part 1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-25\\competition-enriched.json"
+    },
+    {
+      "mapId": 26,
+      "status": "created",
+      "title": "Croatia Open Day 3 part 2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-26\\competition-enriched.json"
+    },
+    {
+      "mapId": 27,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Croatia open training - Opatjia",
+      "category": "Träning"
+    },
+    {
+      "mapId": 28,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Croatia open training - Crni Lug",
+      "category": "Träning"
+    },
+    {
+      "mapId": 29,
+      "status": "created",
+      "title": "Croatia Open Day 2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-29\\competition-enriched.json"
+    },
+    {
+      "mapId": 30,
+      "status": "created",
+      "title": "Croatia Open Day 4",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-30\\competition-enriched.json"
+    },
+    {
+      "mapId": 31,
+      "status": "created",
+      "title": "Croatia Open Day 5",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-31\\competition-enriched.json"
+    },
+    {
+      "mapId": 32,
+      "status": "created",
+      "title": "O-ringen E1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-32\\competition-enriched.json"
+    },
+    {
+      "mapId": 33,
+      "status": "created",
+      "title": "O-ringen E2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-33\\competition-enriched.json"
+    },
+    {
+      "mapId": 34,
+      "status": "created",
+      "title": "O-ringen E3",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-34\\competition-enriched.json"
+    },
+    {
+      "mapId": 35,
+      "status": "created",
+      "title": "O-ringen E4",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-35\\competition-enriched.json"
+    },
+    {
+      "mapId": 36,
+      "status": "created",
+      "title": "O-ringen E5",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-36\\competition-enriched.json"
+    },
+    {
+      "mapId": 37,
+      "status": "created",
+      "title": "Stjärnorpssprinten",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-37\\competition-enriched.json"
+    },
+    {
+      "mapId": 38,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Höglands-OL",
+      "category": "Träning"
+    },
+    {
+      "mapId": 39,
+      "status": "created",
+      "title": "Bockadubbeln, medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-39\\competition-enriched.json"
+    },
+    {
+      "mapId": 40,
+      "status": "created",
+      "title": "Bockadubbeln, lång",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-40\\competition-enriched.json"
+    },
+    {
+      "mapId": 41,
+      "status": "created",
+      "title": "Natt-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-41\\competition-enriched.json"
+    },
+    {
+      "mapId": 42,
+      "status": "created",
+      "title": "Lång-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-42\\competition-enriched.json"
+    },
+    {
+      "mapId": 43,
+      "status": "created",
+      "title": "Stafett-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-43\\competition-enriched.json"
+    },
+    {
+      "mapId": 44,
+      "status": "created",
+      "title": "Bauertrampet, lång",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-44\\competition-enriched.json"
+    },
+    {
+      "mapId": 45,
+      "status": "created",
+      "title": "Bauertrampet, medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-45\\competition-enriched.json"
+    },
+    {
+      "mapId": 46,
+      "status": "created",
+      "title": "SM medel kval",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-46\\competition-enriched.json"
+    },
+    {
+      "mapId": 47,
+      "status": "created",
+      "title": "SM medel B-final",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-47\\competition-enriched.json"
+    },
+    {
+      "mapId": 48,
+      "status": "created",
+      "title": "SM stafett",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-48\\competition-enriched.json"
+    },
+    {
+      "mapId": 49,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup LAIK",
+      "category": "Träning"
+    },
+    {
+      "mapId": 50,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup OK Skogsströvarna",
+      "category": "Träning"
+    },
+    {
+      "mapId": 51,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup LOK",
+      "category": "Träning"
+    },
+    {
+      "mapId": 52,
+      "status": "created",
+      "title": "25-Manna",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-52\\competition-enriched.json"
+    },
+    {
+      "mapId": 53,
+      "status": "created",
+      "title": "Älgfritt",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-53\\competition-enriched.json"
+    },
+    {
+      "mapId": 54,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup IFK",
+      "category": "Träning"
+    },
+    {
+      "mapId": 55,
+      "status": "created",
+      "title": "Smålandskavlen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-55\\competition-enriched.json"
+    },
+    {
+      "mapId": 56,
+      "status": "created",
+      "title": "Smålandskavlen, Öppen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-56\\competition-enriched.json"
+    },
+    {
+      "mapId": 57,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup TGOK",
+      "category": "Träning"
+    },
+    {
+      "mapId": 58,
+      "status": "failed",
+      "error": "eventor.orientering.se svarade med HTTP 404 Not Found."
+    },
+    {
+      "mapId": 59,
+      "status": "created",
+      "title": "Svartåfejden",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-59\\competition-enriched.json"
+    },
+    {
+      "mapId": 60,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Night Extreme #1",
+      "category": "Träning"
+    },
+    {
+      "mapId": 61,
+      "status": "created",
+      "title": "Jättemilen del 1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-61\\competition-enriched.json"
+    }
+  ]
+}

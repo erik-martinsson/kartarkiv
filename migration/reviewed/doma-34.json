@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-01T20:46:16.775Z",
+  "competition": {
+    "doma": {
+      "mapId": 34,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=34",
+      "title": "O-ringen E3",
+      "date": "2011-07-27",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 13.08,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/34.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=17937&categoryId=9",
+      "courseLengthKm": 11.2
+    },
+    "location": null,
+    "latitude": 61.2586684,
+    "longitude": 16.8384251,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21L",
+      "club": null,
+      "position": "31",
+      "starters": "115",
+      "controls": 19,
+      "time": "1:22:48",
+      "totalMistakeTime": "2:01",
+      "mistakes": [
+        {
+          "control": 6,
+          "time": "0:32"
+        },
+        {
+          "control": 7,
+          "time": "0:25"
+        },
+        {
+          "control": 9,
+          "time": "1:04"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "O-ringen E3",
+      "domaDate": "2011-07-27",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-34\\competition-enriched.json"
+    }
+  }
+}

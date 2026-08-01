@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "status": "needs-review",
+  "reviewedAt": "2026-08-01T19:39:23.087Z",
+  "competition": {
+    "doma": {
+      "mapId": 13,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=13",
+      "title": "Natt-KM",
+      "date": "2011-04-06",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": null,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/13.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": null
+    },
+    "location": null,
+    "latitude": null,
+    "longitude": null,
+    "discipline": "Natt",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": null,
+      "club": null,
+      "position": null,
+      "starters": null,
+      "controls": null,
+      "time": null,
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Natt-KM",
+      "domaDate": "2011-04-06",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-13\\competition-enriched.json"
+    }
+  }
+}

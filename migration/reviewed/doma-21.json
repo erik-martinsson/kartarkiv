@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-01T20:09:22.603Z",
+  "competition": {
+    "doma": {
+      "mapId": 21,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=21",
+      "title": "Elitserien Falun, Sprint, H21E2",
+      "date": "2011-06-06",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 3.9,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/21.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=17439&categoryId=3",
+      "courseLengthKm": 3.4
+    },
+    "location": "Falun",
+    "latitude": 60.5866586,
+    "longitude": 15.6234302,
+    "discipline": "Sprint",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21E2",
+      "club": null,
+      "position": "24",
+      "starters": "42",
+      "controls": 16,
+      "time": "16:49",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Elitserien Falun, Sprint, H21E2",
+      "domaDate": "2011-06-06",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-21\\competition-enriched.json"
+    }
+  }
+}

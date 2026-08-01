@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-01T19:55:42.156Z",
+  "competition": {
+    "doma": {
+      "mapId": 17,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=17",
+      "title": "Elitserien Mora, Lång H21E2",
+      "date": "2011-06-02",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 16.51,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/17.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=17409&categoryId=2",
+      "courseLengthKm": 15
+    },
+    "location": "Mora",
+    "latitude": 61.0714896,
+    "longitude": 14.4802065,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21E2",
+      "club": null,
+      "position": "5",
+      "starters": "25",
+      "controls": 19,
+      "time": "1:25:52",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Elitserien Mora, Lång H21E2",
+      "domaDate": "2011-06-03",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-17\\competition-enriched.json"
+    }
+  }
+}

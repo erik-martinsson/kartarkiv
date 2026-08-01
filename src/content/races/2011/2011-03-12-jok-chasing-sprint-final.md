@@ -5,7 +5,7 @@ event: "JOK Chasing Sprint - Final"
 date: 2011-03-12
 
 club: ""
-country: "SE"
+country: "GB"
 location: ""
 
 discipline: "Medel"

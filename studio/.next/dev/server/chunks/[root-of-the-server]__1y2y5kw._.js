@@ -439,7 +439,7 @@ function assertPublishable(reviewed) {
 function buildPublishPlan(reviewed, options = {}) {
     const normalized = normalizePlanOptions({
         ...options,
-        country: options.country ?? reviewed.competition.country ?? DEFAULT_COUNTRY
+        country: reviewed.competition.country ?? options.country ?? DEFAULT_COUNTRY
     });
     const date = requireIsoDate(reviewed.competition.doma.date);
     const title = chooseTitle(reviewed);
@@ -502,7 +502,10 @@ async function publishReviewed(reviewed, options = {}) {
             asset.kind,
             asset
         ]));
-    const finalMarkdown = buildMarkdown(reviewed, normalized, plan.title, plan.date, finalAssetByKind);
+    const finalMarkdown = buildMarkdown(reviewed, {
+        ...normalized,
+        country: reviewed.competition.country ?? normalized.country ?? DEFAULT_COUNTRY
+    }, plan.title, plan.date, finalAssetByKind);
     normalized.onProgress?.({
         type: "markdown-write-start",
         path: plan.markdownPath

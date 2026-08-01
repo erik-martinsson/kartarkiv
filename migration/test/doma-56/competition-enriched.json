@@ -1,0 +1,164 @@
+{
+  "doma": {
+    "mapId": 56,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=56",
+    "title": "Smålandskavlen, Öppen",
+    "date": "2011-10-30",
+    "category": "Tävling",
+    "relayLeg": 3,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/56.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=19145&categoryId=251"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "5",
+    "starters": "79",
+    "controls": 8,
+    "time": "25.24",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Smålandskavlen, Öppen",
+    "domaDate": "2011-10-30",
+    "databaseId": 19145,
+    "searchedDates": [
+      "2011-10-28",
+      "2011-10-29",
+      "2011-10-30",
+      "2011-10-31",
+      "2011-11-01"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2011-10-28&endDate=2011-10-28&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-10-28&endDate=2011-10-28&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-10-28&endDate=2011-10-28&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-10-28&endDate=2011-10-28&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-10-28&endDate=2011-10-28&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-10-28&endDate=2011-10-28&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-10-29&endDate=2011-10-29&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-10-29&endDate=2011-10-29&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-10-29&endDate=2011-10-29&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-10-29&endDate=2011-10-29&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-10-29&endDate=2011-10-29&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-10-29&endDate=2011-10-29&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-10-30&endDate=2011-10-30&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-10-30&endDate=2011-10-30&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-10-30&endDate=2011-10-30&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-10-30&endDate=2011-10-30&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-10-30&endDate=2011-10-30&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-10-30&endDate=2011-10-30&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-10-31&endDate=2011-10-31&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-10-31&endDate=2011-10-31&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-10-31&endDate=2011-10-31&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-10-31&endDate=2011-10-31&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-10-31&endDate=2011-10-31&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-10-31&endDate=2011-10-31&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-11-01&endDate=2011-11-01&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-11-01&endDate=2011-11-01&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-11-01&endDate=2011-11-01&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-11-01&endDate=2011-11-01&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-11-01&endDate=2011-11-01&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-11-01&endDate=2011-11-01&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 1110,
+        "title": "Smålandskavlen",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-10-29&endDate=2011-10-29&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3202,
+        "title": "Intresseanmälan TSK Ungdom Smålandskavlen",
+        "score": 40,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-10-29&endDate=2011-10-29&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1302,
+        "title": "HaningeNatten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-10-28&endDate=2011-10-28&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3346,
+        "title": "Kretsungdomsavslutning - natt",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-10-28&endDate=2011-10-28&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3255,
+        "title": "OK Österåkers Ultra-KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-10-30&endDate=2011-10-30&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1659,
+        "title": "Ulricehamns OK Medeldistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-10-30&endDate=2011-10-30&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3236,
+        "title": "Solna OK Barometerloppet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-10-30&endDate=2011-10-30&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3437,
+        "title": "Veteran-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-11-01&endDate=2011-11-01&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}
