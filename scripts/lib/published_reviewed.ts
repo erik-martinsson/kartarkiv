@@ -156,7 +156,13 @@ export function buildPublishPlan(
   reviewed: ReviewedDomaCompetition,
   options: BuildPublishPlanOptions = {},
 ): PublishPlan {
-  const normalized = normalizePlanOptions(options);
+  const normalized = normalizePlanOptions({
+    ...options,
+    country:
+      reviewed.competition.country ??
+      options.country ??
+      DEFAULT_COUNTRY,
+  });
   const date = requireIsoDate(reviewed.competition.doma.date);
   const title = chooseTitle(reviewed);
   const year = date.slice(0, 4);
@@ -410,6 +416,10 @@ export function buildMarkdown(
   if (routeImage) {
     if (!mapImage) lines.push("");
     lines.push(`routeImage: ${yamlString(routeImage)}`);
+  }
+
+  if (routeImage) {
+    lines.push(`thumbnailImage: ${yamlString(routeImage)}`);
   }
 
   if (gpsFile) {

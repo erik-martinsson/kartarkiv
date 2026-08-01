@@ -23,6 +23,7 @@ controls: 27
 mistakeSeconds: 0
 
 routeImage: "/maps/2011/2011-03-13-southern-champs_rutt.jpg"
+thumbnailImage: "/maps/2011/2011-03-13-southern-champs_rutt.jpg"
 
 latitude: 51.5788212
 longitude: -0.8894718

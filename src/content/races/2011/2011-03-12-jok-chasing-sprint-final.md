@@ -23,6 +23,7 @@ controls: null
 mistakeSeconds: 0
 
 routeImage: "/maps/2011/2011-03-12-jok-chasing-sprint-final_rutt.jpg"
+thumbnailImage: "/maps/2011/2011-03-12-jok-chasing-sprint-final_rutt.jpg"
 
 latitude: 51.74744005
 longitude: -1.18524955

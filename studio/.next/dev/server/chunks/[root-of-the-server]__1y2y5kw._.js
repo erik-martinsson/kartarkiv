@@ -437,7 +437,10 @@ function assertPublishable(reviewed) {
     return validation.warnings;
 }
 function buildPublishPlan(reviewed, options = {}) {
-    const normalized = normalizePlanOptions(options);
+    const normalized = normalizePlanOptions({
+        ...options,
+        country: options.country ?? reviewed.competition.country ?? DEFAULT_COUNTRY
+    });
     const date = requireIsoDate(reviewed.competition.doma.date);
     const title = chooseTitle(reviewed);
     const year = date.slice(0, 4);
@@ -593,6 +596,9 @@ function buildMarkdown(reviewed, options, title, date, assetByKind) {
     if (routeImage) {
         if (!mapImage) lines.push("");
         lines.push(`routeImage: ${yamlString(routeImage)}`);
+    }
+    if (routeImage) {
+        lines.push(`thumbnailImage: ${yamlString(routeImage)}`);
     }
     if (gpsFile) {
         lines.push("", `gpsFile: ${yamlString(gpsFile)}`);
