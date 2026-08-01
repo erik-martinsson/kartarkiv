@@ -1,4 +1,4 @@
-import { readdir, readFile } from "node:fs/promises";
+import { access, readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { NextResponse } from "next/server";
 
@@ -9,23 +9,55 @@ import type {
   ReviewedDomaCompetition,
 } from "@/types/migration";
 
+import { buildPublishPlan } from "../../../../../../scripts/lib/published_reviewed";
+
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-async function readReviewStatus(
+type ReviewQueueState = Pick<
+  MigrationQueueItem,
+  "status" | "published"
+>;
+
+async function readReviewQueueState(
+  repositoryRoot: string,
   reviewedDirectory: string,
   mapId: number,
-): Promise<MigrationQueueItem["status"]> {
+): Promise<ReviewQueueState> {
+  const reviewedFile = path.join(
+    reviewedDirectory,
+    `doma-${mapId}.json`,
+  );
+
   try {
-    const content = await readFile(
-      path.join(reviewedDirectory, `doma-${mapId}.json`),
-      "utf8",
-    );
-    const review = JSON.parse(content) as ReviewedDomaCompetition;
-    return review.status;
+    const content = await readFile(reviewedFile, "utf8");
+    const review =
+      JSON.parse(content) as ReviewedDomaCompetition;
+
+    let published = false;
+
+    try {
+      const plan = buildPublishPlan(review, {
+        projectRoot: repositoryRoot,
+        sourceFile: reviewedFile,
+      });
+
+      await access(plan.markdownPath);
+      published = true;
+    } catch {
+      published = false;
+    }
+
+    return {
+      status: review.status,
+      published,
+    };
   } catch {
-    return "pending";
+    return {
+      status: "pending",
+      published: false,
+    };
   }
 }
 
@@ -63,14 +95,23 @@ export async function GET(): Promise<NextResponse> {
             ),
             "utf8",
           );
-          const competition = JSON.parse(content) as EnrichedDomaCompetition;
+          const competition =
+            JSON.parse(content) as EnrichedDomaCompetition;
+          const reviewState =
+            await readReviewQueueState(
+              root,
+              reviewedDirectory,
+              mapId,
+            );
 
           return {
             mapId,
             title: competition.doma.title,
             date: competition.doma.date,
-            status: await readReviewStatus(reviewedDirectory, mapId),
-            confidence: competition.eventorMatch?.confidence ?? null,
+            status: reviewState.status,
+            published: reviewState.published,
+            confidence:
+              competition.eventorMatch?.confidence ?? null,
             warningCount: competition.warnings.length,
           };
         } catch (error) {

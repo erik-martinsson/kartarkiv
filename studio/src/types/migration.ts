@@ -118,6 +118,8 @@ export type MigrationQueueItem = {
   title: string | null;
   date: string | null;
   status: MigrationReviewStatus;
+  /** True when the generated race Markdown file exists in the Kartarkiv. */
+  published: boolean;
   confidence: "high" | "medium" | null;
   warningCount: number;
 };

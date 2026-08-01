@@ -8,7 +8,7 @@ club: "Linköpings OK"
 country: "SE"
 location: "Hallsbergs kommun"
 
-discipline: "Lång"
+discipline: "Natt"
 raceClass: "H21"
 
 distanceKm: 12.98

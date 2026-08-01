@@ -2,21 +2,380 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RaceCard from '../../components/RaceCard.astro';
-const races = (await getCollection('races')).sort((a,b)=>b.data.date.getTime()-a.data.date.getTime());
+
+const races = (await getCollection('races')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const countryNames: Record<string, string> = {
+  SE: 'Sverige',
+  NO: 'Norge',
+  FI: 'Finland',
+  DK: 'Danmark',
+  IS: 'Island',
+  EE: 'Estland',
+  LV: 'Lettland',
+  LT: 'Litauen',
+  CH: 'Schweiz',
+  DE: 'Tyskland',
+  AT: 'Österrike',
+  FR: 'Frankrike',
+  GB: 'Storbritannien',
+  CZ: 'Tjeckien',
+  PL: 'Polen',
+  ES: 'Spanien',
+  IT: 'Italien',
+  PT: 'Portugal',
+  BE: 'Belgien',
+  NL: 'Nederländerna'
+};
+
+const raceItems = races.map((race) => {
+  const year = String(race.data.date.getFullYear());
+  const discipline = race.data.discipline?.trim() || 'Okänd disciplin';
+  const countryCode = race.data.country?.trim().toUpperCase() || '??';
+  const country = countryNames[countryCode] ?? countryCode;
+
+  const searchText = [
+    race.data.title,
+    race.data.event,
+    race.data.location,
+    discipline,
+    country,
+    countryCode,
+    race.data.club,
+    race.data.raceClass,
+    year
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLocaleLowerCase('sv-SE');
+
+  return {
+    race,
+    year,
+    discipline,
+    country,
+    searchText
+  };
+});
 ---
+
 <BaseLayout title="Kartor – Erik Orientering">
   <section class="page-shell archive-page">
-    <div class="archive-header"><div><p class="eyebrow">ARKIV</p><h1>Alla kartor</h1></div><input id="search" type="search" placeholder="Sök tävling, plats eller år…" /></div>
-    <div class="race-grid archive-grid" id="race-grid">
-      {races.map(race => <div class="search-item" data-search={`${race.data.title} ${race.data.location} ${race.data.date.getFullYear()} ${race.data.class}`.toLowerCase()}><RaceCard race={race} /></div>)}
+    <div class="archive-header">
+      <div>
+        <p class="eyebrow">ARKIV</p>
+        <h1>Alla kartor</h1>
+        <p class="archive-intro">
+          {races.length} tävlingar i Kartarkivet.
+        </p>
+      </div>
+
+      <label class="archive-search">
+        <span>Sök i Kartarkivet</span>
+        <input
+          id="search"
+          type="search"
+          placeholder="Sök tävling, plats, disciplin eller år…"
+          autocomplete="off"
+        />
+      </label>
+    </div>
+
+    <div class="archive-toolbar" aria-label="Arkivverktyg">
+      <div class="archive-grouping-control">
+        <span class="archive-toolbar-label">Gruppera efter</span>
+
+        <div class="archive-grouping-buttons" role="group" aria-label="Gruppera tävlingar">
+          <button class="is-active" type="button" data-grouping="year" aria-pressed="true">
+            År
+          </button>
+          <button type="button" data-grouping="discipline" aria-pressed="false">
+            Disciplin
+          </button>
+          <button type="button" data-grouping="country" aria-pressed="false">
+            Land
+          </button>
+        </div>
+      </div>
+
+      <button
+        class="archive-expand-button"
+        id="toggle-all-groups"
+        type="button"
+        aria-expanded="false"
+      >
+        Fäll ut alla
+      </button>
+    </div>
+
+    <p class="archive-search-summary" id="search-summary" aria-live="polite">
+      Visar alla {races.length} tävlingar.
+    </p>
+
+    <div
+      class="archive-race-source"
+      id="archive-race-source"
+      aria-hidden="true"
+      hidden
+    >
+      {
+        raceItems.map(({ race, year, discipline, country, searchText }) => (
+          <div
+            class="search-item"
+            data-year={year}
+            data-discipline={discipline}
+            data-country={country}
+            data-search={searchText}
+          >
+            <RaceCard race={race} />
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="archive-groups" id="archive-groups"></div>
+
+    <div class="archive-empty-search" id="archive-empty-search" hidden>
+      <strong>Inga tävlingar hittades</strong>
+      <p>Prova ett annat tävlingsnamn, en plats, disciplin, ett land eller ett år.</p>
     </div>
   </section>
+
   <script>
-    const input = document.querySelector('#search');
-    const items = [...document.querySelectorAll('.search-item')];
-    input?.addEventListener('input', () => {
-      const q = input.value.toLowerCase().trim();
-      items.forEach(item => item.toggleAttribute('hidden', !item.dataset.search.includes(q)));
+    type Grouping = 'year' | 'discipline' | 'country';
+
+    const STORAGE_KEY = 'kartarkiv:archive-grouping';
+    const input = document.querySelector<HTMLInputElement>('#search');
+    const groupContainer = document.querySelector<HTMLElement>('#archive-groups');
+    const source = document.querySelector<HTMLElement>('#archive-race-source');
+    const summary = document.querySelector<HTMLElement>('#search-summary');
+    const emptyState = document.querySelector<HTMLElement>('#archive-empty-search');
+    const toggleAllButton = document.querySelector<HTMLButtonElement>('#toggle-all-groups');
+    const groupingButtons = [
+      ...document.querySelectorAll<HTMLButtonElement>('[data-grouping]')
+    ];
+    const items = source
+      ? [...source.querySelectorAll<HTMLElement>('.search-item')]
+      : [];
+
+    const normalize = (value: string): string =>
+      value
+        .toLocaleLowerCase('sv-SE')
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '')
+        .trim();
+
+    const pluralize = (count: number): string =>
+      count === 1 ? 'tävling' : 'tävlingar';
+
+    const readSavedGrouping = (): Grouping => {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+
+        if (saved === 'discipline' || saved === 'country') {
+          return saved;
+        }
+      } catch {
+        // localStorage kan saknas i vissa webbläsarkontexter.
+      }
+
+      return 'year';
+    };
+
+    let activeGrouping: Grouping = readSavedGrouping();
+
+    const groupLabel = (item: HTMLElement): string => {
+      if (activeGrouping === 'discipline') {
+        return item.dataset.discipline || 'Okänd disciplin';
+      }
+
+      if (activeGrouping === 'country') {
+        return item.dataset.country || 'Okänt land';
+      }
+
+      return item.dataset.year || 'Okänt år';
+    };
+
+    const compareGroupLabels = (a: string, b: string): number => {
+      if (activeGrouping === 'year') {
+        return Number(b) - Number(a);
+      }
+
+      return a.localeCompare(b, 'sv-SE', {
+        sensitivity: 'base',
+        numeric: true
+      });
+    };
+
+    const updateGroupingButtons = (): void => {
+      groupingButtons.forEach((button) => {
+        const selected = button.dataset.grouping === activeGrouping;
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-pressed', String(selected));
+      });
+    };
+
+    const updateToggleAllButton = (): void => {
+      if (!toggleAllButton || !groupContainer) {
+        return;
+      }
+
+      const groups = [
+        ...groupContainer.querySelectorAll<HTMLDetailsElement>('[data-group]')
+      ].filter((group) => !group.hidden);
+
+      const allOpen = groups.length > 0 && groups.every((group) => group.open);
+
+      toggleAllButton.textContent = allOpen
+        ? 'Fäll ihop alla'
+        : 'Fäll ut alla';
+      toggleAllButton.setAttribute('aria-expanded', String(allOpen));
+    };
+
+    const createGroup = (
+      label: string,
+      groupItems: HTMLElement[],
+      open: boolean
+    ): HTMLDetailsElement => {
+      const details = document.createElement('details');
+      details.className = 'archive-group';
+      details.dataset.group = '';
+      details.open = open;
+
+      const heading = document.createElement('summary');
+      heading.className = 'archive-group-heading';
+
+      const title = document.createElement('span');
+      title.className = 'archive-group-title';
+
+      const chevron = document.createElement('span');
+      chevron.className = 'archive-group-chevron';
+      chevron.setAttribute('aria-hidden', 'true');
+      chevron.textContent = '›';
+
+      const strong = document.createElement('strong');
+      strong.textContent = label;
+
+      title.append(chevron, strong);
+
+      const count = document.createElement('span');
+      count.className = 'archive-group-count';
+      count.dataset.groupCount = '';
+      count.textContent = `${groupItems.length} ${pluralize(groupItems.length)}`;
+
+      heading.append(title, count);
+
+      const grid = document.createElement('div');
+      grid.className = 'race-grid archive-grid archive-group-grid';
+
+      groupItems.forEach((item) => {
+        item.hidden = false;
+        grid.append(item);
+      });
+
+      details.append(heading, grid);
+      details.addEventListener('toggle', updateToggleAllButton);
+
+      return details;
+    };
+
+    const renderArchive = (): void => {
+      if (!groupContainer) {
+        return;
+      }
+
+      const query = normalize(input?.value ?? '');
+      const visibleItems = items.filter((item) => {
+        const searchable = normalize(item.dataset.search ?? '');
+        return !query || searchable.includes(query);
+      });
+
+      const groups = new Map<string, HTMLElement[]>();
+
+      visibleItems.forEach((item) => {
+        const label = groupLabel(item);
+        const group = groups.get(label) ?? [];
+
+        group.push(item);
+        groups.set(label, group);
+      });
+
+      const sortedGroups = [...groups.entries()].sort(([a], [b]) =>
+        compareGroupLabels(a, b)
+      );
+
+      groupContainer.replaceChildren();
+
+      sortedGroups.forEach(([label, groupItems], index) => {
+        groupContainer.append(
+          createGroup(label, groupItems, query ? true : index === 0)
+        );
+      });
+
+      const visibleTotal = visibleItems.length;
+
+      if (summary) {
+        summary.textContent = query
+          ? `Visar ${visibleTotal} ${pluralize(
+              visibleTotal
+            )} som matchar “${input?.value.trim() ?? ''}”.`
+          : `Visar alla ${items.length} tävlingar.`;
+      }
+
+      if (emptyState) {
+        emptyState.hidden = visibleTotal !== 0;
+      }
+
+      updateGroupingButtons();
+      updateToggleAllButton();
+    };
+
+    input?.addEventListener('input', renderArchive);
+
+    groupingButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const grouping = button.dataset.grouping;
+
+        if (
+          grouping !== 'year' &&
+          grouping !== 'discipline' &&
+          grouping !== 'country'
+        ) {
+          return;
+        }
+
+        activeGrouping = grouping;
+
+        try {
+          localStorage.setItem(STORAGE_KEY, activeGrouping);
+        } catch {
+          // Grupperingen fungerar ändå utan localStorage.
+        }
+
+        renderArchive();
+      });
     });
+
+    toggleAllButton?.addEventListener('click', () => {
+      if (!groupContainer) {
+        return;
+      }
+
+      const groups = [
+        ...groupContainer.querySelectorAll<HTMLDetailsElement>('[data-group]')
+      ].filter((group) => !group.hidden);
+
+      const shouldOpen = groups.some((group) => !group.open);
+
+      groups.forEach((group) => {
+        group.open = shouldOpen;
+      });
+
+      updateToggleAllButton();
+    });
+
+    renderArchive();
   </script>
 </BaseLayout>

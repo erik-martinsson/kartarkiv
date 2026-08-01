@@ -702,10 +702,13 @@ export default function MigrationReview() {
   const currentQueueIndex = queue.findIndex((item) => String(item.mapId) === mapIdInput);
   const previousItem = currentQueueIndex > 0 ? queue[currentQueueIndex - 1] : null;
   const nextItem = currentQueueIndex >= 0 && currentQueueIndex < queue.length - 1 ? queue[currentQueueIndex + 1] : null;
-  const approvedCount = queue.filter((item) => item.status === "approved").length;
+  const publishedCount = queue.filter((item) => item.published).length;
+  const approvedCount = queue.filter(
+    (item) => item.status === "approved" && !item.published,
+  ).length;
   const reviewCount = queue.filter((item) => item.status === "needs-review").length;
   const pendingCount = queue.filter((item) => item.status === "pending").length;
-  const completedCount = approvedCount + reviewCount;
+  const completedCount = publishedCount + approvedCount + reviewCount;
   const progressPercent = queue.length ? Math.round((completedCount / queue.length) * 100) : 0;
   const match = competition?.eventorMatch;
   const eventor = competition?.eventor;
@@ -761,7 +764,7 @@ export default function MigrationReview() {
       <section className="panel migration-toolbar">
         <div className="migration-progress-summary">
           <strong>{progressPercent}% klart</strong>
-          <span>Totalt {queue.length} · Godkända {approvedCount} · Manuella {reviewCount} · Kvar {pendingCount}</span>
+          <span>Totalt {queue.length} · Publicerade {publishedCount} · Godkända {approvedCount} · Manuella {reviewCount} · Kvar {pendingCount}</span>
           <progress max={100} value={progressPercent} aria-label={`${progressPercent}% av migrationskön granskad`} />
         </div>
         <div className="migration-id-control"><label htmlFor="migration-map-id">DOMA map-ID</label><div>
@@ -782,9 +785,46 @@ export default function MigrationReview() {
 
       {queue.length ? <section className="panel migration-queue-bar" aria-label="Migrationskö">
         <button className="button secondary" type="button" disabled={!previousItem || isLoading} onClick={() => previousItem && void loadMap(String(previousItem.mapId))}>← Föregående</button>
-        <div><strong>{currentQueueIndex >= 0 ? currentQueueIndex + 1 : "—"} av {queue.length}</strong><span>{queue.filter((item) => item.status === "approved").length} godkända · {queue.filter((item) => item.status === "needs-review").length} manuella</span></div>
-        <select aria-label="Välj tävling i migrationskön" value={currentQueueIndex >= 0 ? mapIdInput : ""} onChange={(event) => void loadMap(event.target.value)}><option value="" disabled>Välj DOMA-post</option>{queue.map((item) => <option key={item.mapId} value={item.mapId}>{item.status === "approved" ? "✓" : item.status === "needs-review" ? "!" : "○"} DOMA {item.mapId} — {item.title ?? "Utan titel"}</option>)}</select>
+        <div>
+          <strong>{currentQueueIndex >= 0 ? currentQueueIndex + 1 : "—"} av {queue.length}</strong>
+          <span>{publishedCount} publicerade · {approvedCount} godkända · {reviewCount} manuella</span>
+        </div>
+        <select
+          aria-label="Välj tävling i migrationskön"
+          value={currentQueueIndex >= 0 ? mapIdInput : ""}
+          onChange={(event) => void loadMap(event.target.value)}
+        >
+          <option value="" disabled>Välj DOMA-post</option>
+          {queue.map((item) => {
+            const marker = item.published
+              ? "●"
+              : item.status === "approved"
+                ? "✓"
+                : item.status === "needs-review"
+                  ? "!"
+                  : "○";
+            const label = item.published
+              ? "Publicerad"
+              : item.status === "approved"
+                ? "Godkänd"
+                : item.status === "needs-review"
+                  ? "Manuell"
+                  : "Ej granskad";
+
+            return (
+              <option key={item.mapId} value={item.mapId}>
+                {marker} DOMA {item.mapId} — {item.title ?? "Utan titel"} — {label}
+              </option>
+            );
+          })}
+        </select>
         <button className="button secondary" type="button" disabled={!nextItem || isLoading} onClick={() => nextItem && void loadMap(String(nextItem.mapId))}>Nästa →</button>
+        <div className="migration-queue-legend" aria-label="Statusförklaring">
+          <span><strong>●</strong> Publicerad</span>
+          <span><strong>✓</strong> Godkänd</span>
+          <span><strong>!</strong> Manuell</span>
+          <span><strong>○</strong> Ej granskad</span>
+        </div>
       </section> : null}
 
       {message ? <p className="migration-message" role="status">{message}</p> : null}
@@ -942,6 +982,25 @@ export default function MigrationReview() {
           border: 1px solid rgba(22, 163, 74, 0.45);
           border-radius: 0.5rem;
           background: rgba(22, 163, 74, 0.08);
+        }
+
+        .migration-queue-legend {
+          grid-column: 1 / -1;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.55rem 1rem;
+          color: var(--muted, #64748b);
+          font-size: 0.78rem;
+        }
+
+        .migration-queue-legend span {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.3rem;
+        }
+
+        .migration-queue-legend strong {
+          color: var(--foreground, #111827);
         }
       `}</style>
     </main>
