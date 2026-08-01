@@ -578,6 +578,9 @@ export default function Home() {
             <Link className="studio-nav-link" href="/migration">
               Migrering
             </Link>
+            <Link className="studio-nav-link" href="/published">
+              Publicerade
+            </Link>
           </nav>
 
           <div className="status-badge">

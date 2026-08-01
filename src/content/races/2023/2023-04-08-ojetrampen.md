@@ -2,7 +2,7 @@
 title: "Öjetrampen"
 event: "Öjetrampen"
 
-date: 2023-04-08
+date: "2023-04-08"
 
 club: "Främmestads IK / OK Kullingshof"
 country: "SE"
