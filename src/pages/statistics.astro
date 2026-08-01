@@ -1,21 +1,492 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const races = (await getCollection('races')).sort(
+  (a, b) => a.data.date.getTime() - b.data.date.getTime()
+);
+
+const timeToSeconds = (time) => {
+  if (!time) return 0;
+  const parts = String(time).split(':').map(Number);
+  if (parts.length < 2 || parts.some(Number.isNaN)) return 0;
+  return parts.reduce((total, part) => total * 60 + part, 0);
+};
+
+const formatDuration = (seconds) => {
+  const rounded = Math.max(0, Math.round(seconds));
+  const days = Math.floor(rounded / 86400);
+  const hours = Math.floor((rounded % 86400) / 3600);
+  const minutes = Math.floor((rounded % 3600) / 60);
+  const remainingSeconds = rounded % 60;
+  if (days > 0) return `${days} d ${hours} h ${minutes} min`;
+  if (hours > 0) return `${hours} h ${minutes} min`;
+  return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
+};
+
+const formatCompactDuration = (seconds) => {
+  const rounded = Math.max(0, Math.round(seconds));
+  const minutes = Math.floor(rounded / 60);
+  const remainingSeconds = rounded % 60;
+  return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
+};
+
+const formatNumber = (value, decimals = 0) =>
+  value.toLocaleString('sv-SE', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  });
+
+const totalRaces = races.length;
+const totalRaceSeconds = races.reduce((sum, race) => sum + timeToSeconds(race.data.time), 0);
+const totalOfficialDistance = races.reduce((sum, race) => sum + (race.data.distanceKm ?? 0), 0);
+const totalGpsDistance = races.reduce((sum, race) => sum + (race.data.gpsDistanceKm ?? 0), 0);
+const totalControls = races.reduce((sum, race) => sum + (race.data.controls ?? 0), 0);
+const totalMistakeSeconds = races.reduce((sum, race) => sum + (race.data.mistakeSeconds ?? 0), 0);
+
+const averagePlacement = totalRaces
+  ? races.reduce((sum, race) => sum + race.data.position, 0) / totalRaces
+  : 0;
+const victories = races.filter((race) => race.data.position === 1).length;
+const podiums = races.filter((race) => race.data.position <= 3).length;
+const podiumShare = totalRaces ? (podiums / totalRaces) * 100 : 0;
+const topTen = races.filter((race) => race.data.position <= 10).length;
+const topTenShare = totalRaces ? (topTen / totalRaces) * 100 : 0;
+
+const averageMistakeSeconds = totalRaces ? totalMistakeSeconds / totalRaces : 0;
+const racesWithoutMistakes = races.filter((race) => (race.data.mistakeSeconds ?? 0) === 0).length;
+const mistakeFreeShare = totalRaces ? (racesWithoutMistakes / totalRaces) * 100 : 0;
+const largestMistake = races.reduce((largest, race) => Math.max(largest, race.data.mistakeSeconds ?? 0), 0);
+
+const racesWithDistance = races.filter(
+  (race) => (race.data.distanceKm ?? 0) > 0
+);
+const longestRace = racesWithDistance.reduce(
+  (best, race) =>
+    !best || race.data.distanceKm > best.data.distanceKm
+      ? race
+      : best,
+  null
+);
+const shortestRace = racesWithDistance.reduce(
+  (best, race) =>
+    !best || race.data.distanceKm < best.data.distanceKm
+      ? race
+      : best,
+  null
+);
+const mostControlsRace = races.reduce(
+  (best, race) =>
+    !best || (race.data.controls ?? 0) > (best.data.controls ?? 0)
+      ? race
+      : best,
+  null
+);
+const mostClimbRace = races.reduce(
+  (best, race) =>
+    !best || (race.data.gpsClimb ?? 0) > (best.data.gpsClimb ?? 0)
+      ? race
+      : best,
+  null
+);
+const mostMistakeRace = races.reduce(
+  (best, race) =>
+    !best ||
+    (race.data.mistakeSeconds ?? 0) >
+      (best.data.mistakeSeconds ?? 0)
+      ? race
+      : best,
+  null
+);
+const fastestRace = races
+  .map((race) => {
+    const seconds = timeToSeconds(race.data.time);
+    const distance =
+      race.data.gpsDistanceKm ?? race.data.distanceKm ?? 0;
+
+    return {
+      race,
+      paceSeconds:
+        seconds > 0 && distance > 0 ? seconds / distance : Infinity
+    };
+  })
+  .filter((item) => Number.isFinite(item.paceSeconds))
+  .sort((a, b) => a.paceSeconds - b.paceSeconds)[0] ?? null;
+
+const yearMap = new Map();
+for (const race of races) {
+  const year = race.data.date.getFullYear();
+  const current = yearMap.get(year) ?? {
+    year,
+    races: 0,
+    distanceKm: 0,
+    controls: 0,
+    mistakeSeconds: 0,
+    raceSeconds: 0
+  };
+  current.races += 1;
+  current.distanceKm += race.data.gpsDistanceKm ?? race.data.distanceKm ?? 0;
+  current.controls += race.data.controls ?? 0;
+  current.mistakeSeconds += race.data.mistakeSeconds ?? 0;
+  current.raceSeconds += timeToSeconds(race.data.time);
+  yearMap.set(year, current);
+}
+
+const yearly = [...yearMap.values()].sort((a, b) => a.year - b.year);
+const maxRacesPerYear = Math.max(1, ...yearly.map((item) => item.races));
+const maxDistancePerYear = Math.max(1, ...yearly.map((item) => item.distanceKm));
+const maxControlsPerYear = Math.max(1, ...yearly.map((item) => item.controls));
+const yearlyMistakeAverage = yearly.map((item) => ({
+  ...item,
+  averageMistakeSeconds: item.races ? item.mistakeSeconds / item.races : 0
+}));
+const maxMistakeAverage = Math.max(1, ...yearlyMistakeAverage.map((item) => item.averageMistakeSeconds));
+const yearlyPace = yearly.map((item) => ({
+  ...item,
+  paceSecondsPerKm: item.distanceKm > 0 ? item.raceSeconds / item.distanceKm : 0
+}));
+const maxPace = Math.max(1, ...yearlyPace.map((item) => item.paceSecondsPerKm));
+
+const disciplineMap = new Map();
+for (const race of races) {
+  const discipline = race.data.discipline?.trim() || 'Okänd';
+  disciplineMap.set(discipline, (disciplineMap.get(discipline) ?? 0) + 1);
+}
+
+const disciplineStats = [...disciplineMap.entries()]
+  .map(([discipline, count]) => ({
+    discipline,
+    count,
+    share: totalRaces ? (count / totalRaces) * 100 : 0
+  }))
+  .sort((a, b) => b.count - a.count);
+
+const pieColors = ['#ff7a00', '#f3b24b', '#dd5f38', '#c44767', '#965b9e', '#5d75b8', '#3f8b9c', '#4f9b78'];
+let pieCursor = 0;
+const pieSegments = disciplineStats.map((item, index) => {
+  const start = pieCursor;
+  const end = pieCursor + item.share;
+  pieCursor = end;
+  return `${pieColors[index % pieColors.length]} ${start}% ${end}%`;
+});
+const pieBackground = pieSegments.length > 0
+  ? `conic-gradient(${pieSegments.join(', ')})`
+  : 'conic-gradient(#333 0 100%)';
+
+const lineWidth = 900;
+const lineHeight = 320;
+const linePaddingX = 44;
+const linePaddingY = 36;
+const usableWidth = lineWidth - linePaddingX * 2;
+const usableHeight = lineHeight - linePaddingY * 2;
+const linePoints = yearlyMistakeAverage.map((item, index) => {
+  const x = yearlyMistakeAverage.length <= 1
+    ? lineWidth / 2
+    : linePaddingX + (index / (yearlyMistakeAverage.length - 1)) * usableWidth;
+  const y = linePaddingY + usableHeight - (item.averageMistakeSeconds / maxMistakeAverage) * usableHeight;
+  return { ...item, x, y };
+});
+const linePath = linePoints.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ');
+const pacePoints = yearlyPace.map((item, index) => {
+  const x = yearlyPace.length <= 1
+    ? lineWidth / 2
+    : linePaddingX + (index / (yearlyPace.length - 1)) * usableWidth;
+  const y = linePaddingY + usableHeight - (item.paceSecondsPerKm / maxPace) * usableHeight;
+  return { ...item, x, y };
+});
+const pacePath = pacePoints.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ');
 ---
 
 <BaseLayout title="Statistik · Erik Martinssons Kartarkiv">
-  <main class="archive-page page-shell">
-    <p class="eyebrow">KARTARKIV</p>
+  <main class="archive-page page-shell statistics-page">
+    <header class="statistics-header">
+      <p class="eyebrow">KARTARKIV</p>
+      <h1>Statistik</h1>
+      <p>Statistik baserad på alla publicerade tävlingar i Kartarkivet. Sidan uppdateras automatiskt när nya kartor publiceras.</p>
+    </header>
 
-    <h1>Statistik</h1>
+    <section class="statistics-section">
+      <div class="statistics-section-heading">
+        <div>
+          <p class="eyebrow">ÖVERSIKT</p>
+          <h2>Sammanställning</h2>
+        </div>
+      </div>
 
-    <section class="panel prose">
-      <h2>Mer statistik kommer snart</h2>
-
-      <p>
-        Här kommer mer utförlig statistik över tävlingar,
-        distanser, tider, placeringar, bomtid och utveckling
-        över tid att visas.
-      </p>
+      <div class="statistics-metric-grid">
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">⚑</span>
+          <span>Antal tävlingar</span>
+          <strong>{formatNumber(totalRaces)}</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">◷</span>
+          <span>Total tävlingstid</span>
+          <strong>{formatDuration(totalRaceSeconds)}</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">↔</span>
+          <span>Total tävlingsdistans</span>
+          <strong>{formatNumber(totalOfficialDistance, 1)} km</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">⌖</span>
+          <span>Total GPS-distans</span>
+          <strong>{formatNumber(totalGpsDistance, 1)} km</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">◎</span>
+          <span>Antal kontroller</span>
+          <strong>{formatNumber(totalControls)}</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">↔</span>
+          <span>Snittdistans per lopp</span>
+          <strong>{formatNumber(totalRaces ? totalOfficialDistance / totalRaces : 0, 1)} km</strong>
+        </article>
+      </div>
     </section>
+
+    <section class="statistics-section">
+      <div class="statistics-section-heading">
+        <div>
+          <p class="eyebrow">PLACERINGAR</p>
+          <h2>Resultat</h2>
+        </div>
+      </div>
+
+      <div class="statistics-metric-grid">
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">↗</span>
+          <span>Snittplacering</span>
+          <strong>{formatNumber(Math.round(averagePlacement))}</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">♕</span>
+          <span>Antal segrar</span>
+          <strong>{formatNumber(victories)}</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">♛</span>
+          <span>Antal pallplatser</span>
+          <strong>{formatNumber(podiums)}</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">%</span>
+          <span>Andel pallplatser</span>
+          <strong>{formatNumber(podiumShare, 1)} %</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">10</span>
+          <span>Antal topp 10</span>
+          <strong>{formatNumber(topTen)}</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">%</span>
+          <span>Andel topp 10</span>
+          <strong>{formatNumber(topTenShare, 1)} %</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="statistics-section">
+      <div class="statistics-section-heading">
+        <div>
+          <p class="eyebrow">ANALYS</p>
+          <h2>Bommar</h2>
+        </div>
+      </div>
+
+      <div class="statistics-metric-grid">
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">◴</span>
+          <span>Total bomtid</span>
+          <strong>{formatDuration(totalMistakeSeconds)}</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">÷</span>
+          <span>Genomsnittlig bom/lopp</span>
+          <strong>{formatCompactDuration(averageMistakeSeconds)}</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">✓</span>
+          <span>Lopp utan registrerad bom</span>
+          <strong>{formatNumber(racesWithoutMistakes)}</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">✓%</span>
+          <span>Andel utan registrerad bom</span>
+          <strong>{formatNumber(mistakeFreeShare, 1)} %</strong>
+        </article>
+        <article class="statistics-metric">
+          <span class="statistics-metric-icon" aria-hidden="true">!</span>
+          <span>Största registrerade bomtid</span>
+          <strong>{formatCompactDuration(largestMistake)}</strong>
+        </article>
+        <article class="statistics-metric statistics-metric-note">
+          <span class="statistics-metric-icon" aria-hidden="true">?</span>
+          <span>Vanligaste kontrollen att missa</span>
+          <strong>—</strong>
+          <small>Kontrollspecifika bommar sparas ännu inte i publicerade tävlingar.</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="statistics-section">
+      <div class="statistics-section-heading">
+        <div>
+          <p class="eyebrow">REKORD</p>
+          <h2>Höjdpunkter</h2>
+        </div>
+      </div>
+
+      <div class="statistics-record-grid">
+        <article class="statistics-record">
+          <span>Längsta tävling</span>
+          <strong>{longestRace ? `${formatNumber(longestRace.data.distanceKm, 1)} km` : '—'}</strong>
+          <small>{longestRace?.data.title ?? 'Ingen data'}</small>
+        </article>
+        <article class="statistics-record">
+          <span>Kortaste tävling</span>
+          <strong>{shortestRace ? `${formatNumber(shortestRace.data.distanceKm, 1)} km` : '—'}</strong>
+          <small>{shortestRace?.data.title ?? 'Ingen data'}</small>
+        </article>
+        <article class="statistics-record">
+          <span>Flest kontroller</span>
+          <strong>{mostControlsRace?.data.controls ?? '—'}</strong>
+          <small>{mostControlsRace?.data.title ?? 'Ingen data'}</small>
+        </article>
+        <article class="statistics-record">
+          <span>Mest GPS-stigning</span>
+          <strong>{mostClimbRace?.data.gpsClimb ? `${formatNumber(mostClimbRace.data.gpsClimb)} m` : '—'}</strong>
+          <small>{mostClimbRace?.data.title ?? 'Ingen data'}</small>
+        </article>
+        <article class="statistics-record">
+          <span>Störst bomtid</span>
+          <strong>{mostMistakeRace ? formatCompactDuration(mostMistakeRace.data.mistakeSeconds ?? 0) : '—'}</strong>
+          <small>{mostMistakeRace?.data.title ?? 'Ingen data'}</small>
+        </article>
+        <article class="statistics-record">
+          <span>Snabbaste snittempo</span>
+          <strong>{fastestRace ? `${formatCompactDuration(fastestRace.paceSeconds)} /km` : '—'}</strong>
+          <small>{fastestRace?.race.data.title ?? 'Ingen data'}</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="statistics-charts">
+      <div class="statistics-section-heading"><div><p class="eyebrow">UTVECKLING</p><h2>Diagram</h2></div></div>
+      <div class="statistics-chart-grid">
+        <article class="panel statistics-chart-panel">
+          <div class="statistics-chart-heading"><h3>Antal tävlingar per år</h3><p>Publicerade tävlingar fördelade över tid.</p></div>
+          <div class="statistics-bar-chart">
+            {yearly.map((item) => <div class="statistics-bar-column"><div class="statistics-bar-value">{item.races}</div><div class="statistics-bar-track"><div class="statistics-bar-fill" style={`height: ${(item.races / maxRacesPerYear) * 100}%`}></div></div><span>{item.year}</span></div>)}
+          </div>
+        </article>
+
+        <article class="panel statistics-chart-panel">
+          <div class="statistics-chart-heading"><h3>Löpta kilometer per år</h3><p>GPS-distans där den finns, annars officiell banlängd.</p></div>
+          <div class="statistics-bar-chart">
+            {yearly.map((item) => <div class="statistics-bar-column"><div class="statistics-bar-value">{formatNumber(item.distanceKm, 0)}</div><div class="statistics-bar-track"><div class="statistics-bar-fill" style={`height: ${(item.distanceKm / maxDistancePerYear) * 100}%`}></div></div><span>{item.year}</span></div>)}
+          </div>
+        </article>
+
+        <article class="panel statistics-chart-panel">
+          <div class="statistics-chart-heading"><h3>Antal kontroller per år</h3><p>Summan av registrerade kontroller för årets tävlingar.</p></div>
+          <div class="statistics-bar-chart">
+            {yearly.map((item) => <div class="statistics-bar-column"><div class="statistics-bar-value">{formatNumber(item.controls)}</div><div class="statistics-bar-track"><div class="statistics-bar-fill" style={`height: ${(item.controls / maxControlsPerYear) * 100}%`}></div></div><span>{item.year}</span></div>)}
+          </div>
+        </article>
+
+        <article class="panel statistics-chart-panel statistics-chart-wide">
+          <div class="statistics-chart-heading"><h3>Genomsnittlig bomtid per år</h3><p>Genomsnittlig registrerad bomtid per tävling.</p></div>
+          {linePoints.length > 0 ? <div class="statistics-line-chart-wrap"><svg class="statistics-line-chart" viewBox={`0 0 ${lineWidth} ${lineHeight}`} role="img" aria-label="Genomsnittlig bomtid per år">
+            {[0, 0.25, 0.5, 0.75, 1].map((ratio) => { const y = linePaddingY + usableHeight - ratio * usableHeight; return <line x1={linePaddingX} x2={lineWidth - linePaddingX} y1={y} y2={y} class="statistics-grid-line" />; })}
+            <path d={linePath} class="statistics-line-path" />
+            {linePoints.map((point) => <g><circle cx={point.x} cy={point.y} r="6" class="statistics-line-point" /><text x={point.x} y={point.y - 14} text-anchor="middle" class="statistics-line-value">{formatCompactDuration(point.averageMistakeSeconds)}</text><text x={point.x} y={lineHeight - 5} text-anchor="middle" class="statistics-line-year">{point.year}</text></g>)}
+          </svg></div> : <p class="statistics-empty-chart">Ingen statistik ännu.</p>}
+        </article>
+
+        <article class="panel statistics-chart-panel statistics-chart-half">
+          <div class="statistics-chart-heading">
+            <h3>Snittfart (min/km) per år</h3>
+            <p>Total tävlingstid dividerad med löpt distans för respektive år.</p>
+          </div>
+
+          {
+            pacePoints.length > 0 ? (
+              <div class="statistics-line-chart-wrap">
+                <svg
+                  class="statistics-line-chart"
+                  viewBox={`0 0 ${lineWidth} ${lineHeight}`}
+                  role="img"
+                  aria-labelledby="pace-line-title pace-line-desc"
+                >
+                  <title id="pace-line-title">Snittfart i minuter per kilometer per år</title>
+                  <desc id="pace-line-desc">
+                    Linje med en punkt för varje år. Värdet visar genomsnittliga minuter per kilometer.
+                  </desc>
+
+                  {[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
+                    const y = linePaddingY + usableHeight - ratio * usableHeight;
+                    return (
+                      <line
+                        x1={linePaddingX}
+                        x2={lineWidth - linePaddingX}
+                        y1={y}
+                        y2={y}
+                        class="statistics-grid-line"
+                      />
+                    );
+                  })}
+
+                  <path d={pacePath} class="statistics-line-path" />
+
+                  {
+                    pacePoints.map((point) => (
+                      <g>
+                        <circle cx={point.x} cy={point.y} r="6" class="statistics-line-point" />
+                        <text
+                          x={point.x}
+                          y={point.y - 14}
+                          text-anchor="middle"
+                          class="statistics-line-value"
+                        >
+                          {formatCompactDuration(point.paceSecondsPerKm)}
+                        </text>
+                        <text
+                          x={point.x}
+                          y={lineHeight - 5}
+                          text-anchor="middle"
+                          class="statistics-line-year"
+                        >
+                          {point.year}
+                        </text>
+                      </g>
+                    ))
+                  }
+                </svg>
+              </div>
+            ) : (
+              <p class="statistics-empty-chart">Ingen statistik ännu.</p>
+            )
+          }
+        </article>
+
+        <article class="panel statistics-chart-panel statistics-chart-half">
+          <div class="statistics-chart-heading"><h3>Fördelning per disciplin</h3><p>Andel av samtliga publicerade tävlingar.</p></div>
+          <div class="statistics-discipline-layout">
+            <div class="statistics-pie" style={`--statistics-pie: ${pieBackground}`} role="img" aria-label="Cirkeldiagram över tävlingarnas disciplinfördelning"><div><strong>{totalRaces}</strong><span>tävlingar</span></div></div>
+            <div class="statistics-legend">
+              {disciplineStats.map((item, index) => <div class="statistics-legend-item"><span class="statistics-legend-color" style={`background: ${pieColors[index % pieColors.length]}`}></span><div><strong>{item.discipline}</strong><span>{item.count} · {formatNumber(item.share, 1)} %</span></div></div>)}
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p class="statistics-update-note">
+      Statistiken uppdateras automatiskt när nya tävlingar publiceras.
+    </p>
   </main>
 </BaseLayout>
