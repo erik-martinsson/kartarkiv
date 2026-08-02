@@ -58,14 +58,18 @@ const placementText =
     ? `${race.data.position}:a av ${race.data.starters}`
     : positionText;
 
+const hasWinSplits = Boolean(race.data.winsplits);
+
 const mistakeSeconds =
   typeof race.data.mistakeSeconds === 'number'
     ? race.data.mistakeSeconds
     : 0;
 
-const mistakeTimeText = `${Math.floor(mistakeSeconds / 60)}:${String(
-  mistakeSeconds % 60
-).padStart(2, '0')}`;
+const mistakeTimeText = hasWinSplits
+  ? `${Math.floor(mistakeSeconds / 60)}:${String(
+      mistakeSeconds % 60
+    ).padStart(2, '0')}`
+  : '–';
 
 const timeToSeconds = (time) => {
   if (!time) return 0;
@@ -78,8 +82,14 @@ const timeToSeconds = (time) => {
 
 const raceTimeSeconds = timeToSeconds(race.data.time);
 const mistakePercent =
-  raceTimeSeconds > 0 ? (mistakeSeconds / raceTimeSeconds) * 100 : 0;
-const mistakePercentText = `${mistakePercent.toFixed(1)} %`;
+  hasWinSplits && raceTimeSeconds > 0
+    ? (mistakeSeconds / raceTimeSeconds) * 100
+    : null;
+
+const mistakePercentText =
+  mistakePercent !== null
+    ? `${mistakePercent.toFixed(1)} %`
+    : '–';
 
 const paceSecondsPerKm =
   raceTimeSeconds > 0 && gpsDistance > 0
@@ -200,6 +210,14 @@ const climbText =
     <strong>{mistakePercentText}</strong>
   </div>
 
+  {
+    !hasWinSplits && (
+      <div class="detail-stat-note">
+        Underlag för bomanalys saknas.
+      </div>
+    )
+  }
+
   <div>
     <span>Kontroller</span>
     <strong>{race.data.controls ?? '–'}</strong>
@@ -298,7 +316,7 @@ const climbText =
           />
         </div>
 
-        <p class="map-lightbox-help">Kartan öppnas anpassad till skärmen. Zooma med mushjul eller nypgest och dra sedan kartan. 100 % motsvarar bildens originalstorlek.</p>
+        <p class="map-lightbox-help">Zooma med mushjulet och dra kartan när den är inzoomad. Dubbelklick återställer zoom.</p>
       </dialog>
     )
   }
@@ -318,8 +336,6 @@ const climbText =
       '#map-lightbox-variant-toggle'
     );
 
-    let preserveViewOnNextImageLoad = false;
-
     if (
       openButton instanceof HTMLButtonElement &&
       dialog instanceof HTMLDialogElement &&
@@ -330,24 +346,18 @@ const climbText =
       stage instanceof HTMLElement &&
       lightboxImage instanceof HTMLImageElement
     ) {
-      const maximumScale = 6;
-      const buttonZoomFactor = 1.25;
-      const wheelSensitivity = 0.0015;
-      const stagePadding = 24;
-
-      let fitScale = 1;
       let scale = 1;
       let translateX = 0;
       let translateY = 0;
-      let animationFrame = 0;
 
-      const pointers = new Map();
-
+      let isDragging = false;
       let dragPointerId = null;
       let dragStartX = 0;
       let dragStartY = 0;
-      let dragStartTranslateX = 0;
-      let dragStartTranslateY = 0;
+      let startTranslateX = 0;
+      let startTranslateY = 0;
+
+      const activePointers = new Map();
 
       let pinchStartDistance = 0;
       let pinchStartScale = 1;
@@ -356,208 +366,141 @@ const climbText =
       let pinchStartCenterX = 0;
       let pinchStartCenterY = 0;
 
-      const clamp = (value, minimum, maximum) =>
-        Math.min(maximum, Math.max(minimum, value));
-
-      const calculateFitScale = () => {
-        const naturalWidth = lightboxImage.naturalWidth || 1;
-        const naturalHeight = lightboxImage.naturalHeight || 1;
-        const availableWidth = Math.max(
-          1,
-          stage.clientWidth - stagePadding
-        );
-        const availableHeight = Math.max(
-          1,
-          stage.clientHeight - stagePadding
-        );
-
-        return Math.min(
-          1,
-          availableWidth / naturalWidth,
-          availableHeight / naturalHeight
-        );
-      };
+      const minimumScale = 1;
+      const maximumScale = 5;
+      const zoomStep = 0.25;
 
       const clampScale = (value) =>
-        clamp(value, fitScale, maximumScale);
+        Math.min(maximumScale, Math.max(minimumScale, value));
 
-      const getPanBounds = (candidateScale = scale) => {
-        const naturalWidth = lightboxImage.naturalWidth || 1;
-        const naturalHeight = lightboxImage.naturalHeight || 1;
-        const displayedWidth = naturalWidth * candidateScale;
-        const displayedHeight = naturalHeight * candidateScale;
-
-        return {
-          x: Math.max(0, (displayedWidth - stage.clientWidth) / 2),
-          y: Math.max(0, (displayedHeight - stage.clientHeight) / 2),
-        };
-      };
-
-      const clampTranslation = () => {
-        const bounds = getPanBounds();
-
-        translateX = clamp(translateX, -bounds.x, bounds.x);
-        translateY = clamp(translateY, -bounds.y, bounds.y);
-
-        if (bounds.x === 0) translateX = 0;
-        if (bounds.y === 0) translateY = 0;
-      };
-
-      const renderTransform = () => {
-        animationFrame = 0;
-        clampTranslation();
-
+      const applyTransform = () => {
         lightboxImage.style.transform =
-          `translate(-50%, -50%) translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
+          `translate(${translateX}px, ${translateY}px) scale(${scale})`;
 
         resetButton.textContent = `${Math.round(scale * 100)} %`;
-
-        const bounds = getPanBounds();
-        const canPan = bounds.x > 0 || bounds.y > 0;
-
-        stage.classList.toggle('is-zoomed', canPan);
-        stage.classList.toggle('can-pan', canPan);
-      };
-
-      const requestRender = () => {
-        if (animationFrame !== 0) return;
-        animationFrame = window.requestAnimationFrame(renderTransform);
+        stage.classList.toggle('is-zoomed', scale > minimumScale);
       };
 
       const resetView = () => {
-        fitScale = calculateFitScale();
-        scale = fitScale;
+        scale = 1;
         translateX = 0;
         translateY = 0;
 
-        pointers.clear();
+        isDragging = false;
         dragPointerId = null;
+        activePointers.clear();
         pinchStartDistance = 0;
 
         stage.classList.remove('is-dragging');
-        requestRender();
+        applyTransform();
       };
 
-      const zoomAt = (nextScaleValue, clientX, clientY) => {
-        const nextScale = clampScale(nextScaleValue);
-        const previousScale = scale;
+      const changeZoom = (change) => {
+        scale = clampScale(scale + change);
 
-        if (Math.abs(nextScale - previousScale) < 0.0001) return;
+        if (scale === minimumScale) {
+          translateX = 0;
+          translateY = 0;
+        }
 
-        const stageRect = stage.getBoundingClientRect();
-        const pointX =
-          clientX - stageRect.left - stageRect.width / 2;
-        const pointY =
-          clientY - stageRect.top - stageRect.height / 2;
-        const ratio = nextScale / previousScale;
-
-        translateX = pointX - (pointX - translateX) * ratio;
-        translateY = pointY - (pointY - translateY) * ratio;
-        scale = nextScale;
-
-        requestRender();
-      };
-
-      const zoomAtStageCenter = (nextScale) => {
-        const stageRect = stage.getBoundingClientRect();
-
-        zoomAt(
-          nextScale,
-          stageRect.left + stageRect.width / 2,
-          stageRect.top + stageRect.height / 2
-        );
+        applyTransform();
       };
 
       const getPointerValues = () =>
-        Array.from(pointers.values());
+        Array.from(activePointers.values());
 
       const getDistance = (first, second) =>
-        Math.hypot(second.x - first.x, second.y - first.y);
+        Math.hypot(
+          second.x - first.x,
+          second.y - first.y
+        );
 
       const getCenter = (first, second) => ({
         x: (first.x + second.x) / 2,
-        y: (first.y + second.y) / 2,
+        y: (first.y + second.y) / 2
       });
 
       const beginPinch = () => {
-        const values = getPointerValues();
-        if (values.length < 2) return;
+        const pointers = getPointerValues();
 
-        const center = getCenter(values[0], values[1]);
+        if (pointers.length < 2) return;
 
-        pinchStartDistance = getDistance(values[0], values[1]);
+        const first = pointers[0];
+        const second = pointers[1];
+        const center = getCenter(first, second);
+
+        pinchStartDistance = getDistance(first, second);
         pinchStartScale = scale;
         pinchStartTranslateX = translateX;
         pinchStartTranslateY = translateY;
         pinchStartCenterX = center.x;
         pinchStartCenterY = center.y;
 
+        isDragging = false;
         dragPointerId = null;
         stage.classList.add('is-dragging');
       };
 
       const updatePinch = () => {
-        const values = getPointerValues();
+        const pointers = getPointerValues();
 
-        if (values.length < 2 || pinchStartDistance <= 0) {
+        if (
+          pointers.length < 2 ||
+          pinchStartDistance <= 0
+        ) {
           return;
         }
 
-        const center = getCenter(values[0], values[1]);
-        const distance = getDistance(values[0], values[1]);
-        const nextScale = clampScale(
-          pinchStartScale * (distance / pinchStartDistance)
-        );
-        const ratio = nextScale / pinchStartScale;
+        const first = pointers[0];
+        const second = pointers[1];
 
-        const stageRect = stage.getBoundingClientRect();
-        const startPointX =
-          pinchStartCenterX -
-          stageRect.left -
-          stageRect.width / 2;
-        const startPointY =
-          pinchStartCenterY -
-          stageRect.top -
-          stageRect.height / 2;
-        const currentPointX =
-          center.x - stageRect.left - stageRect.width / 2;
-        const currentPointY =
-          center.y - stageRect.top - stageRect.height / 2;
+        const currentDistance = getDistance(first, second);
+        const currentCenter = getCenter(first, second);
+
+        scale = clampScale(
+          pinchStartScale *
+          (currentDistance / pinchStartDistance)
+        );
 
         translateX =
-          currentPointX -
-          (startPointX - pinchStartTranslateX) * ratio;
-        translateY =
-          currentPointY -
-          (startPointY - pinchStartTranslateY) * ratio;
-        scale = nextScale;
+          pinchStartTranslateX +
+          currentCenter.x -
+          pinchStartCenterX;
 
-        requestRender();
+        translateY =
+          pinchStartTranslateY +
+          currentCenter.y -
+          pinchStartCenterY;
+
+        if (scale === minimumScale) {
+          translateX = 0;
+          translateY = 0;
+        }
+
+        applyTransform();
       };
 
       const openLightbox = () => {
+        resetView();
         dialog.showModal();
         document.body.classList.add('lightbox-open');
-
-        window.requestAnimationFrame(() => {
-          resetView();
-          closeButton.focus();
-        });
       };
 
       const closeLightbox = () => {
         dialog.close();
+        document.body.classList.remove('lightbox-open');
+        resetView();
       };
 
       openButton.addEventListener('click', openLightbox);
       closeButton.addEventListener('click', closeLightbox);
 
       zoomInButton.addEventListener('click', () => {
-        zoomAtStageCenter(scale * buttonZoomFactor);
+        changeZoom(zoomStep);
       });
 
       zoomOutButton.addEventListener('click', () => {
-        zoomAtStageCenter(scale / buttonZoomFactor);
+        changeZoom(-zoomStep);
       });
 
       resetButton.addEventListener('click', resetView);
@@ -576,198 +519,124 @@ const climbText =
       dialog.addEventListener('close', () => {
         document.body.classList.remove('lightbox-open');
         resetView();
-        openButton.focus();
       });
 
       stage.addEventListener(
         'wheel',
         (event) => {
           event.preventDefault();
-
-          const factor = Math.exp(
-            -event.deltaY * wheelSensitivity
-          );
-
-          zoomAt(scale * factor, event.clientX, event.clientY);
+          changeZoom(event.deltaY < 0 ? zoomStep : -zoomStep);
         },
         { passive: false }
       );
 
-      stage.addEventListener('dblclick', (event) => {
-        event.preventDefault();
-
-        if (scale >= maximumScale - 0.01) {
-          resetView();
-          return;
-        }
-
-        zoomAt(scale * 1.75, event.clientX, event.clientY);
-      });
+      stage.addEventListener('dblclick', resetView);
 
       stage.addEventListener('pointerdown', (event) => {
-        if (
-          event.pointerType === 'mouse' &&
-          event.button !== 0
-        ) {
-          return;
-        }
-
         event.preventDefault();
 
-        pointers.set(event.pointerId, {
+        activePointers.set(event.pointerId, {
           x: event.clientX,
-          y: event.clientY,
+          y: event.clientY
         });
 
         stage.setPointerCapture(event.pointerId);
 
-        if (pointers.size === 2) {
+        if (activePointers.size === 2) {
           beginPinch();
           return;
         }
 
-        const bounds = getPanBounds();
-        const canPan = bounds.x > 0 || bounds.y > 0;
-
-        if (canPan) {
+        if (
+          activePointers.size === 1 &&
+          scale > minimumScale
+        ) {
+          isDragging = true;
           dragPointerId = event.pointerId;
+
           dragStartX = event.clientX;
           dragStartY = event.clientY;
-          dragStartTranslateX = translateX;
-          dragStartTranslateY = translateY;
+          startTranslateX = translateX;
+          startTranslateY = translateY;
+
           stage.classList.add('is-dragging');
         }
       });
 
       stage.addEventListener('pointermove', (event) => {
-        if (!pointers.has(event.pointerId)) return;
+        if (!activePointers.has(event.pointerId)) {
+          return;
+        }
 
         event.preventDefault();
 
-        pointers.set(event.pointerId, {
+        activePointers.set(event.pointerId, {
           x: event.clientX,
-          y: event.clientY,
+          y: event.clientY
         });
 
-        if (pointers.size >= 2) {
+        if (activePointers.size >= 2) {
           updatePinch();
           return;
         }
 
-        if (dragPointerId === event.pointerId) {
+        if (
+          isDragging &&
+          dragPointerId === event.pointerId
+        ) {
           translateX =
-            dragStartTranslateX + event.clientX - dragStartX;
+            startTranslateX +
+            event.clientX -
+            dragStartX;
+
           translateY =
-            dragStartTranslateY + event.clientY - dragStartY;
-          requestRender();
+            startTranslateY +
+            event.clientY -
+            dragStartY;
+
+          applyTransform();
         }
       });
 
       const stopPointer = (event) => {
-        pointers.delete(event.pointerId);
+        activePointers.delete(event.pointerId);
 
         if (stage.hasPointerCapture(event.pointerId)) {
           stage.releasePointerCapture(event.pointerId);
         }
 
-        pinchStartDistance = 0;
+        if (
+          activePointers.size === 1 &&
+          scale > minimumScale
+        ) {
+          const iterator = activePointers.entries().next();
 
-        if (pointers.size === 1) {
-          const remaining = pointers.entries().next();
+          if (!iterator.done) {
+            const [remainingPointerId, point] = iterator.value;
 
-          if (!remaining.done) {
-            const [pointerId, point] = remaining.value;
-            const bounds = getPanBounds();
-            const canPan = bounds.x > 0 || bounds.y > 0;
+            isDragging = true;
+            dragPointerId = remainingPointerId;
+            dragStartX = point.x;
+            dragStartY = point.y;
+            startTranslateX = translateX;
+            startTranslateY = translateY;
 
-            if (canPan) {
-              dragPointerId = pointerId;
-              dragStartX = point.x;
-              dragStartY = point.y;
-              dragStartTranslateX = translateX;
-              dragStartTranslateY = translateY;
-              stage.classList.add('is-dragging');
-            }
+            stage.classList.add('is-dragging');
           }
         } else {
+          isDragging = false;
           dragPointerId = null;
 
-          if (pointers.size === 0) {
+          if (activePointers.size === 0) {
             stage.classList.remove('is-dragging');
           }
         }
 
-        requestRender();
+        pinchStartDistance = 0;
       };
 
       stage.addEventListener('pointerup', stopPointer);
       stage.addEventListener('pointercancel', stopPointer);
-
-      lightboxImage.addEventListener('load', () => {
-        if (!dialog.open) {
-          preserveViewOnNextImageLoad = false;
-          return;
-        }
-
-        if (preserveViewOnNextImageLoad) {
-          preserveViewOnNextImageLoad = false;
-          requestRender();
-          return;
-        }
-
-        resetView();
-      });
-
-      window.addEventListener('resize', () => {
-        if (dialog.open) {
-          resetView();
-        }
-      });
-
-      dialog.addEventListener('keydown', (event) => {
-        if (event.key === '+' || event.key === '=') {
-          event.preventDefault();
-          zoomAtStageCenter(scale * buttonZoomFactor);
-          return;
-        }
-
-        if (event.key === '-') {
-          event.preventDefault();
-          zoomAtStageCenter(scale / buttonZoomFactor);
-          return;
-        }
-
-        if (event.key === '0') {
-          event.preventDefault();
-          resetView();
-          return;
-        }
-
-        const bounds = getPanBounds();
-        const canPan = bounds.x > 0 || bounds.y > 0;
-
-        if (!canPan) return;
-
-        const panStep = 64;
-
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          translateX += panStep;
-        } else if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          translateX -= panStep;
-        } else if (event.key === 'ArrowUp') {
-          event.preventDefault();
-          translateY += panStep;
-        } else if (event.key === 'ArrowDown') {
-          event.preventDefault();
-          translateY -= panStep;
-        } else {
-          return;
-        }
-
-        requestRender();
-      });
     }
 
     if (
@@ -801,21 +670,16 @@ const climbText =
       const updateMapVariant = () => {
         const blankSrc =
           detailMapImage.dataset.blankSrc ?? '';
+
         const routeSrc =
           detailMapImage.dataset.routeSrc ?? '';
+
         const nextSrc =
-          showingRoute && routeSrc ? routeSrc : blankSrc;
+          showingRoute && routeSrc
+            ? routeSrc
+            : blankSrc;
 
         detailMapImage.src = nextSrc;
-
-        if (
-          dialog instanceof HTMLDialogElement &&
-          dialog.open &&
-          lightboxImage.getAttribute('src') !== nextSrc
-        ) {
-          preserveViewOnNextImageLoad = true;
-        }
-
         lightboxImage.src = nextSrc;
 
         updateToggleButton(mapVariantToggle);

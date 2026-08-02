@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-02T20:30:32.977Z",
+  "finishedAt": "2026-08-02T20:31:00.452Z",
+  "options": {
+    "from": 43,
+    "to": 43,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": true
+  },
+  "counts": {
+    "total": 1,
+    "created": 1,
+    "skipped": 0,
+    "skippedExisting": 0,
+    "skippedTraining": 0,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 43,
+      "status": "created",
+      "title": "Stafett-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-43\\competition-enriched.json"
+    }
+  ]
+}

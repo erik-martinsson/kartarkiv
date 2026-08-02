@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-02T20:18:01.729Z",
+  "finishedAt": "2026-08-02T20:22:03.533Z",
+  "options": {
+    "from": 37,
+    "to": 61,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": true
+  },
+  "counts": {
+    "total": 25,
+    "created": 15,
+    "skipped": 7,
+    "skippedExisting": 0,
+    "skippedTraining": 7,
+    "failed": 3
+  },
+  "items": [
+    {
+      "mapId": 37,
+      "status": "created",
+      "title": "Stjärnorpssprinten",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-37\\competition-enriched.json"
+    },
+    {
+      "mapId": 38,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Höglands-OL",
+      "category": "Träning"
+    },
+    {
+      "mapId": 39,
+      "status": "created",
+      "title": "Bockadubbeln, medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-39\\competition-enriched.json"
+    },
+    {
+      "mapId": 40,
+      "status": "created",
+      "title": "Bockadubbeln, lång",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-40\\competition-enriched.json"
+    },
+    {
+      "mapId": 41,
+      "status": "created",
+      "title": "Natt-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-41\\competition-enriched.json"
+    },
+    {
+      "mapId": 42,
+      "status": "created",
+      "title": "Lång-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-42\\competition-enriched.json"
+    },
+    {
+      "mapId": 43,
+      "status": "failed",
+      "error": "Erik Martinsson hittades inte i WinSplits-klassen. Klassen innehöll 10 löpare."
+    },
+    {
+      "mapId": 44,
+      "status": "created",
+      "title": "Bauertrampet, lång",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-44\\competition-enriched.json"
+    },
+    {
+      "mapId": 45,
+      "status": "created",
+      "title": "Bauertrampet, medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-45\\competition-enriched.json"
+    },
+    {
+      "mapId": 46,
+      "status": "created",
+      "title": "SM medel kval",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-46\\competition-enriched.json"
+    },
+    {
+      "mapId": 47,
+      "status": "created",
+      "title": "SM medel B-final",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-47\\competition-enriched.json"
+    },
+    {
+      "mapId": 48,
+      "status": "failed",
+      "error": "Erik Martinsson hittades inte i WinSplits-klassen. Klassen innehöll 109 löpare."
+    },
+    {
+      "mapId": 49,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup LAIK",
+      "category": "Träning"
+    },
+    {
+      "mapId": 50,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup OK Skogsströvarna",
+      "category": "Träning"
+    },
+    {
+      "mapId": 51,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup LOK",
+      "category": "Träning"
+    },
+    {
+      "mapId": 52,
+      "status": "failed",
+      "error": "DOMA:s WinSplits-länk saknar ett giltigt databaseId eller categoryId."
+    },
+    {
+      "mapId": 53,
+      "status": "created",
+      "title": "Älgfritt",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-53\\competition-enriched.json"
+    },
+    {
+      "mapId": 54,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup IFK",
+      "category": "Träning"
+    },
+    {
+      "mapId": 55,
+      "status": "created",
+      "title": "Smålandskavlen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-55\\competition-enriched.json"
+    },
+    {
+      "mapId": 56,
+      "status": "created",
+      "title": "Smålandskavlen, Öppen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-56\\competition-enriched.json"
+    },
+    {
+      "mapId": 57,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup TGOK",
+      "category": "Träning"
+    },
+    {
+      "mapId": 58,
+      "status": "created",
+      "title": "Novembersprinten",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-58\\competition-enriched.json"
+    },
+    {
+      "mapId": 59,
+      "status": "created",
+      "title": "Svartåfejden",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-59\\competition-enriched.json"
+    },
+    {
+      "mapId": 60,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Night Extreme #1",
+      "category": "Träning"
+    },
+    {
+      "mapId": 61,
+      "status": "created",
+      "title": "Jättemilen del 1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-61\\competition-enriched.json"
+    }
+  ]
+}

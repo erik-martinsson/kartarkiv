@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-02T20:37:01.431Z",
+  "competition": {
+    "doma": {
+      "mapId": 37,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=37",
+      "title": "Stjärnorpssprinten",
+      "date": "2011-08-04",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 5.24,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/37.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=18078&categoryId=1",
+      "courseLengthKm": 4.8
+    },
+    "location": null,
+    "latitude": 58.5752366,
+    "longitude": 15.5940328,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "30",
+      "starters": "57",
+      "controls": 18,
+      "time": "36:16",
+      "totalMistakeTime": "3.26",
+      "mistakes": [
+        {
+          "control": 2,
+          "time": "0.27"
+        },
+        {
+          "control": 8,
+          "time": "1.18"
+        },
+        {
+          "control": 9,
+          "time": "0.42"
+        },
+        {
+          "control": 17,
+          "time": "0.59"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 1403,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/1403",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=1403",
+      "title": "Stjärnorpssprinten",
+      "date": "",
+      "organiser": "Stjärnorps SK",
+      "location": "",
+      "rawDiscipline": "medel",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 1403,
+      "title": "Stjärnorpssprinten",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/1403",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=1403",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Stjärnorpssprinten",
+      "domaDate": "2011-08-04",
+      "databaseId": 18078,
+      "searchedDates": [
+        "2011-08-02",
+        "2011-08-03",
+        "2011-08-04",
+        "2011-08-05",
+        "2011-08-06"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2011-08-02&endDate=2011-08-02&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-08-02&endDate=2011-08-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-08-02&endDate=2011-08-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-08-02&endDate=2011-08-02&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-08-02&endDate=2011-08-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-08-02&endDate=2011-08-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-08-03&endDate=2011-08-03&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-08-03&endDate=2011-08-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-08-03&endDate=2011-08-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-08-03&endDate=2011-08-03&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-08-03&endDate=2011-08-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-08-03&endDate=2011-08-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-08-04&endDate=2011-08-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-08-04&endDate=2011-08-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-08-04&endDate=2011-08-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-08-04&endDate=2011-08-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-08-04&endDate=2011-08-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-08-04&endDate=2011-08-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-08-05&endDate=2011-08-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-08-05&endDate=2011-08-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-08-05&endDate=2011-08-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-08-05&endDate=2011-08-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-08-05&endDate=2011-08-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-08-05&endDate=2011-08-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-08-06&endDate=2011-08-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-08-06&endDate=2011-08-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-08-06&endDate=2011-08-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-08-06&endDate=2011-08-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-08-06&endDate=2011-08-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-08-06&endDate=2011-08-06&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 1403,
+          "title": "Stjärnorpssprinten",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-04&endDate=2011-08-04&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-37\\competition-enriched.json"
+    }
+  }
+}

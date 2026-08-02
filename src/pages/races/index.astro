@@ -282,15 +282,32 @@ const raceItems = races.map((race) => {
         groups.set(label, group);
       });
 
-      const sortedGroups = [...groups.entries()].sort(([a], [b]) =>
-        compareGroupLabels(a, b)
+      const sortedGroups = [...groups.entries()].sort(
+        ([labelA, itemsA], [labelB, itemsB]) => {
+          if (activeGrouping === 'country') {
+            const countDifference =
+              itemsB.length - itemsA.length;
+
+            if (countDifference !== 0) {
+              return countDifference;
+            }
+          }
+
+          return compareGroupLabels(labelA, labelB);
+        }
       );
 
       groupContainer.replaceChildren();
 
       sortedGroups.forEach(([label, groupItems], index) => {
         groupContainer.append(
-          createGroup(label, groupItems, query ? true : index === 0)
+          createGroup(
+            label,
+            groupItems,
+            query
+              ? true
+              : activeGrouping === 'year' && index === 0
+          )
         );
       });
 

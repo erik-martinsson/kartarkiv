@@ -1,2 +1,4 @@
-{"timestamp":"00:00:04.272","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:09.361","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:07.469","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:15.996","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:07:37.913","source":"Server","level":"ERROR","message":"Kunde inte publicera DOMA 39: Error: Cannot publish without raceClass. Fill in the class in Studio/Migrate and approve the review again."}
+{"timestamp":"00:10:02.997","source":"Server","level":"ERROR","message":"Kunde inte publicera DOMA 40: Error: Cannot publish without raceClass. Fill in the class in Studio/Migrate and approve the review again."}

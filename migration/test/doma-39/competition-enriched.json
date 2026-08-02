@@ -11,7 +11,7 @@
     "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/39.jpg",
     "blankMapImageUrl": null,
     "kmlUrl": null,
-    "winsplitsUrl": null
+    "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=18084&categoryId=1"
   },
   "location": null,
   "latitude": null,
@@ -20,28 +20,330 @@
   "result": {
     "runnerName": "Erik Martinsson",
     "raceClass": null,
-    "club": null,
-    "position": null,
-    "starters": null,
-    "controls": null,
-    "time": null,
-    "totalMistakeTime": "0:00",
-    "mistakes": []
+    "club": "Linköpings OK",
+    "position": "2",
+    "starters": "42",
+    "controls": 18,
+    "time": "28.50",
+    "totalMistakeTime": "1.28",
+    "mistakes": [
+      {
+        "control": 9,
+        "time": "1.28"
+      }
+    ]
   },
   "eventor": null,
   "eventorMatch": null,
   "eventorResolverDebug": {
     "wantedTitle": "Bockadubbeln, medel",
     "domaDate": "2011-08-13",
-    "databaseId": 0,
-    "searchedDates": [],
-    "calendarUrls": [],
-    "candidates": []
+    "databaseId": 18084,
+    "searchedDates": [
+      "2011-08-11",
+      "2011-08-12",
+      "2011-08-13",
+      "2011-08-14",
+      "2011-08-15"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-08-12&endDate=2011-08-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-08-12&endDate=2011-08-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-08-12&endDate=2011-08-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-08-12&endDate=2011-08-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-08-12&endDate=2011-08-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-08-12&endDate=2011-08-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2011-08-15&endDate=2011-08-15&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2011-08-15&endDate=2011-08-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2011-08-15&endDate=2011-08-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2011-08-15&endDate=2011-08-15&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2011-08-15&endDate=2011-08-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2011-08-15&endDate=2011-08-15&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 1380,
+        "title": "Norrlandsmästerskap Medel",
+        "score": 48,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 757,
+        "title": "s=\"tooltip\" title=\"orienteringslöpning\">mästLlör 13/8Norrlandsmästerskap Medel",
+        "score": 37,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3098,
+        "title": "GGL Mossberga",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3097,
+        "title": "Motionsorientering Jakobsbergskogen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3012,
+        "title": "Dag-KM OK Tylöskog",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2923,
+        "title": "Sommarserie 5",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2932,
+        "title": "Öppet VM i Medeldistans och Hallands Nyheters Ungdomsserie Et 5",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2974,
+        "title": "Njudungsmästerskap dag 2011",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-11&endDate=2011-08-11&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1504,
+        "title": "Norrlandsmästerskap Sprint",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-12&endDate=2011-08-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2483,
+        "title": "Öppet Natt-RM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-12&endDate=2011-08-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 939,
+        "title": "Bockajakten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1426,
+        "title": "Svealandsmästerskap",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1629,
+        "title": "Järladubbeln, medeldistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3049,
+        "title": "Klubbmästerkskap Lång",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 715,
+        "title": "Hjo 2-dagars",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-13&endDate=2011-08-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 940,
+        "title": "Bockajakten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1597,
+        "title": "Eskilstunaorienteringen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1547,
+        "title": "Grangärdeträffen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 758,
+        "title": "Götalandsmästerskap, Stafett",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1630,
+        "title": "Järladubbeln, långdistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1742,
+        "title": "Landehof augustitävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 711,
+        "title": "Lesjöfors MIX:en",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1427,
+        "title": "Lindebygdsträffen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1379,
+        "title": "Norrlandsmästerskap Lång",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 1044,
+        "title": "Slottskampen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 716,
+        "title": "Hjo 2-dagars",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-08-14&endDate=2011-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
   },
   "liveloxUrl": null,
   "warnings": [
     "Blank kartbild saknas (#hiddenMapImage).",
-    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
-    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    "Ingen tillräckligt säker Eventor-träff hittades."
   ]
 }
