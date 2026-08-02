@@ -366,7 +366,7 @@ const climbText =
       let pinchStartCenterX = 0;
       let pinchStartCenterY = 0;
 
-      const minimumScale = 1;
+      const minimumScale = 0.5;
       const maximumScale = 5;
       const zoomStep = 0.25;
 
@@ -378,7 +378,7 @@ const climbText =
           `translate(-50%, -50%) translate(${translateX}px, ${translateY}px) scale(${scale})`;
 
         resetButton.textContent = `${Math.round(scale * 100)} %`;
-        stage.classList.toggle('is-zoomed', scale > minimumScale);
+        stage.classList.toggle('is-zoomed', scale >= minimumScale);
       };
 
       const resetView = () => {
@@ -547,10 +547,7 @@ const climbText =
           return;
         }
 
-        if (
-          activePointers.size === 1 &&
-          scale > minimumScale
-        ) {
+        if (activePointers.size === 1) {
           isDragging = true;
           dragPointerId = event.pointerId;
 
@@ -605,10 +602,7 @@ const climbText =
           stage.releasePointerCapture(event.pointerId);
         }
 
-        if (
-          activePointers.size === 1 &&
-          scale > minimumScale
-        ) {
+        if (activePointers.size === 1) {
           const iterator = activePointers.entries().next();
 
           if (!iterator.done) {
