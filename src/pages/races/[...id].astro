@@ -375,7 +375,7 @@ const climbText =
 
       const applyTransform = () => {
         lightboxImage.style.transform =
-          `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+          `translate(-50%, -50%) translate(${translateX}px, ${translateY}px) scale(${scale})`;
 
         resetButton.textContent = `${Math.round(scale * 100)} %`;
         stage.classList.toggle('is-zoomed', scale > minimumScale);

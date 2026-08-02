@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-02T21:31:18.063Z",
+  "finishedAt": "2026-08-02T21:31:18.246Z",
+  "options": {
+    "from": 38,
+    "to": 38,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": true
+  },
+  "counts": {
+    "total": 1,
+    "created": 0,
+    "skipped": 1,
+    "skippedExisting": 0,
+    "skippedTraining": 1,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 38,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Höglands-OL",
+      "category": "Träning"
+    }
+  ]
+}

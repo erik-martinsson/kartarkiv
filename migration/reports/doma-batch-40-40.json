@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-02T21:39:36.625Z",
+  "finishedAt": "2026-08-02T21:39:57.230Z",
+  "options": {
+    "from": 40,
+    "to": 40,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": true
+  },
+  "counts": {
+    "total": 1,
+    "created": 1,
+    "skipped": 0,
+    "skippedExisting": 0,
+    "skippedTraining": 0,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 40,
+      "status": "created",
+      "title": "Bockadubbeln, lång",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-40\\competition-enriched.json"
+    }
+  ]
+}

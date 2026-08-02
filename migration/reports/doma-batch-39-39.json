@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-02T21:39:02.614Z",
+  "finishedAt": "2026-08-02T21:39:20.426Z",
+  "options": {
+    "from": 39,
+    "to": 39,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": true
+  },
+  "counts": {
+    "total": 1,
+    "created": 1,
+    "skipped": 0,
+    "skippedExisting": 0,
+    "skippedTraining": 0,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 39,
+      "status": "created",
+      "title": "Bockadubbeln, medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-39\\competition-enriched.json"
+    }
+  ]
+}
