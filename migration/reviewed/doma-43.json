@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T07:13:20.255Z",
+  "competition": {
+    "doma": {
+      "mapId": 43,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=43",
+      "title": "Stafett-DM",
+      "date": "2011-09-04",
+      "category": "Tävling",
+      "relayLeg": 3,
+      "runningTime": null,
+      "runningDistanceKm": 9.75,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/43.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=18447&categoryId=12",
+      "courseLengthKm": 8.4
+    },
+    "location": null,
+    "latitude": 58.5499079,
+    "longitude": 15.6748551,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK 1",
+      "position": "4",
+      "starters": "10",
+      "controls": 13,
+      "time": "56:01",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Stafett-DM",
+      "domaDate": "2011-09-04",
+      "databaseId": 18447,
+      "searchedDates": [
+        "2011-09-02",
+        "2011-09-03",
+        "2011-09-04",
+        "2011-09-05",
+        "2011-09-06"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-05&endDate=2011-09-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-05&endDate=2011-09-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-05&endDate=2011-09-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-05&endDate=2011-09-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-05&endDate=2011-09-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-05&endDate=2011-09-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 1336,
+          "title": "DM Stafett Gotland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1745,
+          "title": "DM Stafett Dalarna",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1235,
+          "title": "DM Stafett Göteborg",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 915,
+          "title": "DM Stafett Småland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1683,
+          "title": "DM Stafett Stockholm",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1603,
+          "title": "DM Stafett Södermanland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1137,
+          "title": "DM Stafett Uppland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1788,
+          "title": "DM Stafett Värmland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1168,
+          "title": "DM Stafett Blekinge",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1271,
+          "title": "DM Stafett Skåne",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1063,
+          "title": "DM Stafett Östergötland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 958,
+          "title": "DM Stafett Bohuslän-Dal",
+          "score": 80,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1366,
+          "title": "DM Stafett Gästrikland + Hälsingland",
+          "score": 80,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3123,
+          "title": "Intresseanmälan TSK Ungdom DM Stafett",
+          "score": 77,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3145,
+          "title": "Sako-stafett",
+          "score": 48,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1682,
+          "title": "DM Natt Stockholm",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 813,
+          "title": "DM Natt Västergötland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1475,
+          "title": "DM Natt Ångermanland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1709,
+          "title": "DM Natt Dalarna",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1097,
+          "title": "DM Medel Göteborg",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1602,
+          "title": "DM Medel Södermanland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1739,
+          "title": "DM Medel Värmland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1430,
+          "title": "DM Medel Örebro",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1510,
+          "title": "DM Natt Norrbotten",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 814,
+          "title": "DM Sprint Västergötland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1270,
+          "title": "DM Medel Skåne",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 741,
+          "title": "DM Medel Västmanland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1167,
+          "title": "DM Medel Blekinge",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1149,
+          "title": "DM Medel Uppland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1062,
+          "title": "DM Medel Östergötland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1708,
+          "title": "DM Sprint Dalarna",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1509,
+          "title": "DM Sprint Norrbotten",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1337,
+          "title": "DM Lång Gotland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 946,
+          "title": "DM Lång Halland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1431,
+          "title": "DM Lång Örebro",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 815,
+          "title": "DM Lång Västergötland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 742,
+          "title": "DM Lång Västmanland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1469,
+          "title": "DM Sprint Ångermanland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1494,
+          "title": "DM Natt Bohuslän-Dal",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-02&endDate=2011-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1365,
+          "title": "DM Medel Gästrikland + Hälsingland",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 914,
+          "title": "DM Medel Småland, VTSC",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3111,
+          "title": "Haninge SOK, DM-kavle",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3070,
+          "title": "Intresseanmälan till kavle DM Hedemora",
+          "score": 39,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3134,
+          "title": "pan class=\"tooltip\" title=\"stafett\">SMtis 6/9 - sön 18/9AOK:s 3-dagarsAvesta OKDalarna",
+          "score": 35,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1752,
+          "title": "PreO Björklinge SOK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1753,
+          "title": "PreO Natt Björklinge SOK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-03&endDate=2011-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1653,
+          "title": "PreO OK Linné",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3118,
+          "title": "När-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3141,
+          "title": "Ol-cup sprint 3 \"Bruksträffen light\"",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-04&endDate=2011-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3203,
+          "title": "Motions-orientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1439,
+          "title": "Nattugglan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3153,
+          "title": "Borlänge 4-klubbs deltävling 6",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3125,
+          "title": "KM-Toleby",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3052,
+          "title": "OK Nackhes Sprint KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3147,
+          "title": "OK Nackhes Sprint KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2362,
+          "title": "Ungdomstävling Södra Skaraborg",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2939,
+          "title": "Sprint-KM Sundbybergs IK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-06&endDate=2011-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen tillräckligt säker Eventor-träff hittades."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-43\\competition-enriched.json"
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T07:16:30.812Z",
+  "competition": {
+    "doma": {
+      "mapId": 44,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=44",
+      "title": "Bauertrampet, lång",
+      "date": "2011-09-10",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 11.08,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/44.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=18535&categoryId=2",
+      "courseLengthKm": 9.5
+    },
+    "location": null,
+    "latitude": 57.6441227,
+    "longitude": 14.0426708,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "1",
+      "starters": "8",
+      "controls": 20,
+      "time": "1:03:20",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": {
+      "eventId": 1098,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/1098",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=1098",
+      "title": "Bauertrampet, Lång",
+      "date": "",
+      "organiser": "Jönköpings OK",
+      "location": "",
+      "rawDiscipline": "lång",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 1098,
+      "title": "Bauertrampet, Lång",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/1098",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=1098",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Bauertrampet, lång",
+      "domaDate": "2011-09-10",
+      "databaseId": 18535,
+      "searchedDates": [
+        "2011-09-08",
+        "2011-09-09",
+        "2011-09-10",
+        "2011-09-11",
+        "2011-09-12"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2011-09-08&endDate=2011-09-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-08&endDate=2011-09-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-08&endDate=2011-09-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-08&endDate=2011-09-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-08&endDate=2011-09-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-08&endDate=2011-09-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 1098,
+          "title": "Bauertrampet, Lång",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-44\\competition-enriched.json"
+    }
+  }
+}

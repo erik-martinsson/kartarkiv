@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T07:27:50.613Z",
+  "competition": {
+    "doma": {
+      "mapId": 48,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=48",
+      "title": "SM stafett",
+      "date": "2011-09-18",
+      "category": "Tävling",
+      "relayLeg": 2,
+      "runningTime": null,
+      "runningDistanceKm": 7.32,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/48.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=18660&categoryId=49",
+      "courseLengthKm": 6.7
+    },
+    "location": null,
+    "latitude": 58.3429391,
+    "longitude": 12.3166698,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK 2",
+      "position": "31",
+      "starters": "106",
+      "controls": 9,
+      "time": "38:30",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "SM stafett",
+      "domaDate": "2011-09-18",
+      "databaseId": 18660,
+      "searchedDates": [
+        "2011-09-16",
+        "2011-09-17",
+        "2011-09-18",
+        "2011-09-19",
+        "2011-09-20"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-19&endDate=2011-09-19&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-19&endDate=2011-09-19&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-19&endDate=2011-09-19&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-19&endDate=2011-09-19&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-19&endDate=2011-09-19&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-19&endDate=2011-09-19&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-20&endDate=2011-09-20&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-20&endDate=2011-09-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-20&endDate=2011-09-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-20&endDate=2011-09-20&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-20&endDate=2011-09-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-20&endDate=2011-09-20&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 1225,
+          "title": "SM Stafett",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1297,
+          "title": "Publiktävling SM-stafett",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1687,
+          "title": "ss=\"tooltip\" title=\"orienteringslöpning\">natMsön 18/9SM Stafett",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1228,
+          "title": "PreO SM natt",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1801,
+          "title": "SM Medel, kval",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1229,
+          "title": "PreO SM TempO",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1802,
+          "title": "SM Medel, final",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1226,
+          "title": "PreO SM dag",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3134,
+          "title": "iv class=\"tooltip\" title=\"orienteringslöpning\">närSfre 16/9PreO SM natt",
+          "score": 36,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1056,
+          "title": "ss=\"tooltip\" title=\"orienteringslöpning\">natMlör 17/9PreO SM TempO",
+          "score": 36,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1059,
+          "title": "Lagadalskampen, VTSC",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3210,
+          "title": "Östra Nattserien",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1605,
+          "title": "Patrullnatten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-16&endDate=2011-09-16&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1686,
+          "title": "IFK Enskede, lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1060,
+          "title": "Lagadalskampen, VTSC",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 750,
+          "title": "Skaraborgsstafett",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3130,
+          "title": "Tjurruset och Kalvruset 2011 Anmälan för Kils OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1511,
+          "title": "Bergnäsets AIK med ungdoms-Cup 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1720,
+          "title": "Bjursåsluffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3131,
+          "title": "KM 2011",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3040,
+          "title": "U-serien Final",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 973,
+          "title": "Veteran RM Medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3156,
+          "title": "Älgotscup Sydvästra kretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-17&endDate=2011-09-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1586,
+          "title": "Klarälvskavlen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1728,
+          "title": "Skutskärs OK Medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1606,
+          "title": "Åkersorienteringen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1274,
+          "title": "Göingeträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2732,
+          "title": "Publiktävling blåbärskavlen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 981,
+          "title": "Tivedsträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 974,
+          "title": "Veteran RM Lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 945,
+          "title": "Blåbärskavlen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3168,
+          "title": "Final RAsport cup",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3160,
+          "title": "IFK Mora OKs öppna KM MTBO",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-18&endDate=2011-09-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3216,
+          "title": "MTB-Orientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-19&endDate=2011-09-19&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3197,
+          "title": "25-manna träning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-20&endDate=2011-09-20&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen tillräckligt säker Eventor-träff hittades."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-48\\competition-enriched.json"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T07:19:05.669Z",
+  "competition": {
+    "doma": {
+      "mapId": 45,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=45",
+      "title": "Bauertrampet, medel",
+      "date": "2011-09-11",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 5.5,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/45.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=18556&categoryId=1",
+      "courseLengthKm": 4.52
+    },
+    "location": null,
+    "latitude": 57.6568823,
+    "longitude": 14.0467666,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "3",
+      "starters": "18",
+      "controls": 18,
+      "time": "35:29",
+      "totalMistakeTime": "3.25",
+      "mistakes": [
+        {
+          "control": 8,
+          "time": "0.38"
+        },
+        {
+          "control": 10,
+          "time": "2.47"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 1880,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/1880",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=1880",
+      "title": "Bauertrampet, Medel",
+      "date": "",
+      "organiser": "Jönköpings OK",
+      "location": "",
+      "rawDiscipline": "medel",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 1880,
+      "title": "Bauertrampet, Medel",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/1880",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=1880",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Bauertrampet, medel",
+      "domaDate": "2011-09-11",
+      "databaseId": 18556,
+      "searchedDates": [
+        "2011-09-09",
+        "2011-09-10",
+        "2011-09-11",
+        "2011-09-12",
+        "2011-09-13"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-09&endDate=2011-09-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-10&endDate=2011-09-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-12&endDate=2011-09-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2011-09-13&endDate=2011-09-13&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2011-09-13&endDate=2011-09-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2011-09-13&endDate=2011-09-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2011-09-13&endDate=2011-09-13&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2011-09-13&endDate=2011-09-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2011-09-13&endDate=2011-09-13&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 1880,
+          "title": "Bauertrampet, Medel",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2011-09-11&endDate=2011-09-11&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-45\\competition-enriched.json"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T08:19:09.602Z",
+  "competition": {
+    "doma": {
+      "mapId": 61,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=61",
+      "title": "Jättemilen del 1",
+      "date": "2011-11-13",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 26.97,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/61.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": null,
+      "courseLengthKm": 24.5
+    },
+    "location": null,
+    "latitude": 55.9740828,
+    "longitude": 12.3060955,
+    "discipline": "Ultralång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "6",
+      "starters": "32",
+      "controls": 58,
+      "time": "2:15:57",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Jättemilen del 1",
+      "domaDate": "2011-11-13",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-61\\competition-enriched.json"
+    },
+    "country": "DK"
+  }
+}

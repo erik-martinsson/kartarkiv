@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T07:55:12.226Z",
+  "competition": {
+    "doma": {
+      "mapId": 52,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=52",
+      "title": "25-Manna",
+      "date": "2011-10-08",
+      "category": "Tävling",
+      "relayLeg": 2,
+      "runningTime": null,
+      "runningDistanceKm": 7.45,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/52.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": null,
+      "courseLengthKm": 7.1
+    },
+    "location": null,
+    "latitude": 59.1667058,
+    "longitude": 17.5389773,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "25manna",
+      "club": "Linköpings OK 1",
+      "position": "21",
+      "starters": "359",
+      "controls": 16,
+      "time": "40:05",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "25-Manna",
+      "domaDate": "2011-10-08",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-52\\competition-enriched.json"
+    }
+  }
+}
