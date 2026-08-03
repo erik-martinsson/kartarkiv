@@ -1,0 +1,122 @@
+{
+  "doma": {
+    "mapId": 105,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=105",
+    "title": "Eskilstuna Weekend E1",
+    "date": "2012-07-06",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/105.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=21941&categoryId=1"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "17",
+    "starters": "32",
+    "controls": 23,
+    "time": "36.06",
+    "totalMistakeTime": "0.58",
+    "mistakes": [
+      {
+        "control": 13,
+        "time": "0.29"
+      },
+      {
+        "control": 19,
+        "time": "0.29"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 2890,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/2890",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=2890",
+    "title": "Eskilstuna weekend",
+    "date": "",
+    "organiser": "IK StandardÄrla IF",
+    "location": "",
+    "rawDiscipline": "lång",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 2890,
+    "title": "Eskilstuna weekend",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/2890",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=2890",
+    "score": 94,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Eskilstuna Weekend E1",
+    "domaDate": "2012-07-06",
+    "databaseId": 21941,
+    "searchedDates": [
+      "2012-07-04",
+      "2012-07-05",
+      "2012-07-06",
+      "2012-07-07",
+      "2012-07-08"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2012-07-04&endDate=2012-07-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-04&endDate=2012-07-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-04&endDate=2012-07-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-04&endDate=2012-07-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-04&endDate=2012-07-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-04&endDate=2012-07-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 2890,
+        "title": "Eskilstuna weekend",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

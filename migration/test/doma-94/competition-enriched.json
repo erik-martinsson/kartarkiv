@@ -1,0 +1,449 @@
+{
+  "doma": {
+    "mapId": 94,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=94",
+    "title": "EOC Tour E3",
+    "date": "2012-05-20",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/94.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=21051&categoryId=1"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "88",
+    "starters": "117",
+    "controls": 5,
+    "time": "32.58",
+    "totalMistakeTime": "2.40",
+    "mistakes": [
+      {
+        "control": 1,
+        "time": "2.40"
+      }
+    ]
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "EOC Tour E3",
+    "domaDate": "2012-05-20",
+    "databaseId": 21051,
+    "searchedDates": [
+      "2012-05-18",
+      "2012-05-19",
+      "2012-05-20",
+      "2012-05-21",
+      "2012-05-22"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-05-19&endDate=2012-05-19&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-05-19&endDate=2012-05-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-05-19&endDate=2012-05-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-05-19&endDate=2012-05-19&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-05-19&endDate=2012-05-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-05-19&endDate=2012-05-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-05-20&endDate=2012-05-20&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-05-20&endDate=2012-05-20&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-05-20&endDate=2012-05-20&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-05-20&endDate=2012-05-20&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-05-20&endDate=2012-05-20&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-05-20&endDate=2012-05-20&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-05-21&endDate=2012-05-21&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-05-21&endDate=2012-05-21&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-05-21&endDate=2012-05-21&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-05-21&endDate=2012-05-21&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-05-21&endDate=2012-05-21&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-05-21&endDate=2012-05-21&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 3522,
+        "title": "EOC Tour",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2683,
+        "title": "Tour de Medelpad",
+        "score": 32,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3644,
+        "title": "EOC JVM test medel",
+        "score": 29,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4794,
+        "title": "Eskilstuna Park Tour, deltävling 2",
+        "score": 29,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4763,
+        "title": "div class=\"tooltip\" title=\"orienteringslöpning\">närMtis 22/5Eskilstuna Park Tour, deltävling 2",
+        "score": 24,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4740,
+        "title": "5-dagars på hemmaplan",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4735,
+        "title": "Njudungszonens ungdomsserie",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4697,
+        "title": "Nissadals Ungdomscup",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2579,
+        "title": "Närkekvartetten dag 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-18&endDate=2012-05-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3230,
+        "title": "ETOC, publiktävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-19&endDate=2012-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2580,
+        "title": "Närkekvartetten dag 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-19&endDate=2012-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3229,
+        "title": "ETOC, publiktävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-20&endDate=2012-05-20&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2685,
+        "title": "Marstrand",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-20&endDate=2012-05-20&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2582,
+        "title": "Närkekvartetten dag 4",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-20&endDate=2012-05-20&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2995,
+        "title": "Bruksträffen 2012",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-20&endDate=2012-05-20&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5506,
+        "title": "MOL 5 Bråtenspåret",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5021,
+        "title": "Motions-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4259,
+        "title": "Motionsorientering - Täby Ok",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5036,
+        "title": "Sommarserien med Nacka-orienteringen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3686,
+        "title": "VPT 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4372,
+        "title": "Södertälje IF Veteran-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4926,
+        "title": "Dala-Veteran OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4312,
+        "title": "Poängtävling 5",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4256,
+        "title": "Motionsorientering - Upplands Väsby/Runby",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3938,
+        "title": "EES - Eslöv Evening Sprint Etapp2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4803,
+        "title": "VB-Serien 2012",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5792,
+        "title": "Örnligan och7-klubbs",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4919,
+        "title": "Sprintcupen i Mark",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4903,
+        "title": "Kretsungdomstävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4939,
+        "title": "FUS Folkareserien",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4831,
+        "title": "Klubbmästerskap för Tolered Utby OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4993,
+        "title": "SAKO deltävling 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4956,
+        "title": "Till skogs med Roslagens Sparbank",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5023,
+        "title": "U-ringen etapp 2 Långhundra IF",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4881,
+        "title": "Höglandsserien",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4901,
+        "title": "KM lång",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-22&endDate=2012-05-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}

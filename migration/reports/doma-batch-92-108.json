@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-03T13:52:11.967Z",
+  "finishedAt": "2026-08-03T13:55:00.372Z",
+  "options": {
+    "from": 92,
+    "to": 108,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 17,
+    "created": 14,
+    "skipped": 3,
+    "skippedExisting": 0,
+    "skippedTraining": 3,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 92,
+      "status": "created",
+      "title": "EOC Tour E1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-92\\competition-enriched.json"
+    },
+    {
+      "mapId": 93,
+      "status": "created",
+      "title": "EOC Tour E2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-93\\competition-enriched.json"
+    },
+    {
+      "mapId": 94,
+      "status": "created",
+      "title": "EOC Tour E3",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-94\\competition-enriched.json"
+    },
+    {
+      "mapId": 95,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Lång-KM",
+      "category": "Träning"
+    },
+    {
+      "mapId": 96,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "OL-intervaller",
+      "category": "Träning"
+    },
+    {
+      "mapId": 97,
+      "status": "created",
+      "title": "Jukola, str 3",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-97\\competition-enriched.json"
+    },
+    {
+      "mapId": 98,
+      "status": "created",
+      "title": "Idre 3-Dagars E1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-98\\competition-enriched.json"
+    },
+    {
+      "mapId": 99,
+      "status": "created",
+      "title": "Idre 3-Dagars E2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-99\\competition-enriched.json"
+    },
+    {
+      "mapId": 100,
+      "status": "created",
+      "title": "Idre 3-Dagars E3",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-100\\competition-enriched.json"
+    },
+    {
+      "mapId": 101,
+      "status": "created",
+      "title": "Sälen 3+3 Sprint",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-101\\competition-enriched.json"
+    },
+    {
+      "mapId": 102,
+      "status": "created",
+      "title": "Sälen 3+3 Lång",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-102\\competition-enriched.json"
+    },
+    {
+      "mapId": 103,
+      "status": "created",
+      "title": "Sälen 3+3 Medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-103\\competition-enriched.json"
+    },
+    {
+      "mapId": 104,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Finspång",
+      "category": "Träning"
+    },
+    {
+      "mapId": 105,
+      "status": "created",
+      "title": "Eskilstuna Weekend E1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-105\\competition-enriched.json"
+    },
+    {
+      "mapId": 106,
+      "status": "created",
+      "title": "Eskilstuna Weekend E2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-106\\competition-enriched.json"
+    },
+    {
+      "mapId": 107,
+      "status": "created",
+      "title": "Eskilstuna Weekend E3",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-107\\competition-enriched.json"
+    },
+    {
+      "mapId": 108,
+      "status": "created",
+      "title": "Tjust 2-dagars Dag 1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-108\\competition-enriched.json"
+    }
+  ]
+}

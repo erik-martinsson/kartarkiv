@@ -1,0 +1,271 @@
+{
+  "doma": {
+    "mapId": 106,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=106",
+    "title": "Eskilstuna Weekend E2",
+    "date": "2012-07-07",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/106.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=21946&categoryId=1"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "17",
+    "starters": "31",
+    "controls": 21,
+    "time": "1:26.20",
+    "totalMistakeTime": "4.59",
+    "mistakes": [
+      {
+        "control": 8,
+        "time": "2.45"
+      },
+      {
+        "control": 10,
+        "time": "0.56"
+      },
+      {
+        "control": 13,
+        "time": "0.43"
+      },
+      {
+        "control": 14,
+        "time": "0.35"
+      }
+    ]
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Eskilstuna Weekend E2",
+    "domaDate": "2012-07-07",
+    "databaseId": 21946,
+    "searchedDates": [
+      "2012-07-05",
+      "2012-07-06",
+      "2012-07-07",
+      "2012-07-08",
+      "2012-07-09"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-09&endDate=2012-07-09&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-09&endDate=2012-07-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-09&endDate=2012-07-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-09&endDate=2012-07-09&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-09&endDate=2012-07-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-09&endDate=2012-07-09&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 2890,
+        "title": "Eskilstuna weekend",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4697,
+        "title": "närLfre 6/7 - sön 8/7Eskilstuna weekend",
+        "score": 29,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4735,
+        "title": "Njudungszonens ungdomsserie",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2537,
+        "title": "Havs-OL, dag 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5151,
+        "title": "HSOK Sommarcup 2012 E3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4721,
+        "title": "Sommarserie 6",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-05&endDate=2012-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2354,
+        "title": "Vålådalens 3-dagars",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-06&endDate=2012-07-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5012,
+        "title": "Intresseanmälan Tjoget 2012 OK Skogsfalken",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2953,
+        "title": "Gotlands 2-dagars",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2175,
+        "title": "Morokulien 2-dagars",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2709,
+        "title": "Vittjärvs 2-dagars",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3217,
+        "title": "PreO DM öppet 2-dagars Hälsingland",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2616,
+        "title": "Tjoget",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3970,
+        "title": "Lagtävling PreO Rehns BK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-07&endDate=2012-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5169,
+        "title": "När-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-08&endDate=2012-07-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2630,
+        "title": "Gränsjakten i Strömstad",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-09&endDate=2012-07-09&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2778,
+        "title": "Sommar-3-kvällars",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-09&endDate=2012-07-09&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}
