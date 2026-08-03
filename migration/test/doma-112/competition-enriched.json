@@ -1,0 +1,159 @@
+{
+  "doma": {
+    "mapId": 112,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=112",
+    "title": "O-ringen E3",
+    "date": "2012-07-24",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/112.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=22102&categoryId=9"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "14",
+    "starters": "192",
+    "controls": 19,
+    "time": "37.47",
+    "totalMistakeTime": "0.39",
+    "mistakes": [
+      {
+        "control": 14,
+        "time": "0.39"
+      }
+    ]
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "O-ringen E3",
+    "domaDate": "2012-07-24",
+    "databaseId": 22102,
+    "searchedDates": [
+      "2012-07-22",
+      "2012-07-23",
+      "2012-07-24",
+      "2012-07-25",
+      "2012-07-26"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2012-07-22&endDate=2012-07-22&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-22&endDate=2012-07-22&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-22&endDate=2012-07-22&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-22&endDate=2012-07-22&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-22&endDate=2012-07-22&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-22&endDate=2012-07-22&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-23&endDate=2012-07-23&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-23&endDate=2012-07-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-23&endDate=2012-07-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-23&endDate=2012-07-23&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-23&endDate=2012-07-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-23&endDate=2012-07-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-24&endDate=2012-07-24&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-24&endDate=2012-07-24&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-24&endDate=2012-07-24&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-24&endDate=2012-07-24&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-24&endDate=2012-07-24&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-24&endDate=2012-07-24&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-25&endDate=2012-07-25&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-25&endDate=2012-07-25&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-25&endDate=2012-07-25&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-25&endDate=2012-07-25&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-25&endDate=2012-07-25&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-25&endDate=2012-07-25&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-07-26&endDate=2012-07-26&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-07-26&endDate=2012-07-26&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-07-26&endDate=2012-07-26&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-07-26&endDate=2012-07-26&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-07-26&endDate=2012-07-26&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-07-26&endDate=2012-07-26&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 2977,
+        "title": "O-Ringen Halland",
+        "score": 48,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-22&endDate=2012-07-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3324,
+        "title": "O-Ringen Halland MTB-O",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-23&endDate=2012-07-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5265,
+        "title": "O-Ringen Halland Elitsprint",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-25&endDate=2012-07-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4697,
+        "title": "närLsön 22/7 - fre 27/7O-Ringen Halland",
+        "score": 37,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-22&endDate=2012-07-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4735,
+        "title": "Njudungszonens ungdomsserie",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-22&endDate=2012-07-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5149,
+        "title": "Sommarserien SOL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-24&endDate=2012-07-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5179,
+        "title": "TSKs sommarsprintserie del 2 - Årstaskogen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-07-25&endDate=2012-07-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}

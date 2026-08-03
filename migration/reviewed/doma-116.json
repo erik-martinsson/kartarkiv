@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T18:58:31.860Z",
+  "competition": {
+    "doma": {
+      "mapId": 116,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=116",
+      "title": "Natt-SM",
+      "date": "2012-08-24",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 16.54,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/116.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=22449&categoryId=1",
+      "courseLengthKm": 12.91
+    },
+    "location": null,
+    "latitude": 61.37422177,
+    "longitude": 16.59660565,
+    "discipline": "Natt",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "53",
+      "starters": "82",
+      "controls": 26,
+      "time": "1:57:43",
+      "totalMistakeTime": "7.40",
+      "mistakes": [
+        {
+          "control": 6,
+          "time": "1.15"
+        },
+        {
+          "control": 7,
+          "time": "2.21"
+        },
+        {
+          "control": 10,
+          "time": "2.42"
+        },
+        {
+          "control": 19,
+          "time": "0.23"
+        },
+        {
+          "control": 24,
+          "time": "0.59"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 3201,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/3201",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=3201",
+      "title": "SM Natt",
+      "date": "",
+      "organiser": "Rehns BK",
+      "location": "",
+      "rawDiscipline": "lång",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 3201,
+      "title": "SM Natt",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/3201",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=3201",
+      "score": 95,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Natt-SM",
+      "domaDate": "2012-08-24",
+      "databaseId": 22449,
+      "searchedDates": [
+        "2012-08-22",
+        "2012-08-23",
+        "2012-08-24",
+        "2012-08-25",
+        "2012-08-26"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2012-08-22&endDate=2012-08-22&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-08-22&endDate=2012-08-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-08-22&endDate=2012-08-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-08-22&endDate=2012-08-22&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-08-22&endDate=2012-08-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-08-22&endDate=2012-08-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-08-23&endDate=2012-08-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-08-23&endDate=2012-08-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-08-23&endDate=2012-08-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-08-23&endDate=2012-08-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-08-23&endDate=2012-08-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-08-23&endDate=2012-08-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-08-24&endDate=2012-08-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-08-24&endDate=2012-08-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-08-24&endDate=2012-08-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-08-24&endDate=2012-08-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-08-24&endDate=2012-08-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-08-24&endDate=2012-08-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-08-25&endDate=2012-08-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-08-25&endDate=2012-08-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-08-25&endDate=2012-08-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-08-25&endDate=2012-08-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-08-25&endDate=2012-08-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-08-25&endDate=2012-08-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-08-26&endDate=2012-08-26&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-08-26&endDate=2012-08-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-08-26&endDate=2012-08-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-08-26&endDate=2012-08-26&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-08-26&endDate=2012-08-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-08-26&endDate=2012-08-26&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 3201,
+          "title": "SM Natt",
+          "score": 95,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-08-24&endDate=2012-08-24&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-116\\competition-enriched.json"
+    }
+  }
+}
