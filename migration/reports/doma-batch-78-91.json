@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-03T08:42:22.479Z",
+  "finishedAt": "2026-08-03T08:45:04.744Z",
+  "options": {
+    "from": 78,
+    "to": 91,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 14,
+    "created": 9,
+    "skipped": 4,
+    "skippedExisting": 0,
+    "skippedTraining": 4,
+    "failed": 1
+  },
+  "items": [
+    {
+      "mapId": 78,
+      "status": "created",
+      "title": "Nyköpingsnatten, del 1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-78\\competition-enriched.json"
+    },
+    {
+      "mapId": 79,
+      "status": "created",
+      "title": "Nyköpingsnatten, del 2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-79\\competition-enriched.json"
+    },
+    {
+      "mapId": 80,
+      "status": "created",
+      "title": "Måsenstafetten",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-80\\competition-enriched.json"
+    },
+    {
+      "mapId": 81,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Klubbträning Slaka",
+      "category": "Träning"
+    },
+    {
+      "mapId": 82,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Tiomilaträning Karlsby",
+      "category": "Träning"
+    },
+    {
+      "mapId": 83,
+      "status": "created",
+      "title": "Svartnatta",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-83\\competition-enriched.json"
+    },
+    {
+      "mapId": 84,
+      "status": "created",
+      "title": "Tibrotrippeln, natt",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-84\\competition-enriched.json"
+    },
+    {
+      "mapId": 85,
+      "status": "created",
+      "title": "Tibrotrippeln, medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-85\\competition-enriched.json"
+    },
+    {
+      "mapId": 86,
+      "status": "created",
+      "title": "Tibrotrippeln, lång",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-86\\competition-enriched.json"
+    },
+    {
+      "mapId": 87,
+      "status": "created",
+      "title": "Stigtomtakavlen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-87\\competition-enriched.json"
+    },
+    {
+      "mapId": 88,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Kolmårdenträning",
+      "category": "Träning"
+    },
+    {
+      "mapId": 89,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Tiomilaträning",
+      "category": "Träning"
+    },
+    {
+      "mapId": 90,
+      "status": "created",
+      "title": "Tiomila",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-90\\competition-enriched.json"
+    },
+    {
+      "mapId": 91,
+      "status": "failed",
+      "error": "WinSplits svarade inte efter att utökad information aktiverades."
+    }
+  ]
+}

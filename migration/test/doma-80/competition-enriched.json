@@ -1,0 +1,249 @@
+{
+  "doma": {
+    "mapId": 80,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=80",
+    "title": "Måsenstafetten",
+    "date": "2012-03-25",
+    "category": "Tävling",
+    "relayLeg": 2,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/80.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=20123&categoryId=18"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "16",
+    "starters": "74",
+    "controls": 7,
+    "time": "53.09",
+    "totalMistakeTime": "4.17",
+    "mistakes": [
+      {
+        "control": 5,
+        "time": "4.17"
+      }
+    ]
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Måsenstafetten",
+    "domaDate": "2012-03-25",
+    "databaseId": 20123,
+    "searchedDates": [
+      "2012-03-23",
+      "2012-03-24",
+      "2012-03-25",
+      "2012-03-26",
+      "2012-03-27"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2012-03-23&endDate=2012-03-23&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-03-23&endDate=2012-03-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-03-23&endDate=2012-03-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-03-23&endDate=2012-03-23&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-03-23&endDate=2012-03-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-03-23&endDate=2012-03-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-03-26&endDate=2012-03-26&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-03-26&endDate=2012-03-26&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-03-26&endDate=2012-03-26&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-03-26&endDate=2012-03-26&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-03-26&endDate=2012-03-26&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-03-26&endDate=2012-03-26&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-03-27&endDate=2012-03-27&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-03-27&endDate=2012-03-27&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-03-27&endDate=2012-03-27&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-03-27&endDate=2012-03-27&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-03-27&endDate=2012-03-27&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-03-27&endDate=2012-03-27&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 2381,
+        "title": "Måsenstafetten",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3796,
+        "title": "ss=\"tooltip\" title=\"orienteringslöpning\">distMsön 25/3Intresseanmälan TSK Ungdom Måsenstafetten",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4430,
+        "title": "Intresseanmälan TSK Ungdom Måsenstafetten",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3480,
+        "title": "WinterCupen 2011-2012",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-23&endDate=2012-03-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2520,
+        "title": "Nyköpingsnatten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-23&endDate=2012-03-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2521,
+        "title": "Nyköpingsorienteringen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3419,
+        "title": "SM Medel + JSM Medel + USM Lång + VRM Lång + publiktävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3242,
+        "title": "World Cup 2012 Middle",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4215,
+        "title": "Orustkavlen 2012",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2611,
+        "title": "Vårracet, medeldistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-24&endDate=2012-03-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3243,
+        "title": "World Cup 2012 Ultralong, mass start",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2612,
+        "title": "Vårracet, långdistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3415,
+        "title": "SM Lång + JSM Lång + USM Sprint + VRM Sprint + publiktävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3913,
+        "title": "Nattcup 4",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-25&endDate=2012-03-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4481,
+        "title": "Dala Veteran-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-27&endDate=2012-03-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3882,
+        "title": "Motionsorientering - Granskog",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-03-27&endDate=2012-03-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "doma": {
+    "mapId": 83,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=83",
+    "title": "Svartnatta",
+    "date": "2012-04-05",
+    "category": "Tävling",
+    "relayLeg": 2,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/83.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=20286&categoryId=25"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "15",
+    "starters": "133",
+    "controls": 7,
+    "time": "41.00",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Svartnatta",
+    "domaDate": "2012-04-05",
+    "databaseId": 20286,
+    "searchedDates": [
+      "2012-04-03",
+      "2012-04-04",
+      "2012-04-05",
+      "2012-04-06",
+      "2012-04-07"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2012-04-03&endDate=2012-04-03&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-04-03&endDate=2012-04-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-04-03&endDate=2012-04-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-04-03&endDate=2012-04-03&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-04-03&endDate=2012-04-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-04-03&endDate=2012-04-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-04-04&endDate=2012-04-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-04-04&endDate=2012-04-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-04-04&endDate=2012-04-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-04-04&endDate=2012-04-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-04-04&endDate=2012-04-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-04-04&endDate=2012-04-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-04-05&endDate=2012-04-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-04-05&endDate=2012-04-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-04-05&endDate=2012-04-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-04-05&endDate=2012-04-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-04-05&endDate=2012-04-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-04-05&endDate=2012-04-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-04-06&endDate=2012-04-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-04-06&endDate=2012-04-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-04-06&endDate=2012-04-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-04-06&endDate=2012-04-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-04-06&endDate=2012-04-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-04-06&endDate=2012-04-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 2856,
+        "title": "Svartnatta",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-05&endDate=2012-04-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2461,
+        "title": "/div>natLNtor 5/4Svartnatta",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-05&endDate=2012-04-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4628,
+        "title": "Dala Veteran-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-03&endDate=2012-04-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4629,
+        "title": "NOK träning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-03&endDate=2012-04-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3883,
+        "title": "Motionsorientering - Granskog",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-03&endDate=2012-04-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2755,
+        "title": "Sydsvenska 7-mannakavlen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-05&endDate=2012-04-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3620,
+        "title": "Vårdubbeln på Söderåsen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-05&endDate=2012-04-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2462,
+        "title": "Kortfredan, Five-O 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-06&endDate=2012-04-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2310,
+        "title": "Påsk-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-06&endDate=2012-04-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3621,
+        "title": "Vårdubbeln på Söderåsen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-06&endDate=2012-04-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3050,
+        "title": "Dran långfredag",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-06&endDate=2012-04-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2758,
+        "title": "Helsingborgs SOK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2622,
+        "title": "Nackheträffen+DM Medel Halland",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2535,
+        "title": "Stockenfejden",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4586,
+        "title": "Påskorientering i Borlänge",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2428,
+        "title": "Öjetrampen, Five-O 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2972,
+        "title": "Finspångsorienteringen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 2946,
+        "title": "Järla, medeldistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-04-07&endDate=2012-04-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}

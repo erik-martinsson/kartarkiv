@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "status": "needs-review",
+  "reviewedAt": "2026-08-03T09:11:11.248Z",
+  "competition": {
+    "doma": {
+      "mapId": 79,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=79",
+      "title": "Nyköpingsnatten, del 2",
+      "date": "2012-03-23",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": null,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/79.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": null
+    },
+    "location": null,
+    "latitude": null,
+    "longitude": null,
+    "discipline": "Annan",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": null,
+      "club": null,
+      "position": null,
+      "starters": null,
+      "controls": null,
+      "time": null,
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Nyköpingsnatten, del 2",
+      "domaDate": "2012-03-23",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-79\\competition-enriched.json"
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "doma": {
+    "mapId": 91,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=91",
+    "title": "Ljungsbrokampen",
+    "date": "2012-05-10",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/91.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=20886&categoryId=1"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "3",
+    "starters": "33",
+    "controls": 15,
+    "time": "31.30",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": {
+    "eventId": 2687,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/2687",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=2687",
+    "title": "Ljungsbrokampen",
+    "date": "",
+    "organiser": "OK Skogsströvarna",
+    "location": "",
+    "rawDiscipline": "medel",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 2687,
+    "title": "Ljungsbrokampen",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/2687",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=2687",
+    "score": 100,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Ljungsbrokampen",
+    "domaDate": "2012-05-10",
+    "databaseId": 20886,
+    "searchedDates": [
+      "2012-05-08",
+      "2012-05-09",
+      "2012-05-10",
+      "2012-05-11",
+      "2012-05-12"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2012-05-08&endDate=2012-05-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-05-08&endDate=2012-05-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-05-08&endDate=2012-05-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-05-08&endDate=2012-05-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-05-08&endDate=2012-05-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-05-08&endDate=2012-05-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-05-09&endDate=2012-05-09&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-05-09&endDate=2012-05-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-05-09&endDate=2012-05-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-05-09&endDate=2012-05-09&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-05-09&endDate=2012-05-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-05-09&endDate=2012-05-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-05-10&endDate=2012-05-10&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-05-10&endDate=2012-05-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-05-10&endDate=2012-05-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-05-10&endDate=2012-05-10&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-05-10&endDate=2012-05-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-05-10&endDate=2012-05-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-05-11&endDate=2012-05-11&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-05-11&endDate=2012-05-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-05-11&endDate=2012-05-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-05-11&endDate=2012-05-11&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-05-11&endDate=2012-05-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-05-11&endDate=2012-05-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-05-12&endDate=2012-05-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-05-12&endDate=2012-05-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-05-12&endDate=2012-05-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-05-12&endDate=2012-05-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-05-12&endDate=2012-05-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-05-12&endDate=2012-05-12&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 2687,
+        "title": "Ljungsbrokampen",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-05-10&endDate=2012-05-10&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

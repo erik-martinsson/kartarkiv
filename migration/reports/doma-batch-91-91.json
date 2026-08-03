@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-03T08:57:09.624Z",
+  "finishedAt": "2026-08-03T08:57:17.865Z",
+  "options": {
+    "from": 91,
+    "to": 91,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": true
+  },
+  "counts": {
+    "total": 1,
+    "created": 1,
+    "skipped": 0,
+    "skippedExisting": 0,
+    "skippedTraining": 0,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 91,
+      "status": "created",
+      "title": "Ljungsbrokampen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-91\\competition-enriched.json"
+    }
+  ]
+}
