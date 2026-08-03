@@ -1,0 +1,126 @@
+{
+  "doma": {
+    "mapId": 127,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=127",
+    "title": "Älgfritt",
+    "date": "2012-10-14",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": null,
+    "runningDistanceKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/127.jpg",
+    "blankMapImageUrl": null,
+    "kmlUrl": null,
+    "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=23303&categoryId=1"
+  },
+  "location": null,
+  "latitude": null,
+  "longitude": null,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "6",
+    "starters": "26",
+    "controls": 23,
+    "time": "39.13",
+    "totalMistakeTime": "5.28",
+    "mistakes": [
+      {
+        "control": 1,
+        "time": "0.44"
+      },
+      {
+        "control": 13,
+        "time": "3.23"
+      },
+      {
+        "control": 21,
+        "time": "1.21"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 2938,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/2938",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=2938",
+    "title": "Älgfritt",
+    "date": "",
+    "organiser": "OK Motala",
+    "location": "",
+    "rawDiscipline": "medel",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 2938,
+    "title": "Älgfritt",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/2938",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=2938",
+    "score": 100,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Älgfritt",
+    "domaDate": "2012-10-14",
+    "databaseId": 23303,
+    "searchedDates": [
+      "2012-10-12",
+      "2012-10-13",
+      "2012-10-14",
+      "2012-10-15",
+      "2012-10-16"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2012-10-12&endDate=2012-10-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-10-12&endDate=2012-10-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-10-12&endDate=2012-10-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-10-12&endDate=2012-10-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-10-12&endDate=2012-10-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-10-12&endDate=2012-10-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-10-13&endDate=2012-10-13&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-10-13&endDate=2012-10-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-10-13&endDate=2012-10-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-10-13&endDate=2012-10-13&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-10-13&endDate=2012-10-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-10-13&endDate=2012-10-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-10-14&endDate=2012-10-14&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-10-14&endDate=2012-10-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-10-14&endDate=2012-10-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-10-14&endDate=2012-10-14&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-10-14&endDate=2012-10-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-10-14&endDate=2012-10-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-10-15&endDate=2012-10-15&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-10-15&endDate=2012-10-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-10-15&endDate=2012-10-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-10-15&endDate=2012-10-15&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-10-15&endDate=2012-10-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-10-15&endDate=2012-10-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2012-10-16&endDate=2012-10-16&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2012-10-16&endDate=2012-10-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2012-10-16&endDate=2012-10-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2012-10-16&endDate=2012-10-16&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2012-10-16&endDate=2012-10-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2012-10-16&endDate=2012-10-16&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 2938,
+        "title": "Älgfritt",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-14&endDate=2012-10-14&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Blank kartbild saknas (#hiddenMapImage).",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

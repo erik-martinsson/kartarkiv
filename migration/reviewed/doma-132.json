@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T20:55:57.063Z",
+  "competition": {
+    "doma": {
+      "mapId": 132,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=132",
+      "title": "Sydsvenska 2-milen",
+      "date": "2012-11-04",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 25.21,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/132.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=23558&categoryId=1",
+      "courseLengthKm": 19.7
+    },
+    "location": null,
+    "latitude": 56.98249636,
+    "longitude": 13.30897118,
+    "discipline": "Ultralång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "1",
+      "starters": "17",
+      "controls": 28,
+      "time": "2:12:28",
+      "totalMistakeTime": "6.53",
+      "mistakes": [
+        {
+          "control": 2,
+          "time": "1.18"
+        },
+        {
+          "control": 3,
+          "time": "1.48"
+        },
+        {
+          "control": 5,
+          "time": "3.21"
+        },
+        {
+          "control": 16,
+          "time": "0.26"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 2914,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/2914",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=2914",
+      "title": "Sydsvenska 2-milen + DM Ultralång Halland",
+      "date": "",
+      "organiser": "Hylte OK",
+      "location": "",
+      "rawDiscipline": "ultralång",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 2914,
+      "title": "Sydsvenska 2-milen + DM Ultralång Halland",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/2914",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=2914",
+      "score": 94,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Sydsvenska 2-milen",
+      "domaDate": "2012-11-04",
+      "databaseId": 23558,
+      "searchedDates": [
+        "2012-11-02",
+        "2012-11-03",
+        "2012-11-04",
+        "2012-11-05",
+        "2012-11-06"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2012-11-02&endDate=2012-11-02&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-11-02&endDate=2012-11-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-11-02&endDate=2012-11-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-11-02&endDate=2012-11-02&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-11-02&endDate=2012-11-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-11-02&endDate=2012-11-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-11-03&endDate=2012-11-03&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-11-03&endDate=2012-11-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-11-03&endDate=2012-11-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-11-03&endDate=2012-11-03&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-11-03&endDate=2012-11-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-11-03&endDate=2012-11-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-11-04&endDate=2012-11-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-11-04&endDate=2012-11-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-11-04&endDate=2012-11-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-11-04&endDate=2012-11-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-11-04&endDate=2012-11-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-11-04&endDate=2012-11-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-11-05&endDate=2012-11-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-11-05&endDate=2012-11-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-11-05&endDate=2012-11-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-11-05&endDate=2012-11-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-11-05&endDate=2012-11-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-11-05&endDate=2012-11-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-11-06&endDate=2012-11-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-11-06&endDate=2012-11-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-11-06&endDate=2012-11-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-11-06&endDate=2012-11-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-11-06&endDate=2012-11-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-11-06&endDate=2012-11-06&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 2914,
+          "title": "Sydsvenska 2-milen + DM Ultralång Halland",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-11-04&endDate=2012-11-04&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-132\\competition-enriched.json"
+    }
+  }
+}

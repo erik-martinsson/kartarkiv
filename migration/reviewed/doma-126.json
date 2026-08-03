@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T20:47:00.226Z",
+  "competition": {
+    "doma": {
+      "mapId": 126,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=126",
+      "title": "25-Manna",
+      "date": "2012-10-06",
+      "category": "Tävling",
+      "relayLeg": 25,
+      "runningTime": null,
+      "runningDistanceKm": 9.8,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/126.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=23210&categoryId=36",
+      "courseLengthKm": 8.6
+    },
+    "location": null,
+    "latitude": 59.153383,
+    "longitude": 18.136333,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "25-Manna",
+      "club": "Linköpings OK 1",
+      "position": "23",
+      "starters": "198",
+      "controls": 16,
+      "time": "49:44",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "25-Manna str.25",
+      "domaDate": "2012-10-06",
+      "databaseId": 23210,
+      "searchedDates": [
+        "2012-10-04",
+        "2012-10-05",
+        "2012-10-06",
+        "2012-10-07",
+        "2012-10-08"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2012-10-04&endDate=2012-10-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-10-04&endDate=2012-10-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-10-04&endDate=2012-10-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-10-04&endDate=2012-10-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-10-04&endDate=2012-10-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-10-04&endDate=2012-10-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-10-07&endDate=2012-10-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-10-07&endDate=2012-10-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-10-07&endDate=2012-10-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-10-07&endDate=2012-10-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-10-07&endDate=2012-10-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-10-07&endDate=2012-10-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-10-08&endDate=2012-10-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-10-08&endDate=2012-10-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-10-08&endDate=2012-10-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-10-08&endDate=2012-10-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-10-08&endDate=2012-10-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-10-08&endDate=2012-10-08&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 5306,
+          "title": "25-manna helgen",
+          "score": 79,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5300,
+          "title": "Anmälan 25-manna",
+          "score": 79,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5360,
+          "title": "Haninge SOK, anml 25-manna",
+          "score": 67,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5399,
+          "title": "Anmälan 25-manna i Himmelsboda, Botkyrka",
+          "score": 67,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3299,
+          "title": "v>natSLlör 6/10Haninge SOK, anml 25-manna",
+          "score": 64,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5303,
+          "title": "BAIK-A-NATT",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-04&endDate=2012-10-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 19835,
+          "title": "POL-Sisustugan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5511,
+          "title": "Östra Natt HOK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5479,
+          "title": "KM Natt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-05&endDate=2012-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5448,
+          "title": "25manna, öppna motionsklasser",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2797,
+          "title": "Stads-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5385,
+          "title": "Mölndal Outdoors hösttävling",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5449,
+          "title": "Klubbudkavlen 2012",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-06&endDate=2012-10-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3300,
+          "title": "25mannakorten, medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-07&endDate=2012-10-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2792,
+          "title": "Ruskruset",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-10-07&endDate=2012-10-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen tillräckligt säker Eventor-träff hittades."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-126\\competition-enriched.json"
+    }
+  }
+}

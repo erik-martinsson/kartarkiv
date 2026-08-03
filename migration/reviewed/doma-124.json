@@ -1,0 +1,529 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T20:41:33.171Z",
+  "competition": {
+    "doma": {
+      "mapId": 124,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=124",
+      "title": "Medel-SM Final",
+      "date": "2012-09-22",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 5.25,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/124.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=23012&categoryId=6",
+      "courseLengthKm": 4.58
+    },
+    "location": null,
+    "latitude": 60.25937693,
+    "longitude": 16.66384293,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21B",
+      "club": "Linköpings OK",
+      "position": "28",
+      "starters": "39",
+      "controls": 14,
+      "time": "37:29",
+      "totalMistakeTime": "1.38",
+      "mistakes": [
+        {
+          "control": 9,
+          "time": "1.38"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Medel-SM Final (H21B)",
+      "domaDate": "2012-09-22",
+      "databaseId": 23012,
+      "searchedDates": [
+        "2012-09-20",
+        "2012-09-21",
+        "2012-09-22",
+        "2012-09-23",
+        "2012-09-24"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-09-21&endDate=2012-09-21&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-09-21&endDate=2012-09-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-09-21&endDate=2012-09-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-09-21&endDate=2012-09-21&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-09-21&endDate=2012-09-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-09-21&endDate=2012-09-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-09-24&endDate=2012-09-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-09-24&endDate=2012-09-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-09-24&endDate=2012-09-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-09-24&endDate=2012-09-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-09-24&endDate=2012-09-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-09-24&endDate=2012-09-24&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 5339,
+          "title": "Sommarserie FINAL",
+          "score": 31,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 4245,
+          "title": "SM Medeldistans",
+          "score": 31,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-21&endDate=2012-09-21&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3181,
+          "title": "SM Stafett",
+          "score": 31,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5082,
+          "title": "SM Medeldistans, publiktävling",
+          "score": 26,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5130,
+          "title": "SM Stafett, publiktävling",
+          "score": 26,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5358,
+          "title": "class=\"tooltip\" title=\"orienteringslöpning\">klubbLtor 20/9Sommarserie FINAL",
+          "score": 20,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5493,
+          "title": "Hagaby kursmästerskap",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5480,
+          "title": "Tibro Handikappen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5474,
+          "title": "Klubbmästerskap FAIK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-20&endDate=2012-09-20&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5332,
+          "title": "Östra Nattserien etapp 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-21&endDate=2012-09-21&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5347,
+          "title": "Öppna Falumästerskap, Natt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-21&endDate=2012-09-21&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2057,
+          "title": "OL-Rounden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-21&endDate=2012-09-21&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2593,
+          "title": "Bahco Cup",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3680,
+          "title": "Ekorren cup",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3323,
+          "title": "Hultsfreds OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2528,
+          "title": "Kils OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2710,
+          "title": "Markdubbeln, medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2870,
+          "title": "PreO",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2883,
+          "title": "PreO DM Natt öppet Uppland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 4472,
+          "title": "Motionsorientering - Lidingö",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5431,
+          "title": "Ungdomens 5-dagars, Etapp 5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3268,
+          "title": "SOLVarvet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5466,
+          "title": "4-klubbsmatch deltävling 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5379,
+          "title": "Öppet KM MTBO",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5213,
+          "title": "4-Sprinten 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5384,
+          "title": "Klubbmästerskap Lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2585,
+          "title": "Riksmästerskap för Veteraner, medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5382,
+          "title": "Älgots Cup",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2058,
+          "title": "OL-Rounden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5304,
+          "title": "Bahco MTB",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-22&endDate=2012-09-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3404,
+          "title": "Klarälvskavlen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2711,
+          "title": "Markdubbeln, långdistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2273,
+          "title": "PreO",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2594,
+          "title": "Ungdomsstafetten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 1101,
+          "title": "Bauertrampet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2789,
+          "title": "Höstflåset",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2059,
+          "title": "OL-Rounden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2586,
+          "title": "Riksmästerskap för Veteraner, långdistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5158,
+          "title": "Ungdomsserieavslutning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3295,
+          "title": "Elvdansen, medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5433,
+          "title": "Tjalves klubbmästerskap",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5478,
+          "title": "OL-cup Medel4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5396,
+          "title": "Parkserien 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-23&endDate=2012-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen tillräckligt säker Eventor-träff hittades."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-124\\competition-enriched.json"
+    }
+  }
+}

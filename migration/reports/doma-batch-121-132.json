@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-03T20:24:33.833Z",
+  "finishedAt": "2026-08-03T20:28:03.633Z",
+  "options": {
+    "from": 121,
+    "to": 132,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 12,
+    "created": 10,
+    "skipped": 2,
+    "skippedExisting": 0,
+    "skippedTraining": 2,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 121,
+      "status": "created",
+      "title": "Medel-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-121\\competition-enriched.json"
+    },
+    {
+      "mapId": 122,
+      "status": "created",
+      "title": "Stafett-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-122\\competition-enriched.json"
+    },
+    {
+      "mapId": 123,
+      "status": "created",
+      "title": "Medel-SM Kval (H21A)",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-123\\competition-enriched.json"
+    },
+    {
+      "mapId": 124,
+      "status": "created",
+      "title": "Medel-SM Final (H21B)",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-124\\competition-enriched.json"
+    },
+    {
+      "mapId": 125,
+      "status": "created",
+      "title": "Stafett-SM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-125\\competition-enriched.json"
+    },
+    {
+      "mapId": 126,
+      "status": "created",
+      "title": "25-Manna str.25",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-126\\competition-enriched.json"
+    },
+    {
+      "mapId": 127,
+      "status": "created",
+      "title": "Älgfritt",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-127\\competition-enriched.json"
+    },
+    {
+      "mapId": 128,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup IV",
+      "category": "Träning"
+    },
+    {
+      "mapId": 129,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Nattcup V",
+      "category": "Träning"
+    },
+    {
+      "mapId": 130,
+      "status": "created",
+      "title": "Smålandskavlen, natt",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-130\\competition-enriched.json"
+    },
+    {
+      "mapId": 131,
+      "status": "created",
+      "title": "Smålandskavlen, Öppen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-131\\competition-enriched.json"
+    },
+    {
+      "mapId": 132,
+      "status": "created",
+      "title": "Sydsvenska 2-milen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-132\\competition-enriched.json"
+    }
+  ]
+}

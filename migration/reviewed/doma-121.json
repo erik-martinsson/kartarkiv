@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T20:32:32.830Z",
+  "competition": {
+    "doma": {
+      "mapId": 121,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=121",
+      "title": "Medel-DM",
+      "date": "2012-09-08",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": null,
+      "runningDistanceKm": 6.15,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/121.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=22761&categoryId=1",
+      "courseLengthKm": 5.1
+    },
+    "location": null,
+    "latitude": 58.21643103,
+    "longitude": 14.66094811,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "19",
+      "starters": "45",
+      "controls": 20,
+      "time": "37:23",
+      "totalMistakeTime": "2.36",
+      "mistakes": [
+        {
+          "control": 1,
+          "time": "0.44"
+        },
+        {
+          "control": 13,
+          "time": "0.33"
+        },
+        {
+          "control": 19,
+          "time": "1.19"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 2568,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/2568",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=2568",
+      "title": "DM Medel Östergötland",
+      "date": "",
+      "organiser": "Mjölby OK",
+      "location": "",
+      "rawDiscipline": "medel",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 2568,
+      "title": "DM Medel Östergötland",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/2568",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=2568",
+      "score": 85,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Medel-DM",
+      "domaDate": "2012-09-08",
+      "databaseId": 22761,
+      "searchedDates": [
+        "2012-09-06",
+        "2012-09-07",
+        "2012-09-08",
+        "2012-09-09",
+        "2012-09-10"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2012-09-06&endDate=2012-09-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-09-06&endDate=2012-09-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-09-06&endDate=2012-09-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-09-06&endDate=2012-09-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-09-06&endDate=2012-09-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-09-06&endDate=2012-09-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-09-07&endDate=2012-09-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-09-07&endDate=2012-09-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-09-07&endDate=2012-09-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-09-07&endDate=2012-09-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-09-07&endDate=2012-09-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-09-07&endDate=2012-09-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-09-08&endDate=2012-09-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-09-08&endDate=2012-09-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-09-08&endDate=2012-09-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-09-08&endDate=2012-09-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-09-08&endDate=2012-09-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-09-08&endDate=2012-09-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-09-09&endDate=2012-09-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-09-09&endDate=2012-09-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-09-09&endDate=2012-09-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-09-09&endDate=2012-09-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-09-09&endDate=2012-09-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-09-09&endDate=2012-09-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2012-09-10&endDate=2012-09-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2012-09-10&endDate=2012-09-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2012-09-10&endDate=2012-09-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2012-09-10&endDate=2012-09-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2012-09-10&endDate=2012-09-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2012-09-10&endDate=2012-09-10&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 2686,
+          "title": "DM Medel Göteborg",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-08&endDate=2012-09-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2786,
+          "title": "DM Medel Skåne",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-08&endDate=2012-09-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2313,
+          "title": "DM Medel Uppland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-08&endDate=2012-09-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 2568,
+          "title": "DM Medel Östergötland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2012-09-08&endDate=2012-09-08&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-121\\competition-enriched.json"
+    }
+  }
+}
