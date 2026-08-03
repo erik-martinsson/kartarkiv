@@ -1,0 +1,493 @@
+{
+  "doma": {
+    "mapId": 167,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=167",
+    "title": "Sprint-KM",
+    "date": "2013-05-21",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "17:20",
+    "runningDistanceKm": 4.51,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/167.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/167.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=167&format=kml",
+    "winsplitsUrl": "http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25638&categoryId=1"
+  },
+  "location": null,
+  "latitude": 58.403164444444,
+  "longitude": 15.625747083333,
+  "discipline": "Sprint",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "2",
+    "starters": "30",
+    "controls": 23,
+    "time": "17.20",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": {
+    "eventId": 4151,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/4151",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=4151",
+    "title": "Östergötlands sprintcup",
+    "date": "",
+    "organiser": "Linköpings OK",
+    "location": "",
+    "rawDiscipline": "sprint",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 4151,
+    "title": "Östergötlands sprintcup",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/4151",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=4151",
+    "score": 0,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Sprint-KM",
+    "domaDate": "2013-05-21",
+    "databaseId": 25638,
+    "searchedDates": [
+      "2013-05-19",
+      "2013-05-20",
+      "2013-05-21",
+      "2013-05-22",
+      "2013-05-23"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2013-05-20&endDate=2013-05-20&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2013-05-20&endDate=2013-05-20&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2013-05-20&endDate=2013-05-20&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2013-05-20&endDate=2013-05-20&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2013-05-20&endDate=2013-05-20&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2013-05-20&endDate=2013-05-20&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2013-05-22&endDate=2013-05-22&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2013-05-22&endDate=2013-05-22&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2013-05-22&endDate=2013-05-22&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2013-05-22&endDate=2013-05-22&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2013-05-22&endDate=2013-05-22&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2013-05-22&endDate=2013-05-22&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 6777,
+        "title": "KM Sprint",
+        "score": 95,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7575,
+        "title": "närLtor 23/5Sprint-KM Galtsjön",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7255,
+        "title": "Sprint-KM Galtsjön",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7238,
+        "title": "Tibro KM Sprint",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7097,
+        "title": "Sundbybergs IK KM-Sprint",
+        "score": 80,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7152,
+        "title": "class=\"tooltip\" title=\"orienteringslöpning\">klubbLsön 19/5Sundbybergs IK KM-Sprint",
+        "score": 71,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7178,
+        "title": "KM-lång",
+        "score": 48,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7289,
+        "title": "TbOK Ungdoms-KM",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7096,
+        "title": "Sundbybergs IK KM-Lång",
+        "score": 40,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6860,
+        "title": "Frida City Sprint Etapp 1",
+        "score": 40,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6948,
+        "title": "EES - Eslöv Evening Sprint - Etapp2",
+        "score": 39,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6662,
+        "title": "närLtor 23/5Frida City Sprint Etapp 1",
+        "score": 38,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7078,
+        "title": "KM MOIF, Herkules, Uven och Frölunda",
+        "score": 38,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3894,
+        "title": "ass=\"tooltip\" title=\"orienteringslöpning\">natLsön 19/5Sundbybergs IK KM-Lång",
+        "score": 36,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4544,
+        "title": "ass=\"tooltip\" title=\"orienteringslöpning\">distLtor 23/5KM Sprint",
+        "score": 36,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-23&endDate=2013-05-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6837,
+        "title": "iv class=\"tooltip\" title=\"orienteringslöpning\">närStis 21/5EES - Eslöv Evening Sprint - Etapp2",
+        "score": 35,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6725,
+        "title": "5-dagars på hemmaplan",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7059,
+        "title": "Motionsorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4078,
+        "title": "Tour de Medelpad",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3738,
+        "title": "Lundasprinten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7024,
+        "title": "Motionsorientering Plus SIS",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4486,
+        "title": "Sätilasprinten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4012,
+        "title": "Almbyträffen, långdistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6554,
+        "title": "Eksjö SOK MTB-O Svenska Cupen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 3654,
+        "title": "Vikingträffen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7124,
+        "title": "Etapp 2 av Hallandspostens ungdomsserie.",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-19&endDate=2013-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6625,
+        "title": "Motionsorientering BVSOK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-20&endDate=2013-05-20&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6668,
+        "title": "Motionsorientering - Älvsjöskogen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-20&endDate=2013-05-20&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7278,
+        "title": "Motionsorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7293,
+        "title": "Motionsorientering 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7989,
+        "title": "Tisdags-OL Hagenstugan",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7025,
+        "title": "EOL veterantävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6261,
+        "title": "Dala Veteran-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6570,
+        "title": "Motionsorientering - Granskog",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6696,
+        "title": "Poängtävling 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6931,
+        "title": "Motions-OL Bråtenspåret",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6992,
+        "title": "Motionsorientering - Tuve",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7235,
+        "title": "TESTBANAN JOK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 4151,
+        "title": "Östergötlands sprintcup",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-21&endDate=2013-05-21&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

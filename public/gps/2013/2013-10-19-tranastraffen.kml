@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Tranåsträffen (2013-10-19)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/189.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.032367170064</north>
+          <south>57.993625057432</south>
+          <east>15.02957720056</east>
+          <west>14.979074945748</west>
+          <rotation>-3.1868196477426</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

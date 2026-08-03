@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T21:31:59.825Z",
+  "competition": {
+    "doma": {
+      "mapId": 177,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=177",
+      "title": "Tjoget",
+      "date": "2013-07-06",
+      "category": "Tävling",
+      "relayLeg": 20,
+      "runningTime": "48:54",
+      "runningDistanceKm": 9.85,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/177.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/177.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=177&format=kml",
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=26601&categoryId=43",
+      "courseLengthKm": 7.9
+    },
+    "location": null,
+    "latitude": 56.720263472222,
+    "longitude": 15.305424166667,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "Tjoget",
+      "club": "Linköpings OK 1",
+      "position": "8",
+      "starters": "74",
+      "controls": 20,
+      "time": "48:54",
+      "totalMistakeTime": "1:37",
+      "mistakes": [
+        {
+          "control": 8,
+          "time": "1:37"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Tjoget, str20",
+      "domaDate": "2013-07-06",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-177\\competition-enriched.json"
+    }
+  }
+}

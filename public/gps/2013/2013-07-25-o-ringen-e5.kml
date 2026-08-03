@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: O-ringen Etapp 5 H21L (2013-07-25)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/185.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>65.798591165506</north>
+          <south>65.772445573131</south>
+          <east>21.735810099039</east>
+          <west>21.68905571845</west>
+          <rotation>-4.3392334303681</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Ljungsbrokampen (2013-05-06)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/162.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.527115974634</north>
+          <south>58.507576972144</south>
+          <east>15.598309901852</east>
+          <west>15.547084341512</west>
+          <rotation>-0.83678370064813</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

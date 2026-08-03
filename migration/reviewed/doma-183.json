@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T21:41:11.227Z",
+  "competition": {
+    "doma": {
+      "mapId": 183,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=183",
+      "title": "O-ringen E3",
+      "date": "2013-07-23",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "99:32",
+      "runningDistanceKm": 14.6,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/183.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/183.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=183&format=kml",
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=26755&categoryId=9",
+      "courseLengthKm": 12.5
+    },
+    "location": null,
+    "latitude": 66.031883888889,
+    "longitude": 21.267940138889,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21L",
+      "club": null,
+      "position": "75",
+      "starters": "200",
+      "controls": 19,
+      "time": "1:39:32",
+      "totalMistakeTime": "3:37",
+      "mistakes": [
+        {
+          "control": 6,
+          "time": "3:37"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "O-ringen Etapp 3 H21L",
+      "domaDate": "2013-07-23",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-183\\competition-enriched.json"
+    }
+  }
+}

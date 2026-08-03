@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-03T21:07:56.083Z",
+  "finishedAt": "2026-08-03T21:08:18.292Z",
+  "options": {
+    "from": 158,
+    "to": 158,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": true
+  },
+  "counts": {
+    "total": 1,
+    "created": 1,
+    "skipped": 0,
+    "skippedExisting": 0,
+    "skippedTraining": 0,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 158,
+      "status": "created",
+      "title": "Stigtomtakavlen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-158\\competition-enriched.json"
+    }
+  ]
+}

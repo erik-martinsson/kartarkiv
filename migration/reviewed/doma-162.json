@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T21:20:11.504Z",
+  "competition": {
+    "doma": {
+      "mapId": 162,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=162",
+      "title": "Ljungsbrokampen",
+      "date": "2013-05-06",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "32:57",
+      "runningDistanceKm": 5.82,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/162.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/162.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=162&format=kml",
+      "winsplitsUrl": "http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25328&categoryId=1",
+      "courseLengthKm": 4.8
+    },
+    "location": null,
+    "latitude": 58.517036944444,
+    "longitude": 15.572695277778,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "12",
+      "starters": "42",
+      "controls": 13,
+      "time": "32:59",
+      "totalMistakeTime": "0.33",
+      "mistakes": [
+        {
+          "control": 10,
+          "time": "0.33"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 3649,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/3649",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=3649",
+      "title": "Ljungsbrokampen",
+      "date": "",
+      "organiser": "OK Skogsströvarna",
+      "location": "",
+      "rawDiscipline": "medel",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 3649,
+      "title": "Ljungsbrokampen",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/3649",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=3649",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Ljungsbrokampen",
+      "domaDate": "2013-05-06",
+      "databaseId": 25328,
+      "searchedDates": [
+        "2013-05-04",
+        "2013-05-05",
+        "2013-05-06",
+        "2013-05-07",
+        "2013-05-08"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2013-05-04&endDate=2013-05-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-05-04&endDate=2013-05-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-05-04&endDate=2013-05-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-05-04&endDate=2013-05-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-05-04&endDate=2013-05-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-05-04&endDate=2013-05-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-05-05&endDate=2013-05-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-05-05&endDate=2013-05-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-05-05&endDate=2013-05-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-05-05&endDate=2013-05-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-05-05&endDate=2013-05-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-05-05&endDate=2013-05-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-05-06&endDate=2013-05-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-05-06&endDate=2013-05-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-05-06&endDate=2013-05-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-05-06&endDate=2013-05-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-05-06&endDate=2013-05-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-05-06&endDate=2013-05-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-05-07&endDate=2013-05-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-05-07&endDate=2013-05-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-05-07&endDate=2013-05-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-05-07&endDate=2013-05-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-05-07&endDate=2013-05-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-05-07&endDate=2013-05-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-05-08&endDate=2013-05-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-05-08&endDate=2013-05-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-05-08&endDate=2013-05-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-05-08&endDate=2013-05-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-05-08&endDate=2013-05-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-05-08&endDate=2013-05-08&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 3649,
+          "title": "Ljungsbrokampen",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-07&endDate=2013-05-07&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-162\\competition-enriched.json"
+    }
+  }
+}

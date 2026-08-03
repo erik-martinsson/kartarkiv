@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T21:23:44.152Z",
+  "competition": {
+    "doma": {
+      "mapId": 166,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=166",
+      "title": "Silva League och Närkekvartetten dag 4",
+      "date": "2013-05-11",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "96:54",
+      "runningDistanceKm": 15.11,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/166.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/166.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=166&format=kml",
+      "winsplitsUrl": "http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=25421&categoryId=4",
+      "courseLengthKm": 12.79
+    },
+    "location": null,
+    "latitude": 59.421173055556,
+    "longitude": 15.078205,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21E3",
+      "club": "Linköpings OK",
+      "position": "12",
+      "starters": "55",
+      "controls": 17,
+      "time": "1:36:54",
+      "totalMistakeTime": "1.07",
+      "mistakes": [
+        {
+          "control": 8,
+          "time": "1.07"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 4010,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/4010",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=4010",
+      "title": "Silva League och Närkekvartetten dag 4",
+      "date": "",
+      "organiser": "Hagaby GoIF ÖrebroKFUM Örebro OK",
+      "location": "",
+      "rawDiscipline": "lång",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 4010,
+      "title": "Silva League och Närkekvartetten dag 4",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/4010",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=4010",
+      "score": 94,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Silva League och Närkekvartetten dag 4 H21E3",
+      "domaDate": "2013-05-11",
+      "databaseId": 25421,
+      "searchedDates": [
+        "2013-05-09",
+        "2013-05-10",
+        "2013-05-11",
+        "2013-05-12",
+        "2013-05-13"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2013-05-09&endDate=2013-05-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-05-09&endDate=2013-05-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-05-09&endDate=2013-05-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-05-09&endDate=2013-05-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-05-09&endDate=2013-05-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-05-09&endDate=2013-05-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-05-10&endDate=2013-05-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-05-10&endDate=2013-05-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-05-10&endDate=2013-05-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-05-10&endDate=2013-05-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-05-10&endDate=2013-05-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-05-10&endDate=2013-05-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-05-11&endDate=2013-05-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-05-11&endDate=2013-05-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-05-11&endDate=2013-05-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-05-11&endDate=2013-05-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-05-11&endDate=2013-05-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-05-11&endDate=2013-05-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-05-12&endDate=2013-05-12&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-05-12&endDate=2013-05-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-05-12&endDate=2013-05-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-05-12&endDate=2013-05-12&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-05-12&endDate=2013-05-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-05-12&endDate=2013-05-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-05-13&endDate=2013-05-13&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-05-13&endDate=2013-05-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-05-13&endDate=2013-05-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-05-13&endDate=2013-05-13&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-05-13&endDate=2013-05-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-05-13&endDate=2013-05-13&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 4198,
+          "title": "Silva League",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-09&endDate=2013-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 4010,
+          "title": "Silva League och Närkekvartetten dag 4",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-05-12&endDate=2013-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-166\\competition-enriched.json"
+    }
+  }
+}

@@ -1,2 +1,3 @@
-{"timestamp":"00:00:06.113","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:21.042","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:07.168","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:16.850","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:01:27.804","source":"Server","level":"ERROR","message":"Kunde inte publicera DOMA 151: TypeError: fetch failed"}

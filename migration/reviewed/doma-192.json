@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T22:03:21.813Z",
+  "competition": {
+    "doma": {
+      "mapId": 192,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=192",
+      "title": "Novembersprinten",
+      "date": "2013-11-02",
+      "category": "Tävling",
+      "relayLeg": 6,
+      "runningTime": "30:04",
+      "runningDistanceKm": 5.57,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/192.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/192.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=192&format=kml",
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=28447&categoryId=12",
+      "courseLengthKm": 4.7
+    },
+    "location": null,
+    "latitude": 58.26676375,
+    "longitude": 15.183783611111,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "Stora",
+      "club": "Linköpings OK 1",
+      "position": "3",
+      "starters": "25",
+      "controls": 14,
+      "time": "30:04",
+      "totalMistakeTime": "2:07",
+      "mistakes": [
+        {
+          "control": 7,
+          "time": "2:07"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Novembersprinten, str6",
+      "domaDate": "2013-11-02",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-192\\competition-enriched.json"
+    }
+  }
+}

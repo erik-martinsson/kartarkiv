@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Gudhems vårtävling (2013-04-12)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/155.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.265626519648</north>
+          <south>58.246295569203</south>
+          <east>13.593977473868</east>
+          <west>13.544215541307</west>
+          <rotation>1.1603642434871</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,122 @@
+{
+  "doma": {
+    "mapId": 155,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=155",
+    "title": "Gudhems vårtävling",
+    "date": "2013-04-12",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "29:42",
+    "runningDistanceKm": 6.09,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/155.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/155.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=155&format=kml",
+    "winsplitsUrl": "http://obasen.nu/winsplits/online/sv/default.asp?page=table&databaseId=24883&categoryId=1"
+  },
+  "location": null,
+  "latitude": 58.255547361111,
+  "longitude": 13.569106111111,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "6",
+    "starters": "45",
+    "controls": 17,
+    "time": "29.42",
+    "totalMistakeTime": "2.20",
+    "mistakes": [
+      {
+        "control": 2,
+        "time": "0.24"
+      },
+      {
+        "control": 9,
+        "time": "1.56"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 4110,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/4110",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=4110",
+    "title": "Gudhems vårtävling",
+    "date": "",
+    "organiser": "Gudhems IF",
+    "location": "",
+    "rawDiscipline": "medel",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 4110,
+    "title": "Gudhems vårtävling",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/4110",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=4110",
+    "score": 100,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Gudhems vårtävling",
+    "domaDate": "2013-04-12",
+    "databaseId": 24883,
+    "searchedDates": [
+      "2013-04-10",
+      "2013-04-11",
+      "2013-04-12",
+      "2013-04-13",
+      "2013-04-14"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2013-04-10&endDate=2013-04-10&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2013-04-10&endDate=2013-04-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2013-04-10&endDate=2013-04-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2013-04-10&endDate=2013-04-10&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2013-04-10&endDate=2013-04-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2013-04-10&endDate=2013-04-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2013-04-11&endDate=2013-04-11&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2013-04-11&endDate=2013-04-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2013-04-11&endDate=2013-04-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2013-04-11&endDate=2013-04-11&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2013-04-11&endDate=2013-04-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2013-04-11&endDate=2013-04-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2013-04-12&endDate=2013-04-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2013-04-12&endDate=2013-04-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2013-04-12&endDate=2013-04-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2013-04-12&endDate=2013-04-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2013-04-12&endDate=2013-04-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2013-04-12&endDate=2013-04-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2013-04-13&endDate=2013-04-13&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2013-04-13&endDate=2013-04-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2013-04-13&endDate=2013-04-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2013-04-13&endDate=2013-04-13&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2013-04-13&endDate=2013-04-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2013-04-13&endDate=2013-04-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2013-04-14&endDate=2013-04-14&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2013-04-14&endDate=2013-04-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2013-04-14&endDate=2013-04-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2013-04-14&endDate=2013-04-14&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2013-04-14&endDate=2013-04-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2013-04-14&endDate=2013-04-14&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 4110,
+        "title": "Gudhems vårtävling",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-13&endDate=2013-04-13&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

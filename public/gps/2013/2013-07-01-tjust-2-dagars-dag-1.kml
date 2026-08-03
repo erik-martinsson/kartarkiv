@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Tjust 2-dagars, dag 1 (2013-07-01)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/176.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.89083009264</north>
+          <south>57.858613377783</south>
+          <east>16.402743697067</east>
+          <west>16.327483820873</west>
+          <rotation>-0.44974030482478</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

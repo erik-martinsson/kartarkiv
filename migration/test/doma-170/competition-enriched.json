@@ -1,0 +1,47 @@
+{
+  "doma": {
+    "mapId": 170,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=170",
+    "title": "Lång-KM Linköpings OK",
+    "date": "2013-05-31",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "52:21",
+    "runningDistanceKm": 10.54,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/170.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/170.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=170&format=kml",
+    "winsplitsUrl": null
+  },
+  "location": null,
+  "latitude": 58.209500555556,
+  "longitude": 14.661596944444,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": null,
+    "position": null,
+    "starters": null,
+    "controls": null,
+    "time": "52:21",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Lång-KM Linköpings OK",
+    "domaDate": "2013-05-31",
+    "databaseId": 0,
+    "searchedDates": [],
+    "calendarUrls": [],
+    "candidates": []
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T21:58:51.794Z",
+  "competition": {
+    "doma": {
+      "mapId": 190,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=190",
+      "title": "Smålandskavlen",
+      "date": "2013-10-26",
+      "category": "Tävling",
+      "relayLeg": 2,
+      "runningTime": "63:26",
+      "runningDistanceKm": 12.65,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/190.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/190.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=190&format=kml",
+      "winsplitsUrl": null,
+      "courseLengthKm": 10.3
+    },
+    "location": null,
+    "latitude": 57.243569722222,
+    "longitude": 16.4775125,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK 1",
+      "position": "21",
+      "starters": "75",
+      "controls": 18,
+      "time": "1:03:26",
+      "totalMistakeTime": "1:15",
+      "mistakes": [
+        {
+          "control": 3,
+          "time": "1:15"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Smålandskavlen, str2",
+      "domaDate": "2013-10-26",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-190\\competition-enriched.json"
+    }
+  }
+}

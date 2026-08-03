@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Silva League och Närkekvartetten dag 4 H21E3 (2013-05-11)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/166.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>59.436313694093</north>
+          <south>59.4069623301</south>
+          <east>15.117715909607</east>
+          <west>15.038707222318</west>
+          <rotation>0.62812986267153</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

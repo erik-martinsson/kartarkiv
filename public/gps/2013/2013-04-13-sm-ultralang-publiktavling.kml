@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: SM Ultralång, publiktävling (2013-04-13)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/156.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.65199989053</north>
+          <south>57.624516928252</south>
+          <east>12.339091568699</east>
+          <west>12.302949003432</west>
+          <rotation>3.4871170745119</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

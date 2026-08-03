@@ -1,0 +1,47 @@
+{
+  "doma": {
+    "mapId": 191,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=191",
+    "title": "Smålandskavlen, öppen, str3",
+    "date": "2013-10-27",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "28:54",
+    "runningDistanceKm": 5.84,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/191.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/191.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=191&format=kml",
+    "winsplitsUrl": null
+  },
+  "location": null,
+  "latitude": 57.245985277778,
+  "longitude": 16.488791666667,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": null,
+    "position": null,
+    "starters": null,
+    "controls": null,
+    "time": "28:54",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Smålandskavlen, öppen, str3",
+    "domaDate": "2013-10-27",
+    "databaseId": 0,
+    "searchedDates": [],
+    "calendarUrls": [],
+    "candidates": []
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+  ]
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Öjetrampen (2013-03-30)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/151.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.110929939114</north>
+          <south>58.082421000078</south>
+          <east>12.618107602403</east>
+          <west>12.543674016336</west>
+          <rotation>2.4162535550307</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

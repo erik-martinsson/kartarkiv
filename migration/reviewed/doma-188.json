@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T21:55:43.739Z",
+  "competition": {
+    "doma": {
+      "mapId": 188,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=188",
+      "title": "25-Manna",
+      "date": "2013-10-12",
+      "category": "Tävling",
+      "relayLeg": 24,
+      "runningTime": "54:41",
+      "runningDistanceKm": 10.27,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/188.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/188.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=188&format=kml",
+      "winsplitsUrl": null,
+      "courseLengthKm": 8.5
+    },
+    "location": null,
+    "latitude": 59.500355277778,
+    "longitude": 17.767440277778,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "25-manna",
+      "club": "Linköpings OK 1",
+      "position": "18",
+      "starters": "250",
+      "controls": 21,
+      "time": "54:41",
+      "totalMistakeTime": "7:47",
+      "mistakes": [
+        {
+          "control": 10,
+          "time": "1:02"
+        },
+        {
+          "control": 11,
+          "time": "1:40"
+        },
+        {
+          "control": 13,
+          "time": "5:05"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "25-Manna, sträcka 24",
+      "domaDate": "2013-10-12",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-188\\competition-enriched.json"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T21:42:32.639Z",
+  "competition": {
+    "doma": {
+      "mapId": 184,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=184",
+      "title": "O-ringen E4",
+      "date": "2013-07-24",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "33:06",
+      "runningDistanceKm": 5.6,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/184.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/184.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=184&format=kml",
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=26761&categoryId=9",
+      "courseLengthKm": 4.91
+    },
+    "location": null,
+    "latitude": 66.029344166667,
+    "longitude": 21.236996666667,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21L",
+      "club": null,
+      "position": "39",
+      "starters": "200",
+      "controls": 16,
+      "time": "33:06",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "O-ringen Etapp 4 H21L",
+      "domaDate": "2013-07-24",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-184\\competition-enriched.json"
+    }
+  }
+}

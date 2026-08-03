@@ -1,0 +1,47 @@
+{
+  "doma": {
+    "mapId": 177,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=177",
+    "title": "Tjoget, str20",
+    "date": "2013-07-06",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "48:54",
+    "runningDistanceKm": 9.85,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/177.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/177.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=177&format=kml",
+    "winsplitsUrl": null
+  },
+  "location": null,
+  "latitude": 56.720263472222,
+  "longitude": 15.305424166667,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": null,
+    "position": null,
+    "starters": null,
+    "controls": null,
+    "time": "48:54",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Tjoget, str20",
+    "domaDate": "2013-07-06",
+    "databaseId": 0,
+    "searchedDates": [],
+    "calendarUrls": [],
+    "candidates": []
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+  ]
+}

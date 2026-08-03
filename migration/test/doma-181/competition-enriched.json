@@ -1,0 +1,47 @@
+{
+  "doma": {
+    "mapId": 181,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=181",
+    "title": "O-ringen Etapp 1 H21L",
+    "date": "2013-07-20",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "94:38",
+    "runningDistanceKm": 15.45,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/181.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/181.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=181&format=kml",
+    "winsplitsUrl": null
+  },
+  "location": null,
+  "latitude": 65.754905416667,
+  "longitude": 21.65862,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": null,
+    "position": null,
+    "starters": null,
+    "controls": null,
+    "time": "94:38",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "O-ringen Etapp 1 H21L",
+    "domaDate": "2013-07-20",
+    "databaseId": 0,
+    "searchedDates": [],
+    "calendarUrls": [],
+    "candidates": []
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+  ]
+}

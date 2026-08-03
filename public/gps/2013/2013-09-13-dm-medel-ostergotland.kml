@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Medel-DM (2013-09-13)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/186.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.73153762365</north>
+          <south>58.712086297687</south>
+          <east>15.772153502958</east>
+          <west>15.72096107757</west>
+          <rotation>0.25043358623107</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

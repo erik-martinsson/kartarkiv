@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T21:16:28.326Z",
+  "competition": {
+    "doma": {
+      "mapId": 158,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=158",
+      "title": "Stigtomtakavlen",
+      "date": "2013-04-25",
+      "category": "Tävling",
+      "relayLeg": 1,
+      "runningTime": null,
+      "runningDistanceKm": 10.8,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/158.jpg",
+      "blankMapImageUrl": null,
+      "kmlUrl": null,
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=25118&categoryId=7",
+      "courseLengthKm": 9.4
+    },
+    "location": null,
+    "latitude": 58.7974,
+    "longitude": 16.7735,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK 1",
+      "position": "12",
+      "starters": "31",
+      "controls": 9,
+      "time": "57:58",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Stigtomtakavlen",
+      "domaDate": "2013-04-25",
+      "databaseId": 25118,
+      "searchedDates": [
+        "2013-04-23",
+        "2013-04-24",
+        "2013-04-25",
+        "2013-04-26",
+        "2013-04-27"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-04-26&endDate=2013-04-26&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-04-26&endDate=2013-04-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-04-26&endDate=2013-04-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-04-26&endDate=2013-04-26&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-04-26&endDate=2013-04-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-04-26&endDate=2013-04-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 3895,
+          "title": "Stigtomtakavlen",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-26&endDate=2013-04-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6766,
+          "title": "/div>distLNfre 26/4 - lör 27/4Stigtomtakavlen",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-26&endDate=2013-04-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6792,
+          "title": "KM Natt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6703,
+          "title": "Motionsorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7031,
+          "title": "Motionsorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6704,
+          "title": "Nyköpings OK Veterantävling",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7986,
+          "title": "Tisdags-OL Orkanvallen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6693,
+          "title": "Poängtävling",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6928,
+          "title": "Motions-OL Kedjeåsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6569,
+          "title": "Motionsorientering - Barkarby",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6722,
+          "title": "ParkO 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7046,
+          "title": "Motionsorientering 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6836,
+          "title": "Breddorientering Sätila",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-23&endDate=2013-04-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6536,
+          "title": "Luffarligan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6925,
+          "title": "Veteran-OL 3-stad",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6827,
+          "title": "Motions-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6614,
+          "title": "Motionsorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5926,
+          "title": "Herrmatch Västra kretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7022,
+          "title": "Kretsträning Östra Skaraborgskretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 4499,
+          "title": "Tiomilarepet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6812,
+          "title": "Bauernatta",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-24&endDate=2013-04-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7044,
+          "title": "Gå-Lunka-Löp Kanadaskogen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7057,
+          "title": "Motions-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8032,
+          "title": "POL-Falköping",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6122,
+          "title": "Veteran-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6563,
+          "title": "Veteran OL deltävling 5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6509,
+          "title": "Motionsorientering 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7007,
+          "title": "Träningsorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6618,
+          "title": "Motionsorientering - Ursvik",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7034,
+          "title": "5-mannaträning 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6935,
+          "title": "Motionsorientering Alingsås",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6723,
+          "title": "ParkO 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7018,
+          "title": "Motionsorientering Våxnäs",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6973,
+          "title": "25-mannaträning 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6772,
+          "title": "Kretsmästerskap Södra kretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7001,
+          "title": "Kretsteknikträning Stafett",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7002,
+          "title": "Kretsteknikträning Stafett",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6885,
+          "title": "Motionsorientering Hierneskolan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6995,
+          "title": "OL-ungdomsträning #3 (Hagaby/Almby IK)",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7014,
+          "title": "Pokaljakt 2013 Deltävling SISU Forshaga",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7040,
+          "title": "Poängjakt 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6881,
+          "title": "Ungdomsserien deltävling 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6534,
+          "title": "10mila träning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6944,
+          "title": "Ungdomens 5-dagars deltävling 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6642,
+          "title": "Run to the Hills",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-25&endDate=2013-04-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3864,
+          "title": "Uppsala Möte, natt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-26&endDate=2013-04-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 4500,
+          "title": "Häringedubbeln, medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3888,
+          "title": "Kalmarträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6835,
+          "title": "Upptaktläger DH13-16 - Västmanland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6756,
+          "title": "Mitt i Prick i Väst",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 4136,
+          "title": "Silva League med nationell långdistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7047,
+          "title": "Vintercupen del 10",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3736,
+          "title": "OK Gynge",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3671,
+          "title": "Hallstaträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 3957,
+          "title": "Uppsala Möte, medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6180,
+          "title": "Rigordubbeln, medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6170,
+          "title": "Sydsvenska mästerskapen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2013-04-27&endDate=2013-04-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Blank kartbild saknas (#hiddenMapImage).",
+      "Ingen tillräckligt säker Eventor-träff hittades."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-158\\competition-enriched.json"
+    }
+  }
+}

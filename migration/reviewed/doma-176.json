@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-03T21:30:09.807Z",
+  "competition": {
+    "doma": {
+      "mapId": 176,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=176",
+      "title": "Tjust 2-dagars, dag 1",
+      "date": "2013-07-01",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "75:27",
+      "runningDistanceKm": 11.41,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/176.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/176.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=176&format=kml",
+      "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=26518&categoryId=1",
+      "courseLengthKm": 9.85
+    },
+    "location": null,
+    "latitude": 57.874225138889,
+    "longitude": 16.365122777778,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": null,
+      "position": "14",
+      "starters": "26",
+      "controls": 18,
+      "time": "1:15:27",
+      "totalMistakeTime": "3:55",
+      "mistakes": [
+        {
+          "control": 4,
+          "time": "1:18"
+        },
+        {
+          "control": 7,
+          "time": "2:37"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Tjust 2-dagars, dag 1",
+      "domaDate": "2013-07-01",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-176\\competition-enriched.json"
+    }
+  }
+}
