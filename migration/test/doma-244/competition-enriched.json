@@ -1,0 +1,733 @@
+{
+  "doma": {
+    "mapId": 244,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=244",
+    "title": "Stafett-DM",
+    "date": "2014-09-14",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "57:23",
+    "runningDistanceKm": 10.27,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/244.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/244.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=244&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=33070&categoryId=13"
+  },
+  "location": null,
+  "latitude": 58.603955138889,
+  "longitude": 15.318560277778,
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "2",
+    "starters": "8",
+    "controls": 19,
+    "time": "57.21",
+    "totalMistakeTime": "2.22",
+    "mistakes": [
+      {
+        "control": 2,
+        "time": "0.33"
+      },
+      {
+        "control": 7,
+        "time": "1.49"
+      }
+    ]
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Stafett-DM",
+    "domaDate": "2014-09-14",
+    "databaseId": 33070,
+    "searchedDates": [
+      "2014-09-12",
+      "2014-09-13",
+      "2014-09-14",
+      "2014-09-15",
+      "2014-09-16"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 7336,
+        "title": "v>distSLlör 13/9Öppna banor stafett-DM 140913",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10712,
+        "title": "Öppna banor stafett-DM 140913",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6142,
+        "title": "DM Stafett Blekinge",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6331,
+        "title": "DM Stafett Göteborg",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6253,
+        "title": "DM Stafett Östergötland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10465,
+        "title": "Intresseanmälan DM stafett",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5999,
+        "title": "DM Stafett Skåne",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6092,
+        "title": "DM Stafett Södermanland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6710,
+        "title": "DM Stafett Värmland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6424,
+        "title": "DM Stafett Västmanland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6384,
+        "title": "DM Stafett Bohuslän-Dal",
+        "score": 80,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6169,
+        "title": "DM Stafett Gästrikland + Hälsingland",
+        "score": 80,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7497,
+        "title": "DM Stafett Stockholm + Uppland",
+        "score": 80,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6588,
+        "title": "DM Stafett Örebro Län",
+        "score": 80,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10426,
+        "title": "Intresseanmälan DM stafett Leksand 13/9",
+        "score": 77,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9987,
+        "title": "DM Stafett Västmanland, öppna motionsklasser",
+        "score": 77,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7955,
+        "title": "DM Stafett Östergötland, individuella öppna motionsklasser",
+        "score": 75,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10440,
+        "title": "DM Stafett Skåne, individuella öppna motionsklasser",
+        "score": 75,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9373,
+        "title": "DM Stafett Blekinge, individuella öppna motionsklasser",
+        "score": 75,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10535,
+        "title": "DM Stafett Stockholm + Uppland, individuella öppna motionsklasser",
+        "score": 74,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8649,
+        "title": "tooltip\" title=\"mountainbikeorientering\">MnatLsön 14/9Intresseanmälan DM stafett",
+        "score": 73,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6132,
+        "title": "\"tooltip\" title=\"orienteringslöpning\">mästSlör 13/9Intresseanmälan DM stafett Leksand 13/9",
+        "score": 71,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6370,
+        "title": "DM Natt Gotland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6133,
+        "title": "DM Natt Västergötland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7335,
+        "title": "DM Sprint Dalarna",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6064,
+        "title": "DM Natt Halland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6463,
+        "title": "DM Natt Småland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6141,
+        "title": "DM Medel Blekinge",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6303,
+        "title": "DM Medel Göteborg",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6198,
+        "title": "DM Medel Sörmland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6252,
+        "title": "DM Medel Östergötland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5998,
+        "title": "DM Medel Skåne",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5874,
+        "title": "DM Medel Värmland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6053,
+        "title": "DM Sprint Västmanland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9715,
+        "title": "MTBO Stafett Falun",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6389,
+        "title": "DM Lång Halland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5983,
+        "title": "DM Lång Småland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6134,
+        "title": "DM Lång Västergötland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6371,
+        "title": "DM Lång Gotland",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8123,
+        "title": "DM Natt Medelpad",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7496,
+        "title": "DM Natt Stockholm + Uppland",
+        "score": 40,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6587,
+        "title": "DM Natt Örebro Län",
+        "score": 40,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6310,
+        "title": "DM Natt Bohuslän-Dal",
+        "score": 40,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6168,
+        "title": "DM Medel Gästrikland + Hälsingland",
+        "score": 40,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10560,
+        "title": "Nyköpings OK Budkavle-DM",
+        "score": 40,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9447,
+        "title": "ss=\"tooltip\" title=\"orienteringslöpning\">distMlör 13/9MTBO Stafett Falun",
+        "score": 36,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6665,
+        "title": "ss=\"tooltip\" title=\"orienteringslöpning\">distMsön 14/9DM Stafett Skåne, individuella öppna motionsklasser",
+        "score": 35,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9446,
+        "title": "Nattserien 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10481,
+        "title": "Anmälan till DSKK Höstblot i Falun",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10779,
+        "title": "U-KM 2014",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10480,
+        "title": "Klyftamocup 4",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10523,
+        "title": "Kretsträning IF Hagen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10322,
+        "title": "Motionsorientering - Alingsås",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10751,
+        "title": "Skogskarlarnas Natt",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10823,
+        "title": "Tisdags-OL Karstorp",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10659,
+        "title": "Dala Veteran-OL Leksand",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10817,
+        "title": "Sakoträning och Motionsorientering OKS",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9005,
+        "title": "Motions-OL Kedjeåsen, infart Nolby",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9201,
+        "title": "Lidingö Challenge - Etapp 8",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10602,
+        "title": "Medel-KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10585,
+        "title": "Motionsorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10498,
+        "title": "Motionsorientering och ungdomsträning (Breddorientering)",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10780,
+        "title": "Norrcupen 140916 The final hunt",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10743,
+        "title": "Attunda OK, Natt-KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-16&endDate=2014-09-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}

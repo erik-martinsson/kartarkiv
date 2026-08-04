@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Sälen 3+3 Etapp 3 (2014-06-28)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/226.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>61.193793014901</north>
+          <south>61.165839990618</south>
+          <east>12.965473344222</east>
+          <west>12.886567395566</west>
+          <rotation>2.6698193740132</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

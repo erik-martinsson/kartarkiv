@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T08:34:48.787Z",
+  "competition": {
+    "doma": {
+      "mapId": 240,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=240",
+      "title": "Ombergsjakten",
+      "date": "2014-08-29",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "28:25",
+      "runningDistanceKm": 5.46,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/240.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/240.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=240&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=32679&categoryId=1",
+      "courseLengthKm": 4.6
+    },
+    "location": null,
+    "latitude": 58.306378611111,
+    "longitude": 14.657848611111,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "6",
+      "starters": "45",
+      "controls": 19,
+      "time": "28:23",
+      "totalMistakeTime": "2.23",
+      "mistakes": [
+        {
+          "control": 7,
+          "time": "1.50"
+        },
+        {
+          "control": 17,
+          "time": "0.33"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 9066,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/9066",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=9066",
+      "title": "Ombergsjakten, dag 1",
+      "date": "",
+      "organiser": "Mjölby OK Ödeshögs SK",
+      "location": "",
+      "rawDiscipline": "medel",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 9066,
+      "title": "Ombergsjakten, dag 1",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/9066",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=9066",
+      "score": 94,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Ombergsjakten",
+      "domaDate": "2014-08-29",
+      "databaseId": 32679,
+      "searchedDates": [
+        "2014-08-27",
+        "2014-08-28",
+        "2014-08-29",
+        "2014-08-30",
+        "2014-08-31"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2014-08-27&endDate=2014-08-27&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-08-27&endDate=2014-08-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-08-27&endDate=2014-08-27&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-08-27&endDate=2014-08-27&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-08-27&endDate=2014-08-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-08-27&endDate=2014-08-27&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-08-28&endDate=2014-08-28&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-08-28&endDate=2014-08-28&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-08-28&endDate=2014-08-28&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-08-28&endDate=2014-08-28&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-08-28&endDate=2014-08-28&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-08-28&endDate=2014-08-28&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-08-29&endDate=2014-08-29&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-08-29&endDate=2014-08-29&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-08-29&endDate=2014-08-29&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-08-29&endDate=2014-08-29&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-08-29&endDate=2014-08-29&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-08-29&endDate=2014-08-29&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-08-30&endDate=2014-08-30&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-08-30&endDate=2014-08-30&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-08-30&endDate=2014-08-30&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-08-30&endDate=2014-08-30&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-08-30&endDate=2014-08-30&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-08-30&endDate=2014-08-30&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-08-31&endDate=2014-08-31&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-08-31&endDate=2014-08-31&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-08-31&endDate=2014-08-31&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-08-31&endDate=2014-08-31&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-08-31&endDate=2014-08-31&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-08-31&endDate=2014-08-31&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 9066,
+          "title": "Ombergsjakten, dag 1",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-08-30&endDate=2014-08-30&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-240\\competition-enriched.json"
+    }
+  }
+}

@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T08:43:19.821Z",
+  "competition": {
+    "doma": {
+      "mapId": 249,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=249",
+      "title": "Smålandskavlen_öppen",
+      "date": "2014-10-25",
+      "category": "Tävling",
+      "relayLeg": 3,
+      "runningTime": "31:37",
+      "runningDistanceKm": 6.35,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/249.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/249.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=249&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=33767&categoryId=194",
+      "courseLengthKm": 5.02
+    },
+    "location": null,
+    "latitude": 57.253688055556,
+    "longitude": 13.820177083333,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "Öppen",
+      "club": "Linköpings OK 1",
+      "position": "3",
+      "starters": "41",
+      "controls": 14,
+      "time": "31:51",
+      "totalMistakeTime": "0.20",
+      "mistakes": [
+        {
+          "control": 11,
+          "time": "0.20"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Smålandskavlen_öppen",
+      "domaDate": "2014-10-25",
+      "databaseId": 33767,
+      "searchedDates": [
+        "2014-10-23",
+        "2014-10-24",
+        "2014-10-25",
+        "2014-10-26",
+        "2014-10-27"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-10-24&endDate=2014-10-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-10-24&endDate=2014-10-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-10-24&endDate=2014-10-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-10-24&endDate=2014-10-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-10-24&endDate=2014-10-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-10-24&endDate=2014-10-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-10-26&endDate=2014-10-26&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-10-26&endDate=2014-10-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-10-26&endDate=2014-10-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-10-26&endDate=2014-10-26&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-10-26&endDate=2014-10-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-10-26&endDate=2014-10-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-10-27&endDate=2014-10-27&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-10-27&endDate=2014-10-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-10-27&endDate=2014-10-27&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-10-27&endDate=2014-10-27&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-10-27&endDate=2014-10-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-10-27&endDate=2014-10-27&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 6173,
+          "title": "Smålandskavlen",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10538,
+          "title": "Smålandskavlen, individuella klasser och öppna motionsklasser",
+          "score": 38,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10765,
+          "title": "KM natt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10323,
+          "title": "Motionsorientering (Finding Lights in Alingsås)",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10229,
+          "title": "POL-Främmestad",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10575,
+          "title": "Veterantävling Järndammen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10725,
+          "title": "GBG Teknikträning Natt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10657,
+          "title": "Kretsteknikträning Borås O-Ring",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10738,
+          "title": "Kretsteknikträning Marks Orienteringskrets",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11002,
+          "title": "Natt-KM Ungdoma",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10844,
+          "title": "Tjalve 2-dagars",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10604,
+          "title": "Närnatt Cup, etapp 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-23&endDate=2014-10-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8754,
+          "title": "Haningenatten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-24&endDate=2014-10-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10950,
+          "title": "Avslutning Kretsungdomstävling södra kretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-24&endDate=2014-10-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10932,
+          "title": "Siljanskrets Natt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-24&endDate=2014-10-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10874,
+          "title": "Natt-WM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-24&endDate=2014-10-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5807,
+          "title": "Arosträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10883,
+          "title": "Eskilstuna City Cup",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10833,
+          "title": "Haninge MTBO",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8755,
+          "title": "Haningestafetten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10419,
+          "title": "Kretsteknikträning Västra Kretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10969,
+          "title": "Nordcupen Etapp 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10949,
+          "title": "Ultralång-KM Centrum OK och TMOK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10908,
+          "title": "Medel-KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-25&endDate=2014-10-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10591,
+          "title": "Gängkavlen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-26&endDate=2014-10-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10447,
+          "title": "Höstrusket",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-26&endDate=2014-10-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10821,
+          "title": "MTBO Järfälla OK, Ultralång Järfälla runt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-10-26&endDate=2014-10-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-249\\competition-enriched.json"
+    }
+  }
+}

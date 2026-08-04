@@ -1,0 +1,104 @@
+{
+  "doma": {
+    "mapId": 233,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=233",
+    "title": "O-ringen E5 H21L",
+    "date": "2014-07-24",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "1:12:39",
+    "runningDistanceKm": 14.76,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/233.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/233.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=233&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=32064&categoryId=9"
+  },
+  "location": null,
+  "latitude": 55.742181944444,
+  "longitude": 14.147820555556,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings Orienteringsklubb",
+    "position": "3",
+    "starters": "187",
+    "controls": 20,
+    "time": "1:12.34",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "O-ringen E5 H21L",
+    "domaDate": "2014-07-24",
+    "databaseId": 32064,
+    "searchedDates": [
+      "2014-07-22",
+      "2014-07-23",
+      "2014-07-24",
+      "2014-07-25",
+      "2014-07-26"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2014-07-22&endDate=2014-07-22&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-07-22&endDate=2014-07-22&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-07-22&endDate=2014-07-22&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-07-22&endDate=2014-07-22&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-07-22&endDate=2014-07-22&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-07-22&endDate=2014-07-22&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-07-23&endDate=2014-07-23&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-07-23&endDate=2014-07-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-07-23&endDate=2014-07-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-07-23&endDate=2014-07-23&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-07-23&endDate=2014-07-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-07-23&endDate=2014-07-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-07-24&endDate=2014-07-24&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-07-24&endDate=2014-07-24&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-07-24&endDate=2014-07-24&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-07-24&endDate=2014-07-24&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-07-24&endDate=2014-07-24&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-07-24&endDate=2014-07-24&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-07-25&endDate=2014-07-25&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-07-25&endDate=2014-07-25&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-07-25&endDate=2014-07-25&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-07-25&endDate=2014-07-25&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-07-25&endDate=2014-07-25&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-07-25&endDate=2014-07-25&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-07-26&endDate=2014-07-26&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-07-26&endDate=2014-07-26&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-07-26&endDate=2014-07-26&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-07-26&endDate=2014-07-26&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-07-26&endDate=2014-07-26&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-07-26&endDate=2014-07-26&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 9753,
+        "title": "O-Ringen 5-dagars Nostalgirace",
+        "score": 32,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-22&endDate=2014-07-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5115,
+        "title": "O-Ringen Skåne 2014",
+        "score": 32,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-22&endDate=2014-07-22&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}

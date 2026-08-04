@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Kolmårdsmedeln (2014-04-18)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/210.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.695679889314</north>
+          <south>58.676730635634</south>
+          <east>16.309174781817</east>
+          <west>16.258969969886</west>
+          <rotation>-0.24729828153083</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

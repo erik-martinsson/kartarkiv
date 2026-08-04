@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T07:11:36.527Z",
+  "competition": {
+    "doma": {
+      "mapId": 221,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=221",
+      "title": "Idre 3-dagars Etapp 1",
+      "date": "2014-06-23",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "1:08:55",
+      "runningDistanceKm": 12.24,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/221.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/221.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=221&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=31703&categoryId=2",
+      "courseLengthKm": 11.26
+    },
+    "location": null,
+    "latitude": 61.86719,
+    "longitude": 12.858371666667,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "5",
+      "starters": "37",
+      "controls": 23,
+      "time": "1:08:58",
+      "totalMistakeTime": "1.38",
+      "mistakes": [
+        {
+          "control": 1,
+          "time": "0.47"
+        },
+        {
+          "control": 18,
+          "time": "0.30"
+        },
+        {
+          "control": 20,
+          "time": "0.21"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 8301,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/8301",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=8301",
+      "title": "Idre 3-dagars",
+      "date": "",
+      "organiser": "Idrefjällens OK",
+      "location": "",
+      "rawDiscipline": "lång",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 8301,
+      "title": "Idre 3-dagars",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/8301",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=8301",
+      "score": 94,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Idre 3-dagars Etapp 1",
+      "domaDate": "2014-06-23",
+      "databaseId": 31703,
+      "searchedDates": [
+        "2014-06-21",
+        "2014-06-22",
+        "2014-06-23",
+        "2014-06-24",
+        "2014-06-25"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2014-06-21&endDate=2014-06-21&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-06-21&endDate=2014-06-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-06-21&endDate=2014-06-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-06-21&endDate=2014-06-21&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-06-21&endDate=2014-06-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-06-21&endDate=2014-06-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-06-22&endDate=2014-06-22&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-06-22&endDate=2014-06-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-06-22&endDate=2014-06-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-06-22&endDate=2014-06-22&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-06-22&endDate=2014-06-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-06-22&endDate=2014-06-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-06-23&endDate=2014-06-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-06-23&endDate=2014-06-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-06-23&endDate=2014-06-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-06-23&endDate=2014-06-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-06-23&endDate=2014-06-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-06-23&endDate=2014-06-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-06-24&endDate=2014-06-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-06-24&endDate=2014-06-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-06-24&endDate=2014-06-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-06-24&endDate=2014-06-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-06-24&endDate=2014-06-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-06-24&endDate=2014-06-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-06-25&endDate=2014-06-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-06-25&endDate=2014-06-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-06-25&endDate=2014-06-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-06-25&endDate=2014-06-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-06-25&endDate=2014-06-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-06-25&endDate=2014-06-25&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 8301,
+          "title": "Idre 3-dagars",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-06-24&endDate=2014-06-24&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-221\\competition-enriched.json"
+    }
+  }
+}

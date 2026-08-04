@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Sälen 3+3 Långdistans (2014-06-27)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/224.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>61.181607513669</north>
+          <south>61.142502203197</south>
+          <east>13.0384154953</east>
+          <west>12.929238475542</west>
+          <rotation>2.4369675166486</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

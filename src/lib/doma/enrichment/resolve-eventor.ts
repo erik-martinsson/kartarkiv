@@ -322,7 +322,7 @@ function extractClassInformation(
     const normalized = normalizeText(value);
 
     const match = normalized.match(
-      /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)\s+(\d[\d\s]*)\s*m(?:\s*,?\s*(\d+)\s+startande)?/i,
+      /(?:^|\s)([\p{L}\p{N}][\p{L}\p{N}\s/+().:_-]{0,60}?)\s+(\d[\d\s]*)\s*m(?:\s*,?\s*(\d+)\s+startande)?/iu,
     );
 
     if (!match) {
@@ -352,7 +352,7 @@ function extractClassInformation(
   for (const value of values) {
     const match =
       normalizeText(value).match(
-        /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)(?=\s|$)/i,
+        /(?:^|\s)([\p{L}\p{N}][\p{L}\p{N}\s/+().:_-]{0,60})(?=\s*$)/iu,
       );
 
     if (match) {
@@ -391,16 +391,64 @@ function normalizeTime(
     return "";
   }
 
-  const normalized =
-    normalizeText(value);
+  const normalized = normalizeText(value);
+  const parts = normalized.split(/[.:]/);
 
-  const match = normalized.match(
-    /^(\d{1,3})[.:](\d{2})$/,
-  );
+  if (
+    parts.length === 3 &&
+    parts.every((part) => /^\d+$/.test(part))
+  ) {
+    const hours = Number(parts[0]);
+    const minutes = Number(parts[1]);
+    const seconds = Number(parts[2]);
 
-  return match
-    ? `${match[1]}:${match[2]}`
-    : normalized;
+    if (
+      Number.isFinite(hours) &&
+      minutes >= 0 &&
+      minutes < 60 &&
+      seconds >= 0 &&
+      seconds < 60
+    ) {
+      return (
+        `${hours}:` +
+        `${String(minutes).padStart(2, "0")}:` +
+        String(seconds).padStart(2, "0")
+      );
+    }
+  }
+
+  if (
+    parts.length === 2 &&
+    parts.every((part) => /^\d+$/.test(part))
+  ) {
+    const totalMinutes = Number(parts[0]);
+    const seconds = Number(parts[1]);
+
+    if (
+      Number.isFinite(totalMinutes) &&
+      totalMinutes >= 0 &&
+      seconds >= 0 &&
+      seconds < 60
+    ) {
+      if (totalMinutes >= 60) {
+        const hours = Math.floor(totalMinutes / 60);
+        const minutes = totalMinutes % 60;
+
+        return (
+          `${hours}:` +
+          `${String(minutes).padStart(2, "0")}:` +
+          String(seconds).padStart(2, "0")
+        );
+      }
+
+      return (
+        `${totalMinutes}:` +
+        String(seconds).padStart(2, "0")
+      );
+    }
+  }
+
+  return normalized;
 }
 
 function isPlausibleWinSplitsTitle(

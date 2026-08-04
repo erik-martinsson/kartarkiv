@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T08:33:23.240Z",
+  "competition": {
+    "doma": {
+      "mapId": 235,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=235",
+      "title": "Stjärnorpssprinten",
+      "date": "2014-08-07",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "36:05",
+      "runningDistanceKm": 6.05,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/235.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/235.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=235&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=32207&categoryId=1",
+      "courseLengthKm": 5.17
+    },
+    "location": null,
+    "latitude": 58.625288611111,
+    "longitude": 15.691858611111,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "7",
+      "starters": "44",
+      "controls": 19,
+      "time": "36:04",
+      "totalMistakeTime": "0.30",
+      "mistakes": [
+        {
+          "control": 16,
+          "time": "0.30"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 5985,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/5985",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=5985",
+      "title": "Stjärnorpssprinten",
+      "date": "",
+      "organiser": "OK Denseln",
+      "location": "",
+      "rawDiscipline": "medel",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 5985,
+      "title": "Stjärnorpssprinten",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/5985",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=5985",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Stjärnorpssprinten",
+      "domaDate": "2014-08-07",
+      "databaseId": 32207,
+      "searchedDates": [
+        "2014-08-05",
+        "2014-08-06",
+        "2014-08-07",
+        "2014-08-08",
+        "2014-08-09"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2014-08-05&endDate=2014-08-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-08-05&endDate=2014-08-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-08-05&endDate=2014-08-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-08-05&endDate=2014-08-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-08-05&endDate=2014-08-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-08-05&endDate=2014-08-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-08-06&endDate=2014-08-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-08-06&endDate=2014-08-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-08-06&endDate=2014-08-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-08-06&endDate=2014-08-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-08-06&endDate=2014-08-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-08-06&endDate=2014-08-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-08-07&endDate=2014-08-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-08-07&endDate=2014-08-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-08-07&endDate=2014-08-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-08-07&endDate=2014-08-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-08-07&endDate=2014-08-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-08-07&endDate=2014-08-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-08-08&endDate=2014-08-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-08-08&endDate=2014-08-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-08-08&endDate=2014-08-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-08-08&endDate=2014-08-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-08-08&endDate=2014-08-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-08-08&endDate=2014-08-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-08-09&endDate=2014-08-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-08-09&endDate=2014-08-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-08-09&endDate=2014-08-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-08-09&endDate=2014-08-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-08-09&endDate=2014-08-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-08-09&endDate=2014-08-09&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 5985,
+          "title": "Stjärnorpssprinten",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-08-07&endDate=2014-08-07&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-235\\competition-enriched.json"
+    }
+  }
+}

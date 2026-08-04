@@ -1,0 +1,138 @@
+{
+  "doma": {
+    "mapId": 208,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=208",
+    "title": "Natt-SM",
+    "date": "2014-04-10",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "1:35:42",
+    "runningDistanceKm": 18.23,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/208.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/208.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=208&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=30018&categoryId=1"
+  },
+  "location": null,
+  "latitude": 59.633987916667,
+  "longitude": 17.675503472222,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "41",
+    "starters": "120",
+    "controls": 26,
+    "time": "1:35.37",
+    "totalMistakeTime": "6.30",
+    "mistakes": [
+      {
+        "control": 1,
+        "time": "0.45"
+      },
+      {
+        "control": 5,
+        "time": "0.58"
+      },
+      {
+        "control": 12,
+        "time": "0.51"
+      },
+      {
+        "control": 15,
+        "time": "1.06"
+      },
+      {
+        "control": 16,
+        "time": "1.06"
+      },
+      {
+        "control": 21,
+        "time": "1.44"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 6657,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/6657",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=6657",
+    "title": "SM Natt",
+    "date": "",
+    "organiser": "Sigtuna OK",
+    "location": "",
+    "rawDiscipline": "lång",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 6657,
+    "title": "SM Natt",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/6657",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=6657",
+    "score": 95,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Natt-SM",
+    "domaDate": "2014-04-10",
+    "databaseId": 30018,
+    "searchedDates": [
+      "2014-04-08",
+      "2014-04-09",
+      "2014-04-10",
+      "2014-04-11",
+      "2014-04-12"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2014-04-08&endDate=2014-04-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-08&endDate=2014-04-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-08&endDate=2014-04-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-08&endDate=2014-04-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-08&endDate=2014-04-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-08&endDate=2014-04-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-09&endDate=2014-04-09&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-09&endDate=2014-04-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-09&endDate=2014-04-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-09&endDate=2014-04-09&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-09&endDate=2014-04-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-09&endDate=2014-04-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-10&endDate=2014-04-10&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-10&endDate=2014-04-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-10&endDate=2014-04-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-10&endDate=2014-04-10&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-10&endDate=2014-04-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-10&endDate=2014-04-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-11&endDate=2014-04-11&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-11&endDate=2014-04-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-11&endDate=2014-04-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-11&endDate=2014-04-11&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-11&endDate=2014-04-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-11&endDate=2014-04-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-12&endDate=2014-04-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-12&endDate=2014-04-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-12&endDate=2014-04-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-12&endDate=2014-04-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-12&endDate=2014-04-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-12&endDate=2014-04-12&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 6657,
+        "title": "SM Natt",
+        "score": 95,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-11&endDate=2014-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

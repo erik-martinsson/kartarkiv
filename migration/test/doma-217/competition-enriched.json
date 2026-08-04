@@ -1,0 +1,824 @@
+{
+  "doma": {
+    "mapId": 217,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=217",
+    "title": "Peking-Duon - Medel",
+    "date": "2014-05-25",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "27:08",
+    "runningDistanceKm": 5.17,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/217.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/217.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=217&format=kml",
+    "winsplitsUrl": "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=31030&categoryId=20"
+  },
+  "location": null,
+  "latitude": 58.553539027778,
+  "longitude": 16.2070425,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK / Domnarvets GOIF 3",
+    "position": "2",
+    "starters": "13",
+    "controls": 9,
+    "time": "14.29",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Peking-Duon - Medel",
+    "domaDate": "2014-05-25",
+    "databaseId": 31030,
+    "searchedDates": [
+      "2014-05-23",
+      "2014-05-24",
+      "2014-05-25",
+      "2014-05-26",
+      "2014-05-27"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2014-05-23&endDate=2014-05-23&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-05-23&endDate=2014-05-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-05-23&endDate=2014-05-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-05-23&endDate=2014-05-23&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-05-23&endDate=2014-05-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-05-23&endDate=2014-05-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-05-26&endDate=2014-05-26&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-05-26&endDate=2014-05-26&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-05-26&endDate=2014-05-26&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-05-26&endDate=2014-05-26&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-05-26&endDate=2014-05-26&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-05-26&endDate=2014-05-26&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 7898,
+        "title": "Peking-Duon",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9984,
+        "title": "Öppet Medel-KM",
+        "score": 32,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9875,
+        "title": "class=\"tooltip\" title=\"orienteringslöpning\">klubbLsön 25/5Peking-Duon",
+        "score": 25,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10022,
+        "title": "div class=\"tooltip\" title=\"orienteringslöpning\">närMtis 27/5Öppet Medel-KM",
+        "score": 25,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6029,
+        "title": "Silva League, sprintdistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-23&endDate=2014-05-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10013,
+        "title": "Västmanlands Skogskarlars Vårting 2014",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-23&endDate=2014-05-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5964,
+        "title": "DM Sprint Skåne",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6767,
+        "title": "IFK Mora OK, medeldistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8565,
+        "title": "JOKs MTB-O dubbelsprint",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9943,
+        "title": "Lång-KM, TMOK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9147,
+        "title": "Motionsorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5683,
+        "title": "Nipstigen, medeldistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5965,
+        "title": "PreO DM Skåne",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7966,
+        "title": "Silva League, medeldistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6543,
+        "title": "Skaraborgsmästerskapen Stafett",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6369,
+        "title": "Ungdomstrollet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9751,
+        "title": "Veckans bana v 22",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6330,
+        "title": "Vårserien 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6582,
+        "title": "5-manna",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9498,
+        "title": "Dag-KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9782,
+        "title": "Norra Hallands Ungdomsserie Etapp 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5706,
+        "title": "OK Måsens ungdomstävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8322,
+        "title": "Viljans närtävling och zon-KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9952,
+        "title": "KM Medeldistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-24&endDate=2014-05-24&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6249,
+        "title": "EdetDubbeln",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6768,
+        "title": "IFK Mora OK, långdistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10069,
+        "title": "Intensivkurs 2014-05-25",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6307,
+        "title": "Lämmeltåget",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5684,
+        "title": "Nipstigen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7967,
+        "title": "Silva League, final med jaktstart",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9731,
+        "title": "Söders MTBO-vår",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9968,
+        "title": "KM Lång, OK Älvsjö Örby",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9824,
+        "title": "KM Lång, Sundbybergs IK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9890,
+        "title": "OK Tranan KM-Dag 2014",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9953,
+        "title": "KM Långdistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9862,
+        "title": "Dag-KM (IFK Enskede, Skarpnäcks OL, Skogsluffarnas OK)",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9825,
+        "title": "KM Sprint, Sundbybergs IK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9813,
+        "title": "Pre O När OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-25&endDate=2014-05-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10072,
+        "title": "Gbg SKK-KM 2014",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-26&endDate=2014-05-26&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9714,
+        "title": "Sprintcupen Rånäs/Rimbo",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-26&endDate=2014-05-26&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9927,
+        "title": "Älgsprinten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-26&endDate=2014-05-26&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9823,
+        "title": "10-klubbs 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9946,
+        "title": "FSOK ungdomsserie + NOK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8931,
+        "title": "Kretsträning Västra Kretsen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9324,
+        "title": "Motionsorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8945,
+        "title": "Motionsorientering (Sprint)",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9227,
+        "title": "Motionsorientering Ursvik",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8786,
+        "title": "POL-Träff",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10081,
+        "title": "Tisdags-OL Lövsjötorp",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9961,
+        "title": "Tränings-OL 2014-05-27",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9581,
+        "title": "VPT 4",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9870,
+        "title": "Veteran Ol, 140527",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9882,
+        "title": "Dala Veteran-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8996,
+        "title": "Motions-OL Lunedet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9939,
+        "title": "5-dagars på hemmaplan, etapp 5",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9657,
+        "title": "Motionsorientering Kilene",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9844,
+        "title": "Motionsorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10029,
+        "title": "DOK-KM 2014",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8727,
+        "title": "EES - Eslöv Evening Sprint - Etapp3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10000,
+        "title": "KM Grand Slam - Sprint",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9170,
+        "title": "Motionsorientering och ungdomsträning (Breddorientering)",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9974,
+        "title": "Norrcupen 140527",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10079,
+        "title": "Tjogetträning 27 maj",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10054,
+        "title": "7 klubbs OKN",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9997,
+        "title": "Undomskrets/Motionsorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6368,
+        "title": "DM Sprint Södermanland",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9995,
+        "title": "FUS Folkareserien",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10003,
+        "title": "KLM Sprint Andrarums IF",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9973,
+        "title": "SAKO Ungdomsstafett",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7978,
+        "title": "Sandvikens Öppna Kommunmästerskap",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10014,
+        "title": "Sprint-KM Lidingö",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9873,
+        "title": "Till Skogs med Roslagens sparbank del 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9899,
+        "title": "Ungdomsserien Motalakretsen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9969,
+        "title": "Haninge SOK Lång-KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-05-27&endDate=2014-05-27&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}

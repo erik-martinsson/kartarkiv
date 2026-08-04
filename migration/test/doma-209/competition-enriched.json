@@ -1,0 +1,423 @@
+{
+  "doma": {
+    "mapId": 209,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=209",
+    "title": "Stigtomtakaveln",
+    "date": "2014-04-17",
+    "category": "Tävling",
+    "relayLeg": 5,
+    "runningTime": "1:10:40",
+    "runningDistanceKm": 12.3,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/209.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/209.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=209&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=30123&categoryId=27"
+  },
+  "location": null,
+  "latitude": 58.82934,
+  "longitude": 17.352344444444,
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "7",
+    "starters": "23",
+    "controls": 29,
+    "time": "1:10.54",
+    "totalMistakeTime": "1.43",
+    "mistakes": [
+      {
+        "control": 2,
+        "time": "1.18"
+      },
+      {
+        "control": 28,
+        "time": "0.25"
+      }
+    ]
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Stigtomtakaveln",
+    "domaDate": "2014-04-17",
+    "databaseId": 30123,
+    "searchedDates": [
+      "2014-04-15",
+      "2014-04-16",
+      "2014-04-17",
+      "2014-04-18",
+      "2014-04-19"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 8252,
+        "title": "ParkO 1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8607,
+        "title": "POL-Rankås",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9678,
+        "title": "Tisdags-Ol Rankås",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9633,
+        "title": "OK Kåre Dala Veteran",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8113,
+        "title": "Poängtävling 1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9571,
+        "title": "NOK-träning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9021,
+        "title": "Vårspringet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8991,
+        "title": "Motions-OL Rävåsen/Timsåsarna",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9332,
+        "title": "Motionsorientering Stockfallet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9594,
+        "title": "Norrcupen 140415",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9625,
+        "title": "Teknikträning södra kretsen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-15&endDate=2014-04-15&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9247,
+        "title": "Motionsorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9611,
+        "title": "Götaälvdalskretsen Kretsträning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9608,
+        "title": "Träningstävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9330,
+        "title": "ABC-cupen deltävling 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8352,
+        "title": "Intresseanmälan Superpåsken 17-21/4 2014 !",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8253,
+        "title": "ParkO 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8908,
+        "title": "Tävlingsresa Kolmården",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8955,
+        "title": "Gå-Lunka-Löp Lidetorp",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6386,
+        "title": "Häxjakten Five-O 1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5778,
+        "title": "Stigtomtakavlen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5701,
+        "title": "Arosträffen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6365,
+        "title": "Friskusträffen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 8586,
+        "title": "Påskläger 2014",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9166,
+        "title": "Påskriset",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6387,
+        "title": "Kortfredan Five-O 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6081,
+        "title": "Kolmårdsmedeln",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9484,
+        "title": "Veckans bana",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6283,
+        "title": "Öjetrampen Five-O 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5750,
+        "title": "Påsk-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 7994,
+        "title": "Påskyran",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6296,
+        "title": "Nackheträffen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6275,
+        "title": "Torsås OK nationell",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen tillräckligt säker Eventor-träff hittades."
+  ]
+}

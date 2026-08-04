@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T08:36:20.479Z",
+  "competition": {
+    "doma": {
+      "mapId": 242,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=242",
+      "title": "Lång-DM",
+      "date": "2014-09-06",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "1:24:15",
+      "runningDistanceKm": 13.57,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/242.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/242.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=242&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=32904&categoryId=2",
+      "courseLengthKm": 11.04
+    },
+    "location": null,
+    "latitude": 58.204862361111,
+    "longitude": 15.110810555556,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "5",
+      "starters": "21",
+      "controls": 17,
+      "time": "1:24:16",
+      "totalMistakeTime": "7.02",
+      "mistakes": [
+        {
+          "control": 6,
+          "time": "4.53"
+        },
+        {
+          "control": 13,
+          "time": "1.07"
+        },
+        {
+          "control": 14,
+          "time": "1.02"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 6057,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/6057",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=6057",
+      "title": "DM Lång Östergötland",
+      "date": "",
+      "organiser": "Boxholms OK",
+      "location": "",
+      "rawDiscipline": "lång",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 6057,
+      "title": "DM Lång Östergötland",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/6057",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=6057",
+      "score": 85,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Lång-DM",
+      "domaDate": "2014-09-06",
+      "databaseId": 32904,
+      "searchedDates": [
+        "2014-09-04",
+        "2014-09-05",
+        "2014-09-06",
+        "2014-09-07",
+        "2014-09-08"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-09-08&endDate=2014-09-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-09-08&endDate=2014-09-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-09-08&endDate=2014-09-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-09-08&endDate=2014-09-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-09-08&endDate=2014-09-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-09-08&endDate=2014-09-08&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 6436,
+          "title": "DM Lång Göteborg",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5997,
+          "title": "DM Lång Skåne",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6057,
+          "title": "DM Lång Östergötland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen Livelox-länk hittades i Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-242\\competition-enriched.json"
+    }
+  }
+}

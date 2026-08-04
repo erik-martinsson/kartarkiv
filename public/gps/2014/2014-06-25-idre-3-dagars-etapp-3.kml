@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Idre 3-dagars Etapp 3 (2014-06-25)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/223.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>61.939372103964</north>
+          <south>61.913194680552</south>
+          <east>12.845816221897</east>
+          <west>12.786612032893</west>
+          <rotation>-0.7661967413718</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

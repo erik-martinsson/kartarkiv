@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Novembersprinten (2014-11-01)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/250.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.286646096333</north>
+          <south>58.259362621365</south>
+          <east>15.214942001926</east>
+          <west>15.17911478706</west>
+          <rotation>0.84909600161535</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

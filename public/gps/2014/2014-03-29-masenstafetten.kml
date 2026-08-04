@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Måsenstafetten (2014-03-29)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/203.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.667735373004</north>
+          <south>58.652023947079</south>
+          <east>16.934212129508</east>
+          <west>16.87966050197</west>
+          <rotation>-1.1197597461763</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

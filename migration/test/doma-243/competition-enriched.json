@@ -1,0 +1,148 @@
+{
+  "doma": {
+    "mapId": 243,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=243",
+    "title": "Medel-DM",
+    "date": "2014-09-13",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "33:22",
+    "runningDistanceKm": 5.74,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/243.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/243.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=243&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=33025&categoryId=1"
+  },
+  "location": null,
+  "latitude": 58.607191666667,
+  "longitude": 15.345603055556,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "8",
+    "starters": "39",
+    "controls": 18,
+    "time": "33.19",
+    "totalMistakeTime": "1.15",
+    "mistakes": [
+      {
+        "control": 1,
+        "time": "1.15"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 6252,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/6252",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=6252",
+    "title": "DM Medel Östergötland",
+    "date": "",
+    "organiser": "Tjällmo-Godegårds OK",
+    "location": "",
+    "rawDiscipline": "medel",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 6252,
+    "title": "DM Medel Östergötland",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/6252",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=6252",
+    "score": 85,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Medel-DM",
+    "domaDate": "2014-09-13",
+    "databaseId": 33025,
+    "searchedDates": [
+      "2014-09-11",
+      "2014-09-12",
+      "2014-09-13",
+      "2014-09-14",
+      "2014-09-15"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2014-09-11&endDate=2014-09-11&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-11&endDate=2014-09-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-11&endDate=2014-09-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-11&endDate=2014-09-11&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-11&endDate=2014-09-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-11&endDate=2014-09-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-12&endDate=2014-09-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-14&endDate=2014-09-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-15&endDate=2014-09-15&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 6141,
+        "title": "DM Medel Blekinge",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6303,
+        "title": "DM Medel Göteborg",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6198,
+        "title": "DM Medel Sörmland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6252,
+        "title": "DM Medel Östergötland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-13&endDate=2014-09-13&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

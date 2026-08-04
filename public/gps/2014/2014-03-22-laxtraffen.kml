@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Laxträffen (2014-03-22)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/202.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>56.984687768571</north>
+          <south>56.955442834604</south>
+          <east>12.864839697306</east>
+          <west>12.793660692935</west>
+          <rotation>3.3319820606285</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

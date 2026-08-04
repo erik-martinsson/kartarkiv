@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Fjällsprinten - JK40 (2014-06-22)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/220.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>61.88967997676</north>
+          <south>61.881856385403</south>
+          <east>12.868582273846</east>
+          <west>12.847109904653</west>
+          <rotation>-1.1831903150295</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

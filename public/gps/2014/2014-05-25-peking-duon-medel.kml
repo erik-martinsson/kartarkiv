@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Peking-Duon - Medel (2014-05-25)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/217.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.563697442623</north>
+          <south>58.544120613521</south>
+          <east>16.232582225437</east>
+          <west>16.181508150587</west>
+          <rotation>0.004531613006244</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

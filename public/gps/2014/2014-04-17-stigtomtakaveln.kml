@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Stigtomtakaveln (2014-04-17)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/209.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.845542848357</north>
+          <south>58.814055940744</south>
+          <east>17.376625337703</east>
+          <west>17.328099643035</west>
+          <rotation>-1.8722100630096</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

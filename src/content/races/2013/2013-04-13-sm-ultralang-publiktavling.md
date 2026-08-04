@@ -8,7 +8,7 @@ club: "Linköpings OK"
 country: "SE"
 location: ""
 
-discipline: "Ultralång"
+discipline: "Medel"
 raceClass: "H21"
 
 distanceKm: 4.7

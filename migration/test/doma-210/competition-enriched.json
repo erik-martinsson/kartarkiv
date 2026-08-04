@@ -1,0 +1,118 @@
+{
+  "doma": {
+    "mapId": 210,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=210",
+    "title": "Kolmårdsmedeln",
+    "date": "2014-04-18",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "44:17",
+    "runningDistanceKm": 7.11,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/210.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/210.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=210&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=30139&categoryId=2"
+  },
+  "location": null,
+  "latitude": 58.685876388889,
+  "longitude": 16.28407625,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "40",
+    "starters": "63",
+    "controls": 4,
+    "time": "43.46",
+    "totalMistakeTime": "3.44",
+    "mistakes": [
+      {
+        "control": 1,
+        "time": "3.44"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 6081,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/6081",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=6081",
+    "title": "Kolmårdsmedeln",
+    "date": "",
+    "organiser": "OK Kolmården",
+    "location": "",
+    "rawDiscipline": "medel",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 6081,
+    "title": "Kolmårdsmedeln",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/6081",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=6081",
+    "score": 100,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Kolmårdsmedeln",
+    "domaDate": "2014-04-18",
+    "databaseId": 30139,
+    "searchedDates": [
+      "2014-04-16",
+      "2014-04-17",
+      "2014-04-18",
+      "2014-04-19",
+      "2014-04-20"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-16&endDate=2014-04-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-17&endDate=2014-04-17&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-18&endDate=2014-04-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-04-20&endDate=2014-04-20&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-04-20&endDate=2014-04-20&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-04-20&endDate=2014-04-20&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-04-20&endDate=2014-04-20&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-04-20&endDate=2014-04-20&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-04-20&endDate=2014-04-20&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 6081,
+        "title": "Kolmårdsmedeln",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-04-19&endDate=2014-04-19&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

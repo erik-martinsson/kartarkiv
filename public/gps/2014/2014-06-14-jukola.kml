@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Jukola (2014-06-14)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/219.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>62.774577013562</north>
+          <south>62.737040019615</south>
+          <east>28.001076970141</east>
+          <west>27.933728892063</west>
+          <rotation>-9.8165840199638</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

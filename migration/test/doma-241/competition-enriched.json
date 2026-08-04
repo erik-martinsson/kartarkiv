@@ -1,0 +1,156 @@
+{
+  "doma": {
+    "mapId": 241,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=241",
+    "title": "Natt-DM",
+    "date": "2014-09-05",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "1:06:28",
+    "runningDistanceKm": 11.26,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/241.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/241.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=241&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=32861&categoryId=2"
+  },
+  "location": null,
+  "latitude": 58.677255555556,
+  "longitude": 16.328505,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "8",
+    "starters": "15",
+    "controls": 16,
+    "time": "1:06.26",
+    "totalMistakeTime": "5.03",
+    "mistakes": [
+      {
+        "control": 4,
+        "time": "1.30"
+      },
+      {
+        "control": 5,
+        "time": "1.10"
+      },
+      {
+        "control": 14,
+        "time": "2.23"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 6083,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/6083",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=6083",
+    "title": "DM Natt Östergötland + Södermanland",
+    "date": "",
+    "organiser": "OK KolmårdenSödermanlands OF",
+    "location": "",
+    "rawDiscipline": "lång",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 6083,
+    "title": "DM Natt Östergötland + Södermanland",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/6083",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=6083",
+    "score": 80,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Natt-DM",
+    "domaDate": "2014-09-05",
+    "databaseId": 32861,
+    "searchedDates": [
+      "2014-09-03",
+      "2014-09-04",
+      "2014-09-05",
+      "2014-09-06",
+      "2014-09-07"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2014-09-03&endDate=2014-09-03&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-03&endDate=2014-09-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-03&endDate=2014-09-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-03&endDate=2014-09-03&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-03&endDate=2014-09-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-03&endDate=2014-09-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-04&endDate=2014-09-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-06&endDate=2014-09-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2014-09-07&endDate=2014-09-07&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 7976,
+        "title": "DM Natt Gästrikland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6364,
+        "title": "DM Natt Värmland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5936,
+        "title": "DM Natt Blekinge",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 6083,
+        "title": "DM Natt Östergötland + Södermanland",
+        "score": 80,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-09-05&endDate=2014-09-05&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

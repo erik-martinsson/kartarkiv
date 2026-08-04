@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Tibrotrippeln Natt (2014-04-03)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/205.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.440488539287</north>
+          <south>58.41882350604</south>
+          <east>14.276196234317</east>
+          <west>14.218277134725</west>
+          <rotation>0.61983052232214</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

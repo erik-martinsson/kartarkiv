@@ -23,6 +23,74 @@ function normalizeCaption(value: string): string {
     .toLocaleLowerCase("sv-SE");
 }
 
+function normalizeRunningTime(
+  value: string | null | undefined,
+): string | null {
+  const normalized = normalizeText(value);
+
+  if (!normalized) {
+    return null;
+  }
+
+  const parts = normalized.split(/[.:]/);
+
+  if (
+    parts.length === 3 &&
+    parts.every((part) => /^\d+$/.test(part))
+  ) {
+    const hours = Number(parts[0]);
+    const minutes = Number(parts[1]);
+    const seconds = Number(parts[2]);
+
+    if (
+      Number.isFinite(hours) &&
+      minutes >= 0 &&
+      minutes < 60 &&
+      seconds >= 0 &&
+      seconds < 60
+    ) {
+      return (
+        `${hours}:` +
+        `${String(minutes).padStart(2, "0")}:` +
+        String(seconds).padStart(2, "0")
+      );
+    }
+  }
+
+  if (
+    parts.length === 2 &&
+    parts.every((part) => /^\d+$/.test(part))
+  ) {
+    const totalMinutes = Number(parts[0]);
+    const seconds = Number(parts[1]);
+
+    if (
+      Number.isFinite(totalMinutes) &&
+      totalMinutes >= 0 &&
+      seconds >= 0 &&
+      seconds < 60
+    ) {
+      if (totalMinutes >= 60) {
+        const hours = Math.floor(totalMinutes / 60);
+        const minutes = totalMinutes % 60;
+
+        return (
+          `${hours}:` +
+          `${String(minutes).padStart(2, "0")}:` +
+          String(seconds).padStart(2, "0")
+        );
+      }
+
+      return (
+        `${totalMinutes}:` +
+        String(seconds).padStart(2, "0")
+      );
+    }
+  }
+
+  return normalized;
+}
+
 function resolveUrl(
   value: string | undefined,
   baseUrl: string,
@@ -482,9 +550,11 @@ export function parseDomaCompetition(
     ),
 
     relayLeg: parseRelayLeg(properties),
-    runningTime: firstPropertyValue(
-      properties,
-      "Tid",
+    runningTime: normalizeRunningTime(
+      firstPropertyValue(
+        properties,
+        "Tid",
+      ),
     ),
     runningDistanceKm:
       parseRunningDistanceKm(properties),

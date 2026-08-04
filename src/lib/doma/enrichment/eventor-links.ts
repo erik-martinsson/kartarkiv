@@ -257,13 +257,60 @@ function normalizeTime(
   }
 
   const normalized = normalizeText(value);
+  const parts = normalized.split(/[.:]/);
 
-  const minuteMatch = normalized.match(
-    /^(\d{1,3})[.:](\d{2})$/,
-  );
+  if (
+    parts.length === 3 &&
+    parts.every((part) => /^\d+$/.test(part))
+  ) {
+    const hours = Number(parts[0]);
+    const minutes = Number(parts[1]);
+    const seconds = Number(parts[2]);
 
-  if (minuteMatch) {
-    return `${minuteMatch[1]}:${minuteMatch[2]}`;
+    if (
+      Number.isFinite(hours) &&
+      minutes >= 0 &&
+      minutes < 60 &&
+      seconds >= 0 &&
+      seconds < 60
+    ) {
+      return (
+        `${hours}:` +
+        `${String(minutes).padStart(2, "0")}:` +
+        String(seconds).padStart(2, "0")
+      );
+    }
+  }
+
+  if (
+    parts.length === 2 &&
+    parts.every((part) => /^\d+$/.test(part))
+  ) {
+    const totalMinutes = Number(parts[0]);
+    const seconds = Number(parts[1]);
+
+    if (
+      Number.isFinite(totalMinutes) &&
+      totalMinutes >= 0 &&
+      seconds >= 0 &&
+      seconds < 60
+    ) {
+      if (totalMinutes >= 60) {
+        const hours = Math.floor(totalMinutes / 60);
+        const minutes = totalMinutes % 60;
+
+        return (
+          `${hours}:` +
+          `${String(minutes).padStart(2, "0")}:` +
+          String(seconds).padStart(2, "0")
+        );
+      }
+
+      return (
+        `${totalMinutes}:` +
+        String(seconds).padStart(2, "0")
+      );
+    }
   }
 
   return normalized;
@@ -494,7 +541,7 @@ function findLastClassInformation(
    * H21 4 890 m, 32 startande
    */
   const fullClassPattern =
-    /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)\s+(\d[\d\s]*)\s*m\s*,?\s*(\d+)\s+startande/gi;
+    /(?:^|\s)([\p{L}\p{N}][\p{L}\p{N}\s/+().:_-]{0,60}?)\s+(\d[\d\s]*)\s*m\s*,?\s*(\d+)\s+startande/giu;
 
   const matches = [
     ...nearbyText.matchAll(
@@ -545,7 +592,7 @@ function findFallbackClassName(
     const text = stripHtml(match[1]);
 
     const classMatch = text.match(
-      /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)(?=\s|$)/i,
+      /(?:^|\s)([\p{L}\p{N}][\p{L}\p{N}\s/+().:_-]{0,60})(?=\s*$)/iu,
     );
 
     if (classMatch) {

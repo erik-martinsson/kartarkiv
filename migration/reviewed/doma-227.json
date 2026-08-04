@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T07:20:55.161Z",
+  "competition": {
+    "doma": {
+      "mapId": 227,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=227",
+      "title": "Tjoget",
+      "date": "2014-07-06",
+      "category": "Tävling",
+      "relayLeg": 8,
+      "runningTime": "53:57",
+      "runningDistanceKm": 10.08,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/227.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/227.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=227&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=31909&categoryId=29",
+      "courseLengthKm": 8.3
+    },
+    "location": null,
+    "latitude": 56.640694444444,
+    "longitude": 15.575230694444,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "Tjoget",
+      "club": "Linköpings OK 1",
+      "position": "2",
+      "starters": "70",
+      "controls": 17,
+      "time": "53:45",
+      "totalMistakeTime": "0.39",
+      "mistakes": [
+        {
+          "control": 2,
+          "time": "0.39"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Tjoget",
+      "domaDate": "2014-07-06",
+      "databaseId": 31909,
+      "searchedDates": [
+        "2014-07-04",
+        "2014-07-05",
+        "2014-07-06",
+        "2014-07-07",
+        "2014-07-08"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2014-07-04&endDate=2014-07-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-07-04&endDate=2014-07-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-07-04&endDate=2014-07-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-07-04&endDate=2014-07-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-07-04&endDate=2014-07-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-07-04&endDate=2014-07-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-07-06&endDate=2014-07-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-07-06&endDate=2014-07-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-07-06&endDate=2014-07-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-07-06&endDate=2014-07-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-07-06&endDate=2014-07-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-07-06&endDate=2014-07-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-07-07&endDate=2014-07-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-07-07&endDate=2014-07-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-07-07&endDate=2014-07-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-07-07&endDate=2014-07-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-07-07&endDate=2014-07-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-07-07&endDate=2014-07-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 6254,
+          "title": "Tjoget",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6289,
+          "title": "s=\"tooltip\" title=\"orienteringslöpning\">natSlör 5/7Intresseanmälan Tjoget",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8913,
+          "title": "Intresseanmälan Tjoget",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10092,
+          "title": "Intresseanmälan Tjoget",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10128,
+          "title": "Intresseanmälan-Tjoget",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 6401,
+          "title": "ss=\"tooltip\" title=\"orienteringslöpning\">natMlör 5/7 - sön 6/7Tjoget",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9934,
+          "title": "Mini-5-dagars",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-04&endDate=2014-07-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5817,
+          "title": "Eskilstuna weekend",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-04&endDate=2014-07-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5875,
+          "title": "Morokulien 2-dagars",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10082,
+          "title": "Vittjärvs 2-dagars, dag 1 + DM Medel Norrbotten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-05&endDate=2014-07-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9828,
+          "title": "Teknikläger 6-9 juli 2014",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-06&endDate=2014-07-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10083,
+          "title": "Vittjärvs 2-dagars, dag 2, långdistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-06&endDate=2014-07-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10247,
+          "title": "5-kvällars Främmestads IK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9563,
+          "title": "Hiernmannen Skillingmark",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 7581,
+          "title": "Gotlands 3-dagars",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9904,
+          "title": "Sommarserien IFK Enskede",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8126,
+          "title": "Poängtävling 9",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10251,
+          "title": "Höglands-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10249,
+          "title": "Närtävling Falkenbergs OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10286,
+          "title": "Sörklubbs",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10284,
+          "title": "Träning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10299,
+          "title": "Sommar-OL 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10276,
+          "title": "USM-1978",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10298,
+          "title": "Motionsorientering Helsingborg",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10088,
+          "title": "KM Sprint",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10233,
+          "title": "Motionsorientering Umeå",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10155,
+          "title": "KM Sprint",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2014-07-08&endDate=2014-07-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-227\\competition-enriched.json"
+    }
+  }
+}
