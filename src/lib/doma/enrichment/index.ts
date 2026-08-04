@@ -1,6 +1,6 @@
 import { readDomaCompetition } from "../index";
 import {
-  loadWinSplits,
+  loadWinSplitsWithMetadata,
   type WinSplitsRunner,
 } from "../../../../studio/src/lib/winsplits";
 import {
@@ -76,6 +76,78 @@ function findRunner(
         normalizeName(runner.name) ===
         wanted,
     ) ?? null
+  );
+}
+
+function normalizeResultTime(
+  value: string | null | undefined,
+): string | null {
+  const normalized =
+    cleanOptional(value);
+
+  if (!normalized) {
+    return null;
+  }
+
+  const parts = normalized.split(/[.:]/);
+
+  if (
+    parts.length !== 2 &&
+    parts.length !== 3
+  ) {
+    return normalized;
+  }
+
+  if (
+    !parts.every((part) =>
+      /^\d+$/.test(part),
+    )
+  ) {
+    return normalized;
+  }
+
+  if (parts.length === 3) {
+    const hours = Number(parts[0]);
+    const minutes = Number(parts[1]);
+    const seconds = Number(parts[2]);
+
+    if (
+      minutes >= 60 ||
+      seconds >= 60
+    ) {
+      return normalized;
+    }
+
+    return (
+      `${hours}:` +
+      `${String(minutes).padStart(2, "0")}:` +
+      String(seconds).padStart(2, "0")
+    );
+  }
+
+  const totalMinutes = Number(parts[0]);
+  const seconds = Number(parts[1]);
+
+  if (seconds >= 60) {
+    return normalized;
+  }
+
+  if (totalMinutes < 60) {
+    return (
+      `${totalMinutes}:` +
+      String(seconds).padStart(2, "0")
+    );
+  }
+
+  const hours =
+    Math.floor(totalMinutes / 60);
+  const minutes =
+    totalMinutes % 60;
+
+  return (
+    `${hours}:` +
+    `${String(minutes).padStart(2, "0")}:` +
+    String(seconds).padStart(2, "0")
   );
 }
 
@@ -216,7 +288,9 @@ export async function readEnrichedDomaCompetition(
         starters: null,
         controls: null,
         time:
-          cleanOptional(doma.runningTime),
+          normalizeResultTime(
+            doma.runningTime,
+          ),
         totalMistakeTime: "0:00",
         mistakes: [],
       },
@@ -244,9 +318,9 @@ export async function readEnrichedDomaCompetition(
    * tävlingens titel eller datum. DOMA är facit
    * för båda värdena.
    */
-  const [runners, eventorResolution] =
+  const [winsplitsData, eventorResolution] =
     await Promise.all([
-      loadWinSplits(
+      loadWinSplitsWithMetadata(
         ids.databaseId,
         ids.categoryId,
       ),
@@ -256,6 +330,9 @@ export async function readEnrichedDomaCompetition(
         ids.databaseId,
       ),
     ]);
+
+  const { runners, metadata: winsplitsMetadata } =
+    winsplitsData;
 
   const runner =
     findRunner(runners, runnerName);
@@ -347,14 +424,21 @@ export async function readEnrichedDomaCompetition(
 
   const raceClass =
     cleanOptional(
-      /*
-       * WinSplits-löparobjektet innehåller inte
-       * klassnamnet. Klassen hämtas därför från
-       * DOMA-länkens categoryId tills vi lägger till
-       * separat klassrubriksläsning i WinSplits.
-       */
-      null,
+      winsplitsMetadata.raceClass,
     );
+
+  const officialDistanceKm =
+    winsplitsMetadata.distanceKm ??
+    doma.runningDistanceKm ??
+    null;
+
+  if (
+    winsplitsMetadata.distanceKm === null
+  ) {
+    warnings.push(
+      "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen.",
+    );
+  }
 
   return {
     doma: {
@@ -366,7 +450,7 @@ export async function readEnrichedDomaCompetition(
       relayLeg: doma.relayLeg,
       runningTime: doma.runningTime,
       runningDistanceKm:
-        doma.runningDistanceKm,
+        officialDistanceKm,
       routeMapImageUrl:
         doma.routeMapImageUrl,
       blankMapImageUrl:
@@ -399,14 +483,20 @@ export async function readEnrichedDomaCompetition(
         String(runners.length),
       controls: runner.controls,
       time:
-        cleanOptional(runner.totalTime),
+        normalizeResultTime(
+          runner.totalTime,
+        ),
       totalMistakeTime:
-        cleanOptional(runner.totalMistake) ??
-        "0:00",
+        normalizeResultTime(
+          runner.totalMistake,
+        ) ?? "0:00",
       mistakes: runner.mistakes.map(
         (mistake) => ({
           control: mistake.control,
-          time: mistake.loss,
+          time:
+            normalizeResultTime(
+              mistake.loss,
+            ) ?? mistake.loss,
         }),
       ),
     },

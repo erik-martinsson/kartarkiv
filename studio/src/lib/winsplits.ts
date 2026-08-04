@@ -26,6 +26,16 @@ export interface WinSplitsRunner {
   mistakes: WinSplitsMistake[];
 }
 
+export interface WinSplitsClassMetadata {
+  raceClass: string | null;
+  distanceKm: number | null;
+}
+
+export interface WinSplitsData {
+  runners: WinSplitsRunner[];
+  metadata: WinSplitsClassMetadata;
+}
+
 function cleanText(value: string): string {
   return value
     .replace(/\u00a0/g, " ")
@@ -402,10 +412,246 @@ function parseRunners(
   return runners;
 }
 
-export async function loadWinSplits(
+
+function parseDistanceKm(
+  value: string,
+): number | null {
+  const normalized = cleanText(value)
+    .replace(",", ".");
+
+  const kilometerMatch = normalized.match(
+    /(?:banlängd|banlangd|längd|langd|course\s*length)?\s*:?\s*(\d+(?:\.\d+)?)\s*km\b/i,
+  );
+
+  if (kilometerMatch) {
+    const distance = Number(kilometerMatch[1]);
+
+    return (
+      Number.isFinite(distance) &&
+      distance >= 0.2 &&
+      distance <= 100
+    )
+      ? distance
+      : null;
+  }
+
+  const meterMatch = normalized.match(
+    /(?:banlängd|banlangd|längd|langd|course\s*length)?\s*:?\s*(\d[\d\s]{2,6})\s*m\b/i,
+  );
+
+  if (!meterMatch) {
+    return null;
+  }
+
+  const meters = Number(
+    meterMatch[1].replace(/\s+/g, ""),
+  );
+
+  return (
+    Number.isFinite(meters) &&
+    meters >= 200 &&
+    meters <= 100_000
+  )
+    ? Number((meters / 1_000).toFixed(3))
+    : null;
+}
+
+async function readClassMetadata(
+  page: Page,
+  categoryId: number,
+): Promise<WinSplitsClassMetadata> {
+  const raceClassCandidates: string[] = [];
+  const textCandidates: string[] = [];
+
+  for (const frame of page.frames()) {
+    try {
+      const snapshot = await frame.evaluate(
+        ({ wantedCategoryId }) => {
+          const clean = (
+            value: string | null | undefined,
+          ) =>
+            (value ?? "")
+              .replace(/\u00a0/g, " ")
+              .replace(/\s+/g, " ")
+              .trim();
+
+          const selectedOptions = Array.from(
+            document.querySelectorAll<
+              HTMLOptionElement
+            >("option:checked, option[selected]"),
+          )
+            .map((option) => ({
+              text: clean(option.textContent),
+              value: option.value,
+            }))
+            .filter((option) => option.text);
+
+          const matchingOption =
+            selectedOptions.find(
+              (option) =>
+                option.value ===
+                String(wantedCategoryId),
+            ) ??
+            selectedOptions[0] ??
+            null;
+
+          const headings = Array.from(
+            document.querySelectorAll(
+              "h1, h2, h3, h4, caption, legend",
+            ),
+          )
+            .map((element) =>
+              clean(element.textContent),
+            )
+            .filter(Boolean);
+
+          return {
+            selectedClass:
+              matchingOption?.text ?? "",
+            headings,
+            title: clean(document.title),
+            bodyText: clean(
+              document.body?.innerText,
+            ),
+          };
+        },
+        {
+          wantedCategoryId: categoryId,
+        },
+      );
+
+      if (snapshot.selectedClass) {
+        raceClassCandidates.push(
+          snapshot.selectedClass,
+        );
+      }
+
+      raceClassCandidates.push(
+        ...snapshot.headings,
+      );
+
+      if (snapshot.title) {
+        raceClassCandidates.push(
+          snapshot.title,
+        );
+      }
+
+      if (snapshot.bodyText) {
+        textCandidates.push(
+          snapshot.bodyText,
+        );
+      }
+    } catch {
+      // En enskild WinSplits-ram kan vara oläsbar.
+    }
+  }
+
+  const cleanClassCandidate = (
+    value: string,
+  ): string | null => {
+    const candidate = cleanText(value)
+      .replace(
+        /\s*(?:resultat|sträcktider|stracktider|winsplits online).*$/i,
+        "",
+      )
+      .replace(/^\s*(?:klass|class)\s*:?\s*/i, "")
+      .trim();
+
+    if (
+      !candidate ||
+      candidate.length > 100 ||
+      /^(?:resultat|sträcktider|stracktider|klasser|start)$/i.test(
+        candidate,
+      )
+    ) {
+      return null;
+    }
+
+    return candidate;
+  };
+
+  const raceClass =
+    raceClassCandidates
+      .map(cleanClassCandidate)
+      .find(Boolean) ?? null;
+
+  let distanceKm: number | null = null;
+
+  if (raceClass) {
+    const escapedClass = raceClass.replace(
+      /[.*+?^${}()|[\]\\]/g,
+      "\\$&",
+    );
+
+    for (const text of textCandidates) {
+      const nearbyMatch = text.match(
+        new RegExp(
+          `${escapedClass}.{0,160}`,
+          "i",
+        ),
+      );
+
+      distanceKm = parseDistanceKm(
+        nearbyMatch?.[0] ?? "",
+      );
+
+      if (distanceKm !== null) {
+        break;
+      }
+    }
+  }
+
+  if (distanceKm === null) {
+    for (const text of textCandidates) {
+      const labelled = text.match(
+        /(?:banlängd|banlangd|längd|langd|course\s*length)\s*:?\s*(?:\d+(?:[.,]\d+)?\s*km|\d[\d\s]{2,6}\s*m)/i,
+      );
+
+      distanceKm = parseDistanceKm(
+        labelled?.[0] ?? "",
+      );
+
+      if (distanceKm !== null) {
+        break;
+      }
+    }
+  }
+
+  if (distanceKm === null) {
+    const plausibleDistances = new Set<number>();
+
+    for (const text of textCandidates) {
+      for (
+        const match of text.matchAll(
+          /\b(\d+(?:[.,]\d+)?)\s*km\b|\b(\d[\d\s]{2,6})\s*m\b/gi,
+        )
+      ) {
+        const parsed = parseDistanceKm(
+          match[0],
+        );
+
+        if (parsed !== null) {
+          plausibleDistances.add(parsed);
+        }
+      }
+    }
+
+    if (plausibleDistances.size === 1) {
+      distanceKm =
+        [...plausibleDistances][0];
+    }
+  }
+
+  return {
+    raceClass,
+    distanceKm,
+  };
+}
+
+async function loadWinSplitsInternal(
   databaseId: number,
   categoryId: number,
-): Promise<WinSplitsRunner[]> {
+): Promise<WinSplitsData> {
   const browser = await chromium.launch({
     headless: true,
   });
@@ -476,8 +722,40 @@ export async function loadWinSplits(
       );
     }
 
-    return runners;
+    const metadata =
+      await readClassMetadata(
+        page,
+        categoryId,
+      );
+
+    return {
+      runners,
+      metadata,
+    };
   } finally {
     await browser.close();
   }
+}
+
+export async function loadWinSplitsWithMetadata(
+  databaseId: number,
+  categoryId: number,
+): Promise<WinSplitsData> {
+  return loadWinSplitsInternal(
+    databaseId,
+    categoryId,
+  );
+}
+
+export async function loadWinSplits(
+  databaseId: number,
+  categoryId: number,
+): Promise<WinSplitsRunner[]> {
+  const data =
+    await loadWinSplitsInternal(
+      databaseId,
+      categoryId,
+    );
+
+  return data.runners;
 }
