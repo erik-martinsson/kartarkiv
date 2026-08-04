@@ -1,0 +1,161 @@
+{
+  "doma": {
+    "mapId": 394,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=394",
+    "title": "Natt-DM",
+    "date": "2017-09-07",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "59:37",
+    "runningDistanceKm": 10.21,
+    "courseLengthKm": 0.84,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/394.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/394.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=394&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=51241&categoryId=1"
+  },
+  "location": null,
+  "latitude": 58.5788575,
+  "longitude": 15.888625138889,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "H217",
+    "club": "Linköpings OK",
+    "position": "1",
+    "starters": "5",
+    "controls": 19,
+    "time": "59:43",
+    "totalMistakeTime": "2:57",
+    "mistakes": [
+      {
+        "control": 16,
+        "time": "2:57"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 14983,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/14983",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=14983",
+    "title": "DM, natt, Östergötland",
+    "date": "",
+    "organiser": "OK Denseln",
+    "location": "",
+    "rawDiscipline": "lång",
+    "raceClass": "H217",
+    "distanceKm": 0.84,
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 14983,
+    "title": "DM, natt, Östergötland",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/14983",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=14983",
+    "score": 85,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Natt-DM",
+    "domaDate": "2017-09-07",
+    "databaseId": 51241,
+    "searchedDates": [
+      "2017-09-05",
+      "2017-09-06",
+      "2017-09-07",
+      "2017-09-08",
+      "2017-09-09"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2017-09-05&endDate=2017-09-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-09-05&endDate=2017-09-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-09-05&endDate=2017-09-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-09-05&endDate=2017-09-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-09-05&endDate=2017-09-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-09-05&endDate=2017-09-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-09-06&endDate=2017-09-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-09-06&endDate=2017-09-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-09-06&endDate=2017-09-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-09-06&endDate=2017-09-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-09-06&endDate=2017-09-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-09-06&endDate=2017-09-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-09-07&endDate=2017-09-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-09-07&endDate=2017-09-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-09-07&endDate=2017-09-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-09-07&endDate=2017-09-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-09-07&endDate=2017-09-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-09-07&endDate=2017-09-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-09-09&endDate=2017-09-09&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-09-09&endDate=2017-09-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-09-09&endDate=2017-09-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-09-09&endDate=2017-09-09&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-09-09&endDate=2017-09-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-09-09&endDate=2017-09-09&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 14564,
+        "title": "DM, natt, Blekinge",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15213,
+        "title": "DM, natt, Småland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15456,
+        "title": "DM, natt, Stockholm",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15362,
+        "title": "DM, natt, Västergötland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14983,
+        "title": "DM, natt, Östergötland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-09-08&endDate=2017-09-08&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista."
+  ]
+}

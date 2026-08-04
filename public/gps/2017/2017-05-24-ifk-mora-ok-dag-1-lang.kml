@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: IFK Mora Långdistans (2017-05-24)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/373.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>61.038234118105</north>
+          <south>61.004378659993</south>
+          <east>14.473717752981</east>
+          <west>14.377827282307</west>
+          <rotation>-4.5073077838391</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

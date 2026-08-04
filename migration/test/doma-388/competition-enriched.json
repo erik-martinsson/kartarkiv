@@ -1,0 +1,47 @@
+{
+  "doma": {
+    "mapId": 388,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=388",
+    "title": "Ultraträffen, medel",
+    "date": "2017-08-04",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "30:35",
+    "runningDistanceKm": 5.04,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/388.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/388.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=388&format=kml",
+    "winsplitsUrl": null
+  },
+  "location": null,
+  "latitude": 57.435211666667,
+  "longitude": 13.3168,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": null,
+    "position": null,
+    "starters": null,
+    "controls": null,
+    "time": "30:35",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Ultraträffen, medel",
+    "domaDate": "2017-08-04",
+    "databaseId": 0,
+    "searchedDates": [],
+    "calendarUrls": [],
+    "candidates": []
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+  ]
+}

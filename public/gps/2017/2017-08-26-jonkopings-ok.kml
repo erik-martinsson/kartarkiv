@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Jönköpings OK (2017-08-26)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/391.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.616781970614</north>
+          <south>57.588369844364</south>
+          <east>14.285746861325</east>
+          <west>14.212977123278</west>
+          <rotation>0.55815850243549</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

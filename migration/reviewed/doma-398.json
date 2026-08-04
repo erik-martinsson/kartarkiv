@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T14:24:46.737Z",
+  "competition": {
+    "doma": {
+      "mapId": 398,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=398",
+      "title": "Medel-SM, final",
+      "date": "2017-09-22",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "42:05",
+      "runningDistanceKm": 5.98,
+      "courseLengthKm": 4.95,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/398.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/398.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=398&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=51638&categoryId=6"
+    },
+    "location": null,
+    "latitude": 58.974415,
+    "longitude": 15.114218472222,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21C",
+      "club": "Linköpings OK",
+      "position": "23",
+      "starters": "41",
+      "controls": 17,
+      "time": "42:04",
+      "totalMistakeTime": "7:49",
+      "mistakes": [
+        {
+          "control": 7,
+          "time": "0:54"
+        },
+        {
+          "control": 8,
+          "time": "1:35"
+        },
+        {
+          "control": 12,
+          "time": "4:12"
+        },
+        {
+          "control": 13,
+          "time": "1:08"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 16457,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/16457",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=16457",
+      "title": "SM, medel, final",
+      "date": "",
+      "organiser": "OK TisarenÖrebro Läns OF",
+      "location": "",
+      "rawDiscipline": "medel",
+      "raceClass": "H21 Final C4",
+      "distanceKm": 0.95,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:16457-1&classExternalId=307550-1"
+    },
+    "eventorMatch": {
+      "eventId": 16457,
+      "title": "SM, medel, final",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/16457",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=16457",
+      "score": 79,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Medel-SM, final H21C",
+      "domaDate": "2017-09-22",
+      "databaseId": 51638,
+      "searchedDates": [
+        "2017-09-20",
+        "2017-09-21",
+        "2017-09-22",
+        "2017-09-23",
+        "2017-09-24"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2017-09-20&endDate=2017-09-20&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-09-20&endDate=2017-09-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-09-20&endDate=2017-09-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-09-20&endDate=2017-09-20&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-09-20&endDate=2017-09-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-09-20&endDate=2017-09-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-09-21&endDate=2017-09-21&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-09-21&endDate=2017-09-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-09-21&endDate=2017-09-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-09-21&endDate=2017-09-21&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-09-21&endDate=2017-09-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-09-21&endDate=2017-09-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-09-22&endDate=2017-09-22&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-09-22&endDate=2017-09-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-09-22&endDate=2017-09-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-09-22&endDate=2017-09-22&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-09-22&endDate=2017-09-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-09-22&endDate=2017-09-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-09-23&endDate=2017-09-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-09-23&endDate=2017-09-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-09-23&endDate=2017-09-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-09-23&endDate=2017-09-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-09-23&endDate=2017-09-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-09-23&endDate=2017-09-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-09-24&endDate=2017-09-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-09-24&endDate=2017-09-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-09-24&endDate=2017-09-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-09-24&endDate=2017-09-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-09-24&endDate=2017-09-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-09-24&endDate=2017-09-24&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 16457,
+          "title": "SM, medel, final",
+          "score": 79,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-09-23&endDate=2017-09-23&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:16457-1&classExternalId=307550-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-398\\competition-enriched.json"
+    }
+  }
+}

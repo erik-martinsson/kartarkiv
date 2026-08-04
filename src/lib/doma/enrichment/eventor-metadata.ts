@@ -252,42 +252,79 @@ function cleanClassName(
 function parseClassLine(
   value: string,
 ): RunnerClassInformation | null {
-  const text = normalizeText(value);
+  const text = normalizeText(value)
+    .replace(/[()[\]]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 
   if (!text) {
     return null;
   }
 
   /*
-   * Exempel:
-   * H21 Elit 12 860 m, 42 startande
-   * H21 Elite 12 860 m, 42 starting competitors
-   * H21E (12860 m)
+   * Läs klass och längd i samma regex så att första
+   * siffran i exempelvis "H21 5 300 m" inte råkar
+   * hamna i klassnamnet.
    */
-  const distanceKm =
-    parseDistanceKm(text);
+  const meterMatch = text.match(
+    /^(.+?)\s+(\d(?:[\d\s]*\d)?)\s*m\b/i,
+  );
 
-  if (distanceKm === null) {
+  if (meterMatch) {
+    const raceClass =
+      cleanClassName(meterMatch[1]);
+
+    const meters = Number(
+      meterMatch[2].replace(/\s+/g, ""),
+    );
+
+    if (
+      raceClass &&
+      raceClass.length <= 100 &&
+      Number.isFinite(meters) &&
+      meters >= 200 &&
+      meters <= 100_000
+    ) {
+      return {
+        raceClass,
+        distanceKm: Number(
+          (meters / 1_000).toFixed(3),
+        ),
+      };
+    }
+  }
+
+  const kilometerMatch = text
+    .replace(",", ".")
+    .match(
+      /^(.+?)\s+(\d+(?:\.\d+)?)\s*km\b/i,
+    );
+
+  if (!kilometerMatch) {
     return null;
   }
 
   const raceClass =
-    cleanClassName(
-      text
-        .replace(/[()[\]]/g, " ")
-        .replace(/\s+/g, " "),
-    );
+    cleanClassName(kilometerMatch[1]);
+
+  const kilometers =
+    Number(kilometerMatch[2]);
 
   if (
     !raceClass ||
-    raceClass.length > 100
+    raceClass.length > 100 ||
+    !Number.isFinite(kilometers) ||
+    kilometers < 0.2 ||
+    kilometers > 100
   ) {
     return null;
   }
 
   return {
     raceClass,
-    distanceKm,
+    distanceKm: Number(
+      kilometers.toFixed(3),
+    ),
   };
 }
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Medel-SM, final H21C (2017-09-22)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/398.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.988005229113</north>
+          <south>58.961393940731</south>
+          <east>15.131875559593</east>
+          <west>15.096574183196</west>
+          <rotation>0.025926594655659</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

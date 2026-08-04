@@ -1,0 +1,170 @@
+{
+  "doma": {
+    "mapId": 384,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=384",
+    "title": "O-ringen E2 H21L",
+    "date": "2017-07-23",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "1:12:28",
+    "runningDistanceKm": 12.47,
+    "courseLengthKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/384.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/384.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=384&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=50267&categoryId=3"
+  },
+  "location": null,
+  "latitude": 59.558932777778,
+  "longitude": 12.813232222222,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "24",
+    "starters": "105",
+    "controls": 14,
+    "time": "1:12:27",
+    "totalMistakeTime": "8:04",
+    "mistakes": [
+      {
+        "control": 8,
+        "time": "4:22"
+      },
+      {
+        "control": 9,
+        "time": "2:49"
+      },
+      {
+        "control": 10,
+        "time": "0:53"
+      }
+    ]
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "O-ringen E2 H21L",
+    "domaDate": "2017-07-23",
+    "databaseId": 50267,
+    "searchedDates": [
+      "2017-07-21",
+      "2017-07-22",
+      "2017-07-23",
+      "2017-07-24",
+      "2017-07-25"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2017-07-21&endDate=2017-07-21&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-07-21&endDate=2017-07-21&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-07-21&endDate=2017-07-21&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-07-21&endDate=2017-07-21&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-07-21&endDate=2017-07-21&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-07-21&endDate=2017-07-21&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-07-22&endDate=2017-07-22&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-07-22&endDate=2017-07-22&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-07-22&endDate=2017-07-22&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-07-22&endDate=2017-07-22&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-07-22&endDate=2017-07-22&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-07-22&endDate=2017-07-22&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-07-23&endDate=2017-07-23&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-07-23&endDate=2017-07-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-07-23&endDate=2017-07-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-07-23&endDate=2017-07-23&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-07-23&endDate=2017-07-23&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-07-23&endDate=2017-07-23&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-07-24&endDate=2017-07-24&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-07-24&endDate=2017-07-24&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-07-24&endDate=2017-07-24&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-07-24&endDate=2017-07-24&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-07-24&endDate=2017-07-24&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-07-24&endDate=2017-07-24&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 16881,
+        "title": "O-Ringen Värmland 2017",
+        "score": 32,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-07-23&endDate=2017-07-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 19591,
+        "title": "O-Ringen Värmland 2017, MtbO",
+        "score": 29,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-07-23&endDate=2017-07-23&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 19612,
+        "title": "Sommarserien",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 19608,
+        "title": "MerSu-Cup 2017 deltävling 4",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18496,
+        "title": "Tränings-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 19610,
+        "title": "Motionsorientering - För alla!",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 19611,
+        "title": "Teknikträning Sommaren 2017",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-07-25&endDate=2017-07-25&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen tillräckligt säker Eventor-träff hittades.",
+    "Klassen kunde inte identifieras från Eventors resultatlista.",
+    "Banlängden kunde inte identifieras från Eventors resultatlista."
+  ]
+}

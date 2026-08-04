@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T14:06:21.166Z",
+  "competition": {
+    "doma": {
+      "mapId": 378,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=378",
+      "title": "SM Sprintstafett",
+      "date": "2017-06-03",
+      "category": "Tävling",
+      "relayLeg": 2,
+      "runningTime": "15:24",
+      "runningDistanceKm": 4.21,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/378.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/378.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=378&format=kml",
+      "winsplitsUrl": null,
+      "courseLengthKm": 3.09
+    },
+    "location": null,
+    "latitude": 59.273663472222,
+    "longitude": 15.217302638889,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "DH21",
+      "club": null,
+      "position": "8",
+      "starters": "40",
+      "controls": 19,
+      "time": "15:24",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "SM Sprintstafett",
+      "domaDate": "2017-06-03",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-378\\competition-enriched.json"
+    }
+  }
+}

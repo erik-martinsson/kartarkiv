@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: 25-Manna (2017-10-06)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/401.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>59.19294156911</north>
+          <south>59.162157447454</south>
+          <east>17.821353395915</east>
+          <west>17.743290628644</west>
+          <rotation>-2.2430373032781</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

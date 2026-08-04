@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T14:22:10.527Z",
+  "competition": {
+    "doma": {
+      "mapId": 391,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=391",
+      "title": "Jönköpings OK",
+      "date": "2017-08-26",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "1:05:53",
+      "runningDistanceKm": 11.42,
+      "courseLengthKm": 9.71,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/391.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/391.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=391&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=50882&categoryId=1"
+    },
+    "location": null,
+    "latitude": 57.602160555556,
+    "longitude": 14.249355833333,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "2",
+      "starters": "5",
+      "controls": 19,
+      "time": "1:05:55",
+      "totalMistakeTime": "0:29",
+      "mistakes": [
+        {
+          "control": 17,
+          "time": "0:29"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 15178,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/15178",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=15178",
+      "title": "Jönköpings OK",
+      "date": "",
+      "organiser": "Jönköpings OK",
+      "location": "",
+      "rawDiscipline": "lång",
+      "raceClass": "H219",
+      "distanceKm": 0.71,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:15178-1&classExternalId=299748-1"
+    },
+    "eventorMatch": {
+      "eventId": 15178,
+      "title": "Jönköpings OK",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/15178",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=15178",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Jönköpings OK",
+      "domaDate": "2017-08-26",
+      "databaseId": 50882,
+      "searchedDates": [
+        "2017-08-24",
+        "2017-08-25",
+        "2017-08-26",
+        "2017-08-27",
+        "2017-08-28"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2017-08-24&endDate=2017-08-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-08-24&endDate=2017-08-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-08-24&endDate=2017-08-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-08-24&endDate=2017-08-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-08-24&endDate=2017-08-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-08-24&endDate=2017-08-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-08-25&endDate=2017-08-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-08-25&endDate=2017-08-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-08-25&endDate=2017-08-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-08-25&endDate=2017-08-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-08-25&endDate=2017-08-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-08-25&endDate=2017-08-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-08-26&endDate=2017-08-26&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-08-26&endDate=2017-08-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-08-26&endDate=2017-08-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-08-26&endDate=2017-08-26&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-08-26&endDate=2017-08-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-08-26&endDate=2017-08-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-08-27&endDate=2017-08-27&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-08-27&endDate=2017-08-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-08-27&endDate=2017-08-27&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-08-27&endDate=2017-08-27&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-08-27&endDate=2017-08-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-08-27&endDate=2017-08-27&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-08-28&endDate=2017-08-28&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-08-28&endDate=2017-08-28&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-08-28&endDate=2017-08-28&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-08-28&endDate=2017-08-28&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-08-28&endDate=2017-08-28&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-08-28&endDate=2017-08-28&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 15178,
+          "title": "Jönköpings OK",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-08-27&endDate=2017-08-27&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:15178-1&classExternalId=299748-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-391\\competition-enriched.json"
+    }
+  }
+}

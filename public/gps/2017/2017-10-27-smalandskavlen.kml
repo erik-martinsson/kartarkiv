@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Smålandskavlen (2017-10-27)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/402.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.836858527205</north>
+          <south>57.798161572756</south>
+          <east>14.868608432391</east>
+          <west>14.818166923043</west>
+          <rotation>-3.8886755292114</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Kolmårdssprinten (2017-11-10)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/403.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.66529210162</north>
+          <south>58.6581883617</south>
+          <east>16.464074768474</east>
+          <west>16.444279720635</west>
+          <rotation>-5.0759398489311</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T14:13:22.792Z",
+  "competition": {
+    "doma": {
+      "mapId": 381,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=381",
+      "title": "Tjoget",
+      "date": "2017-07-01",
+      "category": "Tävling",
+      "relayLeg": 19,
+      "runningTime": "49:38",
+      "runningDistanceKm": 9.36,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/381.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/381.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=381&format=kml",
+      "winsplitsUrl": null,
+      "courseLengthKm": 7.98
+    },
+    "location": null,
+    "latitude": 56.767699305556,
+    "longitude": 15.181171388889,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "Tjoget",
+      "club": "Linköpings OK",
+      "position": "4",
+      "starters": "75",
+      "controls": null,
+      "time": "49:38",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Tjoget",
+      "domaDate": "2017-07-01",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-381\\competition-enriched.json"
+    }
+  }
+}

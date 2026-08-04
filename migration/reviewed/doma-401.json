@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T14:29:58.182Z",
+  "competition": {
+    "doma": {
+      "mapId": 401,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=401",
+      "title": "25-Manna",
+      "date": "2017-10-06",
+      "category": "Tävling",
+      "relayLeg": 24,
+      "runningTime": "46:21",
+      "runningDistanceKm": 9,
+      "courseLengthKm": 8,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/401.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/401.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=401&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=51965&categoryId=8"
+    },
+    "location": null,
+    "latitude": 59.177106388889,
+    "longitude": 17.782305138889,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "25-manna",
+      "club": "Linköpings OK 1",
+      "position": "17",
+      "starters": "375",
+      "controls": 20,
+      "time": "46:22",
+      "totalMistakeTime": "0:38",
+      "mistakes": [
+        {
+          "control": 1,
+          "time": "0:38"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "25-Manna",
+      "domaDate": "2017-10-06",
+      "databaseId": 51965,
+      "searchedDates": [
+        "2017-10-04",
+        "2017-10-05",
+        "2017-10-06",
+        "2017-10-07",
+        "2017-10-08"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2017-10-04&endDate=2017-10-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-10-04&endDate=2017-10-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-10-04&endDate=2017-10-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-10-04&endDate=2017-10-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-10-04&endDate=2017-10-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-10-04&endDate=2017-10-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-10-06&endDate=2017-10-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-10-06&endDate=2017-10-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-10-06&endDate=2017-10-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-10-06&endDate=2017-10-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-10-06&endDate=2017-10-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-10-06&endDate=2017-10-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-10-07&endDate=2017-10-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-10-07&endDate=2017-10-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-10-07&endDate=2017-10-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-10-07&endDate=2017-10-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-10-07&endDate=2017-10-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-10-07&endDate=2017-10-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 19890,
+          "title": "\"icons\">tor 5/1025-mannaträning",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20221,
+          "title": "25-mannaträning",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-04&endDate=2017-10-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20302,
+          "title": "25-mannaträning",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20295,
+          "title": "25-mannaträning / klubbträning Östra Husby",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20354,
+          "title": "närLtor 5/10Borlänge-Säter 25-manna träning",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20177,
+          "title": "Borlänge-Säter 25-manna träning",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20337,
+          "title": "Motionsorientering/25-mannaträning",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 19754,
+          "title": "Veteran-OL nr 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-04&endDate=2017-10-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20353,
+          "title": "Natt-OL Hälsoarenan 2017",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-04&endDate=2017-10-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20269,
+          "title": "Nattjakta 2 Edanenäset",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-04&endDate=2017-10-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 19839,
+          "title": "POL-Sisustugan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20305,
+          "title": "Veteran-Ol Bågskyttebanan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20227,
+          "title": "Roslagsveteranerna 5 okt i Sigtuna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20134,
+          "title": "Vet OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 19242,
+          "title": "Veteran-OL tävling 18",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 18436,
+          "title": "Veteran-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20264,
+          "title": "OK Löftans SprintCup #1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 18508,
+          "title": "Tränings-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20306,
+          "title": "GBG Teknikträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20226,
+          "title": "Nattcup",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-05&endDate=2017-10-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20256,
+          "title": "Östra Natt del 5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-06&endDate=2017-10-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20162,
+          "title": "KM-Natt 2017",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-06&endDate=2017-10-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15463,
+          "title": "25manna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-07&endDate=2017-10-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 18154,
+          "title": "25manna, individuella öppna klasser",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-07&endDate=2017-10-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14993,
+          "title": "Falkdrevet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-07&endDate=2017-10-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15936,
+          "title": "KSK-sprinten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15408,
+          "title": "Torslundssprinten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15464,
+          "title": "25mannamedeln",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14994,
+          "title": "Falkdrevet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20202,
+          "title": "Öppet PreO KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-10-08&endDate=2017-10-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-401\\competition-enriched.json"
+    }
+  }
+}

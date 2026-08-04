@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T14:32:11.550Z",
+  "competition": {
+    "doma": {
+      "mapId": 403,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=403",
+      "title": "Kolmårdssprinten",
+      "date": "2017-11-10",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "18:28",
+      "runningDistanceKm": 4.09,
+      "courseLengthKm": 3.9,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/403.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/403.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=403&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=52514&categoryId=2"
+    },
+    "location": null,
+    "latitude": 58.661546944444,
+    "longitude": 16.454145277778,
+    "discipline": "Sprint",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "Herrar Lång",
+      "club": "Linköpings OK",
+      "position": "4",
+      "starters": "198",
+      "controls": 26,
+      "time": "18:20",
+      "totalMistakeTime": "0:27",
+      "mistakes": [
+        {
+          "control": 12,
+          "time": "0:27"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 20278,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/20278",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=20278",
+      "title": "Kolmårdensprinten",
+      "date": "",
+      "organiser": "OK Kolmården",
+      "location": "",
+      "rawDiscipline": "sprint",
+      "raceClass": "Herrar Lång3",
+      "distanceKm": 0.9,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:20278-1&classExternalId=307849-1"
+    },
+    "eventorMatch": {
+      "eventId": 20278,
+      "title": "Kolmårdensprinten",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/20278",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=20278",
+      "score": 0,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Kolmårdssprinten",
+      "domaDate": "2017-11-10",
+      "databaseId": 52514,
+      "searchedDates": [
+        "2017-11-08",
+        "2017-11-09",
+        "2017-11-10",
+        "2017-11-11",
+        "2017-11-12"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2017-11-08&endDate=2017-11-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-11-08&endDate=2017-11-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-11-08&endDate=2017-11-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-11-08&endDate=2017-11-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-11-08&endDate=2017-11-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-11-08&endDate=2017-11-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-11-10&endDate=2017-11-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-11-10&endDate=2017-11-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-11-10&endDate=2017-11-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-11-10&endDate=2017-11-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-11-10&endDate=2017-11-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-11-10&endDate=2017-11-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-11-11&endDate=2017-11-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-11-11&endDate=2017-11-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-11-11&endDate=2017-11-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-11-11&endDate=2017-11-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-11-11&endDate=2017-11-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-11-11&endDate=2017-11-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2017-11-12&endDate=2017-11-12&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2017-11-12&endDate=2017-11-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2017-11-12&endDate=2017-11-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2017-11-12&endDate=2017-11-12&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2017-11-12&endDate=2017-11-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2017-11-12&endDate=2017-11-12&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 20224,
+          "title": "Ravinen-by-Night",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-08&endDate=2017-11-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 19760,
+          "title": "Veteran-OL nr 8",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-08&endDate=2017-11-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20463,
+          "title": "Ravinen-by-Night del 3-Terräng-KM Special",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-08&endDate=2017-11-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20425,
+          "title": "MOF Nattcup #2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-08&endDate=2017-11-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20596,
+          "title": "Veteran-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20606,
+          "title": "Natt-OL 2017-11-09",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20545,
+          "title": "GBG Teknikträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20521,
+          "title": "HSOK Klubbmästerskap Natt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20489,
+          "title": "Landehofs Nattcup Etapp 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20471,
+          "title": "Öppen träning i Karlslund",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20561,
+          "title": "Östra Blekinges nattcup deltävling 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20555,
+          "title": "MOX-spets Bjurs",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-09&endDate=2017-11-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20498,
+          "title": "Öppet KM Kortdistans Natt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-10&endDate=2017-11-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15527,
+          "title": "O-event, dag 1, Sprint by Night",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-10&endDate=2017-11-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15468,
+          "title": "Novembertävlingarna, medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-11&endDate=2017-11-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20499,
+          "title": "Öppet KM Kortdistans Dag",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-11&endDate=2017-11-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 20278,
+          "title": "Kolmårdensprinten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2017-11-11&endDate=2017-11-11&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:20278-1&classExternalId=307849-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-403\\competition-enriched.json"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Ultraträffen, medel (2017-08-04)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/388.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.447666587397</north>
+          <south>57.423498437169</south>
+          <east>13.343056203748</east>
+          <west>13.290515701594</west>
+          <rotation>1.8650360163632</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>
