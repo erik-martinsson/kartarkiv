@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T19:26:07.380Z",
+  "competition": {
+    "doma": {
+      "mapId": 451,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=451",
+      "title": "Ultralång-SM",
+      "date": "2018-11-03",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "2:41:29",
+      "runningDistanceKm": 27.5,
+      "courseLengthKm": 22.1,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/451.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/451.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=451&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=59252&categoryId=1"
+    },
+    "location": null,
+    "latitude": 57.922015138889,
+    "longitude": 14.579154166667,
+    "discipline": "Ultralång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21 Elit",
+      "club": "Linköpings OK",
+      "position": "24",
+      "starters": "47",
+      "controls": 26,
+      "time": "2:41:26",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": {
+      "eventId": 22114,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/22114",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=22114",
+      "title": "SM, ultralång",
+      "date": "",
+      "organiser": "IKHP Huskvarna IdrottsklubbJönköpings OK",
+      "location": "",
+      "rawDiscipline": "ultralång",
+      "raceClass": "H21 Elit",
+      "distanceKm": 22.1,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:22114-1&classExternalId=328080-1"
+    },
+    "eventorMatch": {
+      "eventId": 22114,
+      "title": "SM, ultralång",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/22114",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=22114",
+      "score": 95,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Ultralång-SM",
+      "domaDate": "2018-11-03",
+      "databaseId": 59252,
+      "searchedDates": [
+        "2018-11-01",
+        "2018-11-02",
+        "2018-11-03",
+        "2018-11-04",
+        "2018-11-05"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2018-11-01&endDate=2018-11-01&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-11-01&endDate=2018-11-01&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-11-01&endDate=2018-11-01&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-11-01&endDate=2018-11-01&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-11-01&endDate=2018-11-01&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-11-01&endDate=2018-11-01&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-11-02&endDate=2018-11-02&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-11-02&endDate=2018-11-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-11-02&endDate=2018-11-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-11-02&endDate=2018-11-02&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-11-02&endDate=2018-11-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-11-02&endDate=2018-11-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-11-03&endDate=2018-11-03&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-11-03&endDate=2018-11-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-11-03&endDate=2018-11-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-11-03&endDate=2018-11-03&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-11-03&endDate=2018-11-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-11-03&endDate=2018-11-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-11-04&endDate=2018-11-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-11-04&endDate=2018-11-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-11-04&endDate=2018-11-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-11-04&endDate=2018-11-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-11-04&endDate=2018-11-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-11-04&endDate=2018-11-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-11-05&endDate=2018-11-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-11-05&endDate=2018-11-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-11-05&endDate=2018-11-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-11-05&endDate=2018-11-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-11-05&endDate=2018-11-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-11-05&endDate=2018-11-05&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 22114,
+          "title": "SM, ultralång",
+          "score": 95,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-11-04&endDate=2018-11-04&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:22114-1&classExternalId=328080-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-451\\competition-enriched.json"
+    }
+  }
+}

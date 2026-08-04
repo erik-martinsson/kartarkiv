@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Grövelsjöorienteringen - E2 (2018-08-03)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/435.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>62.071773499241</north>
+          <south>62.033609377405</south>
+          <east>12.405444620765</east>
+          <west>12.34775991055</west>
+          <rotation>2.2602675821033</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

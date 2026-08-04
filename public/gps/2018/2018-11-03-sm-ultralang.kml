@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Ultralång-SM (2018-11-03)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/451.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.943119805725</north>
+          <south>57.901994717926</south>
+          <east>14.632542212573</east>
+          <west>14.525860475957</west>
+          <rotation>-4.2873845251788</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

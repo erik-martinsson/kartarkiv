@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: SM Medel Publiktävling (2018-09-14)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/445.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.519266840572</north>
+          <south>57.500863537671</south>
+          <east>14.371848400112</east>
+          <west>14.324576019134</west>
+          <rotation>0.89952279638493</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

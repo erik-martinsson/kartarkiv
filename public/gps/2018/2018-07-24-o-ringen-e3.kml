@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: O-ringen E3 H21L (2018-07-24)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/430.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>63.347000842319</north>
+          <south>63.319603158634</south>
+          <east>18.656972961561</east>
+          <west>18.573050364254</west>
+          <rotation>-6.7902925185289</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

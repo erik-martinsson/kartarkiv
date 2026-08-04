@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Ulrikadubbeln, lång (2018-09-01)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/443.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.147821252085</north>
+          <south>58.113312780212</south>
+          <east>15.490119234897</east>
+          <west>15.415529157944</west>
+          <rotation>-4.5410350567695</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

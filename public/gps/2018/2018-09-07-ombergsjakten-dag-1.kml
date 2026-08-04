@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Ombergsjakten (2018-09-07)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/444.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.313455679524</north>
+          <south>58.294921937169</south>
+          <east>14.673078933284</east>
+          <west>14.624025020271</west>
+          <rotation>0.99110831760001</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

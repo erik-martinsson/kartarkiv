@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T19:19:10.746Z",
+  "competition": {
+    "doma": {
+      "mapId": 441,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=441",
+      "title": "DM Stafett",
+      "date": "2018-08-25",
+      "category": "Tävling",
+      "relayLeg": 2,
+      "runningTime": "59:57",
+      "runningDistanceKm": 10.76,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/441.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/441.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=441&format=kml",
+      "winsplitsUrl": null,
+      "courseLengthKm": 9.1
+    },
+    "location": null,
+    "latitude": 58.549764722222,
+    "longitude": 16.122454861111,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": null,
+      "position": "4",
+      "starters": "7",
+      "controls": 22,
+      "time": "59:57",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "DM Stafett",
+      "domaDate": "2018-08-25",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-441\\competition-enriched.json"
+    }
+  }
+}

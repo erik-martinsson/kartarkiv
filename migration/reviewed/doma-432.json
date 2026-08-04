@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T19:13:13.062Z",
+  "competition": {
+    "doma": {
+      "mapId": 432,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=432",
+      "title": "O-ringen E5",
+      "date": "2018-07-26",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "1:24:54",
+      "runningDistanceKm": 13.25,
+      "courseLengthKm": 11,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/432.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/432.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=432&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=56960&categoryId=11"
+    },
+    "location": null,
+    "latitude": 63.2865,
+    "longitude": 18.759454583333,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21L",
+      "club": "Linköpings OK",
+      "position": "15",
+      "starters": "161",
+      "controls": 20,
+      "time": "1:24:54",
+      "totalMistakeTime": "3:14",
+      "mistakes": [
+        {
+          "control": 2,
+          "time": "2:25"
+        },
+        {
+          "control": 13,
+          "time": "0:49"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "O-ringen E5 H21L",
+      "domaDate": "2018-07-26",
+      "databaseId": 56960,
+      "searchedDates": [
+        "2018-07-24",
+        "2018-07-25",
+        "2018-07-26",
+        "2018-07-27",
+        "2018-07-28"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-07-25&endDate=2018-07-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-07-25&endDate=2018-07-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-07-25&endDate=2018-07-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-07-25&endDate=2018-07-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-07-25&endDate=2018-07-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-07-25&endDate=2018-07-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-07-26&endDate=2018-07-26&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-07-26&endDate=2018-07-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-07-26&endDate=2018-07-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-07-26&endDate=2018-07-26&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-07-26&endDate=2018-07-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-07-26&endDate=2018-07-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-07-27&endDate=2018-07-27&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-07-27&endDate=2018-07-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-07-27&endDate=2018-07-27&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-07-27&endDate=2018-07-27&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-07-27&endDate=2018-07-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-07-27&endDate=2018-07-27&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-07-28&endDate=2018-07-28&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-07-28&endDate=2018-07-28&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-07-28&endDate=2018-07-28&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-07-28&endDate=2018-07-28&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-07-28&endDate=2018-07-28&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-07-28&endDate=2018-07-28&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 20111,
+          "title": "O-Ringen Höga Kusten",
+          "score": 32,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 22907,
+          "title": "O-Ringen Höga Kusten, MTBO",
+          "score": 29,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24317,
+          "title": "O-Ringen Höga Kusten, elitsprinten",
+          "score": 29,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23115,
+          "title": "Prova på MtbO, O-Ringen Höga Kusten",
+          "score": 27,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23088,
+          "title": "Sommarträning Klaxkullen 2018",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23056,
+          "title": "NOK-träning, HOK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23108,
+          "title": "Motionsorientering i Helsingborg",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-24&endDate=2018-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23099,
+          "title": "Sommarserien",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-26&endDate=2018-07-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 22823,
+          "title": "PreO, Elitserien & A-Cupen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-27&endDate=2018-07-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23116,
+          "title": "FR 2018",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-27&endDate=2018-07-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-432\\competition-enriched.json"
+    }
+  }
+}

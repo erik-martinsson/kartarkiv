@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T19:16:34.951Z",
+  "competition": {
+    "doma": {
+      "mapId": 439,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=439",
+      "title": "Kolmårdsträffen, lång",
+      "date": "2018-08-18",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "1:15:04",
+      "runningDistanceKm": 13.19,
+      "courseLengthKm": 11.32,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/439.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/439.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=439&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=57346&categoryId=1"
+    },
+    "location": null,
+    "latitude": 58.704455972222,
+    "longitude": 16.185332916667,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "10",
+      "starters": "43",
+      "controls": 17,
+      "time": "1:15:04",
+      "totalMistakeTime": "1:13",
+      "mistakes": [
+        {
+          "control": 11,
+          "time": "1:13"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 18561,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/18561",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=18561",
+      "title": "Kolmårdsträffen, lång",
+      "date": "",
+      "organiser": "Tjalve Orienteringsklubb",
+      "location": "",
+      "rawDiscipline": "lång",
+      "raceClass": "H21",
+      "distanceKm": 11.32,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:18561-1&classExternalId=331340-1"
+    },
+    "eventorMatch": {
+      "eventId": 18561,
+      "title": "Kolmårdsträffen, lång",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/18561",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=18561",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Kolmårdsträffen, lång",
+      "domaDate": "2018-08-18",
+      "databaseId": 57346,
+      "searchedDates": [
+        "2018-08-16",
+        "2018-08-17",
+        "2018-08-18",
+        "2018-08-19",
+        "2018-08-20"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2018-08-16&endDate=2018-08-16&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-08-16&endDate=2018-08-16&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-08-16&endDate=2018-08-16&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-08-16&endDate=2018-08-16&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-08-16&endDate=2018-08-16&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-08-16&endDate=2018-08-16&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-08-17&endDate=2018-08-17&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-08-17&endDate=2018-08-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-08-17&endDate=2018-08-17&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-08-17&endDate=2018-08-17&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-08-17&endDate=2018-08-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-08-17&endDate=2018-08-17&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-08-18&endDate=2018-08-18&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-08-18&endDate=2018-08-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-08-18&endDate=2018-08-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-08-18&endDate=2018-08-18&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-08-18&endDate=2018-08-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-08-18&endDate=2018-08-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-08-19&endDate=2018-08-19&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-08-19&endDate=2018-08-19&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-08-19&endDate=2018-08-19&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-08-19&endDate=2018-08-19&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-08-19&endDate=2018-08-19&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-08-19&endDate=2018-08-19&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-08-20&endDate=2018-08-20&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-08-20&endDate=2018-08-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-08-20&endDate=2018-08-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-08-20&endDate=2018-08-20&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-08-20&endDate=2018-08-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-08-20&endDate=2018-08-20&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 18561,
+          "title": "Kolmårdsträffen, lång",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-08-19&endDate=2018-08-19&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:18561-1&classExternalId=331340-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-439\\competition-enriched.json"
+    }
+  }
+}

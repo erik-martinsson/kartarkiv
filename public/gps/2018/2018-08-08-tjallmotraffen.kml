@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Tjällmoträffen (2018-08-08)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/437.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.791555739201</north>
+          <south>58.766002310245</south>
+          <east>15.319484415578</east>
+          <west>15.285156351995</west>
+          <rotation>-4.7276493510412</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>
