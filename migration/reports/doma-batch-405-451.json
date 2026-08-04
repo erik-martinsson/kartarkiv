@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-04T15:07:22.815Z",
+  "finishedAt": "2026-08-04T15:21:58.651Z",
+  "options": {
+    "from": 405,
+    "to": 451,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 47,
+    "created": 45,
+    "skipped": 1,
+    "skippedExisting": 0,
+    "skippedTraining": 1,
+    "failed": 1
+  },
+  "items": [
+    {
+      "mapId": 405,
+      "status": "created",
+      "title": "10Mila",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-405\\competition-enriched.json"
+    },
+    {
+      "mapId": 406,
+      "status": "created",
+      "title": "Svartåfejden",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-406\\competition-enriched.json"
+    },
+    {
+      "mapId": 407,
+      "status": "created",
+      "title": "Ljungsbrokampen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-407\\competition-enriched.json"
+    },
+    {
+      "mapId": 408,
+      "status": "created",
+      "title": "Närkekvartetten, dag 1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-408\\competition-enriched.json"
+    },
+    {
+      "mapId": 409,
+      "status": "created",
+      "title": "Närkekvartetten, dag 2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-409\\competition-enriched.json"
+    },
+    {
+      "mapId": 410,
+      "status": "created",
+      "title": "Närkekvartetten, dag 3",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-410\\competition-enriched.json"
+    },
+    {
+      "mapId": 411,
+      "status": "created",
+      "title": "Närkekvartetten, dag 4",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-411\\competition-enriched.json"
+    },
+    {
+      "mapId": 412,
+      "status": "created",
+      "title": "Staffans minne",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-412\\competition-enriched.json"
+    },
+    {
+      "mapId": 413,
+      "status": "skipped",
+      "skipReason": "training",
+      "title": "Lång-KM",
+      "category": "Träning"
+    },
+    {
+      "mapId": 414,
+      "status": "created",
+      "title": "Pekingduon. sprint",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-414\\competition-enriched.json"
+    },
+    {
+      "mapId": 415,
+      "status": "created",
+      "title": "Pekingduon, medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-415\\competition-enriched.json"
+    },
+    {
+      "mapId": 416,
+      "status": "created",
+      "title": "Stråkensprinten, E1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-416\\competition-enriched.json"
+    },
+    {
+      "mapId": 417,
+      "status": "created",
+      "title": "Stråkensprinten, E2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-417\\competition-enriched.json"
+    },
+    {
+      "mapId": 418,
+      "status": "created",
+      "title": "Gällstads sprint",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-418\\competition-enriched.json"
+    },
+    {
+      "mapId": 419,
+      "status": "created",
+      "title": "Sprint-SM, kval",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-419\\competition-enriched.json"
+    },
+    {
+      "mapId": 420,
+      "status": "created",
+      "title": "Sprint-SM, final",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-420\\competition-enriched.json"
+    },
+    {
+      "mapId": 421,
+      "status": "failed",
+      "error": "DOMA:s WinSplits-länk saknar ett giltigt databaseId eller categoryId."
+    },
+    {
+      "mapId": 422,
+      "status": "created",
+      "title": "Sprint-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-422\\competition-enriched.json"
+    },
+    {
+      "mapId": 423,
+      "status": "created",
+      "title": "Jukola",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-423\\competition-enriched.json"
+    },
+    {
+      "mapId": 424,
+      "status": "created",
+      "title": "Tjoget",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-424\\competition-enriched.json"
+    },
+    {
+      "mapId": 425,
+      "status": "created",
+      "title": "Eskilstuna Weekend E1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-425\\competition-enriched.json"
+    },
+    {
+      "mapId": 426,
+      "status": "created",
+      "title": "Eskilstuna Weekend E2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-426\\competition-enriched.json"
+    },
+    {
+      "mapId": 427,
+      "status": "created",
+      "title": "Eskilstuna Weekend E3",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-427\\competition-enriched.json"
+    },
+    {
+      "mapId": 428,
+      "status": "created",
+      "title": "O-ringen E1 H21L",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-428\\competition-enriched.json"
+    },
+    {
+      "mapId": 429,
+      "status": "created",
+      "title": "O-ringen E2 H21L",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-429\\competition-enriched.json"
+    },
+    {
+      "mapId": 430,
+      "status": "created",
+      "title": "O-ringen E3 H21L",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-430\\competition-enriched.json"
+    },
+    {
+      "mapId": 431,
+      "status": "created",
+      "title": "O-ringen E4 H21L",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-431\\competition-enriched.json"
+    },
+    {
+      "mapId": 432,
+      "status": "created",
+      "title": "O-ringen E5 H21L",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-432\\competition-enriched.json"
+    },
+    {
+      "mapId": 433,
+      "status": "created",
+      "title": "Grövelsjöorienteringen - prologen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-433\\competition-enriched.json"
+    },
+    {
+      "mapId": 434,
+      "status": "created",
+      "title": "Grövelsjöorienteringen - E1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-434\\competition-enriched.json"
+    },
+    {
+      "mapId": 435,
+      "status": "created",
+      "title": "Grövelsjöorienteringen - E2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-435\\competition-enriched.json"
+    },
+    {
+      "mapId": 436,
+      "status": "created",
+      "title": "Grövelsjöorienteringen - E3",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-436\\competition-enriched.json"
+    },
+    {
+      "mapId": 437,
+      "status": "created",
+      "title": "Tjällmoträffen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-437\\competition-enriched.json"
+    },
+    {
+      "mapId": 438,
+      "status": "created",
+      "title": "Kolmårdsträffen, medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-438\\competition-enriched.json"
+    },
+    {
+      "mapId": 439,
+      "status": "created",
+      "title": "Kolmårdsträffen, lång",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-439\\competition-enriched.json"
+    },
+    {
+      "mapId": 440,
+      "status": "created",
+      "title": "DM Medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-440\\competition-enriched.json"
+    },
+    {
+      "mapId": 441,
+      "status": "created",
+      "title": "DM Stafett",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-441\\competition-enriched.json"
+    },
+    {
+      "mapId": 442,
+      "status": "created",
+      "title": "Ulrikadubbeln, medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-442\\competition-enriched.json"
+    },
+    {
+      "mapId": 443,
+      "status": "created",
+      "title": "Ulrikadubbeln, lång",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-443\\competition-enriched.json"
+    },
+    {
+      "mapId": 444,
+      "status": "created",
+      "title": "Ombergsjakten",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-444\\competition-enriched.json"
+    },
+    {
+      "mapId": 445,
+      "status": "created",
+      "title": "SM Medel Publiktävling",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-445\\competition-enriched.json"
+    },
+    {
+      "mapId": 446,
+      "status": "created",
+      "title": "SM Stafett",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-446\\competition-enriched.json"
+    },
+    {
+      "mapId": 447,
+      "status": "created",
+      "title": "Natt-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-447\\competition-enriched.json"
+    },
+    {
+      "mapId": 448,
+      "status": "created",
+      "title": "Lång-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-448\\competition-enriched.json"
+    },
+    {
+      "mapId": 449,
+      "status": "created",
+      "title": "25-Manna",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-449\\competition-enriched.json"
+    },
+    {
+      "mapId": 450,
+      "status": "created",
+      "title": "Smålandskavlen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-450\\competition-enriched.json"
+    },
+    {
+      "mapId": 451,
+      "status": "created",
+      "title": "Ultralång-SM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-451\\competition-enriched.json"
+    }
+  ]
+}

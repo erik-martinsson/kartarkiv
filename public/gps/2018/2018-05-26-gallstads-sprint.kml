@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Gällstads sprint (2018-05-26)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/418.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.669110525611</north>
+          <south>57.662695606351</south>
+          <east>13.436645880806</east>
+          <west>13.420099470556</west>
+          <rotation>1.5280300693391</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

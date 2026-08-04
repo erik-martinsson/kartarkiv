@@ -1,0 +1,437 @@
+{
+  "doma": {
+    "mapId": 449,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=449",
+    "title": "25-Manna",
+    "date": "2018-10-05",
+    "category": "Tävling",
+    "relayLeg": 2,
+    "runningTime": "42:02",
+    "runningDistanceKm": 8.77,
+    "courseLengthKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/449.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/449.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=449&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=58713&categoryId=3"
+  },
+  "location": null,
+  "latitude": 59.432954027778,
+  "longitude": 17.897521527778,
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "49",
+    "starters": "64",
+    "controls": 12,
+    "time": "42:07",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "25-Manna",
+    "domaDate": "2018-10-05",
+    "databaseId": 58713,
+    "searchedDates": [
+      "2018-10-03",
+      "2018-10-04",
+      "2018-10-05",
+      "2018-10-06",
+      "2018-10-07"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-10-05&endDate=2018-10-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-10-05&endDate=2018-10-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-10-05&endDate=2018-10-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-10-05&endDate=2018-10-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-10-05&endDate=2018-10-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-10-05&endDate=2018-10-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-10-07&endDate=2018-10-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-10-07&endDate=2018-10-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-10-07&endDate=2018-10-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-10-07&endDate=2018-10-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-10-07&endDate=2018-10-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-10-07&endDate=2018-10-07&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 23672,
+        "title": "25-mannaträning",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23799,
+        "title": "class=\"tooltip\" title=\"orienteringslöpning\">klubbLtor 4/1025-mannaträning 181004",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23687,
+        "title": "25-mannaträning 181004",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23710,
+        "title": "Veteran OL 3-stad",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23437,
+        "title": "Veteran-OL nr 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23776,
+        "title": "VCEIT",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23763,
+        "title": "Medel-KM OL-TEAMET 2018",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23041,
+        "title": "Rolles nattcup",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23535,
+        "title": "Solna OK Natt-KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-03&endDate=2018-10-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23158,
+        "title": "POL-Högaliden",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23787,
+        "title": "Veteran",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23209,
+        "title": "Veteran-OL Stadsparken",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23796,
+        "title": "Skol-OL åk 7",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23684,
+        "title": "Roslagsveteranerna",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22382,
+        "title": "Veteran-OL tävling 18",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23736,
+        "title": "GOK VeteranOL, Garpe",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23502,
+        "title": "Veteranorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23711,
+        "title": "Veteran OL Göteborg",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23798,
+        "title": "Skol-OL åk 9",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22039,
+        "title": "Tränings-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23785,
+        "title": "Ingvarnatt",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23240,
+        "title": "GBG Teknikträning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23739,
+        "title": "Flygande kilometern 2018-10-04",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23766,
+        "title": "Markbygdsträning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22507,
+        "title": "Motionsorientering Umeå",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23623,
+        "title": "Baikanatta",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23367,
+        "title": "Nattcup LOK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-04&endDate=2018-10-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18623,
+        "title": "Falkdrevet, dag 1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 19881,
+        "title": "25manna",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22364,
+        "title": "Motionsorientering 25manna",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23783,
+        "title": "Skellefteå OK öppna KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23321,
+        "title": "KM MTBO, Medel",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23506,
+        "title": "Skogsfalken Open",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-06&endDate=2018-10-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18624,
+        "title": "Falkdrevet, dag 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-07&endDate=2018-10-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 19882,
+        "title": "25mannamedeln",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-10-07&endDate=2018-10-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen tillräckligt säker Eventor-träff hittades.",
+    "Klassen kunde inte identifieras från Eventors resultatlista.",
+    "Banlängden kunde inte identifieras från Eventors resultatlista."
+  ]
+}

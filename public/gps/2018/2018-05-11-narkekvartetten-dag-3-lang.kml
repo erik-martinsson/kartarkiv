@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Närkekvartetten, dag 3 (2018-05-11)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/410.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>59.29249878096</north>
+          <south>59.251492520289</south>
+          <east>14.879938732985</east>
+          <west>14.794126928855</west>
+          <rotation>0.41357587966391</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

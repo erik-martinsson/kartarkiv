@@ -261,35 +261,118 @@ function parseClassLine(
     return null;
   }
 
-  /*
-   * Läs klass och längd i samma regex så att första
-   * siffran i exempelvis "H21 5 300 m" inte råkar
-   * hamna i klassnamnet.
-   */
-  const meterMatch = text.match(
-    /^(.+?)\s+(\d(?:[\d\s]*\d)?)\s*m\b/i,
+  const meterTextMatch = text.match(
+    /^(.+?)\s*m\b/i,
   );
 
-  if (meterMatch) {
-    const raceClass =
-      cleanClassName(meterMatch[1]);
+  if (meterTextMatch) {
+    const beforeMeters =
+      meterTextMatch[1].trim();
 
-    const meters = Number(
-      meterMatch[2].replace(/\s+/g, ""),
-    );
+    const candidates: Array<{
+      raceClass: string;
+      distanceKm: number;
+      score: number;
+    }> = [];
 
-    if (
-      raceClass &&
-      raceClass.length <= 100 &&
-      Number.isFinite(meters) &&
-      meters >= 200 &&
-      meters <= 100_000
+    for (
+      let splitIndex = 1;
+      splitIndex < beforeMeters.length;
+      splitIndex += 1
     ) {
-      return {
+      const left =
+        beforeMeters.slice(0, splitIndex).trim();
+
+      const right =
+        beforeMeters.slice(splitIndex).trim();
+
+      if (
+        !left ||
+        !/^\d[\d\s]*$/.test(right)
+      ) {
+        continue;
+      }
+
+      const meters = Number(
+        right.replace(/\s+/g, ""),
+      );
+
+      if (
+        !Number.isFinite(meters) ||
+        meters < 200 ||
+        meters > 100_000
+      ) {
+        continue;
+      }
+
+      const raceClass =
+        cleanClassName(left);
+
+      if (
+        !raceClass ||
+        raceClass.length > 100
+      ) {
+        continue;
+      }
+
+      let score = 0;
+
+      const standardClass =
+        raceClass.match(
+          /^([HD])\s*(\d{1,3})(.*)$/i,
+        );
+
+      if (standardClass) {
+        const age =
+          Number(standardClass[2]);
+
+        if (age >= 8 && age <= 100) {
+          score += 100;
+        } else {
+          score -= 100;
+        }
+
+        score += 20;
+      }
+
+      if (
+        /(?:elit|elite|kort|lång|lang|öppen|oppen|open|motion)/i.test(
+          raceClass,
+        )
+      ) {
+        score += 10;
+      }
+
+      if (meters >= 1_000 && meters <= 30_000) {
+        score += 30;
+      } else if (meters >= 500) {
+        score += 10;
+      }
+
+      if (meters >= 1_000) {
+        score += 15;
+      }
+
+      candidates.push({
         raceClass,
         distanceKm: Number(
           (meters / 1_000).toFixed(3),
         ),
+        score,
+      });
+    }
+
+    candidates.sort(
+      (left, right) =>
+        right.score - left.score,
+    );
+
+    if (candidates[0]) {
+      return {
+        raceClass:
+          candidates[0].raceClass,
+        distanceKm:
+          candidates[0].distanceKm,
       };
     }
   }

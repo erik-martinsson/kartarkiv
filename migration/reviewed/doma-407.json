@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T15:35:00.555Z",
+  "competition": {
+    "doma": {
+      "mapId": 407,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=407",
+      "title": "Ljungsbrokampen",
+      "date": "2018-05-07",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "35:19",
+      "runningDistanceKm": 6.34,
+      "courseLengthKm": 5.58,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/407.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/407.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=407&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=55125&categoryId=1"
+    },
+    "location": null,
+    "latitude": 58.589427916667,
+    "longitude": 15.471210972222,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "16",
+      "starters": "57",
+      "controls": 23,
+      "time": "35:15",
+      "totalMistakeTime": "1:17",
+      "mistakes": [
+        {
+          "control": 5,
+          "time": "0:20"
+        },
+        {
+          "control": 17,
+          "time": "0:57"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 18559,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/18559",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=18559",
+      "title": "Ljungsbrokampen",
+      "date": "",
+      "organiser": "OK Skogsströvarna",
+      "location": "",
+      "rawDiscipline": "medel",
+      "raceClass": "H21",
+      "distanceKm": 5.58,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:18559-1&classExternalId=323730-1"
+    },
+    "eventorMatch": {
+      "eventId": 18559,
+      "title": "Ljungsbrokampen",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/18559",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=18559",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Ljungsbrokampen",
+      "domaDate": "2018-05-07",
+      "databaseId": 55125,
+      "searchedDates": [
+        "2018-05-05",
+        "2018-05-06",
+        "2018-05-07",
+        "2018-05-08",
+        "2018-05-09"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2018-05-05&endDate=2018-05-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-05-05&endDate=2018-05-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-05-05&endDate=2018-05-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-05-05&endDate=2018-05-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-05-05&endDate=2018-05-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-05-05&endDate=2018-05-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-05-06&endDate=2018-05-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-05-06&endDate=2018-05-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-05-06&endDate=2018-05-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-05-06&endDate=2018-05-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-05-06&endDate=2018-05-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-05-06&endDate=2018-05-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 18559,
+          "title": "Ljungsbrokampen",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:18559-1&classExternalId=323730-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-407\\competition-enriched.json"
+    }
+  }
+}

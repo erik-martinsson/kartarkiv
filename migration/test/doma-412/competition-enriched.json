@@ -1,0 +1,115 @@
+{
+  "doma": {
+    "mapId": 412,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=412",
+    "title": "Staffans minne",
+    "date": "2018-05-14",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "15:55",
+    "runningDistanceKm": 4.22,
+    "courseLengthKm": 3.43,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/412.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/412.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=412&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=55320&categoryId=1"
+  },
+  "location": null,
+  "latitude": 58.447022916667,
+  "longitude": 14.889995694444,
+  "discipline": "Sprint",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "H21",
+    "club": "Linköpings OK",
+    "position": "6",
+    "starters": "44",
+    "controls": 19,
+    "time": "15:54",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": {
+    "eventId": 18446,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/18446",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=18446",
+    "title": "Staffans minne",
+    "date": "",
+    "organiser": "Boxholms OK",
+    "location": "",
+    "rawDiscipline": "sprint",
+    "raceClass": "H21",
+    "distanceKm": 3.43,
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:18446-1&classExternalId=315387-1"
+  },
+  "eventorMatch": {
+    "eventId": 18446,
+    "title": "Staffans minne",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/18446",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=18446",
+    "score": 100,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Staffans minne",
+    "domaDate": "2018-05-14",
+    "databaseId": 55320,
+    "searchedDates": [
+      "2018-05-12",
+      "2018-05-13",
+      "2018-05-14",
+      "2018-05-15",
+      "2018-05-16"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2018-05-12&endDate=2018-05-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-05-12&endDate=2018-05-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-05-12&endDate=2018-05-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-05-12&endDate=2018-05-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-05-12&endDate=2018-05-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-05-12&endDate=2018-05-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-05-13&endDate=2018-05-13&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-05-13&endDate=2018-05-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-05-13&endDate=2018-05-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-05-13&endDate=2018-05-13&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-05-13&endDate=2018-05-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-05-13&endDate=2018-05-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-05-14&endDate=2018-05-14&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-05-14&endDate=2018-05-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-05-14&endDate=2018-05-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-05-14&endDate=2018-05-14&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-05-14&endDate=2018-05-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-05-14&endDate=2018-05-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-05-15&endDate=2018-05-15&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-05-15&endDate=2018-05-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-05-15&endDate=2018-05-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-05-15&endDate=2018-05-15&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-05-15&endDate=2018-05-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-05-15&endDate=2018-05-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-05-16&endDate=2018-05-16&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-05-16&endDate=2018-05-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-05-16&endDate=2018-05-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-05-16&endDate=2018-05-16&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-05-16&endDate=2018-05-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-05-16&endDate=2018-05-16&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 18446,
+        "title": "Staffans minne",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-05-15&endDate=2018-05-15&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:18446-1&classExternalId=315387-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+  ]
+}

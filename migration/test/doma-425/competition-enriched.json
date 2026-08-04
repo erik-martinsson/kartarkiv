@@ -1,0 +1,120 @@
+{
+  "doma": {
+    "mapId": 425,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=425",
+    "title": "Eskilstuna Weekend E1",
+    "date": "2018-07-05",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "30:20",
+    "runningDistanceKm": 5.4,
+    "courseLengthKm": 5.09,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/425.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/425.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=425&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=56729&categoryId=2"
+  },
+  "location": null,
+  "latitude": 59.220612083333,
+  "longitude": 16.717226944444,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "H21",
+    "club": "Linköpings OK",
+    "position": "3",
+    "starters": "57",
+    "controls": 19,
+    "time": "30:17",
+    "totalMistakeTime": "0:35",
+    "mistakes": [
+      {
+        "control": 4,
+        "time": "0:35"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 18687,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/18687",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=18687",
+    "title": "Eskilstuna weekend",
+    "date": "",
+    "organiser": "IK StandardÄrla IF",
+    "location": "",
+    "rawDiscipline": "lång",
+    "raceClass": "H21",
+    "distanceKm": 5.09,
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:18687-1&classExternalId=326243-1"
+  },
+  "eventorMatch": {
+    "eventId": 18687,
+    "title": "Eskilstuna weekend",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/18687",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=18687",
+    "score": 94,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Eskilstuna Weekend E1",
+    "domaDate": "2018-07-05",
+    "databaseId": 56729,
+    "searchedDates": [
+      "2018-07-03",
+      "2018-07-04",
+      "2018-07-05",
+      "2018-07-06",
+      "2018-07-07"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2018-07-03&endDate=2018-07-03&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-07-03&endDate=2018-07-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-07-03&endDate=2018-07-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-07-03&endDate=2018-07-03&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-07-03&endDate=2018-07-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-07-03&endDate=2018-07-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 18687,
+        "title": "Eskilstuna weekend",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:18687-1&classExternalId=326243-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+  ]
+}

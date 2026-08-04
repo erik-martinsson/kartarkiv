@@ -1,0 +1,372 @@
+{
+  "doma": {
+    "mapId": 426,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=426",
+    "title": "Eskilstuna Weekend E2",
+    "date": "2018-07-06",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "1:06:01",
+    "runningDistanceKm": 12.2,
+    "courseLengthKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/426.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/426.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=426&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=56734&categoryId=2"
+  },
+  "location": null,
+  "latitude": 59.226871805556,
+  "longitude": 16.689884027778,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "19",
+    "starters": "57",
+    "controls": 21,
+    "time": "1:05:58",
+    "totalMistakeTime": "0:53",
+    "mistakes": [
+      {
+        "control": 13,
+        "time": "0:53"
+      }
+    ]
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Eskilstuna Weekend E2",
+    "domaDate": "2018-07-06",
+    "databaseId": 56734,
+    "searchedDates": [
+      "2018-07-04",
+      "2018-07-05",
+      "2018-07-06",
+      "2018-07-07",
+      "2018-07-08"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-07-08&endDate=2018-07-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-07-08&endDate=2018-07-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-07-08&endDate=2018-07-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-07-08&endDate=2018-07-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-07-08&endDate=2018-07-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-07-08&endDate=2018-07-08&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 18687,
+        "title": "Eskilstuna weekend",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22954,
+        "title": "Eskilstuna Weekend MTBO",
+        "score": 63,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18817,
+        "title": "\"icons\">lör 7/7Eskilstuna Weekend MTBO",
+        "score": 28,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22438,
+        "title": "Trekvällars",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 17608,
+        "title": "Tjust 2-dagars, dag 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22951,
+        "title": "Veckoturen 3-dagars Dag 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22690,
+        "title": "Hälsinglands 3-dagars Etapp 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23011,
+        "title": "GOFs Sommarserie",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16620,
+        "title": "Havs-OL, dag 1, lång",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22859,
+        "title": "Hiernmannen Vadjungen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-04&endDate=2018-07-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 20112,
+        "title": "Havs-OL, dag 2, sprint",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 21285,
+        "title": "MOL 13",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22887,
+        "title": "Veckoturen 3-dagars Dag 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22974,
+        "title": "Närtävling Jönköpings OL-Allians",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 21996,
+        "title": "Tränings-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22942,
+        "title": "5-kvällars etapp 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16621,
+        "title": "Havs-OL, dag 2, medel",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22983,
+        "title": "Motionsorientering i Höganäs",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22015,
+        "title": "Motionsorientering Umeå 5 juli",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22924,
+        "title": "Sommarorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 21685,
+        "title": "Sommarserie 5",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 23022,
+        "title": "Tränings-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-05&endDate=2018-07-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18029,
+        "title": "Vålådalens 3-dagars, etapp 1, sprint",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-06&endDate=2018-07-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 20301,
+        "title": "Seskarö IF jubileum",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18799,
+        "title": "Gotlands 2-dagars",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18030,
+        "title": "Vålådalens 3-dagars, etapp 2, medel",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-07&endDate=2018-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18031,
+        "title": "Vålådalens 3-dagars, etapp 3, lång",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-08&endDate=2018-07-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 22897,
+        "title": "Skellefteå OK, Ostvik",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-07-08&endDate=2018-07-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen tillräckligt säker Eventor-träff hittades.",
+    "Klassen kunde inte identifieras från Eventors resultatlista.",
+    "Banlängden kunde inte identifieras från Eventors resultatlista."
+  ]
+}

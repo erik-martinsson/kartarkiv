@@ -1,0 +1,130 @@
+{
+  "doma": {
+    "mapId": 408,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=408",
+    "title": "Närkekvartetten, dag 1",
+    "date": "2018-05-09",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "1:50:20",
+    "runningDistanceKm": 15.11,
+    "courseLengthKm": 12.45,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/408.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/408.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=408&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=55200&categoryId=1"
+  },
+  "location": null,
+  "latitude": 59.400508194444,
+  "longitude": 15.012084027778,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "H21 Elit",
+    "club": "Linköpings OK",
+    "position": "17",
+    "starters": "36",
+    "controls": 19,
+    "time": "1:50:18",
+    "totalMistakeTime": "3:53",
+    "mistakes": [
+      {
+        "control": 12,
+        "time": "3:53"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 18463,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/18463",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=18463",
+    "title": "Närkekvartetten, dag 1, lång",
+    "date": "",
+    "organiser": "Almby IKKFUM Örebro OK",
+    "location": "",
+    "rawDiscipline": "lång",
+    "raceClass": "H21 Elit",
+    "distanceKm": 12.45,
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:18463-1&classExternalId=317550-1"
+  },
+  "eventorMatch": {
+    "eventId": 18463,
+    "title": "Närkekvartetten, dag 1, lång",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/18463",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=18463",
+    "score": 94,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Närkekvartetten, dag 1",
+    "domaDate": "2018-05-09",
+    "databaseId": 55200,
+    "searchedDates": [
+      "2018-05-07",
+      "2018-05-08",
+      "2018-05-09",
+      "2018-05-10",
+      "2018-05-11"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-05-07&endDate=2018-05-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-05-08&endDate=2018-05-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-05-09&endDate=2018-05-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-05-10&endDate=2018-05-10&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-05-10&endDate=2018-05-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-05-10&endDate=2018-05-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-05-10&endDate=2018-05-10&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-05-10&endDate=2018-05-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-05-10&endDate=2018-05-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2018-05-11&endDate=2018-05-11&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2018-05-11&endDate=2018-05-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2018-05-11&endDate=2018-05-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2018-05-11&endDate=2018-05-11&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2018-05-11&endDate=2018-05-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2018-05-11&endDate=2018-05-11&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 20973,
+        "title": "\"icons\">tor 10/5Närkekvartetten, dag 1, lång",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-05-10&endDate=2018-05-10&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 18463,
+        "title": "Närkekvartetten, dag 1, lång",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2018-05-10&endDate=2018-05-10&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:18463-1&classExternalId=317550-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+  ]
+}

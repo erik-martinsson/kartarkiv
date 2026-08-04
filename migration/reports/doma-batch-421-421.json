@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-04T15:29:34.023Z",
+  "finishedAt": "2026-08-04T15:30:07.872Z",
+  "options": {
+    "from": 421,
+    "to": 421,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": true
+  },
+  "counts": {
+    "total": 1,
+    "created": 1,
+    "skipped": 0,
+    "skippedExisting": 0,
+    "skippedTraining": 0,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 421,
+      "status": "created",
+      "title": "Sprint-SM, stafett",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-421\\competition-enriched.json"
+    }
+  ]
+}

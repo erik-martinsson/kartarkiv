@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Tjoget (2018-06-30)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/424.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>56.637562119282</north>
+          <south>56.610100870862</south>
+          <east>15.663811819251</east>
+          <west>15.595019133564</west>
+          <rotation>-4.9137897188648</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

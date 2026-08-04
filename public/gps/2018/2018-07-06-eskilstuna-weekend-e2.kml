@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Eskilstuna Weekend E2 (2018-07-06)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/426.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>59.237937284382</north>
+          <south>59.216387403334</south>
+          <east>16.723676818374</east>
+          <west>16.656103200314</west>
+          <rotation>-1.6443445519377</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>
