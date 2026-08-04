@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T12:46:37.593Z",
+  "competition": {
+    "doma": {
+      "mapId": 319,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=319",
+      "title": "Kolmårdskavlen",
+      "date": "2016-04-09",
+      "category": "Tävling",
+      "relayLeg": 4,
+      "runningTime": "59:01",
+      "runningDistanceKm": 10.45,
+      "courseLengthKm": 8.9,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/319.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/319.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=319&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=41386&categoryId=19"
+    },
+    "location": null,
+    "latitude": 58.730695555556,
+    "longitude": 16.355591666667,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H17",
+      "club": "Linköpings OK 1",
+      "position": "10",
+      "starters": "23",
+      "controls": 16,
+      "time": "58:58",
+      "totalMistakeTime": "2:51",
+      "mistakes": [
+        {
+          "control": 10,
+          "time": "1:13"
+        },
+        {
+          "control": 11,
+          "time": "0:46"
+        },
+        {
+          "control": 14,
+          "time": "0:52"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Kolmårdskavlen",
+      "domaDate": "2016-04-09",
+      "databaseId": 41386,
+      "searchedDates": [
+        "2016-04-07",
+        "2016-04-08",
+        "2016-04-09",
+        "2016-04-10",
+        "2016-04-11"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-04-08&endDate=2016-04-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-04-08&endDate=2016-04-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-04-08&endDate=2016-04-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-04-08&endDate=2016-04-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-04-08&endDate=2016-04-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-04-08&endDate=2016-04-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-04-11&endDate=2016-04-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-04-11&endDate=2016-04-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-04-11&endDate=2016-04-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-04-11&endDate=2016-04-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-04-11&endDate=2016-04-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-04-11&endDate=2016-04-11&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 12028,
+          "title": "=\"icons\">sön 10/4Kolmårdsdubbeln, Kolmårdskavlen",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12155,
+          "title": "Kolmårdsdubbeln, Kolmårdskavlen",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15569,
+          "title": "Natt-Cup Light/Teknikträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14715,
+          "title": "POL Mostugan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15150,
+          "title": "Veteranorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15321,
+          "title": "Roslagsveteranerna Lövsättra",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14701,
+          "title": "Veteran-OL tävling 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15099,
+          "title": "Veteran-O Göteborg",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15595,
+          "title": "Ol-teknik Bergamålahallar",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15551,
+          "title": "Samträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14971,
+          "title": "Kretsträning Marks Orienteringskrets",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15006,
+          "title": "Masstartsträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14731,
+          "title": "DOK:s motions-OL Råbäck",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-07&endDate=2016-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11818,
+          "title": "Grymnatta",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-08&endDate=2016-04-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14278,
+          "title": "Observationstävling (medel) inför WC, Polen och EM, Tjeckien",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-08&endDate=2016-04-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12514,
+          "title": "Nattinatta",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-08&endDate=2016-04-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11552,
+          "title": "Göteborgsdubbeln, lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11041,
+          "title": "OK Tors ungdomstävling",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12096,
+          "title": "Vårstarten i Avesta, medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14620,
+          "title": "SkidO, Bodens BK skartävling",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12026,
+          "title": "Swedish League, #1, sprint (WRE), med Brösarpssprinten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14040,
+          "title": "50turen Naturpasset",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14895,
+          "title": "Run to The Hills 2016",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11762,
+          "title": "Västboträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12154,
+          "title": "Kolmårdsdubbeln, Kolmårdsmedeln",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12087,
+          "title": "Lännamedeln",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-09&endDate=2016-04-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11553,
+          "title": "Göteborgsdubbeln, medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11042,
+          "title": "Torfejden, lång/medel (ungdomar sprint)",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12131,
+          "title": "Öppet skaraborgsmästerskap, medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12515,
+          "title": "Broruset",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15512,
+          "title": "Kolmårdsdubbeln, Öppna motionsklasser",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15604,
+          "title": "Rånässtafetten, individuella öppna motionsklasser",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12259,
+          "title": "Rånässtafetten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14948,
+          "title": "Kvarnsveden När-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14981,
+          "title": "Motionsorientering Umeå 10 april",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12680,
+          "title": "Anebyorienteringen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-04-10&endDate=2016-04-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-319\\competition-enriched.json"
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "doma": {
+    "mapId": 346,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=346",
+    "title": "Avesta Propagandan",
+    "date": "2016-08-13",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "31:08",
+    "runningDistanceKm": 5.51,
+    "courseLengthKm": 0.79,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/346.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/346.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=346&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=44037&categoryId=1"
+  },
+  "location": null,
+  "latitude": 60.075330277778,
+  "longitude": 16.060209166667,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "D21 Elit4",
+    "club": "Linköpings OK",
+    "position": "1",
+    "starters": "23",
+    "controls": 19,
+    "time": "31:12",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": {
+    "eventId": 13629,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/13629",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=13629",
+    "title": "Avesta Propagandan",
+    "date": "",
+    "organiser": "Avesta OK",
+    "location": "",
+    "rawDiscipline": "medel",
+    "raceClass": "D21 Elit4",
+    "distanceKm": 0.79,
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:13629-1&classExternalId=244462-1"
+  },
+  "eventorMatch": {
+    "eventId": 13629,
+    "title": "Avesta Propagandan",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/13629",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=13629",
+    "score": 100,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Avesta Propagandan",
+    "domaDate": "2016-08-13",
+    "databaseId": 44037,
+    "searchedDates": [
+      "2016-08-11",
+      "2016-08-12",
+      "2016-08-13",
+      "2016-08-14",
+      "2016-08-15"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2016-08-11&endDate=2016-08-11&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-11&endDate=2016-08-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-11&endDate=2016-08-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-11&endDate=2016-08-11&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-11&endDate=2016-08-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-11&endDate=2016-08-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-12&endDate=2016-08-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-12&endDate=2016-08-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-12&endDate=2016-08-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-12&endDate=2016-08-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-12&endDate=2016-08-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-12&endDate=2016-08-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-13&endDate=2016-08-13&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-13&endDate=2016-08-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-13&endDate=2016-08-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-13&endDate=2016-08-13&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-13&endDate=2016-08-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-13&endDate=2016-08-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-14&endDate=2016-08-14&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-14&endDate=2016-08-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-14&endDate=2016-08-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-14&endDate=2016-08-14&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-14&endDate=2016-08-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-14&endDate=2016-08-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-15&endDate=2016-08-15&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-15&endDate=2016-08-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-15&endDate=2016-08-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-15&endDate=2016-08-15&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-15&endDate=2016-08-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-15&endDate=2016-08-15&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 13628,
+        "title": "Avesta Propagandan",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-08-13&endDate=2016-08-13&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13629,
+        "title": "Avesta Propagandan",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-08-14&endDate=2016-08-14&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:13629-1&classExternalId=244462-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+  ]
+}

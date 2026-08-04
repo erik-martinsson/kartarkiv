@@ -1,0 +1,156 @@
+{
+  "doma": {
+    "mapId": 343,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=343",
+    "title": "TibroTrippeln, lång",
+    "date": "2016-08-06",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "1:47:28",
+    "runningDistanceKm": 16.69,
+    "courseLengthKm": 0.46,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/343.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/343.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=343&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=43914&categoryId=1"
+  },
+  "location": null,
+  "latitude": 58.422430833333,
+  "longitude": 14.255937777778,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "D21 Elit9",
+    "club": "Linköpings OK",
+    "position": "9",
+    "starters": "35",
+    "controls": 24,
+    "time": "1:47:25",
+    "totalMistakeTime": "14:24",
+    "mistakes": [
+      {
+        "control": 3,
+        "time": "0:41"
+      },
+      {
+        "control": 6,
+        "time": "1:11"
+      },
+      {
+        "control": 7,
+        "time": "2:11"
+      },
+      {
+        "control": 14,
+        "time": "3:05"
+      },
+      {
+        "control": 17,
+        "time": "3:04"
+      },
+      {
+        "control": 18,
+        "time": "0:36"
+      },
+      {
+        "control": 21,
+        "time": "1:30"
+      },
+      {
+        "control": 22,
+        "time": "1:17"
+      },
+      {
+        "control": 23,
+        "time": "0:26"
+      },
+      {
+        "control": 24,
+        "time": "0:23"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 11570,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/11570",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=11570",
+    "title": "Tibrotrippeln, dag 3, lång",
+    "date": "",
+    "organiser": "IF HagenTibro OKTidaholm SOK Sisu",
+    "location": "",
+    "rawDiscipline": "lång",
+    "raceClass": "D21 Elit9",
+    "distanceKm": 0.46,
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:11570-1&classExternalId=244847-1"
+  },
+  "eventorMatch": {
+    "eventId": 11570,
+    "title": "Tibrotrippeln, dag 3, lång",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/11570",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=11570",
+    "score": 85,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "TibroTrippeln, lång",
+    "domaDate": "2016-08-06",
+    "databaseId": 43914,
+    "searchedDates": [
+      "2016-08-04",
+      "2016-08-05",
+      "2016-08-06",
+      "2016-08-07",
+      "2016-08-08"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-07&endDate=2016-08-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-07&endDate=2016-08-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-07&endDate=2016-08-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-07&endDate=2016-08-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-07&endDate=2016-08-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-07&endDate=2016-08-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-08&endDate=2016-08-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-08&endDate=2016-08-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-08&endDate=2016-08-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-08&endDate=2016-08-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-08&endDate=2016-08-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-08&endDate=2016-08-08&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 11570,
+        "title": "Tibrotrippeln, dag 3, lång",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-08-07&endDate=2016-08-07&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:11570-1&classExternalId=244847-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+  ]
+}

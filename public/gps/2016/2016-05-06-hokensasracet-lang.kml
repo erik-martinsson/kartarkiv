@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Hökensåsracet, lång (2016-05-06)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/326.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.991954093398</north>
+          <south>57.965688478086</south>
+          <east>14.138680115004</east>
+          <west>14.103317146631</west>
+          <rotation>0.59951578566994</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

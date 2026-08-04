@@ -38,6 +38,8 @@ export type EventorMetadata = {
   organiser: string;
   location: string;
   rawDiscipline: string;
+  raceClass: string;
+  distanceKm: number | null;
   liveloxUrl: string | null;
 };
 

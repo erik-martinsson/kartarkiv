@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Sprint-SM Final (2016-06-04)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/332.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>56.210781201003</north>
+          <south>56.203522962938</south>
+          <east>15.276263306327</east>
+          <west>15.263524563178</west>
+          <rotation>-0.23264644011591</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,128 @@
+{
+  "doma": {
+    "mapId": 326,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=326",
+    "title": "Hökensåsracet, lång",
+    "date": "2016-05-06",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "54:27",
+    "runningDistanceKm": 9.55,
+    "courseLengthKm": 0.45,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/326.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/326.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=326&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=42062&categoryId=2"
+  },
+  "location": null,
+  "latitude": 57.978491111111,
+  "longitude": 14.120998611111,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "H218",
+    "club": "Linköpings Orienteringsklubb",
+    "position": "3",
+    "starters": "25",
+    "controls": 23,
+    "time": "54:28",
+    "totalMistakeTime": "2:34",
+    "mistakes": [
+      {
+        "control": 2,
+        "time": "1:00"
+      },
+      {
+        "control": 18,
+        "time": "0:57"
+      },
+      {
+        "control": 20,
+        "time": "0:37"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 11708,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/11708",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=11708",
+    "title": "Hökensåsracet, lång",
+    "date": "",
+    "organiser": "OK Gränsen",
+    "location": "",
+    "rawDiscipline": "lång",
+    "raceClass": "H218",
+    "distanceKm": 0.45,
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:11708-1&classExternalId=236283-1"
+  },
+  "eventorMatch": {
+    "eventId": 11708,
+    "title": "Hökensåsracet, lång",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/11708",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=11708",
+    "score": 100,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Hökensåsracet, lång",
+    "domaDate": "2016-05-06",
+    "databaseId": 42062,
+    "searchedDates": [
+      "2016-05-04",
+      "2016-05-05",
+      "2016-05-06",
+      "2016-05-07",
+      "2016-05-08"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-05-07&endDate=2016-05-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-05-07&endDate=2016-05-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-05-07&endDate=2016-05-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-05-07&endDate=2016-05-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-05-07&endDate=2016-05-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-05-07&endDate=2016-05-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-05-08&endDate=2016-05-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-05-08&endDate=2016-05-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-05-08&endDate=2016-05-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-05-08&endDate=2016-05-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-05-08&endDate=2016-05-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-05-08&endDate=2016-05-08&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 11708,
+        "title": "Hökensåsracet, lång",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-07&endDate=2016-05-07&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:11708-1&classExternalId=236283-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+  ]
+}

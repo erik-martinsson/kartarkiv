@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: 10MILA, str3 (2016-05-13)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/327.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>60.644586348408</north>
+          <south>60.615102304311</south>
+          <east>15.751286853825</east>
+          <west>15.654081814016</west>
+          <rotation>-0.62180122685938</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

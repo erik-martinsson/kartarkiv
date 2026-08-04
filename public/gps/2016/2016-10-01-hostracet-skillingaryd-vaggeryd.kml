@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Höstracet (2016-10-01)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/354.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.473858780389</north>
+          <south>57.451784376475</south>
+          <east>14.081303050998</east>
+          <west>14.04745925426</west>
+          <rotation>1.0645794835457</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

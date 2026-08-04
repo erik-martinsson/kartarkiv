@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: DM-Stafett Östergötland (2016-09-10)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/352.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.617693732025</north>
+          <south>58.590750091588</south>
+          <east>15.229715819326</east>
+          <west>15.158627385057</west>
+          <rotation>-0.26221807316497</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

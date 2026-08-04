@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T13:03:09.148Z",
+  "competition": {
+    "doma": {
+      "mapId": 336,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=336",
+      "title": "O-ringen E2",
+      "date": "2016-07-24",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "1:17:39",
+      "runningDistanceKm": 13.5,
+      "courseLengthKm": 11,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/336.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/336.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=336&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=43800&categoryId=3"
+    },
+    "location": null,
+    "latitude": 61.143116388889,
+    "longitude": 13.107362777778,
+    "discipline": "Annan",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21E2",
+      "club": "Linköpings OK",
+      "position": "24",
+      "starters": "140",
+      "controls": 17,
+      "time": "1:17:39",
+      "totalMistakeTime": "4:19",
+      "mistakes": [
+        {
+          "control": 3,
+          "time": "0:45"
+        },
+        {
+          "control": 6,
+          "time": "0:34"
+        },
+        {
+          "control": 13,
+          "time": "3:00"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "O-ringen H21E2 E2",
+      "domaDate": "2016-07-24",
+      "databaseId": 43800,
+      "searchedDates": [
+        "2016-07-22",
+        "2016-07-23",
+        "2016-07-24",
+        "2016-07-25",
+        "2016-07-26"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2016-07-22&endDate=2016-07-22&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-07-22&endDate=2016-07-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-07-22&endDate=2016-07-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-07-22&endDate=2016-07-22&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-07-22&endDate=2016-07-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-07-22&endDate=2016-07-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-07-23&endDate=2016-07-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-07-23&endDate=2016-07-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-07-23&endDate=2016-07-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-07-23&endDate=2016-07-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-07-23&endDate=2016-07-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-07-23&endDate=2016-07-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-07-24&endDate=2016-07-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-07-24&endDate=2016-07-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-07-24&endDate=2016-07-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-07-24&endDate=2016-07-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-07-24&endDate=2016-07-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-07-24&endDate=2016-07-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-07-25&endDate=2016-07-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-07-25&endDate=2016-07-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-07-25&endDate=2016-07-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-07-25&endDate=2016-07-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-07-25&endDate=2016-07-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-07-25&endDate=2016-07-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-07-26&endDate=2016-07-26&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-07-26&endDate=2016-07-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-07-26&endDate=2016-07-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-07-26&endDate=2016-07-26&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-07-26&endDate=2016-07-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-07-26&endDate=2016-07-26&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 13850,
+          "title": "O-Ringen AXA-stafetten",
+          "score": 32,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-07-23&endDate=2016-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13229,
+          "title": "O-Ringen Sälen 2016",
+          "score": 32,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-07-24&endDate=2016-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 16422,
+          "title": "Träningsrace MtbO O-Ringen Sälen",
+          "score": 29,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-07-22&endDate=2016-07-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 16420,
+          "title": "Träningsrace OL O-Ringen Sälen",
+          "score": 29,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-07-22&endDate=2016-07-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13231,
+          "title": "O-Ringen Sälen 2016 Pre-O",
+          "score": 29,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-07-24&endDate=2016-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13230,
+          "title": "MtbO, O-Ringen Sälen 2016",
+          "score": 29,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-07-25&endDate=2016-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12151,
+          "title": "Morokulien 2-dagars",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-07-22&endDate=2016-07-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11759,
+          "title": "PreO, \"Helsingehelg\" i Idre, DM Dalarna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-07-22&endDate=2016-07-22&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-336\\competition-enriched.json"
+    }
+  }
+}

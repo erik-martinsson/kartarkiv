@@ -158,6 +158,262 @@ function createLiveloxUrl(
   }
 }
 
+type RunnerClassInformation = {
+  raceClass: string;
+  distanceKm: number | null;
+};
+
+function decodeHtmlText(
+  html: string,
+): string {
+  return normalizeText(
+    cheerio
+      .load(`<div>${html}</div>`)("div")
+      .text(),
+  );
+}
+
+function normalizeRunnerName(
+  value: string,
+): string {
+  return comparableText(value)
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function parseDistanceKm(
+  value: string,
+): number | null {
+  const meterMatch = value.match(
+    /\b(\d[\d\s]{2,6})\s*m\b/i,
+  );
+
+  if (meterMatch) {
+    const meters = Number(
+      meterMatch[1].replace(/\s+/g, ""),
+    );
+
+    if (
+      Number.isFinite(meters) &&
+      meters >= 200 &&
+      meters <= 100_000
+    ) {
+      return Number(
+        (meters / 1_000).toFixed(3),
+      );
+    }
+  }
+
+  const kilometerMatch = value
+    .replace(",", ".")
+    .match(
+      /\b(\d+(?:\.\d+)?)\s*km\b/i,
+    );
+
+  if (!kilometerMatch) {
+    return null;
+  }
+
+  const kilometers =
+    Number(kilometerMatch[1]);
+
+  return (
+    Number.isFinite(kilometers) &&
+    kilometers >= 0.2 &&
+    kilometers <= 100
+  )
+    ? Number(kilometers.toFixed(3))
+    : null;
+}
+
+function cleanClassName(
+  value: string,
+): string {
+  return normalizeText(value)
+    .replace(
+      /^(?:klass|class)\s*:?\s*/i,
+      "",
+    )
+    .replace(
+      /\s+\d[\d\s]{2,6}\s*m\b.*$/i,
+      "",
+    )
+    .replace(
+      /\s+\d+(?:[.,]\d+)?\s*km\b.*$/i,
+      "",
+    )
+    .replace(
+      /\s*,?\s*\d+\s+(?:startande|starting competitors|starters)\b.*$/i,
+      "",
+    )
+    .trim();
+}
+
+function parseClassLine(
+  value: string,
+): RunnerClassInformation | null {
+  const text = normalizeText(value);
+
+  if (!text) {
+    return null;
+  }
+
+  /*
+   * Exempel:
+   * H21 Elit 12 860 m, 42 startande
+   * H21 Elite 12 860 m, 42 starting competitors
+   * H21E (12860 m)
+   */
+  const distanceKm =
+    parseDistanceKm(text);
+
+  if (distanceKm === null) {
+    return null;
+  }
+
+  const raceClass =
+    cleanClassName(
+      text
+        .replace(/[()[\]]/g, " ")
+        .replace(/\s+/g, " "),
+    );
+
+  if (
+    !raceClass ||
+    raceClass.length > 100
+  ) {
+    return null;
+  }
+
+  return {
+    raceClass,
+    distanceKm,
+  };
+}
+
+function findRunnerClassInformation(
+  html: string,
+  runnerName: string,
+): RunnerClassInformation | null {
+  const $ = cheerio.load(html);
+  const wantedName =
+    normalizeRunnerName(runnerName);
+
+  let runnerRowElement:
+    Parameters<typeof $>[0] | null = null;
+
+  $("tr").each((_index, element) => {
+    if (runnerRowElement) {
+      return;
+    }
+
+    const rowText =
+      normalizeRunnerName($(element).text());
+
+    if (
+      rowText &&
+      rowText.includes(wantedName)
+    ) {
+      runnerRowElement = element;
+    }
+  });
+
+  if (runnerRowElement) {
+    const runnerRow =
+      $(runnerRowElement);
+
+    /*
+     * Sök först bland tidigare syskon i samma tabell.
+     */
+    let previous =
+      runnerRow.prev();
+
+    for (
+      let step = 0;
+      previous.length > 0 && step < 40;
+      step += 1
+    ) {
+      const information =
+        parseClassLine(previous.text());
+
+      if (information) {
+        return information;
+      }
+
+      previous = previous.prev();
+    }
+
+    /*
+     * Därefter i rubriker och närliggande block före tabellen.
+     */
+    const table = runnerRow.closest("table");
+    let block = table.prev();
+
+    for (
+      let step = 0;
+      block.length > 0 && step < 20;
+      step += 1
+    ) {
+      const information =
+        parseClassLine(block.text());
+
+      if (information) {
+        return information;
+      }
+
+      block = block.prev();
+    }
+  }
+
+  /*
+   * Reservmetod: hitta löparens position i den avkodade
+   * resultatsidan och välj den sista klass-/längdraden före
+   * löparen. Detta fungerar även när Eventor använder en
+   * ovanlig tabellstruktur.
+   */
+  const decoded =
+    decodeHtmlText(html);
+
+  const runnerIndex =
+    normalizeRunnerName(decoded)
+      .indexOf(wantedName);
+
+  if (runnerIndex < 0) {
+    return null;
+  }
+
+  const beforeRunner =
+    decoded.slice(
+      Math.max(0, runnerIndex - 60_000),
+      runnerIndex,
+    );
+
+  const candidates:
+    RunnerClassInformation[] = [];
+
+  const patterns = [
+    /([^\n\r]{1,120}?\b\d[\d\s]{2,6}\s*m\b(?:\s*,?\s*\d+\s+(?:startande|starting competitors|starters))?)/giu,
+    /([^\n\r]{1,120}?\b\d+(?:[.,]\d+)?\s*km\b(?:\s*,?\s*\d+\s+(?:startande|starting competitors|starters))?)/giu,
+  ];
+
+  for (const pattern of patterns) {
+    for (
+      const match of beforeRunner.matchAll(
+        pattern,
+      )
+    ) {
+      const information =
+        parseClassLine(match[1]);
+
+      if (information) {
+        candidates.push(information);
+      }
+    }
+  }
+
+  return candidates.at(-1) ?? null;
+}
+
 function findLiveloxUrl(
   html: string,
   baseUrl: string,
@@ -209,7 +465,7 @@ function findLiveloxUrl(
 
 export async function readEventorMetadata(
   match: EventorMatch,
-  raceClass: string,
+  runnerName: string,
 ): Promise<EventorMetadata> {
   const [eventHtml, resultHtml] =
     await Promise.all([
@@ -235,6 +491,12 @@ export async function readEventorMetadata(
   const rawDate =
     readValue(values, ["Datum"]);
 
+  const runnerClass =
+    findRunnerClassInformation(
+      resultHtml,
+      runnerName,
+    );
+
   return {
     eventId: match.eventId,
     eventorUrl: match.eventorUrl,
@@ -256,10 +518,14 @@ export async function readEventorMetadata(
       "Tävlingsdistans",
       "Distans",
     ]),
+    raceClass:
+      runnerClass?.raceClass ?? "",
+    distanceKm:
+      runnerClass?.distanceKm ?? null,
     liveloxUrl: findLiveloxUrl(
       resultHtml,
       match.resultListUrl,
-      raceClass,
+      runnerClass?.raceClass ?? "",
     ),
   };
 }

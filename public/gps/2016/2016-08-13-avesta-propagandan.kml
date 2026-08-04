@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Avesta Propagandan (2016-08-13)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/346.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>60.085311290489</north>
+          <south>60.06604333401</south>
+          <east>16.086528546237</east>
+          <west>16.03389236585</west>
+          <rotation>-0.72999700518498</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,6 +1,6 @@
 import { readDomaCompetition } from "../index";
 import {
-  loadWinSplitsWithMetadata,
+  loadWinSplits,
   type WinSplitsRunner,
 } from "../../../../studio/src/lib/winsplits";
 import {
@@ -89,16 +89,12 @@ function normalizeResultTime(
     return null;
   }
 
-  const parts = normalized.split(/[.:]/);
+  const parts =
+    normalized.split(/[.:]/);
 
   if (
-    parts.length !== 2 &&
-    parts.length !== 3
-  ) {
-    return normalized;
-  }
-
-  if (
+    (parts.length !== 2 &&
+      parts.length !== 3) ||
     !parts.every((part) =>
       /^\d+$/.test(part),
     )
@@ -125,8 +121,11 @@ function normalizeResultTime(
     );
   }
 
-  const totalMinutes = Number(parts[0]);
-  const seconds = Number(parts[1]);
+  const totalMinutes =
+    Number(parts[0]);
+
+  const seconds =
+    Number(parts[1]);
 
   if (seconds >= 60) {
     return normalized;
@@ -141,6 +140,7 @@ function normalizeResultTime(
 
   const hours =
     Math.floor(totalMinutes / 60);
+
   const minutes =
     totalMinutes % 60;
 
@@ -318,9 +318,9 @@ export async function readEnrichedDomaCompetition(
    * tävlingens titel eller datum. DOMA är facit
    * för båda värdena.
    */
-  const [winsplitsData, eventorResolution] =
+  const [runners, eventorResolution] =
     await Promise.all([
-      loadWinSplitsWithMetadata(
+      loadWinSplits(
         ids.databaseId,
         ids.categoryId,
       ),
@@ -330,9 +330,6 @@ export async function readEnrichedDomaCompetition(
         ids.databaseId,
       ),
     ]);
-
-  const { runners, metadata: winsplitsMetadata } =
-    winsplitsData;
 
   const runner =
     findRunner(runners, runnerName);
@@ -356,7 +353,7 @@ export async function readEnrichedDomaCompetition(
     eventorMatch
       ? await readEventorMetadata(
           eventorMatch,
-          "",
+          runnerName,
         )
       : null;
 
@@ -424,19 +421,21 @@ export async function readEnrichedDomaCompetition(
 
   const raceClass =
     cleanOptional(
-      winsplitsMetadata.raceClass,
+      eventor?.raceClass,
     );
 
-  const officialDistanceKm =
-    winsplitsMetadata.distanceKm ??
-    doma.runningDistanceKm ??
-    null;
+  const courseLengthKm =
+    eventor?.distanceKm ?? null;
 
-  if (
-    winsplitsMetadata.distanceKm === null
-  ) {
+  if (!raceClass) {
     warnings.push(
-      "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+    );
+  }
+
+  if (courseLengthKm === null) {
+    warnings.push(
+      "Banlängden kunde inte identifieras från Eventors resultatlista.",
     );
   }
 
@@ -450,7 +449,8 @@ export async function readEnrichedDomaCompetition(
       relayLeg: doma.relayLeg,
       runningTime: doma.runningTime,
       runningDistanceKm:
-        officialDistanceKm,
+        doma.runningDistanceKm,
+      courseLengthKm,
       routeMapImageUrl:
         doma.routeMapImageUrl,
       blankMapImageUrl:

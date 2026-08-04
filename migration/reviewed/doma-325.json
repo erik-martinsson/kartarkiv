@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T12:54:23.105Z",
+  "competition": {
+    "doma": {
+      "mapId": 325,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=325",
+      "title": "Ulricehamns OK",
+      "date": "2016-05-04",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "32:50",
+      "runningDistanceKm": 6.04,
+      "courseLengthKm": 5.33,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/325.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/325.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=325&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=42021&categoryId=1"
+    },
+    "location": null,
+    "latitude": 57.828581666667,
+    "longitude": 13.479436388889,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "2",
+      "starters": "19",
+      "controls": 15,
+      "time": "32:53",
+      "totalMistakeTime": "1:05",
+      "mistakes": [
+        {
+          "control": 5,
+          "time": "0:41"
+        },
+        {
+          "control": 12,
+          "time": "0:24"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 12331,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/12331",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=12331",
+      "title": "Ulricehamns OK",
+      "date": "",
+      "organiser": "Ulricehamns OK",
+      "location": "",
+      "rawDiscipline": "medel",
+      "raceClass": "H215",
+      "distanceKm": 0.33,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:12331-1&classExternalId=242356-1"
+    },
+    "eventorMatch": {
+      "eventId": 12331,
+      "title": "Ulricehamns OK",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/12331",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=12331",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Ulricehamns OK",
+      "domaDate": "2016-05-04",
+      "databaseId": 42021,
+      "searchedDates": [
+        "2016-05-02",
+        "2016-05-03",
+        "2016-05-04",
+        "2016-05-05",
+        "2016-05-06"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2016-05-02&endDate=2016-05-02&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-05-02&endDate=2016-05-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-05-02&endDate=2016-05-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-05-02&endDate=2016-05-02&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-05-02&endDate=2016-05-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-05-02&endDate=2016-05-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-05-03&endDate=2016-05-03&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-05-03&endDate=2016-05-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-05-03&endDate=2016-05-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-05-03&endDate=2016-05-03&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-05-03&endDate=2016-05-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-05-03&endDate=2016-05-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-05-04&endDate=2016-05-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-05-06&endDate=2016-05-06&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 12331,
+          "title": "Ulricehamns OK",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-05&endDate=2016-05-05&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:12331-1&classExternalId=242356-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-325\\competition-enriched.json"
+    }
+  }
+}

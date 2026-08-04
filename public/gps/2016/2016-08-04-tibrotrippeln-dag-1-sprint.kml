@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: TibroTrippeln, sprint (2016-08-04)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/341.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.42632745423</north>
+          <south>58.415483397025</south>
+          <east>14.188589539557</east>
+          <west>14.174293253564</west>
+          <rotation>0.89899086912409</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,115 @@
+{
+  "doma": {
+    "mapId": 341,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=341",
+    "title": "TibroTrippeln, sprint",
+    "date": "2016-08-04",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "13:34",
+    "runningDistanceKm": 3.44,
+    "courseLengthKm": 0.82,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/341.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/341.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=341&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=43899&categoryId=1"
+  },
+  "location": null,
+  "latitude": 58.420774861111,
+  "longitude": 14.181444166667,
+  "discipline": "Sprint",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "H212",
+    "club": "Linköpings OK",
+    "position": "2",
+    "starters": "30",
+    "controls": 18,
+    "time": "13:31",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": {
+    "eventId": 11568,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/11568",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=11568",
+    "title": "Tibrotrippeln, dag 1, sprint",
+    "date": "",
+    "organiser": "IF HagenTibro OKTidaholm SOK Sisu",
+    "location": "",
+    "rawDiscipline": "sprint",
+    "raceClass": "H212",
+    "distanceKm": 0.82,
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:11568-1&classExternalId=244725-1"
+  },
+  "eventorMatch": {
+    "eventId": 11568,
+    "title": "Tibrotrippeln, dag 1, sprint",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/11568",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=11568",
+    "score": 85,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "TibroTrippeln, sprint",
+    "domaDate": "2016-08-04",
+    "databaseId": 43899,
+    "searchedDates": [
+      "2016-08-02",
+      "2016-08-03",
+      "2016-08-04",
+      "2016-08-05",
+      "2016-08-06"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2016-08-02&endDate=2016-08-02&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-02&endDate=2016-08-02&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-02&endDate=2016-08-02&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-02&endDate=2016-08-02&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-02&endDate=2016-08-02&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-02&endDate=2016-08-02&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-03&endDate=2016-08-03&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-03&endDate=2016-08-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-03&endDate=2016-08-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-03&endDate=2016-08-03&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-03&endDate=2016-08-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-03&endDate=2016-08-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-04&endDate=2016-08-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-08-06&endDate=2016-08-06&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 11568,
+        "title": "Tibrotrippeln, dag 1, sprint",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-08-05&endDate=2016-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:11568-1&classExternalId=244725-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+  ]
+}

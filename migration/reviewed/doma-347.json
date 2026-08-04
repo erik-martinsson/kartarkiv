@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T13:08:36.113Z",
+  "competition": {
+    "doma": {
+      "mapId": 347,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=347",
+      "title": "Ramunderträffen",
+      "date": "2016-08-20",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "37:44",
+      "runningDistanceKm": 6.18,
+      "courseLengthKm": 5.1,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/347.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/347.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=347&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=44191&categoryId=1&ct=true"
+    },
+    "location": null,
+    "latitude": 58.434244861111,
+    "longitude": 16.313375972222,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "8",
+      "starters": "31",
+      "controls": 22,
+      "time": "37:15",
+      "totalMistakeTime": "3:32",
+      "mistakes": [
+        {
+          "control": 7,
+          "time": "2:49"
+        },
+        {
+          "control": 21,
+          "time": "0:43"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 15070,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/15070",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=15070",
+      "title": "Ramunderträffen",
+      "date": "",
+      "organiser": "Söderköpings OK",
+      "location": "",
+      "rawDiscipline": "medel",
+      "raceClass": "",
+      "distanceKm": null,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:15070-1&classExternalId=239628-1"
+    },
+    "eventorMatch": {
+      "eventId": 15070,
+      "title": "Ramunderträffen",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/15070",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=15070",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Ramunderträffen",
+      "domaDate": "2016-08-20",
+      "databaseId": 44191,
+      "searchedDates": [
+        "2016-08-18",
+        "2016-08-19",
+        "2016-08-20",
+        "2016-08-21",
+        "2016-08-22"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2016-08-18&endDate=2016-08-18&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-08-18&endDate=2016-08-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-08-18&endDate=2016-08-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-08-18&endDate=2016-08-18&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-08-18&endDate=2016-08-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-08-18&endDate=2016-08-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-08-19&endDate=2016-08-19&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-08-19&endDate=2016-08-19&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-08-19&endDate=2016-08-19&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-08-19&endDate=2016-08-19&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-08-19&endDate=2016-08-19&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-08-19&endDate=2016-08-19&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-08-20&endDate=2016-08-20&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-08-20&endDate=2016-08-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-08-20&endDate=2016-08-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-08-20&endDate=2016-08-20&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-08-20&endDate=2016-08-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-08-20&endDate=2016-08-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-08-21&endDate=2016-08-21&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-08-21&endDate=2016-08-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-08-21&endDate=2016-08-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-08-21&endDate=2016-08-21&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-08-21&endDate=2016-08-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-08-21&endDate=2016-08-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-08-22&endDate=2016-08-22&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-08-22&endDate=2016-08-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-08-22&endDate=2016-08-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-08-22&endDate=2016-08-22&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-08-22&endDate=2016-08-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-08-22&endDate=2016-08-22&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 15070,
+          "title": "Ramunderträffen",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-08-21&endDate=2016-08-21&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:15070-1&classExternalId=239628-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-347\\competition-enriched.json"
+    }
+  }
+}

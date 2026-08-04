@@ -1,0 +1,657 @@
+{
+  "doma": {
+    "mapId": 333,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=333",
+    "title": "SM, sprintstafett",
+    "date": "2016-06-05",
+    "category": "Tävling",
+    "relayLeg": 3,
+    "runningTime": "13:21",
+    "runningDistanceKm": 3.86,
+    "courseLengthKm": null,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/333.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/333.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=333&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=42957&categoryId=4"
+  },
+  "location": null,
+  "latitude": 56.211616111111,
+  "longitude": 15.277576527778,
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK 1",
+    "position": "10",
+    "starters": "33",
+    "controls": 16,
+    "time": "13:16",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "SM, sprintstafett",
+    "domaDate": "2016-06-05",
+    "databaseId": 42957,
+    "searchedDates": [
+      "2016-06-03",
+      "2016-06-04",
+      "2016-06-05",
+      "2016-06-06",
+      "2016-06-07"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2016-06-03&endDate=2016-06-03&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-06-03&endDate=2016-06-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-06-03&endDate=2016-06-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-06-03&endDate=2016-06-03&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-06-03&endDate=2016-06-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-06-03&endDate=2016-06-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 11735,
+        "title": "ss=\"tooltip\" title=\"orienteringslöpning\">natMsön 5/6SM, sprintstafett, kval",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14876,
+        "title": "SM, sprintstafett, kval",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16051,
+        "title": "=\"icons\">mån 6/6SM, sprintstafett, final",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14875,
+        "title": "SM, sprintstafett, final",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14838,
+        "title": "Kristinehamns sprintstafett",
+        "score": 48,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13928,
+        "title": "SM, sprint, individuell",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13943,
+        "title": "Sprinthelgen, publiktävling SM",
+        "score": 43,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15944,
+        "title": "class=\"tooltip\" title=\"orienteringslöpning\">klubbMmån 6/6Kristinehamns sprintstafett",
+        "score": 37,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16030,
+        "title": "SKK Västmanland Vårting",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-03&endDate=2016-06-03&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12194,
+        "title": "Kinnekullesprinten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13536,
+        "title": "PreO, Hedströmmen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12445,
+        "title": "Vårserien E4",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12324,
+        "title": "Ösaträffen, dag 1, medel",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15838,
+        "title": "Älgots Cup Ungdomstävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16015,
+        "title": "Älgotsscup deltävling 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16003,
+        "title": "Klubbmatch Skogskarlar och Skogsflickor individuellt",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14605,
+        "title": "MtbO, Edsbyns OK, Dag 1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-04&endDate=2016-06-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12325,
+        "title": "Ösaträffen, dag 2, medel",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12220,
+        "title": "Sommarlandssprinten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16101,
+        "title": "Tjogetträning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16017,
+        "title": "Klubbmatch Skogskarlar och Skogsflickor budkavle",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12928,
+        "title": "PreO, Surahammar",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14606,
+        "title": "MtbO, Edsbyns OK, Dag 2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-05&endDate=2016-06-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12326,
+        "title": "Ösaträffen, dag 3, lång",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 11679,
+        "title": "DM, sprint, Värmland",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16028,
+        "title": "KM lång",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12427,
+        "title": "PreO, DM, Västmanland",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16112,
+        "title": "Haninge SOK Dag-KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16087,
+        "title": "Lång KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16022,
+        "title": "Närtävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15882,
+        "title": "KM långdistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15997,
+        "title": "Lång KM",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15967,
+        "title": "Klubbmästerskap",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16177,
+        "title": "Klubbmästerskap Sprintdistans",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16104,
+        "title": "GOF Jukola/Venla test",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-06&endDate=2016-06-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14624,
+        "title": "Sprintcup 1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15878,
+        "title": "VPT final",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15887,
+        "title": "Veterantävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15751,
+        "title": "Dala Veteran",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14685,
+        "title": "Tisdags-OL Rånna",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15111,
+        "title": "Motions-OL Djerfstugan",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16160,
+        "title": "Cykel-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14849,
+        "title": "Frida City Sprint E2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16025,
+        "title": "Lilla 5-dagars E2",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16183,
+        "title": "Motionsorientering - För alla!",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16013,
+        "title": "Träning OL-NV (Klubbmästerskap)",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15962,
+        "title": "7-Klubbs",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15662,
+        "title": "Motionsorientering Taseboda",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 14179,
+        "title": "Norrcupen 20160607",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15052,
+        "title": "Poängcup 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16186,
+        "title": "Poängjakt 7",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16000,
+        "title": "SOK Viljan MTBO",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 16071,
+        "title": "Jukolarodeo",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15980,
+        "title": "Sprintcupen Etapp 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15788,
+        "title": "Motionsorientering Tjuvholmssundet",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15705,
+        "title": "Siljanskrets medel och närtävling",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 15953,
+        "title": "Till skogs med Roslagens Sparbank - deltävling 4",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-06-07&endDate=2016-06-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen tillräckligt säker Eventor-träff hittades.",
+    "Klassen kunde inte identifieras från Eventors resultatlista.",
+    "Banlängden kunde inte identifieras från Eventors resultatlista."
+  ]
+}

@@ -1,0 +1,696 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T12:56:32.878Z",
+  "competition": {
+    "doma": {
+      "mapId": 327,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=327",
+      "title": "10MILA",
+      "date": "2016-05-13",
+      "category": "Tävling",
+      "relayLeg": 3,
+      "runningTime": "1:08:46",
+      "runningDistanceKm": 14.03,
+      "courseLengthKm": 11.93,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/327.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/327.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=327&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=42292&categoryId=34&ct=true"
+    },
+    "location": null,
+    "latitude": 60.62943375,
+    "longitude": 15.702696805556,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "Herrar",
+      "club": "Linköpings OK 1",
+      "position": "8",
+      "starters": "344",
+      "controls": 14,
+      "time": "1:08:42",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "10MILA, str3",
+      "domaDate": "2016-05-13",
+      "databaseId": 42292,
+      "searchedDates": [
+        "2016-05-11",
+        "2016-05-12",
+        "2016-05-13",
+        "2016-05-14",
+        "2016-05-15"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-05-13&endDate=2016-05-13&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-05-13&endDate=2016-05-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-05-13&endDate=2016-05-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-05-13&endDate=2016-05-13&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-05-13&endDate=2016-05-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-05-13&endDate=2016-05-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 15886,
+          "title": "GBG Teknikträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15120,
+          "title": "Ungdomsserie 1, Västra",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15793,
+          "title": "Ungdomsserien Östra",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15800,
+          "title": "Veteran OL 3-stad",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15106,
+          "title": "Motions-OL Båsbergen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15647,
+          "title": "Motionsorientering Skatås",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15643,
+          "title": "Motionsorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14858,
+          "title": "Motionsorientering - Borås 1 av 5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15330,
+          "title": "IKHP Sprint Cup 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15837,
+          "title": "MTBO Träningstävling, Risen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15759,
+          "title": "Södra Hallands Ungdomsserie Etapp 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15783,
+          "title": "Ungdomsserien Östra kretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15897,
+          "title": "FUS Folkareserien WOD",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15494,
+          "title": "Njudungszonens ungdomsserie deltävling 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-11&endDate=2016-05-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14909,
+          "title": "Motionsorientering Ursvik",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15609,
+          "title": "POL-Klyftamo",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15957,
+          "title": "Roslagsveteranerna 2016-05-12",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12912,
+          "title": "Sandvikens öppna kommunmästerskap",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15356,
+          "title": "Skidklubbens Sommarcup E1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15853,
+          "title": "Tjustallanses Ungdomsserie-1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13978,
+          "title": "Ungdomsserien, #1, krets norr 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13974,
+          "title": "Ungdomsserien, #1, krets söder 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13975,
+          "title": "Ungdomsserien, #1, krets söder 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13976,
+          "title": "Ungdomsserien, #1, krets söder 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14705,
+          "title": "Veteran-OL tävling 6",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15558,
+          "title": "Först i Mål",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14961,
+          "title": "VOL 1 Stockviksskidstadion",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15166,
+          "title": "DOK:s motions-OL Viken",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15946,
+          "title": "Poängjakt 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15824,
+          "title": "Torsdagsträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15843,
+          "title": "Tränings-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15277,
+          "title": "Motionsorientering Tuggelite",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15888,
+          "title": "Borlänge-Säter träning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15710,
+          "title": "KM Sprint, OK Kontinent & Malmö OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15943,
+          "title": "Kretsträning Holmestad",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14977,
+          "title": "Kretsträning Marks Orienteringskrets",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14656,
+          "title": "MOL 7",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15894,
+          "title": "Motionsorientering 12 maj Umeå",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15308,
+          "title": "Motionsorientering Kroksåsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15547,
+          "title": "Sommarserien 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15541,
+          "title": "Norra Hallands Ungdomsserie Etapp 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13979,
+          "title": "Ungdomsserien, #1, krets norr 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13977,
+          "title": "Ungdomsserien, #1, krets söder 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-12&endDate=2016-05-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13698,
+          "title": "Tiomila Open Individual, Friday",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-13&endDate=2016-05-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14732,
+          "title": "King and Queen of Mördarbacken",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-13&endDate=2016-05-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13708,
+          "title": "PreO, DM, Hälsingland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14394,
+          "title": "PreO, TempO",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13699,
+          "title": "Tiomila Open Individual, Saturday",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8003,
+          "title": "Tiomila i Falun-Borlänge",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14938,
+          "title": "Klubbmästerskap lång, Malmö OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15602,
+          "title": "Skånes Skogsflickmatch i Tockarp",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-14&endDate=2016-05-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15995,
+          "title": "Intensivkurs 2016-05-15",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13707,
+          "title": "PreO, Helsingevår",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13700,
+          "title": "Tiomila Open Individual, Sunday",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15952,
+          "title": "Intensivkurs",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15035,
+          "title": "Motionsorientering Umeå 15 maj",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 14552,
+          "title": "Skogis Cup nr 5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12911,
+          "title": "Veteranträffen i Gästrikland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15626,
+          "title": "Tjustmästerskap dag",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 15954,
+          "title": "Teknikträning/Kul i skogen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2016-05-15&endDate=2016-05-15&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-327\\competition-enriched.json"
+    }
+  }
+}

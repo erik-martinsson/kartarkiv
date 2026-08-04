@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Askersundsträffen (2016-08-12)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/345.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.927940302231</north>
+          <south>58.908447700672</south>
+          <east>15.112837193118</east>
+          <west>15.061383152801</west>
+          <rotation>1.7236523171664</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

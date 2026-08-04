@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Lång-DM (2016-09-03)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/350.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.712854694235</north>
+          <south>58.686233857989</south>
+          <east>16.21380987031</east>
+          <west>16.14263480977</west>
+          <rotation>-0.23889462573005</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Anderstorps OK (2016-04-01)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/315.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.290462746723</north>
+          <south>57.263194572344</south>
+          <east>13.676018851658</east>
+          <west>13.640213199855</west>
+          <rotation>0.78008435410217</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>
