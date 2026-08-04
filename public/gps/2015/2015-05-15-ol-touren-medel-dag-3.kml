@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: OL-touren E3 (2015-05-15)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/275.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>60.800006208194</north>
+          <south>60.779259032895</south>
+          <east>15.470204905754</east>
+          <west>15.413815007653</west>
+          <rotation>-0.23592538628939</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

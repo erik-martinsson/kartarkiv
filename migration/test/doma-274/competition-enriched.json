@@ -1,0 +1,127 @@
+{
+  "doma": {
+    "mapId": 274,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=274",
+    "title": "Silva League #4, medel H21E2",
+    "date": "2015-05-14",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "36:42",
+    "runningDistanceKm": 6.54,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/274.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/274.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=274&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=36317&categoryId=3"
+  },
+  "location": null,
+  "latitude": 60.352964166667,
+  "longitude": 15.71911,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "12",
+    "starters": "53",
+    "controls": 17,
+    "time": "36:41",
+    "totalMistakeTime": "3:05",
+    "mistakes": [
+      {
+        "control": 4,
+        "time": "0:41"
+      },
+      {
+        "control": 8,
+        "time": "0:35"
+      },
+      {
+        "control": 15,
+        "time": "1:49"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 8982,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/8982",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=8982",
+    "title": "Swedish League, medel, med OL-Touren, dag 2",
+    "date": "",
+    "organiser": "Säterbygdens OK",
+    "location": "",
+    "rawDiscipline": "medel",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 8982,
+    "title": "Swedish League, medel, med OL-Touren, dag 2",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/8982",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=8982",
+    "score": 41,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Silva League #4, medel H21E2",
+    "domaDate": "2015-05-14",
+    "databaseId": 36317,
+    "searchedDates": [
+      "2015-05-12",
+      "2015-05-13",
+      "2015-05-14",
+      "2015-05-15",
+      "2015-05-16"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-05-16&endDate=2015-05-16&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-05-16&endDate=2015-05-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-05-16&endDate=2015-05-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-05-16&endDate=2015-05-16&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-05-16&endDate=2015-05-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-05-16&endDate=2015-05-16&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 8982,
+        "title": "Swedish League, medel, med OL-Touren, dag 2",
+        "score": 41,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista.",
+    "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen."
+  ]
+}

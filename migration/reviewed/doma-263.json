@@ -1,0 +1,428 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T11:19:35.812Z",
+  "competition": {
+    "doma": {
+      "mapId": 263,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=263",
+      "title": "Kolmårdskaveln",
+      "date": "2015-04-05",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "51:53",
+      "runningDistanceKm": 9.91,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/263.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/263.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=263&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=35447&categoryId=19",
+      "courseLengthKm": 8.7
+    },
+    "location": null,
+    "latitude": 58.728638055556,
+    "longitude": 16.355535416667,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H17",
+      "club": "Linköpings OK 1",
+      "position": "24",
+      "starters": "75",
+      "controls": 15,
+      "time": "51:55",
+      "totalMistakeTime": "2:51",
+      "mistakes": [
+        {
+          "control": 1,
+          "time": "0:54"
+        },
+        {
+          "control": 2,
+          "time": "1:04"
+        },
+        {
+          "control": 3,
+          "time": "0:53"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Kolmårdskaveln",
+      "domaDate": "2015-04-05",
+      "databaseId": 35447,
+      "searchedDates": [
+        "2015-04-03",
+        "2015-04-04",
+        "2015-04-05",
+        "2015-04-06",
+        "2015-04-07"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 9086,
+          "title": "Sydsvenska 7-mannabudkavlen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8718,
+          "title": "Friskusträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11784,
+          "title": "Järla O-tour, etapp 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9532,
+          "title": "Kortfredan Five-O 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8728,
+          "title": "NAIS-träffen, medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8554,
+          "title": "Påskorienteringen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10877,
+          "title": "Sydsvenska 7-mannabudkavlen, individuella öppna motionsklasser",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12308,
+          "title": "MTBO-träning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11745,
+          "title": "Påskriset",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-03&endDate=2015-04-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8729,
+          "title": "NAIS-träffen, lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9335,
+          "title": "Ärlaträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8580,
+          "title": "Öjetrampen Five-O 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9088,
+          "title": "Göingefejden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9566,
+          "title": "Nackheträffen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-04&endDate=2015-04-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8645,
+          "title": "Kolmårdsmedeln",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8866,
+          "title": "Stockenfejden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9089,
+          "title": "Tockarps IK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11585,
+          "title": "Skogis Cup nr 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9421,
+          "title": "Bohuslunken Five-O 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-05&endDate=2015-04-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8706,
+          "title": "Anebyorienteringen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10651,
+          "title": "IFK Lidingö, medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8646,
+          "title": "Kolmårdskavlen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9353,
+          "title": "Vikingaträffen Five-O 5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11558,
+          "title": "Kolmårdskavlen, individuella öppna motionsklasser",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 9090,
+          "title": "Påskrännet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 8602,
+          "title": "Snötrampen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11915,
+          "title": "Motionsorientering Umeå 6 April",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-06&endDate=2015-04-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11545,
+          "title": "Dala Veteran OL Kvarnsveden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12286,
+          "title": "Tisdags-OL Rydskogen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 12118,
+          "title": "Motions-OL Storängen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11928,
+          "title": "Norrcupen 150407",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11989,
+          "title": "Poäng Cup 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-07&endDate=2015-04-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-263\\competition-enriched.json"
+    }
+  }
+}

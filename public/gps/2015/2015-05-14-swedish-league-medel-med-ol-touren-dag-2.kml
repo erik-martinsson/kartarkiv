@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Silva League #4, medel H21E2 (2015-05-14)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/274.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>60.367324100805</north>
+          <south>60.339594425551</south>
+          <east>15.757346585683</east>
+          <west>15.680852579521</west>
+          <rotation>-0.30195245134856</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

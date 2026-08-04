@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: NAIS-träffen lång (2015-04-03)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/261.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.682270244322</north>
+          <south>58.643442427305</south>
+          <east>16.099998624559</east>
+          <west>16.027352464914</west>
+          <rotation>-1.0419631637238</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

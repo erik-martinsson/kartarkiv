@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T11:33:12.153Z",
+  "competition": {
+    "doma": {
+      "mapId": 273,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=273",
+      "title": "Silva League #3, sprint",
+      "date": "2015-05-13",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "15:03",
+      "runningDistanceKm": 4.21,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/273.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/273.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=273&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=36292&categoryId=1",
+      "courseLengthKm": 3.9
+    },
+    "location": null,
+    "latitude": 60.3476375,
+    "longitude": 15.744666388889,
+    "discipline": "Sprint",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21E",
+      "club": "Linköpings OK",
+      "position": "44",
+      "starters": "90",
+      "controls": 21,
+      "time": "14:58",
+      "totalMistakeTime": "0:44",
+      "mistakes": [
+        {
+          "control": 10,
+          "time": "0:21"
+        },
+        {
+          "control": 19,
+          "time": "0:23"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 8981,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/8981",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=8981",
+      "title": "Swedish League, sprint, WRE, med OL-Touren, dag 1",
+      "date": "",
+      "organiser": "Säterbygdens OK",
+      "location": "",
+      "rawDiscipline": "sprint",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 8981,
+      "title": "Swedish League, sprint, WRE, med OL-Touren, dag 1",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/8981",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=8981",
+      "score": 51,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Silva League #3, sprint",
+      "domaDate": "2015-05-13",
+      "databaseId": 36292,
+      "searchedDates": [
+        "2015-05-11",
+        "2015-05-12",
+        "2015-05-13",
+        "2015-05-14",
+        "2015-05-15"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2015-05-11&endDate=2015-05-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-05-11&endDate=2015-05-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-05-11&endDate=2015-05-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-05-11&endDate=2015-05-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-05-11&endDate=2015-05-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-05-11&endDate=2015-05-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-05-12&endDate=2015-05-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-05-13&endDate=2015-05-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-05-15&endDate=2015-05-15&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 8981,
+          "title": "Swedish League, sprint, WRE, med OL-Touren, dag 1",
+          "score": 51,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-05-14&endDate=2015-05-14&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen Livelox-länk hittades i Eventors resultatlista.",
+      "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-273\\competition-enriched.json"
+    }
+  }
+}

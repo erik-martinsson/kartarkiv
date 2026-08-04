@@ -1,0 +1,123 @@
+{
+  "doma": {
+    "mapId": 266,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=266",
+    "title": "TibroTrippeln, Lång, del2",
+    "date": "2015-04-10",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "29:46",
+    "runningDistanceKm": 5.46,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/266.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/266.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=266&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=35511&categoryId=2"
+  },
+  "location": null,
+  "latitude": 58.465642777778,
+  "longitude": 14.352129444444,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "1",
+    "starters": "30",
+    "controls": 25,
+    "time": "1:07:32",
+    "totalMistakeTime": "1:03",
+    "mistakes": [
+      {
+        "control": 17,
+        "time": "0:26"
+      },
+      {
+        "control": 18,
+        "time": "0:37"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 9501,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/9501",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=9501",
+    "title": "Tibrotrippeln, dag 2, lång",
+    "date": "",
+    "organiser": "Tibro OK",
+    "location": "",
+    "rawDiscipline": "lång",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 9501,
+    "title": "Tibrotrippeln, dag 2, lång",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/9501",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=9501",
+    "score": 63,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "TibroTrippeln, Lång, del2",
+    "domaDate": "2015-04-10",
+    "databaseId": 35511,
+    "searchedDates": [
+      "2015-04-08",
+      "2015-04-09",
+      "2015-04-10",
+      "2015-04-11",
+      "2015-04-12"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2015-04-08&endDate=2015-04-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-04-08&endDate=2015-04-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-04-08&endDate=2015-04-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-04-08&endDate=2015-04-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-04-08&endDate=2015-04-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-04-08&endDate=2015-04-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-04-09&endDate=2015-04-09&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-04-09&endDate=2015-04-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-04-09&endDate=2015-04-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-04-09&endDate=2015-04-09&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-04-09&endDate=2015-04-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-04-09&endDate=2015-04-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-04-10&endDate=2015-04-10&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-04-10&endDate=2015-04-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-04-10&endDate=2015-04-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-04-10&endDate=2015-04-10&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-04-10&endDate=2015-04-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-04-10&endDate=2015-04-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-04-11&endDate=2015-04-11&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-04-11&endDate=2015-04-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-04-11&endDate=2015-04-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-04-11&endDate=2015-04-11&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-04-11&endDate=2015-04-11&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-04-11&endDate=2015-04-11&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-04-12&endDate=2015-04-12&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-04-12&endDate=2015-04-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-04-12&endDate=2015-04-12&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-04-12&endDate=2015-04-12&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-04-12&endDate=2015-04-12&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-04-12&endDate=2015-04-12&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 9501,
+        "title": "Tibrotrippeln, dag 2, lång",
+        "score": 63,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-04-11&endDate=2015-04-11&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista.",
+    "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen."
+  ]
+}

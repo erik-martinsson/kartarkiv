@@ -1,0 +1,392 @@
+{
+  "doma": {
+    "mapId": 284,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=284",
+    "title": "Gotland 3-dagars, E3",
+    "date": "2015-07-08",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "1:30:14",
+    "runningDistanceKm": 15.85,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/284.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/284.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=284&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=37524&categoryId=1"
+  },
+  "location": null,
+  "latitude": 57.964515972222,
+  "longitude": 19.320798888889,
+  "discipline": "Annan",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "25",
+    "starters": "53",
+    "controls": 27,
+    "time": "1:30:17",
+    "totalMistakeTime": "9:47",
+    "mistakes": [
+      {
+        "control": 6,
+        "time": "0:39"
+      },
+      {
+        "control": 9,
+        "time": "0:34"
+      },
+      {
+        "control": 18,
+        "time": "1:14"
+      },
+      {
+        "control": 23,
+        "time": "7:20"
+      }
+    ]
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Gotland 3-dagars, E3",
+    "domaDate": "2015-07-08",
+    "databaseId": 37524,
+    "searchedDates": [
+      "2015-07-06",
+      "2015-07-07",
+      "2015-07-08",
+      "2015-07-09",
+      "2015-07-10"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-10&endDate=2015-07-10&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-10&endDate=2015-07-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-10&endDate=2015-07-10&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-10&endDate=2015-07-10&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-10&endDate=2015-07-10&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-10&endDate=2015-07-10&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 8522,
+        "title": "Gotland 3-dagars",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9567,
+        "title": "Hallands 3-dagars",
+        "score": 37,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-10&endDate=2015-07-10&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12664,
+        "title": "Mini-5-Dagars 2015",
+        "score": 32,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13115,
+        "title": "närLtis 7/7 - tor 9/7Gotland 3-dagars",
+        "score": 29,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 9108,
+        "title": "ss=\"tooltip\" title=\"orienteringslöpning\">natMmån 6/7 - fre 10/7Mini-5-Dagars 2015",
+        "score": 25,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12421,
+        "title": "Teknikläger 5-8 juli 2015",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12972,
+        "title": "Kretsträning Götaälvdalskretsen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10564,
+        "title": "PreO, DM, lång, Uppland",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13156,
+        "title": "Dalaveteran 2015",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13200,
+        "title": "Sommarserien Hägerstalund",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 10982,
+        "title": "Poängtävling 9",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13158,
+        "title": "Höglands-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13083,
+        "title": "SAKO VäneRyr",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13159,
+        "title": "5 kvällars motionsorientering",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13177,
+        "title": "Sommar-OL 4 2015",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13065,
+        "title": "Teknikträning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12967,
+        "title": "Öppna Norrköpings Mästerskapen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 11975,
+        "title": "Motionsorientering Helsingborg",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12916,
+        "title": "GOF:s Sommarserie Etapp 4",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13023,
+        "title": "HSOK Sommarcup 2015, Etapp 1",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13021,
+        "title": "Hiernmannen Dalen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13132,
+        "title": "Rånäs OK/Rimbo SOK Sprintcup 3",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13098,
+        "title": "Skärmjakt nr 8",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13167,
+        "title": "Tenhults Sommarnärtävling 2015",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 12508,
+        "title": "Motionsorientering Tallmon",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13164,
+        "title": "Motionsorientering Umeå 9 juli",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 11804,
+        "title": "Sommarserie 4",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13160,
+        "title": "5-kvällars Främmestads IK",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-09&endDate=2015-07-09&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 13209,
+        "title": "Tyngemästerskap 2015",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-10&endDate=2015-07-10&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen tillräckligt säker Eventor-träff hittades.",
+    "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen."
+  ]
+}

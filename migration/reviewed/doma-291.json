@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T11:47:14.126Z",
+  "competition": {
+    "doma": {
+      "mapId": 291,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=291",
+      "title": "O-ringen E5",
+      "date": "2015-07-23",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "1:49:08",
+      "runningDistanceKm": 17.6,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/291.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/291.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=291&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=37643&categoryId=2",
+      "courseLengthKm": 13.3
+    },
+    "location": null,
+    "latitude": 57.745011527778,
+    "longitude": 12.902222222222,
+    "discipline": "Annan",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21E",
+      "club": "Linköpings Orienteringsklubb",
+      "position": "51",
+      "starters": "80",
+      "controls": 24,
+      "time": "1:49:05",
+      "totalMistakeTime": "3:05",
+      "mistakes": [
+        {
+          "control": 2,
+          "time": "1:25"
+        },
+        {
+          "control": 7,
+          "time": "0:30"
+        },
+        {
+          "control": 16,
+          "time": "0:32"
+        },
+        {
+          "control": 21,
+          "time": "0:38"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "O-ringen E5, H21E",
+      "domaDate": "2015-07-23",
+      "databaseId": 37643,
+      "searchedDates": [
+        "2015-07-21",
+        "2015-07-22",
+        "2015-07-23",
+        "2015-07-24",
+        "2015-07-25"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-07-22&endDate=2015-07-22&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-07-22&endDate=2015-07-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-07-22&endDate=2015-07-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-07-22&endDate=2015-07-22&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-07-22&endDate=2015-07-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-07-22&endDate=2015-07-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-07-23&endDate=2015-07-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-07-23&endDate=2015-07-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-07-23&endDate=2015-07-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-07-23&endDate=2015-07-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-07-23&endDate=2015-07-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-07-23&endDate=2015-07-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-07-24&endDate=2015-07-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-07-24&endDate=2015-07-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-07-24&endDate=2015-07-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-07-24&endDate=2015-07-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-07-24&endDate=2015-07-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-07-24&endDate=2015-07-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-07-25&endDate=2015-07-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-07-25&endDate=2015-07-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-07-25&endDate=2015-07-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-07-25&endDate=2015-07-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-07-25&endDate=2015-07-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-07-25&endDate=2015-07-25&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 5116,
+          "title": "O-Ringen Borås 2015",
+          "score": 32,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13175,
+          "title": "AXA Sprint Cup",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-291\\competition-enriched.json"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Åtvidkampen (2015-08-08)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/293.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.195724032948</north>
+          <south>58.175999140281</south>
+          <east>15.95141866285</east>
+          <west>15.900688193436</west>
+          <rotation>0.90943607291353</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

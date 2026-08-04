@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: TibroTrippeln, Lång, del1 (2015-04-10)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/265.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.479794148447</north>
+          <south>58.452290934769</south>
+          <east>14.388034381108</east>
+          <west>14.315644204774</west>
+          <rotation>0.32213581923297</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

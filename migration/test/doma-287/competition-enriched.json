@@ -1,0 +1,128 @@
+{
+  "doma": {
+    "mapId": 287,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=287",
+    "title": "O-ringen E1, H21E",
+    "date": "2015-07-18",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "1:45:52",
+    "runningDistanceKm": 16.51,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/287.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/287.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=287&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=37627&categoryId=2"
+  },
+  "location": null,
+  "latitude": 57.577612361111,
+  "longitude": 12.835193194444,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings Orienteringsklubb",
+    "position": "53",
+    "starters": "80",
+    "controls": 22,
+    "time": "1:45:55",
+    "totalMistakeTime": "1:19",
+    "mistakes": [
+      {
+        "control": 17,
+        "time": "1:19"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 5116,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/5116",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=5116",
+    "title": "O-Ringen Borås 2015",
+    "date": "",
+    "organiser": "Svensk Orientering Events",
+    "location": "",
+    "rawDiscipline": "lång",
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:5116-1&classExternalId=172393-1"
+  },
+  "eventorMatch": {
+    "eventId": 5116,
+    "title": "O-Ringen Borås 2015",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/5116",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=5116",
+    "score": 32,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "O-ringen E1, H21E",
+    "domaDate": "2015-07-18",
+    "databaseId": 37627,
+    "searchedDates": [
+      "2015-07-16",
+      "2015-07-17",
+      "2015-07-18",
+      "2015-07-19",
+      "2015-07-20"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2015-07-16&endDate=2015-07-16&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-16&endDate=2015-07-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-16&endDate=2015-07-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-16&endDate=2015-07-16&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-16&endDate=2015-07-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-16&endDate=2015-07-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 12097,
+        "title": "O-Ringen träningsrace",
+        "score": 37,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 5116,
+        "title": "O-Ringen Borås 2015",
+        "score": 32,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:5116-1&classExternalId=172393-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen."
+  ]
+}

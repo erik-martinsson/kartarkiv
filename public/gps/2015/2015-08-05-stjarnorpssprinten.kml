@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Stjärnorpssprinten (2015-08-05)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/292.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.619264688286</north>
+          <south>58.591368896989</south>
+          <east>15.629293807434</east>
+          <west>15.592684900716</west>
+          <rotation>-0.19430224350663</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

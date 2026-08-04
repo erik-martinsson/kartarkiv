@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T11:45:37.273Z",
+  "competition": {
+    "doma": {
+      "mapId": 288,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=288",
+      "title": "O-ringen E2",
+      "date": "2015-07-19",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "1:39:20",
+      "runningDistanceKm": 17.34,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/288.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/288.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=288&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=37628&categoryId=2",
+      "courseLengthKm": 14.1
+    },
+    "location": null,
+    "latitude": 57.542404305556,
+    "longitude": 13.174716388889,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21E",
+      "club": "Linköpings Orienteringsklubb",
+      "position": "44",
+      "starters": "80",
+      "controls": 23,
+      "time": "1:39:22",
+      "totalMistakeTime": "0:53",
+      "mistakes": [
+        {
+          "control": 10,
+          "time": "0:53"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "O-ringen E2, H21E",
+      "domaDate": "2015-07-19",
+      "databaseId": 37628,
+      "searchedDates": [
+        "2015-07-17",
+        "2015-07-18",
+        "2015-07-19",
+        "2015-07-20",
+        "2015-07-21"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-07-20&endDate=2015-07-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-07-21&endDate=2015-07-21&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 12097,
+          "title": "O-Ringen träningsrace",
+          "score": 37,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 5116,
+          "title": "O-Ringen Borås 2015",
+          "score": 32,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10640,
+          "title": "PreO, DM, Göteborg + Bohuslän-Dal + Västergötland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-17&endDate=2015-07-17&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 10958,
+          "title": "AXA Stafetten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-18&endDate=2015-07-18&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 13175,
+          "title": "AXA Sprint Cup",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 11590,
+          "title": "Skogis Cup nr 7",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-19&endDate=2015-07-19&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-288\\competition-enriched.json"
+    }
+  }
+}

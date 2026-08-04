@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T11:48:46.189Z",
+  "competition": {
+    "doma": {
+      "mapId": 294,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=294",
+      "title": "Tjällmoträffen",
+      "date": "2015-08-12",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "36:20",
+      "runningDistanceKm": 5.94,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/294.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/294.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=294&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=37863&categoryId=1",
+      "courseLengthKm": 5
+    },
+    "location": null,
+    "latitude": 58.571497222222,
+    "longitude": 15.361396111111,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "16",
+      "starters": "39",
+      "controls": 18,
+      "time": "36:20",
+      "totalMistakeTime": "3:51",
+      "mistakes": [
+        {
+          "control": 4,
+          "time": "0:55"
+        },
+        {
+          "control": 6,
+          "time": "0:34"
+        },
+        {
+          "control": 10,
+          "time": "0:30"
+        },
+        {
+          "control": 12,
+          "time": "0:45"
+        },
+        {
+          "control": 14,
+          "time": "1:07"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 9233,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/9233",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=9233",
+      "title": "Tjällmoträffen",
+      "date": "",
+      "organiser": "Tjällmo-Godegårds OK",
+      "location": "",
+      "rawDiscipline": "medel",
+      "liveloxUrl": null
+    },
+    "eventorMatch": {
+      "eventId": 9233,
+      "title": "Tjällmoträffen",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/9233",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=9233",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Tjällmoträffen",
+      "domaDate": "2015-08-12",
+      "databaseId": 37863,
+      "searchedDates": [
+        "2015-08-10",
+        "2015-08-11",
+        "2015-08-12",
+        "2015-08-13",
+        "2015-08-14"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2015-08-10&endDate=2015-08-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-08-10&endDate=2015-08-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-08-10&endDate=2015-08-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-08-10&endDate=2015-08-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-08-10&endDate=2015-08-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-08-10&endDate=2015-08-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-08-11&endDate=2015-08-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-08-11&endDate=2015-08-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-08-11&endDate=2015-08-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-08-11&endDate=2015-08-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-08-11&endDate=2015-08-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-08-11&endDate=2015-08-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-08-12&endDate=2015-08-12&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-08-12&endDate=2015-08-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-08-12&endDate=2015-08-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-08-12&endDate=2015-08-12&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-08-12&endDate=2015-08-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-08-12&endDate=2015-08-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-08-13&endDate=2015-08-13&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-08-13&endDate=2015-08-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-08-13&endDate=2015-08-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-08-13&endDate=2015-08-13&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-08-13&endDate=2015-08-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-08-13&endDate=2015-08-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2015-08-14&endDate=2015-08-14&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2015-08-14&endDate=2015-08-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2015-08-14&endDate=2015-08-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2015-08-14&endDate=2015-08-14&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2015-08-14&endDate=2015-08-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2015-08-14&endDate=2015-08-14&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 9233,
+          "title": "Tjällmoträffen",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-08-13&endDate=2015-08-13&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen Livelox-länk hittades i Eventors resultatlista.",
+      "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-294\\competition-enriched.json"
+    }
+  }
+}

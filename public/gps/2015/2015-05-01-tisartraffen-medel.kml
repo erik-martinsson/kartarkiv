@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Tisarträffen, medel (2015-04-30)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/270.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>59.060822328584</north>
+          <south>59.034063736383</south>
+          <east>15.242953974183</east>
+          <west>15.207551924654</west>
+          <rotation>-0.3717148478176</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

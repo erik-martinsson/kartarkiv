@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Natt-DM Östergötland (2015-09-03)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/298.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.302201851731</north>
+          <south>58.274277032046</south>
+          <east>15.502228396096</east>
+          <west>15.429941490004</west>
+          <rotation>-0.019549536156808</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

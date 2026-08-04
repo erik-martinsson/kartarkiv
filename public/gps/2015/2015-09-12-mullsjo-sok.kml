@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Mullsjö SOK (2015-09-12)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/300.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.010038519079</north>
+          <south>57.96882484615</south>
+          <east>13.930573347736</east>
+          <west>13.87704861727</west>
+          <rotation>1.0995549500193</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

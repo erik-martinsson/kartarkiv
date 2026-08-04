@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Gotland 3-dagars, E1 (2015-07-06)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/282.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.986366202639</north>
+          <south>57.95842326513</south>
+          <east>19.356708538594</east>
+          <west>19.320687890495</west>
+          <rotation>-3.9564613274542</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

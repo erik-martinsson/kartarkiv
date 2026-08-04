@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Finspångsorienteringen (2015-04-24)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/269.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.765012227359</north>
+          <south>58.737206945085</south>
+          <east>15.791864386973</east>
+          <west>15.718578241361</west>
+          <rotation>0.021781415516712</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

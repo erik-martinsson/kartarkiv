@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Svartnatta (2015-04-01)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/260.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>59.107265123715</north>
+          <south>59.080853942406</south>
+          <east>15.934376610213</east>
+          <west>15.869438428415</west>
+          <rotation>0.79202875973322</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,123 @@
+{
+  "doma": {
+    "mapId": 282,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=282",
+    "title": "Gotland 3-dagars, E1",
+    "date": "2015-07-06",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "34:12",
+    "runningDistanceKm": 6.16,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/282.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/282.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=282&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=37499&categoryId=1"
+  },
+  "location": null,
+  "latitude": 57.971927361111,
+  "longitude": 19.338644166667,
+  "discipline": "Lång",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": "Linköpings OK",
+    "position": "14",
+    "starters": "53",
+    "controls": 14,
+    "time": "34:12",
+    "totalMistakeTime": "3:46",
+    "mistakes": [
+      {
+        "control": 3,
+        "time": "3:07"
+      },
+      {
+        "control": 7,
+        "time": "0:39"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 8522,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/8522",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=8522",
+    "title": "Gotland 3-dagars",
+    "date": "",
+    "organiser": "Visborgs OK",
+    "location": "",
+    "rawDiscipline": "lång",
+    "liveloxUrl": null
+  },
+  "eventorMatch": {
+    "eventId": 8522,
+    "title": "Gotland 3-dagars",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/8522",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=8522",
+    "score": 94,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Gotland 3-dagars, E1",
+    "domaDate": "2015-07-06",
+    "databaseId": 37499,
+    "searchedDates": [
+      "2015-07-04",
+      "2015-07-05",
+      "2015-07-06",
+      "2015-07-07",
+      "2015-07-08"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2015-07-04&endDate=2015-07-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-04&endDate=2015-07-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-04&endDate=2015-07-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-04&endDate=2015-07-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-04&endDate=2015-07-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-04&endDate=2015-07-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-05&endDate=2015-07-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-05&endDate=2015-07-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-05&endDate=2015-07-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-05&endDate=2015-07-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-05&endDate=2015-07-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-05&endDate=2015-07-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-06&endDate=2015-07-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2015-07-08&endDate=2015-07-08&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 8522,
+        "title": "Gotland 3-dagars",
+        "score": 94,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2015-07-07&endDate=2015-07-07&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "Ingen Livelox-länk hittades i Eventors resultatlista.",
+    "Banlängden kunde inte läsas entydigt från den valda WinSplits-klassen."
+  ]
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: SM-Medel kval H21B (2015-09-17)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/303.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>59.091584858868</north>
+          <south>59.063906217985</south>
+          <east>17.990050346906</east>
+          <west>17.953101058213</west>
+          <rotation>-2.2876040466212</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

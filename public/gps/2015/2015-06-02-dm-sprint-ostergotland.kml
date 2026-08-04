@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Sprint-DM Östergötland (2015-06-02)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/278.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.680204938119</north>
+          <south>58.664609239263</south>
+          <east>16.382078354339</east>
+          <west>16.361372130483</west>
+          <rotation>0.25574638658259</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>
