@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Pekingduon, medel (2019-05-25)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/463.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.57712479386</north>
+          <south>58.55864607952</south>
+          <east>16.203959124602</east>
+          <west>16.170550009864</west>
+          <rotation>0.50058623455257</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

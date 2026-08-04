@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Natt-DM (2019-08-29)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/473.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.218679731792</north>
+          <south>58.194449167033</south>
+          <east>16.079949321011</east>
+          <west>16.009487175898</west>
+          <rotation>-3.7508628256954</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

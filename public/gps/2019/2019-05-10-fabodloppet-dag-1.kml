@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Fäbodloppet, dag 1 (2019-05-10)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/458.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>60.569336488415</north>
+          <south>60.549832526583</south>
+          <east>15.488502427818</east>
+          <west>15.434373558516</west>
+          <rotation>-5.0659750927774</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

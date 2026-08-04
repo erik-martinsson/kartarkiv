@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Markdubbeln, lång (2019-08-03)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/470.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.492060390821</north>
+          <south>57.465212081397</south>
+          <east>12.788578963266</east>
+          <west>12.720008584893</west>
+          <rotation>-2.4689286970787</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Staffans minne (2019-05-13)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/460.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.451682418227</north>
+          <south>58.440067584124</south>
+          <east>14.896423029448</east>
+          <west>14.881136164895</west>
+          <rotation>0.10215143060311</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

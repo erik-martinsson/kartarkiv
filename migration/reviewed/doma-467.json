@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T20:39:39.214Z",
+  "competition": {
+    "doma": {
+      "mapId": 467,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=467",
+      "title": "Hallands 3-dagars E2",
+      "date": "2019-07-12",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "1:35:45",
+      "runningDistanceKm": 12.44,
+      "courseLengthKm": 10,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/467.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/467.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=467&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=64223&categoryId=3"
+    },
+    "location": null,
+    "latitude": 57.163284722222,
+    "longitude": 12.517738888889,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "25",
+      "starters": "40",
+      "controls": 20,
+      "time": "1:35:43",
+      "totalMistakeTime": "1:23",
+      "mistakes": [
+        {
+          "control": 11,
+          "time": "1:23"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Hallands 3-dagars E2",
+      "domaDate": "2019-07-12",
+      "databaseId": 64223,
+      "searchedDates": [
+        "2019-07-10",
+        "2019-07-11",
+        "2019-07-12",
+        "2019-07-13",
+        "2019-07-14"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-07-14&endDate=2019-07-14&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-07-14&endDate=2019-07-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-07-14&endDate=2019-07-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-07-14&endDate=2019-07-14&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-07-14&endDate=2019-07-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-07-14&endDate=2019-07-14&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 21966,
+          "title": "Hallands 3-dagars",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 19184,
+          "title": "Gotland 3-dagars",
+          "score": 37,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26762,
+          "title": "Veckoturen 10 juli",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23462,
+          "title": "Bad-OL i Halland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26551,
+          "title": "GOFs Sommarserie Etapp 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26701,
+          "title": "Hiernmannen deltävling 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26700,
+          "title": "Motionsorientering Brönet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26154,
+          "title": "Motionsorientering Seskarö",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26659,
+          "title": "Sommar-ol",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26508,
+          "title": "Provlöpning O-Ringen Uppsala 2020",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26570,
+          "title": "Tenhults sommarnärtävling",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24867,
+          "title": "Motionsorientering, Mjögsjön Koppom",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25789,
+          "title": "Tränings-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26745,
+          "title": "5-kvällars Istrums SK etapp 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25880,
+          "title": "Motionsorientering Umeå",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26609,
+          "title": "NOF-träning 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26732,
+          "title": "Skärmjakt nr.5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24974,
+          "title": "Sommarserie 5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26774,
+          "title": "Sommarträning Länsklacken",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26554,
+          "title": "Sommarträning Stenungsunds OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26530,
+          "title": "Motionsorientering i Höganäs",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26687,
+          "title": "Rälla sommarorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25264,
+          "title": "Engelbrektssprinten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26826,
+          "title": "test 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26742,
+          "title": "Testtävling",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26801,
+          "title": "Nostalgiträning i Kungsberg",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26828,
+          "title": "Motionsorientering Risböle",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-14&endDate=2019-07-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26496,
+          "title": "Klubbmästerskap, Lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-14&endDate=2019-07-14&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-467\\competition-enriched.json"
+    }
+  }
+}

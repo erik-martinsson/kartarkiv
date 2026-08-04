@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Hallands 3-dagars E1 (2019-07-11)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/466.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.157138219295</north>
+          <south>57.144835531257</south>
+          <east>12.522411526459</east>
+          <west>12.482654707651</west>
+          <rotation>2.2175665109236</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

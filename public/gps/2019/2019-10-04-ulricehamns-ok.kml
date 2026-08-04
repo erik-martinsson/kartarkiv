@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Ulricehamns OK (2019-10-04)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/478.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.765992401594</north>
+          <south>57.744983251458</south>
+          <east>13.420761379936</east>
+          <west>13.395858858903</west>
+          <rotation>1.4715866604218</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

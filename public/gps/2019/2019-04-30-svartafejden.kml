@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Svartåfejden (2019-04-30)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/454.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.333423142141</north>
+          <south>58.31439369573</south>
+          <east>15.226286672617</east>
+          <west>15.177072000735</west>
+          <rotation>-3.1683334530766</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Anebyorienteringen, lång (2019-04-21)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/453.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.827285369176</north>
+          <south>57.80899174794</south>
+          <east>14.944586031627</east>
+          <west>14.884816784325</west>
+          <rotation>-4.7677380164699</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

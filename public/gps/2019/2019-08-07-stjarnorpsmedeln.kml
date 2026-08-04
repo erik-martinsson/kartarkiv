@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Stjärnorpsmedeln (2019-08-07)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/471.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.575707448737</north>
+          <south>58.556589649885</south>
+          <east>15.619941702858</east>
+          <west>15.592260008394</west>
+          <rotation>-5.6143900482376</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,120 @@
+{
+  "doma": {
+    "mapId": 478,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=478",
+    "title": "Ulricehamns OK",
+    "date": "2019-10-04",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "32:49",
+    "runningDistanceKm": 5.49,
+    "courseLengthKm": 4.9,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/478.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/478.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=478&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=66179&categoryId=1&ct=true"
+  },
+  "location": null,
+  "latitude": 57.755255972222,
+  "longitude": 13.408317638889,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "H21",
+    "club": "Linköpings OK",
+    "position": "3",
+    "starters": "25",
+    "controls": 16,
+    "time": "32:55",
+    "totalMistakeTime": "0:42",
+    "mistakes": [
+      {
+        "control": 5,
+        "time": "0:42"
+      }
+    ]
+  },
+  "eventor": {
+    "eventId": 22233,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/22233",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=22233",
+    "title": "Ulricehamns OK",
+    "date": "",
+    "organiser": "Ulricehamns OK",
+    "location": "",
+    "rawDiscipline": "medel",
+    "raceClass": "H21",
+    "distanceKm": 4.9,
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:22233-1&classExternalId=392214-1"
+  },
+  "eventorMatch": {
+    "eventId": 22233,
+    "title": "Ulricehamns OK",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/22233",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=22233",
+    "score": 100,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Ulricehamns OK",
+    "domaDate": "2019-10-04",
+    "databaseId": 66179,
+    "searchedDates": [
+      "2019-10-02",
+      "2019-10-03",
+      "2019-10-04",
+      "2019-10-05",
+      "2019-10-06"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2019-10-02&endDate=2019-10-02&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2019-10-02&endDate=2019-10-02&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2019-10-02&endDate=2019-10-02&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2019-10-02&endDate=2019-10-02&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2019-10-02&endDate=2019-10-02&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2019-10-02&endDate=2019-10-02&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2019-10-03&endDate=2019-10-03&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2019-10-03&endDate=2019-10-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2019-10-03&endDate=2019-10-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2019-10-03&endDate=2019-10-03&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2019-10-03&endDate=2019-10-03&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2019-10-03&endDate=2019-10-03&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2019-10-04&endDate=2019-10-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2019-10-04&endDate=2019-10-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2019-10-04&endDate=2019-10-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2019-10-04&endDate=2019-10-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2019-10-04&endDate=2019-10-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2019-10-04&endDate=2019-10-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2019-10-05&endDate=2019-10-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2019-10-05&endDate=2019-10-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2019-10-05&endDate=2019-10-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2019-10-05&endDate=2019-10-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2019-10-05&endDate=2019-10-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2019-10-05&endDate=2019-10-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2019-10-06&endDate=2019-10-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2019-10-06&endDate=2019-10-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2019-10-06&endDate=2019-10-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2019-10-06&endDate=2019-10-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2019-10-06&endDate=2019-10-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2019-10-06&endDate=2019-10-06&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 22233,
+        "title": "Ulricehamns OK",
+        "score": 100,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-05&endDate=2019-10-05&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:22233-1&classExternalId=392214-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+  ]
+}

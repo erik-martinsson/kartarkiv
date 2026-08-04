@@ -1,0 +1,135 @@
+{
+  "doma": {
+    "mapId": 461,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=461",
+    "title": "Sprint-DM",
+    "date": "2019-05-18",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "17:47",
+    "runningDistanceKm": 3.98,
+    "courseLengthKm": 3.21,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/461.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/461.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=461&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=62700&categoryId=1"
+  },
+  "location": null,
+  "latitude": 57.953941944444,
+  "longitude": 15.076452361111,
+  "discipline": "Sprint",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "H21",
+    "club": "Linköpings OK",
+    "position": "2",
+    "starters": "9",
+    "controls": 23,
+    "time": "17:46",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": {
+    "eventId": 21959,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/21959",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=21959",
+    "title": "DM, sprint, Östergötland",
+    "date": "",
+    "organiser": "OK 64 Torpa",
+    "location": "",
+    "rawDiscipline": "sprint",
+    "raceClass": "H21",
+    "distanceKm": 3.21,
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:21959-1&classExternalId=370303-1"
+  },
+  "eventorMatch": {
+    "eventId": 21959,
+    "title": "DM, sprint, Östergötland",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/21959",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=21959",
+    "score": 85,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Sprint-DM",
+    "domaDate": "2019-05-18",
+    "databaseId": 62700,
+    "searchedDates": [
+      "2019-05-16",
+      "2019-05-17",
+      "2019-05-18",
+      "2019-05-19",
+      "2019-05-20"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2019-05-16&endDate=2019-05-16&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2019-05-16&endDate=2019-05-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2019-05-16&endDate=2019-05-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2019-05-16&endDate=2019-05-16&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2019-05-16&endDate=2019-05-16&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2019-05-16&endDate=2019-05-16&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2019-05-17&endDate=2019-05-17&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2019-05-17&endDate=2019-05-17&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2019-05-17&endDate=2019-05-17&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2019-05-17&endDate=2019-05-17&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2019-05-17&endDate=2019-05-17&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2019-05-17&endDate=2019-05-17&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2019-05-18&endDate=2019-05-18&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2019-05-18&endDate=2019-05-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2019-05-18&endDate=2019-05-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2019-05-18&endDate=2019-05-18&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2019-05-18&endDate=2019-05-18&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2019-05-18&endDate=2019-05-18&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2019-05-19&endDate=2019-05-19&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2019-05-19&endDate=2019-05-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2019-05-19&endDate=2019-05-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2019-05-19&endDate=2019-05-19&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2019-05-19&endDate=2019-05-19&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2019-05-19&endDate=2019-05-19&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2019-05-20&endDate=2019-05-20&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2019-05-20&endDate=2019-05-20&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2019-05-20&endDate=2019-05-20&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2019-05-20&endDate=2019-05-20&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2019-05-20&endDate=2019-05-20&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2019-05-20&endDate=2019-05-20&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 21660,
+        "title": "DM, sprint, Småland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-18&endDate=2019-05-18&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 21904,
+        "title": "DM, sprint, Västergötland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-19&endDate=2019-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 21959,
+        "title": "DM, sprint, Östergötland",
+        "score": 85,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-19&endDate=2019-05-19&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:21959-1&classExternalId=370303-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+  ]
+}

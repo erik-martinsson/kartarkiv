@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Stafett-DM (2019-09-07)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/475.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.605198575249</north>
+          <south>58.578566935521</south>
+          <east>14.988184953073</east>
+          <west>14.953314391173</west>
+          <rotation>-4.774192236439</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

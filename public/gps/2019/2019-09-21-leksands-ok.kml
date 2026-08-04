@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Leksands OK (2019-09-21)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/476.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>60.688483493169</north>
+          <south>60.655734613253</south>
+          <east>15.072740095867</east>
+          <west>14.988810109343</west>
+          <rotation>-5.17860514249</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

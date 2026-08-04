@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T20:38:47.143Z",
+  "competition": {
+    "doma": {
+      "mapId": 466,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=466",
+      "title": "Hallands 3-dagars E1",
+      "date": "2019-07-11",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "34:33",
+      "runningDistanceKm": 5.64,
+      "courseLengthKm": 4.87,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/466.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/466.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=466&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=64219&categoryId=3"
+    },
+    "location": null,
+    "latitude": 57.150710972222,
+    "longitude": 12.502549861111,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21 Lång",
+      "club": "Linköpings OK",
+      "position": "22",
+      "starters": "39",
+      "controls": 15,
+      "time": "34:31",
+      "totalMistakeTime": "1:36",
+      "mistakes": [
+        {
+          "control": 6,
+          "time": "0:35"
+        },
+        {
+          "control": 13,
+          "time": "0:29"
+        },
+        {
+          "control": 14,
+          "time": "0:32"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 21966,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/21966",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=21966",
+      "title": "Hallands 3-dagars",
+      "date": "",
+      "organiser": "FK Friskus-VarbergOK Nackhe",
+      "location": "",
+      "rawDiscipline": "lång",
+      "raceClass": "H21 Lång",
+      "distanceKm": 4.87,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:21966-1&classExternalId=356062-1"
+    },
+    "eventorMatch": {
+      "eventId": 21966,
+      "title": "Hallands 3-dagars",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/21966",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=21966",
+      "score": 94,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Hallands 3-dagars E1",
+      "domaDate": "2019-07-11",
+      "databaseId": 64219,
+      "searchedDates": [
+        "2019-07-09",
+        "2019-07-10",
+        "2019-07-11",
+        "2019-07-12",
+        "2019-07-13"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2019-07-09&endDate=2019-07-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-07-09&endDate=2019-07-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-07-09&endDate=2019-07-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-07-09&endDate=2019-07-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-07-09&endDate=2019-07-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-07-09&endDate=2019-07-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-07-10&endDate=2019-07-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-07-11&endDate=2019-07-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-07-13&endDate=2019-07-13&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 21966,
+          "title": "Hallands 3-dagars",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-07-12&endDate=2019-07-12&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:21966-1&classExternalId=356062-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-466\\competition-enriched.json"
+    }
+  }
+}

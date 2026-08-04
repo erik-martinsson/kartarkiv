@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Pekingduon, sprint (2019-05-25)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/462.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.575283513772</north>
+          <south>58.566392048619</south>
+          <east>16.190703859646</east>
+          <west>16.176773197239</west>
+          <rotation>0.42596472781406</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

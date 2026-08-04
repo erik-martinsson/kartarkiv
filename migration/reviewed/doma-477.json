@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T20:44:55.204Z",
+  "competition": {
+    "doma": {
+      "mapId": 477,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=477",
+      "title": "25-Manna",
+      "date": "2019-10-11",
+      "category": "Tävling",
+      "relayLeg": 24,
+      "runningTime": "49:38",
+      "runningDistanceKm": 9.75,
+      "courseLengthKm": 8.59,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/477.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/477.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=477&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=66331&categoryId=35"
+    },
+    "location": null,
+    "latitude": 59.134609166667,
+    "longitude": 18.091294583333,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "25-manna",
+      "club": "Linköpings OK 1",
+      "position": "24",
+      "starters": "99",
+      "controls": 23,
+      "time": "49:14",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "25-Manna",
+      "domaDate": "2019-10-11",
+      "databaseId": 66331,
+      "searchedDates": [
+        "2019-10-09",
+        "2019-10-10",
+        "2019-10-11",
+        "2019-10-12",
+        "2019-10-13"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-10-11&endDate=2019-10-11&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-10-11&endDate=2019-10-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-10-11&endDate=2019-10-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-10-11&endDate=2019-10-11&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-10-11&endDate=2019-10-11&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-10-11&endDate=2019-10-11&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-10-13&endDate=2019-10-13&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-10-13&endDate=2019-10-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-10-13&endDate=2019-10-13&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-10-13&endDate=2019-10-13&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-10-13&endDate=2019-10-13&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-10-13&endDate=2019-10-13&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 26921,
+          "title": "\"icons\">sön 6/10 - sön 20/1025-manna träning",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27514,
+          "title": "25-manna träning",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27415,
+          "title": "25-mannaträning ÖLOF",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27473,
+          "title": "25-mannaträning 3 - 2019",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27630,
+          "title": "Onsdagsligan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27572,
+          "title": "SkolDM Medelpad 2019",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27610,
+          "title": "Roslagsveteraner",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27567,
+          "title": "Veteran OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26930,
+          "title": "Höglandets-Veteran-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27571,
+          "title": "Luffarligan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27465,
+          "title": "Veteran-OL nr 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27250,
+          "title": "Veteran-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27612,
+          "title": "Landslagsträning i Göteborg",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27645,
+          "title": "Natt KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27489,
+          "title": "Nattjakta deltävling 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27368,
+          "title": "GOF Nattcup Etapp 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-09&endDate=2019-10-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27842,
+          "title": "Daglediga 30",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27560,
+          "title": "GOLD RUSH 2 (guldlöpet)",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26771,
+          "title": "POL Istrum",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24766,
+          "title": "Veteran-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24616,
+          "title": "Veteran-OL tävling 19 (Final)",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27408,
+          "title": "Veteran-OL KFUM Vidablick",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27613,
+          "title": "IFKs Sprintgrupp - Sprint Johanneberg",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26931,
+          "title": "Veteran-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27553,
+          "title": "Kort-KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27557,
+          "title": "Samträning Gbg SYD-VÄST",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27512,
+          "title": "Borlänge-Säter-träning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27606,
+          "title": "GBG Teknikträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27509,
+          "title": "Sprintcup #2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27587,
+          "title": "Ol slingor i Staberg",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27382,
+          "title": "Nattråttan 2019-2020 Etapp 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27614,
+          "title": "NV träning V41",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27600,
+          "title": "Nattcup IFK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27494,
+          "title": "Höstcup 1 Umeå",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27574,
+          "title": "Höstrusket",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-10&endDate=2019-10-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 33063,
+          "title": "5manna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-11&endDate=2019-10-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27475,
+          "title": "ÖstraNatt Final etapp 6",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-11&endDate=2019-10-11&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21885,
+          "title": "25manna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26954,
+          "title": "Lunds OK 25manna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27397,
+          "title": "Motionsorientering 25manna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27582,
+          "title": "KM dag",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27680,
+          "title": "KM Skellefteå OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27458,
+          "title": "Svartåtrampet 2019 (MTB-träning med tidtagning)",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-12&endDate=2019-10-12&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21886,
+          "title": "25mannamedeln",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-13&endDate=2019-10-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 27224,
+          "title": "Kretsmästerskap, SV Skåne",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-13&endDate=2019-10-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23110,
+          "title": "KSK-sprinten",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-10-13&endDate=2019-10-13&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-477\\competition-enriched.json"
+    }
+  }
+}

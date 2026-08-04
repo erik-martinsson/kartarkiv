@@ -1,0 +1,47 @@
+{
+  "doma": {
+    "mapId": 464,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=464",
+    "title": "Jukola",
+    "date": "2019-06-14",
+    "category": "Tävling",
+    "relayLeg": 2,
+    "runningTime": "1:07:58",
+    "runningDistanceKm": 11.34,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/464.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/464.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=464&format=kml",
+    "winsplitsUrl": null
+  },
+  "location": null,
+  "latitude": 61.435724583333,
+  "longitude": 24.214216527778,
+  "discipline": "Stafett",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": null,
+    "club": null,
+    "position": null,
+    "starters": null,
+    "controls": null,
+    "time": "1:07:58",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": null,
+  "eventorMatch": null,
+  "eventorResolverDebug": {
+    "wantedTitle": "Jukola",
+    "domaDate": "2019-06-14",
+    "databaseId": 0,
+    "searchedDates": [],
+    "calendarUrls": [],
+    "candidates": []
+  },
+  "liveloxUrl": null,
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+    "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+    "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+  ]
+}

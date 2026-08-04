@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Traneträffen (2019-10-05)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/479.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.557459371052</north>
+          <south>57.526606146265</south>
+          <east>13.203824271852</east>
+          <west>13.138769774511</west>
+          <rotation>-3.3565799298636</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

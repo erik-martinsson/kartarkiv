@@ -1,0 +1,1006 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-04T20:33:55.548Z",
+  "competition": {
+    "doma": {
+      "mapId": 462,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=462",
+      "title": "Pekingduon, sprint",
+      "date": "2019-05-25",
+      "category": "Tävling",
+      "relayLeg": 2,
+      "runningTime": "16:20",
+      "runningDistanceKm": 3.82,
+      "courseLengthKm": 2.97,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/462.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/462.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=462&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=63003&categoryId=54"
+    },
+    "location": null,
+    "latitude": 58.57069375,
+    "longitude": 16.183739583333,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "M17",
+      "club": "Domnarvets GOIF / Linköpings OK 3",
+      "position": "6",
+      "starters": "54",
+      "controls": 20,
+      "time": "16:25",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Pekingduon, sprint",
+      "domaDate": "2019-05-25",
+      "databaseId": 63003,
+      "searchedDates": [
+        "2019-05-23",
+        "2019-05-24",
+        "2019-05-25",
+        "2019-05-26",
+        "2019-05-27"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-05-24&endDate=2019-05-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-05-24&endDate=2019-05-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-05-24&endDate=2019-05-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-05-24&endDate=2019-05-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-05-24&endDate=2019-05-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-05-24&endDate=2019-05-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 24093,
+          "title": "Pekingduon",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26341,
+          "title": "Dalaoffensivens spetsträning - sprint",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21614,
+          "title": "DM, sprint, Blekinge",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23608,
+          "title": "DM, sprint, Västmanland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24107,
+          "title": "DM, sprint, Dalarna",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23461,
+          "title": "DM, sprint, Halland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 22242,
+          "title": "Hellidssprinten och Skaraborgsmästerskap, sprint",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26247,
+          "title": "KM Sprint Landehof Sjövalla",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24172,
+          "title": "Pekingduon, individuella öppna klasser",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26110,
+          "title": "närLtor 23/5Dalaoffensivens spetsträning - sprint",
+          "score": 39,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25836,
+          "title": "närLlör 25/5DM, sprint, Blekinge",
+          "score": 39,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21799,
+          "title": "\"icons\">lör 25/5DM, sprint, Dalarna",
+          "score": 38,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23609,
+          "title": "\"icons\">lör 25/5Hellidssprinten och Skaraborgsmästerskap, sprint",
+          "score": 37,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21879,
+          "title": "Örebro City Sprint / DM, sprint, Örebro Län",
+          "score": 37,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 19865,
+          "title": "\"icons\">sön 26/5KM Sprint Landehof Sjövalla",
+          "score": 37,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25004,
+          "title": "POL Kymbotall",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26029,
+          "title": "Roslagsveteranerna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25459,
+          "title": "VOL 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26313,
+          "title": "Östra Kretsens Ungdomsserie, Hjobygdens OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25939,
+          "title": "veteran-ol i Södra Vätterbygden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25706,
+          "title": "Veteran-OL, Västmanland, HOK-2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24605,
+          "title": "Veteran-OL tävling 9",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25028,
+          "title": "Veteran-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26272,
+          "title": "Veteranorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26405,
+          "title": "KM-Lång OL TEAMET",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25407,
+          "title": "DM, ultralång, Västmanland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25164,
+          "title": "MOL 7",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26149,
+          "title": "Motionsorientering Seskarö",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26364,
+          "title": "Motions OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25910,
+          "title": "Motionsorientering Ursvik",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26145,
+          "title": "Klubbmästerskap Medeldistans för OK Orion och Karlskrona SOK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 30815,
+          "title": "Klubbträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 30825,
+          "title": "Kurs",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26238,
+          "title": "Motions-OL / S delen Marielundskartan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26236,
+          "title": "Torsdagsträning Sommarcupen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26444,
+          "title": "Ungdomsserien",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25198,
+          "title": "Motionsorientering Hammarö",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24863,
+          "title": "Motionsorientering, Boda Koppom",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26326,
+          "title": "Samträning Gbg Syd-Väst",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26402,
+          "title": "5-dagars på hemmaplan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25951,
+          "title": "GBG Teknikträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26419,
+          "title": "Markbygdsträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26323,
+          "title": "Motionsorientering Umeå",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26327,
+          "title": "Poängjakt 4 - Rensjön",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26132,
+          "title": "Sommarcup Kungälvs OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24971,
+          "title": "Sommarserie 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26411,
+          "title": "Torsdagsträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25107,
+          "title": "Motionsorientering i Uppland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25782,
+          "title": "Tränings-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26194,
+          "title": "Lång-KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26366,
+          "title": "Klubbmästerskap 2019",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26271,
+          "title": "Herrmatch Västra kretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26448,
+          "title": "Klubbträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26403,
+          "title": "Långdistans KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-23&endDate=2019-05-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25754,
+          "title": "StOF Sommarläger Medeldistans (UP)",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-24&endDate=2019-05-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25967,
+          "title": "Björkstubbematch",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-24&endDate=2019-05-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21615,
+          "title": "DM, sprintstafett, Blekinge",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21852,
+          "title": "Tour de Medelpad, dag 1, lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26493,
+          "title": "Unionsmatchen 2019",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23855,
+          "title": "Unionsmatchen 2019 - Individuellt",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25955,
+          "title": "Provlöpning O-Ringen Uppsala 2020",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26317,
+          "title": "Aboda-träning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21727,
+          "title": "Bergnäsets AIK vårtävling, dag 1, lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24934,
+          "title": "JVM-tester, dag 1, medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25993,
+          "title": "Älgots Cup SÖ + Öppna banor för alla",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26316,
+          "title": "Haninge SOK lång KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24108,
+          "title": "DM, sprintstafett, Dalarna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25837,
+          "title": "StOF Sommarläger Äventyrsstafett",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-25&endDate=2019-05-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23943,
+          "title": "DM, sprintstafett, Halland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24315,
+          "title": "PreO DM Hälsingland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24316,
+          "title": "TempO",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21853,
+          "title": "Tour de Medelpad, dag 2, medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 23884,
+          "title": "Unionsmatchen 2019 - Stafett",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21728,
+          "title": "Bergnäsets AIK vårtävling, dag 2, medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24935,
+          "title": "JVM-tester, dag 2, lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26205,
+          "title": "Tuff, Tuffare, Tuffast",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25750,
+          "title": "StOF Sommarläger Lägerstafett",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26117,
+          "title": "Lång-KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25875,
+          "title": "Motionsorientering Umeå",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 24686,
+          "title": "Skogis Cup nr 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 21880,
+          "title": "DM, sprintstafett, Örebro Län",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26377,
+          "title": "SK Björnen motionsorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26437,
+          "title": "Värmlandslägret Rogaining",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-26&endDate=2019-05-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26617,
+          "title": "Daglediga 20",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26345,
+          "title": "Kärralundsskolan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26373,
+          "title": "Lundenskolan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25287,
+          "title": "KartoHoj etspp 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25013,
+          "title": "Motionsorientering Tuve",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 25293,
+          "title": "Värmlandsserien MTBO 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26374,
+          "title": "Jukola/Venla test samt 25mannaträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 26198,
+          "title": "VOK Motions-OL 3 (Vännäs)",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2019-05-27&endDate=2019-05-27&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-462\\competition-enriched.json"
+    }
+  }
+}
