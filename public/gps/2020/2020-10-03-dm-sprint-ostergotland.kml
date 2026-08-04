@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Sprint-DM (2020-10-03)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/491.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.581368074101</north>
+          <south>58.573569311573</south>
+          <east>15.935386181333</east>
+          <west>15.914941597713</west>
+          <rotation>-5.537771088209</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

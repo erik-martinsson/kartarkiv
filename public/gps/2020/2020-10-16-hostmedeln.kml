@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Höstmedeln (2020-10-16)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/492.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.670476843308</north>
+          <south>58.650994906589</south>
+          <east>16.162718945794</east>
+          <west>16.111668262279</west>
+          <rotation>-5.8222683322831</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>
