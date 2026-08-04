@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-04T20:54:54.622Z",
+  "finishedAt": "2026-08-04T20:56:08.071Z",
+  "options": {
+    "from": 489,
+    "to": 492,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 4,
+    "created": 4,
+    "skipped": 0,
+    "skippedExisting": 0,
+    "skippedTraining": 0,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 489,
+      "status": "created",
+      "title": "Natt-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-489\\competition-enriched.json"
+    },
+    {
+      "mapId": 490,
+      "status": "created",
+      "title": "Medel-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-490\\competition-enriched.json"
+    },
+    {
+      "mapId": 491,
+      "status": "created",
+      "title": "Sprint-DM",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-491\\competition-enriched.json"
+    },
+    {
+      "mapId": 492,
+      "status": "created",
+      "title": "Höstmedeln",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-492\\competition-enriched.json"
+    }
+  ]
+}
