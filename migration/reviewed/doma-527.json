@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-05T07:16:18.300Z",
+  "competition": {
+    "doma": {
+      "mapId": 527,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=527",
+      "title": "O-ringen E1",
+      "date": "2022-07-24",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "38:26",
+      "runningDistanceKm": 6.66,
+      "courseLengthKm": 5.54,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/527.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/527.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=527&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=83644&categoryId=44"
+    },
+    "location": null,
+    "latitude": 59.812399305556,
+    "longitude": 17.577454583333,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H35",
+      "club": "Linköpings OK",
+      "position": "5",
+      "starters": "48",
+      "controls": 15,
+      "time": "38:25",
+      "totalMistakeTime": "2:03",
+      "mistakes": [
+        {
+          "control": 3,
+          "time": "1:23"
+        },
+        {
+          "control": 6,
+          "time": "0:40"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 24475,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/24475",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=24475",
+      "title": "O-Ringen Uppsala",
+      "date": "",
+      "organiser": "Svensk Orientering Events",
+      "location": "",
+      "rawDiscipline": "lång",
+      "raceClass": "H35",
+      "distanceKm": 5.54,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:24475-1&classExternalId=518622-1"
+    },
+    "eventorMatch": {
+      "eventId": 24475,
+      "title": "O-Ringen Uppsala",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/24475",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=24475",
+      "score": 37,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "O-ringen H35 E1",
+      "domaDate": "2022-07-24",
+      "databaseId": 83644,
+      "searchedDates": [
+        "2022-07-22",
+        "2022-07-23",
+        "2022-07-24",
+        "2022-07-25",
+        "2022-07-26"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2022-07-22&endDate=2022-07-22&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-07-22&endDate=2022-07-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-07-22&endDate=2022-07-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-07-22&endDate=2022-07-22&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-07-22&endDate=2022-07-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-07-22&endDate=2022-07-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 24475,
+          "title": "O-Ringen Uppsala",
+          "score": 37,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:24475-1&classExternalId=518622-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-527\\competition-enriched.json"
+    }
+  }
+}

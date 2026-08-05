@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-05T07:02:11.190Z",
+  "competition": {
+    "doma": {
+      "mapId": 519,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=519",
+      "title": "Kolmårdsdubbeln, medel",
+      "date": "2022-04-16",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "35:09",
+      "runningDistanceKm": 5.14,
+      "courseLengthKm": 4.42,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/519.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/519.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=519&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=80979&categoryId=7"
+    },
+    "location": null,
+    "latitude": 58.683166527778,
+    "longitude": 16.116192916667,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "1",
+      "starters": "25",
+      "controls": 14,
+      "time": "35:06",
+      "totalMistakeTime": "1:28",
+      "mistakes": [
+        {
+          "control": 3,
+          "time": "0:22"
+        },
+        {
+          "control": 8,
+          "time": "0:23"
+        },
+        {
+          "control": 10,
+          "time": "0:43"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 36830,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/36830",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=36830",
+      "title": "Kolmårdsdubbeln, dag 1, medel",
+      "date": "",
+      "organiser": "OK Kolmården",
+      "location": "",
+      "rawDiscipline": "medel",
+      "raceClass": "H21",
+      "distanceKm": 4.42,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:36830-1&classExternalId=498979-1"
+    },
+    "eventorMatch": {
+      "eventId": 36830,
+      "title": "Kolmårdsdubbeln, dag 1, medel",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/36830",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=36830",
+      "score": 85,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Kolmårdsdubbeln, medel",
+      "domaDate": "2022-04-16",
+      "databaseId": 80979,
+      "searchedDates": [
+        "2022-04-14",
+        "2022-04-15",
+        "2022-04-16",
+        "2022-04-17",
+        "2022-04-18"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2022-04-14&endDate=2022-04-14&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-04-14&endDate=2022-04-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-04-14&endDate=2022-04-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-04-14&endDate=2022-04-14&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-04-14&endDate=2022-04-14&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-04-14&endDate=2022-04-14&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-04-15&endDate=2022-04-15&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-04-15&endDate=2022-04-15&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-04-15&endDate=2022-04-15&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-04-15&endDate=2022-04-15&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-04-15&endDate=2022-04-15&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-04-15&endDate=2022-04-15&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-04-16&endDate=2022-04-16&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-04-16&endDate=2022-04-16&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-04-16&endDate=2022-04-16&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-04-16&endDate=2022-04-16&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-04-16&endDate=2022-04-16&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-04-16&endDate=2022-04-16&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-04-17&endDate=2022-04-17&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-04-17&endDate=2022-04-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-04-17&endDate=2022-04-17&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-04-17&endDate=2022-04-17&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-04-17&endDate=2022-04-17&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-04-17&endDate=2022-04-17&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-04-18&endDate=2022-04-18&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-04-18&endDate=2022-04-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-04-18&endDate=2022-04-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-04-18&endDate=2022-04-18&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-04-18&endDate=2022-04-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-04-18&endDate=2022-04-18&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 36830,
+          "title": "Kolmårdsdubbeln, dag 1, medel",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-04-17&endDate=2022-04-17&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:36830-1&classExternalId=498979-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-519\\competition-enriched.json"
+    }
+  }
+}

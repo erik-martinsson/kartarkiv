@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Zinkegruvemedeln (2022-04-23)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/521.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.820412046708</north>
+          <south>58.795876863408</south>
+          <east>15.085363402068</east>
+          <west>15.038548176852</west>
+          <rotation>-5.3307521874277</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-08-05T06:47:37.839Z",
+  "finishedAt": "2026-08-05T06:53:53.847Z",
+  "options": {
+    "from": 516,
+    "to": 531,
+    "runner": "Erik Martinsson",
+    "user": "erik",
+    "delayMs": 1500,
+    "force": false
+  },
+  "counts": {
+    "total": 16,
+    "created": 16,
+    "skipped": 0,
+    "skippedExisting": 0,
+    "skippedTraining": 0,
+    "failed": 0
+  },
+  "items": [
+    {
+      "mapId": 516,
+      "status": "created",
+      "title": "Måsenstafetten",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-516\\competition-enriched.json"
+    },
+    {
+      "mapId": 517,
+      "status": "created",
+      "title": "Bredaryds SOK, Långdistans",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-517\\competition-enriched.json"
+    },
+    {
+      "mapId": 518,
+      "status": "created",
+      "title": "Stigtomtakavlen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-518\\competition-enriched.json"
+    },
+    {
+      "mapId": 519,
+      "status": "created",
+      "title": "Kolmårdsdubbeln, medel",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-519\\competition-enriched.json"
+    },
+    {
+      "mapId": 520,
+      "status": "created",
+      "title": "Kolmårdsdubbeln, stafett",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-520\\competition-enriched.json"
+    },
+    {
+      "mapId": 521,
+      "status": "created",
+      "title": "Zinkegruvemedeln",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-521\\competition-enriched.json"
+    },
+    {
+      "mapId": 522,
+      "status": "created",
+      "title": "Ljungsbrokampen",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-522\\competition-enriched.json"
+    },
+    {
+      "mapId": 523,
+      "status": "created",
+      "title": "Tiomila",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-523\\competition-enriched.json"
+    },
+    {
+      "mapId": 524,
+      "status": "created",
+      "title": "Jukola",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-524\\competition-enriched.json"
+    },
+    {
+      "mapId": 525,
+      "status": "created",
+      "title": "WC Borås Publiktävling 2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-525\\competition-enriched.json"
+    },
+    {
+      "mapId": 526,
+      "status": "created",
+      "title": "WC Borås Publiktävling 3",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-526\\competition-enriched.json"
+    },
+    {
+      "mapId": 527,
+      "status": "created",
+      "title": "O-ringen H35 E1",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-527\\competition-enriched.json"
+    },
+    {
+      "mapId": 528,
+      "status": "created",
+      "title": "O-ringen H35 E2",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-528\\competition-enriched.json"
+    },
+    {
+      "mapId": 529,
+      "status": "created",
+      "title": "O-ringen H35 E3",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-529\\competition-enriched.json"
+    },
+    {
+      "mapId": 530,
+      "status": "created",
+      "title": "O-ringen H35 E4",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-530\\competition-enriched.json"
+    },
+    {
+      "mapId": 531,
+      "status": "created",
+      "title": "O-ringen H35 E5",
+      "category": "Tävling",
+      "outputPath": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-531\\competition-enriched.json"
+    }
+  ]
+}

@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-05T07:17:04.019Z",
+  "competition": {
+    "doma": {
+      "mapId": 528,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=528",
+      "title": "O-ringen E2",
+      "date": "2022-07-25",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "58:22",
+      "runningDistanceKm": 10.61,
+      "courseLengthKm": 8.5,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/528.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/528.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=528&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=83665&categoryId=44"
+    },
+    "location": null,
+    "latitude": 59.822712916667,
+    "longitude": 17.556511388889,
+    "discipline": "Lång",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H35",
+      "club": "Linköpings OK",
+      "position": "4",
+      "starters": "48",
+      "controls": 13,
+      "time": "58:21",
+      "totalMistakeTime": "3:14",
+      "mistakes": [
+        {
+          "control": 5,
+          "time": "3:14"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "O-ringen H35 E2",
+      "domaDate": "2022-07-25",
+      "databaseId": 83665,
+      "searchedDates": [
+        "2022-07-23",
+        "2022-07-24",
+        "2022-07-25",
+        "2022-07-26",
+        "2022-07-27"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-07-27&endDate=2022-07-27&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-07-27&endDate=2022-07-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-07-27&endDate=2022-07-27&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-07-27&endDate=2022-07-27&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-07-27&endDate=2022-07-27&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-07-27&endDate=2022-07-27&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 24475,
+          "title": "O-Ringen Uppsala",
+          "score": 37,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40904,
+          "title": "O-Ringen Uppsala, Bagheerastafetten",
+          "score": 32,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37349,
+          "title": "MTBO, O-Ringen Uppsala",
+          "score": 32,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41466,
+          "title": "Veckans bana V21 OK Linné",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41842,
+          "title": "Midsommar-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41540,
+          "title": "Idrefjällsommaren 2022, 6 träningsområden med 12 banor/område",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41910,
+          "title": "Veckansbana OK Malmia",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 31842,
+          "title": "Veckans bana Favorit i repris från 2020 vid Växplats Nybyn",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41932,
+          "title": "Sommarbanor Flygstaden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41909,
+          "title": "Månadens bana Juli",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41954,
+          "title": "Sommarbanor Svartsundet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41905,
+          "title": "Veckans bana, V.27-29",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41976,
+          "title": "Sommarbanor Kungsgårdshällorna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41975,
+          "title": "Sommarbanor Mohed",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41980,
+          "title": "Sommarteknik",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41981,
+          "title": "Sommarbanor på Ekensberg",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41988,
+          "title": "Sommarteknik Kils OK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41986,
+          "title": "Sommarteknik",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41989,
+          "title": "Veckans bana Svaidestugan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41987,
+          "title": "Veckans bana v28-29",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41124,
+          "title": "Veckans bana - Svartvik",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41867,
+          "title": "Veckans sommarbana v 28-29",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42004,
+          "title": "Veckans bana V 28-29 Nytorp",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41999,
+          "title": "Veckans bana, V.28-29",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41578,
+          "title": "Veckans bana - Hemlingby v 28-29",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42017,
+          "title": "Veckans Bana Mostugan 12/7-7/8",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42028,
+          "title": "Veckans bana Bomsarvet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41992,
+          "title": "Veckans hittaut-bana v29 Ärla",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41682,
+          "title": "Veckans bana, V.23-24",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41817,
+          "title": "Veckans bana, V.25-26",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41125,
+          "title": "Veckans bana - Grötsjön",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42025,
+          "title": "Veckans bana V29",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 39772,
+          "title": "Veckans bana Råbäck SO",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42050,
+          "title": "Veckans bana HSOK V29",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42047,
+          "title": "Veckans Bana Slätte 19/7-14/8",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 34609,
+          "title": "Metrunner Stockholm City Race",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42059,
+          "title": "VECKANS BANA 21-25/6 STRÄNGNÄS",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41880,
+          "title": "Sommar-ol v 29",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42088,
+          "title": "Veckans hittaut-bana v30",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41487,
+          "title": "Swedish Summer O-meeting day 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36738,
+          "title": "MTBO, Uppsala, medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41814,
+          "title": "Mälarcup #1 OL-Skytte",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-23&endDate=2022-07-23&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42093,
+          "title": "Motionsorientering, Innervik",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36740,
+          "title": "MTBO, Uppsala, model event",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-24&endDate=2022-07-24&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42100,
+          "title": "Lilla Torrberget Veckans bana",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42001,
+          "title": "Veckans bana V30",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41869,
+          "title": "Veckans sommarbana v 30-31",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42089,
+          "title": "Veckans bana V30-31 S. Nytorp",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41581,
+          "title": "Veckans bana - Hemlingby v 30",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 39884,
+          "title": "Sommarsimrishamn Etapp 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 42051,
+          "title": "Veckans bana HSOK V30",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-25&endDate=2022-07-25&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41833,
+          "title": "MPOL E5 Husie",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41426,
+          "title": "Motionsorientering Microsprint",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-07-26&endDate=2022-07-26&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-528\\competition-enriched.json"
+    }
+  }
+}

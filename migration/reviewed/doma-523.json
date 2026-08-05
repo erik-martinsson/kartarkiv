@@ -1,0 +1,1025 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-05T07:29:32.796Z",
+  "competition": {
+    "doma": {
+      "mapId": 523,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=523",
+      "title": "Tiomila",
+      "date": "2022-05-08",
+      "category": "Tävling",
+      "relayLeg": 3,
+      "runningTime": "1:21:55",
+      "runningDistanceKm": 14.35,
+      "courseLengthKm": 11.5,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/523.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/523.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=523&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=81602&categoryId=18"
+    },
+    "location": null,
+    "latitude": 59.344099722222,
+    "longitude": 14.943701666667,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "Herrar",
+      "club": "Linköpings OK 1",
+      "position": "74",
+      "starters": "302",
+      "controls": 21,
+      "time": "1:21:54",
+      "totalMistakeTime": "4:49",
+      "mistakes": [
+        {
+          "control": 1,
+          "time": "2:30"
+        },
+        {
+          "control": 13,
+          "time": "2:19"
+        }
+      ]
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Tiomila",
+      "domaDate": "2022-05-08",
+      "databaseId": 81485,
+      "searchedDates": [
+        "2022-05-06",
+        "2022-05-07",
+        "2022-05-08",
+        "2022-05-09",
+        "2022-05-10"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 38061,
+          "title": "Tiomila Örebro, Open Individual Courses, Friday",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 39409,
+          "title": "LundsOK-tiomila",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36452,
+          "title": "\"icons\">lör 7/5Tiomila Örebro, Open Individual Courses, Saturday",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38062,
+          "title": "Tiomila Örebro, Open Individual Courses, Saturday",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 33643,
+          "title": "Tiomila i Ånnaboda, Örebro",
+          "score": 94,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40814,
+          "title": "Veckans bana Svaidestugan 15/4- 7/5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40981,
+          "title": "Veckans bana 17 Mölltorp",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 39739,
+          "title": "Veckans bana Högbergstorp",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40906,
+          "title": "Veckans bana26-4 - 15-5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41008,
+          "title": "Veckans Bana Slätte 26/4-8/5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40910,
+          "title": "Veckans bana - Hedtjärn",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41105,
+          "title": "Veckansbana Vägval Rösjöberget",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41151,
+          "title": "Naturpasset Lidingö MTBO 2022",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40712,
+          "title": "Veckans bana V18",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40730,
+          "title": "Veckans bana V18 Stadsskogen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41162,
+          "title": "Veckans bana 18 Tobäcken",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41110,
+          "title": "Veckans bana HSOK V18",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41065,
+          "title": "Veckans bana 3/5 - 15/5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41164,
+          "title": "Veckans Bana Mostugan 3/5-15/5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40882,
+          "title": "Veckans bana - Hemlingby v 18",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40592,
+          "title": "Allemansluffen, Vreta",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41143,
+          "title": "Veckans bana Smårisberget Deje",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41108,
+          "title": "Veckans bana, Dålingen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41214,
+          "title": "Veckans bana v18 Gimo",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40419,
+          "title": "Månadens bana",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41139,
+          "title": "Teknik-träning-Gropahålet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41141,
+          "title": "Veckoturen 4/5 Råhällan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41171,
+          "title": "VECKANS BANA 5-9/5 STRÄNGNÄS",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40541,
+          "title": "Veckans bana v 18",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40757,
+          "title": "Veckans Bana Skattkärr",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41238,
+          "title": "Veckansbana OK Malmia",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40871,
+          "title": "Veteran-Ol i Södra Vätterbygden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-06&endDate=2022-05-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36637,
+          "title": "Tenhultsmedeln",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36514,
+          "title": "Veteranträffen i Gästrikland",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40835,
+          "title": "Älgotscup och KM sydöstra kretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-07&endDate=2022-05-07&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36638,
+          "title": "Tenhultslången",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36553,
+          "title": "Årsundarundan, medel",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36453,
+          "title": "Älmedubbeln, dag 2, lång",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41119,
+          "title": "Veckans bana - Skärsviken",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41262,
+          "title": "Veckans bana Slättflis 8-28/5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41103,
+          "title": "GMOK Intensivkurs #1 2022 träningstävling",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36531,
+          "title": "Omega Kort",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41043,
+          "title": "Motionsorientering 8 maj Umeå",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41004,
+          "title": "Run to the Hills 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-08&endDate=2022-05-08&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40193,
+          "title": "FOK:s Sprintcup etapp 4",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41261,
+          "title": "Veckans bana V19 OK Linné",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40713,
+          "title": "Veckans bana V19",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41283,
+          "title": "Veckans bana V19 Humsjön",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40700,
+          "title": "Veckans bana Råbäck NO",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41383,
+          "title": "Veckans bana V 20 7-vägaskälet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40883,
+          "title": "Veckans bana - Hemlingby v 19",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41144,
+          "title": "Pokaljakten Kristinehamn (Björkvallen)",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40628,
+          "title": "Motionsorientering Länsmansgården",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40969,
+          "title": "Värmlandsserien MTBO deltävling 1, Deje",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40922,
+          "title": "Motions-OL #2 i Ö Vännfors",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41111,
+          "title": "Veckans bana HSOK V19",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-09&endDate=2022-05-09&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40535,
+          "title": "Till Skogs #1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41131,
+          "title": "Tjustalliansens Ungdomsserie 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41296,
+          "title": "Veckans Bana Slätte 10/5-22/5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 39789,
+          "title": "Veteranorientering i Helgesta",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 39895,
+          "title": "Dala Veteran-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40320,
+          "title": "Motions-OL/KRETS Villingsberg-Norhammar",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41182,
+          "title": "5-dagars på hemmaplan etapp 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41254,
+          "title": "Motionsorientering Sandsätersbro",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40984,
+          "title": "SNO KM-Sprint",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41071,
+          "title": "Träning OL-NV",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41307,
+          "title": "Motionsorientering, Medle",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40649,
+          "title": "Sörklubbs #3 - Bollnäs Lottefors",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40152,
+          "title": "Skogsfemman, #1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41255,
+          "title": "Veckans bana Sandsätersbro",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40802,
+          "title": "Norrcup",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41257,
+          "title": "Sprintcupen Etapp 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41000,
+          "title": "Sprint-KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40731,
+          "title": "Tränings-OL, egostafett",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40961,
+          "title": "Ungdomsserien",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40880,
+          "title": "Motionsorientering Skrömterud, Edane",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41165,
+          "title": "7-klubbs",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 39038,
+          "title": "EES - Eslöv Evening Sprint - etapp 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41251,
+          "title": "Tisdagsträning/Veckans bana",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40594,
+          "title": "Allemansluffen, Trösken/Österbo",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41169,
+          "title": "Umeåregionens teknikträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40836,
+          "title": "Ungdomens 5-dagars Etapp 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40620,
+          "title": "KM i medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41072,
+          "title": "Ungdomscup",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41158,
+          "title": "Eskilstuna Sprint Cup #2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40903,
+          "title": "Dag-KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40118,
+          "title": "Dammatch västra kretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41041,
+          "title": "Ungdomsserien #3, UOK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41030,
+          "title": "Höglandsserien deltävling 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 40335,
+          "title": "VOF Ungdom, VPT 1",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36486,
+          "title": "Vårserien, #2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 41325,
+          "title": "Veckans bana, SISU Forshaga/Deje SF, SISU-gården",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2022-05-10&endDate=2022-05-10&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-523\\competition-enriched.json"
+    }
+  }
+}

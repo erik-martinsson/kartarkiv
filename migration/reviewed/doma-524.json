@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-05T07:14:53.083Z",
+  "competition": {
+    "doma": {
+      "mapId": 524,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=524",
+      "title": "Jukola",
+      "date": "2022-06-18",
+      "category": "Tävling",
+      "relayLeg": 3,
+      "runningTime": "1:33:43",
+      "runningDistanceKm": 16.49,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/524.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/524.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=524&format=kml",
+      "winsplitsUrl": null,
+      "courseLengthKm": 14.9
+    },
+    "location": null,
+    "latitude": 60.647184444444,
+    "longitude": 22.02368125,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "Jukola",
+      "club": "Linköpings OK 1",
+      "position": "75",
+      "starters": "1900",
+      "controls": 29,
+      "time": "1:33:43",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Jukola",
+      "domaDate": "2022-06-18",
+      "databaseId": 0,
+      "searchedDates": [],
+      "calendarUrls": [],
+      "candidates": []
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer/Lukkari-Jukola-2022-Jukolan-Viesti/Jukolan-viesti/3?classId=491373&relayLeg=3&live=false&tab=legView",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "DOMA-posten saknar WinSplits-länk. Komplettera länken manuellt i granskningssteget.",
+      "Resultat, klass, banlängd och bomtider kunde inte berikas utan WinSplits."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-524\\competition-enriched.json"
+    },
+    "country": "FI"
+  }
+}

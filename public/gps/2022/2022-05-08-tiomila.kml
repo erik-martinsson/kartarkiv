@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Tiomila (2022-05-08)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/523.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>59.35911633042</north>
+          <south>59.329783825529</south>
+          <east>14.973434757242</east>
+          <west>14.914071292401</west>
+          <rotation>-5.3247643265635</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

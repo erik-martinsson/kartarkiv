@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: WC Borås Publiktävling 3 (2022-05-27)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/526.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>57.739982111298</north>
+          <south>57.718925682036</south>
+          <east>12.90482433843</east>
+          <west>12.874233753571</west>
+          <rotation>0.18786771008548</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

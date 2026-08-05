@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: O-ringen H35 E5 (2022-07-29)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/531.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>59.806557969351</north>
+          <south>59.765398999738</south>
+          <east>17.757731100089</east>
+          <west>17.645343046629</west>
+          <rotation>-5.922147774192</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>
