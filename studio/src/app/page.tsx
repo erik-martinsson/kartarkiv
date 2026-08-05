@@ -244,6 +244,18 @@ type ReverseGeocodeResponse = {
   error?: string;
 };
 
+type CreateRaceResponse = {
+  success?: boolean;
+  repositoryRoot?: string;
+  created?: Array<{
+    relativePath: string;
+    absolutePath: string;
+  }>;
+  conflicts?: string[];
+  nextStep?: string;
+  error?: string;
+};
+
 async function reverseGeocodeLocation(
   latitude: number,
   longitude: number,
@@ -302,6 +314,10 @@ export default function Home() {
     useState(false);
   const [showPreview, setShowPreview] =
     useState(false);
+  const [isCreatingRace, setIsCreatingRace] =
+    useState(false);
+  const [createRaceResult, setCreateRaceResult] =
+    useState<CreateRaceResponse | null>(null);
 
   const [eventSource, setEventSource] = useState("");
   const [isImportingEventor, setIsImportingEventor] = useState(false);
@@ -854,12 +870,99 @@ export default function Home() {
     }
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    event: FormEvent<HTMLFormElement>,
+  ) => {
     event.preventDefault();
 
-    alert(
-      "Formuläret fungerar. I nästa steg kopplar vi GPX-analys, förhandsgranskning och GitHub-import.",
-    );
+    if (
+      missingRequiredChecks.length > 0 ||
+      isCreatingRace
+    ) {
+      return;
+    }
+
+    setIsCreatingRace(true);
+    setCreateRaceResult(null);
+
+    try {
+      const requestData =
+        new FormData();
+
+      requestData.set(
+        "metadata",
+        JSON.stringify({
+          slug: slugPreview,
+          year: racePreview.year,
+          markdown: racePreview.markdown,
+          mapImagePath:
+            racePreview.mapImagePath,
+          routeImagePath:
+            racePreview.routeImagePath,
+          gpsFilePath:
+            racePreview.gpsFilePath,
+        }),
+      );
+
+      if (blankMap) {
+        requestData.set(
+          "mapImage",
+          blankMap,
+        );
+      }
+
+      if (routeMap) {
+        requestData.set(
+          "routeImage",
+          routeMap,
+        );
+      }
+
+      if (gpxFile) {
+        requestData.set(
+          "gpxFile",
+          gpxFile,
+        );
+      }
+
+      const response = await fetch(
+        "/api/create-race",
+        {
+          method: "POST",
+          body: requestData,
+        },
+      );
+
+      const result =
+        (await response.json()) as
+          CreateRaceResponse;
+
+      if (!response.ok) {
+        const conflictText =
+          result.conflicts?.length
+            ? `\n${result.conflicts.join("\n")}`
+            : "";
+
+        throw new Error(
+          (result.error ||
+            "Tävlingen kunde inte skapas.") +
+            conflictText,
+        );
+      }
+
+      setCreateRaceResult(result);
+      setShowPreview(true);
+    } catch (caughtError) {
+      setCreateRaceResult({
+        success: false,
+        error:
+          caughtError instanceof Error
+            ? caughtError.message
+            : "Tävlingen kunde inte skapas.",
+      });
+    } finally {
+      setIsCreatingRace(false);
+    }
   };
 
   return (
@@ -1532,18 +1635,90 @@ export default function Home() {
               type="submit"
               className="button primary"
               disabled={
-                missingRequiredChecks.length > 0
+                missingRequiredChecks.length > 0 ||
+                isCreatingRace
               }
               style={{
                 opacity:
-                  missingRequiredChecks.length > 0
+                  missingRequiredChecks.length > 0 ||
+                  isCreatingRace
                     ? 0.55
                     : 1,
+                cursor: isCreatingRace
+                  ? "wait"
+                  : "pointer",
               }}
             >
-              Skapa tävling
+              {isCreatingRace
+                ? "Skapar…"
+                : "Skapa tävling"}
             </button>
           </div>
+
+          {createRaceResult ? (
+            <div
+              role="status"
+              aria-live="polite"
+              style={{
+                display: "grid",
+                gap: "0.65rem",
+                marginTop: "1rem",
+                padding: "0.9rem",
+                borderRadius: "0.75rem",
+                border: createRaceResult.success
+                  ? "1px solid rgba(66, 190, 116, 0.45)"
+                  : "1px solid rgba(255, 105, 105, 0.45)",
+                background: createRaceResult.success
+                  ? "rgba(66, 190, 116, 0.08)"
+                  : "rgba(255, 105, 105, 0.08)",
+              }}
+            >
+              <strong>
+                {createRaceResult.success
+                  ? "Tävlingen skapades i Kartarkivet"
+                  : "Tävlingen kunde inte skapas"}
+              </strong>
+
+              {createRaceResult.error ? (
+                <span
+                  style={{
+                    whiteSpace: "pre-wrap",
+                  }}
+                >
+                  {createRaceResult.error}
+                </span>
+              ) : null}
+
+              {createRaceResult.created?.length ? (
+                <div
+                  style={{
+                    display: "grid",
+                    gap: "0.3rem",
+                  }}
+                >
+                  {createRaceResult.created.map(
+                    (file) => (
+                      <code
+                        key={file.relativePath}
+                        style={{
+                          overflowWrap:
+                            "anywhere",
+                        }}
+                      >
+                        ✓ {file.relativePath}
+                      </code>
+                    ),
+                  )}
+                </div>
+              ) : null}
+
+              {createRaceResult.nextStep ? (
+                <small>
+                  {createRaceResult.nextStep}
+                </small>
+              ) : null}
+            </div>
+          ) : null}
 
           <p className="output-note">
             Förhandsgranskningen och den kommande

@@ -75,6 +75,12 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/api/create-race",
+      "regex": "^/api/create\\-race(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/create\\-race(?:/)?$"
+    },
+    {
       "page": "/api/eventor-links",
       "regex": "^/api/eventor\\-links(?:/)?$",
       "routeKeys": {},

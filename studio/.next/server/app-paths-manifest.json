@@ -1,6 +1,7 @@
 {
   "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/create-race/route": "app/api/create-race/route.js",
   "/api/eventor-links/route": "app/api/eventor-links/route.js",
   "/api/migration/doma/[mapId]/publish/route": "app/api/migration/doma/[mapId]/publish/route.js",
   "/api/migration/doma/[mapId]/review/route": "app/api/migration/doma/[mapId]/review/route.js",

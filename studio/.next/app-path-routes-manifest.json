@@ -1,6 +1,7 @@
 {
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
+  "/api/create-race/route": "/api/create-race",
   "/api/eventor-links/route": "/api/eventor-links",
   "/api/migration/doma/[mapId]/publish/route": "/api/migration/doma/[mapId]/publish",
   "/api/migration/doma/[mapId]/review/route": "/api/migration/doma/[mapId]/review",

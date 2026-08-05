@@ -1,6 +1,7 @@
 {
   "version": 1,
   "functions": {
+    "/api/create-race": {},
     "/api/eventor-links": {},
     "/api/migration/doma": {},
     "/api/migration/doma/[mapId]": {},

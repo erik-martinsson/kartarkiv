@@ -134,6 +134,63 @@ function addOptionalNumber(
   );
 }
 
+function normalizeRaceTime(
+  value: string,
+): string {
+  const trimmed = value.trim();
+
+  if (!trimmed) {
+    return "";
+  }
+
+  const parts = trimmed
+    .split(/[.:]/)
+    .map((part) => part.trim());
+
+  if (
+    (parts.length !== 2 &&
+      parts.length !== 3) ||
+    parts.some((part) => !/^\d+$/.test(part))
+  ) {
+    return trimmed;
+  }
+
+  const numbers = parts.map(Number);
+
+  if (parts.length === 2) {
+    const [minutes, seconds] = numbers;
+
+    if (seconds >= 60) {
+      return trimmed;
+    }
+
+    if (minutes < 60) {
+      return `${minutes}:${String(seconds).padStart(2, "0")}`;
+    }
+
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+
+    return (
+      `${hours}:` +
+      `${String(remainingMinutes).padStart(2, "0")}:` +
+      String(seconds).padStart(2, "0")
+    );
+  }
+
+  const [hours, minutes, seconds] = numbers;
+
+  if (minutes >= 60 || seconds >= 60) {
+    return trimmed;
+  }
+
+  return (
+    `${hours}:` +
+    `${String(minutes).padStart(2, "0")}:` +
+    String(seconds).padStart(2, "0")
+  );
+}
+
 export function buildRaceMarkdown(
   input: RaceMarkdownInput,
 ): RaceMarkdownResult {
@@ -218,7 +275,7 @@ export function buildRaceMarkdown(
   );
 
   lines.push(
-    `time: ${quoteYaml(input.time)}`,
+    `time: ${quoteYaml(normalizeRaceTime(input.time))}`,
     "",
   );
 
