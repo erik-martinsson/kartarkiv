@@ -649,14 +649,11 @@ __turbopack_context__.s([
     ()=>getEventLinks
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/studio/node_modules/axios/lib/axios.js [app-route] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$externals$5d2f$playwright__$5b$external$5d$__$28$playwright$2c$__esm_import$2c$__$5b$project$5d2f$studio$2f$node_modules$2f$playwright$29$__ = __turbopack_context__.i("[externals]/playwright [external] (playwright, esm_import, [project]/studio/node_modules/playwright)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$src$2f$lib$2f$winsplits$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/studio/src/lib/winsplits.ts [app-route] (ecmascript)");
 var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
-    __TURBOPACK__imported__module__$5b$externals$5d2f$playwright__$5b$external$5d$__$28$playwright$2c$__esm_import$2c$__$5b$project$5d2f$studio$2f$node_modules$2f$playwright$29$__,
     __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$src$2f$lib$2f$winsplits$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__
 ]);
-[__TURBOPACK__imported__module__$5b$externals$5d2f$playwright__$5b$external$5d$__$28$playwright$2c$__esm_import$2c$__$5b$project$5d2f$studio$2f$node_modules$2f$playwright$29$__, __TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$src$2f$lib$2f$winsplits$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
-;
+[__TURBOPACK__imported__module__$5b$project$5d2f$studio$2f$src$2f$lib$2f$winsplits$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__;
 ;
 ;
 const EVENTOR_BASE_URL = "https://eventor.orientering.se";
@@ -1093,76 +1090,54 @@ async function fetchHtml(url) {
     });
     return response.data;
 }
-async function openPage(page, url) {
-    await page.goto(url, {
-        waitUntil: "domcontentloaded",
-        timeout: 30_000
-    });
-    await page.waitForLoadState("networkidle", {
-        timeout: 10_000
-    }).catch(()=>undefined);
-    await page.waitForTimeout(500);
-}
-async function readEventInformation(page) {
-    const rawInformation = await page.evaluate(()=>{
-        function clean(value) {
-            return (value ?? "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
+function readEventInformation(html) {
+    const values = new Map();
+    function storeValue(rawLabel, rawValue) {
+        const label = stripHtml(rawLabel).toLocaleLowerCase("sv-SE");
+        const value = stripHtml(rawValue);
+        if (!label || !value) {
+            return;
         }
-        const values = new Map();
-        for (const row of Array.from(document.querySelectorAll("tr"))){
-            const cells = Array.from(row.querySelectorAll(":scope > th, :scope > td"));
-            if (cells.length < 2) {
-                continue;
-            }
-            const label = clean(cells[0].textContent);
-            const value = clean(cells[1].textContent);
-            if (!label || !value) {
-                continue;
-            }
-            values.set(label.toLocaleLowerCase("sv-SE"), value);
+        values.set(label, value);
+    }
+    /*
+   * Eventor visar tävlingsinformationen som tabell på
+   * vissa sidor och som dt/dd-lista på andra.
+   */ for (const rowMatch of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)){
+        const cells = [
+            ...rowMatch[1].matchAll(/<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi)
+        ];
+        if (cells.length >= 2) {
+            storeValue(cells[0][1], cells[1][1]);
         }
-        for (const term of Array.from(document.querySelectorAll("dt"))){
-            const definition = term.nextElementSibling;
-            if (!definition || definition.tagName.toLocaleLowerCase() !== "dd") {
-                continue;
+    }
+    for (const definitionMatch of html.matchAll(/<dt\b[^>]*>([\s\S]*?)<\/dt>\s*<dd\b[^>]*>([\s\S]*?)<\/dd>/gi)){
+        storeValue(definitionMatch[1], definitionMatch[2]);
+    }
+    function read(...labels) {
+        for (const label of labels){
+            const wanted = label.toLocaleLowerCase("sv-SE");
+            const direct = values.get(wanted);
+            if (direct) {
+                return direct;
             }
-            const label = clean(term.textContent);
-            const value = clean(definition.textContent);
-            if (!label || !value) {
-                continue;
-            }
-            values.set(label.toLocaleLowerCase("sv-SE"), value);
-        }
-        function read(...labels) {
-            for (const label of labels){
-                const wanted = label.toLocaleLowerCase("sv-SE");
-                const direct = values.get(wanted);
-                if (direct) {
-                    return direct;
-                }
-                for (const [storedLabel, storedValue] of values){
-                    if (storedLabel.startsWith(wanted)) {
-                        return storedValue;
-                    }
+            for (const [storedLabel, storedValue] of values){
+                if (storedLabel.startsWith(wanted)) {
+                    return storedValue;
                 }
             }
-            return "";
         }
-        const headings = Array.from(document.querySelectorAll("h1, h2")).map((element)=>clean(element.textContent)).filter(Boolean);
-        return {
-            title: read("Tävling") || headings[0] || "",
-            date: read("Datum"),
-            organiser: read("Arrangörsorganisation", "Arrangör"),
-            location: read("Arena", "Tävlingsplats", "Plats", "Tävlingsområde"),
-            discipline: read("Tävlingsdistans", "Distans")
-        };
-    });
+        return "";
+    }
+    const headings = [
+        ...html.matchAll(/<h[12]\b[^>]*>([\s\S]*?)<\/h[12]>/gi)
+    ].map((match)=>stripHtml(match[1])).filter(Boolean);
     return {
-        title: normalizeText(rawInformation.title),
-        date: parseSwedishDate(rawInformation.date),
-        organiser: normalizeText(rawInformation.organiser),
-        location: normalizeText(rawInformation.location),
-        discipline: normalizeDiscipline(rawInformation.discipline)
+        title: read("Tävling") || headings[0] || "",
+        date: parseSwedishDate(read("Datum")),
+        organiser: read("Arrangörsorganisation", "Arrangör"),
+        location: read("Arena", "Tävlingsplats", "Plats", "Tävlingsområde"),
+        discipline: normalizeDiscipline(read("Tävlingsdistans", "Distans"))
     };
 }
 async function getEventLinks(eventId, runnerName = "Erik Martinsson") {
@@ -1171,46 +1146,34 @@ async function getEventLinks(eventId, runnerName = "Erik Martinsson") {
     }
     const eventorUrl = `${EVENTOR_BASE_URL}` + `/Events/Show/${eventId}`;
     const resultListUrl = `${EVENTOR_BASE_URL}` + "/Events/ResultList" + `?eventId=${eventId}`;
-    const [resultHtml, browser] = await Promise.all([
+    const [resultHtml, eventHtml] = await Promise.all([
         fetchHtml(resultListUrl),
-        __TURBOPACK__imported__module__$5b$externals$5d2f$playwright__$5b$external$5d$__$28$playwright$2c$__esm_import$2c$__$5b$project$5d2f$studio$2f$node_modules$2f$playwright$29$__["chromium"].launch({
-            headless: true
-        })
+        fetchHtml(eventorUrl)
     ]);
-    try {
-        const context = await browser.newContext({
-            locale: "sv-SE",
-            userAgent: "Mozilla/5.0 " + "(Windows NT 10.0; Win64; x64) " + "AppleWebKit/537.36 " + "(KHTML, like Gecko) " + "Chrome/131.0.0.0 " + "Safari/537.36"
-        });
-        const page = await context.newPage();
-        await openPage(page, eventorUrl);
-        const eventInformation = await readEventInformation(page);
-        const classInformation = parseClassInformation(resultHtml, runnerName);
-        const { winsplits, runner, classInformation: winSplitsClassInformation } = await findWinSplitsRunner(resultHtml, resultListUrl, classInformation.raceClass, runnerName);
-        const resolvedClassInformation = winSplitsClassInformation ?? classInformation;
-        const liveloxUrl = findLiveloxLink(resultHtml, resultListUrl, resolvedClassInformation.raceClass);
-        return {
-            eventId,
-            eventorUrl,
-            resultListUrl,
-            title: eventInformation.title,
-            date: eventInformation.date,
-            club: eventInformation.organiser || runner?.club || "",
-            location: eventInformation.location,
-            raceClass: resolvedClassInformation.raceClass,
-            discipline: eventInformation.discipline,
-            distanceKm: resolvedClassInformation.distanceKm,
-            time: normalizeTime(runner?.totalTime),
-            position: runner?.place ?? "",
-            starters: resolvedClassInformation.starters,
-            controls: runner ? String(runner.controls) : "",
-            mistakeTime: normalizeTime(runner?.totalMistake) || "0:00",
-            winsplits,
-            liveloxUrl
-        };
-    } finally{
-        await browser.close();
-    }
+    const eventInformation = readEventInformation(eventHtml);
+    const classInformation = parseClassInformation(resultHtml, runnerName);
+    const { winsplits, runner, classInformation: winSplitsClassInformation } = await findWinSplitsRunner(resultHtml, resultListUrl, classInformation.raceClass, runnerName);
+    const resolvedClassInformation = winSplitsClassInformation ?? classInformation;
+    const liveloxUrl = findLiveloxLink(resultHtml, resultListUrl, resolvedClassInformation.raceClass);
+    return {
+        eventId,
+        eventorUrl,
+        resultListUrl,
+        title: eventInformation.title,
+        date: eventInformation.date,
+        club: eventInformation.organiser || runner?.club || "",
+        location: eventInformation.location,
+        raceClass: resolvedClassInformation.raceClass,
+        discipline: eventInformation.discipline,
+        distanceKm: resolvedClassInformation.distanceKm,
+        time: normalizeTime(runner?.totalTime),
+        position: runner?.place ?? "",
+        starters: resolvedClassInformation.starters,
+        controls: runner ? String(runner.controls) : "",
+        mistakeTime: normalizeTime(runner?.totalMistake) || "0:00",
+        winsplits,
+        liveloxUrl
+    };
 }
 __turbopack_async_result__();
 } catch(e) { __turbopack_async_result__(e); } }, false);}),

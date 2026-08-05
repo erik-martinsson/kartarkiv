@@ -1,7 +1,5 @@
 {
   "/api/create-race/route": "app/api/create-race/route.js",
   "/api/eventor-links/route": "app/api/eventor-links/route.js",
-  "/api/reverse-geocode/route": "app/api/reverse-geocode/route.js",
-  "/api/winsplits-eventor/route": "app/api/winsplits-eventor/route.js",
-  "/page": "app/page.js"
+  "/api/reverse-geocode/route": "app/api/reverse-geocode/route.js"
 }

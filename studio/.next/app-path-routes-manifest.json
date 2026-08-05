@@ -1,0 +1,18 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/create-race/route": "/api/create-race",
+  "/api/eventor-links/route": "/api/eventor-links",
+  "/api/migration/doma/[mapId]/publish/route": "/api/migration/doma/[mapId]/publish",
+  "/api/migration/doma/[mapId]/review/route": "/api/migration/doma/[mapId]/review",
+  "/api/migration/doma/[mapId]/route": "/api/migration/doma/[mapId]",
+  "/api/migration/doma/route": "/api/migration/doma",
+  "/api/published/[...id]/route": "/api/published/[...id]",
+  "/api/published/route": "/api/published",
+  "/api/reverse-geocode/route": "/api/reverse-geocode",
+  "/api/winsplits-eventor/route": "/api/winsplits-eventor",
+  "/favicon.ico/route": "/favicon.ico",
+  "/migration/page": "/migration",
+  "/page": "/",
+  "/published/page": "/published"
+}

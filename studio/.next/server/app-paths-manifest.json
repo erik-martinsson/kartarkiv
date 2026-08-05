@@ -1,0 +1,18 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/create-race/route": "app/api/create-race/route.js",
+  "/api/eventor-links/route": "app/api/eventor-links/route.js",
+  "/api/migration/doma/[mapId]/publish/route": "app/api/migration/doma/[mapId]/publish/route.js",
+  "/api/migration/doma/[mapId]/review/route": "app/api/migration/doma/[mapId]/review/route.js",
+  "/api/migration/doma/[mapId]/route": "app/api/migration/doma/[mapId]/route.js",
+  "/api/migration/doma/route": "app/api/migration/doma/route.js",
+  "/api/published/[...id]/route": "app/api/published/[...id]/route.js",
+  "/api/published/route": "app/api/published/route.js",
+  "/api/reverse-geocode/route": "app/api/reverse-geocode/route.js",
+  "/api/winsplits-eventor/route": "app/api/winsplits-eventor/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/migration/page": "app/migration/page.js",
+  "/page": "app/page.js",
+  "/published/page": "app/published/page.js"
+}
