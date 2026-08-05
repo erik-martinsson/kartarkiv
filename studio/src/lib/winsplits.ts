@@ -1,14 +1,11 @@
-import {
-  chromium,
-  type Frame,
-  type Page,
-} from "playwright";
 import * as cheerio from "cheerio";
 
 const WINSPLITS_URL =
   "https://obasen.orientering.se/winsplits/online/sv/default.asp";
 
 const RUNNER_NAME = "Erik Martinsson";
+const REQUEST_TIMEOUT_MS = 30_000;
+const MAX_FRAME_DEPTH = 3;
 
 export interface WinSplitsMistake {
   control: number;
@@ -34,6 +31,75 @@ export interface WinSplitsClassMetadata {
 export interface WinSplitsData {
   runners: WinSplitsRunner[];
   metadata: WinSplitsClassMetadata;
+}
+
+type LoadedPage = {
+  url: string;
+  html: string;
+};
+
+class CookieJar {
+  private readonly cookies =
+    new Map<string, string>();
+
+  addFromResponse(response: Response): void {
+    const headers = response.headers as Headers & {
+      getSetCookie?: () => string[];
+    };
+
+    const setCookieValues =
+      typeof headers.getSetCookie === "function"
+        ? headers.getSetCookie()
+        : response.headers.get("set-cookie")
+          ? [response.headers.get("set-cookie") as string]
+          : [];
+
+    for (const setCookie of setCookieValues) {
+      /*
+       * Flera Set-Cookie-värden kan vara hopslagna av
+       * fetch-implementationen. Dela bara vid kommatecken
+       * som följs av ett nytt cookie-namn.
+       */
+      const cookieParts = setCookie.split(
+        /,(?=\s*[^;,=\s]+=[^;,]*)/,
+      );
+
+      for (const cookiePart of cookieParts) {
+        const firstPart =
+          cookiePart.split(";")[0]?.trim();
+
+        const separatorIndex =
+          firstPart?.indexOf("=") ?? -1;
+
+        if (
+          !firstPart ||
+          separatorIndex <= 0
+        ) {
+          continue;
+        }
+
+        const name = firstPart
+          .slice(0, separatorIndex)
+          .trim();
+
+        const value = firstPart
+          .slice(separatorIndex + 1)
+          .trim();
+
+        if (name) {
+          this.cookies.set(name, value);
+        }
+      }
+    }
+  }
+
+  toHeader(): string {
+    return [...this.cookies.entries()]
+      .map(([name, value]) =>
+        `${name}=${value}`,
+      )
+      .join("; ");
+  }
 }
 
 function cleanText(value: string): string {
@@ -69,12 +135,13 @@ function containsRunnerRows(
 function looksLikeResultTable(
   html: string,
 ): boolean {
-  const normalizedHtml = html.toLowerCase();
+  const normalizedHtml =
+    html.toLocaleLowerCase("sv-SE");
 
   return (
     containsRunnerRows(html) ||
     normalizedHtml.includes(
-      RUNNER_NAME.toLowerCase(),
+      RUNNER_NAME.toLocaleLowerCase("sv-SE"),
     ) ||
     (
       normalizedHtml.includes("<table") &&
@@ -87,214 +154,441 @@ function looksLikeResultTable(
   );
 }
 
-async function readableFrameHtml(
-  frame: Frame,
-): Promise<string | null> {
+function createRequestHeaders(
+  cookieJar: CookieJar,
+  referer?: string,
+): HeadersInit {
+  const cookie = cookieJar.toHeader();
+
+  return {
+    "User-Agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
+      "AppleWebKit/537.36 (KHTML, like Gecko) " +
+      "Chrome/131.0.0.0 Safari/537.36",
+    Accept:
+      "text/html,application/xhtml+xml,*/*",
+    "Accept-Language":
+      "sv-SE,sv;q=0.9,en;q=0.7",
+    ...(cookie ? { Cookie: cookie } : {}),
+    ...(referer ? { Referer: referer } : {}),
+  };
+}
+
+async function requestHtml(
+  url: string,
+  cookieJar: CookieJar,
+  options: {
+    method?: "GET" | "POST";
+    body?: URLSearchParams;
+    referer?: string;
+  } = {},
+): Promise<LoadedPage> {
+  const controller =
+    new AbortController();
+
+  const timeout = setTimeout(
+    () => controller.abort(),
+    REQUEST_TIMEOUT_MS,
+  );
+
   try {
-    return await frame.content();
-  } catch {
-    return null;
+    const method = options.method ?? "GET";
+
+    const response = await fetch(url, {
+      method,
+      redirect: "follow",
+      cache: "no-store",
+      headers: {
+        ...createRequestHeaders(
+          cookieJar,
+          options.referer,
+        ),
+        ...(method === "POST"
+          ? {
+              "Content-Type":
+                "application/x-www-form-urlencoded",
+            }
+          : {}),
+      },
+      body:
+        method === "POST"
+          ? options.body?.toString()
+          : undefined,
+      signal: controller.signal,
+    });
+
+    cookieJar.addFromResponse(response);
+
+    if (!response.ok) {
+      throw new Error(
+        `WinSplits svarade med HTTP ${response.status}.`,
+      );
+    }
+
+    return {
+      url: response.url || url,
+      html: await response.text(),
+    };
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      error.name === "AbortError"
+    ) {
+      throw new Error(
+        "WinSplits svarade inte inom 30 sekunder.",
+      );
+    }
+
+    throw error;
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
-async function findSettingsFrame(
-  page: Page,
-): Promise<Frame> {
-  const deadline = Date.now() + 20_000;
+function frameUrls(
+  page: LoadedPage,
+): string[] {
+  const $ = cheerio.load(page.html);
+  const urls = new Set<string>();
 
-  while (Date.now() < deadline) {
-    for (const frame of page.frames()) {
-      try {
-        const bodyText = await frame
-          .locator("body")
-          .innerText({ timeout: 1_500 });
+  $("frame[src], iframe[src]").each(
+    (_, element) => {
+      const source =
+        $(element).attr("src")?.trim();
 
-        const normalizedText = cleanText(
-          bodyText,
-        ).toLowerCase();
-
-        if (
-          normalizedText.includes(
-            "utökad information",
-          ) ||
-          normalizedText.includes(
-            "utokad information",
-          )
-        ) {
-          return frame;
-        }
-      } catch {
-        // Ramen kan vara under omladdning.
+      if (!source) {
+        return;
       }
+
+      try {
+        urls.add(
+          new URL(source, page.url).toString(),
+        );
+      } catch {
+        // Ignorera felaktiga ramadresser.
+      }
+    },
+  );
+
+  return [...urls];
+}
+
+async function loadPageTree(
+  rootUrl: string,
+  cookieJar: CookieJar,
+): Promise<LoadedPage[]> {
+  const pages: LoadedPage[] = [];
+  const visited = new Set<string>();
+
+  async function visit(
+    url: string,
+    depth: number,
+    referer?: string,
+  ): Promise<void> {
+    if (
+      depth > MAX_FRAME_DEPTH ||
+      visited.has(url)
+    ) {
+      return;
     }
 
-    await page.waitForTimeout(250);
+    visited.add(url);
+
+    const page = await requestHtml(
+      url,
+      cookieJar,
+      { referer },
+    );
+
+    pages.push(page);
+
+    const childUrls = frameUrls(page);
+
+    await Promise.all(
+      childUrls.map((childUrl) =>
+        visit(
+          childUrl,
+          depth + 1,
+          page.url,
+        ).catch(() => undefined),
+      ),
+    );
   }
 
-  throw new Error(
-    'Kunde inte hitta WinSplits-inställningen "utökad information".',
-  );
+  await visit(rootUrl, 0);
+
+  return pages;
+}
+
+function findResultPage(
+  pages: LoadedPage[],
+): LoadedPage | null {
+  const candidates = pages
+    .filter((page) =>
+      looksLikeResultTable(page.html),
+    )
+    .sort((left, right) => {
+      const leftScore =
+        containsRunnerRows(left.html)
+          ? 2
+          : 1;
+
+      const rightScore =
+        containsRunnerRows(right.html)
+          ? 2
+          : 1;
+
+      return rightScore - leftScore;
+    });
+
+  return candidates[0] ?? null;
+}
+
+function inputValue(
+  $: cheerio.CheerioAPI,
+  element: any,
+): string {
+  const value =
+    $(element).attr("value");
+
+  return value ?? "on";
+}
+
+function findExtendedInformationForm(
+  pages: LoadedPage[],
+): {
+  page: LoadedPage;
+  formIndex: number;
+} | null {
+  for (const page of pages) {
+    const $ = cheerio.load(page.html);
+    const forms = $("form").toArray();
+
+    for (
+      let formIndex = 0;
+      formIndex < forms.length;
+      formIndex += 1
+    ) {
+      const form = $(forms[formIndex]);
+
+      const searchableText = cleanText(
+        [
+          form.text(),
+          form.html() ?? "",
+        ].join(" "),
+      ).toLocaleLowerCase("sv-SE");
+
+      if (
+        searchableText.includes(
+          "utökad information",
+        ) ||
+        searchableText.includes(
+          "utokad information",
+        )
+      ) {
+        return {
+          page,
+          formIndex,
+        };
+      }
+    }
+  }
+
+  return null;
+}
+
+function buildFormSubmission(
+  page: LoadedPage,
+  formIndex: number,
+): {
+  url: string;
+  method: "GET" | "POST";
+  values: URLSearchParams;
+} {
+  const $ = cheerio.load(page.html);
+  const form = $("form").eq(formIndex);
+
+  const action =
+    form.attr("action")?.trim() ||
+    page.url;
+
+  const url =
+    new URL(action, page.url).toString();
+
+  const method =
+    form.attr("method")
+      ?.toLocaleUpperCase("sv-SE") === "POST"
+      ? "POST"
+      : "GET";
+
+  const values = new URLSearchParams();
+
+  form.find(
+    "input[name], select[name], textarea[name]",
+  ).each((_, element) => {
+    const node = $(element);
+    const name =
+      node.attr("name")?.trim();
+
+    if (!name) {
+      return;
+    }
+
+    const tagName =
+      element.tagName.toLocaleLowerCase(
+        "sv-SE",
+      );
+
+    if (tagName === "select") {
+      const selected =
+        node.find("option[selected]").first();
+
+      const option =
+        selected.length > 0
+          ? selected
+          : node.find("option").first();
+
+      values.append(
+        name,
+        option.attr("value") ??
+          cleanText(option.text()),
+      );
+
+      return;
+    }
+
+    if (tagName === "textarea") {
+      values.append(
+        name,
+        node.text(),
+      );
+
+      return;
+    }
+
+    const type =
+      node.attr("type")
+        ?.toLocaleLowerCase("sv-SE") ??
+      "text";
+
+    const searchableText = cleanText(
+      [
+        name,
+        node.attr("id") ?? "",
+        node.attr("title") ?? "",
+        node.attr("value") ?? "",
+        node.parent().text(),
+        node.closest("tr").text(),
+      ].join(" "),
+    ).toLocaleLowerCase("sv-SE");
+
+    if (
+      type === "checkbox" ||
+      type === "radio"
+    ) {
+      const isExtendedInformation =
+        searchableText.includes(
+          "utökad information",
+        ) ||
+        searchableText.includes(
+          "utokad information",
+        );
+
+      const isChecked =
+        node.is("[checked]");
+
+      if (
+        isExtendedInformation ||
+        isChecked
+      ) {
+        values.append(
+          name,
+          inputValue($, element),
+        );
+      }
+
+      return;
+    }
+
+    if (
+      type === "submit" ||
+      type === "button" ||
+      type === "image"
+    ) {
+      const value =
+        node.attr("value") ?? "";
+
+      if (
+        /^ok$/i.test(value) ||
+        /uppdatera|visa/i.test(value)
+      ) {
+        values.append(name, value);
+      }
+
+      return;
+    }
+
+    values.append(
+      name,
+      node.attr("value") ?? "",
+    );
+  });
+
+  return {
+    url,
+    method,
+    values,
+  };
 }
 
 async function enableExtendedInformation(
-  page: Page,
+  pages: LoadedPage[],
+  cookieJar: CookieJar,
 ): Promise<void> {
-  const settingsFrame =
-    await findSettingsFrame(page);
+  const found =
+    findExtendedInformationForm(pages);
 
-  const checkboxes = settingsFrame.locator(
-    'input[type="checkbox"]',
-  );
-
-  const checkboxCount =
-    await checkboxes.count();
-
-  if (checkboxCount === 0) {
+  if (!found) {
     throw new Error(
-      "Inställningsdelen hittades, men den innehåller inga kryssrutor.",
+      'Kunde inte hitta WinSplits-inställningen "utökad information".',
     );
   }
 
-  let checkboxIndex =
-    await settingsFrame.evaluate(() => {
-      const inputs = Array.from(
-        document.querySelectorAll<HTMLInputElement>(
-          'input[type="checkbox"]',
-        ),
-      );
-
-      for (
-        let index = 0;
-        index < inputs.length;
-        index += 1
-      ) {
-        const checkbox = inputs[index];
-
-        const searchableText = [
-          checkbox.name,
-          checkbox.id,
-          checkbox.value,
-          checkbox.title,
-          checkbox.parentElement?.textContent,
-          checkbox.closest("tr")?.textContent,
-          checkbox.nextSibling?.textContent,
-        ]
-          .filter(Boolean)
-          .join(" ")
-          .replace(/\s+/g, " ")
-          .toLowerCase();
-
-        if (
-          searchableText.includes(
-            "utökad information",
-          ) ||
-          searchableText.includes(
-            "utokad information",
-          )
-        ) {
-          return index;
-        }
-      }
-
-      return -1;
-    });
-
-  if (checkboxIndex < 0) {
-    checkboxIndex = checkboxCount - 1;
-  }
-
-  const checkbox =
-    checkboxes.nth(checkboxIndex);
-
-  if (!(await checkbox.isChecked())) {
-    await checkbox.check({ force: true });
-  }
-
-  const okButton = settingsFrame.locator(
-    [
-      'input[type="submit"][value="OK"]',
-      'input[type="button"][value="OK"]',
-      'button:has-text("OK")',
-    ].join(", "),
-  );
-
-  if ((await okButton.count()) === 0) {
-    throw new Error(
-      'Kunde inte hitta knappen "OK" i WinSplits-inställningarna.',
+  const submission =
+    buildFormSubmission(
+      found.page,
+      found.formIndex,
     );
+
+  if (submission.method === "POST") {
+    await requestHtml(
+      submission.url,
+      cookieJar,
+      {
+        method: "POST",
+        body: submission.values,
+        referer: found.page.url,
+      },
+    );
+
+    return;
   }
 
-  await okButton.first().click({ force: true });
+  const url = new URL(submission.url);
 
-  const deadline = Date.now() + 20_000;
-
-  while (Date.now() < deadline) {
-    for (const frame of page.frames()) {
-      const html =
-        await readableFrameHtml(frame);
-
-      if (
-        html?.toLowerCase().includes(
-          "bommad tid",
-        )
-      ) {
-        return;
-      }
-    }
-
-    await page.waitForTimeout(250);
+  for (
+    const [name, value] of
+    submission.values.entries()
+  ) {
+    url.searchParams.set(name, value);
   }
 
-  throw new Error(
-    "WinSplits svarade inte efter att utökad information aktiverades.",
-  );
-}
-
-async function findTableHtml(
-  page: Page,
-  timeoutMs = 20_000,
-): Promise<string> {
-  const deadline = Date.now() + timeoutMs;
-  let bestFallback: string | null = null;
-  let bestFallbackScore = -1;
-
-  while (Date.now() < deadline) {
-    for (const frame of page.frames()) {
-      const html =
-        await readableFrameHtml(frame);
-
-      if (!html) {
-        continue;
-      }
-
-      if (looksLikeResultTable(html)) {
-        if (containsRunnerRows(html)) {
-          return html;
-        }
-
-        const score =
-          html.toLowerCase().includes(
-            RUNNER_NAME.toLowerCase(),
-          )
-            ? 2
-            : 1;
-
-        if (score > bestFallbackScore) {
-          bestFallback = html;
-          bestFallbackScore = score;
-        }
-      }
-    }
-
-    await page.waitForTimeout(250);
-  }
-
-  if (bestFallback) {
-    return bestFallback;
-  }
-
-  throw new Error(
-    "Kunde inte hitta WinSplits-tabellen.",
+  await requestHtml(
+    url.toString(),
+    cookieJar,
+    {
+      referer: found.page.url,
+    },
   );
 }
 
@@ -412,19 +706,20 @@ function parseRunners(
   return runners;
 }
 
-
 function parseDistanceKm(
   value: string,
 ): number | null {
   const normalized = cleanText(value)
     .replace(",", ".");
 
-  const kilometerMatch = normalized.match(
-    /(?:banlängd|banlangd|längd|langd|course\s*length)?\s*:?\s*(\d+(?:\.\d+)?)\s*km\b/i,
-  );
+  const kilometerMatch =
+    normalized.match(
+      /(?:banlängd|banlangd|längd|langd|course\s*length)?\s*:?\s*(\d+(?:\.\d+)?)\s*km\b/i,
+    );
 
   if (kilometerMatch) {
-    const distance = Number(kilometerMatch[1]);
+    const distance =
+      Number(kilometerMatch[1]);
 
     return (
       Number.isFinite(distance) &&
@@ -435,9 +730,10 @@ function parseDistanceKm(
       : null;
   }
 
-  const meterMatch = normalized.match(
-    /(?:banlängd|banlangd|längd|langd|course\s*length)?\s*:?\s*(\d[\d\s]{2,6})\s*m\b/i,
-  );
+  const meterMatch =
+    normalized.match(
+      /(?:banlängd|banlangd|längd|langd|course\s*length)?\s*:?\s*(\d[\d\s]{2,6})\s*m\b/i,
+    );
 
   if (!meterMatch) {
     return null;
@@ -452,136 +748,97 @@ function parseDistanceKm(
     meters >= 200 &&
     meters <= 100_000
   )
-    ? Number((meters / 1_000).toFixed(3))
+    ? Number(
+        (meters / 1_000).toFixed(3),
+      )
     : null;
 }
 
-async function readClassMetadata(
-  page: Page,
+function cleanClassCandidate(
+  value: string,
+): string | null {
+  const candidate = cleanText(value)
+    .replace(
+      /\s*(?:resultat|sträcktider|stracktider|winsplits online).*$/i,
+      "",
+    )
+    .replace(
+      /^\s*(?:klass|class)\s*:?\s*/i,
+      "",
+    )
+    .trim();
+
+  if (
+    !candidate ||
+    candidate.length > 100 ||
+    /^(?:resultat|sträcktider|stracktider|klasser|start)$/i.test(
+      candidate,
+    )
+  ) {
+    return null;
+  }
+
+  const classMatch = candidate.match(
+    /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)(?=\s|$)/i,
+  );
+
+  return classMatch
+    ? cleanText(classMatch[1])
+    : null;
+}
+
+function readClassMetadata(
+  pages: LoadedPage[],
   categoryId: number,
-): Promise<WinSplitsClassMetadata> {
+): WinSplitsClassMetadata {
   const raceClassCandidates: string[] = [];
   const textCandidates: string[] = [];
 
-  for (const frame of page.frames()) {
-    try {
-      const snapshot = await frame.evaluate(
-        ({ wantedCategoryId }) => {
-          const clean = (
-            value: string | null | undefined,
-          ) =>
-            (value ?? "")
-              .replace(/\u00a0/g, " ")
-              .replace(/\s+/g, " ")
-              .trim();
+  for (const page of pages) {
+    const $ = cheerio.load(page.html);
 
-          const selectedOptions = Array.from(
-            document.querySelectorAll<
-              HTMLOptionElement
-            >("option:checked, option[selected]"),
-          )
-            .map((option) => ({
-              text: clean(option.textContent),
-              value: option.value,
-            }))
-            .filter((option) => option.text);
+    const matchingOption =
+      $(
+        `option[value="${categoryId}"]`,
+      ).first();
 
-          const matchingOption =
-            selectedOptions.find(
-              (option) =>
-                option.value ===
-                String(wantedCategoryId),
-            ) ??
-            selectedOptions[0] ??
-            null;
-
-          const headings = Array.from(
-            document.querySelectorAll(
-              "h1, h2, h3, h4, caption, legend",
-            ),
-          )
-            .map((element) =>
-              clean(element.textContent),
-            )
-            .filter(Boolean);
-
-          return {
-            selectedClass:
-              matchingOption?.text ?? "",
-            headings,
-            title: clean(document.title),
-            bodyText: clean(
-              document.body?.innerText,
-            ),
-          };
-        },
-        {
-          wantedCategoryId: categoryId,
-        },
-      );
-
-      if (snapshot.selectedClass) {
-        raceClassCandidates.push(
-          snapshot.selectedClass,
-        );
-      }
-
+    if (matchingOption.length > 0) {
       raceClassCandidates.push(
-        ...snapshot.headings,
+        cleanText(matchingOption.text()),
       );
-
-      if (snapshot.title) {
-        raceClassCandidates.push(
-          snapshot.title,
-        );
-      }
-
-      if (snapshot.bodyText) {
-        textCandidates.push(
-          snapshot.bodyText,
-        );
-      }
-    } catch {
-      // En enskild WinSplits-ram kan vara oläsbar.
     }
+
+    $(
+      "option[selected], h1, h2, h3, h4, caption, legend, title",
+    ).each((_, element) => {
+      raceClassCandidates.push(
+        cleanText($(element).text()),
+      );
+    });
+
+    textCandidates.push(
+      cleanText($.root().text()),
+    );
   }
-
-  const cleanClassCandidate = (
-    value: string,
-  ): string | null => {
-    const candidate = cleanText(value)
-      .replace(
-        /\s*(?:resultat|sträcktider|stracktider|winsplits online).*$/i,
-        "",
-      )
-      .replace(/^\s*(?:klass|class)\s*:?\s*/i, "")
-      .trim();
-
-    if (
-      !candidate ||
-      candidate.length > 100 ||
-      /^(?:resultat|sträcktider|stracktider|klasser|start)$/i.test(
-        candidate,
-      )
-    ) {
-      return null;
-    }
-
-    return candidate;
-  };
 
   const raceClass =
     raceClassCandidates
       .map(cleanClassCandidate)
-      .find(Boolean) ?? null;
+      .find(
+        (
+          candidate,
+        ): candidate is string =>
+          Boolean(candidate),
+      ) ?? null;
 
   let distanceKm: number | null = null;
 
   if (raceClass) {
-    const escapedClass = raceClass.replace(
-      /[.*+?^${}()|[\]\\]/g,
-      "\\$&",
-    );
+    const escapedClass =
+      raceClass.replace(
+        /[.*+?^${}()|[\]\\]/g,
+        "\\$&",
+      );
 
     for (const text of textCandidates) {
       const nearbyMatch = text.match(
@@ -617,124 +874,116 @@ async function readClassMetadata(
     }
   }
 
-  if (distanceKm === null) {
-    const plausibleDistances = new Set<number>();
-
-    for (const text of textCandidates) {
-      for (
-        const match of text.matchAll(
-          /\b(\d+(?:[.,]\d+)?)\s*km\b|\b(\d[\d\s]{2,6})\s*m\b/gi,
-        )
-      ) {
-        const parsed = parseDistanceKm(
-          match[0],
-        );
-
-        if (parsed !== null) {
-          plausibleDistances.add(parsed);
-        }
-      }
-    }
-
-    if (plausibleDistances.size === 1) {
-      distanceKm =
-        [...plausibleDistances][0];
-    }
-  }
-
   return {
     raceClass,
     distanceKm,
   };
 }
 
+function createWinSplitsUrl(
+  databaseId: number,
+  categoryId: number,
+): string {
+  const url = new URL(WINSPLITS_URL);
+
+  url.searchParams.set("page", "table");
+  url.searchParams.set(
+    "databaseId",
+    String(databaseId),
+  );
+  url.searchParams.set(
+    "categoryId",
+    String(categoryId),
+  );
+
+  return url.toString();
+}
+
 async function loadWinSplitsInternal(
   databaseId: number,
   categoryId: number,
 ): Promise<WinSplitsData> {
-  const browser = await chromium.launch({
-    headless: true,
-  });
-
-  try {
-    const context =
-      await browser.newContext({
-        locale: "sv-SE",
-      });
-
-    const page =
-      await context.newPage();
-
-    const url =
-      `${WINSPLITS_URL}` +
-      `?page=table` +
-      `&databaseId=${databaseId}` +
-      `&categoryId=${categoryId}`;
-
-    await page.goto(url, {
-      waitUntil: "domcontentloaded",
-      timeout: 30_000,
-    });
-
-    await page.waitForTimeout(750);
-
-    let html =
-      await findTableHtml(page);
-
-    if (
-      !html.toLowerCase().includes(
-        "bommad tid",
-      )
-    ) {
-      await enableExtendedInformation(
-        page,
-      );
-
-      html =
-        await findTableHtml(
-          page,
-          20_000,
-        );
-    }
-
-    if (
-      !html.toLowerCase().includes(
-        "bommad tid",
-      )
-    ) {
-      await page.screenshot({
-        path: "winsplits-fel.png",
-        fullPage: true,
-      });
-
-      throw new Error(
-        "WinSplits aktiverade inte utökad information. " +
-          "Skärmbilden winsplits-fel.png har sparats.",
-      );
-    }
-
-    const runners =
-      parseRunners(html);
-
-    if (runners.length === 0) {
-      throw new Error(
-        "Tabellen laddades, men inga löpare kunde läsas.",
-      );
-    }
-
-    const metadata =
-      await readClassMetadata(
-        page,
-        categoryId,
-      );
-
-    return {
-      runners,
-      metadata,
-    };
-  } finally {
-    await browser.close();
+  if (
+    !Number.isInteger(databaseId) ||
+    databaseId <= 0 ||
+    !Number.isInteger(categoryId) ||
+    categoryId < 0
+  ) {
+    throw new Error(
+      "Ogiltigt databaseId eller categoryId för WinSplits.",
+    );
   }
+
+  const url = createWinSplitsUrl(
+    databaseId,
+    categoryId,
+  );
+
+  const cookieJar = new CookieJar();
+
+  let pages = await loadPageTree(
+    url,
+    cookieJar,
+  );
+
+  let resultPage =
+    findResultPage(pages);
+
+  if (!resultPage) {
+    throw new Error(
+      "Kunde inte hitta WinSplits-tabellen.",
+    );
+  }
+
+  if (
+    !resultPage.html
+      .toLocaleLowerCase("sv-SE")
+      .includes("bommad tid")
+  ) {
+    await enableExtendedInformation(
+      pages,
+      cookieJar,
+    );
+
+    pages = await loadPageTree(
+      url,
+      cookieJar,
+    );
+
+    resultPage =
+      findResultPage(pages);
+  }
+
+  if (!resultPage) {
+    throw new Error(
+      "Kunde inte hitta WinSplits-tabellen efter att inställningarna uppdaterats.",
+    );
+  }
+
+  const runners =
+    parseRunners(resultPage.html);
+
+  if (runners.length === 0) {
+    throw new Error(
+      "Tabellen laddades, men inga löpare kunde läsas.",
+    );
+  }
+
+  /*
+   * Enstaka äldre WinSplits-poster kan sakna
+   * verktygstips trots aktiverad utökad information.
+   * Resultat, tider och kontroller returneras ändå.
+   */
+  const metadata =
+    readClassMetadata(
+      pages,
+      categoryId,
+    );
+
+  return {
+    runners,
+    metadata,
+  };
 }
 
 export async function loadWinSplitsWithMetadata(
