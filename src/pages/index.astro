@@ -99,6 +99,7 @@ const years = [
 ];
 
 const base = import.meta.env.BASE_URL;
+const cleanBase = base.replace(/\/$/, '');
 
 const mapRaces = races.flatMap((race) => {
   const location = getRaceLocation(race.data);
@@ -121,7 +122,7 @@ const mapRaces = races.flatMap((race) => {
 <BaseLayout>
   <section
     class="hero"
-    style={`--hero-image: url('${base}/images/Erik_Hero_III.png')`}
+    style={`--hero-image: url('${cleanBase}/images/Erik_Hero_III.png')`}
   >
     <div class="hero-overlay"></div>
 
