@@ -177,7 +177,10 @@ function repositoryRelativePath(
         : metadata.gpsFilePath;
 
   return sourcePath
-    ? sourcePath.replace(/^\/+/, "")
+    ? path.posix.join(
+        "public",
+        sourcePath.replace(/^\/+/, ""),
+      )
     : null;
 }
 
