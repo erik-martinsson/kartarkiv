@@ -1,6 +1,6 @@
 ---
-title: "25manna, OK Södertörn / Snättringe SK Hjälp"
-date: 2022-10-08
+title: "25manna"
+date: "2022-10-08"
 
 club: "Linköpings OK 1"
 country: "SE"
@@ -33,5 +33,4 @@ results: "https://eventor.orientering.se/Events/Show/36464"
 
 featured: false
 ---
-
 

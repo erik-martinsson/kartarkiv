@@ -134,7 +134,7 @@ function repositoryRelativePath(metadata, kind) {
         return __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$path__$5b$external$5d$__$28$node$3a$path$2c$__cjs$29$__["default"].posix.join("src", "content", "races", metadata.year, `${metadata.slug}.md`);
     }
     const sourcePath = kind === "mapImage" ? metadata.mapImagePath : kind === "routeImage" ? metadata.routeImagePath : metadata.gpsFilePath;
-    return sourcePath ? sourcePath.replace(/^\/+/, "") : null;
+    return sourcePath ? __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$path__$5b$external$5d$__$28$node$3a$path$2c$__cjs$29$__["default"].posix.join("public", sourcePath.replace(/^\/+/, "")) : null;
 }
 async function POST(request) {
     const createdPaths = [];
