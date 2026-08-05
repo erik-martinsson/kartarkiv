@@ -1,0 +1,1406 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-05T06:36:42.770Z",
+  "competition": {
+    "doma": {
+      "mapId": 512,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=512",
+      "title": "Stafett-DM",
+      "date": "2021-09-04",
+      "category": "Tävling",
+      "relayLeg": 3,
+      "runningTime": "47:20",
+      "runningDistanceKm": 8.14,
+      "courseLengthKm": 6.5,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/512.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/512.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=512&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=77052&categoryId=156"
+    },
+    "location": null,
+    "latitude": 58.143395277778,
+    "longitude": 15.582482222222,
+    "discipline": "Stafett",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H120",
+      "club": "Linköpings OK 1",
+      "position": "1",
+      "starters": "6",
+      "controls": 13,
+      "time": "47:36",
+      "totalMistakeTime": "0:00",
+      "mistakes": []
+    },
+    "eventor": null,
+    "eventorMatch": null,
+    "eventorResolverDebug": {
+      "wantedTitle": "Stafett-DM",
+      "domaDate": "2021-09-04",
+      "databaseId": 77052,
+      "searchedDates": [
+        "2021-09-02",
+        "2021-09-03",
+        "2021-09-04",
+        "2021-09-05",
+        "2021-09-06"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 37810,
+          "title": "DM, stafett, Gotland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 29401,
+          "title": "DM, stafett, Blekinge",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32290,
+          "title": "DM, stafett, Göteborg",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 31312,
+          "title": "DM, stafett, Halland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 30440,
+          "title": "DM, stafett, Skåne",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32574,
+          "title": "DM, stafett, Södermanland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 30288,
+          "title": "DM, stafett, Västergötland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 29148,
+          "title": "DM, stafett, Västmanland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32879,
+          "title": "DM, stafett, Östergötland",
+          "score": 85,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37842,
+          "title": "DM stafett, Öppna banor",
+          "score": 80,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 29402,
+          "title": "DM, stafett, Blekinge, individuella öppna klasser",
+          "score": 75,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37509,
+          "title": "DM, stafett, Halland, individuella öppna klasser",
+          "score": 75,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 30441,
+          "title": "DM, stafett, Skåne, individuella öppna klasser",
+          "score": 75,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37340,
+          "title": "DM, stafett, Göteborg, individuella öppna klasser",
+          "score": 75,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37863,
+          "title": "DM, stafett, Södermanland, individuella öppna klasser",
+          "score": 75,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32475,
+          "title": "DM, stafett, Västergötland, individuella öppna klasser",
+          "score": 75,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32880,
+          "title": "DM, stafett, Östergötland, individuella öppna klasser",
+          "score": 75,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32049,
+          "title": "DM, natt, Gästrikland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 30203,
+          "title": "DM, natt, Södermanland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32646,
+          "title": "DM, natt, Västmanland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32494,
+          "title": "DM, natt, Gotland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 33087,
+          "title": "DM, natt, Uppland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 29213,
+          "title": "DM, lång, Västerbotten",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 29400,
+          "title": "DM, medel, Blekinge",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 29268,
+          "title": "DM, medel, Göteborg",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32604,
+          "title": "DM, medel, Halland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 30442,
+          "title": "DM, medel, Skåne",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32806,
+          "title": "DM, medel, Stockholm",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 28850,
+          "title": "DM, medel, Västergötland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 33094,
+          "title": "DM, sprint, Småland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36741,
+          "title": "DM, sprint, Värmland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37567,
+          "title": "DM, sprintstafett, Dalarna",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 33095,
+          "title": "DM, sprintstafett, Småland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 29214,
+          "title": "DM, medel, Östergötland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 30015,
+          "title": "DM, sprint, Dalarna",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 35943,
+          "title": "DM, sprint, Västmanland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37819,
+          "title": "DM, sprintstafett, Dalarna",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 30016,
+          "title": "DM, lång, Dalarna",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 29675,
+          "title": "DM, lång, Gästrikland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 33097,
+          "title": "DM, lång, Småland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32807,
+          "title": "DM, lång, Stockholm",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 33158,
+          "title": "DM, lång, Uppland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32563,
+          "title": "DM, lång, Värmland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32520,
+          "title": "DM, sprint, Hälsingland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32521,
+          "title": "DM, medel, Hälsingland",
+          "score": 43,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32515,
+          "title": "DM, medel, Bohuslän-Dal",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 33737,
+          "title": "DM, medel, Jämtland-Härjedalen",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32629,
+          "title": "DM, medel, Örebro län",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 33738,
+          "title": "DM, lång, Jämtland-Härjedalen",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32631,
+          "title": "DM, lång, Örebro län",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32516,
+          "title": "DM, lång, Bohuslän-Dal",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37700,
+          "title": "MTBO, DM, medel, Ångermanland",
+          "score": 40,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37977,
+          "title": "\"icons\">lör 4/9DM stafett, Öppna banor",
+          "score": 38,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37740,
+          "title": "Veckans bana Svaidestugan 15/8-4/9",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37908,
+          "title": "Månadens bana",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37936,
+          "title": "Veckans Bana Slätte 24/8-5/9",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37978,
+          "title": "Veckans bana, SAIS v34-37, 27/8-19/9",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38011,
+          "title": "Veckans bana Höstspringet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37980,
+          "title": "IF Hagen veckans bana 35",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37547,
+          "title": "Veckans bana v.35",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37945,
+          "title": "Veckans bana v35",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37556,
+          "title": "Veckans bana V35",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38018,
+          "title": "Veckans bana V35 Bölskullen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38010,
+          "title": "Veckans Bana V35-V36",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37683,
+          "title": "Veckans bana - Hemlingby v35",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 34914,
+          "title": "MTB OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38076,
+          "title": "Veckans bana v.35",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37704,
+          "title": "Motions-OL/Veckans bana #14 i Överboda",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37996,
+          "title": "Veckans bana HSOK V35",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38036,
+          "title": "Veckans banor - Rönnåsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37976,
+          "title": "Veckans bana, Upplands Väsby, 31/8-12/9",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37984,
+          "title": "Veckans Bana Mostugan 31/8-12/9",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38022,
+          "title": "Tisdagsträning/Veckans bana",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37981,
+          "title": "Veckans Bana",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38064,
+          "title": "Veckans bana Gisslevik",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38001,
+          "title": "Veckoturen 1-7 september 2021",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37768,
+          "title": "FOK:s Höstcup Etapp 2",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37917,
+          "title": "Teknikträning GBG Syd",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38021,
+          "title": "VECKANS BANA 2-6/9 STRÄNGNÄS",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38078,
+          "title": "Veckans bana 2 till 8 sep OK Rodhen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37889,
+          "title": "Roslagsveteranerna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 33326,
+          "title": "Veterantouren v35",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 36865,
+          "title": "Veteran-OL OKS",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37605,
+          "title": "VOL 12 SOK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37937,
+          "title": "POL-träning Slätte",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37699,
+          "title": "Veteran-ol i Södra Vätterbygden, Klubbmatch",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37982,
+          "title": "Veteran-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 34518,
+          "title": "Motionsorientering Ursvik",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37588,
+          "title": "Motions-OL Dammen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38044,
+          "title": "Motions-OL i Norberg",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37048,
+          "title": "Motionsorientering Sörmon södra",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37983,
+          "title": "OL-alliansens Ungdomsserie",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37560,
+          "title": "Motionsorientering Seskarö 2-5 sep 2021",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38008,
+          "title": "Borlänge Säter träning - Sprint",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 34853,
+          "title": "Torsdagsträning #11 Rosenholm",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37662,
+          "title": "Tränings-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37869,
+          "title": "Motionsorientering",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38006,
+          "title": "OCK träning Äspet",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 34474,
+          "title": "Motionsorientering Adolfsfors",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38026,
+          "title": "Höstcup etapp 3, Oskarströms skjutbana",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38015,
+          "title": "Kretsträning Kind",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37374,
+          "title": "GBG Teknikträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37893,
+          "title": "Klubbträning Gröngarn",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37938,
+          "title": "KM-Dag-OL",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38051,
+          "title": "Kretsträning Mark",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37903,
+          "title": "Tjustalliansens ungdomsserie 5 + Tjustmästerskap dag",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37920,
+          "title": "Dalaoffensivens Spetsträning - Gallsjöbergsmedeln a´la DSA Elit/KOK",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37325,
+          "title": "EES - Eslöv Evening Sprint - etapp 3",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38004,
+          "title": "Kretsträning Laggarudden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37651,
+          "title": "Ungdomsserien deltävling 5",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37900,
+          "title": "Motionsorientering 2-8 sep Umeå",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 35172,
+          "title": "Veckans bana v 35",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-02&endDate=2021-09-02&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37056,
+          "title": "Veckans Bana Sörmon södra",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-03&endDate=2021-09-03&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 32817,
+          "title": "Härnösands OK medeldistans",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37346,
+          "title": "Sprintstafett",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-04&endDate=2021-09-04&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38092,
+          "title": "Veckans bana VOK-stugan 5-25/9",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37629,
+          "title": "Dag-KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38101,
+          "title": "IF Hagen veckans bana 36",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-05&endDate=2021-09-05&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38117,
+          "title": "Träning på stafettbanorna",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37830,
+          "title": "Veckans bana V36 OK Linne'",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38090,
+          "title": "Kretsträning Götaälvdalskretsen",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38108,
+          "title": "Veckans bana v 36",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37955,
+          "title": "Veckans bana v36",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37357,
+          "title": "Veckans bana V36",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38115,
+          "title": "Veckans bana V 36 Kolmilan",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38112,
+          "title": "Veckans klubbträning",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37684,
+          "title": "Veckans bana - Hemlingby v36",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37837,
+          "title": "Mini-KM",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 38052,
+          "title": "AOK:s ungdoms 3-dagars",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37705,
+          "title": "Motions-OL #15 i Trinnliden",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        },
+        {
+          "eventId": 37997,
+          "title": "Veckans bana HSOK V36",
+          "score": 0,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-09-06&endDate=2021-09-06&mode=List&map=false",
+          "verifiedByWinSplitsId": false,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": null
+        }
+      ]
+    },
+    "liveloxUrl": null,
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna.",
+      "Ingen tillräckligt säker Eventor-träff hittades.",
+      "Klassen kunde inte identifieras från Eventors resultatlista.",
+      "Banlängden kunde inte identifieras från Eventors resultatlista."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-512\\competition-enriched.json"
+    }
+  }
+}

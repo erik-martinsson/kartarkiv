@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Grövelsjönorienteringen E1 (2021-08-06)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/503.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>62.008663677053</north>
+          <south>61.989780888243</south>
+          <east>12.348813872012</east>
+          <west>12.30858105873</west>
+          <rotation>-4.1944610885877</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

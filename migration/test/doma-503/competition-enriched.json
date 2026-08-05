@@ -1,0 +1,765 @@
+{
+  "doma": {
+    "mapId": 503,
+    "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=503",
+    "title": "Grövelsjönorienteringen E1",
+    "date": "2021-08-06",
+    "category": "Tävling",
+    "relayLeg": null,
+    "runningTime": "30:31",
+    "runningDistanceKm": 5.71,
+    "courseLengthKm": 5.35,
+    "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/503.jpg",
+    "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/503.blank.jpg",
+    "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=503&format=kml",
+    "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=76275&categoryId=1"
+  },
+  "location": null,
+  "latitude": 61.998835694444,
+  "longitude": 12.328643055556,
+  "discipline": "Medel",
+  "result": {
+    "runnerName": "Erik Martinsson",
+    "raceClass": "H21",
+    "club": "Linköpings OK",
+    "position": "20",
+    "starters": "71",
+    "controls": 19,
+    "time": "30:26",
+    "totalMistakeTime": "0:00",
+    "mistakes": []
+  },
+  "eventor": {
+    "eventId": 36394,
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/36394",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=36394",
+    "title": "Grövelsjöorienteringen, etapp 1, Nybo, medel",
+    "date": "",
+    "organiser": "Grövelsjöfjällens OK",
+    "location": "",
+    "rawDiscipline": "medel",
+    "raceClass": "H21",
+    "distanceKm": 5.35,
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:36394-1&classExternalId=463036-1"
+  },
+  "eventorMatch": {
+    "eventId": 36394,
+    "title": "Grövelsjöorienteringen, etapp 1, Nybo, medel",
+    "eventorUrl": "https://eventor.orientering.se/Events/Show/36394",
+    "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=36394",
+    "score": 0,
+    "verifiedByWinSplitsId": true,
+    "verificationMethod": "winsplits-database-id",
+    "confidence": "high"
+  },
+  "eventorResolverDebug": {
+    "wantedTitle": "Grövelsjönorienteringen E1",
+    "domaDate": "2021-08-06",
+    "databaseId": 76275,
+    "searchedDates": [
+      "2021-08-04",
+      "2021-08-05",
+      "2021-08-06",
+      "2021-08-07",
+      "2021-08-08"
+    ],
+    "calendarUrls": [
+      "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2021-08-06&endDate=2021-08-06&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2021-08-06&endDate=2021-08-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2021-08-06&endDate=2021-08-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2021-08-06&endDate=2021-08-06&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2021-08-06&endDate=2021-08-06&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2021-08-06&endDate=2021-08-06&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2021-08-07&endDate=2021-08-07&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2021-08-07&endDate=2021-08-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2021-08-07&endDate=2021-08-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2021-08-07&endDate=2021-08-07&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2021-08-07&endDate=2021-08-07&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2021-08-07&endDate=2021-08-07&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/events?startDate=2021-08-08&endDate=2021-08-08&mode=List&map=false",
+      "https://eventor.orientering.se/events?startDate=2021-08-08&endDate=2021-08-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/events?startDate=2021-08-08&endDate=2021-08-08&mode=List&map=false&searchPanel=true",
+      "https://eventor.orientering.se/Events?startDate=2021-08-08&endDate=2021-08-08&mode=List&map=false",
+      "https://eventor.orientering.se/Events?startDate=2021-08-08&endDate=2021-08-08&mode=List&map=false&layout=print",
+      "https://eventor.orientering.se/Events?startDate=2021-08-08&endDate=2021-08-08&mode=List&map=false&searchPanel=true"
+    ],
+    "candidates": [
+      {
+        "eventId": 37258,
+        "title": "Fyra etapper i Tjust - E1 Heda, Gamleby",
+        "score": 38,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37146,
+        "title": "Veckans bana sommar 2021",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37153,
+        "title": "Veckans bana, S Törnskogen, 21/6-11/7",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37251,
+        "title": "OCK träningar Rinkaby skjutfält",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37208,
+        "title": "Sommar OL på Fårö",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37296,
+        "title": "Månadens bana juli-augusti",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37277,
+        "title": "Sommarens bana 2021",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37259,
+        "title": "Fyra etapper i Tjust - E2 Ankarsrum",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37256,
+        "title": "Fyra etapper i Tjust - E3 Gränsö",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37257,
+        "title": "Fyra etapper i Tjust - E4 Gunnebo",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37352,
+        "title": "U10mila Träningspaket Rankås Tibro",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37455,
+        "title": "Idrefjällsommaren 2021",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37130,
+        "title": "Veckans bana, N Törnskogen, 5/7-8/8",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37318,
+        "title": "Veckans bana - sommarspecialen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37536,
+        "title": "Sommarteknik V29 - Räggårdsviken",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37534,
+        "title": "Veckans bana, Viby, 19/7-15/8",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37497,
+        "title": "Veckans bana v29-31, Sveafallen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37540,
+        "title": "Hemdagars Ockelbo",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37557,
+        "title": "Träning vid rensjön",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37566,
+        "title": "Veckans bana - Vad är det",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37559,
+        "title": "Veckans bana Stadshagen 26/7-14/8",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37584,
+        "title": "Veckans bana, SAIS v30-33, 26/7-22/8",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37583,
+        "title": "Veckans Bana v30-31",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37576,
+        "title": "Veckans Bana Slätte 27/7-8/8",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37214,
+        "title": "Hemdagars, Uddevalla OK v 30",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37630,
+        "title": "Veckans bana Kils OK sommarspecial Klackskullen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37631,
+        "title": "Veckans bana V31",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37315,
+        "title": "Veckans bana v31",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37361,
+        "title": "Veckans träningsorientering - V31",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37632,
+        "title": "Veckans bana V 31-32 Gällsjön",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37671,
+        "title": "#TBE Veckans bana Trekanten",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37299,
+        "title": "Veckans bana - Hemlingby v 31",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37690,
+        "title": "Veckans bana HSOK V31",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37680,
+        "title": "Veckans Bana Piskenshus Forshaga 3/8-16/8",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37635,
+        "title": "Veckans Bana Mostugan 3/8-15/8",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 28128,
+        "title": "OK Hällens 3-dagars, dag 3, lång",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37721,
+        "title": "OKR veckans bana 31-32",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37654,
+        "title": "Veckoturen 4 - 8 augusti 2021",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37484,
+        "title": "U-10-milaträning",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37744,
+        "title": "Gamleby OK Natt-ol",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37578,
+        "title": "Engelska milen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-04&endDate=2021-08-04&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37295,
+        "title": "POL-träning Älgamossen",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 29244,
+        "title": "Stjärnorpsmedeln",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37562,
+        "title": "VeteranOL BGoIF",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37573,
+        "title": "V-ringen etapp 5",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37702,
+        "title": "VECKANS BANA 5-9/8 STRÄNGNÄS",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37693,
+        "title": "Veckans bana MOL 11 Lojsta",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37606,
+        "title": "Veteran‐Ol i Södra Vätterbygden",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37491,
+        "title": "Motions-OL i Norberg",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37399,
+        "title": "Roslagsveteranerna",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 36725,
+        "title": "Obygdshelgen, dag 1, medel",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 33322,
+        "title": "Veterantouren v31",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37604,
+        "title": "VOL 8",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37561,
+        "title": "Teknikträning GBG Syd",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37727,
+        "title": "Träning i Norberg",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37529,
+        "title": "Motionsorientering Seskarö 5-8 augusti 2021",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37634,
+        "title": "Tränings-OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 36429,
+        "title": "Sommar OL",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 34472,
+        "title": "Motionsorientering Adolfsfors",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 37215,
+        "title": "Sommar-ol, v 31",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 35168,
+        "title": "Veckans bana v 31",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-05&endDate=2021-08-05&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 33585,
+        "title": "MTBO, USM/JSM/SM/VSM, Svenska Cupen, #1, sprint",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-06&endDate=2021-08-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 36726,
+        "title": "Obygdshelgen, dag 2, lång",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-06&endDate=2021-08-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 28863,
+        "title": "Tibrptrippeln, Fredagsmedeln",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-06&endDate=2021-08-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 30553,
+        "title": "Ungdomens 10-mila",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-06&endDate=2021-08-06&mode=List&map=false",
+        "verifiedByWinSplitsId": false,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": null
+      },
+      {
+        "eventId": 36394,
+        "title": "Grövelsjöorienteringen, etapp 1, Nybo, medel",
+        "score": 0,
+        "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-07&endDate=2021-08-07&mode=List&map=false",
+        "verifiedByWinSplitsId": true,
+        "eventDate": null,
+        "dateMatches": false,
+        "verificationMethod": "winsplits-database-id"
+      }
+    ]
+  },
+  "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:36394-1&classExternalId=463036-1",
+  "warnings": [
+    "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+  ]
+}

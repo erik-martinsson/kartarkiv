@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Kolmårdsträffen, lång (2021-08-21)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/508.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.788575979101</north>
+          <south>58.760943281203</south>
+          <east>16.29324029749</east>
+          <west>16.218530398456</west>
+          <rotation>-5.8883196765059</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

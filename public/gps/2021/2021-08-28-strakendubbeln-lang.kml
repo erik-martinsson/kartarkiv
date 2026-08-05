@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+  <name>Erik Martinsson: Stråkendubbeln, lång (2021-08-28)</name>
+    <Folder>
+      <GroundOverlay>
+        <Icon>
+          <href>http://www.lid1.se/erik/doma/map_images/510.jpg</href>
+        </Icon>
+        <LatLonBox>
+          <north>58.007220131794</north>
+          <south>57.967147942104</south>
+          <east>13.944718342467</east>
+          <west>13.881226734342</west>
+          <rotation>0.90740499622678</rotation>
+        </LatLonBox>
+      </GroundOverlay>
+    </Folder>
+  </Document>
+</kml>

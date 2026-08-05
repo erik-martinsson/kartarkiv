@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "status": "approved",
+  "reviewedAt": "2026-08-05T06:34:09.048Z",
+  "competition": {
+    "doma": {
+      "mapId": 507,
+      "sourceUrl": "http://www.lid1.se/erik/doma/show_map.php?user=erik&map=507",
+      "title": "Kolmårdsträffen, medel",
+      "date": "2021-08-20",
+      "category": "Tävling",
+      "relayLeg": null,
+      "runningTime": "33:56",
+      "runningDistanceKm": 5.35,
+      "courseLengthKm": 4.77,
+      "routeMapImageUrl": "http://www.lid1.se/erik/doma/map_images/507.jpg",
+      "blankMapImageUrl": "http://www.lid1.se/erik/doma/map_images/507.blank.jpg",
+      "kmlUrl": "http://www.lid1.se/erik/doma/export_kml.php?id=507&format=kml",
+      "winsplitsUrl": "http://obasen.orientering.se/winsplits/online/sv/default.asp?page=table&databaseId=76556&categoryId=1"
+    },
+    "location": null,
+    "latitude": 58.763388333333,
+    "longitude": 16.2570175,
+    "discipline": "Medel",
+    "result": {
+      "runnerName": "Erik Martinsson",
+      "raceClass": "H21",
+      "club": "Linköpings OK",
+      "position": "2",
+      "starters": "25",
+      "controls": 18,
+      "time": "33:54",
+      "totalMistakeTime": "0:30",
+      "mistakes": [
+        {
+          "control": 17,
+          "time": "0:30"
+        }
+      ]
+    },
+    "eventor": {
+      "eventId": 29152,
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/29152",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=29152",
+      "title": "Kolmårdsträffen, medel",
+      "date": "",
+      "organiser": "Tjalve Orienteringsklubb",
+      "location": "",
+      "rawDiscipline": "medel",
+      "raceClass": "H21",
+      "distanceKm": 4.77,
+      "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:29152-1&classExternalId=469773-1"
+    },
+    "eventorMatch": {
+      "eventId": 29152,
+      "title": "Kolmårdsträffen, medel",
+      "eventorUrl": "https://eventor.orientering.se/Events/Show/29152",
+      "resultListUrl": "https://eventor.orientering.se/Events/ResultList?eventId=29152",
+      "score": 100,
+      "verifiedByWinSplitsId": true,
+      "verificationMethod": "winsplits-database-id",
+      "confidence": "high"
+    },
+    "eventorResolverDebug": {
+      "wantedTitle": "Kolmårdsträffen, medel",
+      "domaDate": "2021-08-20",
+      "databaseId": 76556,
+      "searchedDates": [
+        "2021-08-18",
+        "2021-08-19",
+        "2021-08-20",
+        "2021-08-21",
+        "2021-08-22"
+      ],
+      "calendarUrls": [
+        "https://eventor.orientering.se/events?startDate=2021-08-18&endDate=2021-08-18&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2021-08-18&endDate=2021-08-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2021-08-18&endDate=2021-08-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2021-08-18&endDate=2021-08-18&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2021-08-18&endDate=2021-08-18&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2021-08-18&endDate=2021-08-18&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2021-08-19&endDate=2021-08-19&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2021-08-19&endDate=2021-08-19&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2021-08-19&endDate=2021-08-19&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2021-08-19&endDate=2021-08-19&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2021-08-19&endDate=2021-08-19&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2021-08-19&endDate=2021-08-19&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2021-08-20&endDate=2021-08-20&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2021-08-20&endDate=2021-08-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2021-08-20&endDate=2021-08-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2021-08-20&endDate=2021-08-20&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2021-08-20&endDate=2021-08-20&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2021-08-20&endDate=2021-08-20&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2021-08-21&endDate=2021-08-21&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2021-08-21&endDate=2021-08-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2021-08-21&endDate=2021-08-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2021-08-21&endDate=2021-08-21&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2021-08-21&endDate=2021-08-21&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2021-08-21&endDate=2021-08-21&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/events?startDate=2021-08-22&endDate=2021-08-22&mode=List&map=false",
+        "https://eventor.orientering.se/events?startDate=2021-08-22&endDate=2021-08-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/events?startDate=2021-08-22&endDate=2021-08-22&mode=List&map=false&searchPanel=true",
+        "https://eventor.orientering.se/Events?startDate=2021-08-22&endDate=2021-08-22&mode=List&map=false",
+        "https://eventor.orientering.se/Events?startDate=2021-08-22&endDate=2021-08-22&mode=List&map=false&layout=print",
+        "https://eventor.orientering.se/Events?startDate=2021-08-22&endDate=2021-08-22&mode=List&map=false&searchPanel=true"
+      ],
+      "candidates": [
+        {
+          "eventId": 29152,
+          "title": "Kolmårdsträffen, medel",
+          "score": 100,
+          "discoveredFrom": "https://eventor.orientering.se/events?startDate=2021-08-21&endDate=2021-08-21&mode=List&map=false",
+          "verifiedByWinSplitsId": true,
+          "eventDate": null,
+          "dateMatches": false,
+          "verificationMethod": "winsplits-database-id"
+        }
+      ]
+    },
+    "liveloxUrl": "https://www.livelox.com/Viewer?eventExternalIdentifier=0:29152-1&classExternalId=469773-1",
+    "warnings": [
+      "Eventor saknade plats och GEOAPIFY_API_KEY är inte konfigurerad. Platsen kunde därför inte hämtas från koordinaterna."
+    ],
+    "_migrationApi": {
+      "apiVersion": "doma-migration-route-2026-07-31-v5",
+      "sourceFile": "C:\\Users\\ErikMartinsson\\Documents\\GitHub\\kartarkiv\\migration\\test\\doma-507\\competition-enriched.json"
+    }
+  }
+}
