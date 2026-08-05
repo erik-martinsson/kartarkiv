@@ -153,7 +153,28 @@ const yearlyPace = yearly.map((item) => ({
   ...item,
   paceSecondsPerKm: item.distanceKm > 0 ? item.raceSeconds / item.distanceKm : 0
 }));
-const maxPace = Math.max(1, ...yearlyPace.map((item) => item.paceSecondsPerKm));
+
+const paceValues = yearlyPace
+  .map((item) => item.paceSecondsPerKm)
+  .filter((value) => value > 0 && Number.isFinite(value));
+
+const rawMinPace = paceValues.length > 0 ? Math.min(...paceValues) : 0;
+const rawMaxPace = paceValues.length > 0 ? Math.max(...paceValues) : 60;
+const paceRawStep = Math.max(1, (rawMaxPace - rawMinPace) / 4);
+const paceStepOptions = [5, 10, 15, 30, 60, 120];
+const paceTickStep =
+  paceStepOptions.find((step) => step >= paceRawStep) ??
+  Math.ceil(paceRawStep / 60) * 60;
+const paceMin = Math.max(0, Math.floor(rawMinPace / paceTickStep) * paceTickStep);
+const paceMax = Math.max(
+  paceMin + paceTickStep,
+  Math.ceil(rawMaxPace / paceTickStep) * paceTickStep
+);
+const paceRange = Math.max(1, paceMax - paceMin);
+const paceYTicks = Array.from(
+  { length: Math.round(paceRange / paceTickStep) + 1 },
+  (_, index) => paceMin + index * paceTickStep
+);
 
 const disciplineMap = new Map();
 for (const race of races) {
@@ -241,7 +262,10 @@ const pacePoints = yearlyPace.map((item, index) => {
   const x = yearlyPace.length <= 1
     ? lineWidth / 2
     : linePaddingX + (index / (yearlyPace.length - 1)) * usableWidth;
-  const y = linePaddingY + usableHeight - (item.paceSecondsPerKm / maxPace) * usableHeight;
+  const y =
+    linePaddingY +
+    usableHeight -
+    ((item.paceSecondsPerKm - paceMin) / paceRange) * usableHeight;
   return { ...item, x, y };
 });
 const pacePath = pacePoints.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ');
@@ -638,16 +662,30 @@ const scatterYTicks = [0, 0.25, 0.5, 0.75, 1].map((ratio) => ({
                     Linje med en punkt för varje år. Värdet visar genomsnittliga minuter per kilometer.
                   </desc>
 
-                  {[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
-                    const y = linePaddingY + usableHeight - ratio * usableHeight;
+                  {paceYTicks.map((tick) => {
+                    const y =
+                      linePaddingY +
+                      usableHeight -
+                      ((tick - paceMin) / paceRange) * usableHeight;
+
                     return (
-                      <line
-                        x1={linePaddingX}
-                        x2={lineWidth - linePaddingX}
-                        y1={y}
-                        y2={y}
-                        class="statistics-grid-line"
-                      />
+                      <g>
+                        <line
+                          x1={linePaddingX}
+                          x2={lineWidth - linePaddingX}
+                          y1={y}
+                          y2={y}
+                          class="statistics-grid-line"
+                        />
+                        <text
+                          x={linePaddingX - 10}
+                          y={y + 4}
+                          text-anchor="end"
+                          class="statistics-line-year"
+                        >
+                          {formatCompactDuration(tick)}
+                        </text>
+                      </g>
                     );
                   })}
 
