@@ -1,17 +1,19 @@
-import {
-  chromium,
-  type Browser,
-  type BrowserContext,
-  type Page,
-} from "playwright";
+import * as cheerio from "cheerio";
 import { NextResponse } from "next/server";
-import { loadWinSplits } from "@/lib/winsplits";
+import {
+  loadWinSplitsWithMetadata,
+} from "@/lib/winsplits";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const EVENTOR_BASE_URL =
   "https://eventor.orientering.se";
+
+const WINSPLITS_BASE_URL =
+  "https://obasen.orientering.se/winsplits/online/sv";
+
+const REQUEST_TIMEOUT_MS = 30_000;
 
 type WinSplitsInformation = {
   databaseId: number;
@@ -63,6 +65,37 @@ function normalizeComparableText(
     .replace(/[^\p{L}\p{N}]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function normalizeName(
+  value: string,
+): string {
+  return normalizeText(value)
+    .normalize("NFD")
+    .replace(/\p{M}+/gu, "")
+    .toLocaleLowerCase("sv-SE")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function normalizeTime(
+  value: string | undefined,
+): string {
+  if (!value) {
+    return "";
+  }
+
+  const normalized =
+    normalizeText(value);
+
+  const match = normalized.match(
+    /^(\d{1,3})[.:](\d{2})$/,
+  );
+
+  return match
+    ? `${match[1]}:${match[2]}`
+    : normalized;
 }
 
 function parseDateFromText(
@@ -161,7 +194,7 @@ function readWinSplitsIds(
 
   if (
     !Number.isInteger(categoryId) ||
-    categoryId <= 0
+    categoryId < 0
   ) {
     throw new Error(
       "WinSplits-länken saknar ett giltigt categoryId.",
@@ -186,76 +219,63 @@ function readWinSplitsIds(
   };
 }
 
-function createWinSplitsHeaderUrl(
-  databaseId: number,
-): string {
-  const url = new URL(
-    "https://obasen.orientering.se/winsplits/online/sv/top.asp",
-  );
-
-  url.searchParams.set(
-    "page",
-    "classes",
-  );
-  url.searchParams.set(
-    "databaseId",
-    String(databaseId),
-  );
-
-  return url.toString();
-}
-
-function createWinSplitsClassesUrl(
-  databaseId: number,
-): string {
-  const url = new URL(
-    "https://obasen.orientering.se/winsplits/online/sv/default.asp",
-  );
-
-  url.searchParams.set("page", "classes");
-  url.searchParams.set(
-    "databaseId",
-    String(databaseId),
-  );
-
-  return url.toString();
-}
-
-async function openPage(
-  page: Page,
+async function fetchHtml(
   url: string,
-): Promise<void> {
-  await page.goto(url, {
-    waitUntil: "domcontentloaded",
-    timeout: 30_000,
-  });
+): Promise<string> {
+  const controller =
+    new AbortController();
 
-  await page
-    .waitForLoadState("networkidle", {
-      timeout: 10_000,
-    })
-    .catch(() => undefined);
+  const timeout = setTimeout(
+    () => controller.abort(),
+    REQUEST_TIMEOUT_MS,
+  );
 
-  await page.waitForTimeout(1_000);
+  try {
+    const response = await fetch(url, {
+      cache: "no-store",
+      redirect: "follow",
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 KartarkivStudio",
+        Accept:
+          "text/html,application/xhtml+xml,*/*",
+        "Accept-Language":
+          "sv-SE,sv;q=0.9,en;q=0.7",
+      },
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        `HTTP ${response.status} från ${new URL(url).hostname}.`,
+      );
+    }
+
+    return response.text();
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      error.name === "AbortError"
+    ) {
+      throw new Error(
+        "Den externa tjänsten svarade inte inom 30 sekunder.",
+      );
+    }
+
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
-type WinSplitsPageSnapshot = {
-  url: string;
-  bodyText: string;
-  documentTitle: string;
-  htmlText: string;
-};
-
-function decodeBasicHtmlEntities(
-  value: string,
+function htmlText(
+  html: string,
 ): string {
-  return value
-    .replace(/&nbsp;/gi, " ")
-    .replace(/&amp;/gi, "&")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;/gi, "'")
-    .replace(/&lt;/gi, "<")
-    .replace(/&gt;/gi, ">");
+  const $ = cheerio.load(html);
+
+  return normalizeText(
+    $.root().text(),
+  );
 }
 
 function cleanWinSplitsTitle(
@@ -263,10 +283,13 @@ function cleanWinSplitsTitle(
   date: string,
 ): string {
   let title = normalizeText(
-    decodeBasicHtmlEntities(value)
+    value
       .replace(
         new RegExp(
-          `\\[?${date.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\]?`,
+          `\\[?${date.replace(
+            /[.*+?^${}()|[\]\\]/g,
+            "\\$&",
+          )}\\]?`,
           "g",
         ),
         " ",
@@ -291,7 +314,8 @@ function cleanWinSplitsTitle(
   const menuParts = title.split("|");
 
   if (menuParts.length > 1) {
-    title = menuParts[menuParts.length - 1];
+    title =
+      menuParts[menuParts.length - 1];
   }
 
   return normalizeText(
@@ -307,107 +331,7 @@ function cleanWinSplitsTitle(
   );
 }
 
-function extractClassInformation(
-  snapshots: WinSplitsPageSnapshot[],
-): {
-  raceClass: string;
-  distanceKm: string;
-  starters: string;
-} {
-  const values = snapshots.flatMap(
-    (snapshot) => [
-      snapshot.bodyText,
-      snapshot.documentTitle,
-      snapshot.htmlText,
-    ],
-  );
-
-  for (const value of values) {
-    const normalized = normalizeText(value);
-
-    const match = normalized.match(
-      /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)\s+(\d[\d\s]*)\s*m(?:\s*,?\s*(\d+)\s+startande)?/i,
-    );
-
-    if (!match) {
-      continue;
-    }
-
-    const meters = Number(
-      match[2].replace(/\s+/g, ""),
-    );
-
-    return {
-      raceClass:
-        normalizeText(match[1]),
-      distanceKm:
-        Number.isFinite(meters) &&
-        meters > 0
-          ? String(
-              Number(
-                (meters / 1_000).toFixed(3),
-              ),
-            )
-          : "",
-      starters: match[3] ?? "",
-    };
-  }
-
-  for (const value of values) {
-    const match =
-      normalizeText(value).match(
-        /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)(?=\s|$)/i,
-      );
-
-    if (match) {
-      return {
-        raceClass:
-          normalizeText(match[1]),
-        distanceKm: "",
-        starters: "",
-      };
-    }
-  }
-
-  return {
-    raceClass: "",
-    distanceKm: "",
-    starters: "",
-  };
-}
-
-function normalizeName(
-  value: string,
-): string {
-  return normalizeText(value)
-    .normalize("NFD")
-    .replace(/\p{M}+/gu, "")
-    .toLocaleLowerCase("sv-SE")
-    .replace(/[^\p{L}\p{N}]+/gu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function normalizeTime(
-  value: string | undefined,
-): string {
-  if (!value) {
-    return "";
-  }
-
-  const normalized =
-    normalizeText(value);
-
-  const match = normalized.match(
-    /^(\d{1,3})[.:](\d{2})$/,
-  );
-
-  return match
-    ? `${match[1]}:${match[2]}`
-    : normalized;
-}
-
-function isPlausibleWinSplitsTitle(
+function isPlausibleTitle(
   value: string,
 ): boolean {
   const normalized =
@@ -421,7 +345,7 @@ function isPlausibleWinSplitsTitle(
     return false;
   }
 
-  const rejectedTitles = new Set([
+  return !new Set([
     "online",
     "ladda upp",
     "start",
@@ -431,29 +355,28 @@ function isPlausibleWinSplitsTitle(
     "om winsplits online",
     "hjalp",
     "winsplits online",
-  ]);
-
-  return !rejectedTitles.has(normalized);
+  ]).has(normalized);
 }
 
-function extractWinSplitsInformation(
-  snapshots: WinSplitsPageSnapshot[],
+function extractTitleAndDate(
+  htmlDocuments: string[],
 ): {
   title: string;
   date: string;
-} | null {
-  const values = snapshots.flatMap(
-    (snapshot) => [
-      snapshot.bodyText,
-      snapshot.documentTitle,
-      snapshot.htmlText,
-    ],
+} {
+  const values = htmlDocuments.flatMap(
+    (html) => {
+      const $ = cheerio.load(html);
+
+      return [
+        htmlText(html),
+        normalizeText($("title").text()),
+      ];
+    },
   );
 
   for (const value of values) {
-    const normalized = normalizeText(value);
-
-    const match = normalized.match(
+    const match = value.match(
       /(.{2,240}?)\s*\[(\d{4}-\d{2}-\d{2})\]/,
     );
 
@@ -462,204 +385,133 @@ function extractWinSplitsInformation(
     }
 
     const date = match[2];
-    const title = cleanWinSplitsTitle(
-      match[1],
-      date,
-    );
-
-    if (
-      isPlausibleWinSplitsTitle(title)
-    ) {
-      return {
-        title,
+    const title =
+      cleanWinSplitsTitle(
+        match[1],
         date,
-      };
-    }
-  }
-
-  for (const snapshot of snapshots) {
-    const lines = snapshot.bodyText
-      .split(/\r?\n/)
-      .map((line) => normalizeText(line))
-      .filter(Boolean);
-
-    for (
-      let lineIndex = 0;
-      lineIndex < lines.length;
-      lineIndex += 1
-    ) {
-      const date = parseDateFromText(
-        lines[lineIndex],
       );
 
-      if (!date) {
-        continue;
-      }
-
-      const titleCandidates = [
-        lines[lineIndex],
-        lines[lineIndex - 1] ?? "",
-        lines[lineIndex + 1] ?? "",
-        snapshot.documentTitle,
-      ];
-
-      for (const candidate of titleCandidates) {
-        const title = cleanWinSplitsTitle(
-          candidate,
-          date,
-        );
-
-        if (
-          isPlausibleWinSplitsTitle(title)
-        ) {
-          return {
-            title,
-            date,
-          };
-        }
-      }
+    if (isPlausibleTitle(title)) {
+      return { title, date };
     }
   }
 
-  return null;
+  for (const value of values) {
+    const date =
+      parseDateFromText(value);
+
+    if (!date) {
+      continue;
+    }
+
+    const title =
+      cleanWinSplitsTitle(
+        value.slice(0, 240),
+        date,
+      );
+
+    if (isPlausibleTitle(title)) {
+      return { title, date };
+    }
+  }
+
+  throw new Error(
+    "Kunde inte läsa tävlingsnamn och datum från WinSplits.",
+  );
 }
 
-async function collectWinSplitsSnapshots(
-  page: Page,
-): Promise<WinSplitsPageSnapshot[]> {
-  const snapshots: WinSplitsPageSnapshot[] = [];
+function createWinSplitsHeaderUrl(
+  databaseId: number,
+): string {
+  const url = new URL(
+    `${WINSPLITS_BASE_URL}/top.asp`,
+  );
 
-  for (const frame of page.frames()) {
-    try {
-      const snapshot = await frame.evaluate(() => {
-        function clean(
-          value:
-            | string
-            | null
-            | undefined,
-        ): string {
-          return (value ?? "")
-            .replace(/\u00a0/g, " ")
-            .replace(/\r/g, "")
-            .trim();
-        }
+  url.searchParams.set(
+    "page",
+    "classes",
+  );
+  url.searchParams.set(
+    "databaseId",
+    String(databaseId),
+  );
 
-        const html =
-          document.documentElement?.innerHTML ??
-          "";
+  return url.toString();
+}
 
-        return {
-          url: window.location.href,
-          bodyText: clean(
-            document.body?.innerText,
-          ),
-          documentTitle: clean(
-            document.title,
-          ),
-          htmlText: clean(
-            html.replace(/<[^>]+>/g, " "),
-          ),
-        };
-      });
+function createWinSplitsClassesUrl(
+  databaseId: number,
+): string {
+  const url = new URL(
+    `${WINSPLITS_BASE_URL}/default.asp`,
+  );
 
-      snapshots.push(snapshot);
-    } catch {
-      // En enskild ram kan vara oläsbar.
-    }
-  }
+  url.searchParams.set(
+    "page",
+    "classes",
+  );
+  url.searchParams.set(
+    "databaseId",
+    String(databaseId),
+  );
 
-  return snapshots;
+  return url.toString();
 }
 
 async function readWinSplitsInformation(
-  context: BrowserContext,
   winsplitsUrl: string,
 ): Promise<WinSplitsInformation> {
   const {
     databaseId,
     categoryId,
     normalizedUrl,
-  } =
-    readWinSplitsIds(winsplitsUrl);
+  } = readWinSplitsIds(winsplitsUrl);
 
-  const urlsToTry = Array.from(
-    new Set([
+  const [
+    headerHtml,
+    classesHtml,
+    tableHtml,
+    data,
+  ] = await Promise.all([
+    fetchHtml(
       createWinSplitsHeaderUrl(databaseId),
-      winsplitsUrl,
+    ).catch(() => ""),
+    fetchHtml(
       createWinSplitsClassesUrl(databaseId),
-    ]),
+    ).catch(() => ""),
+    fetchHtml(normalizedUrl).catch(() => ""),
+    loadWinSplitsWithMetadata(
+      databaseId,
+      categoryId,
+    ),
+  ]);
+
+  const {
+    title,
+    date,
+  } = extractTitleAndDate(
+    [
+      headerHtml,
+      classesHtml,
+      tableHtml,
+    ].filter(Boolean),
   );
 
-  const page = await context.newPage();
-
-  try {
-    const allSnapshots:
-      WinSplitsPageSnapshot[] = [];
-
-    for (const url of urlsToTry) {
-      try {
-        await openPage(page, url);
-
-        const snapshots =
-          await collectWinSplitsSnapshots(page);
-
-        allSnapshots.push(...snapshots);
-
-        const information =
-          extractWinSplitsInformation(
-            allSnapshots,
-          );
-
-        if (information) {
-          const classInformation =
-            extractClassInformation(
-              allSnapshots,
-            );
-
-          return {
-            databaseId,
-            categoryId,
-            url: normalizedUrl,
-            title: information.title,
-            date: information.date,
-            raceClass:
-              classInformation.raceClass,
-            distanceKm:
-              classInformation.distanceKm,
-            starters:
-              classInformation.starters,
-          };
-        }
-      } catch {
-        // Försök nästa WinSplits-vy.
-      }
-    }
-
-    const combinedText = normalizeText(
-      allSnapshots
-        .flatMap((snapshot) => [
-          snapshot.bodyText,
-          snapshot.documentTitle,
-          snapshot.htmlText,
-        ])
-        .join(" "),
-    );
-
-    const date =
-      parseDateFromText(combinedText);
-
-    if (!date) {
-      throw new Error(
-        "Kunde inte läsa tävlingsdatumet från WinSplits.",
-      );
-    }
-
-    throw new Error(
-      "Kunde inte läsa tävlingsnamnet från WinSplits.",
-    );
-  } finally {
-    await page.close();
-  }
+  return {
+    databaseId,
+    categoryId,
+    url: normalizedUrl,
+    title,
+    date,
+    raceClass:
+      data.metadata.raceClass ?? "",
+    distanceKm:
+      data.metadata.distanceKm !== null
+        ? String(data.metadata.distanceKm)
+        : "",
+    starters:
+      String(data.runners.length),
+  };
 }
 
 function calculateNameScore(
@@ -727,18 +579,9 @@ function calculateNameScore(
       largestWordCount) *
     80;
 
-  /*
-   * Lite extra poäng när de första orden
-   * överensstämmer.
-   */
-  const leftFirstWord =
-    left.split(" ")[0];
-
-  const rightFirstWord =
-    right.split(" ")[0];
-
   const firstWordBonus =
-    leftFirstWord === rightFirstWord
+    left.split(" ")[0] ===
+    right.split(" ")[0]
       ? 10
       : 0;
 
@@ -770,9 +613,8 @@ function extractEventId(
     );
 
   if (pathMatch) {
-    const eventId = Number(
-      pathMatch[1],
-    );
+    const eventId =
+      Number(pathMatch[1]);
 
     return Number.isInteger(eventId) &&
       eventId > 0
@@ -784,18 +626,15 @@ function extractEventId(
     url.searchParams.get("eventId"),
   );
 
-  if (
+  return (
     Number.isInteger(queryEventId) &&
     queryEventId > 0
-  ) {
-    return queryEventId;
-  }
-
-  return null;
+  )
+    ? queryEventId
+    : null;
 }
 
 async function readEventorCandidates(
-  context: BrowserContext,
   winsplits: WinSplitsInformation,
 ): Promise<EventorCandidate[]> {
   const calendarUrl = new URL(
@@ -806,90 +645,49 @@ async function readEventorCandidates(
     "startDate",
     winsplits.date,
   );
-
   calendarUrl.searchParams.set(
     "endDate",
     winsplits.date,
   );
-
   calendarUrl.searchParams.set(
     "mode",
     "List",
   );
-
   calendarUrl.searchParams.set(
     "organisations",
     "1",
   );
 
-  const page = await context.newPage();
+  const html = await fetchHtml(
+    calendarUrl.toString(),
+  );
 
-  try {
-    await openPage(
-      page,
-      calendarUrl.toString(),
-    );
+  const $ = cheerio.load(html);
 
-    /*
-     * Tävlingslistan kan fyllas i efter den
-     * första sidladdningen.
-     */
-    await page
-      .waitForSelector(
-        'a[href*="/Events/Show/"], a[href*="eventId="]',
-        {
-          timeout: 15_000,
-        },
-      )
-      .catch(() => undefined);
+  const candidatesById =
+    new Map<number, EventorCandidate>();
 
-    await page.waitForTimeout(1_000);
+  $("a[href]").each(
+    (_, anchor) => {
+      const href =
+        $(anchor).attr("href");
 
-    const rawLinks =
-      await page.evaluate(() => {
-        function clean(
-          value:
-            | string
-            | null
-            | undefined,
-        ): string {
-          return (value ?? "")
-            .replace(/\u00a0/g, " ")
-            .replace(/\s+/g, " ")
-            .trim();
-        }
+      if (!href) {
+        return;
+      }
 
-        return Array.from(
-          document.querySelectorAll<
-            HTMLAnchorElement
-          >("a[href]"),
-        ).map((anchor) => ({
-          href: anchor.href,
-          text: clean(
-            anchor.textContent,
-          ),
-        }));
-      });
-
-    const candidatesById =
-      new Map<
-        number,
-        EventorCandidate
-      >();
-
-    for (const link of rawLinks) {
       const eventId =
-        extractEventId(link.href);
+        extractEventId(href);
 
       if (!eventId) {
-        continue;
+        return;
       }
 
       const title =
-        normalizeText(link.text);
+        normalizeText($(anchor).text());
 
       if (!title) {
-        continue;
+        return;
       }
 
       const eventorUrl =
@@ -906,13 +704,11 @@ async function readEventorCandidates(
         title,
         eventorUrl,
         resultListUrl,
-
         nameScore:
           calculateNameScore(
             winsplits.title,
             title,
           ),
-
         verified: false,
       };
 
@@ -929,115 +725,35 @@ async function readEventorCandidates(
           candidate,
         );
       }
-    }
+    },
+  );
 
-    return [
-      ...candidatesById.values(),
-    ].sort(
+  return [...candidatesById.values()]
+    .sort(
       (left, right) =>
         right.nameScore -
         left.nameScore,
     );
-  } finally {
-    await page.close();
-  }
 }
 
 async function candidateUsesDatabaseId(
-  context: BrowserContext,
   candidate: EventorCandidate,
   databaseId: number,
 ): Promise<boolean> {
-  const page = await context.newPage();
-
   try {
-    await openPage(
-      page,
+    const html = await fetchHtml(
       candidate.resultListUrl,
     );
 
-    const expectedText =
-      String(databaseId);
+    const searchableValue = html
+      .replace(/&amp;/gi, "&")
+      .replace(/\s+/g, "");
 
-    const foundInMainPage =
-      await page.evaluate(
-        ({ expectedDatabaseId }) => {
-          const html =
-            document.documentElement
-              .innerHTML;
-
-          const decodedHtml =
-            document.createElement(
-              "textarea",
-            );
-
-          decodedHtml.innerHTML = html;
-
-          const searchableValue =
-            `${html} ${decodedHtml.value}`
-              .replace(/&amp;/gi, "&")
-              .replace(/\s+/g, "");
-
-          return searchableValue.includes(
-            `databaseId=${expectedDatabaseId}`,
-          );
-        },
-        {
-          expectedDatabaseId:
-            expectedText,
-        },
-      );
-
-    if (foundInMainPage) {
-      return true;
-    }
-
-    /*
-     * Kontrollera även alla ramar, om Eventor
-     * skulle lägga länkarna där.
-     */
-    for (const frame of page.frames()) {
-      try {
-        const foundInFrame =
-          await frame.evaluate(
-            ({
-              expectedDatabaseId,
-            }) => {
-              const html =
-                document.documentElement
-                  .innerHTML;
-
-              const searchableValue =
-                html
-                  .replace(
-                    /&amp;/gi,
-                    "&",
-                  )
-                  .replace(/\s+/g, "");
-
-              return searchableValue.includes(
-                `databaseId=${expectedDatabaseId}`,
-              );
-            },
-            {
-              expectedDatabaseId:
-                expectedText,
-            },
-          );
-
-        if (foundInFrame) {
-          return true;
-        }
-      } catch {
-        // En enskild ram kan vara oläsbar.
-      }
-    }
-
-    return false;
+    return searchableValue.includes(
+      `databaseId=${databaseId}`,
+    );
   } catch {
     return false;
-  } finally {
-    await page.close();
   }
 }
 
@@ -1045,8 +761,8 @@ async function createDirectWinSplitsImport(
   winsplits: WinSplitsInformation,
   runnerName = "Erik Martinsson",
 ): Promise<DirectWinSplitsImport> {
-  const runners =
-    await loadWinSplits(
+  const data =
+    await loadWinSplitsWithMetadata(
       winsplits.databaseId,
       winsplits.categoryId,
     );
@@ -1055,7 +771,7 @@ async function createDirectWinSplitsImport(
     normalizeName(runnerName);
 
   const runner =
-    runners.find(
+    data.runners.find(
       (candidate) =>
         normalizeName(candidate.name) ===
         wantedName,
@@ -1071,185 +787,144 @@ async function createDirectWinSplitsImport(
     title: winsplits.title,
     date: winsplits.date,
     club: runner.club,
-    raceClass: winsplits.raceClass,
-    distanceKm: winsplits.distanceKm,
-    time: normalizeTime(
-      runner.totalTime,
-    ),
+    raceClass:
+      winsplits.raceClass,
+    distanceKm:
+      winsplits.distanceKm,
+    time:
+      normalizeTime(
+        runner.totalTime,
+      ),
     position: runner.place,
     starters:
       winsplits.starters ||
-      String(runners.length),
-    controls: String(
-      runner.controls,
-    ),
+      String(data.runners.length),
+    controls:
+      String(runner.controls),
     mistakeTime:
       normalizeTime(
         runner.totalMistake,
       ) || "0:00",
-    winsplitsUrl: winsplits.url,
+    winsplitsUrl:
+      winsplits.url,
   };
 }
 
 async function resolveEventorEvent(
-  browser: Browser,
   winsplitsUrl: string,
 ) {
-  const context =
-    await browser.newContext({
-      locale: "sv-SE",
+  const winsplits =
+    await readWinSplitsInformation(
+      winsplitsUrl,
+    );
 
-      userAgent:
-        "Mozilla/5.0 " +
-        "(Windows NT 10.0; Win64; x64) " +
-        "AppleWebKit/537.36 " +
-        "(KHTML, like Gecko) " +
-        "Chrome/131.0.0.0 " +
-        "Safari/537.36",
-    });
+  const directImport =
+    await createDirectWinSplitsImport(
+      winsplits,
+    );
 
-  try {
-    const winsplits =
-      await readWinSplitsInformation(
-        context,
-        winsplitsUrl,
-      );
+  const candidates =
+    await readEventorCandidates(
+      winsplits,
+    );
 
-    const directImport =
-      await createDirectWinSplitsImport(
-        winsplits,
-      );
-
-    const candidates =
-      await readEventorCandidates(
-        context,
-        winsplits,
-      );
-
-    if (candidates.length === 0) {
-      return {
-        winsplits,
-        directImport,
-        eventor: null,
-        verified: false,
-        candidates: [],
-      };
-    }
-
-    /*
-     * Vi verifierar först de bästa
-     * namnkandidaterna.
-     */
-    const candidatesToVerify =
-      candidates.slice(0, 100);
-
-    for (
-      const candidate of
-        candidatesToVerify
-    ) {
-      const verified =
-        await candidateUsesDatabaseId(
-          context,
-          candidate,
-          winsplits.databaseId,
-        );
-
-      candidate.verified = verified;
-
-      if (verified) {
-        return {
-          winsplits,
-          directImport,
-
-          eventor: {
-            eventId:
-              candidate.eventId,
-
-            title:
-              candidate.title,
-
-            eventorUrl:
-              candidate.eventorUrl,
-
-            resultListUrl:
-              candidate.resultListUrl,
-          },
-
-          verified: true,
-
-          candidates:
-            candidatesToVerify.slice(0, 20),
-        };
-      }
-    }
-
-    /*
-     * Eventor visar inte alltid WinSplits-länken i
-     * HTML-källan. Använd därför en försiktig fallback
-     * när namnmatchningen är mycket tydlig.
-     */
-    const fallbackCandidate =
-      candidatesToVerify[0];
-
-    const secondBestCandidate =
-      candidatesToVerify[1];
-
-    const fallbackIsUnambiguous =
-      Boolean(fallbackCandidate) &&
-      fallbackCandidate.nameScore >= 90 &&
-      (
-        !secondBestCandidate ||
-        fallbackCandidate.nameScore -
-          secondBestCandidate.nameScore >= 20
-      );
-
-    if (
-      fallbackCandidate &&
-      fallbackIsUnambiguous
-    ) {
-      return {
-        winsplits,
-        directImport,
-
-        eventor: {
-          eventId:
-            fallbackCandidate.eventId,
-
-          title:
-            fallbackCandidate.title,
-
-          eventorUrl:
-            fallbackCandidate.eventorUrl,
-
-          resultListUrl:
-            fallbackCandidate.resultListUrl,
-        },
-
-        verified: false,
-
-        candidates:
-          candidatesToVerify.slice(0, 20),
-      };
-    }
-
+  if (candidates.length === 0) {
     return {
       winsplits,
       directImport,
       eventor: null,
       verified: false,
+      candidates: [],
+    };
+  }
+
+  const candidatesToVerify =
+    candidates.slice(0, 100);
+
+  for (
+    const candidate of
+    candidatesToVerify
+  ) {
+    const verified =
+      await candidateUsesDatabaseId(
+        candidate,
+        winsplits.databaseId,
+      );
+
+    candidate.verified = verified;
+
+    if (verified) {
+      return {
+        winsplits,
+        directImport,
+        eventor: {
+          eventId:
+            candidate.eventId,
+          title:
+            candidate.title,
+          eventorUrl:
+            candidate.eventorUrl,
+          resultListUrl:
+            candidate.resultListUrl,
+        },
+        verified: true,
+        candidates:
+          candidatesToVerify.slice(0, 20),
+      };
+    }
+  }
+
+  const fallbackCandidate =
+    candidatesToVerify[0];
+
+  const secondBestCandidate =
+    candidatesToVerify[1];
+
+  const fallbackIsUnambiguous =
+    Boolean(fallbackCandidate) &&
+    fallbackCandidate.nameScore >= 90 &&
+    (
+      !secondBestCandidate ||
+      fallbackCandidate.nameScore -
+        secondBestCandidate.nameScore >= 20
+    );
+
+  if (
+    fallbackCandidate &&
+    fallbackIsUnambiguous
+  ) {
+    return {
+      winsplits,
+      directImport,
+      eventor: {
+        eventId:
+          fallbackCandidate.eventId,
+        title:
+          fallbackCandidate.title,
+        eventorUrl:
+          fallbackCandidate.eventorUrl,
+        resultListUrl:
+          fallbackCandidate.resultListUrl,
+      },
+      verified: false,
       candidates:
         candidatesToVerify.slice(0, 20),
     };
-  } finally {
-    await context.close();
   }
+
+  return {
+    winsplits,
+    directImport,
+    eventor: null,
+    verified: false,
+    candidates:
+      candidatesToVerify.slice(0, 20),
+  };
 }
 
 export async function GET(
   request: Request,
 ) {
-  let browser: Browser | null = null;
-
   try {
     const requestUrl =
       new URL(request.url);
@@ -1269,22 +944,30 @@ export async function GET(
       );
     }
 
-    browser = await chromium.launch({
-      headless: true,
-    });
-
     const result =
       await resolveEventorEvent(
-        browser,
         winsplitsUrl,
       );
 
-    return NextResponse.json(result);
+    return NextResponse.json(
+      result,
+      {
+        headers: {
+          "Cache-Control":
+            "no-store",
+        },
+      },
+    );
   } catch (error) {
     const message =
       error instanceof Error
         ? error.message
         : "Ett okänt fel inträffade.";
+
+    console.error(
+      "WinSplits-import misslyckades:",
+      error,
+    );
 
     return NextResponse.json(
       {
@@ -1292,9 +975,11 @@ export async function GET(
       },
       {
         status: 500,
+        headers: {
+          "Cache-Control":
+            "no-store",
+        },
       },
     );
-  } finally {
-    await browser?.close();
   }
 }
