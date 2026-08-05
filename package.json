@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:vercel": "astro build --config astro.config.vercel.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "import-race": "node scripts/import-race.mjs",
