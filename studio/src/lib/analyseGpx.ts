@@ -129,40 +129,82 @@ const calculateDistance = (points: TrackPoint[]): number => {
   return totalMeters;
 };
 
+const smoothElevations = (
+  elevations: number[],
+  windowSize = 5,
+): number[] => {
+  const safeWindowSize =
+    Math.max(1, Math.floor(windowSize));
+
+  const halfWindow =
+    Math.floor(safeWindowSize / 2);
+
+  return elevations.map((_elevation, index) => {
+    const startIndex =
+      Math.max(0, index - halfWindow);
+
+    const endIndex =
+      Math.min(
+        elevations.length,
+        index + halfWindow + 1,
+      );
+
+    const window =
+      elevations.slice(
+        startIndex,
+        endIndex,
+      );
+
+    return (
+      window.reduce(
+        (sum, value) => sum + value,
+        0,
+      ) / window.length
+    );
+  });
+};
+
 const calculateElevationGain = (
   points: TrackPoint[],
-  minimumGainMeters = 1,
 ): number | null => {
-  const elevationPoints = points.filter((point) =>
-    Number.isFinite(point.elevation),
-  );
+  const elevations = points
+    .map((point) => point.elevation)
+    .filter(
+      (elevation): elevation is number =>
+        typeof elevation === "number" &&
+        Number.isFinite(elevation),
+    );
 
-  if (elevationPoints.length < 2) {
+  if (elevations.length < 2) {
     return null;
   }
 
+  /*
+   * GPX-höjd innehåller ofta små variationer mellan
+   * närliggande punkter. Ett glidande medelvärde över
+   * fem punkter dämpar bruset utan att ta bort den
+   * övergripande höjdprofilen.
+   */
+  const smoothedElevations =
+    smoothElevations(elevations, 5);
+
   let totalGain = 0;
 
-  for (let index = 1; index < points.length; index += 1) {
-    const previousElevation = points[index - 1].elevation;
-    const currentElevation = points[index].elevation;
-
-    if (
-      !Number.isFinite(previousElevation) ||
-      !Number.isFinite(currentElevation)
-    ) {
-      continue;
-    }
-
+  for (
+    let index = 1;
+    index < smoothedElevations.length;
+    index += 1
+  ) {
     const difference =
-      Number(currentElevation) - Number(previousElevation);
+      smoothedElevations[index] -
+      smoothedElevations[index - 1];
 
-    if (difference >= minimumGainMeters) {
+    if (difference > 0) {
       totalGain += difference;
     }
   }
 
-  return totalGain;
+  return Math.round(totalGain);
 };
 
 const findFirstValidTime = (

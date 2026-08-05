@@ -2,13 +2,13 @@
 title: "Eskilstuna weekend"
 event: "Eskilstuna weekend"
 
-date: 2012-07-06
+date: "2012-07-06"
 
 club: "Linköpings OK"
 country: "SE"
-location: ""
+location: "Eskilstuna"
 
-discipline: "Lång"
+discipline: "Medel"
 raceClass: "H21E"
 
 distanceKm: 5.51

@@ -8,6 +8,7 @@
   "/api/migration/doma/route": "/api/migration/doma",
   "/api/published/[...id]/route": "/api/published/[...id]",
   "/api/published/route": "/api/published",
+  "/api/reverse-geocode/route": "/api/reverse-geocode",
   "/api/winsplits-eventor/route": "/api/winsplits-eventor",
   "/favicon.ico/route": "/favicon.ico",
   "/migration/page": "/migration",

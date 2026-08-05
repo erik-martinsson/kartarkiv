@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
+import { analyseGpx } from "@/lib/analyseGpx";
+import { buildRaceMarkdown } from "@/lib/buildRaceMarkdown";
 
 
 type EventLinksResponse = {
@@ -193,10 +195,113 @@ function ImagePreview({
   );
 }
 
+type GpxAnalysisResult = Awaited<
+  ReturnType<typeof analyseGpx>
+>;
+
+function formatGpxDuration(
+  seconds: number | null,
+): string {
+  if (seconds === null) {
+    return "–";
+  }
+
+  const rounded = Math.max(
+    0,
+    Math.round(seconds),
+  );
+  const hours = Math.floor(rounded / 3600);
+  const minutes = Math.floor(
+    (rounded % 3600) / 60,
+  );
+  const remainingSeconds = rounded % 60;
+
+  if (hours > 0) {
+    return (
+      `${hours}:` +
+      `${String(minutes).padStart(2, "0")}:` +
+      String(remainingSeconds).padStart(2, "0")
+    );
+  }
+
+  return (
+    `${minutes}:` +
+    String(remainingSeconds).padStart(2, "0")
+  );
+}
+
+function formatCoordinate(
+  value: number | null | undefined,
+): string {
+  return typeof value === "number" &&
+    Number.isFinite(value)
+    ? value.toFixed(7)
+    : "–";
+}
+
+type ReverseGeocodeResponse = {
+  location?: string;
+  error?: string;
+};
+
+async function reverseGeocodeLocation(
+  latitude: number,
+  longitude: number,
+): Promise<string | null> {
+  const response = await fetch(
+    `/api/reverse-geocode?latitude=${encodeURIComponent(
+      String(latitude),
+    )}&longitude=${encodeURIComponent(
+      String(longitude),
+    )}`,
+    {
+      method: "GET",
+      cache: "no-store",
+    },
+  );
+
+  const data =
+    (await response.json()) as
+      ReverseGeocodeResponse;
+
+  if (!response.ok) {
+    throw new Error(
+      data.error ||
+        "Platsen kunde inte hämtas från koordinaterna.",
+    );
+  }
+
+  return data.location?.trim() || null;
+}
+
+function fileExtension(
+  file: File | null,
+): string | null {
+  if (!file) {
+    return null;
+  }
+
+  const match = file.name.match(
+    /(\.[a-z0-9]+)$/i,
+  );
+
+  return match?.[1]?.toLowerCase() ?? null;
+}
+
 export default function Home() {
   const [blankMap, setBlankMap] = useState<File | null>(null);
   const [routeMap, setRouteMap] = useState<File | null>(null);
   const [gpxFile, setGpxFile] = useState<File | null>(null);
+  const [gpxAnalysis, setGpxAnalysis] =
+    useState<GpxAnalysisResult | null>(null);
+  const [gpxAnalysisMessage, setGpxAnalysisMessage] =
+    useState(
+      "Välj en GPX-fil för att analysera distans, höjd och koordinater.",
+    );
+  const [isAnalysingGpx, setIsAnalysingGpx] =
+    useState(false);
+  const [showPreview, setShowPreview] =
+    useState(false);
 
   const [eventSource, setEventSource] = useState("");
   const [isImportingEventor, setIsImportingEventor] = useState(false);
@@ -222,6 +327,97 @@ export default function Home() {
     comment: "",
   });
 
+  useEffect(() => {
+    let cancelled = false;
+
+    if (!gpxFile) {
+      setGpxAnalysis(null);
+      setIsAnalysingGpx(false);
+      setGpxAnalysisMessage(
+        "Välj en GPX-fil för att analysera distans, höjd och koordinater.",
+      );
+      return;
+    }
+
+    setGpxAnalysis(null);
+    setIsAnalysingGpx(true);
+    setGpxAnalysisMessage(
+      `Analyserar ${gpxFile.name}…`,
+    );
+
+    void analyseGpx(gpxFile)
+      .then(async (analysis) => {
+        if (cancelled) {
+          return;
+        }
+
+        setGpxAnalysis(analysis);
+
+        let resolvedLocation: string | null =
+          null;
+
+        try {
+          /*
+           * Slutpunkten används eftersom starten i
+           * vissa GPX-filer kan ligga vid parkering
+           * eller på annan missvisande plats.
+           */
+          resolvedLocation =
+            await reverseGeocodeLocation(
+              analysis.endLatitude,
+              analysis.endLongitude,
+            );
+        } catch {
+          /*
+           * Platsuppslagningen är en hjälp och får
+           * inte göra GPX-analysen till ett fel.
+           */
+        }
+
+        if (cancelled) {
+          return;
+        }
+
+        if (resolvedLocation) {
+          setForm((current) => ({
+            ...current,
+            location:
+              current.location.trim() ||
+              resolvedLocation,
+          }));
+
+          setGpxAnalysisMessage(
+            `${gpxFile.name} analyserades. Platsförslag: ${resolvedLocation}.`,
+          );
+        } else {
+          setGpxAnalysisMessage(
+            `${gpxFile.name} analyserades, men någon plats kunde inte identifieras automatiskt.`,
+          );
+        }
+      })
+      .catch((caughtError) => {
+        if (cancelled) {
+          return;
+        }
+
+        setGpxAnalysis(null);
+        setGpxAnalysisMessage(
+          caughtError instanceof Error
+            ? caughtError.message
+            : "GPX-filen kunde inte analyseras.",
+        );
+      })
+      .finally(() => {
+        if (!cancelled) {
+          setIsAnalysingGpx(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [gpxFile]);
+
   const slugPreview = useMemo(() => {
     const titleSlug = form.title
       .toLowerCase()
@@ -236,6 +432,114 @@ export default function Home() {
 
     return `${form.date}-${titleSlug}`;
   }, [form.date, form.title]);
+
+  const racePreview = useMemo(
+    () =>
+      buildRaceMarkdown({
+        ...form,
+        slug: slugPreview,
+        mapImageExtension:
+          fileExtension(blankMap),
+        routeImageExtension:
+          fileExtension(routeMap),
+        hasGpxFile: Boolean(gpxFile),
+        gpsDistanceKm:
+          gpxAnalysis?.distanceKm ?? null,
+        gpsClimb:
+          gpxAnalysis?.elevationGainMeters ??
+          null,
+        latitude:
+          gpxAnalysis?.startLatitude ?? null,
+        longitude:
+          gpxAnalysis?.startLongitude ?? null,
+      }),
+    [
+      form,
+      slugPreview,
+      blankMap,
+      routeMap,
+      gpxFile,
+      gpxAnalysis,
+    ],
+  );
+
+  const previewChecks = useMemo(
+    () => [
+      {
+        label: "Titel",
+        ready: Boolean(form.title.trim()),
+        required: true,
+      },
+      {
+        label: "Datum",
+        ready: Boolean(form.date),
+        required: true,
+      },
+      {
+        label: "Arrangör",
+        ready: Boolean(form.club.trim()),
+        required: true,
+      },
+      {
+        label: "Plats",
+        ready: Boolean(form.location.trim()),
+        required: false,
+      },
+      {
+        label: "Klass",
+        ready: Boolean(form.raceClass.trim()),
+        required: true,
+      },
+      {
+        label: "Banlängd",
+        ready:
+          Number(form.distanceKm) > 0,
+        required: true,
+      },
+      {
+        label: "Tävlingstid",
+        ready: Boolean(form.time.trim()),
+        required: true,
+      },
+      {
+        label: "Blank karta",
+        ready: Boolean(blankMap),
+        required: true,
+      },
+      {
+        label: "Karta med rutt",
+        ready: Boolean(routeMap),
+        required: false,
+      },
+      {
+        label: "GPX",
+        ready: Boolean(gpxAnalysis),
+        required: false,
+      },
+      {
+        label: "WinSplits",
+        ready: Boolean(form.winsplits.trim()),
+        required: false,
+      },
+      {
+        label: "Livelox",
+        ready: Boolean(form.livelox.trim()),
+        required: false,
+      },
+    ],
+    [
+      form,
+      blankMap,
+      routeMap,
+      gpxAnalysis,
+    ],
+  );
+
+  const missingRequiredChecks =
+    previewChecks.filter(
+      (check) =>
+        check.required && !check.ready,
+    );
 
   const handleFieldChange = (
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
@@ -653,34 +957,69 @@ export default function Home() {
           <div className="analysis-grid">
             <div>
               <span>Löpt distans</span>
-              <strong>–</strong>
+              <strong>
+                {gpxAnalysis
+                  ? `${gpxAnalysis.distanceKm.toFixed(2)} km`
+                  : "–"}
+              </strong>
             </div>
             <div>
               <span>Höjdmeter</span>
-              <strong>–</strong>
+              <strong>
+                {gpxAnalysis?.elevationGainMeters !== null &&
+                gpxAnalysis?.elevationGainMeters !== undefined
+                  ? `${Math.round(
+                      gpxAnalysis.elevationGainMeters,
+                    )} m`
+                  : "–"}
+              </strong>
             </div>
             <div>
               <span>GPX-tid</span>
-              <strong>–</strong>
+              <strong>
+                {gpxAnalysis
+                  ? formatGpxDuration(
+                      gpxAnalysis.durationSeconds,
+                    )
+                  : "–"}
+              </strong>
             </div>
             <div>
               <span>GPS-punkter</span>
-              <strong>–</strong>
+              <strong>
+                {gpxAnalysis
+                  ? gpxAnalysis.pointCount.toLocaleString(
+                      "sv-SE",
+                    )
+                  : "–"}
+              </strong>
             </div>
             <div>
               <span>Latitud</span>
-              <strong>–</strong>
+              <strong>
+                {formatCoordinate(
+                  gpxAnalysis?.startLatitude,
+                )}
+              </strong>
             </div>
             <div>
               <span>Longitud</span>
-              <strong>–</strong>
+              <strong>
+                {formatCoordinate(
+                  gpxAnalysis?.startLongitude,
+                )}
+              </strong>
             </div>
           </div>
 
-          <p className="analysis-message">
-            {gpxFile
-              ? `${gpxFile.name} är vald. GPX-analysen kopplas in i nästa steg.`
-              : "Välj en GPX-fil för att analysera distans, höjd och koordinater."}
+          <p
+            className="analysis-message"
+            role="status"
+            aria-live="polite"
+          >
+            {isAnalysingGpx
+              ? "Analyserar GPX-filen…"
+              : gpxAnalysisMessage}
           </p>
         </aside>
 
@@ -811,13 +1150,12 @@ export default function Home() {
             </label>
 
             <label className="field field-wide">
-              <span>Plats *</span>
+              <span>Plats</span>
               <input
                 name="location"
                 value={form.location}
                 onChange={handleFieldChange}
-                placeholder="Tävlingsort eller kartområde"
-                required
+                placeholder="Hämtas automatiskt från GPX eller fylls i manuellt"
               />
             </label>
 
@@ -967,43 +1305,250 @@ export default function Home() {
           <div className="panel-heading">
             <div>
               <p className="step-label">STEG 3</p>
-              <h2>Förhandsgranskning</h2>
+              <h2>
+                Tävlingen som kommer att skapas
+              </h2>
             </div>
           </div>
 
-          <div className="filename-preview">
-            <span>Filnamn</span>
-            <strong>{slugPreview}.md</strong>
+          <div
+            className="filename-preview"
+            style={{
+              borderColor:
+                missingRequiredChecks.length === 0
+                  ? "rgba(66, 190, 116, 0.45)"
+                  : "rgba(255, 168, 64, 0.45)",
+            }}
+          >
+            <span>
+              {missingRequiredChecks.length === 0
+                ? "Redo att skapa"
+                : `${missingRequiredChecks.length} obligatoriska uppgifter saknas`}
+            </span>
+            <strong>{racePreview.filename}</strong>
           </div>
 
           <div className="path-list">
             <p>
               <span>Innehåll</span>
-              <code>src/content/races/ÅR/{slugPreview}.md</code>
+              <code>
+                {racePreview.contentPath}
+              </code>
             </p>
             <p>
-              <span>Kartor</span>
-              <code>public/maps/ÅR/</code>
+              <span>Blank karta</span>
+              <code>
+                {racePreview.mapImagePath ?? "Ingen fil vald"}
+              </code>
+            </p>
+            <p>
+              <span>Karta med rutt</span>
+              <code>
+                {racePreview.routeImagePath ?? "Ingen fil vald"}
+              </code>
             </p>
             <p>
               <span>GPX</span>
-              <code>public/gps/ÅR/</code>
+              <code>
+                {racePreview.gpsFilePath ?? "Ingen fil vald"}
+              </code>
             </p>
           </div>
 
+          <div
+            style={{
+              display: "grid",
+              gap: "0.55rem",
+              marginTop: "1rem",
+            }}
+          >
+            <strong>Kvalitetskontroll</strong>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(2, minmax(0, 1fr))",
+                gap: "0.45rem",
+              }}
+            >
+              {previewChecks.map((check) => (
+                <div
+                  key={check.label}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.45rem",
+                    fontSize: "0.84rem",
+                  }}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      color: check.ready
+                        ? "#69d391"
+                        : check.required
+                          ? "#ff9b45"
+                          : "#888",
+                    }}
+                  >
+                    {check.ready
+                      ? "✓"
+                      : check.required
+                        ? "!"
+                        : "–"}
+                  </span>
+                  <span>{check.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {showPreview ? (
+            <div
+              style={{
+                display: "grid",
+                gap: "1rem",
+                marginTop: "1.25rem",
+              }}
+            >
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns:
+                    "repeat(2, minmax(0, 1fr))",
+                  gap: "0.7rem",
+                }}
+              >
+                {[
+                  ["Titel", form.title || "–"],
+                  ["Datum", form.date || "–"],
+                  ["Arrangör", form.club || "–"],
+                  ["Plats", form.location || "–"],
+                  ["Klass", form.raceClass || "–"],
+                  ["Disciplin", form.discipline || "–"],
+                  [
+                    "Banlängd",
+                    form.distanceKm
+                      ? `${form.distanceKm} km`
+                      : "–",
+                  ],
+                  [
+                    "GPS-distans",
+                    gpxAnalysis
+                      ? `${gpxAnalysis.distanceKm.toFixed(2)} km`
+                      : "–",
+                  ],
+                  [
+                    "Höjdmeter",
+                    gpxAnalysis?.elevationGainMeters !== null &&
+                    gpxAnalysis?.elevationGainMeters !== undefined
+                      ? `${Math.round(
+                          gpxAnalysis.elevationGainMeters,
+                        )} m`
+                      : "–",
+                  ],
+                  ["Tid", form.time || "–"],
+                  ["Placering", form.position || "–"],
+                  ["Startande", form.starters || "–"],
+                  ["Kontroller", form.controls || "–"],
+                  [
+                    "Bomtid",
+                    form.mistakeTime || "0:00",
+                  ],
+                ].map(([label, value]) => (
+                  <div
+                    key={label}
+                    style={{
+                      display: "grid",
+                      gap: "0.18rem",
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "#8e8e8e",
+                        fontSize: "0.75rem",
+                      }}
+                    >
+                      {label}
+                    </span>
+                    <strong
+                      style={{
+                        overflowWrap: "anywhere",
+                      }}
+                    >
+                      {value}
+                    </strong>
+                  </div>
+                ))}
+              </div>
+
+              <details>
+                <summary
+                  style={{
+                    cursor: "pointer",
+                    fontWeight: 700,
+                  }}
+                >
+                  Visa genererad Markdown
+                </summary>
+
+                <pre
+                  style={{
+                    margin: "0.8rem 0 0",
+                    padding: "0.9rem",
+                    maxHeight: "28rem",
+                    overflow: "auto",
+                    whiteSpace: "pre-wrap",
+                    overflowWrap: "anywhere",
+                    borderRadius: "0.65rem",
+                    background: "rgba(0, 0, 0, 0.32)",
+                    fontSize: "0.73rem",
+                    lineHeight: 1.55,
+                  }}
+                >
+                  <code>{racePreview.markdown}</code>
+                </pre>
+              </details>
+            </div>
+          ) : null}
+
           <div className="button-stack">
-            <button type="button" className="button secondary">
-              Förhandsgranska
+            <button
+              type="button"
+              className="button secondary"
+              onClick={() =>
+                setShowPreview(
+                  (current) => !current,
+                )
+              }
+            >
+              {showPreview
+                ? "Dölj förhandsgranskning"
+                : "Förhandsgranska"}
             </button>
 
-            <button type="submit" className="button primary">
+            <button
+              type="submit"
+              className="button primary"
+              disabled={
+                missingRequiredChecks.length > 0
+              }
+              style={{
+                opacity:
+                  missingRequiredChecks.length > 0
+                    ? 0.55
+                    : 1,
+              }}
+            >
               Skapa tävling
             </button>
           </div>
 
           <p className="output-note">
-            GitHub-importen är inte aktiverad ännu. Formuläret används nu för
-            att bygga och testa gränssnittet.
+            Förhandsgranskningen och den kommande
+            tävlingsfilen använder samma
+            Markdown-generering.
           </p>
         </aside>
       </form>

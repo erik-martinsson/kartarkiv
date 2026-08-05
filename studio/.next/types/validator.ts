@@ -137,6 +137,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/api/reverse-geocode/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/reverse-geocode">> = Specific
+  const handler = {} as typeof import("../../src/app/api/reverse-geocode/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/api/winsplits-eventor/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/winsplits-eventor">> = Specific

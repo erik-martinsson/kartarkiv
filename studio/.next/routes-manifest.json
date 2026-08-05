@@ -93,6 +93,12 @@
       "namedRegex": "^/api/published(?:/)?$"
     },
     {
+      "page": "/api/reverse-geocode",
+      "regex": "^/api/reverse\\-geocode(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/reverse\\-geocode(?:/)?$"
+    },
+    {
       "page": "/api/winsplits-eventor",
       "regex": "^/api/winsplits\\-eventor(?:/)?$",
       "routeKeys": {},

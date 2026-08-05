@@ -8,6 +8,7 @@
     "/api/migration/doma/[mapId]/review": {},
     "/api/published": {},
     "/api/published/[...id]": {},
+    "/api/reverse-geocode": {},
     "/api/winsplits-eventor": {}
   }
 }
