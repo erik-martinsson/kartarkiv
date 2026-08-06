@@ -27,6 +27,16 @@ function getSessionSecret(): string {
   return secret;
 }
 
+function toArrayBuffer(bytes: Uint8Array): ArrayBuffer {
+  const copy = new Uint8Array(bytes.byteLength);
+  copy.set(bytes);
+  return copy.buffer;
+}
+
+function encodeToArrayBuffer(value: string): ArrayBuffer {
+  return toArrayBuffer(encoder.encode(value));
+}
+
 function toBase64Url(bytes: Uint8Array): string {
   let binary = "";
 
@@ -65,7 +75,7 @@ function fromBase64Url(value: string): Uint8Array | null {
 async function importHmacKey(): Promise<CryptoKey> {
   return crypto.subtle.importKey(
     "raw",
-    encoder.encode(getSessionSecret()),
+    encodeToArrayBuffer(getSessionSecret()),
     {
       name: "HMAC",
       hash: "SHA-256",
@@ -80,7 +90,7 @@ async function sign(value: string): Promise<string> {
   const signature = await crypto.subtle.sign(
     "HMAC",
     key,
-    encoder.encode(value),
+    encodeToArrayBuffer(value),
   );
 
   return toBase64Url(new Uint8Array(signature));
@@ -133,8 +143,8 @@ export async function verifyStudioSessionToken(
     const validSignature = await crypto.subtle.verify(
       "HMAC",
       key,
-      signatureBytes,
-      encoder.encode(payload),
+      toArrayBuffer(signatureBytes),
+      encodeToArrayBuffer(payload),
     );
 
     if (!validSignature) {
