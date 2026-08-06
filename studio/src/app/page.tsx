@@ -1292,15 +1292,14 @@ export default function Home() {
             <label className="field">
               <span>Banlängd (km) *</span>
               <input
-                name="distanceKm"
-                type="number"
-                min="0"
-                step="0.01"
-                value={form.distanceKm}
-                onChange={handleFieldChange}
-                placeholder="8.36"
-                required
-              />
+  name="distanceKm"
+  type="number"
+  min="0"
+  step="0.01"
+  value={form.distanceKm}
+  onChange={handleFieldChange}
+  required
+/>
             </label>
 
             <label className="field">
@@ -1309,7 +1308,6 @@ export default function Home() {
                 name="time"
                 value={form.time}
                 onChange={handleFieldChange}
-                placeholder="53:37"
                 required
               />
             </label>

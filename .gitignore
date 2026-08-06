@@ -2,3 +2,11 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+studio/.next/
+
+# Lokala miljövariabler
+.env.local
+
+event.json
+classes.json
+results.json

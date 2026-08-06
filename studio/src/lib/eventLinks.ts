@@ -1,11 +1,16 @@
-import axios from "axios";
-import { loadWinSplits } from "@/lib/winsplits";
+import * as cheerio from "cheerio";
+import { XMLParser } from "fast-xml-parser";
+import {
+  loadWinSplitsWithMetadata,
+} from "@/lib/winsplits";
 
 const EVENTOR_BASE_URL =
   "https://eventor.orientering.se";
 
 const WINSPLITS_BASE_URL =
   "https://obasen.orientering.se/winsplits/online/sv/default.asp";
+
+const REQUEST_TIMEOUT_MS = 30_000;
 
 export type WinSplitsClassLink = {
   name: string;
@@ -18,7 +23,6 @@ export type EventLinks = {
   eventId: number;
   eventorUrl: string;
   resultListUrl: string;
-
   title: string;
   date: string;
   club: string;
@@ -31,40 +35,205 @@ export type EventLinks = {
   starters: string;
   controls: string;
   mistakeTime: string;
-
   winsplits: WinSplitsClassLink | null;
   liveloxUrl: string | null;
 };
 
-type HtmlLink = {
-  href: string;
-  text: string;
-  position: number;
-};
+type XmlRecord =
+  Record<string, unknown>;
 
-type EventInformation = {
-  title: string;
-  date: string;
-  organiser: string;
-  location: string;
-  discipline: string;
-};
-
-type ClassInformation = {
+type EventorRunner = {
+  name: string;
+  club: string;
   raceClass: string;
-  distanceKm: string;
-  starters: string;
+  classId: number | null;
+  time: string;
+  position: string;
+  controls: number;
 };
 
-function normalizeText(value: string): string {
-  return value
-    .replace(/\u00a0/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+type EventorClass = {
+  id: number | null;
+  name: string;
+  starters: number;
+};
+
+type ResultPageMetadata = {
+  distanceKm: string;
+  starters: number;
+  winsplitsCandidates: Array<{
+    databaseId: number;
+    categoryId: number;
+  }>;
+  liveloxUrl: string | null;
+};
+
+const xmlParser =
+  new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "@_",
+    textNodeName: "#text",
+    trimValues: true,
+    parseTagValue: false,
+    parseAttributeValue: false,
+    removeNSPrefix: true,
+  });
+
+function asRecord(
+  value: unknown,
+): XmlRecord | null {
+  return (
+    value !== null &&
+    typeof value === "object" &&
+    !Array.isArray(value)
+  )
+    ? value as XmlRecord
+    : null;
 }
 
-function normalizeName(value: string): string {
-  return normalizeText(value)
+function asArray<T>(
+  value: T | T[] | null | undefined,
+): T[] {
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return [];
+  }
+
+  return Array.isArray(value)
+    ? value
+    : [value];
+}
+
+function firstValue(
+  source: XmlRecord | null,
+  ...keys: string[]
+): unknown {
+  if (!source) {
+    return undefined;
+  }
+
+  for (const key of keys) {
+    const current = source[key];
+
+    if (
+      current !== null &&
+      current !== undefined
+    ) {
+      return current;
+    }
+  }
+
+  return undefined;
+}
+
+function cleanText(
+  value: unknown,
+): string {
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return "";
+  }
+
+  if (
+    typeof value === "string" ||
+    typeof value === "number" ||
+    typeof value === "boolean"
+  ) {
+    return String(value)
+      .replace(/\u00a0/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  const object = asRecord(value);
+
+  return object && "#text" in object
+    ? cleanText(object["#text"])
+    : "";
+}
+
+function childText(
+  source: XmlRecord | null,
+  ...keys: string[]
+): string {
+  return cleanText(
+    firstValue(source, ...keys),
+  );
+}
+
+function findByKey(
+  value: unknown,
+  wantedKey: string,
+): unknown[] {
+  const found: unknown[] = [];
+
+  function visit(
+    current: unknown,
+  ): void {
+    if (Array.isArray(current)) {
+      current.forEach(visit);
+      return;
+    }
+
+    const object = asRecord(current);
+
+    if (!object) {
+      return;
+    }
+
+    for (
+      const [key, child] of
+      Object.entries(object)
+    ) {
+      if (key === wantedKey) {
+        found.push(
+          ...asArray(child),
+        );
+      }
+
+      visit(child);
+    }
+  }
+
+  visit(value);
+
+  return found;
+}
+
+function numericId(
+  value: unknown,
+): number | null {
+  const object = asRecord(value);
+
+  const raw =
+    object
+      ? firstValue(
+          object,
+          "@_id",
+          "EventClassId",
+          "Id",
+        )
+      : value;
+
+  const parsed =
+    Number(cleanText(raw));
+
+  return (
+    Number.isInteger(parsed) &&
+    parsed > 0
+  )
+    ? parsed
+    : null;
+}
+
+function normalizeName(
+  value: string,
+): string {
+  return cleanText(value)
     .normalize("NFD")
     .replace(/\p{M}+/gu, "")
     .toLocaleLowerCase("sv-SE")
@@ -74,574 +243,1120 @@ function normalizeName(value: string): string {
     .trim();
 }
 
-function getNameTokens(value: string): string[] {
-  return normalizeName(value)
-    .split(" ")
-    .filter(Boolean);
-}
-
-function calculateRunnerNameScore(
-  candidateName: string,
-  wantedName: string,
+function nameScore(
+  candidate: string,
+  wanted: string,
 ): number {
-  const candidate = normalizeName(candidateName);
-  const wanted = normalizeName(wantedName);
+  const left =
+    normalizeName(candidate);
 
-  if (!candidate || !wanted) {
+  const right =
+    normalizeName(wanted);
+
+  if (!left || !right) {
     return 0;
   }
 
-  if (candidate === wanted) {
+  if (left === right) {
     return 100;
   }
 
-  const candidateTokens = getNameTokens(candidateName);
-  const wantedTokens = getNameTokens(wantedName);
+  const leftParts =
+    left.split(" ").filter(Boolean);
+
+  const rightParts =
+    right.split(" ").filter(Boolean);
+
+  const leftSet =
+    new Set(leftParts);
+
+  const rightSet =
+    new Set(rightParts);
 
   if (
-    candidateTokens.length === 0 ||
-    wantedTokens.length === 0
+    rightParts.every(
+      (part) => leftSet.has(part),
+    )
   ) {
-    return 0;
+    return 95;
   }
-
-  const sortedCandidate = [...candidateTokens]
-    .sort()
-    .join(" ");
-
-  const sortedWanted = [...wantedTokens]
-    .sort()
-    .join(" ");
-
-  if (sortedCandidate === sortedWanted) {
-    return 99;
-  }
-
-  const candidateSet = new Set(candidateTokens);
-  const wantedSet = new Set(wantedTokens);
-
-  const sharedTokens = wantedTokens.filter(
-    (token) => candidateSet.has(token),
-  );
-
-  const sharedSubstantiveTokens = sharedTokens.filter(
-    (token) => token.length > 1,
-  );
-
-  const wantedSubstantiveTokens = wantedTokens.filter(
-    (token) => token.length > 1,
-  );
-
-  const candidateSubstantiveTokens =
-    candidateTokens.filter(
-      (token) => token.length > 1,
-    );
 
   if (
-    wantedSubstantiveTokens.length >= 2 &&
-    sharedSubstantiveTokens.length < 2
+    leftParts.every(
+      (part) => rightSet.has(part),
+    )
   ) {
-    return 0;
+    return 92;
   }
 
-  const wantedCoverage =
-    sharedTokens.length / wantedTokens.length;
-
-  const candidateCoverage =
-    sharedTokens.length / candidateTokens.length;
-
-  const wantedFirst = wantedTokens[0];
-  const wantedLast =
-    wantedTokens[wantedTokens.length - 1];
-
-  const candidateFirst = candidateTokens[0];
-  const candidateLast =
-    candidateTokens[candidateTokens.length - 1];
-
-  const sameOuterNames =
-    (wantedFirst === candidateFirst &&
-      wantedLast === candidateLast) ||
-    (wantedFirst === candidateLast &&
-      wantedLast === candidateFirst);
-
-  const allWantedNamesPresent =
-    wantedSubstantiveTokens.every(
-      (token) => candidateSet.has(token),
-    );
-
-  const allCandidateNamesPresent =
-    candidateSubstantiveTokens.every(
-      (token) => wantedSet.has(token),
-    );
-
-  if (
-    sameOuterNames &&
-    (allWantedNamesPresent || allCandidateNamesPresent)
-  ) {
-    return 96;
-  }
-
-  if (allWantedNamesPresent) {
-    return 93;
-  }
-
-  if (allCandidateNamesPresent) {
-    return 91;
-  }
+  const shared =
+    rightParts.filter(
+      (part) => leftSet.has(part),
+    ).length;
 
   return Math.round(
     Math.min(
       89,
-      wantedCoverage * 55 +
-        candidateCoverage * 30 +
-        (sameOuterNames ? 4 : 0),
+      shared /
+        Math.max(
+          1,
+          rightParts.length,
+        ) *
+        60 +
+      shared /
+        Math.max(
+          1,
+          leftParts.length,
+        ) *
+        25,
     ),
   );
-}
-
-function findRunnerByName<
-  T extends { name: string },
->(
-  runners: T[],
-  runnerName: string,
-): T | null {
-  const ranked = runners
-    .map((runner) => ({
-      runner,
-      score: calculateRunnerNameScore(
-        runner.name,
-        runnerName,
-      ),
-    }))
-    .filter((candidate) => candidate.score > 0)
-    .sort(
-      (left, right) =>
-        right.score - left.score,
-    );
-
-  const best = ranked[0];
-
-  if (!best || best.score < 90) {
-    return null;
-  }
-
-  const secondBest = ranked[1];
-
-  if (
-    secondBest &&
-    secondBest.score === best.score
-  ) {
-    return null;
-  }
-
-  return best.runner;
-}
-
-function normalizeClassName(
-  value: string,
-): string {
-  return normalizeText(value)
-    .replace(/\s+/g, "")
-    .replace(/[–—−]/g, "-")
-    .toLocaleUpperCase("sv-SE");
 }
 
 function normalizeTime(
   value: string | undefined,
 ): string {
-  if (!value) {
+  const normalized =
+    cleanText(value);
+
+  if (!normalized) {
     return "";
   }
 
-  const normalized = normalizeText(value);
+  const hms =
+    normalized.match(
+      /^(\d+):(\d{2}):(\d{2})(?:\.\d+)?$/,
+    );
 
-  const minuteMatch = normalized.match(
-    /^(\d{1,3})[.:](\d{2})$/,
-  );
+  if (hms) {
+    const hours =
+      Number(hms[1]);
 
-  if (minuteMatch) {
-    return `${minuteMatch[1]}:${minuteMatch[2]}`;
+    return hours > 0
+      ? `${hours}:${hms[2]}:${hms[3]}`
+      : `${Number(hms[2])}:${hms[3]}`;
+  }
+
+  /*
+   * WinSplits använder ibland punkt mellan
+   * minuter och sekunder, exempelvis 38.29.
+   */
+  const minuteTime =
+    normalized.match(
+      /^(\d{1,3})[.:](\d{2})$/,
+    );
+
+  if (minuteTime) {
+    return (
+      `${Number(minuteTime[1])}:` +
+      `${minuteTime[2]}`
+    );
+  }
+
+  const seconds =
+    Number(normalized);
+
+  if (
+    Number.isFinite(seconds) &&
+    seconds >= 0
+  ) {
+    const rounded =
+      Math.round(seconds);
+
+    const hours =
+      Math.floor(rounded / 3600);
+
+    const minutes =
+      Math.floor(
+        (rounded % 3600) / 60,
+      );
+
+    const remaining =
+      rounded % 60;
+
+    return hours > 0
+      ? `${hours}:${String(minutes).padStart(2, "0")}:${String(remaining).padStart(2, "0")}`
+      : `${minutes}:${String(remaining).padStart(2, "0")}`;
   }
 
   return normalized;
 }
 
-function escapeRegExp(value: string): string {
-  return value.replace(
-    /[.*+?^${}()|[\]\\]/g,
-    "\\$&",
-  );
-}
-
-function decodeHtml(value: string): string {
-  return value
-    .replace(/&amp;/gi, "&")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;|&#x27;/gi, "'")
-    .replace(/&nbsp;/gi, " ")
-    .replace(/&aring;/gi, "å")
-    .replace(/&auml;/gi, "ä")
-    .replace(/&ouml;/gi, "ö")
-    .replace(/&Aring;/g, "Å")
-    .replace(/&Auml;/g, "Ä")
-    .replace(/&Ouml;/g, "Ö")
-    .replace(
-      /&#x([0-9a-f]+);/gi,
-      (_, number: string) =>
-        String.fromCodePoint(
-          Number.parseInt(number, 16),
-        ),
-    )
-    .replace(
-      /&#(\d+);/g,
-      (_, number: string) =>
-        String.fromCodePoint(Number(number)),
-    );
-}
-
-function stripHtml(value: string): string {
-  return normalizeText(
-    decodeHtml(
-      value
-        .replace(
-          /<script\b[^>]*>[\s\S]*?<\/script>/gi,
-          "",
-        )
-        .replace(
-          /<style\b[^>]*>[\s\S]*?<\/style>/gi,
-          "",
-        )
-        .replace(/<br\s*\/?>/gi, " ")
-        .replace(/<[^>]+>/g, " "),
-    ),
-  );
-}
-
-function parseSwedishDate(
-  value: string,
-): string {
-  const normalized = normalizeText(value)
-    .toLocaleLowerCase("sv-SE");
-
-  const isoMatch = normalized.match(
-    /\b(\d{4})-(\d{2})-(\d{2})\b/,
-  );
-
-  if (isoMatch) {
-    return (
-      `${isoMatch[1]}-` +
-      `${isoMatch[2]}-` +
-      `${isoMatch[3]}`
-    );
-  }
-
-  const swedishMatch = normalized.match(
-    /\b(\d{1,2})\s+(januari|februari|mars|april|maj|juni|juli|augusti|september|oktober|november|december)\s+(\d{4})\b/,
-  );
-
-  if (!swedishMatch) {
-    return "";
-  }
-
-  const months: Record<string, string> = {
-    januari: "01",
-    februari: "02",
-    mars: "03",
-    april: "04",
-    maj: "05",
-    juni: "06",
-    juli: "07",
-    augusti: "08",
-    september: "09",
-    oktober: "10",
-    november: "11",
-    december: "12",
-  };
-
-  const day = swedishMatch[1].padStart(
-    2,
-    "0",
-  );
-
-  const month = months[swedishMatch[2]];
-  const year = swedishMatch[3];
-
-  return `${year}-${month}-${day}`;
-}
-
 function normalizeDiscipline(
   value: string,
 ): string {
-  const normalized = normalizeText(value)
-    .toLocaleLowerCase("sv-SE");
+  const normalized =
+    cleanText(value)
+      .toLocaleLowerCase("sv-SE");
 
   if (
     normalized.includes("ultralång") ||
-    normalized.includes("ultralang")
+    normalized.includes("ultralang") ||
+    normalized.includes("ultra long")
   ) {
     return "Ultralång";
   }
 
-  if (normalized.includes("medel")) {
+  if (
+    normalized.includes("medel") ||
+    normalized.includes("middle")
+  ) {
     return "Medel";
   }
 
-  if (normalized.includes("sprint")) {
+  if (
+    normalized.includes("sprint")
+  ) {
     return "Sprint";
   }
 
-  if (normalized.includes("natt")) {
+  if (
+    normalized.includes("natt") ||
+    normalized.includes("night")
+  ) {
     return "Natt";
   }
 
-  if (normalized.includes("stafett")) {
+  if (
+    normalized.includes("stafett") ||
+    normalized.includes("relay")
+  ) {
     return "Stafett";
   }
 
-  if (normalized.includes("lång")) {
+  if (
+    normalized.includes("lång") ||
+    normalized.includes("lang") ||
+    normalized.includes("long")
+  ) {
     return "Lång";
   }
 
   return "Annat";
 }
 
-function createAbsoluteUrl(
-  href: string,
-  baseUrl: string,
-): string | null {
+function readDate(
+  value: unknown,
+): string {
+  const direct =
+    cleanText(value).match(
+      /\b(\d{4}-\d{2}-\d{2})\b/,
+    )?.[1];
+
+  if (direct) {
+    return direct;
+  }
+
+  const object =
+    asRecord(value);
+
+  return cleanText(
+    firstValue(
+      object,
+      "Date",
+      "EventDate",
+    ),
+  ).match(
+    /\b(\d{4}-\d{2}-\d{2})\b/,
+  )?.[1] ?? "";
+}
+
+function requireApiKey(): string {
+  const key =
+    process.env.EVENTOR_API_KEY
+      ?.trim();
+
+  if (!key) {
+    throw new Error(
+      "EVENTOR_API_KEY saknas. Lägg nyckeln i studio/.env.local och i Vercels Environment Variables.",
+    );
+  }
+
+  return key;
+}
+
+async function fetchWithTimeout(
+  url: string,
+  init: RequestInit,
+): Promise<Response> {
+  const controller =
+    new AbortController();
+
+  const timeout =
+    setTimeout(
+      () => controller.abort(),
+      REQUEST_TIMEOUT_MS,
+    );
+
   try {
-    return new URL(
-      decodeHtml(href),
-      baseUrl,
-    ).toString();
+    return await fetch(
+      url,
+      {
+        ...init,
+        signal:
+          controller.signal,
+      },
+    );
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      error.name === "AbortError"
+    ) {
+      throw new Error(
+        "Den externa tjänsten svarade inte inom 30 sekunder.",
+      );
+    }
+
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function fetchEventorXml(
+  path: string,
+): Promise<unknown> {
+  const response =
+    await fetchWithTimeout(
+      `${EVENTOR_BASE_URL}${path}`,
+      {
+        cache: "no-store",
+        headers: {
+          ApiKey:
+            requireApiKey(),
+          Accept:
+            "application/xml,text/xml,*/*",
+          "User-Agent":
+            "KartarkivStudio/1.0",
+        },
+      },
+    );
+
+  const body =
+    await response.text();
+
+  if (!response.ok) {
+    throw new Error(
+      `Eventors API svarade med HTTP ${response.status}: ${cleanText(body).slice(0, 220)}`,
+    );
+  }
+
+  return xmlParser.parse(body);
+}
+
+async function fetchResultHtml(
+  resultListUrl: string,
+): Promise<string | null> {
+  try {
+    const response =
+      await fetchWithTimeout(
+        resultListUrl,
+        {
+          cache: "no-store",
+          redirect: "follow",
+          headers: {
+            ApiKey:
+              requireApiKey(),
+            Accept:
+              "text/html,application/xhtml+xml,*/*",
+            "Accept-Language":
+              "sv-SE,sv;q=0.9,en;q=0.7",
+            "User-Agent":
+              "Mozilla/5.0 KartarkivStudio/1.0",
+          },
+        },
+      );
+
+    return response.ok
+      ? response.text()
+      : null;
   } catch {
     return null;
   }
 }
 
-function extractHtmlLinks(
-  html: string,
-  baseUrl: string,
-): HtmlLink[] {
-  const links: HtmlLink[] = [];
-
-  const anchorPattern =
-    /<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
-
-  for (
-    const match of html.matchAll(
-      anchorPattern,
-    )
-  ) {
-    const href = createAbsoluteUrl(
-      match[1],
-      baseUrl,
+function parsePersonName(
+  personResult: XmlRecord,
+): string {
+  const person =
+    asRecord(
+      firstValue(
+        personResult,
+        "Person",
+        "Competitor",
+      ),
     );
 
-    if (!href) {
+  const personName =
+    asRecord(
+      firstValue(
+        person,
+        "PersonName",
+        "Name",
+      ),
+    );
+
+  const given =
+    childText(
+      personName,
+      "Given",
+      "GivenName",
+      "FirstName",
+    );
+
+  const family =
+    childText(
+      personName,
+      "Family",
+      "FamilyName",
+      "LastName",
+    );
+
+  return (
+    cleanText(
+      `${given} ${family}`,
+    ) ||
+    childText(
+      person,
+      "DisplayName",
+      "Name",
+    ) ||
+    childText(
+      personResult,
+      "Name",
+    )
+  );
+}
+
+function parseOrganisationName(
+  personResult: XmlRecord,
+): string {
+  const organisation =
+    asRecord(
+      firstValue(
+        personResult,
+        "Organisation",
+        "Club",
+      ),
+    );
+
+  return (
+    childText(
+      organisation,
+      "Name",
+      "ShortName",
+    ) ||
+    childText(
+      personResult,
+      "OrganisationName",
+      "ClubName",
+    )
+  );
+}
+
+function parseEventorRunners(
+  resultXml: unknown,
+): EventorRunner[] {
+  const runners:
+    EventorRunner[] = [];
+
+  for (
+    const classValue of
+    findByKey(
+      resultXml,
+      "ClassResult",
+    )
+  ) {
+    const classResult =
+      asRecord(classValue);
+
+    if (!classResult) {
       continue;
     }
 
-    links.push({
-      href,
-      text: stripHtml(match[2]),
-      position: match.index ?? 0,
-    });
+    const eventClassValue =
+      firstValue(
+        classResult,
+        "EventClass",
+        "Class",
+      );
+
+    const eventClass =
+      asRecord(eventClassValue);
+
+    const raceClass =
+      childText(
+        eventClass,
+        "Name",
+        "ClassName",
+      ) ||
+      childText(
+        classResult,
+        "ClassName",
+        "Name",
+      );
+
+    for (
+      const personValue of
+      asArray(
+        firstValue(
+          classResult,
+          "PersonResult",
+          "TeamResult",
+        ),
+      )
+    ) {
+      const personResult =
+        asRecord(personValue);
+
+      if (!personResult) {
+        continue;
+      }
+
+      const name =
+        parsePersonName(
+          personResult,
+        );
+
+      if (!name) {
+        continue;
+      }
+
+      const result =
+        asRecord(
+          firstValue(
+            personResult,
+            "Result",
+            "RaceResult",
+          ),
+        );
+
+      const splitTimes =
+        asArray(
+          firstValue(
+            result,
+            "SplitTime",
+          ),
+        );
+
+      const controls =
+        splitTimes.filter(
+          (splitValue) => {
+            const split =
+              asRecord(splitValue);
+
+            const code =
+              childText(
+                split,
+                "ControlCode",
+                "ControlId",
+              );
+
+            /*
+             * Eventor kan ta med målstämplingen
+             * som kontrollkod 100.
+             */
+            return (
+              code !== "100" &&
+              code !== "999"
+            );
+          },
+        ).length;
+
+      runners.push({
+        name,
+        club:
+          parseOrganisationName(
+            personResult,
+          ),
+        raceClass,
+        classId:
+          numericId(
+            eventClassValue,
+          ),
+        time:
+          normalizeTime(
+            childText(
+              result,
+              "Time",
+              "ResultTime",
+            ),
+          ),
+        position:
+          childText(
+            result,
+            "ResultPosition",
+            "Position",
+            "Place",
+          ),
+        controls,
+      });
+    }
   }
 
-  return links;
+  return runners;
 }
 
-function findRunnerPosition(
-  html: string,
-  runnerName: string,
-): number {
-  const namePattern = normalizeName(
-    runnerName,
-  )
-    .split(" ")
-    .filter(Boolean)
-    .map(escapeRegExp)
-    .join("\\s+");
+function findRunner(
+  runners: EventorRunner[],
+  wantedName: string,
+): EventorRunner | null {
+  const ranked =
+    runners
+      .map((runner) => ({
+        runner,
+        score:
+          nameScore(
+            runner.name,
+            wantedName,
+          ),
+      }))
+      .filter(
+        ({ score }) =>
+          score > 0,
+      )
+      .sort(
+        (left, right) =>
+          right.score -
+          left.score,
+      );
 
-  const match = new RegExp(
-    namePattern,
-    "i",
-  ).exec(decodeHtml(html));
-
-  if (!match) {
-    throw new Error(
-      `${runnerName} hittades inte i Eventors resultatlista.`,
-    );
-  }
-
-  return match.index;
-}
-
-function findLastClassInformation(
-  htmlBeforePosition: string,
-): ClassInformation | null {
-  const nearbyText = stripHtml(
-    htmlBeforePosition.slice(-50_000),
-  );
-
-  /*
-   * Exempel från Eventor:
-   *
-   * H21 4 890 m, 32 startande
-   */
-  const fullClassPattern =
-    /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)\s+(\d[\d\s]*)\s*m\s*,?\s*(\d+)\s+startande/gi;
-
-  const matches = [
-    ...nearbyText.matchAll(
-      fullClassPattern,
-    ),
-  ];
-
-  const match =
-    matches[matches.length - 1];
-
-  if (!match) {
+  if (
+    !ranked[0] ||
+    ranked[0].score < 90
+  ) {
     return null;
   }
 
-  const meters = Number(
-    match[2].replace(/\s+/g, ""),
+  if (
+    ranked[1] &&
+    ranked[1].score ===
+      ranked[0].score
+  ) {
+    return null;
+  }
+
+  return ranked[0].runner;
+}
+
+function parseEventorClasses(
+  classesXml: unknown,
+): EventorClass[] {
+  return findByKey(
+    classesXml,
+    "EventClass",
+  )
+    .map((classValue) => {
+      const eventClass =
+        asRecord(classValue);
+
+      if (!eventClass) {
+        return null;
+      }
+
+      const name =
+        childText(
+          eventClass,
+          "Name",
+          "ClassName",
+        );
+
+      if (!name) {
+        return null;
+      }
+
+      const raceInfo =
+        asRecord(
+          firstValue(
+            eventClass,
+            "ClassRaceInfo",
+          ),
+        );
+
+      return {
+        id:
+          numericId(
+            firstValue(
+              eventClass,
+              "EventClassId",
+            ),
+          ),
+        name,
+        starters:
+          Number(
+            childText(
+              raceInfo,
+              "@_noOfStarts",
+              "NoOfStarts",
+              "NumberOfStarts",
+            ),
+          ) || 0,
+      };
+    })
+    .filter(
+      (
+        item,
+      ): item is EventorClass =>
+        item !== null,
+    );
+}
+
+function parseEventInformation(
+  eventXml: unknown,
+) {
+  const root =
+    asRecord(eventXml);
+
+  const event =
+    asRecord(
+      firstValue(
+        root,
+        "Event",
+      ),
+    ) ??
+    root;
+
+  const eventRace =
+    asRecord(
+      firstValue(
+        event,
+        "EventRace",
+        "Race",
+      ),
+    );
+
+  const organiserWrapper =
+    asRecord(
+      firstValue(
+        event,
+        "Organiser",
+      ),
+    );
+
+  const organiser =
+    asRecord(
+      firstValue(
+        organiserWrapper,
+        "Organisation",
+      ),
+    ) ??
+    organiserWrapper;
+
+  const arena =
+    asRecord(
+      firstValue(
+        eventRace,
+        "Arena",
+        "EventCentre",
+      ),
+    ) ??
+    asRecord(
+      firstValue(
+        event,
+        "Arena",
+        "EventCentre",
+      ),
+    );
+
+  const wrsInfo =
+    asRecord(
+      firstValue(
+        eventRace,
+        "WRSInfo",
+      ),
+    );
+
+  return {
+    title:
+      childText(
+        event,
+        "Name",
+        "EventName",
+      ),
+    date:
+      readDate(
+        firstValue(
+          eventRace,
+          "RaceDate",
+        ),
+      ) ||
+      readDate(
+        firstValue(
+          event,
+          "StartDate",
+          "EventDate",
+          "Date",
+        ),
+      ),
+    organiser:
+      childText(
+        organiser,
+        "Name",
+        "ShortName",
+      ),
+    location:
+      childText(
+        arena,
+        "Name",
+        "Address",
+      ) ||
+      childText(
+        eventRace,
+        "Location",
+      ) ||
+      childText(
+        event,
+        "Location",
+        "Place",
+      ),
+    discipline:
+      normalizeDiscipline(
+        childText(
+          wrsInfo,
+          "Distance",
+        ) ||
+        childText(
+          eventRace,
+          "EventRaceDiscipline",
+          "RaceDiscipline",
+          "Discipline",
+          "EventRaceFormat",
+        ) ||
+        childText(
+          event,
+          "EventForm",
+          "Discipline",
+        ),
+      ),
+  };
+}
+
+function decodeHtml(
+  value: string,
+): string {
+  return value
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&#x27;/gi, "'")
+    .replace(/&nbsp;/gi, " ");
+}
+
+function buildLiveloxViewerUrl(
+  redirectHref: string,
+): string | null {
+  let eventorUrl: URL;
+
+  try {
+    eventorUrl =
+      new URL(
+        redirectHref,
+        EVENTOR_BASE_URL,
+      );
+  } catch {
+    return null;
+  }
+
+  const redirectUrl =
+    eventorUrl.searchParams.get(
+      "redirectUrl",
+    );
+
+  if (!redirectUrl) {
+    return null;
+  }
+
+  try {
+    /*
+     * Eventor lagrar den interna Livelox-sökvägen i
+     * redirectUrl, exempelvis:
+     *
+     * /Viewer?eventExternalIdentifier=0%3A53201-1
+     * &classExternalId=664496-1
+     *
+     * Den kan användas direkt mot www.livelox.com utan
+     * att Eventors inloggningsberoende redirect följs.
+     */
+    const decodedPath =
+      decodeURIComponent(
+        redirectUrl,
+      );
+
+    const liveloxUrl =
+      new URL(
+        decodedPath,
+        "https://www.livelox.com",
+      );
+
+    return (
+      liveloxUrl.hostname
+        .toLocaleLowerCase("sv-SE")
+        .endsWith("livelox.com") &&
+      liveloxUrl.pathname
+        .toLocaleLowerCase("sv-SE")
+        .startsWith("/viewer")
+    )
+      ? liveloxUrl.toString()
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+function parseResultPageMetadata(
+  html: string | null,
+  raceClass: string,
+): ResultPageMetadata {
+  if (!html) {
+    return {
+      distanceKm: "",
+      starters: 0,
+      winsplitsCandidates: [],
+      liveloxUrl: null,
+    };
+  }
+
+  const $ =
+    cheerio.load(html);
+
+  const escapedClass =
+    raceClass.replace(
+      /[.*+?^${}()|[\]\\]/g,
+      "\\$&",
+    );
+
+  /*
+   * Leta i enskilda element i stället för hela body-texten.
+   * Cheerio kan annars slå ihop text från närliggande taggar,
+   * exempelvis "H214 890 m, 32 startande".
+   */
+  const classHeaderPattern =
+    new RegExp(
+      `(?:^|\\s)${escapedClass}\\s*(\\d[\\d\\s]*)\\s*m\\s*,?\\s*(\\d+)\\s*startande(?:\\s|$)`,
+      "i",
+    );
+
+  let classHeader:
+    RegExpMatchArray | null = null;
+
+  let shortestMatchingText =
+    Number.POSITIVE_INFINITY;
+
+  $("body *").each(
+    (_, element) => {
+      const elementText =
+        cleanText(
+          $(element).text(),
+        );
+
+      if (
+        !elementText ||
+        elementText.length >
+          shortestMatchingText
+      ) {
+        return;
+      }
+
+      const match =
+        elementText.match(
+          classHeaderPattern,
+        );
+
+      if (match) {
+        classHeader = match;
+        shortestMatchingText =
+          elementText.length;
+      }
+    },
   );
 
+  /*
+   * Reserv om resultatrubriken mot förmodan ligger direkt
+   * i body utan ett eget omslutande element.
+   */
+  if (!classHeader) {
+    classHeader =
+      cleanText(
+        $("body").text(),
+      ).match(
+        classHeaderPattern,
+      );
+  }
+
   const distanceKm =
-    Number.isFinite(meters) && meters > 0
+    classHeader
       ? String(
           Number(
-            (meters / 1_000).toFixed(3),
+            (
+              Number(
+                classHeader[1]
+                  .replace(
+                    /\s+/g,
+                    "",
+                  ),
+              ) / 1000
+            ).toFixed(3),
           ),
         )
       : "";
 
+  const starters =
+    classHeader
+      ? Number(
+          classHeader[2],
+        )
+      : 0;
+
+  const candidates =
+    new Map<
+      string,
+      {
+        databaseId: number;
+        categoryId: number;
+      }
+    >();
+
+  $("a[href]").each(
+    (_, anchor) => {
+      const href =
+        decodeHtml(
+          $(anchor).attr("href") ??
+          "",
+        );
+
+      if (!href) {
+        return;
+      }
+
+      let url: URL;
+
+      try {
+        url =
+          new URL(
+            href,
+            EVENTOR_BASE_URL,
+          );
+      } catch {
+        return;
+      }
+
+      if (
+        url.hostname
+          .toLocaleLowerCase("sv-SE") !==
+          "obasen.orientering.se" ||
+        !url.pathname
+          .toLocaleLowerCase("sv-SE")
+          .includes("/winsplits/")
+      ) {
+        return;
+      }
+
+      const databaseId =
+        Number(
+          url.searchParams.get(
+            "databaseId",
+          ),
+        );
+
+      const categoryId =
+        Number(
+          url.searchParams.get(
+            "categoryId",
+          ),
+        );
+
+      if (
+        Number.isInteger(databaseId) &&
+        databaseId > 0 &&
+        Number.isInteger(categoryId) &&
+        categoryId >= 0
+      ) {
+        candidates.set(
+          `${databaseId}:${categoryId}`,
+          {
+            databaseId,
+            categoryId,
+          },
+        );
+      }
+    },
+  );
+
+  let liveloxUrl:
+    string | null = null;
+
+  /*
+   * Välj Livelox-länken i rätt klassblock.
+   * Varje .eventClassHeader innehåller klassnamn,
+   * banlängd, WinSplits och Livelox för samma klass.
+   */
+  $(".eventClassHeader").each(
+    (_, header) => {
+      if (liveloxUrl) {
+        return;
+      }
+
+      const headerClass =
+        cleanText(
+          $(header)
+            .find("h3")
+            .first()
+            .text(),
+        );
+
+      if (
+        normalizeName(
+          headerClass,
+        ) !==
+        normalizeName(
+          raceClass,
+        )
+      ) {
+        return;
+      }
+
+      const liveloxAnchor =
+        $(header)
+          .find(
+            'a[href*="RedirectToLivelox"]',
+          )
+          .first();
+
+      const rawHref =
+        decodeHtml(
+          liveloxAnchor.attr(
+            "href",
+          ) ?? "",
+        );
+
+      liveloxUrl =
+        buildLiveloxViewerUrl(
+          rawHref,
+        );
+    },
+  );
+
   return {
-    raceClass: normalizeText(match[1]),
     distanceKm,
-    starters: match[3],
+    starters,
+    winsplitsCandidates:
+      [...candidates.values()],
+    liveloxUrl,
   };
-}
-
-function findFallbackClassName(
-  htmlBeforePosition: string,
-): string {
-  const headingPattern =
-    /<h[1-6]\b[^>]*>([\s\S]*?)<\/h[1-6]>/gi;
-
-  let raceClass = "";
-
-  for (
-    const match of htmlBeforePosition.matchAll(
-      headingPattern,
-    )
-  ) {
-    const text = stripHtml(match[1]);
-
-    const classMatch = text.match(
-      /(?:^|\s)((?:H|D)\s*\d{1,3}(?:\s+(?:kort|lång|elit))?)(?=\s|$)/i,
-    );
-
-    if (classMatch) {
-      raceClass =
-        normalizeText(classMatch[1]);
-    }
-  }
-
-  return raceClass;
-}
-
-function parseClassInformation(
-  html: string,
-  runnerName: string,
-): ClassInformation {
-  const runnerPosition =
-    findRunnerPosition(
-      html,
-      runnerName,
-    );
-
-  const htmlBeforeRunner =
-    html.slice(0, runnerPosition);
-
-  const completeInformation =
-    findLastClassInformation(
-      htmlBeforeRunner,
-    );
-
-  if (completeInformation) {
-    return completeInformation;
-  }
-
-  const fallbackClass =
-    findFallbackClassName(
-      htmlBeforeRunner,
-    );
-
-  if (!fallbackClass) {
-    throw new Error(
-      `Klassen för ${runnerName} kunde inte identifieras.`,
-    );
-  }
-
-  return {
-    raceClass: fallbackClass,
-    distanceKm: "",
-    starters: "",
-  };
-}
-
-function findClassBeforeLink(
-  html: string,
-  linkPosition: number,
-): string {
-  const htmlBeforeLink =
-    html.slice(0, linkPosition);
-
-  const completeInformation =
-    findLastClassInformation(
-      htmlBeforeLink,
-    );
-
-  if (completeInformation) {
-    return completeInformation.raceClass;
-  }
-
-  return findFallbackClassName(
-    htmlBeforeLink,
-  );
-}
-
-function readPositiveInteger(
-  url: URL,
-  parameterName: string,
-): number | null {
-  const value = Number(
-    url.searchParams.get(parameterName),
-  );
-
-  if (
-    !Number.isInteger(value) ||
-    value <= 0
-  ) {
-    return null;
-  }
-
-  return value;
 }
 
 function createWinSplitsUrl(
   databaseId: number,
   categoryId: number,
 ): string {
-  const url = new URL(
-    WINSPLITS_BASE_URL,
-  );
+  const url =
+    new URL(
+      WINSPLITS_BASE_URL,
+    );
 
-  url.searchParams.set("page", "table");
+  url.searchParams.set(
+    "page",
+    "table",
+  );
 
   url.searchParams.set(
     "databaseId",
@@ -656,585 +1371,93 @@ function createWinSplitsUrl(
   return url.toString();
 }
 
-function findWinSplitsLink(
-  html: string,
-  baseUrl: string,
-  raceClass: string,
-): WinSplitsClassLink | null {
-  const targetClass =
-    normalizeClassName(raceClass);
-
-  const links = extractHtmlLinks(
-    html,
-    baseUrl,
-  );
-
-  for (const link of links) {
-    const searchableValue =
-      `${link.text} ${link.href}`
-        .toLocaleLowerCase("sv-SE");
-
-    if (
-      !searchableValue.includes(
-        "winsplits",
-      ) &&
-      !searchableValue.includes(
-        "obasen.orientering.se",
-      )
-    ) {
-      continue;
-    }
-
-    const linkClass = findClassBeforeLink(
-      html,
-      link.position,
-    );
-
-    if (
-      normalizeClassName(linkClass) !==
-      targetClass
-    ) {
-      continue;
-    }
-
-    let url: URL;
-
-    try {
-      url = new URL(link.href);
-    } catch {
-      continue;
-    }
-
-    const databaseId =
-      readPositiveInteger(
-        url,
-        "databaseId",
-      );
-
-    const categoryId =
-      readPositiveInteger(
-        url,
-        "categoryId",
-      );
-
-    if (
-      databaseId === null ||
-      categoryId === null
-    ) {
-      continue;
-    }
-
-    return {
-      name: raceClass,
-      url: createWinSplitsUrl(
-        databaseId,
-        categoryId,
-      ),
-      databaseId,
-      categoryId,
-    };
-  }
-
-  return null;
-}
-
-
-type WinSplitsCandidate = WinSplitsClassLink & {
-  position: number;
-  classMatch: boolean;
-  distanceFromRunner: number;
-};
-
-function findWinSplitsCandidates(
-  html: string,
-  baseUrl: string,
-  raceClass: string,
+async function resolveWinSplits(
+  candidates: ResultPageMetadata[
+    "winsplitsCandidates"
+  ],
   runnerName: string,
-): WinSplitsCandidate[] {
-  const targetClass =
-    normalizeClassName(raceClass);
-
-  const runnerPosition =
-    findRunnerPosition(
-      html,
-      runnerName,
-    );
-
-  const candidates = new Map<
-    string,
-    WinSplitsCandidate
-  >();
-
-  for (
-    const link of extractHtmlLinks(
-      html,
-      baseUrl,
-    )
-  ) {
-    const searchableValue =
-      `${link.text} ${link.href}`
-        .toLocaleLowerCase("sv-SE");
-
-    if (
-      !searchableValue.includes(
-        "winsplits",
-      ) &&
-      !searchableValue.includes(
-        "obasen.orientering.se",
-      )
-    ) {
-      continue;
-    }
-
-    let url: URL;
-
-    try {
-      url = new URL(link.href);
-    } catch {
-      continue;
-    }
-
-    const databaseId =
-      readPositiveInteger(
-        url,
-        "databaseId",
-      );
-
-    const categoryId =
-      readPositiveInteger(
-        url,
-        "categoryId",
-      );
-
-    if (
-      databaseId === null ||
-      categoryId === null
-    ) {
-      continue;
-    }
-
-    const linkClass =
-      findClassBeforeLink(
-        html,
-        link.position,
-      );
-
-    const candidate: WinSplitsCandidate = {
-      name:
-        normalizeText(linkClass) ||
-        raceClass,
-      url: createWinSplitsUrl(
-        databaseId,
-        categoryId,
-      ),
-      databaseId,
-      categoryId,
-      position: link.position,
-      classMatch:
-        normalizeClassName(
-          linkClass,
-        ) === targetClass,
-      distanceFromRunner:
-        Math.abs(
-          link.position -
-            runnerPosition,
-        ),
-    };
-
-    const key =
-      `${databaseId}:${categoryId}`;
-
-    const existing =
-      candidates.get(key);
-
-    if (
-      !existing ||
-      candidate.distanceFromRunner <
-        existing.distanceFromRunner
-    ) {
-      candidates.set(
-        key,
-        candidate,
-      );
-    }
-  }
-
-  return [...candidates.values()]
-    .sort((left, right) => {
-      if (
-        left.classMatch !==
-        right.classMatch
-      ) {
-        return left.classMatch
-          ? -1
-          : 1;
-      }
-
-      return (
-        left.distanceFromRunner -
-        right.distanceFromRunner
-      );
-    });
-}
-
-async function findWinSplitsRunner(
-  html: string,
-  baseUrl: string,
   raceClass: string,
-  runnerName: string,
-): Promise<{
-  winsplits: WinSplitsClassLink | null;
-  runner:
-    | Awaited<
-        ReturnType<
-          typeof loadWinSplits
-        >
-      >[number]
-    | null;
-  classInformation: ClassInformation | null;
-}> {
-  const candidates =
-    findWinSplitsCandidates(
-      html,
-      baseUrl,
-      raceClass,
-      runnerName,
-    );
+) {
+  const wantedClass =
+    normalizeName(raceClass);
 
-  if (candidates.length === 0) {
-    return {
-      winsplits: null,
-      runner: null,
-      classInformation: null,
-    };
-  }
-
-  const attempts: string[] = [];
+  const successful = [];
 
   for (const candidate of candidates) {
     try {
-      const runners =
-        await loadWinSplits(
+      const data =
+        await loadWinSplitsWithMetadata(
           candidate.databaseId,
           candidate.categoryId,
         );
 
-      const runner =
-        findRunnerByName(
-          runners,
-          runnerName,
-        );
+      const ranked =
+        data.runners
+          .map((runner) => ({
+            runner,
+            score:
+              nameScore(
+                runner.name,
+                runnerName,
+              ),
+          }))
+          .sort(
+            (left, right) =>
+              right.score -
+              left.score,
+          );
 
-      attempts.push(
-        `${candidate.databaseId}/${candidate.categoryId}` +
-          ` (${runners.length} löpare)`,
-      );
+      const best =
+        ranked[0];
 
-      if (!runner) {
+      if (
+        !best ||
+        best.score < 90
+      ) {
         continue;
       }
 
-      const linkedClassInformation =
-        findLastClassInformation(
-          html.slice(
-            0,
-            candidate.position,
-          ),
-        );
+      const candidateClass =
+        data.metadata.raceClass ||
+        raceClass;
 
-      return {
+      successful.push({
+        classMatches:
+          !wantedClass ||
+          normalizeName(
+            candidateClass,
+          ) === wantedClass,
         winsplits: {
           name:
-            linkedClassInformation
-              ?.raceClass ||
-            candidate.name ||
-            raceClass,
+            candidateClass,
           url:
-            candidate.url,
+            createWinSplitsUrl(
+              candidate.databaseId,
+              candidate.categoryId,
+            ),
           databaseId:
             candidate.databaseId,
           categoryId:
             candidate.categoryId,
-        },
-        runner,
-        classInformation:
-          linkedClassInformation,
-      };
-    } catch (error) {
-      const message =
-        error instanceof Error
-          ? error.message
-          : String(error);
-
-      attempts.push(
-        `${candidate.databaseId}/${candidate.categoryId}` +
-          ` (${message})`,
-      );
-    }
-  }
-
-  throw new Error(
-    `${runnerName} hittades i Eventor men inte i någon WinSplits-klass. ` +
-      `Testade: ${attempts.join("; ")}`,
-  );
-}
-
-function createLiveloxViewerUrl(
-  eventorRedirectUrl: string,
-): string | null {
-  try {
-    const eventorUrl = new URL(
-      eventorRedirectUrl,
-      EVENTOR_BASE_URL,
-    );
-
-    const isLiveloxRedirect =
-      eventorUrl.pathname
-        .toLocaleLowerCase("sv-SE")
-        .endsWith(
-          "/home/redirecttolivelox",
-        );
-
-    if (!isLiveloxRedirect) {
-      return null;
-    }
-
-    const redirectUrl =
-      eventorUrl.searchParams.get(
-        "redirectUrl",
-      );
-
-    if (!redirectUrl) {
-      return null;
-    }
-
-    let decodedRedirectUrl =
-      redirectUrl;
-
-    try {
-      decodedRedirectUrl =
-        decodeURIComponent(redirectUrl);
+        } satisfies WinSplitsClassLink,
+        runner:
+          best.runner,
+      });
     } catch {
-      /*
-       * URLSearchParams kan redan ha
-       * avkodat värdet.
-       */
+      // Prova nästa WinSplits-länk.
     }
-
-    const liveloxUrl = new URL(
-      decodedRedirectUrl,
-      "https://www.livelox.com",
-    );
-
-    liveloxUrl.protocol = "https:";
-    liveloxUrl.hostname =
-      "www.livelox.com";
-    liveloxUrl.hash = "";
-
-    return liveloxUrl.toString();
-  } catch {
-    return null;
   }
-}
 
-function findLiveloxLink(
-  html: string,
-  baseUrl: string,
-  raceClass: string,
-): string | null {
-  const targetClass =
-    normalizeClassName(raceClass);
-
-  const links = extractHtmlLinks(
-    html,
-    baseUrl,
+  return (
+    successful.find(
+      (item) =>
+        item.classMatches,
+    ) ??
+    successful[0] ?? {
+      winsplits: null,
+      runner: null,
+    }
   );
-
-  for (const link of links) {
-    let url: URL;
-
-    try {
-      url = new URL(link.href);
-    } catch {
-      continue;
-    }
-
-    const isLiveloxRedirect =
-      url.pathname
-        .toLocaleLowerCase("sv-SE")
-        .endsWith(
-          "/home/redirecttolivelox",
-        );
-
-    if (!isLiveloxRedirect) {
-      continue;
-    }
-
-    const linkClass = findClassBeforeLink(
-      html,
-      link.position,
-    );
-
-    if (
-      normalizeClassName(linkClass) !==
-      targetClass
-    ) {
-      continue;
-    }
-
-    const liveloxUrl =
-      createLiveloxViewerUrl(
-        link.href,
-      );
-
-    if (liveloxUrl) {
-      return liveloxUrl;
-    }
-  }
-
-  return null;
-}
-
-async function fetchHtml(
-  url: string,
-): Promise<string> {
-  const response =
-    await axios.get<string>(url, {
-      responseType: "text",
-      timeout: 30_000,
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 KartarkivStudio EventLinks",
-        Accept:
-          "text/html,application/xhtml+xml,*/*",
-        "Accept-Language":
-          "sv-SE,sv;q=0.9,en;q=0.7",
-      },
-    });
-
-  return response.data;
-}
-
-function readEventInformation(
-  html: string,
-): EventInformation {
-  const values = new Map<string, string>();
-
-  function storeValue(
-    rawLabel: string,
-    rawValue: string,
-  ): void {
-    const label = stripHtml(rawLabel)
-      .toLocaleLowerCase("sv-SE");
-
-    const value = stripHtml(rawValue);
-
-    if (!label || !value) {
-      return;
-    }
-
-    values.set(label, value);
-  }
-
-  /*
-   * Eventor visar tävlingsinformationen som tabell på
-   * vissa sidor och som dt/dd-lista på andra.
-   */
-  for (
-    const rowMatch of html.matchAll(
-      /<tr\b[^>]*>([\s\S]*?)<\/tr>/gi,
-    )
-  ) {
-    const cells = [
-      ...rowMatch[1].matchAll(
-        /<(?:th|td)\b[^>]*>([\s\S]*?)<\/(?:th|td)>/gi,
-      ),
-    ];
-
-    if (cells.length >= 2) {
-      storeValue(
-        cells[0][1],
-        cells[1][1],
-      );
-    }
-  }
-
-  for (
-    const definitionMatch of html.matchAll(
-      /<dt\b[^>]*>([\s\S]*?)<\/dt>\s*<dd\b[^>]*>([\s\S]*?)<\/dd>/gi,
-    )
-  ) {
-    storeValue(
-      definitionMatch[1],
-      definitionMatch[2],
-    );
-  }
-
-  function read(
-    ...labels: string[]
-  ): string {
-    for (const label of labels) {
-      const wanted =
-        label.toLocaleLowerCase("sv-SE");
-
-      const direct = values.get(wanted);
-
-      if (direct) {
-        return direct;
-      }
-
-      for (
-        const [
-          storedLabel,
-          storedValue,
-        ] of values
-      ) {
-        if (storedLabel.startsWith(wanted)) {
-          return storedValue;
-        }
-      }
-    }
-
-    return "";
-  }
-
-  const headings = [
-    ...html.matchAll(
-      /<h[12]\b[^>]*>([\s\S]*?)<\/h[12]>/gi,
-    ),
-  ]
-    .map((match) => stripHtml(match[1]))
-    .filter(Boolean);
-
-  return {
-    title:
-      read("Tävling") ||
-      headings[0] ||
-      "",
-
-    date: parseSwedishDate(
-      read("Datum"),
-    ),
-
-    organiser: read(
-      "Arrangörsorganisation",
-      "Arrangör",
-    ),
-
-    location: read(
-      "Arena",
-      "Tävlingsplats",
-      "Plats",
-      "Tävlingsområde",
-    ),
-
-    discipline: normalizeDiscipline(
-      read(
-        "Tävlingsdistans",
-        "Distans",
-      ),
-    ),
-  };
 }
 
 export async function getEventLinks(
@@ -1260,97 +1483,145 @@ export async function getEventLinks(
     `?eventId=${eventId}`;
 
   const [
+    eventXml,
+    classesXml,
+    resultXml,
     resultHtml,
-    eventHtml,
   ] = await Promise.all([
-    fetchHtml(resultListUrl),
-    fetchHtml(eventorUrl),
+    fetchEventorXml(
+      `/api/event/${eventId}`,
+    ),
+    fetchEventorXml(
+      `/api/eventclasses?eventId=${eventId}`,
+    ),
+    fetchEventorXml(
+      `/api/results/event?eventId=${eventId}&includeSplitTimes=true`,
+    ),
+    fetchResultHtml(
+      resultListUrl,
+    ),
   ]);
 
   const eventInformation =
-    readEventInformation(eventHtml);
+    parseEventInformation(
+      eventXml,
+    );
 
-  const classInformation =
-
-    parseClassInformation(
-      resultHtml,
+  const apiRunner =
+    findRunner(
+      parseEventorRunners(
+        resultXml,
+      ),
       runnerName,
+    );
+
+  if (!apiRunner) {
+    throw new Error(
+      `${runnerName} hittades inte i Eventors API-resultat för tävlingen.`,
+    );
+  }
+
+  const eventClasses =
+    parseEventorClasses(
+      classesXml,
+    );
+
+  const eventClass =
+    eventClasses.find(
+      (item) =>
+        item.id !== null &&
+        item.id ===
+          apiRunner.classId,
+    ) ??
+    eventClasses.find(
+      (item) =>
+        normalizeName(
+          item.name,
+        ) ===
+        normalizeName(
+          apiRunner.raceClass,
+        ),
+    ) ?? {
+      id:
+        apiRunner.classId,
+      name:
+        apiRunner.raceClass,
+      starters: 0,
+    };
+
+  const pageMetadata =
+    parseResultPageMetadata(
+      resultHtml,
+      eventClass.name,
     );
 
   const {
     winsplits,
-    runner,
-    classInformation:
-      winSplitsClassInformation,
-  } =
-    await findWinSplitsRunner(
-      resultHtml,
-      resultListUrl,
-      classInformation.raceClass,
-      runnerName,
-    );
+    runner:
+      winSplitsRunner,
+  } = await resolveWinSplits(
+    pageMetadata
+      .winsplitsCandidates,
+    runnerName,
+    eventClass.name,
+  );
 
-  const resolvedClassInformation =
-    winSplitsClassInformation ??
-    classInformation;
-
-  const liveloxUrl =
-    findLiveloxLink(
-      resultHtml,
-      resultListUrl,
-      resolvedClassInformation.raceClass,
-    );
-
+  /*
+   * Ansvarsfördelning:
+   *
+   * Eventor:
+   * titel, datum, arrangör, plats, disciplin,
+   * officiell banlängd, placering, startande.
+   *
+   * WinSplits:
+   * tid, kontroller, bomtid och WinSplits-länk.
+   */
   return {
     eventId,
     eventorUrl,
     resultListUrl,
-
     title:
       eventInformation.title,
-
     date:
       eventInformation.date,
-
     club:
       eventInformation.organiser ||
-      runner?.club ||
-      "",
-
+      apiRunner.club,
     location:
       eventInformation.location,
-
     raceClass:
-      resolvedClassInformation.raceClass,
-
+      eventClass.name,
     discipline:
       eventInformation.discipline,
-
     distanceKm:
-      resolvedClassInformation.distanceKm,
-
+      pageMetadata.distanceKm,
     time:
       normalizeTime(
-        runner?.totalTime,
+        winSplitsRunner?.totalTime ||
+        apiRunner.time,
       ),
-
     position:
-      runner?.place ?? "",
-
+      apiRunner.position ||
+      winSplitsRunner?.place ||
+      "",
     starters:
-      resolvedClassInformation.starters,
-
+      String(
+        pageMetadata.starters ||
+        eventClass.starters ||
+        0,
+      ),
     controls:
-      runner
-        ? String(runner.controls)
-        : "",
-
+      String(
+        winSplitsRunner?.controls ??
+        apiRunner.controls ??
+        0,
+      ),
     mistakeTime:
       normalizeTime(
-        runner?.totalMistake,
+        winSplitsRunner?.totalMistake,
       ) || "0:00",
-
     winsplits,
-    liveloxUrl,
+    liveloxUrl:
+      pageMetadata.liveloxUrl,
   };
 }

@@ -1,4 +1,5 @@
 import * as cheerio from "cheerio";
+import { XMLParser } from "fast-xml-parser";
 import { NextResponse } from "next/server";
 import {
   loadWinSplitsWithMetadata,
@@ -14,6 +15,155 @@ const WINSPLITS_BASE_URL =
   "https://obasen.orientering.se/winsplits/online/sv";
 
 const REQUEST_TIMEOUT_MS = 30_000;
+
+const eventorXmlParser =
+  new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "@_",
+    textNodeName: "#text",
+    trimValues: true,
+    parseTagValue: false,
+    parseAttributeValue: false,
+    removeNSPrefix: true,
+  });
+
+type XmlRecord =
+  Record<string, unknown>;
+
+function xmlRecord(
+  value: unknown,
+): XmlRecord | null {
+  return (
+    value !== null &&
+    typeof value === "object" &&
+    !Array.isArray(value)
+  )
+    ? value as XmlRecord
+    : null;
+}
+
+function xmlList<T>(
+  value: T | T[] | null | undefined,
+): T[] {
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return [];
+  }
+
+  return Array.isArray(value)
+    ? value
+    : [value];
+}
+
+function xmlValue(
+  source: XmlRecord | null,
+  ...keys: string[]
+): unknown {
+  if (!source) {
+    return undefined;
+  }
+
+  for (const key of keys) {
+    if (
+      key in source &&
+      source[key] !== null &&
+      source[key] !== undefined
+    ) {
+      return source[key];
+    }
+  }
+
+  return undefined;
+}
+
+function xmlText(
+  value: unknown,
+): string {
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return "";
+  }
+
+  if (
+    typeof value === "string" ||
+    typeof value === "number" ||
+    typeof value === "boolean"
+  ) {
+    return normalizeText(
+      String(value),
+    );
+  }
+
+  const object =
+    xmlRecord(value);
+
+  return object && "#text" in object
+    ? xmlText(object["#text"])
+    : "";
+}
+
+function eventorApiKey(): string {
+  const key =
+    process.env.EVENTOR_API_KEY
+      ?.trim();
+
+  if (!key) {
+    throw new Error(
+      "EVENTOR_API_KEY saknas i Studio.",
+    );
+  }
+
+  return key;
+}
+
+async function fetchEventorXml(
+  path: string,
+): Promise<unknown> {
+  const controller =
+    new AbortController();
+
+  const timeout = setTimeout(
+    () => controller.abort(),
+    REQUEST_TIMEOUT_MS,
+  );
+
+  try {
+    const response = await fetch(
+      `${EVENTOR_BASE_URL}${path}`,
+      {
+        cache: "no-store",
+        headers: {
+          ApiKey:
+            eventorApiKey(),
+          Accept:
+            "application/xml,text/xml,*/*",
+          "User-Agent":
+            "KartarkivStudio/1.0",
+        },
+        signal: controller.signal,
+      },
+    );
+
+    const body =
+      await response.text();
+
+    if (!response.ok) {
+      throw new Error(
+        `Eventors API svarade med HTTP ${response.status}.`,
+      );
+    }
+
+    return eventorXmlParser.parse(
+      body,
+    );
+  } finally {
+    clearTimeout(timeout);
+  }
+}
 
 type WinSplitsInformation = {
   databaseId: number;
@@ -637,124 +787,119 @@ function extractEventId(
 async function readEventorCandidates(
   winsplits: WinSplitsInformation,
 ): Promise<EventorCandidate[]> {
-  const calendarUrl = new URL(
-    `${EVENTOR_BASE_URL}/Events`,
-  );
+  const fromDate =
+    encodeURIComponent(
+      `${winsplits.date} 00:00:00`,
+    );
 
-  calendarUrl.searchParams.set(
-    "startDate",
-    winsplits.date,
-  );
-  calendarUrl.searchParams.set(
-    "endDate",
-    winsplits.date,
-  );
-  calendarUrl.searchParams.set(
-    "mode",
-    "List",
-  );
-  calendarUrl.searchParams.set(
-    "organisations",
-    "1",
-  );
+  const toDate =
+    encodeURIComponent(
+      `${winsplits.date} 23:59:59`,
+    );
 
-  const html = await fetchHtml(
-    calendarUrl.toString(),
-  );
+  const payload =
+    await fetchEventorXml(
+      `/api/events?fromDate=${fromDate}&toDate=${toDate}`,
+    );
 
-  const $ = cheerio.load(html);
+  const root =
+    xmlRecord(payload);
+
+  const eventList =
+    xmlRecord(
+      xmlValue(
+        root,
+        "EventList",
+      ),
+    );
+
+  const events =
+    xmlList(
+      xmlValue(
+        eventList,
+        "Event",
+      ),
+    );
 
   const candidatesById =
     new Map<number, EventorCandidate>();
 
-  $("a[href]").each(
-    (_, anchor) => {
-      const href =
-        $(anchor).attr("href");
+  for (const eventValue of events) {
+    const event =
+      xmlRecord(eventValue);
 
-      if (!href) {
-        return;
-      }
+    if (!event) {
+      continue;
+    }
 
-      const eventId =
-        extractEventId(href);
-
-      if (!eventId) {
-        return;
-      }
-
-      const title =
-        normalizeText($(anchor).text());
-
-      if (!title) {
-        return;
-      }
-
-      const eventorUrl =
-        `${EVENTOR_BASE_URL}` +
-        `/Events/Show/${eventId}`;
-
-      const resultListUrl =
-        `${EVENTOR_BASE_URL}` +
-        "/Events/ResultList" +
-        `?eventId=${eventId}`;
-
-      const candidate: EventorCandidate = {
-        eventId,
-        title,
-        eventorUrl,
-        resultListUrl,
-        nameScore:
-          calculateNameScore(
-            winsplits.title,
-            title,
-          ),
-        verified: false,
-      };
-
-      const existing =
-        candidatesById.get(eventId);
-
-      if (
-        !existing ||
-        candidate.nameScore >
-          existing.nameScore
-      ) {
-        candidatesById.set(
-          eventId,
-          candidate,
-        );
-      }
-    },
-  );
-
-  return [...candidatesById.values()]
-    .sort(
-      (left, right) =>
-        right.nameScore -
-        left.nameScore,
+    const eventId = Number(
+      xmlText(
+        xmlValue(
+          event,
+          "EventId",
+        ),
+      ),
     );
+
+    const title =
+      xmlText(
+        xmlValue(
+          event,
+          "Name",
+          "EventName",
+        ),
+      );
+
+    if (
+      !Number.isInteger(eventId) ||
+      eventId <= 0 ||
+      !title
+    ) {
+      continue;
+    }
+
+    const eventorUrl =
+      `${EVENTOR_BASE_URL}` +
+      `/Events/Show/${eventId}`;
+
+    const resultListUrl =
+      `${EVENTOR_BASE_URL}` +
+      "/Events/ResultList" +
+      `?eventId=${eventId}`;
+
+    const candidate: EventorCandidate = {
+      eventId,
+      title,
+      eventorUrl,
+      resultListUrl,
+      nameScore:
+        calculateNameScore(
+          winsplits.title,
+          title,
+        ),
+      verified: false,
+    };
+
+    candidatesById.set(
+      eventId,
+      candidate,
+    );
+  }
+
+  return [
+    ...candidatesById.values(),
+  ].sort(
+    (left, right) =>
+      right.nameScore -
+      left.nameScore,
+  );
 }
 
 async function candidateUsesDatabaseId(
-  candidate: EventorCandidate,
-  databaseId: number,
+  _candidate: EventorCandidate,
+  _databaseId: number,
 ): Promise<boolean> {
-  try {
-    const html = await fetchHtml(
-      candidate.resultListUrl,
-    );
-
-    const searchableValue = html
-      .replace(/&amp;/gi, "&")
-      .replace(/\s+/g, "");
-
-    return searchableValue.includes(
-      `databaseId=${databaseId}`,
-    );
-  } catch {
-    return false;
-  }
+  return false;
 }
 
 async function createDirectWinSplitsImport(
@@ -877,17 +1022,9 @@ async function resolveEventorEvent(
   const fallbackCandidate =
     candidatesToVerify[0];
 
-  const secondBestCandidate =
-    candidatesToVerify[1];
-
   const fallbackIsUnambiguous =
     Boolean(fallbackCandidate) &&
-    fallbackCandidate.nameScore >= 90 &&
-    (
-      !secondBestCandidate ||
-      fallbackCandidate.nameScore -
-        secondBestCandidate.nameScore >= 20
-    );
+    fallbackCandidate.nameScore >= 90;
 
   if (
     fallbackCandidate &&
