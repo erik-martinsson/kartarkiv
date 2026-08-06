@@ -1,3 +1,4 @@
+import * as cheerio from "cheerio";
 import { XMLParser } from "fast-xml-parser";
 import {
   loadWinSplitsWithMetadata,
@@ -55,11 +56,11 @@ type EventorClass = {
   id: number | null;
   name: string;
   starters: number;
-  distanceKm: string;
 };
 
-type XmlMetadata = {
+type ResultPageMetadata = {
   distanceKm: string;
+  starters: number;
   winsplitsCandidates: Array<{
     databaseId: number;
     categoryId: number;
@@ -543,6 +544,53 @@ async function fetchEventorXml(
   return xmlParser.parse(body);
 }
 
+async function fetchResultHtml(
+  resultListUrl: string,
+): Promise<string | null> {
+  try {
+    const response =
+      await fetchWithTimeout(
+        resultListUrl,
+        {
+          cache: "no-store",
+          redirect: "follow",
+          headers: {
+            ApiKey:
+              requireApiKey(),
+            Accept:
+              "text/html,application/xhtml+xml,*/*",
+            "Accept-Language":
+              "sv-SE,sv;q=0.9,en;q=0.7",
+            "User-Agent":
+              "Mozilla/5.0 KartarkivStudio/1.0",
+          },
+        },
+      );
+
+    if (!response.ok) {
+      console.error(
+        "fetchResultHtml failed:",
+        {
+          status: response.status,
+          statusText: response.statusText,
+          url: response.url,
+        },
+      );
+
+      return null;
+    }
+
+    return response.text();
+  } catch (error) {
+    console.error(
+      "fetchResultHtml failed:",
+      error,
+    );
+
+    return null;
+  }
+}
+
 function parsePersonName(
   personResult: XmlRecord,
 ): string {
@@ -807,86 +855,6 @@ function findRunner(
   return ranked[0].runner;
 }
 
-function parseDistanceKm(
-  value: unknown,
-): string {
-  const text = cleanText(value);
-
-  if (!text) {
-    return "";
-  }
-
-  const numeric = Number(
-    text.replace(",", "."),
-  );
-
-  if (
-    !Number.isFinite(numeric) ||
-    numeric <= 0
-  ) {
-    return "";
-  }
-
-  /*
-   * IOF/Eventor anger normalt banlängd i meter.
-   * Om värdet redan är ett rimligt km-värde behålls det.
-   */
-  const kilometres =
-    numeric > 100
-      ? numeric / 1000
-      : numeric;
-
-  return String(
-    Number(kilometres.toFixed(3)),
-  );
-}
-
-function findDistanceInRecord(
-  value: unknown,
-): string {
-  const directKeys = [
-    "CourseLength",
-    "RaceCourseLength",
-    "Length",
-    "Distance",
-    "@_length",
-    "@_courseLength",
-  ];
-
-  function visit(
-    current: unknown,
-  ): string {
-    if (Array.isArray(current)) {
-      for (const item of current) {
-        const found = visit(item);
-        if (found) return found;
-      }
-      return "";
-    }
-
-    const object = asRecord(current);
-    if (!object) return "";
-
-    for (const key of directKeys) {
-      if (key in object) {
-        const found = parseDistanceKm(
-          object[key],
-        );
-        if (found) return found;
-      }
-    }
-
-    for (const child of Object.values(object)) {
-      const found = visit(child);
-      if (found) return found;
-    }
-
-    return "";
-  }
-
-  return visit(value);
-}
-
 function parseEventorClasses(
   classesXml: unknown,
 ): EventorClass[] {
@@ -939,13 +907,6 @@ function parseEventorClasses(
               "NumberOfStarts",
             ),
           ) || 0,
-        distanceKm:
-          findDistanceInRecord(
-            raceInfo,
-          ) ||
-          findDistanceInRecord(
-            eventClass,
-          ),
       };
     })
     .filter(
@@ -1086,134 +1047,316 @@ function parseEventInformation(
   };
 }
 
-function collectStrings(
-  value: unknown,
-): string[] {
-  const strings: string[] = [];
-
-  function visit(
-    current: unknown,
-  ): void {
-    if (
-      typeof current === "string" ||
-      typeof current === "number"
-    ) {
-      const text = cleanText(current);
-      if (text) strings.push(text);
-      return;
-    }
-
-    if (Array.isArray(current)) {
-      current.forEach(visit);
-      return;
-    }
-
-    const object = asRecord(current);
-    if (!object) return;
-
-    Object.values(object).forEach(visit);
-  }
-
-  visit(value);
-  return strings;
+function decodeHtml(
+  value: string,
+): string {
+  return value
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&#x27;/gi, "'")
+    .replace(/&nbsp;/gi, " ");
 }
 
-function parseWinSplitsCandidatesFromXml(
-  ...sources: unknown[]
-): XmlMetadata["winsplitsCandidates"] {
-  const candidates = new Map<
-    string,
-    { databaseId: number; categoryId: number }
-  >();
-
-  for (const text of sources.flatMap(collectStrings)) {
-    const decoded = text.replace(/&amp;/gi, "&");
-    const urls = decoded.match(/https?:\/\/[^\s<>"']+/gi) ?? [decoded];
-
-    for (const raw of urls) {
-      try {
-        const url = new URL(raw, EVENTOR_BASE_URL);
-        if (
-          !url.hostname.toLocaleLowerCase("sv-SE").includes("orientering.se") ||
-          !url.pathname.toLocaleLowerCase("sv-SE").includes("winsplits")
-        ) {
-          continue;
-        }
-
-        const databaseId = Number(
-          url.searchParams.get("databaseId"),
-        );
-        const categoryId = Number(
-          url.searchParams.get("categoryId"),
-        );
-
-        if (
-          Number.isInteger(databaseId) &&
-          databaseId > 0 &&
-          Number.isInteger(categoryId) &&
-          categoryId >= 0
-        ) {
-          candidates.set(
-            `${databaseId}:${categoryId}`,
-            { databaseId, categoryId },
-          );
-        }
-      } catch {
-        // Texten var ingen URL.
-      }
-    }
-  }
-
-  return [...candidates.values()];
-}
-
-function createLiveloxViewerUrl(
-  eventId: number,
-  classId: number | null,
+function buildLiveloxViewerUrl(
+  redirectHref: string,
 ): string | null {
-  if (!classId) {
+  let eventorUrl: URL;
+
+  try {
+    eventorUrl =
+      new URL(
+        redirectHref,
+        EVENTOR_BASE_URL,
+      );
+  } catch {
     return null;
   }
 
-  const url = new URL(
-    "/Viewer",
-    "https://www.livelox.com",
-  );
+  const redirectUrl =
+    eventorUrl.searchParams.get(
+      "redirectUrl",
+    );
 
-  url.searchParams.set(
-    "eventExternalIdentifier",
-    `0:${eventId}-1`,
-  );
-  url.searchParams.set(
-    "classExternalId",
-    `${classId}-1`,
-  );
+  if (!redirectUrl) {
+    return null;
+  }
 
-  return url.toString();
+  try {
+    /*
+     * Eventor lagrar den interna Livelox-sökvägen i
+     * redirectUrl, exempelvis:
+     *
+     * /Viewer?eventExternalIdentifier=0%3A53201-1
+     * &classExternalId=664496-1
+     *
+     * Den kan användas direkt mot www.livelox.com utan
+     * att Eventors inloggningsberoende redirect följs.
+     */
+    const decodedPath =
+      decodeURIComponent(
+        redirectUrl,
+      );
+
+    const liveloxUrl =
+      new URL(
+        decodedPath,
+        "https://www.livelox.com",
+      );
+
+    return (
+      liveloxUrl.hostname
+        .toLocaleLowerCase("sv-SE")
+        .endsWith("livelox.com") &&
+      liveloxUrl.pathname
+        .toLocaleLowerCase("sv-SE")
+        .startsWith("/viewer")
+    )
+      ? liveloxUrl.toString()
+      : null;
+  } catch {
+    return null;
+  }
 }
 
-function parseXmlMetadata(
-  eventId: number,
-  eventClass: EventorClass,
-  eventXml: unknown,
-  classesXml: unknown,
-  resultXml: unknown,
-): XmlMetadata {
+function parseResultPageMetadata(
+  html: string | null,
+  raceClass: string,
+): ResultPageMetadata {
+  if (!html) {
+    return {
+      distanceKm: "",
+      starters: 0,
+      winsplitsCandidates: [],
+      liveloxUrl: null,
+    };
+  }
+
+  const $ =
+    cheerio.load(html);
+
+  const escapedClass =
+    raceClass.replace(
+      /[.*+?^${}()|[\]\\]/g,
+      "\\$&",
+    );
+
+  /*
+   * Leta i enskilda element i stället för hela body-texten.
+   * Cheerio kan annars slå ihop text från närliggande taggar,
+   * exempelvis "H214 890 m, 32 startande".
+   */
+  const classHeaderPattern =
+    new RegExp(
+      `(?:^|\\s)${escapedClass}\\s*(\\d[\\d\\s]*)\\s*m\\s*,?\\s*(\\d+)\\s*startande(?:\\s|$)`,
+      "i",
+    );
+
+  let classHeader:
+    RegExpMatchArray | null = null;
+
+  let shortestMatchingText =
+    Number.POSITIVE_INFINITY;
+
+  $("body *").each(
+    (_, element) => {
+      const elementText =
+        cleanText(
+          $(element).text(),
+        );
+
+      if (
+        !elementText ||
+        elementText.length >
+          shortestMatchingText
+      ) {
+        return;
+      }
+
+      const match =
+        elementText.match(
+          classHeaderPattern,
+        );
+
+      if (match) {
+        classHeader = match;
+        shortestMatchingText =
+          elementText.length;
+      }
+    },
+  );
+
+  /*
+   * Reserv om resultatrubriken mot förmodan ligger direkt
+   * i body utan ett eget omslutande element.
+   */
+  if (!classHeader) {
+    classHeader =
+      cleanText(
+        $("body").text(),
+      ).match(
+        classHeaderPattern,
+      );
+  }
+
+  const distanceKm =
+    classHeader
+      ? String(
+          Number(
+            (
+              Number(
+                classHeader[1]
+                  .replace(
+                    /\s+/g,
+                    "",
+                  ),
+              ) / 1000
+            ).toFixed(3),
+          ),
+        )
+      : "";
+
+  const starters =
+    classHeader
+      ? Number(
+          classHeader[2],
+        )
+      : 0;
+
+  const candidates =
+    new Map<
+      string,
+      {
+        databaseId: number;
+        categoryId: number;
+      }
+    >();
+
+  $("a[href]").each(
+    (_, anchor) => {
+      const href =
+        decodeHtml(
+          $(anchor).attr("href") ??
+          "",
+        );
+
+      if (!href) {
+        return;
+      }
+
+      let url: URL;
+
+      try {
+        url =
+          new URL(
+            href,
+            EVENTOR_BASE_URL,
+          );
+      } catch {
+        return;
+      }
+
+      if (
+        url.hostname
+          .toLocaleLowerCase("sv-SE") !==
+          "obasen.orientering.se" ||
+        !url.pathname
+          .toLocaleLowerCase("sv-SE")
+          .includes("/winsplits/")
+      ) {
+        return;
+      }
+
+      const databaseId =
+        Number(
+          url.searchParams.get(
+            "databaseId",
+          ),
+        );
+
+      const categoryId =
+        Number(
+          url.searchParams.get(
+            "categoryId",
+          ),
+        );
+
+      if (
+        Number.isInteger(databaseId) &&
+        databaseId > 0 &&
+        Number.isInteger(categoryId) &&
+        categoryId >= 0
+      ) {
+        candidates.set(
+          `${databaseId}:${categoryId}`,
+          {
+            databaseId,
+            categoryId,
+          },
+        );
+      }
+    },
+  );
+
+  let liveloxUrl:
+    string | null = null;
+
+  /*
+   * Välj Livelox-länken i rätt klassblock.
+   * Varje .eventClassHeader innehåller klassnamn,
+   * banlängd, WinSplits och Livelox för samma klass.
+   */
+  $(".eventClassHeader").each(
+    (_, header) => {
+      if (liveloxUrl) {
+        return;
+      }
+
+      const headerClass =
+        cleanText(
+          $(header)
+            .find("h3")
+            .first()
+            .text(),
+        );
+
+      if (
+        normalizeName(
+          headerClass,
+        ) !==
+        normalizeName(
+          raceClass,
+        )
+      ) {
+        return;
+      }
+
+      const liveloxAnchor =
+        $(header)
+          .find(
+            'a[href*="RedirectToLivelox"]',
+          )
+          .first();
+
+      const rawHref =
+        decodeHtml(
+          liveloxAnchor.attr(
+            "href",
+          ) ?? "",
+        );
+
+      liveloxUrl =
+        buildLiveloxViewerUrl(
+          rawHref,
+        );
+    },
+  );
+
   return {
-    distanceKm:
-      eventClass.distanceKm ||
-      findDistanceInRecord(resultXml),
+    distanceKm,
+    starters,
     winsplitsCandidates:
-      parseWinSplitsCandidatesFromXml(
-        eventXml,
-        classesXml,
-        resultXml,
-      ),
-    liveloxUrl:
-      createLiveloxViewerUrl(
-        eventId,
-        eventClass.id,
-      ),
+      [...candidates.values()],
+    liveloxUrl,
   };
 }
 
@@ -1245,7 +1388,7 @@ function createWinSplitsUrl(
 }
 
 async function resolveWinSplits(
-  candidates: XmlMetadata[
+  candidates: ResultPageMetadata[
     "winsplitsCandidates"
   ],
   runnerName: string,
@@ -1359,6 +1502,7 @@ export async function getEventLinks(
     eventXml,
     classesXml,
     resultXml,
+    resultHtml,
   ] = await Promise.all([
     fetchEventorXml(
       `/api/event/${eventId}`,
@@ -1369,7 +1513,17 @@ export async function getEventLinks(
     fetchEventorXml(
       `/api/results/event?eventId=${eventId}&includeSplitTimes=true`,
     ),
+    fetchResultHtml(
+      resultListUrl,
+    ),
   ]);
+
+  console.log(
+    "Result HTML:",
+    resultHtml
+      ? resultHtml.length
+      : "NULL",
+  );
 
   const eventInformation =
     parseEventInformation(
@@ -1416,16 +1570,12 @@ export async function getEventLinks(
       name:
         apiRunner.raceClass,
       starters: 0,
-      distanceKm: "",
     };
 
-  const xmlMetadata =
-    parseXmlMetadata(
-      eventId,
-      eventClass,
-      eventXml,
-      classesXml,
-      resultXml,
+  const pageMetadata =
+    parseResultPageMetadata(
+      resultHtml,
+      eventClass.name,
     );
 
   const {
@@ -1433,7 +1583,7 @@ export async function getEventLinks(
     runner:
       winSplitsRunner,
   } = await resolveWinSplits(
-    xmlMetadata
+    pageMetadata
       .winsplitsCandidates,
     runnerName,
     eventClass.name,
@@ -1442,12 +1592,12 @@ export async function getEventLinks(
   /*
    * Ansvarsfördelning:
    *
-   * Eventors XML-API:
-   * titel, datum, arrangör, plats, disciplin, klass,
-   * banlängd, placering, startande och Livelox-länk.
+   * Eventor:
+   * titel, datum, arrangör, plats, disciplin,
+   * officiell banlängd, placering, startande.
    *
-   * WinSplits används när XML-svaret innehåller en
-   * WinSplits-referens; annars används Eventors resultatdata.
+   * WinSplits:
+   * tid, kontroller, bomtid och WinSplits-länk.
    */
   return {
     eventId,
@@ -1467,7 +1617,7 @@ export async function getEventLinks(
     discipline:
       eventInformation.discipline,
     distanceKm:
-      xmlMetadata.distanceKm,
+      pageMetadata.distanceKm,
     time:
       normalizeTime(
         winSplitsRunner?.totalTime ||
@@ -1479,6 +1629,7 @@ export async function getEventLinks(
       "",
     starters:
       String(
+        pageMetadata.starters ||
         eventClass.starters ||
         0,
       ),
@@ -1494,6 +1645,6 @@ export async function getEventLinks(
       ) || "0:00",
     winsplits,
     liveloxUrl:
-      xmlMetadata.liveloxUrl,
+      pageMetadata.liveloxUrl,
   };
 }
