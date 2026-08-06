@@ -567,10 +567,26 @@ async function fetchResultHtml(
         },
       );
 
-    return response.ok
-      ? response.text()
-      : null;
-  } catch {
+    if (!response.ok) {
+      console.error(
+        "fetchResultHtml failed:",
+        {
+          status: response.status,
+          statusText: response.statusText,
+          url: response.url,
+        },
+      );
+
+      return null;
+    }
+
+    return response.text();
+  } catch (error) {
+    console.error(
+      "fetchResultHtml failed:",
+      error,
+    );
+
     return null;
   }
 }
@@ -1501,6 +1517,13 @@ export async function getEventLinks(
       resultListUrl,
     ),
   ]);
+
+  console.log(
+    "Result HTML:",
+    resultHtml
+      ? resultHtml.length
+      : "NULL",
+  );
 
   const eventInformation =
     parseEventInformation(
