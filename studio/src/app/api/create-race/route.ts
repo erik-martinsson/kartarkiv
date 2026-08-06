@@ -7,6 +7,12 @@ import {
 import path from "node:path";
 
 import {
+  publishFilesToGitHub,
+  shouldPublishToGitHub,
+  type RepositoryFileTarget,
+} from "@/lib/githubRepository";
+
+import {
   NextRequest,
   NextResponse,
 } from "next/server";
@@ -258,10 +264,7 @@ export async function POST(
       }
     }
 
-    const targets: Array<{
-      relativePath: string;
-      content: string | ArrayBuffer;
-    }> = [];
+    const targets: RepositoryFileTarget[] = [];
 
     const markdownRelative =
       repositoryRelativePath(
@@ -319,18 +322,46 @@ export async function POST(
       });
     }
 
+    if (shouldPublishToGitHub()) {
+      const published = await publishFilesToGitHub(
+        targets,
+        `Lägg till tävling: ${metadata.slug}`,
+      );
+
+      const created: CreatedFile[] = targets.map((target) => ({
+        relativePath: target.relativePath,
+        absolutePath:
+          `${published.repositoryUrl}/blob/` +
+          `${encodeURIComponent(process.env.GITHUB_BRANCH?.trim() || "main")}/` +
+          target.relativePath,
+      }));
+
+      return NextResponse.json(
+        {
+          success: true,
+          repositoryRoot: published.repositoryUrl,
+          created,
+          commitSha: published.commitSha,
+          commitUrl: published.commitUrl,
+          nextStep:
+            "Tävlingen publicerades till GitHub. Kartarkivet byggs nu om automatiskt.",
+        },
+        {
+          status: 201,
+          headers: {
+            "Cache-Control": "no-store",
+          },
+        },
+      );
+    }
+
     const conflicts: string[] = [];
 
     for (const target of targets) {
-      const absolutePath =
-        safeRepositoryPath(
-          target.relativePath,
-        );
+      const absolutePath = safeRepositoryPath(target.relativePath);
 
       if (await exists(absolutePath)) {
-        conflicts.push(
-          target.relativePath,
-        );
+        conflicts.push(target.relativePath);
       }
     }
 
@@ -348,48 +379,34 @@ export async function POST(
     }
 
     for (const target of targets) {
-      const absolutePath =
-        safeRepositoryPath(
-          target.relativePath,
-        );
+      const absolutePath = safeRepositoryPath(target.relativePath);
 
-      await mkdir(
-        path.dirname(absolutePath),
-        {
-          recursive: true,
-        },
-      );
+      await mkdir(path.dirname(absolutePath), {
+        recursive: true,
+      });
 
       await writeFile(
         absolutePath,
         typeof target.content === "string"
           ? target.content
-          : Buffer.from(
-              target.content,
-            ),
+          : Buffer.from(target.content),
       );
 
       createdPaths.push(absolutePath);
     }
 
-    const created: CreatedFile[] =
-      targets.map((target) => ({
-        relativePath:
-          target.relativePath,
-        absolutePath:
-          safeRepositoryPath(
-            target.relativePath,
-          ),
-      }));
+    const created: CreatedFile[] = targets.map((target) => ({
+      relativePath: target.relativePath,
+      absolutePath: safeRepositoryPath(target.relativePath),
+    }));
 
     return NextResponse.json(
       {
         success: true,
-        repositoryRoot:
-          repositoryRoot(),
+        repositoryRoot: repositoryRoot(),
         created,
         nextStep:
-          "Kontrollera ändringarna i VS Code och publicera dem sedan med GitHub Desktop: Commit to main och Push origin.",
+          "Filerna skapades lokalt. Publicera dem till GitHub med ditt vanliga arbetsflöde.",
       },
       {
         status: 201,
@@ -411,6 +428,22 @@ export async function POST(
       ),
     );
 
+    const status =
+      caughtError &&
+      typeof caughtError === "object" &&
+      "status" in caughtError &&
+      Number.isInteger(Number(caughtError.status))
+        ? Number(caughtError.status)
+        : 500;
+
+    const conflicts =
+      caughtError &&
+      typeof caughtError === "object" &&
+      "conflicts" in caughtError &&
+      Array.isArray(caughtError.conflicts)
+        ? caughtError.conflicts
+        : undefined;
+
     const message =
       caughtError instanceof Error
         ? caughtError.message
@@ -424,9 +457,10 @@ export async function POST(
     return NextResponse.json(
       {
         error: message,
+        conflicts,
       },
       {
-        status: 500,
+        status,
         headers: {
           "Cache-Control": "no-store",
         },
