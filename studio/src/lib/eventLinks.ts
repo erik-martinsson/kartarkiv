@@ -56,6 +56,7 @@ type EventorClass = {
   id: number | null;
   name: string;
   starters: number;
+  distanceKm: string;
 };
 
 type ResultPageMetadata = {
@@ -855,6 +856,130 @@ function findRunner(
   return ranked[0].runner;
 }
 
+function parseDistanceKmValue(
+  value: unknown,
+): string {
+  const record = asRecord(value);
+  const rawText = cleanText(
+    record
+      ? firstValue(
+          record,
+          "#text",
+          "Value",
+          "Length",
+          "Distance",
+        )
+      : value,
+  );
+
+  if (!rawText) {
+    return "";
+  }
+
+  const normalized = rawText
+    .replace(/\u00a0/g, " ")
+    .replace(/,/g, ".")
+    .trim();
+
+  const match = normalized.match(
+    /(-?\d+(?:\.\d+)?)\s*(km|kilometer|kilometre|m|meter|metre)?/i,
+  );
+
+  if (!match) {
+    return "";
+  }
+
+  const numeric = Number(match[1]);
+
+  if (!Number.isFinite(numeric) || numeric <= 0) {
+    return "";
+  }
+
+  const unit = (
+    match[2] ||
+    cleanText(
+      record
+        ? firstValue(
+            record,
+            "@_unit",
+            "@_unitCode",
+            "Unit",
+          )
+        : undefined,
+    )
+  ).toLocaleLowerCase("sv-SE");
+
+  const kilometres =
+    unit.startsWith("km") ||
+    unit.startsWith("kilo")
+      ? numeric
+      : unit === "m" ||
+        unit.startsWith("meter") ||
+        unit.startsWith("metre") ||
+        numeric >= 100
+        ? numeric / 1000
+        : numeric;
+
+  if (kilometres <= 0 || kilometres > 100) {
+    return "";
+  }
+
+  return String(
+    Number(kilometres.toFixed(3)),
+  );
+}
+
+function readClassDistanceKm(
+  eventClass: XmlRecord,
+  raceInfo: XmlRecord | null,
+): string {
+  const preferredKeys = [
+    "CourseLength",
+    "ClassCourseLength",
+    "RaceCourseLength",
+    "Length",
+    "Distance",
+  ];
+
+  for (const source of [raceInfo, eventClass]) {
+    if (!source) {
+      continue;
+    }
+
+    for (const key of preferredKeys) {
+      const direct = parseDistanceKmValue(
+        firstValue(source, key),
+      );
+
+      if (direct) {
+        return direct;
+      }
+    }
+
+    const course = asRecord(
+      firstValue(
+        source,
+        "Course",
+        "RaceCourse",
+      ),
+    );
+
+    if (course) {
+      for (const key of preferredKeys) {
+        const nested = parseDistanceKmValue(
+          firstValue(course, key),
+        );
+
+        if (nested) {
+          return nested;
+        }
+      }
+    }
+  }
+
+  return "";
+}
+
 function parseEventorClasses(
   classesXml: unknown,
 ): EventorClass[] {
@@ -907,6 +1032,11 @@ function parseEventorClasses(
               "NumberOfStarts",
             ),
           ) || 0,
+        distanceKm:
+          readClassDistanceKm(
+            eventClass,
+            raceInfo,
+          ),
       };
     })
     .filter(
@@ -1570,6 +1700,7 @@ export async function getEventLinks(
       name:
         apiRunner.raceClass,
       starters: 0,
+      distanceKm: "",
     };
 
   const pageMetadata =
@@ -1617,6 +1748,7 @@ export async function getEventLinks(
     discipline:
       eventInformation.discipline,
     distanceKm:
+      eventClass.distanceKm ||
       pageMetadata.distanceKm,
     time:
       normalizeTime(
