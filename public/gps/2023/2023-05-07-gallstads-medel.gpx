@@ -1,0 +1,6821 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="Attackpoint - http://www.attackpoint.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tp1="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+<trk>
+<trkseg>
+<trkpt lat="57.72603337" lon="13.51958879">
+<ele>283.9</ele>
+<time>2023-05-07T08:33:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>94</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72603831" lon="13.51959961">
+<ele>283.9</ele>
+<time>2023-05-07T08:33:40Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>94</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7261057" lon="13.51972332">
+<ele>285.3</ele>
+<time>2023-05-07T08:33:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>94</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72614501" lon="13.51974956">
+<ele>285.3</ele>
+<time>2023-05-07T08:33:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>95</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72623168" lon="13.51975769">
+<ele>284.5</ele>
+<time>2023-05-07T08:33:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>94</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72635389" lon="13.5196846">
+<ele>284.5</ele>
+<time>2023-05-07T08:33:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>97</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72639052" lon="13.51964227">
+<ele>284.3</ele>
+<time>2023-05-07T08:33:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>95</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72642422" lon="13.51958946">
+<ele>284.5</ele>
+<time>2023-05-07T08:33:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>95</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72652882" lon="13.51927548">
+<ele>284.5</ele>
+<time>2023-05-07T08:33:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>94</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72659169" lon="13.51912569">
+<ele>285.1</ele>
+<time>2023-05-07T08:33:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>98</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72662278" lon="13.51906308">
+<ele>285.1</ele>
+<time>2023-05-07T08:34:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>103</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72667467" lon="13.51894691">
+<ele>285.3</ele>
+<time>2023-05-07T08:34:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>105</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72669814" lon="13.51887717">
+<ele>285.5</ele>
+<time>2023-05-07T08:34:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>108</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72675832" lon="13.51874876">
+<ele>285.9</ele>
+<time>2023-05-07T08:34:05Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>111</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72679" lon="13.51869537">
+<ele>286.1</ele>
+<time>2023-05-07T08:34:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>117</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72681783" lon="13.51864918">
+<ele>286.1</ele>
+<time>2023-05-07T08:34:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>118</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72685722" lon="13.51861398">
+<ele>286.3</ele>
+<time>2023-05-07T08:34:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>117</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72689528" lon="13.51857349">
+<ele>286.5</ele>
+<time>2023-05-07T08:34:09Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>117</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72692872" lon="13.51853066">
+<ele>286.5</ele>
+<time>2023-05-07T08:34:10Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>121</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72695873" lon="13.51848439">
+<ele>286.7</ele>
+<time>2023-05-07T08:34:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>123</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72698513" lon="13.518446">
+<ele>286.7</ele>
+<time>2023-05-07T08:34:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>123</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72700667" lon="13.51835581">
+<ele>287.1</ele>
+<time>2023-05-07T08:34:14Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>127</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72700466" lon="13.51831634">
+<ele>287.3</ele>
+<time>2023-05-07T08:34:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>128</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7269905" lon="13.51827065">
+<ele>287.5</ele>
+<time>2023-05-07T08:34:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>129</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7269589" lon="13.51814291">
+<ele>286.7</ele>
+<time>2023-05-07T08:34:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>132</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72691531" lon="13.51799338">
+<ele>285.9</ele>
+<time>2023-05-07T08:34:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>129</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72688547" lon="13.51791149">
+<ele>286.3</ele>
+<time>2023-05-07T08:34:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>130</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72685295" lon="13.51767353">
+<ele>286.3</ele>
+<time>2023-05-07T08:34:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>130</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7268221" lon="13.51755367">
+<ele>286.3</ele>
+<time>2023-05-07T08:34:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>134</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72679235" lon="13.51747672">
+<ele>286.3</ele>
+<time>2023-05-07T08:34:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>135</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72677567" lon="13.51735518">
+<ele>286.3</ele>
+<time>2023-05-07T08:34:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>133</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72678749" lon="13.51723834">
+<ele>286.3</ele>
+<time>2023-05-07T08:34:40Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>133</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72682923" lon="13.51699686">
+<ele>286.3</ele>
+<time>2023-05-07T08:34:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>130</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72684197" lon="13.51694514">
+<ele>286.2</ele>
+<time>2023-05-07T08:34:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>132</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72686066" lon="13.51681941">
+<ele>286.2</ele>
+<time>2023-05-07T08:34:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>135</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72687458" lon="13.51673232">
+<ele>286.2</ele>
+<time>2023-05-07T08:34:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>136</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7268822" lon="13.51668706">
+<ele>286.2</ele>
+<time>2023-05-07T08:34:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>137</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72690425" lon="13.51661104">
+<ele>286.2</ele>
+<time>2023-05-07T08:34:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>136</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72690986" lon="13.51657181">
+<ele>286.2</ele>
+<time>2023-05-07T08:34:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>136</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72694163" lon="13.51629286">
+<ele>286.2</ele>
+<time>2023-05-07T08:35:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>136</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72694029" lon="13.51625288">
+<ele>286.2</ele>
+<time>2023-05-07T08:35:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>133</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72691883" lon="13.51610569">
+<ele>286.2</ele>
+<time>2023-05-07T08:35:05Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>131</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72685194" lon="13.51592422">
+<ele>286.2</ele>
+<time>2023-05-07T08:35:09Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>133</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72674197" lon="13.51570546">
+<ele>286.2</ele>
+<time>2023-05-07T08:35:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>135</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72680886" lon="13.51561124">
+<ele>286.4</ele>
+<time>2023-05-07T08:35:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>136</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72690869" lon="13.51552307">
+<ele>286.4</ele>
+<time>2023-05-07T08:35:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>140</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72701891" lon="13.51543497">
+<ele>286.4</ele>
+<time>2023-05-07T08:35:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>139</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72710851" lon="13.51530991">
+<ele>286.6</ele>
+<time>2023-05-07T08:35:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>142</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72713383" lon="13.51528259">
+<ele>286.6</ele>
+<time>2023-05-07T08:35:31Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>138</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72715596" lon="13.51526449">
+<ele>286.6</ele>
+<time>2023-05-07T08:35:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>140</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72725855" lon="13.515167">
+<ele>286.6</ele>
+<time>2023-05-07T08:35:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>138</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72728663" lon="13.51511143">
+<ele>286.6</ele>
+<time>2023-05-07T08:35:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>137</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72731446" lon="13.51505921">
+<ele>286.8</ele>
+<time>2023-05-07T08:35:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>136</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72741001" lon="13.51493005">
+<ele>286.8</ele>
+<time>2023-05-07T08:35:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>137</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7275095" lon="13.51482527">
+<ele>287.2</ele>
+<time>2023-05-07T08:35:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>136</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72762626" lon="13.51469032">
+<ele>287.4</ele>
+<time>2023-05-07T08:35:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>135</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72770279" lon="13.5145936">
+<ele>287.6</ele>
+<time>2023-05-07T08:35:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>139</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72774487" lon="13.51454373">
+<ele>287.6</ele>
+<time>2023-05-07T08:36:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>138</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72778384" lon="13.5144931">
+<ele>287.8</ele>
+<time>2023-05-07T08:36:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>139</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72784419" lon="13.5144449">
+<ele>287.8</ele>
+<time>2023-05-07T08:36:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>140</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72793564" lon="13.51432965">
+<ele>288.0</ele>
+<time>2023-05-07T08:36:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>142</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72804511" lon="13.51412589">
+<ele>288.2</ele>
+<time>2023-05-07T08:36:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>142</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72806942" lon="13.51406763">
+<ele>288.4</ele>
+<time>2023-05-07T08:36:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>142</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72812063" lon="13.5140248">
+<ele>288.4</ele>
+<time>2023-05-07T08:36:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>143</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72826916" lon="13.51387661">
+<ele>288.8</ele>
+<time>2023-05-07T08:36:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>142</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72837318" lon="13.5136902">
+<ele>289.0</ele>
+<time>2023-05-07T08:36:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>142</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72850025" lon="13.51352063">
+<ele>289.4</ele>
+<time>2023-05-07T08:36:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>147</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7285217" lon="13.51349657">
+<ele>289.4</ele>
+<time>2023-05-07T08:36:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>145</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72853562" lon="13.51347243">
+<ele>289.4</ele>
+<time>2023-05-07T08:36:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>145</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72856353" lon="13.51344888">
+<ele>289.4</ele>
+<time>2023-05-07T08:36:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>144</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72860619" lon="13.51343966">
+<ele>289.6</ele>
+<time>2023-05-07T08:36:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>144</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72862991" lon="13.51343539">
+<ele>289.8</ele>
+<time>2023-05-07T08:36:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>145</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72869026" lon="13.51342675">
+<ele>290.0</ele>
+<time>2023-05-07T08:36:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>144</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72873603" lon="13.51344905">
+<ele>290.2</ele>
+<time>2023-05-07T08:36:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>144</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7287797" lon="13.51359498">
+<ele>290.4</ele>
+<time>2023-05-07T08:36:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>142</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72880476" lon="13.51364653">
+<ele>290.4</ele>
+<time>2023-05-07T08:36:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>143</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72886746" lon="13.51380914">
+<ele>290.8</ele>
+<time>2023-05-07T08:37:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>145</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72892588" lon="13.51413569">
+<ele>291.2</ele>
+<time>2023-05-07T08:37:09Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>143</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72896502" lon="13.51437517">
+<ele>291.4</ele>
+<time>2023-05-07T08:37:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>140</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72896871" lon="13.51441179">
+<ele>291.6</ele>
+<time>2023-05-07T08:37:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>141</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72901079" lon="13.51463626">
+<ele>291.7</ele>
+<time>2023-05-07T08:37:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>139</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72902437" lon="13.51469141">
+<ele>291.9</ele>
+<time>2023-05-07T08:37:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>141</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72899922" lon="13.51495528">
+<ele>292.1</ele>
+<time>2023-05-07T08:37:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>144</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72900207" lon="13.51511336">
+<ele>292.3</ele>
+<time>2023-05-07T08:37:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>143</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72900936" lon="13.51524638">
+<ele>292.5</ele>
+<time>2023-05-07T08:37:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>143</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72905714" lon="13.51549122">
+<ele>292.9</ele>
+<time>2023-05-07T08:37:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>144</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72911062" lon="13.51560714">
+<ele>293.1</ele>
+<time>2023-05-07T08:37:40Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>147</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72914683" lon="13.51576799">
+<ele>293.3</ele>
+<time>2023-05-07T08:37:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>145</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72915001" lon="13.51582775">
+<ele>293.3</ele>
+<time>2023-05-07T08:37:44Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>141</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72914473" lon="13.51588877">
+<ele>293.5</ele>
+<time>2023-05-07T08:37:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>141</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72911464" lon="13.51605993">
+<ele>293.7</ele>
+<time>2023-05-07T08:37:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>141</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72911615" lon="13.51618825">
+<ele>293.9</ele>
+<time>2023-05-07T08:37:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>141</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7291454" lon="13.51630267">
+<ele>293.9</ele>
+<time>2023-05-07T08:37:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>140</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72916166" lon="13.51640861">
+<ele>294.1</ele>
+<time>2023-05-07T08:37:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>139</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72916669" lon="13.51652563">
+<ele>294.1</ele>
+<time>2023-05-07T08:37:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>138</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72918731" lon="13.51675202">
+<ele>294.5</ele>
+<time>2023-05-07T08:38:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>139</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7292003" lon="13.51679636">
+<ele>294.5</ele>
+<time>2023-05-07T08:38:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>137</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72924506" lon="13.51695897">
+<ele>294.7</ele>
+<time>2023-05-07T08:38:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>138</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72926023" lon="13.51711404">
+<ele>294.9</ele>
+<time>2023-05-07T08:38:10Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>138</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72926878" lon="13.517123">
+<ele>294.9</ele>
+<time>2023-05-07T08:38:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>139</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72927909" lon="13.51711814">
+<ele>295.1</ele>
+<time>2023-05-07T08:38:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>139</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72933751" lon="13.51712611">
+<ele>295.3</ele>
+<time>2023-05-07T08:38:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>138</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72940583" lon="13.51715636">
+<ele>295.5</ele>
+<time>2023-05-07T08:38:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>138</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72942862" lon="13.51715779">
+<ele>295.7</ele>
+<time>2023-05-07T08:38:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>138</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72956676" lon="13.51718285">
+<ele>295.9</ele>
+<time>2023-05-07T08:38:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>139</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72967296" lon="13.51726432">
+<ele>296.3</ele>
+<time>2023-05-07T08:38:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>136</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72974957" lon="13.51732551">
+<ele>296.7</ele>
+<time>2023-05-07T08:38:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>137</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72981796" lon="13.51737438">
+<ele>296.9</ele>
+<time>2023-05-07T08:38:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>137</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72998468" lon="13.51752835">
+<ele>297.5</ele>
+<time>2023-05-07T08:38:44Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>137</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73001209" lon="13.51754813">
+<ele>297.7</ele>
+<time>2023-05-07T08:38:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>136</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7301053" lon="13.51762223">
+<ele>297.9</ele>
+<time>2023-05-07T08:38:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>139</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73022759" lon="13.51774025">
+<ele>298.3</ele>
+<time>2023-05-07T08:38:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>137</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73028668" lon="13.51780077">
+<ele>298.5</ele>
+<time>2023-05-07T08:38:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>140</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73032021" lon="13.51783429">
+<ele>298.7</ele>
+<time>2023-05-07T08:38:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>140</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73035659" lon="13.51789447">
+<ele>298.9</ele>
+<time>2023-05-07T08:39:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>141</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7304337" lon="13.51802414">
+<ele>299.1</ele>
+<time>2023-05-07T08:39:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>145</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73047628" lon="13.51809145">
+<ele>299.3</ele>
+<time>2023-05-07T08:39:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>146</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73053193" lon="13.51814451">
+<ele>299.5</ele>
+<time>2023-05-07T08:39:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>147</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73062087" lon="13.51816244">
+<ele>299.7</ele>
+<time>2023-05-07T08:39:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>148</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73064752" lon="13.51816353">
+<ele>299.9</ele>
+<time>2023-05-07T08:39:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>148</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73074928" lon="13.5181233">
+<ele>300.3</ele>
+<time>2023-05-07T08:39:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>149</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73086537" lon="13.51806697">
+<ele>300.7</ele>
+<time>2023-05-07T08:39:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>148</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73088875" lon="13.51805951">
+<ele>300.7</ele>
+<time>2023-05-07T08:39:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>147</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73095983" lon="13.5180855">
+<ele>301.1</ele>
+<time>2023-05-07T08:39:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>149</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73098179" lon="13.51808935">
+<ele>301.1</ele>
+<time>2023-05-07T08:39:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>148</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73111582" lon="13.51808525">
+<ele>301.7</ele>
+<time>2023-05-07T08:39:31Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>147</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7311698" lon="13.51807276">
+<ele>301.7</ele>
+<time>2023-05-07T08:39:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>148</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73117843" lon="13.51805566">
+<ele>301.9</ele>
+<time>2023-05-07T08:39:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>147</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73126879" lon="13.51796011">
+<ele>302.1</ele>
+<time>2023-05-07T08:39:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>148</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73129536" lon="13.5179684">
+<ele>302.3</ele>
+<time>2023-05-07T08:39:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73135495" lon="13.51798383">
+<ele>302.3</ele>
+<time>2023-05-07T08:39:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>150</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73139242" lon="13.51800755">
+<ele>302.5</ele>
+<time>2023-05-07T08:39:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>147</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73146576" lon="13.51808416">
+<ele>302.4</ele>
+<time>2023-05-07T08:39:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>149</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73153592" lon="13.51811559">
+<ele>302.6</ele>
+<time>2023-05-07T08:39:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73158462" lon="13.51813034">
+<ele>302.6</ele>
+<time>2023-05-07T08:39:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73174195" lon="13.51829479">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73176466" lon="13.51832212">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73184177" lon="13.51839286">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>150</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73192744" lon="13.5185056">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:09Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7319732" lon="13.51859001">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73202207" lon="13.51866033">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:14Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73203422" lon="13.51866863">
+<ele>302.4</ele>
+<time>2023-05-07T08:40:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73207597" lon="13.51870324">
+<ele>302.4</ele>
+<time>2023-05-07T08:40:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73213355" lon="13.51873551">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73222902" lon="13.51884238">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7322633" lon="13.51888044">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73233547" lon="13.51889678">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73234569" lon="13.51888471">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73237553" lon="13.51871666">
+<ele>302.6</ele>
+<time>2023-05-07T08:40:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73243161" lon="13.51844056">
+<ele>302.8</ele>
+<time>2023-05-07T08:40:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73245156" lon="13.51836805">
+<ele>302.8</ele>
+<time>2023-05-07T08:40:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73245726" lon="13.51836311">
+<ele>302.8</ele>
+<time>2023-05-07T08:40:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73249816" lon="13.51838264">
+<ele>302.8</ele>
+<time>2023-05-07T08:40:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73252708" lon="13.51840979">
+<ele>302.8</ele>
+<time>2023-05-07T08:40:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73257662" lon="13.518402">
+<ele>303.0</ele>
+<time>2023-05-07T08:40:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73262012" lon="13.51838951">
+<ele>303.0</ele>
+<time>2023-05-07T08:40:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73273151" lon="13.51835095">
+<ele>303.2</ele>
+<time>2023-05-07T08:41:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73286873" lon="13.51836026">
+<ele>303.4</ele>
+<time>2023-05-07T08:41:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73298029" lon="13.51846671">
+<ele>303.4</ele>
+<time>2023-05-07T08:41:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73300476" lon="13.51850451">
+<ele>303.6</ele>
+<time>2023-05-07T08:41:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73314533" lon="13.51869293">
+<ele>303.6</ele>
+<time>2023-05-07T08:41:17Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73323409" lon="13.51881447">
+<ele>303.8</ele>
+<time>2023-05-07T08:41:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73332076" lon="13.51894632">
+<ele>303.8</ele>
+<time>2023-05-07T08:41:23Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73340718" lon="13.51906065">
+<ele>304.0</ele>
+<time>2023-05-07T08:41:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73346619" lon="13.5191552">
+<ele>304.0</ele>
+<time>2023-05-07T08:41:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73362343" lon="13.51940481">
+<ele>304.2</ele>
+<time>2023-05-07T08:41:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73365386" lon="13.51946407">
+<ele>304.4</ele>
+<time>2023-05-07T08:41:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73381881" lon="13.51975542">
+<ele>304.6</ele>
+<time>2023-05-07T08:41:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>150</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73396441" lon="13.51997788">
+<ele>304.8</ele>
+<time>2023-05-07T08:41:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73402845" lon="13.5200855">
+<ele>304.8</ele>
+<time>2023-05-07T08:41:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73415769" lon="13.52029027">
+<ele>305.0</ele>
+<time>2023-05-07T08:41:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73426984" lon="13.52055774">
+<ele>305.2</ele>
+<time>2023-05-07T08:41:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73422349" lon="13.52072513">
+<ele>305.4</ele>
+<time>2023-05-07T08:41:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73420086" lon="13.52076653">
+<ele>305.6</ele>
+<time>2023-05-07T08:41:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7341214" lon="13.52087701">
+<ele>305.8</ele>
+<time>2023-05-07T08:42:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7340717" lon="13.52099301">
+<ele>305.8</ele>
+<time>2023-05-07T08:42:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>150</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73398603" lon="13.52114079">
+<ele>306.0</ele>
+<time>2023-05-07T08:42:09Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>150</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73395435" lon="13.52120709">
+<ele>306.2</ele>
+<time>2023-05-07T08:42:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73391051" lon="13.52128026">
+<ele>306.2</ele>
+<time>2023-05-07T08:42:14Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73390473" lon="13.52129485">
+<ele>306.4</ele>
+<time>2023-05-07T08:42:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73391697" lon="13.52133449">
+<ele>306.4</ele>
+<time>2023-05-07T08:42:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>150</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73392409" lon="13.52136123">
+<ele>306.4</ele>
+<time>2023-05-07T08:42:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>150</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73392409" lon="13.52139032">
+<ele>306.4</ele>
+<time>2023-05-07T08:42:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73394052" lon="13.5215582">
+<ele>306.5</ele>
+<time>2023-05-07T08:42:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>149</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73400389" lon="13.52187152">
+<ele>306.5</ele>
+<time>2023-05-07T08:42:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73405292" lon="13.52211116">
+<ele>306.5</ele>
+<time>2023-05-07T08:42:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73410061" lon="13.52233437">
+<ele>306.5</ele>
+<time>2023-05-07T08:42:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73411604" lon="13.5225326">
+<ele>306.5</ele>
+<time>2023-05-07T08:42:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>149</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73417437" lon="13.52279973">
+<ele>306.3</ele>
+<time>2023-05-07T08:42:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>146</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73419416" lon="13.52284072">
+<ele>306.3</ele>
+<time>2023-05-07T08:42:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>146</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73427018" lon="13.52297751">
+<ele>306.3</ele>
+<time>2023-05-07T08:42:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>149</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73427999" lon="13.5230221">
+<ele>306.3</ele>
+<time>2023-05-07T08:42:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73427462" lon="13.52307131">
+<ele>306.3</ele>
+<time>2023-05-07T08:42:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73426834" lon="13.52312394">
+<ele>306.1</ele>
+<time>2023-05-07T08:42:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73423665" lon="13.52335394">
+<ele>306.1</ele>
+<time>2023-05-07T08:43:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73414671" lon="13.5234852">
+<ele>305.9</ele>
+<time>2023-05-07T08:43:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73412844" lon="13.52352259">
+<ele>305.9</ele>
+<time>2023-05-07T08:43:05Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73412677" lon="13.52360456">
+<ele>305.9</ele>
+<time>2023-05-07T08:43:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73419206" lon="13.52377329">
+<ele>305.7</ele>
+<time>2023-05-07T08:43:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>150</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73421763" lon="13.52381227">
+<ele>305.7</ele>
+<time>2023-05-07T08:43:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73425233" lon="13.52391654">
+<ele>305.7</ele>
+<time>2023-05-07T08:43:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73425258" lon="13.52399097">
+<ele>305.7</ele>
+<time>2023-05-07T08:43:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73425124" lon="13.52403548">
+<ele>305.7</ele>
+<time>2023-05-07T08:43:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73424084" lon="13.52407789">
+<ele>305.5</ele>
+<time>2023-05-07T08:43:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73422475" lon="13.52408795">
+<ele>305.5</ele>
+<time>2023-05-07T08:43:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73412283" lon="13.52406121">
+<ele>305.3</ele>
+<time>2023-05-07T08:43:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73405954" lon="13.52405635">
+<ele>305.3</ele>
+<time>2023-05-07T08:43:31Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73393926" lon="13.52399818">
+<ele>305.1</ele>
+<time>2023-05-07T08:43:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7339137" lon="13.52402441">
+<ele>305.1</ele>
+<time>2023-05-07T08:43:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.733909" lon="13.52410672">
+<ele>305.1</ele>
+<time>2023-05-07T08:43:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73399064" lon="13.52432289">
+<ele>304.9</ele>
+<time>2023-05-07T08:43:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7339888" lon="13.52438333">
+<ele>304.9</ele>
+<time>2023-05-07T08:43:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73396407" lon="13.52450964">
+<ele>304.9</ele>
+<time>2023-05-07T08:43:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73390523" lon="13.52458114">
+<ele>304.9</ele>
+<time>2023-05-07T08:43:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73387782" lon="13.52460511">
+<ele>304.9</ele>
+<time>2023-05-07T08:43:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73381144" lon="13.52468088">
+<ele>304.7</ele>
+<time>2023-05-07T08:43:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73377003" lon="13.52470259">
+<ele>304.7</ele>
+<time>2023-05-07T08:43:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73375444" lon="13.52472447">
+<ele>304.7</ele>
+<time>2023-05-07T08:43:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73371429" lon="13.52480058">
+<ele>304.7</ele>
+<time>2023-05-07T08:43:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7336904" lon="13.52482589">
+<ele>304.7</ele>
+<time>2023-05-07T08:43:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73366459" lon="13.52483788">
+<ele>304.7</ele>
+<time>2023-05-07T08:43:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73362259" lon="13.52483972">
+<ele>304.5</ele>
+<time>2023-05-07T08:43:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73350692" lon="13.52483327">
+<ele>304.5</ele>
+<time>2023-05-07T08:44:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73330081" lon="13.52485464">
+<ele>304.3</ele>
+<time>2023-05-07T08:44:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7331465" lon="13.52486889">
+<ele>304.1</ele>
+<time>2023-05-07T08:44:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73300342" lon="13.52493678">
+<ele>304.1</ele>
+<time>2023-05-07T08:44:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73281089" lon="13.52509403">
+<ele>303.9</ele>
+<time>2023-05-07T08:44:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73268525" lon="13.52524725">
+<ele>303.9</ele>
+<time>2023-05-07T08:44:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73259355" lon="13.52537524">
+<ele>303.7</ele>
+<time>2023-05-07T08:44:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73255994" lon="13.52546099">
+<ele>303.7</ele>
+<time>2023-05-07T08:44:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73247218" lon="13.52561614">
+<ele>303.5</ele>
+<time>2023-05-07T08:44:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73244904" lon="13.52566894">
+<ele>303.5</ele>
+<time>2023-05-07T08:44:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73233178" lon="13.52589458">
+<ele>303.5</ele>
+<time>2023-05-07T08:44:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73219993" lon="13.52614663">
+<ele>303.3</ele>
+<time>2023-05-07T08:44:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73207286" lon="13.52640546">
+<ele>303.1</ele>
+<time>2023-05-07T08:44:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73198251" lon="13.52665558">
+<ele>302.9</ele>
+<time>2023-05-07T08:44:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73192408" lon="13.52682807">
+<ele>302.8</ele>
+<time>2023-05-07T08:44:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73180766" lon="13.52699555">
+<ele>302.6</ele>
+<time>2023-05-07T08:45:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73174102" lon="13.52709051">
+<ele>302.4</ele>
+<time>2023-05-07T08:45:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73173465" lon="13.52711054">
+<ele>302.4</ele>
+<time>2023-05-07T08:45:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73174287" lon="13.52734239">
+<ele>302.4</ele>
+<time>2023-05-07T08:45:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73174119" lon="13.52741908">
+<ele>302.2</ele>
+<time>2023-05-07T08:45:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73173449" lon="13.5274801">
+<ele>302.2</ele>
+<time>2023-05-07T08:45:17Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73173373" lon="13.52751765">
+<ele>302.2</ele>
+<time>2023-05-07T08:45:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73172527" lon="13.52754246">
+<ele>302.2</ele>
+<time>2023-05-07T08:45:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73171261" lon="13.52763215">
+<ele>302.2</ele>
+<time>2023-05-07T08:45:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73172912" lon="13.52779493">
+<ele>302.0</ele>
+<time>2023-05-07T08:45:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73172108" lon="13.52783323">
+<ele>302.0</ele>
+<time>2023-05-07T08:45:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73170331" lon="13.52789501">
+<ele>302.0</ele>
+<time>2023-05-07T08:45:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73170163" lon="13.52793122">
+<ele>302.0</ele>
+<time>2023-05-07T08:45:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73169895" lon="13.527994">
+<ele>302.0</ele>
+<time>2023-05-07T08:45:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73170632" lon="13.52801462">
+<ele>302.0</ele>
+<time>2023-05-07T08:45:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73171739" lon="13.5280339">
+<ele>302.0</ele>
+<time>2023-05-07T08:45:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73172258" lon="13.52804312">
+<ele>302.0</ele>
+<time>2023-05-07T08:45:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73173985" lon="13.52805695">
+<ele>302.0</ele>
+<time>2023-05-07T08:45:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73174454" lon="13.5280691">
+<ele>302.0</ele>
+<time>2023-05-07T08:45:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73171345" lon="13.52812442">
+<ele>301.8</ele>
+<time>2023-05-07T08:45:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73165025" lon="13.52826021">
+<ele>301.8</ele>
+<time>2023-05-07T08:45:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7316044" lon="13.52842533">
+<ele>301.8</ele>
+<time>2023-05-07T08:45:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73159887" lon="13.52865013">
+<ele>301.8</ele>
+<time>2023-05-07T08:46:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7315868" lon="13.52872658">
+<ele>301.8</ele>
+<time>2023-05-07T08:46:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>170</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73154497" lon="13.52883143">
+<ele>301.8</ele>
+<time>2023-05-07T08:46:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>171</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7315065" lon="13.52888935">
+<ele>301.8</ele>
+<time>2023-05-07T08:46:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>174</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73141027" lon="13.52891861">
+<ele>302.0</ele>
+<time>2023-05-07T08:46:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>174</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73124767" lon="13.52902028">
+<ele>302.0</ele>
+<time>2023-05-07T08:46:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>177</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73115454" lon="13.52912866">
+<ele>302.2</ele>
+<time>2023-05-07T08:46:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>177</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7309797" lon="13.52925564">
+<ele>302.2</ele>
+<time>2023-05-07T08:46:31Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>177</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73094214" lon="13.52928733">
+<ele>302.2</ele>
+<time>2023-05-07T08:46:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>177</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73085087" lon="13.52944474">
+<ele>302.4</ele>
+<time>2023-05-07T08:46:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>177</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73075716" lon="13.52955404">
+<ele>302.4</ele>
+<time>2023-05-07T08:46:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>174</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73074182" lon="13.52959779">
+<ele>302.4</ele>
+<time>2023-05-07T08:46:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>172</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73070435" lon="13.52969016">
+<ele>302.6</ele>
+<time>2023-05-07T08:46:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7306585" lon="13.52972243">
+<ele>302.6</ele>
+<time>2023-05-07T08:46:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73062372" lon="13.52975956">
+<ele>302.6</ele>
+<time>2023-05-07T08:46:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73058139" lon="13.52983072">
+<ele>302.8</ele>
+<time>2023-05-07T08:46:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73052582" lon="13.52991907">
+<ele>302.8</ele>
+<time>2023-05-07T08:46:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73051433" lon="13.52995595">
+<ele>303.0</ele>
+<time>2023-05-07T08:46:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73049086" lon="13.53006491">
+<ele>303.0</ele>
+<time>2023-05-07T08:47:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73046102" lon="13.53017086">
+<ele>303.2</ele>
+<time>2023-05-07T08:47:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73045583" lon="13.53025292">
+<ele>303.2</ele>
+<time>2023-05-07T08:47:05Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73044501" lon="13.53028351">
+<ele>303.4</ele>
+<time>2023-05-07T08:47:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73042733" lon="13.53031109">
+<ele>303.4</ele>
+<time>2023-05-07T08:47:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73035692" lon="13.53041779">
+<ele>303.4</ele>
+<time>2023-05-07T08:47:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>170</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73034125" lon="13.53043489">
+<ele>303.6</ele>
+<time>2023-05-07T08:47:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>171</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73032272" lon="13.53043213">
+<ele>303.6</ele>
+<time>2023-05-07T08:47:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>172</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73024578" lon="13.5304022">
+<ele>303.8</ele>
+<time>2023-05-07T08:47:17Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73021602" lon="13.53040589">
+<ele>303.8</ele>
+<time>2023-05-07T08:47:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73014586" lon="13.5304763">
+<ele>304.2</ele>
+<time>2023-05-07T08:47:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73013857" lon="13.5304732">
+<ele>304.2</ele>
+<time>2023-05-07T08:47:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73008401" lon="13.53043925">
+<ele>304.5</ele>
+<time>2023-05-07T08:47:31Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73007671" lon="13.53043724">
+<ele>304.5</ele>
+<time>2023-05-07T08:47:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73001947" lon="13.53034596">
+<ele>304.9</ele>
+<time>2023-05-07T08:47:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72998963" lon="13.53031319">
+<ele>305.1</ele>
+<time>2023-05-07T08:47:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72993891" lon="13.5302753">
+<ele>305.5</ele>
+<time>2023-05-07T08:47:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7299131" lon="13.53026072">
+<ele>305.5</ele>
+<time>2023-05-07T08:47:44Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.729882" lon="13.53024035">
+<ele>305.7</ele>
+<time>2023-05-07T08:47:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72979751" lon="13.53020456">
+<ele>306.1</ele>
+<time>2023-05-07T08:47:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>171</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72977186" lon="13.53020397">
+<ele>306.3</ele>
+<time>2023-05-07T08:47:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72975703" lon="13.53021327">
+<ele>306.5</ele>
+<time>2023-05-07T08:47:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72974261" lon="13.53021755">
+<ele>306.7</ele>
+<time>2023-05-07T08:47:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72970732" lon="13.53024378">
+<ele>306.9</ele>
+<time>2023-05-07T08:47:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72966022" lon="13.53028913">
+<ele>307.3</ele>
+<time>2023-05-07T08:47:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72963624" lon="13.5303292">
+<ele>307.5</ele>
+<time>2023-05-07T08:48:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72959702" lon="13.53043498">
+<ele>307.9</ele>
+<time>2023-05-07T08:48:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72957573" lon="13.5306151">
+<ele>308.5</ele>
+<time>2023-05-07T08:48:09Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72954061" lon="13.53084493">
+<ele>309.3</ele>
+<time>2023-05-07T08:48:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.729536" lon="13.53086237">
+<ele>309.3</ele>
+<time>2023-05-07T08:48:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72950591" lon="13.53090738">
+<ele>309.7</ele>
+<time>2023-05-07T08:48:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72948747" lon="13.53094049">
+<ele>309.7</ele>
+<time>2023-05-07T08:48:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72943474" lon="13.5310435">
+<ele>310.1</ele>
+<time>2023-05-07T08:48:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72942318" lon="13.53114308">
+<ele>310.3</ele>
+<time>2023-05-07T08:48:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72942368" lon="13.53119236">
+<ele>310.5</ele>
+<time>2023-05-07T08:48:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72942351" lon="13.53127333">
+<ele>310.7</ele>
+<time>2023-05-07T08:48:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>170</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72941488" lon="13.53128842">
+<ele>310.7</ele>
+<time>2023-05-07T08:48:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>170</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72940834" lon="13.53130418">
+<ele>310.9</ele>
+<time>2023-05-07T08:48:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>170</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72938923" lon="13.53131197">
+<ele>311.1</ele>
+<time>2023-05-07T08:48:31Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>170</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72936375" lon="13.53132513">
+<ele>311.3</ele>
+<time>2023-05-07T08:48:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>172</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7293547" lon="13.53132212">
+<ele>311.3</ele>
+<time>2023-05-07T08:48:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>171</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72929309" lon="13.53130175">
+<ele>311.7</ele>
+<time>2023-05-07T08:48:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72927532" lon="13.53129605">
+<ele>311.9</ele>
+<time>2023-05-07T08:48:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72924431" lon="13.53129932">
+<ele>312.1</ele>
+<time>2023-05-07T08:48:40Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7292288" lon="13.53129202">
+<ele>312.1</ele>
+<time>2023-05-07T08:48:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72917784" lon="13.5312647">
+<ele>312.7</ele>
+<time>2023-05-07T08:48:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72914867" lon="13.53126135">
+<ele>312.9</ele>
+<time>2023-05-07T08:48:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72910869" lon="13.53126621">
+<ele>313.3</ele>
+<time>2023-05-07T08:48:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72907868" lon="13.53125146">
+<ele>313.3</ele>
+<time>2023-05-07T08:48:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72901313" lon="13.53123746">
+<ele>313.9</ele>
+<time>2023-05-07T08:48:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>171</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72899997" lon="13.53121726">
+<ele>314.3</ele>
+<time>2023-05-07T08:48:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>171</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7289817" lon="13.53120049">
+<ele>314.5</ele>
+<time>2023-05-07T08:48:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72896117" lon="13.53119521">
+<ele>314.5</ele>
+<time>2023-05-07T08:48:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72890995" lon="13.53123922">
+<ele>314.9</ele>
+<time>2023-05-07T08:49:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72888875" lon="13.53124517">
+<ele>314.9</ele>
+<time>2023-05-07T08:49:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72885388" lon="13.53124542">
+<ele>315.3</ele>
+<time>2023-05-07T08:49:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72881222" lon="13.53123017">
+<ele>315.5</ele>
+<time>2023-05-07T08:49:05Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7287631" lon="13.53121726">
+<ele>315.7</ele>
+<time>2023-05-07T08:49:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72871985" lon="13.53124995">
+<ele>316.1</ele>
+<time>2023-05-07T08:49:09Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72870057" lon="13.53128339">
+<ele>316.1</ele>
+<time>2023-05-07T08:49:10Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72865648" lon="13.53133486">
+<ele>316.3</ele>
+<time>2023-05-07T08:49:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72855607" lon="13.53137216">
+<ele>316.7</ele>
+<time>2023-05-07T08:49:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72854584" lon="13.53137651">
+<ele>316.9</ele>
+<time>2023-05-07T08:49:17Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72851123" lon="13.53140694">
+<ele>317.1</ele>
+<time>2023-05-07T08:49:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72849178" lon="13.53142102">
+<ele>317.1</ele>
+<time>2023-05-07T08:49:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72846613" lon="13.53141566">
+<ele>317.1</ele>
+<time>2023-05-07T08:49:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72838575" lon="13.53135388">
+<ele>317.3</ele>
+<time>2023-05-07T08:49:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72832372" lon="13.53130586">
+<ele>317.7</ele>
+<time>2023-05-07T08:49:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72832682" lon="13.53128649">
+<ele>317.7</ele>
+<time>2023-05-07T08:49:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72831475" lon="13.53116806">
+<ele>317.9</ele>
+<time>2023-05-07T08:49:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72830419" lon="13.53111852">
+<ele>318.1</ele>
+<time>2023-05-07T08:49:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72829372" lon="13.53090235">
+<ele>318.3</ele>
+<time>2023-05-07T08:49:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72826916" lon="13.53064092">
+<ele>318.5</ele>
+<time>2023-05-07T08:49:44Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72826765" lon="13.53036297">
+<ele>318.7</ele>
+<time>2023-05-07T08:49:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72828315" lon="13.53022953">
+<ele>318.7</ele>
+<time>2023-05-07T08:49:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72829648" lon="13.5301603">
+<ele>318.7</ele>
+<time>2023-05-07T08:49:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72832062" lon="13.52990658">
+<ele>318.9</ele>
+<time>2023-05-07T08:49:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72832758" lon="13.52976308">
+<ele>318.8</ele>
+<time>2023-05-07T08:49:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72838675" lon="13.52946745">
+<ele>318.8</ele>
+<time>2023-05-07T08:50:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72842221" lon="13.52934809">
+<ele>318.8</ele>
+<time>2023-05-07T08:50:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72843" lon="13.52931934">
+<ele>318.8</ele>
+<time>2023-05-07T08:50:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7285005" lon="13.52916872">
+<ele>318.8</ele>
+<time>2023-05-07T08:50:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72856914" lon="13.52898357">
+<ele>318.8</ele>
+<time>2023-05-07T08:50:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72859303" lon="13.52892615">
+<ele>318.8</ele>
+<time>2023-05-07T08:50:17Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72862765" lon="13.52868852">
+<ele>319.0</ele>
+<time>2023-05-07T08:50:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7286274" lon="13.52863798">
+<ele>319.0</ele>
+<time>2023-05-07T08:50:23Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72859521" lon="13.52840144">
+<ele>319.0</ele>
+<time>2023-05-07T08:50:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72856101" lon="13.52818108">
+<ele>319.0</ele>
+<time>2023-05-07T08:50:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72854945" lon="13.52791999">
+<ele>319.0</ele>
+<time>2023-05-07T08:50:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72853964" lon="13.52766861">
+<ele>319.0</ele>
+<time>2023-05-07T08:50:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7285124" lon="13.52734306">
+<ele>318.8</ele>
+<time>2023-05-07T08:50:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72853721" lon="13.52717869">
+<ele>318.6</ele>
+<time>2023-05-07T08:50:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72855347" lon="13.5271398">
+<ele>318.6</ele>
+<time>2023-05-07T08:50:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72857191" lon="13.52699169">
+<ele>318.6</ele>
+<time>2023-05-07T08:50:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72860334" lon="13.52678793">
+<ele>318.4</ele>
+<time>2023-05-07T08:51:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72866537" lon="13.52660436">
+<ele>318.2</ele>
+<time>2023-05-07T08:51:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72868398" lon="13.52657955">
+<ele>318.2</ele>
+<time>2023-05-07T08:51:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72879663" lon="13.52650512">
+<ele>318.2</ele>
+<time>2023-05-07T08:51:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7288154" lon="13.52648081">
+<ele>318.2</ele>
+<time>2023-05-07T08:51:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72883032" lon="13.52644888">
+<ele>318.2</ele>
+<time>2023-05-07T08:51:14Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72885673" lon="13.52637671">
+<ele>318.2</ele>
+<time>2023-05-07T08:51:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72889897" lon="13.52625601">
+<ele>318.0</ele>
+<time>2023-05-07T08:51:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72890258" lon="13.52623246">
+<ele>317.8</ele>
+<time>2023-05-07T08:51:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72893359" lon="13.52614964">
+<ele>317.8</ele>
+<time>2023-05-07T08:51:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72896376" lon="13.52611838">
+<ele>317.6</ele>
+<time>2023-05-07T08:51:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72903635" lon="13.52600363">
+<ele>317.6</ele>
+<time>2023-05-07T08:51:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72910483" lon="13.52594085">
+<ele>317.4</ele>
+<time>2023-05-07T08:51:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72911229" lon="13.52592476">
+<ele>317.4</ele>
+<time>2023-05-07T08:51:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72917222" lon="13.52583775">
+<ele>317.2</ele>
+<time>2023-05-07T08:51:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72918035" lon="13.52581697">
+<ele>317.2</ele>
+<time>2023-05-07T08:51:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72920634" lon="13.52573616">
+<ele>317.0</ele>
+<time>2023-05-07T08:51:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7292609" lon="13.52562544">
+<ele>317.0</ele>
+<time>2023-05-07T08:51:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72928781" lon="13.52555654">
+<ele>317.0</ele>
+<time>2023-05-07T08:51:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7293029" lon="13.52553139">
+<ele>316.8</ele>
+<time>2023-05-07T08:51:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72929619" lon="13.52552435">
+<ele>316.8</ele>
+<time>2023-05-07T08:51:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72933609" lon="13.52547029">
+<ele>316.6</ele>
+<time>2023-05-07T08:52:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>148</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72934807" lon="13.52545378">
+<ele>316.6</ele>
+<time>2023-05-07T08:52:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7293417" lon="13.52543592">
+<ele>316.4</ele>
+<time>2023-05-07T08:52:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72934531" lon="13.52542461">
+<ele>316.4</ele>
+<time>2023-05-07T08:52:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72937942" lon="13.5253547">
+<ele>316.0</ele>
+<time>2023-05-07T08:52:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72942175" lon="13.52522177">
+<ele>315.8</ele>
+<time>2023-05-07T08:52:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72945964" lon="13.52520626">
+<ele>315.6</ele>
+<time>2023-05-07T08:52:14Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72947791" lon="13.52515471">
+<ele>315.6</ele>
+<time>2023-05-07T08:52:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72948612" lon="13.52503686">
+<ele>315.2</ele>
+<time>2023-05-07T08:52:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72951479" lon="13.52499512">
+<ele>315.2</ele>
+<time>2023-05-07T08:52:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72963708" lon="13.52490979">
+<ele>314.8</ele>
+<time>2023-05-07T08:52:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72963272" lon="13.52491675">
+<ele>314.8</ele>
+<time>2023-05-07T08:52:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72964027" lon="13.52490921">
+<ele>314.4</ele>
+<time>2023-05-07T08:52:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72960272" lon="13.52479815">
+<ele>314.1</ele>
+<time>2023-05-07T08:52:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72955016" lon="13.5246155">
+<ele>313.7</ele>
+<time>2023-05-07T08:52:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72953851" lon="13.52458097">
+<ele>313.7</ele>
+<time>2023-05-07T08:52:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72950339" lon="13.52446932">
+<ele>313.3</ele>
+<time>2023-05-07T08:52:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72947632" lon="13.52437939">
+<ele>313.1</ele>
+<time>2023-05-07T08:52:44Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72943449" lon="13.52418073">
+<ele>312.9</ele>
+<time>2023-05-07T08:52:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72941354" lon="13.52407982">
+<ele>312.7</ele>
+<time>2023-05-07T08:52:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72937917" lon="13.52394579">
+<ele>312.3</ele>
+<time>2023-05-07T08:52:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72936165" lon="13.52385543">
+<ele>312.1</ele>
+<time>2023-05-07T08:52:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72932444" lon="13.52373775">
+<ele>311.9</ele>
+<time>2023-05-07T08:52:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72926543" lon="13.52359836">
+<ele>311.7</ele>
+<time>2023-05-07T08:53:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72922218" lon="13.52350733">
+<ele>311.5</ele>
+<time>2023-05-07T08:53:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>152</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72920885" lon="13.52346048">
+<ele>311.3</ele>
+<time>2023-05-07T08:53:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>151</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72918178" lon="13.523406">
+<ele>311.1</ele>
+<time>2023-05-07T08:53:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72912386" lon="13.52339518">
+<ele>310.9</ele>
+<time>2023-05-07T08:53:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72899285" lon="13.52343206">
+<ele>310.5</ele>
+<time>2023-05-07T08:53:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72895681" lon="13.52344531">
+<ele>310.5</ele>
+<time>2023-05-07T08:53:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72878766" lon="13.52346609">
+<ele>310.1</ele>
+<time>2023-05-07T08:53:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72866252" lon="13.52337901">
+<ele>309.7</ele>
+<time>2023-05-07T08:53:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72863033" lon="13.52333467">
+<ele>309.7</ele>
+<time>2023-05-07T08:53:23Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7285989" lon="13.52328571">
+<ele>309.5</ele>
+<time>2023-05-07T08:53:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72844685" lon="13.52305261">
+<ele>309.3</ele>
+<time>2023-05-07T08:53:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72840645" lon="13.52302738">
+<ele>309.1</ele>
+<time>2023-05-07T08:53:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7282052" lon="13.52293527">
+<ele>308.7</ele>
+<time>2023-05-07T08:53:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72817578" lon="13.52292697">
+<ele>308.5</ele>
+<time>2023-05-07T08:53:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72811619" lon="13.52290962">
+<ele>308.3</ele>
+<time>2023-05-07T08:53:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72801175" lon="13.52287358">
+<ele>308.1</ele>
+<time>2023-05-07T08:53:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72791686" lon="13.52291473">
+<ele>307.7</ele>
+<time>2023-05-07T08:53:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72789935" lon="13.52295731">
+<ele>307.5</ele>
+<time>2023-05-07T08:53:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72787361" lon="13.52302906">
+<ele>307.3</ele>
+<time>2023-05-07T08:53:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72785325" lon="13.52309855">
+<ele>307.1</ele>
+<time>2023-05-07T08:53:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7278058" lon="13.52334355">
+<ele>306.7</ele>
+<time>2023-05-07T08:53:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72776213" lon="13.52344941">
+<ele>306.5</ele>
+<time>2023-05-07T08:54:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72773791" lon="13.52352669">
+<ele>306.3</ele>
+<time>2023-05-07T08:54:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72773255" lon="13.52356601">
+<ele>306.3</ele>
+<time>2023-05-07T08:54:05Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72770204" lon="13.52381076">
+<ele>305.9</ele>
+<time>2023-05-07T08:54:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72763523" lon="13.52403246">
+<ele>305.7</ele>
+<time>2023-05-07T08:54:17Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72758" lon="13.52416481">
+<ele>305.5</ele>
+<time>2023-05-07T08:54:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72755569" lon="13.52417621">
+<ele>305.3</ele>
+<time>2023-05-07T08:54:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72753993" lon="13.52418568">
+<ele>305.3</ele>
+<time>2023-05-07T08:54:23Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72748419" lon="13.52423379">
+<ele>305.3</ele>
+<time>2023-05-07T08:54:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72745963" lon="13.52427679">
+<ele>305.1</ele>
+<time>2023-05-07T08:54:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72734111" lon="13.52442205">
+<ele>304.9</ele>
+<time>2023-05-07T08:54:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72732108" lon="13.52448693">
+<ele>304.9</ele>
+<time>2023-05-07T08:54:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7273039" lon="13.52454719">
+<ele>304.9</ele>
+<time>2023-05-07T08:54:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72729669" lon="13.52455725">
+<ele>304.7</ele>
+<time>2023-05-07T08:54:40Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72726878" lon="13.5244974">
+<ele>304.7</ele>
+<time>2023-05-07T08:54:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72725796" lon="13.52444049">
+<ele>304.7</ele>
+<time>2023-05-07T08:54:44Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72720206" lon="13.52413598">
+<ele>304.5</ele>
+<time>2023-05-07T08:54:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72718831" lon="13.52408912">
+<ele>304.3</ele>
+<time>2023-05-07T08:54:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72719359" lon="13.52389969">
+<ele>304.3</ele>
+<time>2023-05-07T08:54:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72718797" lon="13.52379165">
+<ele>304.1</ele>
+<time>2023-05-07T08:54:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>154</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72716224" lon="13.52365787">
+<ele>304.1</ele>
+<time>2023-05-07T08:55:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>155</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72716283" lon="13.52346576">
+<ele>303.8</ele>
+<time>2023-05-07T08:55:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72718278" lon="13.52338353">
+<ele>303.8</ele>
+<time>2023-05-07T08:55:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72723399" lon="13.52311405">
+<ele>303.6</ele>
+<time>2023-05-07T08:55:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72727137" lon="13.52286536">
+<ele>303.2</ele>
+<time>2023-05-07T08:55:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.727279" lon="13.52281105">
+<ele>303.2</ele>
+<time>2023-05-07T08:55:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7272842" lon="13.52265783">
+<ele>303.0</ele>
+<time>2023-05-07T08:55:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72729903" lon="13.52240562">
+<ele>302.8</ele>
+<time>2023-05-07T08:55:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7273054" lon="13.52225047">
+<ele>302.6</ele>
+<time>2023-05-07T08:55:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72731571" lon="13.52211552">
+<ele>302.4</ele>
+<time>2023-05-07T08:55:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72732125" lon="13.52204687">
+<ele>302.2</ele>
+<time>2023-05-07T08:55:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72733172" lon="13.52187772">
+<ele>302.0</ele>
+<time>2023-05-07T08:55:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72735142" lon="13.52174386">
+<ele>301.8</ele>
+<time>2023-05-07T08:55:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72738269" lon="13.52162316">
+<ele>301.6</ele>
+<time>2023-05-07T08:55:44Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72739526" lon="13.52157539">
+<ele>301.4</ele>
+<time>2023-05-07T08:55:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72739174" lon="13.52153608">
+<ele>301.4</ele>
+<time>2023-05-07T08:55:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72739283" lon="13.52150121">
+<ele>301.2</ele>
+<time>2023-05-07T08:55:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72740926" lon="13.52138462">
+<ele>301.2</ele>
+<time>2023-05-07T08:55:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72740247" lon="13.52127733">
+<ele>301.0</ele>
+<time>2023-05-07T08:55:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7273541" lon="13.52099645">
+<ele>300.8</ele>
+<time>2023-05-07T08:55:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72737212" lon="13.52093367">
+<ele>300.8</ele>
+<time>2023-05-07T08:55:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72740909" lon="13.52083024">
+<ele>300.6</ele>
+<time>2023-05-07T08:56:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72741001" lon="13.52082211">
+<ele>300.4</ele>
+<time>2023-05-07T08:56:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72743625" lon="13.52081465">
+<ele>300.2</ele>
+<time>2023-05-07T08:56:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72748335" lon="13.52084943">
+<ele>300.2</ele>
+<time>2023-05-07T08:56:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72757446" lon="13.52084205">
+<ele>299.8</ele>
+<time>2023-05-07T08:56:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72770614" lon="13.52091355">
+<ele>299.6</ele>
+<time>2023-05-07T08:56:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72781033" lon="13.52098438">
+<ele>299.4</ele>
+<time>2023-05-07T08:56:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72790966" lon="13.52105781">
+<ele>299.2</ele>
+<time>2023-05-07T08:56:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72801477" lon="13.52106191">
+<ele>299.2</ele>
+<time>2023-05-07T08:56:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72803958" lon="13.5210656">
+<ele>299.2</ele>
+<time>2023-05-07T08:56:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72822054" lon="13.52107356">
+<ele>299.0</ele>
+<time>2023-05-07T08:56:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72838156" lon="13.52113567">
+<ele>298.8</ele>
+<time>2023-05-07T08:56:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7285233" lon="13.52125654">
+<ele>298.6</ele>
+<time>2023-05-07T08:56:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7286683" lon="13.52147581">
+<ele>298.6</ele>
+<time>2023-05-07T08:57:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72868901" lon="13.52149702">
+<ele>298.6</ele>
+<time>2023-05-07T08:57:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72882882" lon="13.52160405">
+<ele>298.4</ele>
+<time>2023-05-07T08:57:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72893007" lon="13.52166264">
+<ele>298.4</ele>
+<time>2023-05-07T08:57:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7289496" lon="13.52165946">
+<ele>298.2</ele>
+<time>2023-05-07T08:57:14Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72897458" lon="13.52166172">
+<ele>298.2</ele>
+<time>2023-05-07T08:57:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72907759" lon="13.52165342">
+<ele>298.2</ele>
+<time>2023-05-07T08:57:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72909243" lon="13.52165803">
+<ele>298.2</ele>
+<time>2023-05-07T08:57:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72914993" lon="13.52163616">
+<ele>298.2</ele>
+<time>2023-05-07T08:57:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72917499" lon="13.52164772">
+<ele>298.0</ele>
+<time>2023-05-07T08:57:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72922503" lon="13.52167731">
+<ele>298.0</ele>
+<time>2023-05-07T08:57:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72935017" lon="13.52166843">
+<ele>297.7</ele>
+<time>2023-05-07T08:57:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7294645" lon="13.52164538">
+<ele>296.7</ele>
+<time>2023-05-07T08:57:40Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.729507" lon="13.52162383">
+<ele>296.3</ele>
+<time>2023-05-07T08:57:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72958805" lon="13.52157011">
+<ele>296.7</ele>
+<time>2023-05-07T08:57:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72968695" lon="13.52152803">
+<ele>296.9</ele>
+<time>2023-05-07T08:57:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72980422" lon="13.52154622">
+<ele>298.3</ele>
+<time>2023-05-07T08:57:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72985208" lon="13.521552">
+<ele>298.9</ele>
+<time>2023-05-07T08:57:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7299183" lon="13.52153616">
+<ele>299.5</ele>
+<time>2023-05-07T08:57:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.729997" lon="13.52149869">
+<ele>300.1</ele>
+<time>2023-05-07T08:58:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.730069" lon="13.52143558">
+<ele>300.1</ele>
+<time>2023-05-07T08:58:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73008795" lon="13.52140859">
+<ele>300.1</ele>
+<time>2023-05-07T08:58:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73009373" lon="13.52139593">
+<ele>300.1</ele>
+<time>2023-05-07T08:58:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73011317" lon="13.52144002">
+<ele>300.1</ele>
+<time>2023-05-07T08:58:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7302011" lon="13.52158888">
+<ele>300.1</ele>
+<time>2023-05-07T08:58:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7302669" lon="13.52175065">
+<ele>300.1</ele>
+<time>2023-05-07T08:58:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73038257" lon="13.52195718">
+<ele>300.3</ele>
+<time>2023-05-07T08:58:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73049883" lon="13.52228416">
+<ele>300.5</ele>
+<time>2023-05-07T08:58:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73053973" lon="13.52241534">
+<ele>300.5</ele>
+<time>2023-05-07T08:58:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73054115" lon="13.52245792">
+<ele>300.5</ele>
+<time>2023-05-07T08:58:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73053638" lon="13.52249639">
+<ele>300.5</ele>
+<time>2023-05-07T08:58:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73051366" lon="13.522587">
+<ele>300.7</ele>
+<time>2023-05-07T08:58:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73048407" lon="13.52261994">
+<ele>300.7</ele>
+<time>2023-05-07T08:58:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73044979" lon="13.52267786">
+<ele>300.7</ele>
+<time>2023-05-07T08:58:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7303617" lon="13.52282069">
+<ele>300.7</ele>
+<time>2023-05-07T08:58:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73034544" lon="13.52289872">
+<ele>300.7</ele>
+<time>2023-05-07T08:58:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73035441" lon="13.52306544">
+<ele>300.7</ele>
+<time>2023-05-07T08:58:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73029506" lon="13.52335797">
+<ele>300.7</ele>
+<time>2023-05-07T08:59:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73021124" lon="13.52354371">
+<ele>300.7</ele>
+<time>2023-05-07T08:59:09Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.73011602" lon="13.52366609">
+<ele>300.7</ele>
+<time>2023-05-07T08:59:14Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7299328" lon="13.52364765">
+<ele>300.9</ele>
+<time>2023-05-07T08:59:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72975711" lon="13.52361043">
+<ele>300.9</ele>
+<time>2023-05-07T08:59:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72970397" lon="13.52364773">
+<ele>300.9</ele>
+<time>2023-05-07T08:59:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72965217" lon="13.52371587">
+<ele>300.9</ele>
+<time>2023-05-07T08:59:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72954052" lon="13.52388971">
+<ele>301.1</ele>
+<time>2023-05-07T08:59:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72947146" lon="13.52414436">
+<ele>301.1</ele>
+<time>2023-05-07T08:59:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72937666" lon="13.52427796">
+<ele>301.3</ele>
+<time>2023-05-07T08:59:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72929091" lon="13.5244415">
+<ele>301.3</ele>
+<time>2023-05-07T08:59:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72922352" lon="13.52456102">
+<ele>301.5</ele>
+<time>2023-05-07T08:59:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7292143" lon="13.52459455">
+<ele>301.5</ele>
+<time>2023-05-07T08:59:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72920776" lon="13.52463411">
+<ele>301.5</ele>
+<time>2023-05-07T08:59:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72919175" lon="13.52467502">
+<ele>301.7</ele>
+<time>2023-05-07T08:59:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72915588" lon="13.5247233">
+<ele>301.7</ele>
+<time>2023-05-07T09:00:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72912386" lon="13.52478172">
+<ele>301.7</ele>
+<time>2023-05-07T09:00:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72910433" lon="13.52484006">
+<ele>301.9</ele>
+<time>2023-05-07T09:00:05Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72906896" lon="13.52493653">
+<ele>302.0</ele>
+<time>2023-05-07T09:00:10Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72905856" lon="13.52494542">
+<ele>302.0</ele>
+<time>2023-05-07T09:00:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7289584" lon="13.52507039">
+<ele>302.2</ele>
+<time>2023-05-07T09:00:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72894767" lon="13.52511071">
+<ele>302.2</ele>
+<time>2023-05-07T09:00:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72893409" lon="13.52516603">
+<ele>302.4</ele>
+<time>2023-05-07T09:00:22Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72892529" lon="13.52519771">
+<ele>302.6</ele>
+<time>2023-05-07T09:00:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72890165" lon="13.52525571">
+<ele>302.8</ele>
+<time>2023-05-07T09:00:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72886796" lon="13.52533224">
+<ele>303.2</ele>
+<time>2023-05-07T09:00:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72886477" lon="13.52536116">
+<ele>303.2</ele>
+<time>2023-05-07T09:00:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72882815" lon="13.52543006">
+<ele>303.6</ele>
+<time>2023-05-07T09:00:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72881901" lon="13.52544732">
+<ele>303.6</ele>
+<time>2023-05-07T09:00:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72876394" lon="13.52556987">
+<ele>304.0</ele>
+<time>2023-05-07T09:00:44Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7287398" lon="13.52557364">
+<ele>304.0</ele>
+<time>2023-05-07T09:00:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72869823" lon="13.52559367">
+<ele>304.2</ele>
+<time>2023-05-07T09:00:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72865623" lon="13.52564815">
+<ele>304.2</ele>
+<time>2023-05-07T09:00:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72864609" lon="13.52568042">
+<ele>304.2</ele>
+<time>2023-05-07T09:00:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7285559" lon="13.52580389">
+<ele>304.6</ele>
+<time>2023-05-07T09:00:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7285378" lon="13.52583147">
+<ele>304.6</ele>
+<time>2023-05-07T09:00:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72844769" lon="13.52596256">
+<ele>305.0</ele>
+<time>2023-05-07T09:01:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72836563" lon="13.52616523">
+<ele>305.6</ele>
+<time>2023-05-07T09:01:09Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72831752" lon="13.52638509">
+<ele>306.0</ele>
+<time>2023-05-07T09:01:14Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72828056" lon="13.52645743">
+<ele>306.2</ele>
+<time>2023-05-07T09:01:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72818676" lon="13.52671819">
+<ele>306.6</ele>
+<time>2023-05-07T09:01:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72813714" lon="13.52692732">
+<ele>307.0</ele>
+<time>2023-05-07T09:01:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72806246" lon="13.5272439">
+<ele>307.4</ele>
+<time>2023-05-07T09:01:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72802021" lon="13.52741975">
+<ele>307.6</ele>
+<time>2023-05-07T09:01:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72797663" lon="13.52755068">
+<ele>307.8</ele>
+<time>2023-05-07T09:01:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72788971" lon="13.52782167">
+<ele>308.4</ele>
+<time>2023-05-07T09:01:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72787873" lon="13.5278541">
+<ele>308.4</ele>
+<time>2023-05-07T09:01:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7278452" lon="13.5279137">
+<ele>308.6</ele>
+<time>2023-05-07T09:01:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>172</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72780606" lon="13.52796424">
+<ele>308.8</ele>
+<time>2023-05-07T09:01:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>174</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72775618" lon="13.52808326">
+<ele>309.0</ele>
+<time>2023-05-07T09:01:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>176</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72775585" lon="13.52812467">
+<ele>309.2</ele>
+<time>2023-05-07T09:01:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>177</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72776105" lon="13.52819902">
+<ele>309.2</ele>
+<time>2023-05-07T09:02:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>178</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72774923" lon="13.5282566">
+<ele>309.4</ele>
+<time>2023-05-07T09:02:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>177</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72774604" lon="13.52830002">
+<ele>309.6</ele>
+<time>2023-05-07T09:02:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>175</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72774872" lon="13.52839918">
+<ele>309.8</ele>
+<time>2023-05-07T09:02:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>175</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72775166" lon="13.52840974">
+<ele>310.0</ele>
+<time>2023-05-07T09:02:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>174</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72773506" lon="13.52841485">
+<ele>310.0</ele>
+<time>2023-05-07T09:02:10Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>172</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72772257" lon="13.52840982">
+<ele>310.2</ele>
+<time>2023-05-07T09:02:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>169</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72770832" lon="13.52840706">
+<ele>310.2</ele>
+<time>2023-05-07T09:02:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72769944" lon="13.5284063">
+<ele>310.4</ele>
+<time>2023-05-07T09:02:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72766549" lon="13.52832969">
+<ele>310.6</ele>
+<time>2023-05-07T09:02:17Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72765719" lon="13.5283074">
+<ele>310.8</ele>
+<time>2023-05-07T09:02:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72759726" lon="13.52825526">
+<ele>310.8</ele>
+<time>2023-05-07T09:02:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72746156" lon="13.52823607">
+<ele>311.0</ele>
+<time>2023-05-07T09:02:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72732066" lon="13.52813892">
+<ele>311.2</ele>
+<time>2023-05-07T09:02:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72726601" lon="13.52808813">
+<ele>311.4</ele>
+<time>2023-05-07T09:02:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72719837" lon="13.52806935">
+<ele>311.4</ele>
+<time>2023-05-07T09:02:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72714078" lon="13.52804152">
+<ele>311.3</ele>
+<time>2023-05-07T09:02:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72707758" lon="13.52797447">
+<ele>311.3</ele>
+<time>2023-05-07T09:02:44Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72701866" lon="13.52794991">
+<ele>311.3</ele>
+<time>2023-05-07T09:02:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72696418" lon="13.52788394">
+<ele>311.3</ele>
+<time>2023-05-07T09:02:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>170</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72694423" lon="13.52786332">
+<ele>311.3</ele>
+<time>2023-05-07T09:02:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>174</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72692" lon="13.5278246">
+<ele>311.3</ele>
+<time>2023-05-07T09:02:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>177</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72682001" lon="13.5277464">
+<ele>311.3</ele>
+<time>2023-05-07T09:02:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>180</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72679838" lon="13.52773181">
+<ele>311.3</ele>
+<time>2023-05-07T09:02:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>179</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72665589" lon="13.52758697">
+<ele>311.1</ele>
+<time>2023-05-07T09:03:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>180</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72658951" lon="13.52750642">
+<ele>310.9</ele>
+<time>2023-05-07T09:03:05Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>179</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72648834" lon="13.52735613">
+<ele>310.7</ele>
+<time>2023-05-07T09:03:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>176</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72633134" lon="13.52717425">
+<ele>310.5</ele>
+<time>2023-05-07T09:03:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>176</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72621769" lon="13.52701508">
+<ele>310.3</ele>
+<time>2023-05-07T09:03:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>178</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72607704" lon="13.5268533">
+<ele>309.7</ele>
+<time>2023-05-07T09:03:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>177</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72591401" lon="13.52667343">
+<ele>309.3</ele>
+<time>2023-05-07T09:03:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>178</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72581619" lon="13.52656983">
+<ele>309.1</ele>
+<time>2023-05-07T09:03:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>175</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72575509" lon="13.52646371">
+<ele>308.9</ele>
+<time>2023-05-07T09:03:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>175</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72573614" lon="13.52643304">
+<ele>308.7</ele>
+<time>2023-05-07T09:03:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>173</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72568795" lon="13.52633723">
+<ele>308.3</ele>
+<time>2023-05-07T09:03:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72564068" lon="13.52630571">
+<ele>308.3</ele>
+<time>2023-05-07T09:03:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72543289" lon="13.52620203">
+<ele>307.9</ele>
+<time>2023-05-07T09:03:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7254007" lon="13.52620186">
+<ele>307.9</ele>
+<time>2023-05-07T09:03:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72533935" lon="13.52615945">
+<ele>307.7</ele>
+<time>2023-05-07T09:03:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72525536" lon="13.52605627">
+<ele>307.5</ele>
+<time>2023-05-07T09:03:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72511521" lon="13.52587095">
+<ele>307.1</ele>
+<time>2023-05-07T09:04:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72508554" lon="13.52583331">
+<ele>306.9</ele>
+<time>2023-05-07T09:04:05Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72503575" lon="13.52584404">
+<ele>306.9</ele>
+<time>2023-05-07T09:04:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7250215" lon="13.52585142">
+<ele>306.7</ele>
+<time>2023-05-07T09:04:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72501145" lon="13.52586483">
+<ele>306.7</ele>
+<time>2023-05-07T09:04:10Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72500943" lon="13.52587773">
+<ele>306.5</ele>
+<time>2023-05-07T09:04:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72507506" lon="13.52602727">
+<ele>306.3</ele>
+<time>2023-05-07T09:04:19Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72518738" lon="13.52622617">
+<ele>305.9</ele>
+<time>2023-05-07T09:04:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72519811" lon="13.52643949">
+<ele>305.7</ele>
+<time>2023-05-07T09:04:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72519895" lon="13.52652348">
+<ele>305.7</ele>
+<time>2023-05-07T09:04:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7251764" lon="13.52659288">
+<ele>305.5</ele>
+<time>2023-05-07T09:04:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72509954" lon="13.52690703">
+<ele>305.5</ele>
+<time>2023-05-07T09:04:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7250873" lon="13.52695682">
+<ele>305.5</ele>
+<time>2023-05-07T09:04:40Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72500256" lon="13.52721498">
+<ele>305.5</ele>
+<time>2023-05-07T09:04:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72496426" lon="13.52742713">
+<ele>305.3</ele>
+<time>2023-05-07T09:04:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72504975" lon="13.52767557">
+<ele>305.3</ele>
+<time>2023-05-07T09:04:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72513097" lon="13.52791035">
+<ele>305.1</ele>
+<time>2023-05-07T09:05:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72521052" lon="13.52817144">
+<ele>305.1</ele>
+<time>2023-05-07T09:05:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72524974" lon="13.5283794">
+<ele>305.0</ele>
+<time>2023-05-07T09:05:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72529526" lon="13.52862448">
+<ele>305.0</ele>
+<time>2023-05-07T09:05:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72537346" lon="13.52888005">
+<ele>305.0</ele>
+<time>2023-05-07T09:05:24Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72534479" lon="13.52915682">
+<ele>305.2</ele>
+<time>2023-05-07T09:05:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7253085" lon="13.52924642">
+<ele>305.2</ele>
+<time>2023-05-07T09:05:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72530456" lon="13.5293377">
+<ele>305.2</ele>
+<time>2023-05-07T09:05:35Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72529752" lon="13.5293807">
+<ele>305.2</ele>
+<time>2023-05-07T09:05:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72529802" lon="13.52945119">
+<ele>305.4</ele>
+<time>2023-05-07T09:05:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72529065" lon="13.52943518">
+<ele>305.4</ele>
+<time>2023-05-07T09:05:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72528503" lon="13.52941062">
+<ele>305.4</ele>
+<time>2023-05-07T09:05:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7252427" lon="13.52926377">
+<ele>305.4</ele>
+<time>2023-05-07T09:05:48Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72517975" lon="13.52915229">
+<ele>305.6</ele>
+<time>2023-05-07T09:05:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7251075" lon="13.52910074">
+<ele>305.6</ele>
+<time>2023-05-07T09:05:56Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72499862" lon="13.52901869">
+<ele>305.6</ele>
+<time>2023-05-07T09:06:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72496107" lon="13.52900276">
+<ele>305.6</ele>
+<time>2023-05-07T09:06:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72492738" lon="13.52898985">
+<ele>305.6</ele>
+<time>2023-05-07T09:06:05Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72491137" lon="13.52896362">
+<ele>305.6</ele>
+<time>2023-05-07T09:06:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72487784" lon="13.52893202">
+<ele>305.6</ele>
+<time>2023-05-07T09:06:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72482126" lon="13.52889866">
+<ele>305.4</ele>
+<time>2023-05-07T09:06:10Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72479653" lon="13.52886873">
+<ele>305.4</ele>
+<time>2023-05-07T09:06:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72467625" lon="13.52873932">
+<ele>305.4</ele>
+<time>2023-05-07T09:06:17Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72458204" lon="13.52869405">
+<ele>305.4</ele>
+<time>2023-05-07T09:06:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72445195" lon="13.52859615">
+<ele>305.2</ele>
+<time>2023-05-07T09:06:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72433737" lon="13.52839465">
+<ele>305.0</ele>
+<time>2023-05-07T09:06:33Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72428465" lon="13.52817228">
+<ele>305.0</ele>
+<time>2023-05-07T09:06:38Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72427065" lon="13.52815133">
+<ele>304.8</ele>
+<time>2023-05-07T09:06:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72423796" lon="13.5281323">
+<ele>304.8</ele>
+<time>2023-05-07T09:06:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72422229" lon="13.5281577">
+<ele>304.8</ele>
+<time>2023-05-07T09:06:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7240917" lon="13.52825962">
+<ele>304.6</ele>
+<time>2023-05-07T09:06:49Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72407359" lon="13.52826624">
+<ele>304.6</ele>
+<time>2023-05-07T09:06:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72404334" lon="13.52833992">
+<ele>304.4</ele>
+<time>2023-05-07T09:06:54Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72403403" lon="13.52837252">
+<ele>304.4</ele>
+<time>2023-05-07T09:06:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72399724" lon="13.52854586">
+<ele>304.2</ele>
+<time>2023-05-07T09:06:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72395189" lon="13.5286472">
+<ele>304.2</ele>
+<time>2023-05-07T09:07:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>158</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72394485" lon="13.52867947">
+<ele>304.0</ele>
+<time>2023-05-07T09:07:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72392968" lon="13.52872062">
+<ele>304.0</ele>
+<time>2023-05-07T09:07:06Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72391803" lon="13.52879363">
+<ele>303.8</ele>
+<time>2023-05-07T09:07:10Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72390881" lon="13.52882372">
+<ele>303.8</ele>
+<time>2023-05-07T09:07:12Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72386497" lon="13.52889765">
+<ele>303.8</ele>
+<time>2023-05-07T09:07:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72380571" lon="13.52894275">
+<ele>303.8</ele>
+<time>2023-05-07T09:07:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7238006" lon="13.52896831">
+<ele>303.8</ele>
+<time>2023-05-07T09:07:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72380923" lon="13.52904601">
+<ele>303.8</ele>
+<time>2023-05-07T09:07:23Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>157</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72380856" lon="13.52910988">
+<ele>303.8</ele>
+<time>2023-05-07T09:07:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72380336" lon="13.52913653">
+<ele>303.8</ele>
+<time>2023-05-07T09:07:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>153</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72377377" lon="13.5292911">
+<ele>303.6</ele>
+<time>2023-05-07T09:07:31Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72375827" lon="13.52939746">
+<ele>303.8</ele>
+<time>2023-05-07T09:07:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>156</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72373036" lon="13.52954549">
+<ele>303.6</ele>
+<time>2023-05-07T09:07:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72370814" lon="13.52960869">
+<ele>303.6</ele>
+<time>2023-05-07T09:07:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72361846" lon="13.52974087">
+<ele>303.5</ele>
+<time>2023-05-07T09:07:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72360538" lon="13.5297635">
+<ele>303.3</ele>
+<time>2023-05-07T09:07:47Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7235359" lon="13.52992946">
+<ele>303.3</ele>
+<time>2023-05-07T09:07:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72352542" lon="13.52994891">
+<ele>303.1</ele>
+<time>2023-05-07T09:07:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72347764" lon="13.52999954">
+<ele>303.1</ele>
+<time>2023-05-07T09:07:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7234509" lon="13.53004597">
+<ele>303.1</ele>
+<time>2023-05-07T09:07:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72344017" lon="13.53007464">
+<ele>302.9</ele>
+<time>2023-05-07T09:07:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7234224" lon="13.53012652">
+<ele>302.9</ele>
+<time>2023-05-07T09:08:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72337195" lon="13.53015661">
+<ele>302.9</ele>
+<time>2023-05-07T09:08:02Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72325988" lon="13.53029307">
+<ele>302.7</ele>
+<time>2023-05-07T09:08:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72318972" lon="13.53050957">
+<ele>302.5</ele>
+<time>2023-05-07T09:08:14Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72318344" lon="13.53060521">
+<ele>302.5</ele>
+<time>2023-05-07T09:08:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7231282" lon="13.53081233">
+<ele>302.3</ele>
+<time>2023-05-07T09:08:20Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>159</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72309928" lon="13.5309648">
+<ele>302.1</ele>
+<time>2023-05-07T09:08:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72308168" lon="13.53098039">
+<ele>300.1</ele>
+<time>2023-05-07T09:08:26Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72305804" lon="13.53099774">
+<ele>299.1</ele>
+<time>2023-05-07T09:08:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7229904" lon="13.53102556">
+<ele>298.3</ele>
+<time>2023-05-07T09:08:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72288278" lon="13.53114509">
+<ele>298.9</ele>
+<time>2023-05-07T09:08:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72279418" lon="13.53119588">
+<ele>299.5</ele>
+<time>2023-05-07T09:08:40Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72276493" lon="13.53119647">
+<ele>299.9</ele>
+<time>2023-05-07T09:08:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>161</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7226071" lon="13.53120234">
+<ele>300.1</ele>
+<time>2023-05-07T09:08:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>160</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72239193" lon="13.53122698">
+<ele>300.5</ele>
+<time>2023-05-07T09:08:53Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72220502" lon="13.53120821">
+<ele>299.5</ele>
+<time>2023-05-07T09:08:58Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72216235" lon="13.53121709">
+<ele>299.3</ele>
+<time>2023-05-07T09:09:00Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72214324" lon="13.53122044">
+<ele>298.9</ele>
+<time>2023-05-07T09:09:01Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72208616" lon="13.53117904">
+<ele>297.9</ele>
+<time>2023-05-07T09:09:03Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72204828" lon="13.53116051">
+<ele>297.7</ele>
+<time>2023-05-07T09:09:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72193361" lon="13.53108332">
+<ele>298.7</ele>
+<time>2023-05-07T09:09:10Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72174083" lon="13.53104099">
+<ele>298.7</ele>
+<time>2023-05-07T09:09:17Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72171903" lon="13.53103537">
+<ele>298.7</ele>
+<time>2023-05-07T09:09:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.7216332" lon="13.53098885">
+<ele>298.7</ele>
+<time>2023-05-07T09:09:23Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72159322" lon="13.53097879">
+<ele>298.7</ele>
+<time>2023-05-07T09:09:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72156565" lon="13.53098567">
+<ele>298.7</ele>
+<time>2023-05-07T09:09:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72153614" lon="13.53100209">
+<ele>298.7</ele>
+<time>2023-05-07T09:09:30Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72152424" lon="13.53100813">
+<ele>298.7</ele>
+<time>2023-05-07T09:09:31Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72149004" lon="13.53102297">
+<ele>298.5</ele>
+<time>2023-05-07T09:09:34Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72143279" lon="13.53094242">
+<ele>298.5</ele>
+<time>2023-05-07T09:09:37Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72139759" lon="13.53085265">
+<ele>298.5</ele>
+<time>2023-05-07T09:09:39Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72139289" lon="13.53074603">
+<ele>298.5</ele>
+<time>2023-05-07T09:09:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>162</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72137588" lon="13.53066497">
+<ele>298.3</ele>
+<time>2023-05-07T09:09:43Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72134705" lon="13.53051678">
+<ele>298.3</ele>
+<time>2023-05-07T09:09:46Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72132567" lon="13.53031897">
+<ele>298.3</ele>
+<time>2023-05-07T09:09:51Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72132383" lon="13.5300961">
+<ele>298.3</ele>
+<time>2023-05-07T09:09:55Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72139256" lon="13.52997757">
+<ele>298.1</ele>
+<time>2023-05-07T09:09:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72143983" lon="13.52978303">
+<ele>298.1</ele>
+<time>2023-05-07T09:10:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72147411" lon="13.5296537">
+<ele>298.1</ele>
+<time>2023-05-07T09:10:07Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72148283" lon="13.52960466">
+<ele>298.1</ele>
+<time>2023-05-07T09:10:08Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72151552" lon="13.52952839">
+<ele>298.1</ele>
+<time>2023-05-07T09:10:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72154444" lon="13.52951565">
+<ele>297.9</ele>
+<time>2023-05-07T09:10:13Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72157696" lon="13.5295071">
+<ele>297.9</ele>
+<time>2023-05-07T09:10:15Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72158769" lon="13.52947441">
+<ele>297.8</ele>
+<time>2023-05-07T09:10:17Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72158241" lon="13.52945203">
+<ele>297.8</ele>
+<time>2023-05-07T09:10:18Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72156472" lon="13.52924575">
+<ele>297.8</ele>
+<time>2023-05-07T09:10:23Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72155819" lon="13.52899488">
+<ele>297.8</ele>
+<time>2023-05-07T09:10:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>163</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72153715" lon="13.52874602">
+<ele>297.8</ele>
+<time>2023-05-07T09:10:31Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72142609" lon="13.52842843">
+<ele>297.8</ele>
+<time>2023-05-07T09:10:36Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>164</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72129499" lon="13.52816231">
+<ele>297.6</ele>
+<time>2023-05-07T09:10:41Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72126256" lon="13.5281147">
+<ele>297.6</ele>
+<time>2023-05-07T09:10:42Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72117505" lon="13.52797329">
+<ele>297.6</ele>
+<time>2023-05-07T09:10:45Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>165</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72107916" lon="13.52779468">
+<ele>297.6</ele>
+<time>2023-05-07T09:10:50Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72101261" lon="13.52769795">
+<ele>297.6</ele>
+<time>2023-05-07T09:10:52Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72086995" lon="13.527448">
+<ele>297.6</ele>
+<time>2023-05-07T09:10:57Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72081773" lon="13.52737474">
+<ele>297.6</ele>
+<time>2023-05-07T09:10:59Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72069083" lon="13.52731766">
+<ele>297.6</ele>
+<time>2023-05-07T09:11:04Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72050072" lon="13.5272553">
+<ele>297.8</ele>
+<time>2023-05-07T09:11:11Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>167</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72034876" lon="13.52724985">
+<ele>298.0</ele>
+<time>2023-05-07T09:11:16Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>168</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72018481" lon="13.52739402">
+<ele>298.4</ele>
+<time>2023-05-07T09:11:21Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72006185" lon="13.52755361">
+<ele>298.6</ele>
+<time>2023-05-07T09:11:25Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72004676" lon="13.52766694">
+<ele>298.8</ele>
+<time>2023-05-07T09:11:27Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72003972" lon="13.52772142">
+<ele>298.8</ele>
+<time>2023-05-07T09:11:28Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72003586" lon="13.52777707">
+<ele>298.8</ele>
+<time>2023-05-07T09:11:29Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+<trkpt lat="57.72003276" lon="13.52786173">
+<ele>299.0</ele>
+<time>2023-05-07T09:11:32Z</time>
+<extensions>
+<tp1:TrackPointExtension>
+<tp1:hr>166</tp1:hr>
+</tp1:TrackPointExtension>
+</extensions>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>
+
