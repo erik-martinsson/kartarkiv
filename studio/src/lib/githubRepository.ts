@@ -30,6 +30,12 @@ type GitHubObject = {
   sha?: string;
 };
 
+type GitHubBlob = {
+  sha?: string;
+  content?: string;
+  encoding?: string;
+};
+
 export type GitHubPublishResult = {
   commitSha: string;
   commitUrl: string;
@@ -48,12 +54,17 @@ function requireEnvironmentVariable(name: string): string {
   return value;
 }
 
+function normalizedBranch(): string {
+  const raw = process.env.GITHUB_BRANCH?.trim() || "main";
+  return raw.split(/\r?\n/, 1)[0].trim() || "main";
+}
+
 function configuration(): GitHubConfiguration {
   return {
     token: requireEnvironmentVariable("GITHUB_TOKEN"),
     owner: requireEnvironmentVariable("GITHUB_OWNER"),
     repo: requireEnvironmentVariable("GITHUB_REPO"),
-    branch: process.env.GITHUB_BRANCH?.trim() || "main",
+    branch: normalizedBranch(),
   };
 }
 
@@ -153,8 +164,67 @@ function targetAsBase64(target: RepositoryFileTarget): string {
     : Buffer.from(target.content).toString("base64");
 }
 
+function blobApiBase(config: GitHubConfiguration): string {
+  return `/repos/${encodeURIComponent(config.owner)}/${encodeURIComponent(
+    config.repo,
+  )}/git/blobs`;
+}
+
 export function shouldPublishToGitHub(): boolean {
   return process.env.VERCEL === "1";
+}
+
+/**
+ * Lagrar en uppladdningsdel som en fristående Git-blob.
+ * Blobben behöver inte ligga i ett filträd och kan därför användas som
+ * tillfällig lagring tills alla delar av filen har laddats upp.
+ */
+export async function createTemporaryGitHubBlob(
+  content: ArrayBuffer,
+): Promise<string> {
+  const config = configuration();
+  const blob = await githubRequest<GitHubObject>(
+    config,
+    blobApiBase(config),
+    {
+      method: "POST",
+      body: JSON.stringify({
+        content: Buffer.from(content).toString("base64"),
+        encoding: "base64",
+      }),
+    },
+  );
+
+  if (!blob.sha) {
+    throw new Error("GitHub skapade ingen tillfällig blob för uppladdningen.");
+  }
+
+  return blob.sha;
+}
+
+/** Läser tillbaka en tidigare uppladdad Git-blob. */
+export async function readTemporaryGitHubBlob(
+  sha: string,
+): Promise<ArrayBuffer> {
+  if (!/^[0-9a-f]{40}$/i.test(sha)) {
+    throw new Error("Ogiltig GitHub-referens för uppladdningsdel.");
+  }
+
+  const config = configuration();
+  const blob = await githubRequest<GitHubBlob>(
+    config,
+    `${blobApiBase(config)}/${encodeURIComponent(sha)}`,
+  );
+
+  if (blob.encoding !== "base64" || typeof blob.content !== "string") {
+    throw new Error("GitHub returnerade uppladdningsdelen i ett oväntat format.");
+  }
+
+  const buffer = Buffer.from(blob.content.replace(/\s+/g, ""), "base64");
+  return buffer.buffer.slice(
+    buffer.byteOffset,
+    buffer.byteOffset + buffer.byteLength,
+  ) as ArrayBuffer;
 }
 
 export async function publishFilesToGitHub(

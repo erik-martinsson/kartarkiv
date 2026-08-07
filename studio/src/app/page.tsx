@@ -253,8 +253,119 @@ type CreateRaceResponse = {
   }>;
   conflicts?: string[];
   nextStep?: string;
+  commitSha?: string;
+  commitUrl?: string;
   error?: string;
 };
+
+type UploadManifest = {
+  chunkRefs: string[];
+  byteLength: number;
+};
+
+type UploadChunkResponse = {
+  success?: boolean;
+  ref?: string;
+  error?: string;
+};
+
+const UPLOAD_CHUNK_BYTES = 2_000_000;
+
+async function readJsonResponse<T>(
+  response: Response,
+  fallbackMessage: string,
+): Promise<T> {
+  const text = await response.text();
+
+  if (!text) {
+    if (!response.ok) {
+      throw new Error(fallbackMessage);
+    }
+    return {} as T;
+  }
+
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    throw new Error(
+      response.ok
+        ? fallbackMessage
+        : `${fallbackMessage} (HTTP ${response.status}: ${text.slice(0, 160)})`,
+    );
+  }
+}
+
+async function uploadFileInChunks(options: {
+  file: File;
+  fileKey: "mapImage" | "routeImage" | "gpxFile";
+  uploadId: string;
+  label: string;
+  onProgress: (message: string) => void;
+}): Promise<UploadManifest> {
+  const {
+    file,
+    fileKey,
+    uploadId,
+    label,
+    onProgress,
+  } = options;
+
+  const totalChunks = Math.ceil(
+    file.size / UPLOAD_CHUNK_BYTES,
+  );
+  const chunkRefs: string[] = [];
+
+  for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex += 1) {
+    const start = chunkIndex * UPLOAD_CHUNK_BYTES;
+    const end = Math.min(
+      file.size,
+      start + UPLOAD_CHUNK_BYTES,
+    );
+    const chunk = file.slice(start, end);
+
+    onProgress(
+      `${label}: laddar upp del ${chunkIndex + 1} av ${totalChunks}…`,
+    );
+
+    const data = new FormData();
+    data.set("uploadId", uploadId);
+    data.set("fileKey", fileKey);
+    data.set("chunkIndex", String(chunkIndex));
+    data.set("totalChunks", String(totalChunks));
+    data.set(
+      "chunk",
+      chunk,
+      `${file.name}.part-${chunkIndex + 1}`,
+    );
+
+    const response = await fetch(
+      "/api/create-race/upload-chunk",
+      {
+        method: "POST",
+        body: data,
+      },
+    );
+
+    const result = await readJsonResponse<UploadChunkResponse>(
+      response,
+      `${label} kunde inte laddas upp.`,
+    );
+
+    if (!response.ok || !result.success || !result.ref) {
+      throw new Error(
+        result.error ||
+          `${label} kunde inte laddas upp.`,
+      );
+    }
+
+    chunkRefs.push(result.ref);
+  }
+
+  return {
+    chunkRefs,
+    byteLength: file.size,
+  };
+}
 
 async function reverseGeocodeLocation(
   latitude: number,
@@ -318,6 +429,8 @@ export default function Home() {
     useState(false);
   const [createRaceResult, setCreateRaceResult] =
     useState<CreateRaceResponse | null>(null);
+  const [createRaceProgress, setCreateRaceProgress] =
+    useState<string | null>(null);
 
   const [eventSource, setEventSource] = useState("");
   const [isImportingEventor, setIsImportingEventor] = useState(false);
@@ -882,62 +995,100 @@ export default function Home() {
       return;
     }
 
+    if (!blankMap) {
+      setCreateRaceResult({
+        success: false,
+        error: "Blank karta måste vara vald.",
+      });
+      return;
+    }
+
     setIsCreatingRace(true);
     setCreateRaceResult(null);
+    setCreateRaceProgress("Förbereder uppladdningen…");
 
     try {
-      const requestData =
-        new FormData();
+      const uploadId =
+        typeof crypto.randomUUID === "function"
+          ? crypto.randomUUID()
+          : `${Date.now()}-${Math.random()
+              .toString(36)
+              .slice(2)}`;
 
-      requestData.set(
-        "metadata",
-        JSON.stringify({
-          slug: slugPreview,
-          year: racePreview.year,
-          markdown: racePreview.markdown,
-          mapImagePath:
-            racePreview.mapImagePath,
-          routeImagePath:
-            racePreview.routeImagePath,
-          gpsFilePath:
-            racePreview.gpsFilePath,
+      const uploads: {
+        mapImage: UploadManifest;
+        routeImage: UploadManifest | null;
+        gpxFile: UploadManifest | null;
+      } = {
+        mapImage: await uploadFileInChunks({
+          file: blankMap,
+          fileKey: "mapImage",
+          uploadId,
+          label: "Blank karta",
+          onProgress: setCreateRaceProgress,
         }),
-      );
-
-      if (blankMap) {
-        requestData.set(
-          "mapImage",
-          blankMap,
-        );
-      }
+        routeImage: null,
+        gpxFile: null,
+      };
 
       if (routeMap) {
-        requestData.set(
-          "routeImage",
-          routeMap,
-        );
+        uploads.routeImage =
+          await uploadFileInChunks({
+            file: routeMap,
+            fileKey: "routeImage",
+            uploadId,
+            label: "Karta med rutt",
+            onProgress: setCreateRaceProgress,
+          });
       }
 
       if (gpxFile) {
-        requestData.set(
-          "gpxFile",
-          gpxFile,
-        );
+        uploads.gpxFile =
+          await uploadFileInChunks({
+            file: gpxFile,
+            fileKey: "gpxFile",
+            uploadId,
+            label: "GPX",
+            onProgress: setCreateRaceProgress,
+          });
       }
+
+      setCreateRaceProgress(
+        "Alla filer är uppladdade. Skapar tävlingen…",
+      );
 
       const response = await fetch(
         "/api/create-race",
         {
           method: "POST",
-          body: requestData,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            uploadId,
+            metadata: {
+              slug: slugPreview,
+              year: racePreview.year,
+              markdown: racePreview.markdown,
+              mapImagePath:
+                racePreview.mapImagePath,
+              routeImagePath:
+                racePreview.routeImagePath,
+              gpsFilePath:
+                racePreview.gpsFilePath,
+            },
+            uploads,
+          }),
         },
       );
 
       const result =
-        (await response.json()) as
-          CreateRaceResponse;
+        await readJsonResponse<CreateRaceResponse>(
+          response,
+          "Tävlingen kunde inte skapas.",
+        );
 
-      if (!response.ok) {
+      if (!response.ok || !result.success) {
         const conflictText =
           result.conflicts?.length
             ? `\n${result.conflicts.join("\n")}`
@@ -950,9 +1101,11 @@ export default function Home() {
         );
       }
 
+      setCreateRaceProgress("Klart.");
       setCreateRaceResult(result);
       setShowPreview(true);
     } catch (caughtError) {
+      setCreateRaceProgress(null);
       setCreateRaceResult({
         success: false,
         error:
@@ -1652,6 +1805,20 @@ export default function Home() {
                 : "Skapa tävling"}
             </button>
           </div>
+
+          {createRaceProgress && isCreatingRace ? (
+            <p
+              role="status"
+              aria-live="polite"
+              style={{
+                margin: "0.85rem 0 0",
+                color: "#b8b8b8",
+                fontSize: "0.85rem",
+              }}
+            >
+              {createRaceProgress}
+            </p>
+          ) : null}
 
           {createRaceResult ? (
             <div
