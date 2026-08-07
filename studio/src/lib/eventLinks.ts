@@ -6,6 +6,9 @@ import {
 import {
   resolveEventLinks,
 } from "@/lib/eventLinkResolver";
+import {
+  resolveWinSplitsForEvent,
+} from "@/lib/winsplitsEventResolver";
 
 const EVENTOR_BASE_URL =
   "https://eventor.orientering.se";
@@ -1347,122 +1350,6 @@ function parseResultPageMetadata(
   };
 }
 
-function createWinSplitsUrl(
-  databaseId: number,
-  categoryId: number,
-): string {
-  const url =
-    new URL(
-      WINSPLITS_BASE_URL,
-    );
-
-  url.searchParams.set(
-    "page",
-    "table",
-  );
-
-  url.searchParams.set(
-    "databaseId",
-    String(databaseId),
-  );
-
-  url.searchParams.set(
-    "categoryId",
-    String(categoryId),
-  );
-
-  return url.toString();
-}
-
-async function resolveWinSplits(
-  candidates: ResultPageMetadata[
-    "winsplitsCandidates"
-  ],
-  runnerName: string,
-  raceClass: string,
-) {
-  const wantedClass =
-    normalizeName(raceClass);
-
-  const successful = [];
-
-  for (const candidate of candidates) {
-    try {
-      const data =
-        await loadWinSplitsWithMetadata(
-          candidate.databaseId,
-          candidate.categoryId,
-        );
-
-      const ranked =
-        data.runners
-          .map((runner) => ({
-            runner,
-            score:
-              nameScore(
-                runner.name,
-                runnerName,
-              ),
-          }))
-          .sort(
-            (left, right) =>
-              right.score -
-              left.score,
-          );
-
-      const best =
-        ranked[0];
-
-      if (
-        !best ||
-        best.score < 90
-      ) {
-        continue;
-      }
-
-      const candidateClass =
-        data.metadata.raceClass ||
-        raceClass;
-
-      successful.push({
-        classMatches:
-          !wantedClass ||
-          normalizeName(
-            candidateClass,
-          ) === wantedClass,
-        winsplits: {
-          name:
-            candidateClass,
-          url:
-            createWinSplitsUrl(
-              candidate.databaseId,
-              candidate.categoryId,
-            ),
-          databaseId:
-            candidate.databaseId,
-          categoryId:
-            candidate.categoryId,
-        } satisfies WinSplitsClassLink,
-        runner:
-          best.runner,
-      });
-    } catch {
-      // Prova nästa WinSplits-länk.
-    }
-  }
-
-  return (
-    successful.find(
-      (item) =>
-        item.classMatches,
-    ) ??
-    successful[0] ?? {
-      winsplits: null,
-      runner: null,
-    }
-  );
-}
-
 export async function getEventLinks(
   eventId: number,
   runnerName = "Erik Martinsson",
@@ -1562,12 +1449,27 @@ export async function getEventLinks(
     winsplits,
     runner:
       winSplitsRunner,
-  } = await resolveWinSplits(
-    pageMetadata
-      .winsplitsCandidates,
+    source:
+      winsplitsSource,
+    confidence:
+      winsplitsConfidence,
+  } = await resolveWinSplitsForEvent({
+    existingCandidates:
+      pageMetadata
+        .winsplitsCandidates,
+    date:
+      eventInformation.date,
+    title:
+      eventInformation.title,
+    organiser:
+      eventInformation.organiser ||
+      apiRunner.club,
+    raceClass:
+      eventClass.name,
     runnerName,
-    eventClass.name,
-  );
+    eventorTime:
+      apiRunner.time,
+  });
 
   /*
    * Livelox får först använda en verifierad länk från Eventors HTML
@@ -1600,6 +1502,8 @@ export async function getEventLinks(
         ),
       winsplits:
         Boolean(winsplits),
+      winsplitsSource,
+      winsplitsConfidence,
     },
   );
 
