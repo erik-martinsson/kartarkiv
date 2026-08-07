@@ -104,6 +104,28 @@ const mostMistakeRace = racesWithReliableMistakeData.reduce(
       : best,
   null
 );
+
+const archiveBaseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const raceArchiveUrl = (race) => {
+  const id = String(race.id ?? '')
+    .replace(/\\/g, '/')
+    .replace(/\.md$/i, '')
+    .replace(/^\/+|\/+$/g, '');
+
+  return `${archiveBaseUrl}races/${id}/`;
+};
+
+const topMistakeRaces = racesWithReliableMistakeData
+  .filter((race) => (race.data.mistakeSeconds ?? 0) > 0)
+  .sort(
+    (a, b) =>
+      (b.data.mistakeSeconds ?? 0) -
+      (a.data.mistakeSeconds ?? 0)
+  )
+  .slice(0, 5);
 const fastestRace = races
   .map((race) => {
     const seconds = timeToSeconds(race.data.time);
@@ -984,8 +1006,132 @@ const scatterYTicks = [0, 0.25, 0.5, 0.75, 1].map((ratio) => ({
       </div>
     </section>
 
+    <section class="statistics-section statistics-top-mistakes">
+      <div class="statistics-section-heading">
+        <div>
+          <p class="eyebrow">TOPP 5</p>
+          <h2>Störst registrerad bomtid</h2>
+        </div>
+      </div>
+
+      <div class="panel statistics-ranking-panel">
+        {
+          topMistakeRaces.length > 0 ? (
+            <div class="statistics-table-wrap">
+              <table class="statistics-ranking-table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Lopp</th>
+                    <th scope="col">År</th>
+                    <th scope="col">Bomtid</th>
+                    <th scope="col">Disciplin</th>
+                    <th scope="col">Plats</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {topMistakeRaces.map((race, index) => (
+                    <tr>
+                      <td class="statistics-ranking-position">
+                        {index + 1}
+                      </td>
+                      <td>
+                        <a
+                          class="statistics-race-link"
+                          href={raceArchiveUrl(race)}
+                        >
+                          {race.data.title}
+                        </a>
+                      </td>
+                      <td>{race.data.date.getFullYear()}</td>
+                      <td class="statistics-ranking-mistake">
+                        {formatCompactDuration(race.data.mistakeSeconds ?? 0)}
+                      </td>
+                      <td>{race.data.discipline?.trim() || 'Okänd'}</td>
+                      <td>{race.data.location?.trim() || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <p class="statistics-empty-chart">
+              Ingen registrerad bomtid ännu.
+            </p>
+          )
+        }
+      </div>
+    </section>
+
     <p class="statistics-update-note">
       Statistiken uppdateras automatiskt när nya tävlingar publiceras.
     </p>
   </main>
+
+  <style>
+    .statistics-ranking-panel {
+      overflow: hidden;
+    }
+
+    .statistics-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .statistics-ranking-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    .statistics-ranking-table th,
+    .statistics-ranking-table td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      vertical-align: middle;
+    }
+
+    .statistics-ranking-table th {
+      color: var(--muted, #a0a0a0);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .statistics-ranking-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .statistics-ranking-table tbody tr:hover {
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .statistics-ranking-position {
+      width: 3rem;
+      color: #ff7a00;
+      font-weight: 800;
+    }
+
+    .statistics-ranking-mistake {
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+      color: #ff7a00;
+      white-space: nowrap;
+    }
+
+    .statistics-race-link {
+      color: inherit;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .statistics-race-link:hover,
+    .statistics-race-link:focus-visible {
+      color: #ff7a00;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+  </style>
 </BaseLayout>
