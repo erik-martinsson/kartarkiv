@@ -1,10 +1,10 @@
 ---
 title: "Gotlands 3-dagars E2"
-date: 2023-07-12
+date: "2023-07-12"
 
 club: "Visborgs OK"
 country: "SE"
-location: "Gotlands kommun"
+location: "Gotland"
 
 discipline: "Medel"
 raceClass: "H40"
@@ -33,5 +33,4 @@ results: "https://eventor.orientering.se/Events/ResultList?eventId=40396&eventRa
 
 featured: false
 ---
-
 
