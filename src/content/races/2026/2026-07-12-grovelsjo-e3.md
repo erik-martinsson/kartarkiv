@@ -2,11 +2,11 @@
 title: "Grövelsjöorienteringen, etapp 3"
 event: "Grövelsjöorienteringen"
 stage: 3
-date: 2026-07-12
+date: "2026-07-12"
 
 club: "Grövelsjöfjällens OK"
 country: "SE"
-location: "Grövelsjön"
+location: "Grövelsjön, Idre"
 
 discipline: "Medel"
 raceClass: "H40"
