@@ -3,6 +3,9 @@ import { XMLParser } from "fast-xml-parser";
 import {
   loadWinSplitsWithMetadata,
 } from "@/lib/winsplits";
+import {
+  resolveEventLinks,
+} from "@/lib/eventLinkResolver";
 
 const EVENTOR_BASE_URL =
   "https://eventor.orientering.se";
@@ -56,7 +59,6 @@ type EventorClass = {
   id: number | null;
   name: string;
   starters: number;
-  distanceKm: string;
 };
 
 type ResultPageMetadata = {
@@ -568,26 +570,10 @@ async function fetchResultHtml(
         },
       );
 
-    if (!response.ok) {
-      console.error(
-        "fetchResultHtml failed:",
-        {
-          status: response.status,
-          statusText: response.statusText,
-          url: response.url,
-        },
-      );
-
-      return null;
-    }
-
-    return response.text();
-  } catch (error) {
-    console.error(
-      "fetchResultHtml failed:",
-      error,
-    );
-
+    return response.ok
+      ? response.text()
+      : null;
+  } catch {
     return null;
   }
 }
@@ -856,130 +842,6 @@ function findRunner(
   return ranked[0].runner;
 }
 
-function parseDistanceKmValue(
-  value: unknown,
-): string {
-  const record = asRecord(value);
-  const rawText = cleanText(
-    record
-      ? firstValue(
-          record,
-          "#text",
-          "Value",
-          "Length",
-          "Distance",
-        )
-      : value,
-  );
-
-  if (!rawText) {
-    return "";
-  }
-
-  const normalized = rawText
-    .replace(/\u00a0/g, " ")
-    .replace(/,/g, ".")
-    .trim();
-
-  const match = normalized.match(
-    /(-?\d+(?:\.\d+)?)\s*(km|kilometer|kilometre|m|meter|metre)?/i,
-  );
-
-  if (!match) {
-    return "";
-  }
-
-  const numeric = Number(match[1]);
-
-  if (!Number.isFinite(numeric) || numeric <= 0) {
-    return "";
-  }
-
-  const unit = (
-    match[2] ||
-    cleanText(
-      record
-        ? firstValue(
-            record,
-            "@_unit",
-            "@_unitCode",
-            "Unit",
-          )
-        : undefined,
-    )
-  ).toLocaleLowerCase("sv-SE");
-
-  const kilometres =
-    unit.startsWith("km") ||
-    unit.startsWith("kilo")
-      ? numeric
-      : unit === "m" ||
-        unit.startsWith("meter") ||
-        unit.startsWith("metre") ||
-        numeric >= 100
-        ? numeric / 1000
-        : numeric;
-
-  if (kilometres <= 0 || kilometres > 100) {
-    return "";
-  }
-
-  return String(
-    Number(kilometres.toFixed(3)),
-  );
-}
-
-function readClassDistanceKm(
-  eventClass: XmlRecord,
-  raceInfo: XmlRecord | null,
-): string {
-  const preferredKeys = [
-    "CourseLength",
-    "ClassCourseLength",
-    "RaceCourseLength",
-    "Length",
-    "Distance",
-  ];
-
-  for (const source of [raceInfo, eventClass]) {
-    if (!source) {
-      continue;
-    }
-
-    for (const key of preferredKeys) {
-      const direct = parseDistanceKmValue(
-        firstValue(source, key),
-      );
-
-      if (direct) {
-        return direct;
-      }
-    }
-
-    const course = asRecord(
-      firstValue(
-        source,
-        "Course",
-        "RaceCourse",
-      ),
-    );
-
-    if (course) {
-      for (const key of preferredKeys) {
-        const nested = parseDistanceKmValue(
-          firstValue(course, key),
-        );
-
-        if (nested) {
-          return nested;
-        }
-      }
-    }
-  }
-
-  return "";
-}
-
 function parseEventorClasses(
   classesXml: unknown,
 ): EventorClass[] {
@@ -1032,11 +894,6 @@ function parseEventorClasses(
               "NumberOfStarts",
             ),
           ) || 0,
-        distanceKm:
-          readClassDistanceKm(
-            eventClass,
-            raceInfo,
-          ),
       };
     })
     .filter(
@@ -1648,13 +1505,6 @@ export async function getEventLinks(
     ),
   ]);
 
-  console.log(
-    "Result HTML:",
-    resultHtml
-      ? resultHtml.length
-      : "NULL",
-  );
-
   const eventInformation =
     parseEventInformation(
       eventXml,
@@ -1700,7 +1550,6 @@ export async function getEventLinks(
       name:
         apiRunner.raceClass,
       starters: 0,
-      distanceKm: "",
     };
 
   const pageMetadata =
@@ -1718,6 +1567,40 @@ export async function getEventLinks(
       .winsplitsCandidates,
     runnerName,
     eventClass.name,
+  );
+
+  /*
+   * Livelox får först använda en verifierad länk från Eventors HTML
+   * när den sidan går att läsa. På Vercel svarar Eventors resultatsida
+   * ibland med 403, så då faller vi tillbaka till Eventors stabila
+   * event-/klassidentifierare och verifierar länken direkt mot Livelox.
+   */
+  const resolvedLinks =
+    await resolveEventLinks({
+      eventId,
+      eventClassId:
+        eventClass.id,
+      eventorHtmlLiveloxUrl:
+        pageMetadata.liveloxUrl,
+    });
+
+  console.info(
+    "Resolved event links:",
+    {
+      eventId,
+      eventClass:
+        eventClass.name,
+      eventClassId:
+        eventClass.id,
+      liveloxSource:
+        resolvedLinks.liveloxSource,
+      livelox:
+        Boolean(
+          resolvedLinks.liveloxUrl,
+        ),
+      winsplits:
+        Boolean(winsplits),
+    },
   );
 
   /*
@@ -1748,7 +1631,6 @@ export async function getEventLinks(
     discipline:
       eventInformation.discipline,
     distanceKm:
-      eventClass.distanceKm ||
       pageMetadata.distanceKm,
     time:
       normalizeTime(
@@ -1777,6 +1659,6 @@ export async function getEventLinks(
       ) || "0:00",
     winsplits,
     liveloxUrl:
-      pageMetadata.liveloxUrl,
+      resolvedLinks.liveloxUrl,
   };
 }
