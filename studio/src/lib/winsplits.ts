@@ -787,70 +787,6 @@ function cleanClassCandidate(
     : null;
 }
 
-function distanceFromClassHeader(
-  value: string,
-  raceClass: string,
-): number | null {
-  const text = cleanText(value);
-
-  if (!text || !raceClass) {
-    return null;
-  }
-
-  const escapedClass =
-    raceClass.replace(
-      /[.*+?^${}()|[\]\\]/g,
-      "\\$&",
-    );
-
-  /*
-   * WinSplits visar banlängden i klassrubriken/breadcrumben:
-   *
-   *   >> H35 (3220 m) >>
-   *
-   * och vissa vyer kan visa samma uppgift utan parentes:
-   *
-   *   H35 3 220 m
-   *
-   * Läs just detta tydliga format i stället för att försöka tolka
-   * all sidtext i närheten av klassnamnet.
-   */
-  const patterns = [
-    new RegExp(
-      `(?:^|[>\\s])${escapedClass}\\s*\\(\\s*(\\d[\\d\\s]{2,6})\\s*m\\s*\\)`,
-      "i",
-    ),
-    new RegExp(
-      `(?:^|[>\\s])${escapedClass}\\s+(\\d[\\d\\s]{2,6})\\s*m\\b`,
-      "i",
-    ),
-  ];
-
-  for (const pattern of patterns) {
-    const match = text.match(pattern);
-
-    if (!match) {
-      continue;
-    }
-
-    const meters = Number(
-      match[1].replace(/\s+/g, ""),
-    );
-
-    if (
-      Number.isFinite(meters) &&
-      meters >= 200 &&
-      meters <= 100_000
-    ) {
-      return Number(
-        (meters / 1000).toFixed(3),
-      );
-    }
-  }
-
-  return null;
-}
-
 function readClassMetadata(
   pages: LoadedPage[],
   categoryId: number,
@@ -861,10 +797,6 @@ function readClassMetadata(
   for (const page of pages) {
     const $ = cheerio.load(page.html);
 
-    /*
-     * Det säkraste klassnamnet är optionen med aktuell categoryId.
-     * Därefter används valda options/rubriker som fallback.
-     */
     const matchingOption =
       $(
         `option[value="${categoryId}"]`,
@@ -902,27 +834,123 @@ function readClassMetadata(
   let distanceKm: number | null = null;
 
   /*
-   * För moderna WinSplits-sidor finns banlängden i klassrubriken,
-   * t.ex. "H35 (3220 m)". Sök igenom alla laddade frames eftersom
-   * breadcrumb/rubrik och resultattabell kan ligga i olika frames.
+   * Moderna WinSplits visar banlängden i klassrubriken/breadcrumben,
+   * exempelvis "H35 (3220 m)". Eftersom categoryId redan identifierar
+   * rätt klass börjar vi med att leta efter just parentesformatet i
+   * samtliga laddade frames.
    */
-  if (raceClass) {
-    for (const text of pageTexts) {
-      distanceKm =
-        distanceFromClassHeader(
-          text,
-          raceClass,
-        );
+  for (const text of pageTexts) {
+    const matches = [
+      ...text.matchAll(
+        /\(\s*(\d[\d\s]{2,6})\s*m\s*\)/gi,
+      ),
+    ];
 
-      if (distanceKm !== null) {
+    if (matches.length === 1) {
+      const meters = Number(
+        matches[0][1].replace(/\s+/g, ""),
+      );
+
+      if (
+        Number.isFinite(meters) &&
+        meters >= 200 &&
+        meters <= 100_000
+      ) {
+        distanceKm = Number(
+          (meters / 1000).toFixed(3),
+        );
         break;
       }
     }
   }
 
   /*
-   * Behåll den gamla etikettbaserade fallbacken för de fall där
-   * WinSplits uttryckligen skriver "Banlängd: 3.2 km".
+   * Om en frame innehåller flera parentes-värden använder vi den som
+   * ligger direkt efter den identifierade klassen.
+   */
+  if (
+    distanceKm === null &&
+    raceClass
+  ) {
+    const escapedClass =
+      raceClass.replace(
+        /[.*+?^${}()|[\]\\]/g,
+        "\\$&",
+      );
+
+    for (const text of pageTexts) {
+      const match = text.match(
+        new RegExp(
+          `${escapedClass}\\s*\\(\\s*(\\d[\\d\\s]{2,6})\\s*m\\s*\\)`,
+          "i",
+        ),
+      );
+
+      if (!match) {
+        continue;
+      }
+
+      const meters = Number(
+        match[1].replace(/\s+/g, ""),
+      );
+
+      if (
+        Number.isFinite(meters) &&
+        meters >= 200 &&
+        meters <= 100_000
+      ) {
+        distanceKm = Number(
+          (meters / 1000).toFixed(3),
+        );
+        break;
+      }
+    }
+  }
+
+  /*
+   * Reserv för format utan parentes, t.ex. "H35 3 220 m".
+   */
+  if (
+    distanceKm === null &&
+    raceClass
+  ) {
+    const escapedClass =
+      raceClass.replace(
+        /[.*+?^${}()|[\]\\]/g,
+        "\\$&",
+      );
+
+    for (const text of pageTexts) {
+      const match = text.match(
+        new RegExp(
+          `${escapedClass}\\s+(\\d[\\d\\s]{2,6})\\s*m\\b`,
+          "i",
+        ),
+      );
+
+      if (!match) {
+        continue;
+      }
+
+      const meters = Number(
+        match[1].replace(/\s+/g, ""),
+      );
+
+      if (
+        Number.isFinite(meters) &&
+        meters >= 200 &&
+        meters <= 100_000
+      ) {
+        distanceKm = Number(
+          (meters / 1000).toFixed(3),
+        );
+        break;
+      }
+    }
+  }
+
+  /*
+   * Behåll den etikettbaserade fallbacken för andra WinSplits-varianter.
    */
   if (distanceKm === null) {
     for (const text of pageTexts) {
