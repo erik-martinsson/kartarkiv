@@ -176,6 +176,70 @@ const paceYTicks = Array.from(
   (_, index) => paceMin + index * paceTickStep
 );
 
+
+// Genomsnittlig extra löpsträcka per år.
+// Endast lopp med både officiell banlängd och GPS-distans räknas.
+// Värdet normaliseras mot banlängden så att korta och långa lopp
+// kan jämföras rättvist: (GPS - bana) / bana * 100.
+const yearlyExtraDistanceMap = new Map();
+for (const race of races) {
+  const officialDistance = race.data.distanceKm ?? 0;
+  const gpsDistance = race.data.gpsDistanceKm ?? 0;
+
+  if (officialDistance <= 0 || gpsDistance <= 0) continue;
+
+  const year = race.data.date.getFullYear();
+  const extraPercent =
+    ((gpsDistance - officialDistance) / officialDistance) * 100;
+
+  const current = yearlyExtraDistanceMap.get(year) ?? {
+    year,
+    races: 0,
+    extraPercentTotal: 0
+  };
+
+  current.races += 1;
+  current.extraPercentTotal += extraPercent;
+  yearlyExtraDistanceMap.set(year, current);
+}
+
+const yearlyExtraDistance = [...yearlyExtraDistanceMap.values()]
+  .map((item) => ({
+    ...item,
+    averageExtraPercent:
+      item.races > 0 ? item.extraPercentTotal / item.races : 0
+  }))
+  .sort((a, b) => a.year - b.year);
+
+const extraDistanceValues = yearlyExtraDistance
+  .map((item) => item.averageExtraPercent)
+  .filter((value) => Number.isFinite(value));
+
+const rawMinExtraDistance =
+  extraDistanceValues.length > 0 ? Math.min(...extraDistanceValues) : 0;
+const rawMaxExtraDistance =
+  extraDistanceValues.length > 0 ? Math.max(...extraDistanceValues) : 10;
+
+const extraDistancePadding = Math.max(
+  1,
+  (rawMaxExtraDistance - rawMinExtraDistance) * 0.15
+);
+
+const extraDistanceMin = Math.floor(
+  (rawMinExtraDistance - extraDistancePadding) / 2
+) * 2;
+const extraDistanceMax = Math.ceil(
+  (rawMaxExtraDistance + extraDistancePadding) / 2
+) * 2;
+const extraDistanceRange = Math.max(
+  1,
+  extraDistanceMax - extraDistanceMin
+);
+
+const extraDistanceYTicks = [0, 0.25, 0.5, 0.75, 1].map(
+  (ratio) => extraDistanceMin + ratio * extraDistanceRange
+);
+
 const disciplineMap = new Map();
 for (const race of races) {
   const discipline = race.data.discipline?.trim() || 'Okänd';
@@ -269,6 +333,26 @@ const pacePoints = yearlyPace.map((item, index) => {
   return { ...item, x, y };
 });
 const pacePath = pacePoints.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ');
+
+const extraDistancePoints = yearlyExtraDistance.map((item, index) => {
+  const x = yearlyExtraDistance.length <= 1
+    ? lineWidth / 2
+    : linePaddingX + (index / (yearlyExtraDistance.length - 1)) * usableWidth;
+  const y =
+    linePaddingY +
+    usableHeight -
+    ((item.averageExtraPercent - extraDistanceMin) / extraDistanceRange) *
+      usableHeight;
+
+  return { ...item, x, y };
+});
+
+const extraDistancePath = extraDistancePoints
+  .map(
+    (point, index) =>
+      `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`
+  )
+  .join(' ');
 
 const scatterWidth = 900;
 const scatterHeight = 360;
@@ -702,6 +786,100 @@ const scatterYTicks = [0, 0.25, 0.5, 0.75, 1].map((ratio) => ({
                           class="statistics-line-value"
                         >
                           {formatCompactDuration(point.paceSecondsPerKm)}
+                        </text>
+                        <text
+                          x={point.x}
+                          y={lineHeight - 5}
+                          text-anchor="middle"
+                          class="statistics-line-year"
+                        >
+                          {point.year}
+                        </text>
+                      </g>
+                    ))
+                  }
+                </svg>
+              </div>
+            ) : (
+              <p class="statistics-empty-chart">Ingen statistik ännu.</p>
+            )
+          }
+        </article>
+
+        <article class="panel statistics-chart-panel statistics-chart-wide">
+          <div class="statistics-chart-heading">
+            <h3>Genomsnittlig extra löpsträcka per år</h3>
+            <p>Skillnaden mellan GPS-distans och officiell banlängd, i procent av banlängden. Lägre värde innebär rakare vägval.</p>
+          </div>
+
+          {
+            extraDistancePoints.length > 0 ? (
+              <div class="statistics-line-chart-wrap">
+                <svg
+                  class="statistics-line-chart"
+                  viewBox={`0 0 ${lineWidth} ${lineHeight}`}
+                  role="img"
+                  aria-labelledby="extra-distance-title extra-distance-desc"
+                >
+                  <title id="extra-distance-title">Genomsnittlig extra löpsträcka per år</title>
+                  <desc id="extra-distance-desc">
+                    Linje med en punkt för varje år. Värdet visar hur många procent längre GPS-distansen i genomsnitt är än den officiella banlängden.
+                  </desc>
+
+                  {extraDistanceYTicks.map((tick) => {
+                    const y =
+                      linePaddingY +
+                      usableHeight -
+                      ((tick - extraDistanceMin) / extraDistanceRange) *
+                        usableHeight;
+
+                    return (
+                      <g>
+                        <line
+                          x1={linePaddingX}
+                          x2={lineWidth - linePaddingX}
+                          y1={y}
+                          y2={y}
+                          class="statistics-grid-line"
+                        />
+                        <text
+                          x={linePaddingX - 10}
+                          y={y + 4}
+                          text-anchor="end"
+                          class="statistics-line-year"
+                        >
+                          {formatNumber(tick, 1)} %
+                        </text>
+                      </g>
+                    );
+                  })}
+
+                  <path
+                    d={extraDistancePath}
+                    fill="none"
+                    stroke="#f3b24b"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+                  {
+                    extraDistancePoints.map((point) => (
+                      <g>
+                        <circle
+                          cx={point.x}
+                          cy={point.y}
+                          r="6"
+                          fill="#f3b24b"
+                          stroke="none"
+                        />
+                        <text
+                          x={point.x}
+                          y={point.y - 14}
+                          text-anchor="middle"
+                          class="statistics-line-value"
+                        >
+                          {formatNumber(point.averageExtraPercent, 1)} %
                         </text>
                         <text
                           x={point.x}
