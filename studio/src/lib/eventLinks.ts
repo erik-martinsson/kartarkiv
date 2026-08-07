@@ -62,6 +62,7 @@ type EventorClass = {
   id: number | null;
   name: string;
   starters: number;
+  distanceKm: string;
 };
 
 type ResultPageMetadata = {
@@ -845,6 +846,112 @@ function findRunner(
   return ranked[0].runner;
 }
 
+function normalizeDistanceKm(
+  value: unknown,
+): string {
+  const text =
+    cleanText(value)
+      .replace(/\u00a0/g, " ")
+      .replace(/,/g, ".");
+
+  if (!text) {
+    return "";
+  }
+
+  const numberMatch =
+    text.match(/-?\d+(?:\.\d+)?/);
+
+  if (!numberMatch) {
+    return "";
+  }
+
+  const numeric =
+    Number(numberMatch[0]);
+
+  if (
+    !Number.isFinite(numeric) ||
+    numeric <= 0
+  ) {
+    return "";
+  }
+
+  /*
+   * Eventor/IOF anger normalt Course Length i meter.
+   * Om värdet redan är ett rimligt kilometervärde behålls det.
+   */
+  const km =
+    numeric >= 100
+      ? numeric / 1000
+      : numeric;
+
+  return String(
+    Number(km.toFixed(3)),
+  );
+}
+
+function distanceFromRecord(
+  source: XmlRecord | null,
+): string {
+  if (!source) {
+    return "";
+  }
+
+  /*
+   * IOF/Eventor har använt lite olika placeringar och namn över tid.
+   * Börja med de specifika banlängdsfälten.
+   */
+  for (const key of [
+    "CourseLength",
+    "CourseDistance",
+    "Length",
+    "Distance",
+  ]) {
+    const direct =
+      firstValue(
+        source,
+        key,
+      );
+
+    if (
+      direct !== undefined &&
+      direct !== null
+    ) {
+      const normalized =
+        normalizeDistanceKm(direct);
+
+      if (normalized) {
+        return normalized;
+      }
+    }
+  }
+
+  /*
+   * I vissa Eventor-svar ligger banan som ett eget Course-objekt.
+   */
+  for (const key of [
+    "Course",
+    "RaceCourse",
+    "ClassRaceInfo",
+  ]) {
+    const nested =
+      asRecord(
+        firstValue(
+          source,
+          key,
+        ),
+      );
+
+    const normalized =
+      distanceFromRecord(nested);
+
+    if (normalized) {
+      return normalized;
+    }
+  }
+
+  return "";
+}
+
 function parseEventorClasses(
   classesXml: unknown,
 ): EventorClass[] {
@@ -897,6 +1004,13 @@ function parseEventorClasses(
               "NumberOfStarts",
             ),
           ) || 0,
+        distanceKm:
+          distanceFromRecord(
+            raceInfo,
+          ) ||
+          distanceFromRecord(
+            eventClass,
+          ),
       };
     })
     .filter(
@@ -1507,6 +1621,7 @@ export async function getEventLinks(
       name:
         apiRunner.raceClass,
       starters: 0,
+      distanceKm: "",
     };
 
   const pageMetadata =
@@ -1523,6 +1638,8 @@ export async function getEventLinks(
       winsplitsSource,
     confidence:
       winsplitsConfidence,
+    distanceKm:
+      winsplitsDistanceKm,
   } = await resolveWinSplitsForEvent({
     existingCandidates:
       pageMetadata
@@ -1573,6 +1690,11 @@ export async function getEventLinks(
         Boolean(winsplits),
       winsplitsSource,
       winsplitsConfidence,
+      eventorDistanceKm:
+        eventClass.distanceKm,
+      winsplitsDistanceKm,
+      htmlDistanceKm:
+        pageMetadata.distanceKm,
     },
   );
 
@@ -1606,7 +1728,13 @@ export async function getEventLinks(
       eventClass.name,
     discipline:
       eventInformation.discipline,
+    /*
+     * Banlängd ska fungera även på Vercel där Eventors ResultList-HTML
+     * kan ge 403. Prioritet: Eventor API -> verifierad WinSplits -> HTML.
+     */
     distanceKm:
+      eventClass.distanceKm ||
+      winsplitsDistanceKm ||
       pageMetadata.distanceKm,
     time:
       normalizeTime(

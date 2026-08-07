@@ -76,6 +76,7 @@ export type ResolvedWinSplits = {
     | "winsplits-search"
     | "none";
   confidence: number;
+  distanceKm: string;
 };
 
 type EventSummary = {
@@ -896,6 +897,163 @@ async function discoverEvents(
     .map(({ event }) => event);
 }
 
+function normalizeDistanceKm(
+  value: unknown,
+): string {
+  const raw =
+    cleanText(String(value ?? ""))
+      .replace(/,/g, ".");
+
+  const match =
+    raw.match(/\d+(?:\.\d+)?/);
+
+  if (!match) {
+    return "";
+  }
+
+  const numeric =
+    Number(match[0]);
+
+  if (
+    !Number.isFinite(numeric) ||
+    numeric <= 0
+  ) {
+    return "";
+  }
+
+  const km =
+    numeric >= 100
+      ? numeric / 1000
+      : numeric;
+
+  return String(
+    Number(km.toFixed(3)),
+  );
+}
+
+function distanceFromMetadata(
+  metadata: unknown,
+): string {
+  if (
+    !metadata ||
+    typeof metadata !== "object"
+  ) {
+    return "";
+  }
+
+  const record =
+    metadata as Record<
+      string,
+      unknown
+    >;
+
+  for (const key of [
+    "distanceKm",
+    "courseLengthKm",
+    "courseLength",
+    "distance",
+    "length",
+  ]) {
+    const normalized =
+      normalizeDistanceKm(
+        record[key],
+      );
+
+    if (normalized) {
+      return normalized;
+    }
+  }
+
+  return "";
+}
+
+function distanceFromWinSplitsHtml(
+  html: string,
+  raceClass: string,
+): string {
+  const $ = cheerio.load(html);
+  const text =
+    cleanText(
+      $("body").text(),
+    );
+
+  if (!text) {
+    return "";
+  }
+
+  const escapedClass =
+    raceClass
+      .trim()
+      .replace(
+        /[.*+?^${}()|[\]\\]/g,
+        "\\$&",
+      );
+
+  const patterns = [
+    escapedClass
+      ? new RegExp(
+          `${escapedClass}.{0,180}?(\\d+(?:[.,]\\d+)?)\\s*km`,
+          "i",
+        )
+      : null,
+    escapedClass
+      ? new RegExp(
+          `${escapedClass}.{0,180}?(\\d[\\d\\s]{2,})\\s*m(?:eter)?`,
+          "i",
+        )
+      : null,
+    /(?:banl[aä]ngd|course\s*length|l[aä]ngd)\s*[:=]?\s*(\d+(?:[.,]\d+)?)\s*km/i,
+    /(?:banl[aä]ngd|course\s*length|l[aä]ngd)\s*[:=]?\s*(\d[\d\s]{2,})\s*m(?:eter)?/i,
+  ].filter(
+    (
+      pattern,
+    ): pattern is RegExp =>
+      pattern !== null,
+  );
+
+  for (const pattern of patterns) {
+    const match =
+      text.match(pattern);
+
+    if (!match) {
+      continue;
+    }
+
+    const normalized =
+      normalizeDistanceKm(
+        match[1]
+          .replace(/\s+/g, ""),
+      );
+
+    if (normalized) {
+      return normalized;
+    }
+  }
+
+  return "";
+}
+
+async function readWinSplitsDistanceKm(
+  url: string,
+  raceClass: string,
+): Promise<string> {
+  try {
+    const response =
+      await fetchWithTimeout(url);
+
+    if (!response.ok) {
+      return "";
+    }
+
+    return distanceFromWinSplitsHtml(
+      await response.text(),
+      raceClass,
+    );
+  } catch {
+    return "";
+  }
+}
+
 async function verifyCandidate(
   candidate: WinSplitsCandidate,
   input: SearchInput,
@@ -943,6 +1101,7 @@ async function verifyCandidate(
       timeMatches: false,
       runnerScore:
         best?.score ?? 0,
+      distanceKm: "",
     };
   }
 
@@ -975,16 +1134,33 @@ async function verifyCandidate(
     !winsplitsTime ||
     eventorTime === winsplitsTime;
 
+  const winsplitsUrl =
+    tableUrl(
+      candidate.databaseId,
+      candidate.categoryId,
+    );
+
+  /*
+   * Banlängd kan redan finnas i den befintliga WinSplits-parserns
+   * metadata. Om inte, läs den verifierade klassens tabellsida.
+   * Detta görs först EFTER att rätt person/klass har hittats.
+   */
+  const distanceKm =
+    distanceFromMetadata(
+      data.metadata,
+    ) ||
+    await readWinSplitsDistanceKm(
+      winsplitsUrl,
+      candidateClass,
+    );
+
   return {
     winsplits: {
       name:
         candidateClass ||
         input.raceClass,
       url:
-        tableUrl(
-          candidate.databaseId,
-          candidate.categoryId,
-        ),
+        winsplitsUrl,
       databaseId:
         candidate.databaseId,
       categoryId:
@@ -996,6 +1172,7 @@ async function verifyCandidate(
     timeMatches,
     runnerScore:
       best.score,
+    distanceKm,
   };
 }
 
@@ -1086,6 +1263,7 @@ async function resolveCandidates(
       source: "none",
       confidence:
         best?.confidence ?? 0,
+      distanceKm: "",
     };
   }
 
@@ -1097,6 +1275,8 @@ async function resolveCandidates(
     source,
     confidence:
       best.confidence,
+    distanceKm:
+      best.distanceKm,
   };
 }
 
@@ -1162,5 +1342,6 @@ export async function resolveWinSplitsForEvent(
     runner: null,
     source: "none",
     confidence: 0,
+    distanceKm: "",
   };
 }
