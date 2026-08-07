@@ -1,6 +1,6 @@
 ---
 title: "Dubbeljakten Ulricehamn, Sprint"
-date: 2023-05-06
+date: "2023-05-06"
 
 club: "Ulricehamns OK"
 country: "SE"
@@ -10,7 +10,7 @@ discipline: "Sprint"
 raceClass: "H21"
 
 distanceKm: 3
-gpsDistanceKm: 2
+gpsDistanceKm: 4
 gpsClimb: 106
 time: "16:54"
 
@@ -33,5 +33,4 @@ results: "https://eventor.orientering.se/Events/Show/40502"
 
 featured: false
 ---
-
 
