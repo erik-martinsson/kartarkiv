@@ -907,8 +907,87 @@ function parseEventorClasses(
     );
 }
 
+function organisationName(
+  value: unknown,
+): string {
+  const record =
+    asRecord(value);
+
+  if (!record) {
+    return "";
+  }
+
+  const direct =
+    childText(
+      record,
+      "Name",
+      "ShortName",
+    );
+
+  if (direct) {
+    return direct;
+  }
+
+  const nested =
+    asRecord(
+      firstValue(
+        record,
+        "Organisation",
+        "Organization",
+      ),
+    );
+
+  return nested
+    ? childText(
+        nested,
+        "Name",
+        "ShortName",
+      )
+    : "";
+}
+
+function parseEventOrganiser(
+  ...sources: unknown[]
+): string {
+  /*
+   * Leta bara i tävlingens Organiser/Organizer-noder.
+   * Vanliga Organisation-noder i resultatlistan är deltagarnas klubbar
+   * och får därför inte användas som arrangör.
+   */
+  for (const source of sources) {
+    if (!source) {
+      continue;
+    }
+
+    const organisers = [
+      ...findByKey(
+        source,
+        "Organiser",
+      ),
+      ...findByKey(
+        source,
+        "Organizer",
+      ),
+    ];
+
+    for (const organiser of organisers) {
+      const name =
+        organisationName(
+          organiser,
+        );
+
+      if (name) {
+        return name;
+      }
+    }
+  }
+
+  return "";
+}
+
 function parseEventInformation(
   eventXml: unknown,
+  eventListXml: unknown = null,
 ) {
   const root =
     asRecord(eventXml);
@@ -930,23 +1009,6 @@ function parseEventInformation(
         "Race",
       ),
     );
-
-  const organiserWrapper =
-    asRecord(
-      firstValue(
-        event,
-        "Organiser",
-      ),
-    );
-
-  const organiser =
-    asRecord(
-      firstValue(
-        organiserWrapper,
-        "Organisation",
-      ),
-    ) ??
-    organiserWrapper;
 
   const arena =
     asRecord(
@@ -995,10 +1057,9 @@ function parseEventInformation(
         ),
       ),
     organiser:
-      childText(
-        organiser,
-        "Name",
-        "ShortName",
+      parseEventOrganiser(
+        eventXml,
+        eventListXml,
       ),
     location:
       childText(
@@ -1374,6 +1435,7 @@ export async function getEventLinks(
 
   const [
     eventXml,
+    eventListXml,
     classesXml,
     resultXml,
     resultHtml,
@@ -1381,6 +1443,13 @@ export async function getEventLinks(
     fetchEventorXml(
       `/api/event/${eventId}`,
     ),
+    /*
+     * Eventors eventlista används som kompletterande källa för
+     * arrangörsorganisation. Importen fortsätter om den saknas.
+     */
+    fetchEventorXml(
+      `/api/events?eventIds=${eventId}`,
+    ).catch(() => null),
     fetchEventorXml(
       `/api/eventclasses?eventId=${eventId}`,
     ),
@@ -1395,6 +1464,7 @@ export async function getEventLinks(
   const eventInformation =
     parseEventInformation(
       eventXml,
+      eventListXml,
     );
 
   const apiRunner =
@@ -1462,8 +1532,7 @@ export async function getEventLinks(
     title:
       eventInformation.title,
     organiser:
-      eventInformation.organiser ||
-      apiRunner.club,
+      eventInformation.organiser,
     raceClass:
       eventClass.name,
     runnerName,
@@ -1525,9 +1594,12 @@ export async function getEventLinks(
       eventInformation.title,
     date:
       eventInformation.date,
+    /*
+     * Arrangör kommer bara från Eventors tävlingsinformation.
+     * apiRunner.club är löparens klubb och är inte arrangören.
+     */
     club:
-      eventInformation.organiser ||
-      apiRunner.club,
+      eventInformation.organiser,
     location:
       eventInformation.location,
     raceClass:

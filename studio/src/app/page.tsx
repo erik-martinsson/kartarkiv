@@ -712,15 +712,17 @@ export default function Home() {
       mistakeTime:
         imported.mistakeTime ||
         current.mistakeTime,
+      /*
+       * Länkar hör till den tävling som precis importerades.
+       * Om den nya tävlingen saknar Livelox/WinSplits ska gamla
+       * länkar rensas, inte återanvändas.
+       */
       livelox:
-        imported.liveloxUrl ||
-        current.livelox,
+        imported.liveloxUrl ?? "",
       winsplits:
-        imported.winsplits?.url ||
-        current.winsplits,
+        imported.winsplits?.url ?? "",
       results:
-        imported.resultListUrl ||
-        current.results,
+        imported.resultListUrl ?? "",
     }));
   };
 
