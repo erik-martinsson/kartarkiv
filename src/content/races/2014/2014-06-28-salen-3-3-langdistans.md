@@ -2,11 +2,11 @@
 title: "Sälen 3+3 Långdistans"
 event: "Sälen 3+3 Långdistans"
 
-date: 2014-06-28
+date: "2014-06-28"
 
 club: "Linköpings OK"
 country: "SE"
-location: ""
+location: "Sälen"
 
 discipline: "Lång"
 raceClass: "H21E"
