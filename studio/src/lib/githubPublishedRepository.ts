@@ -15,7 +15,7 @@ import type {
 
 const GITHUB_API_BASE = "https://api.github.com";
 const GITHUB_API_VERSION = "2022-11-28";
-const RACES_PREFIX = "src/content/races/";
+const RACES_ROOT = "src/content/races";
 
 type GitHubConfiguration = {
   token: string;
@@ -24,35 +24,30 @@ type GitHubConfiguration = {
   branch: string;
 };
 
-type GitHubReference = {
-  object?: { sha?: string };
-};
-
-type GitHubCommit = {
-  tree?: { sha?: string };
-};
-
-type GitHubTreeEntry = {
+type GitHubContentEntry = {
+  type?: "file" | "dir" | "symlink" | "submodule";
+  name?: string;
   path?: string;
-  type?: string;
   sha?: string;
+  download_url?: string | null;
 };
 
-type GitHubTree = {
-  tree?: GitHubTreeEntry[];
-  truncated?: boolean;
-};
-
-type GitHubBlob = {
+type GitHubContentFile = GitHubContentEntry & {
   content?: string;
   encoding?: string;
 };
 
-type GitHubContentFile = {
-  sha?: string;
-  content?: string;
-  encoding?: string;
-};
+class GitHubApiError extends Error {
+  status: number;
+  apiPath: string;
+
+  constructor(status: number, apiPath: string, message: string) {
+    super(message);
+    this.name = "GitHubApiError";
+    this.status = status;
+    this.apiPath = apiPath;
+  }
+}
 
 function requireEnvironmentVariable(name: string): string {
   const value = process.env[name]?.trim();
@@ -75,6 +70,14 @@ function configuration(): GitHubConfiguration {
 
 function repoBase(config: GitHubConfiguration): string {
   return `/repos/${encodeURIComponent(config.owner)}/${encodeURIComponent(config.repo)}`;
+}
+
+function encodeRepositoryPath(repositoryPath: string): string {
+  return repositoryPath
+    .split("/")
+    .filter(Boolean)
+    .map(encodeURIComponent)
+    .join("/");
 }
 
 async function githubRequest<T>(
@@ -107,22 +110,16 @@ async function githubRequest<T>(
   }
 
   if (!response.ok) {
-    if (response.status === 404) {
-      const error = new Error("Tävlingen hittades inte.");
-      Object.assign(error, { code: "ENOENT" });
-      throw error;
-    }
-
     const apiMessage =
       parsed && typeof parsed === "object" && "message" in parsed
         ? String((parsed as { message?: unknown }).message || "")
         : "";
 
-    throw new Error(
-      `GitHub API svarade med HTTP ${response.status}${
-        apiMessage ? `: ${apiMessage}` : ""
-      }`,
-    );
+    const message =
+      `GitHub API svarade med HTTP ${response.status} för ${apiPath}` +
+      (apiMessage ? `: ${apiMessage}` : "");
+
+    throw new GitHubApiError(response.status, apiPath, message);
   }
 
   return parsed as T;
@@ -132,74 +129,119 @@ function decodeBase64Utf8(value: string): string {
   return Buffer.from(value.replace(/\s+/g, ""), "base64").toString("utf8");
 }
 
-async function currentTreeSha(
+function contentApiPath(
   config: GitHubConfiguration,
-): Promise<string> {
-  const reference = await githubRequest<GitHubReference>(
-    config,
-    `${repoBase(config)}/git/ref/heads/${encodeURIComponent(config.branch)}`,
+  repositoryPath: string,
+): string {
+  return (
+    `${repoBase(config)}/contents/${encodeRepositoryPath(repositoryPath)}` +
+    `?ref=${encodeURIComponent(config.branch)}`
   );
-  const commitSha = reference.object?.sha;
-
-  if (!commitSha) {
-    throw new Error("GitHub returnerade ingen commit för målgrenen.");
-  }
-
-  const commit = await githubRequest<GitHubCommit>(
-    config,
-    `${repoBase(config)}/git/commits/${encodeURIComponent(commitSha)}`,
-  );
-  const treeSha = commit.tree?.sha;
-
-  if (!treeSha) {
-    throw new Error("GitHub returnerade inget filträd för målgrenen.");
-  }
-
-  return treeSha;
 }
 
-async function raceTreeEntries(
+async function readDirectory(
   config: GitHubConfiguration,
-): Promise<Array<{ path: string; sha: string }>> {
-  const treeSha = await currentTreeSha(config);
-  const tree = await githubRequest<GitHubTree>(
+  repositoryPath: string,
+): Promise<GitHubContentEntry[]> {
+  const result = await githubRequest<GitHubContentEntry[] | GitHubContentFile>(
     config,
-    `${repoBase(config)}/git/trees/${encodeURIComponent(treeSha)}?recursive=1`,
+    contentApiPath(config, repositoryPath),
   );
 
-  if (tree.truncated) {
+  if (!Array.isArray(result)) {
     throw new Error(
-      "GitHubs filträd blev för stort för att listas komplett. Publicerade tävlingar kan därför inte visas säkert.",
+      `GitHub-sökvägen ${repositoryPath} är inte en katalog.`,
     );
   }
 
-  return (tree.tree ?? [])
-    .filter(
-      (entry): entry is GitHubTreeEntry & { path: string; sha: string } =>
-        entry.type === "blob" &&
-        typeof entry.path === "string" &&
-        entry.path.startsWith(RACES_PREFIX) &&
-        entry.path.endsWith(".md") &&
-        typeof entry.sha === "string" &&
-        Boolean(entry.sha),
-    )
-    .map((entry) => ({ path: entry.path, sha: entry.sha }));
+  return result;
 }
 
-async function readBlobText(
+async function findMarkdownFiles(
   config: GitHubConfiguration,
-  sha: string,
-): Promise<string> {
-  const blob = await githubRequest<GitHubBlob>(
-    config,
-    `${repoBase(config)}/git/blobs/${encodeURIComponent(sha)}`,
-  );
+  repositoryPath: string,
+): Promise<Array<{ path: string; downloadUrl: string | null }>> {
+  const entries = await readDirectory(config, repositoryPath);
+  const output: Array<{ path: string; downloadUrl: string | null }> = [];
 
-  if (blob.encoding !== "base64" || typeof blob.content !== "string") {
-    throw new Error("GitHub returnerade ett okänt filformat.");
+  for (const entry of entries) {
+    if (entry.type === "dir" && entry.path) {
+      output.push(...(await findMarkdownFiles(config, entry.path)));
+      continue;
+    }
+
+    if (
+      entry.type === "file" &&
+      entry.path &&
+      entry.path.toLowerCase().endsWith(".md")
+    ) {
+      output.push({
+        path: entry.path,
+        downloadUrl:
+          typeof entry.download_url === "string" && entry.download_url
+            ? entry.download_url
+            : null,
+      });
+    }
   }
 
-  return decodeBase64Utf8(blob.content);
+  return output;
+}
+
+async function readRawUrl(url: string): Promise<string> {
+  const response = await fetch(url, {
+    cache: "no-store",
+    headers: {
+      "User-Agent": "KartarkivStudio/1.0",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(
+      `GitHub kunde inte läsa Markdown-filen (HTTP ${response.status}).`,
+    );
+  }
+
+  return response.text();
+}
+
+async function readContentFile(
+  config: GitHubConfiguration,
+  repositoryPath: string,
+): Promise<{ content: string; sha: string }> {
+  const file = await githubRequest<GitHubContentFile>(
+    config,
+    contentApiPath(config, repositoryPath),
+  );
+
+  if (
+    file.type !== "file" ||
+    file.encoding !== "base64" ||
+    typeof file.content !== "string" ||
+    typeof file.sha !== "string" ||
+    !file.sha
+  ) {
+    throw new Error(
+      `GitHub returnerade inte filen ${repositoryPath} i förväntat format.`,
+    );
+  }
+
+  return {
+    content: decodeBase64Utf8(file.content),
+    sha: file.sha,
+  };
+}
+
+async function readListedMarkdown(
+  config: GitHubConfiguration,
+  entry: { path: string; downloadUrl: string | null },
+): Promise<string> {
+  if (entry.downloadUrl) {
+    return readRawUrl(entry.downloadUrl);
+  }
+
+  const result = await readContentFile(config, entry.path);
+  return result.content;
 }
 
 async function mapWithConcurrency<T, R>(
@@ -215,12 +257,16 @@ async function mapWithConcurrency<T, R>(
       const index = nextIndex;
       nextIndex += 1;
 
-      if (index >= values.length) return;
+      if (index >= values.length) {
+        return;
+      }
+
       output[index] = await mapper(values[index]);
     }
   }
 
   const workerCount = Math.min(concurrency, values.length);
+
   await Promise.all(
     Array.from({ length: workerCount }, () => worker()),
   );
@@ -228,49 +274,43 @@ async function mapWithConcurrency<T, R>(
   return output;
 }
 
-async function readContentFile(
-  config: GitHubConfiguration,
-  repositoryPath: string,
-): Promise<{ content: string; sha: string }> {
-  const encodedPath = repositoryPath
-    .split("/")
-    .map(encodeURIComponent)
-    .join("/");
-
-  const file = await githubRequest<GitHubContentFile>(
-    config,
-    `${repoBase(config)}/contents/${encodedPath}?ref=${encodeURIComponent(config.branch)}`,
-  );
+function raceIdFromRepositoryPath(repositoryPath: string): string {
+  const prefix = `${RACES_ROOT}/`;
 
   if (
-    file.encoding !== "base64" ||
-    typeof file.content !== "string" ||
-    typeof file.sha !== "string" ||
-    !file.sha
+    !repositoryPath.startsWith(prefix) ||
+    !repositoryPath.toLowerCase().endsWith(".md")
   ) {
-    throw new Error("GitHub returnerade inte den publicerade filen korrekt.");
+    throw new Error(`Ogiltig tävlingssökväg från GitHub: ${repositoryPath}`);
   }
 
-  return {
-    content: decodeBase64Utf8(file.content),
-    sha: file.sha,
-  };
+  return repositoryPath
+    .slice(prefix.length)
+    .replace(/\.md$/i, "");
 }
 
 export async function listGitHubPublishedRaces(): Promise<
   PublishedRaceSummary[]
 > {
   const config = configuration();
-  const entries = await raceTreeEntries(config);
 
-  const summaries = await mapWithConcurrency(entries, 16, async (entry) => {
-    const content = await readBlobText(config, entry.sha);
-    const id = entry.path
-      .slice(RACES_PREFIX.length)
-      .replace(/\.md$/i, "");
+  /*
+   * Viktigt: listningen använder GitHubs Contents API.
+   * Den gamla versionen använde /git/ref och /git/trees och gjorde dessutom
+   * om ALLA 404-fel till "Tävlingen hittades inte", vilket dolde det riktiga
+   * felet när själva repot/branchen/katalogen inte kunde läsas.
+   */
+  const files = await findMarkdownFiles(config, RACES_ROOT);
 
-    return publishedSummaryFromContent(id, content);
-  });
+  const summaries = await mapWithConcurrency(
+    files,
+    20,
+    async (entry): Promise<PublishedRaceSummary> => {
+      const content = await readListedMarkdown(config, entry);
+      const id = raceIdFromRepositoryPath(entry.path);
+      return publishedSummaryFromContent(id, content);
+    },
+  );
 
   return summaries.sort((a, b) => {
     const dateCompare = b.date.localeCompare(a.date);
@@ -284,7 +324,25 @@ export async function readGitHubPublishedRace(
   const config = configuration();
   const normalizedId = normalizePublishedRaceId(id);
   const repositoryPath = publishedRaceRepositoryPath(normalizedId);
-  const { content } = await readContentFile(config, repositoryPath);
+
+  let content: string;
+
+  try {
+    ({ content } = await readContentFile(config, repositoryPath));
+  } catch (error) {
+    /*
+     * Endast när EN SPECIFIK tävlingsfil saknas översätts 404 till ENOENT.
+     * Fel vid listning av repo/branch/katalog ska visas som riktiga GitHub-fel.
+     */
+    if (error instanceof GitHubApiError && error.status === 404) {
+      const notFound = new Error("Tävlingen hittades inte.");
+      Object.assign(notFound, { code: "ENOENT" });
+      throw notFound;
+    }
+
+    throw error;
+  }
+
   const parsed = parsePublishedMarkdown(content);
 
   return {
@@ -304,16 +362,27 @@ export async function writeGitHubPublishedRace(
   const config = configuration();
   const normalizedId = normalizePublishedRaceId(id);
   const repositoryPath = publishedRaceRepositoryPath(normalizedId);
-  const current = await readContentFile(config, repositoryPath);
+
+  let current: { content: string; sha: string };
+
+  try {
+    current = await readContentFile(config, repositoryPath);
+  } catch (error) {
+    if (error instanceof GitHubApiError && error.status === 404) {
+      const notFound = new Error("Tävlingen hittades inte.");
+      Object.assign(notFound, { code: "ENOENT" });
+      throw notFound;
+    }
+
+    throw error;
+  }
+
   const nextContent = serializePublishedMarkdown(
     current.content,
     fields,
     body,
   );
-  const encodedPath = repositoryPath
-    .split("/")
-    .map(encodeURIComponent)
-    .join("/");
+  const encodedPath = encodeRepositoryPath(repositoryPath);
 
   await githubRequest<unknown>(
     config,
@@ -329,10 +398,6 @@ export async function writeGitHubPublishedRace(
     },
   );
 
-  /*
-   * Bygg dokumentet från den data vi precis skrev. Då behöver vi inte göra
-   * ytterligare ett GitHub-anrop innan API-rutten kan svara.
-   */
   const parsed = parsePublishedMarkdown(nextContent);
 
   return {
