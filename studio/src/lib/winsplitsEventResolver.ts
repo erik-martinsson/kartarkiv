@@ -41,6 +41,15 @@ const DATABASE_DATE_ANCHORS = [
     date: "2026-03-22",
     databaseId: 111060,
   },
+  /*
+   * Verifierat mot WinSplits Online. Under våren 2026 ökade
+   * uppladdningstakten kraftigt, så äldre extrapolering hamnade
+   * flera hundra databaseId fel.
+   */
+  {
+    date: "2026-05-30",
+    databaseId: 112978,
+  },
 ] as const;
 
 type WinSplitsCandidate = {
@@ -628,20 +637,19 @@ function eventMatchScore(
     );
 
   /*
-   * Datum måste vara exakt. Därefter väger titel klart tyngst.
-   * Arrangör används som extra verifiering, men får vara tom eftersom
-   * WinSplits ibland använder annat klubbnamn/förkortning än Eventor.
+   * Detta är bara en sorteringssignal. En avvikelse i titel eller
+   * arrangör får aldrig filtrera bort rätt tävling; den slutliga
+   * verifieringen görs mot klass + löpare + sluttid.
    */
   return (
-    70 +
     Math.max(
       title,
       Math.round(
-        fullTextTitle * 0.85,
+        fullTextTitle * 0.9,
       ),
     ) *
-      0.24 +
-    organiser * 0.06
+      0.8 +
+    organiser * 0.2
   );
 }
 
@@ -764,6 +772,54 @@ async function findDatePivot(
   );
 }
 
+async function scanWindowForDate(
+  center: number,
+  radius: number,
+  wantedDate: string,
+): Promise<EventSummary[]> {
+  const ids =
+    Array.from(
+      {
+        length:
+          radius * 2 + 1,
+      },
+      (_, index) =>
+        Math.max(
+          1,
+          center -
+            radius +
+            index,
+        ),
+    );
+
+  const summaries =
+    (
+      await mapWithConcurrency(
+        ids,
+        18,
+        readEventSummary,
+      )
+    ).filter(
+      (
+        item,
+      ): item is EventSummary =>
+        item !== null &&
+        item.date === wantedDate,
+    );
+
+  const unique =
+    new Map<number, EventSummary>();
+
+  for (const item of summaries) {
+    unique.set(
+      item.databaseId,
+      item,
+    );
+  }
+
+  return [...unique.values()];
+}
+
 async function discoverEvents(
   input: SearchInput,
 ): Promise<EventSummary[]> {
@@ -781,44 +837,49 @@ async function discoverEvents(
     );
 
   /*
-   * ±110 täcker ungefär en veckas WinSplits-uppladdningar.
-   * Eftersom vi först flyttar pivoten mot rätt eventdatum behöver vi
-   * normalt betydligt mindre än så, men intervallet ger marginal för
-   * sena uppladdningar och flera tävlingar samma dag.
+   * Sök först snävt, sedan bredare. Viktigast är exakt rätt datum.
+   * databaseId är bara ett sätt att hitta området och får aldrig vara
+   * den slutliga matchningen.
    */
-  const radius = 110;
+  const radii = [
+    140,
+    360,
+    760,
+  ];
 
-  const ids =
-    Array.from(
-      {
-        length:
-          radius * 2 + 1,
-      },
-      (_, index) =>
-        Math.max(
-          1,
-          pivot -
-            radius +
-            index,
-        ),
-    );
+  let events: EventSummary[] = [];
 
-  const summaries =
-    (
-      await mapWithConcurrency(
-        ids,
-        14,
-        readEventSummary,
-      )
-    ).filter(
-      (
-        item,
-      ): item is EventSummary =>
-        item !== null &&
-        item.date === input.date,
-    );
+  for (const radius of radii) {
+    events =
+      await scanWindowForDate(
+        pivot,
+        radius,
+        input.date,
+      );
 
-  return summaries
+    if (events.length > 0) {
+      break;
+    }
+  }
+
+  if (
+    events.length === 0 &&
+    pivot !== estimate
+  ) {
+    events =
+      await scanWindowForDate(
+        estimate,
+        760,
+        input.date,
+      );
+  }
+
+  /*
+   * Titel och arrangör styr bara testordningen. Alla rimliga tävlingar
+   * på exakt rätt datum kan fortfarande verifieras mot Erik, klass och
+   * sluttid.
+   */
+  return events
     .map((event) => ({
       event,
       score:
@@ -827,15 +888,11 @@ async function discoverEvents(
           input,
         ),
     }))
-    .filter(
-      ({ score }) =>
-        score >= 82,
-    )
     .sort(
       (a, b) =>
         b.score - a.score,
     )
-    .slice(0, 8)
+    .slice(0, 40)
     .map(({ event }) => event);
 }
 
@@ -984,7 +1041,7 @@ async function resolveCandidates(
           100,
           (result.classMatches
             ? 45
-            : 15) +
+            : 0) +
             (result.timeMatches
               ? 25
               : 0) +
@@ -1019,6 +1076,8 @@ async function resolveCandidates(
    */
   if (
     !best ||
+    !best.classMatches ||
+    !best.timeMatches ||
     best.confidence < 88
   ) {
     return {
