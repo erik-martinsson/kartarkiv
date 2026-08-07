@@ -787,16 +787,84 @@ function cleanClassCandidate(
     : null;
 }
 
+function distanceFromClassHeader(
+  value: string,
+  raceClass: string,
+): number | null {
+  const text = cleanText(value);
+
+  if (!text || !raceClass) {
+    return null;
+  }
+
+  const escapedClass =
+    raceClass.replace(
+      /[.*+?^${}()|[\]\\]/g,
+      "\\$&",
+    );
+
+  /*
+   * WinSplits visar banlängden i klassrubriken/breadcrumben:
+   *
+   *   >> H35 (3220 m) >>
+   *
+   * och vissa vyer kan visa samma uppgift utan parentes:
+   *
+   *   H35 3 220 m
+   *
+   * Läs just detta tydliga format i stället för att försöka tolka
+   * all sidtext i närheten av klassnamnet.
+   */
+  const patterns = [
+    new RegExp(
+      `(?:^|[>\\s])${escapedClass}\\s*\\(\\s*(\\d[\\d\\s]{2,6})\\s*m\\s*\\)`,
+      "i",
+    ),
+    new RegExp(
+      `(?:^|[>\\s])${escapedClass}\\s+(\\d[\\d\\s]{2,6})\\s*m\\b`,
+      "i",
+    ),
+  ];
+
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+
+    if (!match) {
+      continue;
+    }
+
+    const meters = Number(
+      match[1].replace(/\s+/g, ""),
+    );
+
+    if (
+      Number.isFinite(meters) &&
+      meters >= 200 &&
+      meters <= 100_000
+    ) {
+      return Number(
+        (meters / 1000).toFixed(3),
+      );
+    }
+  }
+
+  return null;
+}
+
 function readClassMetadata(
   pages: LoadedPage[],
   categoryId: number,
 ): WinSplitsClassMetadata {
   const raceClassCandidates: string[] = [];
-  const textCandidates: string[] = [];
+  const pageTexts: string[] = [];
 
   for (const page of pages) {
     const $ = cheerio.load(page.html);
 
+    /*
+     * Det säkraste klassnamnet är optionen med aktuell categoryId.
+     * Därefter används valda options/rubriker som fallback.
+     */
     const matchingOption =
       $(
         `option[value="${categoryId}"]`,
@@ -816,7 +884,7 @@ function readClassMetadata(
       );
     });
 
-    textCandidates.push(
+    pageTexts.push(
       cleanText($.root().text()),
     );
   }
@@ -833,24 +901,18 @@ function readClassMetadata(
 
   let distanceKm: number | null = null;
 
+  /*
+   * För moderna WinSplits-sidor finns banlängden i klassrubriken,
+   * t.ex. "H35 (3220 m)". Sök igenom alla laddade frames eftersom
+   * breadcrumb/rubrik och resultattabell kan ligga i olika frames.
+   */
   if (raceClass) {
-    const escapedClass =
-      raceClass.replace(
-        /[.*+?^${}()|[\]\\]/g,
-        "\\$&",
-      );
-
-    for (const text of textCandidates) {
-      const nearbyMatch = text.match(
-        new RegExp(
-          `${escapedClass}.{0,160}`,
-          "i",
-        ),
-      );
-
-      distanceKm = parseDistanceKm(
-        nearbyMatch?.[0] ?? "",
-      );
+    for (const text of pageTexts) {
+      distanceKm =
+        distanceFromClassHeader(
+          text,
+          raceClass,
+        );
 
       if (distanceKm !== null) {
         break;
@@ -858,8 +920,12 @@ function readClassMetadata(
     }
   }
 
+  /*
+   * Behåll den gamla etikettbaserade fallbacken för de fall där
+   * WinSplits uttryckligen skriver "Banlängd: 3.2 km".
+   */
   if (distanceKm === null) {
-    for (const text of textCandidates) {
+    for (const text of pageTexts) {
       const labelled = text.match(
         /(?:banlängd|banlangd|längd|langd|course\s*length)\s*:?\s*(?:\d+(?:[.,]\d+)?\s*km|\d[\d\s]{2,6}\s*m)/i,
       );
