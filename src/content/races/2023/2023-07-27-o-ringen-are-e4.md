@@ -1,12 +1,12 @@
 ---
 title: "O-Ringen Åre E4"
-date: 2023-07-27
+date: "2023-07-27"
 
 club: "-"
 country: "SE"
 location: "Åre kommun"
 
-discipline: "Lång"
+discipline: "Medel"
 raceClass: "H40"
 
 distanceKm: 4.92
@@ -33,5 +33,4 @@ results: "https://eventor.orientering.se/Events/ResultList?eventId=40052&eventRa
 
 featured: false
 ---
-
 
