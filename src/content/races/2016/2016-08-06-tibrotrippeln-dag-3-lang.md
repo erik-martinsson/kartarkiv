@@ -2,11 +2,11 @@
 title: "Tibrotrippeln, dag 3, lång"
 event: "Tibrotrippeln, dag 3, lång"
 
-date: 2016-08-06
+date: "2016-08-06"
 
 club: "Linköpings OK"
 country: "SE"
-location: ""
+location: "Tibro"
 
 discipline: "Lång"
 raceClass: "H21E"

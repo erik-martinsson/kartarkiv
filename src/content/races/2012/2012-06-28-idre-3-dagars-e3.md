@@ -2,11 +2,11 @@
 title: "Idre 3-Dagars E3"
 event: "Idre 3-Dagars E3"
 
-date: 2012-06-28
+date: "2012-06-28"
 
 club: "Linköpings OK"
 country: "SE"
-location: ""
+location: "Idre"
 
 discipline: "Lång"
 raceClass: "H21"

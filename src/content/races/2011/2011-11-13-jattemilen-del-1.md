@@ -1,12 +1,12 @@
 ---
-title: "Jättemilen del 1"
-event: "Jättemilen del 1"
+title: "Jättemilen"
+event: "Jättemilen"
 
-date: 2011-11-13
+date: "2011-11-13"
 
 club: "Linköpings OK"
 country: "DK"
-location: ""
+location: "Danmark"
 
 discipline: "Ultralång"
 raceClass: "H21"
@@ -31,4 +31,5 @@ longitude: 12.3060955
 featured: false
 ---
 
-6:a av 32 i Jättemilen del 1. Ingen registrerad bomtid.
+6:a av 32 i Jättemilen. Ingen registrerad bomtid.
+Endast del 1
