@@ -436,9 +436,10 @@ const scatterYTicks = [0, 0.25, 0.5, 0.75, 1].map((ratio) => ({
 }));
 
 
-// Resultatpercentil över tid.
-// 100 % = bäst i startfältet, 0 % = sist.
-// Endast lopp med giltig placering och minst två startande används.
+// Resultatnivå över tid.
+// Varje lopp räknas om till en resultatpercentil där 100 % = bäst
+// i startfältet och 0 % = sist. Diagrammet visar medianen per år
+// och disciplin för att minska påverkan från enstaka extremresultat.
 const resultPercentileRaces = races
   .filter((race) => {
     const position = race.data.position ?? 0;
@@ -468,6 +469,16 @@ const resultPercentileRaces = races
     };
   });
 
+const median = (values) => {
+  const sorted = [...values].sort((a, b) => a - b);
+  if (sorted.length === 0) return 0;
+
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0
+    ? (sorted[middle - 1] + sorted[middle]) / 2
+    : sorted[middle];
+};
+
 const resultYearMin = resultPercentileRaces.length > 0
   ? Math.min(...resultPercentileRaces.map((item) => item.year))
   : new Date().getFullYear();
@@ -478,7 +489,41 @@ const resultYearMax = resultPercentileRaces.length > 0
 
 const resultYearRange = Math.max(1, resultYearMax - resultYearMin);
 
-const resultPercentilePoints = resultPercentileRaces.map((item) => ({
+const resultDisciplineYearMap = new Map();
+for (const race of resultPercentileRaces) {
+  const key = `${race.discipline}::${race.year}`;
+  const current = resultDisciplineYearMap.get(key) ?? {
+    discipline: race.discipline,
+    year: race.year,
+    percentiles: []
+  };
+
+  current.percentiles.push(race.percentile);
+  resultDisciplineYearMap.set(key, current);
+}
+
+const resultMedianSeries = [...resultDisciplineYearMap.values()]
+  .map((item) => ({
+    discipline: item.discipline,
+    year: item.year,
+    races: item.percentiles.length,
+    medianPercentile: median(item.percentiles)
+  }))
+  .sort((a, b) =>
+    a.discipline === b.discipline
+      ? a.year - b.year
+      : a.discipline.localeCompare(b.discipline, 'sv-SE')
+  );
+
+const resultDisciplines = [...new Set(
+  resultMedianSeries.map((item) => item.discipline)
+)].sort((a, b) => {
+  const countA = disciplineMap.get(a) ?? 0;
+  const countB = disciplineMap.get(b) ?? 0;
+  return countB - countA || a.localeCompare(b, 'sv-SE');
+});
+
+const resultBackgroundPoints = resultPercentileRaces.map((item) => ({
   ...item,
   color:
     disciplineColorMap.get(item.discipline) ??
@@ -493,6 +538,42 @@ const resultPercentilePoints = resultPercentileRaces.map((item) => ({
     (item.percentile / 100) *
       scatterUsableHeight
 }));
+
+const resultMedianPoints = resultMedianSeries.map((item) => ({
+  ...item,
+  color:
+    disciplineColorMap.get(item.discipline) ??
+    '#a0a0a0',
+  x:
+    scatterPaddingLeft +
+    ((item.year - resultYearMin) / resultYearRange) *
+      scatterUsableWidth,
+  y:
+    scatterPaddingTop +
+    scatterUsableHeight -
+    (item.medianPercentile / 100) *
+      scatterUsableHeight
+}));
+
+const resultMedianLines = resultDisciplines.map((discipline) => {
+  const points = resultMedianPoints
+    .filter((item) => item.discipline === discipline)
+    .sort((a, b) => a.year - b.year);
+
+  return {
+    discipline,
+    color:
+      disciplineColorMap.get(discipline) ??
+      '#a0a0a0',
+    points,
+    path: points
+      .map(
+        (point, index) =>
+          `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`
+      )
+      .join(' ')
+  };
+});
 
 const resultPercentileYTicks = [0, 25, 50, 75, 100].map((value) => ({
   value,
@@ -527,6 +608,7 @@ const resultYearTicks = Array.from(
   (tick, index, items) =>
     index === 0 || tick.year !== items[index - 1].year
 );
+
 ---
 
 <BaseLayout title="Statistik · Erik Martinssons Kartarkiv">
@@ -1102,99 +1184,142 @@ const resultYearTicks = Array.from(
     <section class="statistics-section">
       <article class="panel statistics-chart-panel statistics-chart-wide">
         <div class="statistics-chart-heading">
-          <h3>Resultatpercentil över tid</h3>
-          <p>Varje punkt är ett lopp. 100 % motsvarar bäst i startfältet och 0 % sist. Färgen visar disciplin.</p>
+          <h3>Resultatnivå över tid</h3>
+          <p>Medianpercentil per år och disciplin. Högre är bättre. Små punkter i bakgrunden visar enskilda lopp.</p>
         </div>
 
         {
-          resultPercentilePoints.length > 0 ? (
-            <div class="statistics-line-chart-wrap">
-              <svg
-                class="statistics-line-chart"
-                viewBox={`0 0 ${scatterWidth} ${scatterHeight}`}
-                role="img"
-                aria-labelledby="result-percentile-title result-percentile-desc"
-              >
-                <title id="result-percentile-title">Resultatpercentil över tid</title>
-                <desc id="result-percentile-desc">
-                  Varje punkt motsvarar ett lopp. Den horisontella axeln visar år och den vertikala axeln visar placering relativt startfältet, där hundra procent är bäst.
-                </desc>
-
-                {resultPercentileYTicks.map((tick) => (
-                  <g>
-                    <line
-                      x1={scatterPaddingLeft}
-                      x2={scatterWidth - scatterPaddingRight}
-                      y1={tick.y}
-                      y2={tick.y}
-                      class="statistics-grid-line"
-                    />
-                    <text
-                      x={scatterPaddingLeft - 10}
-                      y={tick.y + 4}
-                      text-anchor="end"
-                      class="statistics-line-year"
-                    >
-                      {tick.value} %
-                    </text>
-                  </g>
+          resultMedianPoints.length > 0 ? (
+            <>
+              <div class="statistics-result-legend" aria-label="Discipliner">
+                {resultDisciplines.map((discipline) => (
+                  <span class="statistics-result-legend-item">
+                    <span
+                      class="statistics-result-legend-dot"
+                      style={`background: ${disciplineColorMap.get(discipline) ?? '#a0a0a0'}`}
+                      aria-hidden="true"
+                    ></span>
+                    {discipline}
+                  </span>
                 ))}
+              </div>
 
-                {resultYearTicks.map((tick) => (
-                  <g>
-                    <line
-                      x1={tick.x}
-                      x2={tick.x}
-                      y1={scatterPaddingTop}
-                      y2={scatterHeight - scatterPaddingBottom}
-                      class="statistics-grid-line"
-                    />
-                    <text
-                      x={tick.x}
-                      y={scatterHeight - 24}
-                      text-anchor="middle"
-                      class="statistics-line-year"
-                    >
-                      {tick.year}
-                    </text>
-                  </g>
-                ))}
-
-                <text
-                  x={scatterWidth / 2}
-                  y={scatterHeight - 5}
-                  text-anchor="middle"
-                  class="statistics-line-year"
+              <div class="statistics-line-chart-wrap">
+                <svg
+                  class="statistics-line-chart"
+                  viewBox={`0 0 ${scatterWidth} ${scatterHeight}`}
+                  role="img"
+                  aria-labelledby="result-percentile-title result-percentile-desc"
                 >
-                  År
-                </text>
+                  <title id="result-percentile-title">Resultatnivå över tid</title>
+                  <desc id="result-percentile-desc">
+                    Linjerna visar medianpercentil per år och disciplin. Små svaga punkter visar enskilda lopp. Hundra procent är bäst i startfältet och noll procent sist.
+                  </desc>
 
-                <text
-                  x="14"
-                  y={scatterHeight / 2}
-                  text-anchor="middle"
-                  class="statistics-line-year"
-                  transform={`rotate(-90 14 ${scatterHeight / 2})`}
-                >
-                  Resultatpercentil
-                </text>
+                  {resultPercentileYTicks.map((tick) => (
+                    <g>
+                      <line
+                        x1={scatterPaddingLeft}
+                        x2={scatterWidth - scatterPaddingRight}
+                        y1={tick.y}
+                        y2={tick.y}
+                        class="statistics-grid-line"
+                      />
+                      <text
+                        x={scatterPaddingLeft - 10}
+                        y={tick.y + 4}
+                        text-anchor="end"
+                        class="statistics-line-year"
+                      >
+                        {tick.value} %
+                      </text>
+                    </g>
+                  ))}
 
-                {resultPercentilePoints.map((point) => (
-                  <g>
-                    <title>
-                      {`${point.title} · ${point.year} · ${point.discipline} · ${point.position}/${point.starters} · ${formatNumber(point.percentile, 1)} %`}
-                    </title>
-                    <circle
-                      cx={point.x}
-                      cy={point.y}
-                      r="4"
-                      fill={point.color}
-                      stroke="none"
+                  {resultYearTicks.map((tick) => (
+                    <g>
+                      <line
+                        x1={tick.x}
+                        x2={tick.x}
+                        y1={scatterPaddingTop}
+                        y2={scatterHeight - scatterPaddingBottom}
+                        class="statistics-grid-line"
+                      />
+                      <text
+                        x={tick.x}
+                        y={scatterHeight - 24}
+                        text-anchor="middle"
+                        class="statistics-line-year"
+                      >
+                        {tick.year}
+                      </text>
+                    </g>
+                  ))}
+
+                  <text
+                    x={scatterWidth / 2}
+                    y={scatterHeight - 5}
+                    text-anchor="middle"
+                    class="statistics-line-year"
+                  >
+                    År
+                  </text>
+
+                  <text
+                    x="14"
+                    y={scatterHeight / 2}
+                    text-anchor="middle"
+                    class="statistics-line-year"
+                    transform={`rotate(-90 14 ${scatterHeight / 2})`}
+                  >
+                    Resultatpercentil
+                  </text>
+
+                  {resultBackgroundPoints.map((point) => (
+                    <g>
+                      <title>
+                        {`${point.title} · ${point.year} · ${point.discipline} · ${point.position}/${point.starters} · ${formatNumber(point.percentile, 1)} %`}
+                      </title>
+                      <circle
+                        cx={point.x}
+                        cy={point.y}
+                        r="2"
+                        fill={point.color}
+                        fill-opacity="0.16"
+                        stroke="none"
+                      />
+                    </g>
+                  ))}
+
+                  {resultMedianLines.map((series) => (
+                    <path
+                      d={series.path}
+                      fill="none"
+                      stroke={series.color}
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     />
-                  </g>
-                ))}
-              </svg>
-            </div>
+                  ))}
+
+                  {resultMedianPoints.map((point) => (
+                    <g>
+                      <title>
+                        {`${point.discipline} · ${point.year} · median ${formatNumber(point.medianPercentile, 1)} % · ${point.races} lopp`}
+                      </title>
+                      <circle
+                        cx={point.x}
+                        cy={point.y}
+                        r="5"
+                        fill={point.color}
+                        stroke="#17191b"
+                        stroke-width="2"
+                      />
+                    </g>
+                  ))}
+                </svg>
+              </div>
+            </>
           ) : (
             <p class="statistics-empty-chart">Ingen statistik ännu.</p>
           )
@@ -1265,6 +1390,29 @@ const resultYearTicks = Array.from(
   </main>
 
   <style>
+    .statistics-result-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.55rem 1rem;
+      margin: 0.15rem 0 0.35rem;
+      color: var(--muted, #a0a0a0);
+      font-size: 0.78rem;
+    }
+
+    .statistics-result-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .statistics-result-legend-dot {
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 999px;
+      flex: 0 0 auto;
+    }
+
     .statistics-ranking-panel {
       overflow: hidden;
     }
