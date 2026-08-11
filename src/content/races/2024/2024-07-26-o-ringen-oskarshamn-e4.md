@@ -1,12 +1,12 @@
 ---
 title: "O-Ringen Oskarshamn E4"
-date: 2024-07-26
+date: "2024-07-26"
 
 club: "-"
 country: "SE"
 location: "Oskarshamn"
 
-discipline: "Lång"
+discipline: "Medel"
 raceClass: "H40"
 
 distanceKm: 3.81
@@ -33,5 +33,4 @@ results: "https://eventor.orientering.se/Events/ResultList?eventId=41864&eventCl
 
 featured: false
 ---
-
 
