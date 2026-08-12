@@ -1,12 +1,12 @@
 ---
 title: "Veteran-SM, ultralång"
-date: 2024-08-11
+date: "2024-08-11"
 
 club: "Grövelsjöfjällens OK"
 country: "SE"
 location: "Älvdalens kommun"
 
-discipline: "Lång"
+discipline: "Ultralång"
 raceClass: "H40"
 
 distanceKm: 15.28
@@ -33,5 +33,4 @@ results: "https://eventor.orientering.se/Events/ResultList?eventId=43129"
 
 featured: false
 ---
-
 
