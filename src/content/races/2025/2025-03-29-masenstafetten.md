@@ -1,6 +1,6 @@
 ---
 title: "Måsenstafetten"
-date: 2025-03-29
+date: "2025-03-29"
 
 club: "OK Måsen"
 country: "SE"
@@ -17,7 +17,7 @@ time: "34:27"
 position: 1
 starters: 20
 
-controls: 10
+controls: 16
 mistakeSeconds: 41
 
 mapImage: "/maps/2025/2025-03-29-masenstafetten_blank.png"
@@ -31,5 +31,4 @@ winsplits: "https://obasen.orientering.se/winsplits/online/sv/default.asp?page=t
 
 featured: false
 ---
-
 
