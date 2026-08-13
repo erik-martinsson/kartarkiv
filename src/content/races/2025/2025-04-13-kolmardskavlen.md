@@ -1,6 +1,6 @@
 ---
 title: "Kolmårdskavlen"
-date: 2025-04-13
+date: "2025-04-13"
 
 club: "OK Kolmården"
 country: "SE"
@@ -17,7 +17,7 @@ time: "1:00:27"
 position: 23
 starters: 58
 
-controls: 21
+controls: 24
 mistakeSeconds: 102
 
 mapImage: "/maps/2025/2025-04-13-kolmardskavlen_blank.png"
