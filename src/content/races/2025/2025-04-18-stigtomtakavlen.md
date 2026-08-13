@@ -1,6 +1,6 @@
 ---
 title: "Stigtomtakavlen"
-date: 2025-04-18
+date: "2025-04-18"
 
 club: "OK Hällen"
 country: "SE"
@@ -17,7 +17,7 @@ time: "1:06:55"
 position: 46
 starters: 82
 
-controls: 11
+controls: 18
 mistakeSeconds: 362
 
 mapImage: "/maps/2025/2025-04-18-stigtomtakavlen_blank.png"
@@ -33,5 +33,4 @@ results: "https://eventor.orientering.se/Events/Show/47770"
 
 featured: false
 ---
-
 
