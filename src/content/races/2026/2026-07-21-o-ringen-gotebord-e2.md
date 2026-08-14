@@ -1,6 +1,6 @@
 ---
-title: "O-Ringen Götebord E2"
-date: 2026-07-21
+title: "O-Ringen Göteborg E2"
+date: "2026-07-21"
 
 club: "-"
 country: "SE"
@@ -33,5 +33,4 @@ results: "https://eventor.orientering.se/Events/ResultList?eventId=50594&eventCl
 
 featured: false
 ---
-
 
