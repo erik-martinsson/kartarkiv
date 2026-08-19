@@ -551,7 +551,7 @@ const maxStatusDays = Math.max(
     renderScatter(String(select?.value ?? 'all'));
   </script>
 
-  <style>
+  <style is:global>
     .training-page { padding-bottom: 4rem; }
     .training-header { display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; margin-bottom:3rem; }
     .training-header h1 { margin:.1rem 0 .5rem; font-size:clamp(2.4rem,7vw,5.6rem); line-height:.95; }
