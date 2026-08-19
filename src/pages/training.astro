@@ -233,36 +233,130 @@ const percentileForRace = (race) => {
   return ((starters - position) / (starters - 1)) * 100;
 };
 
-const trainingBeforeRace = (raceDate, days = 28) => {
+const trainingWindowBeforeRace = (raceDate, days = 28) => {
+  const raceDay = dateOnly(raceDate);
   const end = new Date(raceDate);
+  end.setDate(end.getDate() - 1);
   end.setHours(23, 59, 59, 999);
+
   const start = new Date(raceDate);
   start.setDate(start.getDate() - days);
   start.setHours(0, 0, 0, 0);
 
-  // Tävlingsdagen räknas inte in i träningsbelastningen före loppet.
-  const raceDay = dateOnly(raceDate);
   const rows = trainingRows.filter((row) => {
     const date = new Date(`${row.date}T12:00:00`);
-    return row.date !== raceDay && date >= start && date <= end && row.seconds > 0;
+    return row.date !== raceDay && date >= start && date <= end;
   });
 
+  const active = rows.filter((row) => row.seconds > 0);
+  const runningActivities = new Set(['Running', 'Löpning terräng']);
+  const orienteering = active.filter((row) => row.activity === 'Orientering');
+  const running = active.filter((row) => runningActivities.has(row.activity));
+
   return {
-    seconds: rows.reduce((sum, row) => sum + row.seconds, 0),
-    distanceKm: rows.reduce((sum, row) => sum + row.distanceKm, 0),
-    orienteeringSeconds: rows
-      .filter((row) => row.activity === 'Orientering')
-      .reduce((sum, row) => sum + row.seconds, 0),
-    sessions: rows.length
+    seconds: active.reduce((sum, row) => sum + row.seconds, 0),
+    distanceKm: active.reduce((sum, row) => sum + row.distanceKm, 0),
+    climbM: active.reduce((sum, row) => sum + row.climbM, 0),
+    sessions: active.length,
+    orienteeringSeconds: orienteering.reduce((sum, row) => sum + row.seconds, 0),
+    orienteeringSessions: orienteering.length,
+    runningSeconds: running.reduce((sum, row) => sum + row.seconds, 0),
+    runningDistanceKm: running.reduce((sum, row) => sum + row.distanceKm, 0),
+    sickDays: new Set(rows.filter((row) => row.sick).map((row) => row.date)).size,
+    injuredDays: new Set(rows.filter((row) => row.injured).map((row) => row.date)).size,
+    restDays: new Set(rows.filter((row) => row.restday).map((row) => row.date)).size
   };
+};
+
+const daysSinceLastTraining = (raceDate) => {
+  const raceDay = dateOnly(raceDate);
+  const previous = trainingRows
+    .filter((row) => row.seconds > 0 && row.date < raceDay)
+    .map((row) => row.date)
+    .sort()
+    .at(-1);
+
+  if (!previous) return null;
+  const race = new Date(`${raceDay}T12:00:00`);
+  const prev = new Date(`${previous}T12:00:00`);
+  return Math.max(0, Math.round((race.getTime() - prev.getTime()) / 86400000));
+};
+
+const medianNumber = (values) => {
+  const valid = values.filter((value) => Number.isFinite(value)).sort((a, b) => a - b);
+  if (valid.length === 0) return null;
+  const middle = Math.floor(valid.length / 2);
+  return valid.length % 2
+    ? valid[middle]
+    : (valid[middle - 1] + valid[middle]) / 2;
+};
+
+const quantileBreaks = (values) => {
+  const sorted = values.filter((value) => Number.isFinite(value)).sort((a, b) => a - b);
+  if (sorted.length < 4) return [];
+  const q = (ratio) => {
+    const index = (sorted.length - 1) * ratio;
+    const lower = Math.floor(index);
+    const upper = Math.ceil(index);
+    if (lower === upper) return sorted[lower];
+    const weight = index - lower;
+    return sorted[lower] * (1 - weight) + sorted[upper] * weight;
+  };
+  return [q(0.25), q(0.5), q(0.75)];
+};
+
+const bucketQuartiles = (items, valueKey, metricKey, formatter = (value) => value) => {
+  const eligible = items.filter(
+    (item) => Number.isFinite(item[valueKey]) && Number.isFinite(item[metricKey])
+  );
+  const breaks = quantileBreaks(eligible.map((item) => item[valueKey]));
+  if (breaks.length !== 3) return [];
+
+  const buckets = [
+    { label: 'Lägst', min: -Infinity, max: breaks[0], values: [], rawValues: [] },
+    { label: 'Låg–medel', min: breaks[0], max: breaks[1], values: [], rawValues: [] },
+    { label: 'Medel–hög', min: breaks[1], max: breaks[2], values: [], rawValues: [] },
+    { label: 'Högst', min: breaks[2], max: Infinity, values: [], rawValues: [] }
+  ];
+
+  for (const item of eligible) {
+    const index =
+      item[valueKey] <= breaks[0] ? 0 :
+      item[valueKey] <= breaks[1] ? 1 :
+      item[valueKey] <= breaks[2] ? 2 : 3;
+    buckets[index].values.push(item[metricKey]);
+    buckets[index].rawValues.push(item[valueKey]);
+  }
+
+  return buckets.map((bucket) => ({
+    label: bucket.label,
+    count: bucket.values.length,
+    median: medianNumber(bucket.values) ?? 0,
+    inputMedian: medianNumber(bucket.rawValues) ?? 0,
+    inputLabel: formatter(medianNumber(bucket.rawValues) ?? 0)
+  }));
 };
 
 const raceTrainingLinks = races
   .map((race) => {
     const percentile = percentileForRace(race);
-    if (percentile === null) return null;
-    const load = trainingBeforeRace(race.data.date, 28);
+    const raceSeconds = timeToSeconds(race.data.time);
+    const raceDistance = race.data.gpsDistanceKm ?? race.data.distanceKm ?? 0;
+    const racePaceSeconds = raceSeconds > 0 && raceDistance > 0
+      ? raceSeconds / raceDistance
+      : null;
+    const mistakeShare =
+      race.data.discipline !== 'Stafett' &&
+      race.data.winsplits &&
+      raceSeconds > 0
+        ? ((race.data.mistakeSeconds ?? 0) / raceSeconds) * 100
+        : null;
+
+    const load7 = trainingWindowBeforeRace(race.data.date, 7);
+    const load28 = trainingWindowBeforeRace(race.data.date, 28);
+    const load90 = trainingWindowBeforeRace(race.data.date, 90);
     const sameDayAttackpoint = trainingRows.filter((row) => row.date === dateOnly(race.data.date));
+
     return {
       id: race.id,
       title: race.data.title ?? race.data.name ?? String(race.id),
@@ -272,22 +366,131 @@ const raceTrainingLinks = races
       position: race.data.position,
       starters: race.data.starters,
       percentile,
-      trainingHours28: load.seconds / 3600,
-      trainingKm28: load.distanceKm,
-      orienteeringHours28: load.orienteeringSeconds / 3600,
-      sessions28: load.sessions,
+      racePaceSeconds,
+      mistakeShare,
+      trainingHours7: load7.seconds / 3600,
+      trainingHours28: load28.seconds / 3600,
+      trainingHours90: load90.seconds / 3600,
+      trainingKm28: load28.distanceKm,
+      climb28: load28.climbM,
+      orienteeringHours28: load28.orienteeringSeconds / 3600,
+      orienteeringSessions28: load28.orienteeringSessions,
+      runningHours28: load28.runningSeconds / 3600,
+      runningKm28: load28.runningDistanceKm,
+      sickDays14: trainingWindowBeforeRace(race.data.date, 14).sickDays,
+      injuredDays14: trainingWindowBeforeRace(race.data.date, 14).injuredDays,
+      restDays7: load7.restDays,
+      daysSinceTraining: daysSinceLastTraining(race.data.date),
       hasAttackpointSameDay: sameDayAttackpoint.some((row) => row.seconds > 0),
       url: raceArchiveUrl(race)
     };
-  })
-  .filter(Boolean);
+  });
 
-const raceTrainingByYear = Object.fromEntries(
-  years.map((year) => [year, raceTrainingLinks.filter((item) => item.year === year)])
+const completeResultLinks = raceTrainingLinks.filter((item) => Number.isFinite(item.percentile));
+const reliableMistakeLinks = raceTrainingLinks.filter((item) => Number.isFinite(item.mistakeShare));
+const pacedRaceLinks = raceTrainingLinks.filter((item) => Number.isFinite(item.racePaceSeconds));
+
+const resultByTrainingQuartile = bucketQuartiles(
+  completeResultLinks,
+  'trainingHours28',
+  'percentile',
+  (value) => `${formatNumber(value, 1)} h`
 );
-raceTrainingByYear.all = raceTrainingLinks;
 
-const latestLinkedRaces = [...raceTrainingLinks].reverse().slice(0, 12);
+const resultByOrienteeringQuartile = bucketQuartiles(
+  completeResultLinks,
+  'orienteeringHours28',
+  'percentile',
+  (value) => `${formatNumber(value, 1)} h`
+);
+
+const mistakesByOrienteeringQuartile = bucketQuartiles(
+  reliableMistakeLinks,
+  'orienteeringHours28',
+  'mistakeShare',
+  (value) => `${formatNumber(value, 1)} h`
+);
+
+const paceByRunningQuartile = bucketQuartiles(
+  pacedRaceLinks,
+  'runningKm28',
+  'racePaceSeconds',
+  (value) => `${formatNumber(value, 0)} km`
+);
+
+const recoveryGroups = [
+  { label: '0–1 dag', min: 0, max: 1 },
+  { label: '2 dagar', min: 2, max: 2 },
+  { label: '3 dagar', min: 3, max: 3 },
+  { label: '4+ dagar', min: 4, max: Infinity }
+].map((group) => {
+  const values = completeResultLinks
+    .filter(
+      (item) =>
+        Number.isFinite(item.daysSinceTraining) &&
+        item.daysSinceTraining >= group.min &&
+        item.daysSinceTraining <= group.max
+    )
+    .map((item) => item.percentile);
+
+  return {
+    ...group,
+    count: values.length,
+    median: medianNumber(values) ?? 0
+  };
+});
+
+const illnessGroups = [
+  {
+    label: 'Ingen sjukdag',
+    items: completeResultLinks.filter((item) => item.sickDays14 === 0)
+  },
+  {
+    label: 'Sjuk senaste 14 d',
+    items: completeResultLinks.filter((item) => item.sickDays14 > 0)
+  }
+].map((group) => ({
+  label: group.label,
+  count: group.items.length,
+  median: medianNumber(group.items.map((item) => item.percentile)) ?? 0
+}));
+
+const injuryGroups = [
+  {
+    label: 'Ingen skadedag',
+    items: completeResultLinks.filter((item) => item.injuredDays14 === 0)
+  },
+  {
+    label: 'Skadad senaste 14 d',
+    items: completeResultLinks.filter((item) => item.injuredDays14 > 0)
+  }
+].map((group) => ({
+  label: group.label,
+  count: group.items.length,
+  median: medianNumber(group.items.map((item) => item.percentile)) ?? 0
+}));
+
+const yearlyRaceTraining = years
+  .slice()
+  .reverse()
+  .map((year) => {
+    const resultItems = completeResultLinks.filter((item) => item.year === year);
+    const training = summariesByYear[year];
+    return {
+      year,
+      trainingHours: (training?.seconds ?? 0) / 3600,
+      medianResult: medianNumber(resultItems.map((item) => item.percentile)),
+      races: resultItems.length
+    };
+  })
+  .filter((item) => item.races > 0);
+
+const maxYearTrainingHours = Math.max(
+  1,
+  ...yearlyRaceTraining.map((item) => item.trainingHours)
+);
+
+const latestLinkedRaces = [...completeResultLinks].reverse().slice(0, 12);
 
 const statusByYear = yearly.map((item) => ({
   year: item.year,
@@ -412,41 +615,204 @@ const maxStatusDays = Math.max(
       <div class="training-section-heading">
         <div>
           <p class="eyebrow">TRÄNING × RESULTAT</p>
-          <h2>Träning före tävling</h2>
+          <h2>Vad verkar påverka tävlingarna?</h2>
+          <p class="training-analysis-intro">Analyserna använder hela perioden och grupperar loppen i stället för att bara visa stora punktmoln. Median används för att minska påverkan från enstaka extremresultat.</p>
         </div>
       </div>
 
-      <div class="training-chart-grid">
+      <div class="training-analysis-grid">
+        <article class="panel training-chart-panel">
+          <div class="training-chart-heading">
+            <h3>Resultat efter träningsmängd</h3>
+            <p>Loppen delas i fyra lika stora grupper efter träningstid under de 28 dagarna före tävling. Stapeln visar median resultatpercentil.</p>
+          </div>
+          <div class="analysis-bars">
+            {resultByTrainingQuartile.map((item) => (
+              <div class="analysis-bar-item">
+                <div class="analysis-bar-chart">
+                  <div class="analysis-bar-fill result" style={`height:${item.median}%`}></div>
+                  <strong>{formatNumber(item.median, 0)} %</strong>
+                </div>
+                <span>{item.label}</span>
+                <small>{item.inputLabel} · {item.count} lopp</small>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article class="panel training-chart-panel">
+          <div class="training-chart-heading">
+            <h3>Resultat efter orienteringsträning</h3>
+            <p>Median resultatpercentil beroende på hur mycket orientering som registrerats de senaste 28 dagarna.</p>
+          </div>
+          <div class="analysis-bars">
+            {resultByOrienteeringQuartile.map((item) => (
+              <div class="analysis-bar-item">
+                <div class="analysis-bar-chart">
+                  <div class="analysis-bar-fill orientering" style={`height:${item.median}%`}></div>
+                  <strong>{formatNumber(item.median, 0)} %</strong>
+                </div>
+                <span>{item.label}</span>
+                <small>{item.inputLabel} · {item.count} lopp</small>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article class="panel training-chart-panel">
+          <div class="training-chart-heading">
+            <h3>Bomandel efter orienteringsträning</h3>
+            <p>Median registrerad bomtid som andel av tävlingstiden. Lägre är bättre. Endast lopp med tillförlitligt WinSplits-underlag.</p>
+          </div>
+          <div class="analysis-bars analysis-bars-inverse">
+            {mistakesByOrienteeringQuartile.map((item) => {
+              const maxValue = Math.max(1, ...mistakesByOrienteeringQuartile.map((entry) => entry.median));
+              return (
+                <div class="analysis-bar-item">
+                  <div class="analysis-bar-chart">
+                    <div class="analysis-bar-fill mistake" style={`height:${(item.median / maxValue) * 100}%`}></div>
+                    <strong>{formatNumber(item.median, 1)} %</strong>
+                  </div>
+                  <span>{item.label}</span>
+                  <small>{item.inputLabel} · {item.count} lopp</small>
+                </div>
+              );
+            })}
+          </div>
+        </article>
+
+        <article class="panel training-chart-panel">
+          <div class="training-chart-heading">
+            <h3>Tävlingsfart efter löpmängd</h3>
+            <p>Median min/km på tävling beroende på antal löpkilometer under de 28 föregående dagarna. Running + Löpning terräng.</p>
+          </div>
+          <div class="analysis-bars analysis-bars-pace">
+            {paceByRunningQuartile.map((item) => {
+              const paceValues = paceByRunningQuartile.map((entry) => entry.median);
+              const slowest = Math.max(...paceValues);
+              const fastest = Math.min(...paceValues);
+              const range = Math.max(1, slowest - fastest);
+              const score = 35 + ((slowest - item.median) / range) * 65;
+              return (
+                <div class="analysis-bar-item">
+                  <div class="analysis-bar-chart">
+                    <div class="analysis-bar-fill sprint" style={`height:${score}%`}></div>
+                    <strong>{formatCompactDuration(item.median)}/km</strong>
+                  </div>
+                  <span>{item.label}</span>
+                  <small>{item.inputLabel} · {item.count} lopp</small>
+                </div>
+              );
+            })}
+          </div>
+        </article>
+
+        <article class="panel training-chart-panel">
+          <div class="training-chart-heading">
+            <h3>Återhämtning före tävling</h3>
+            <p>Median resultatpercentil beroende på antal hela dagar sedan senaste registrerade träningspass.</p>
+          </div>
+          <div class="analysis-bars">
+            {recoveryGroups.map((item) => (
+              <div class="analysis-bar-item">
+                <div class="analysis-bar-chart">
+                  <div class="analysis-bar-fill recovery" style={`height:${item.median}%`}></div>
+                  <strong>{formatNumber(item.median, 0)} %</strong>
+                </div>
+                <span>{item.label}</span>
+                <small>{item.count} lopp</small>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article class="panel training-chart-panel">
+          <div class="training-chart-heading">
+            <h3>Sjukdom före tävling</h3>
+            <p>Median resultatpercentil för lopp med respektive utan sjukmarkering under de föregående 14 dagarna.</p>
+          </div>
+          <div class="analysis-bars analysis-bars-two">
+            {illnessGroups.map((item) => (
+              <div class="analysis-bar-item">
+                <div class="analysis-bar-chart">
+                  <div class="analysis-bar-fill sick-analysis" style={`height:${item.median}%`}></div>
+                  <strong>{formatNumber(item.median, 0)} %</strong>
+                </div>
+                <span>{item.label}</span>
+                <small>{item.count} lopp</small>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article class="panel training-chart-panel">
+          <div class="training-chart-heading">
+            <h3>Skada före tävling</h3>
+            <p>Median resultatpercentil för lopp med respektive utan skademarkering under de föregående 14 dagarna.</p>
+          </div>
+          <div class="analysis-bars analysis-bars-two">
+            {injuryGroups.map((item) => (
+              <div class="analysis-bar-item">
+                <div class="analysis-bar-chart">
+                  <div class="analysis-bar-fill injury-analysis" style={`height:${item.median}%`}></div>
+                  <strong>{formatNumber(item.median, 0)} %</strong>
+                </div>
+                <span>{item.label}</span>
+                <small>{item.count} lopp</small>
+              </div>
+            ))}
+          </div>
+        </article>
+
         <article class="panel training-chart-panel training-chart-wide">
           <div class="training-chart-heading">
-            <h3>Träningstid senaste 28 dagarna → resultatpercentil</h3>
-            <p>Varje punkt är ett lopp. Träningen på själva tävlingsdagen räknas inte med. Högre resultatpercentil är bättre.</p>
+            <h3>Träningsmängd och resultatnivå per år</h3>
+            <p>Orange stapel = total träningstid. Vit punkt = median resultatpercentil för årets tävlingar. Två olika skalor visas tillsammans för att jämföra utvecklingen.</p>
           </div>
-          <div class="training-scatter-wrap">
-            <svg id="race-training-scatter" class="training-scatter" viewBox="0 0 1000 430" role="img" aria-label="Träningstid 28 dagar före tävling mot resultatpercentil"></svg>
+          <div class="year-comparison-chart">
+            {yearlyRaceTraining.map((item) => (
+              <div class="year-comparison-column">
+                <div class="year-comparison-plot">
+                  <div class="year-training-bar" style={`height:${(item.trainingHours / maxYearTrainingHours) * 100}%`}>
+                    <span>{formatNumber(item.trainingHours, 0)} h</span>
+                  </div>
+                  {Number.isFinite(item.medianResult) && (
+                    <div class="year-result-dot" style={`bottom:${item.medianResult}%`} title={`${formatNumber(item.medianResult, 0)} % median · ${item.races} lopp`}>
+                      <i></i>
+                    </div>
+                  )}
+                </div>
+                <span>{item.year}</span>
+              </div>
+            ))}
           </div>
-          <div class="training-scatter-note">
-            <span id="race-training-count">{raceTrainingByYear[latestYear]?.length ?? 0} lopp med komplett resultatdata</span>
-            <span>28 dagar före loppet</span>
+          <div class="year-comparison-legend">
+            <span><i class="training"></i>Träningstid</span>
+            <span><i class="result"></i>Median resultatpercentil</span>
           </div>
         </article>
 
         <article class="panel training-chart-panel training-chart-wide">
           <div class="training-chart-heading">
             <h3>Senaste kopplade tävlingarna</h3>
-            <p>Kontroll av kopplingen mellan Kartarkivet och Attackpoint. ✓ betyder att Attackpoint har ett träningspass på samma datum.</p>
+            <p>Kontrolltabell för kopplingen mellan Kartarkivet och Attackpoint. ✓ betyder att Attackpoint har ett registrerat pass på samma datum.</p>
           </div>
           <div class="training-race-table-wrap">
             <table class="training-race-table">
-              <thead><tr><th>Tävling</th><th>Datum</th><th>Disciplin</th><th>28 d</th><th>28 d km</th><th>Resultat</th><th>AP</th></tr></thead>
+              <thead>
+                <tr>
+                  <th>Tävling</th><th>Datum</th><th>Disciplin</th><th>7 d</th><th>28 d</th><th>Orientering 28 d</th><th>Resultat</th><th>AP</th>
+                </tr>
+              </thead>
               <tbody>
                 {latestLinkedRaces.map((race) => (
                   <tr>
                     <td><a href={race.url}>{race.title}</a></td>
                     <td>{race.date}</td>
                     <td>{race.discipline}</td>
+                    <td>{formatNumber(race.trainingHours7, 1)} h</td>
                     <td>{formatNumber(race.trainingHours28, 1)} h</td>
-                    <td>{formatNumber(race.trainingKm28, 0)} km</td>
+                    <td>{formatNumber(race.orienteeringHours28, 1)} h</td>
                     <td>{formatNumber(race.percentile, 0)} %</td>
                     <td>{race.hasAttackpointSameDay ? '✓' : '—'}</td>
                   </tr>
@@ -463,7 +829,7 @@ const maxStatusDays = Math.max(
     </p>
   </main>
 
-  <script define:vars={{ chartData, activityColors, raceTrainingByYear }}>
+  <script define:vars={{ chartData, activityColors }}>
     const select = document.querySelector('#training-year');
     const formatNumber = (value, decimals = 0) =>
       Number(value || 0).toLocaleString('sv-SE', {
@@ -472,35 +838,6 @@ const maxStatusDays = Math.max(
       });
     const formatHours = (seconds) =>
       `${formatNumber(seconds / 3600, seconds >= 360000 ? 0 : 1)} h`;
-
-    const renderScatter = (key) => {
-      const svg = document.querySelector('#race-training-scatter');
-      const count = document.querySelector('#race-training-count');
-      const points = raceTrainingByYear[key] ?? [];
-      if (!svg) return;
-
-      count.textContent = `${points.length} lopp med komplett resultatdata`;
-
-      const W = 1000, H = 430;
-      const left = 72, right = 24, top = 24, bottom = 56;
-      const plotW = W - left - right;
-      const plotH = H - top - bottom;
-      const maxXRaw = Math.max(1, ...points.map((p) => p.trainingHours28));
-      const maxX = Math.ceil(maxXRaw / 10) * 10;
-      const x = (value) => left + (value / maxX) * plotW;
-      const y = (value) => top + ((100 - value) / 100) * plotH;
-
-      const gridY = [0, 25, 50, 75, 100];
-      const gridX = Array.from({length: 6}, (_, i) => (maxX / 5) * i);
-
-      svg.innerHTML = `
-        ${gridY.map((v) => `<line x1="${left}" y1="${y(v)}" x2="${W-right}" y2="${y(v)}" class="scatter-grid"/><text x="${left-14}" y="${y(v)+5}" text-anchor="end" class="scatter-label">${v}%</text>`).join('')}
-        ${gridX.map((v) => `<line x1="${x(v)}" y1="${top}" x2="${x(v)}" y2="${H-bottom}" class="scatter-grid"/><text x="${x(v)}" y="${H-bottom+28}" text-anchor="middle" class="scatter-label">${formatNumber(v,0)} h</text>`).join('')}
-        <text x="${left + plotW/2}" y="${H-8}" text-anchor="middle" class="scatter-axis-title">Träningstid senaste 28 dagarna</text>
-        <text x="18" y="${top + plotH/2}" text-anchor="middle" transform="rotate(-90 18 ${top + plotH/2})" class="scatter-axis-title">Resultatpercentil</text>
-        ${points.map((p) => `<a href="${p.url}"><circle cx="${x(p.trainingHours28)}" cy="${y(p.percentile)}" r="6" class="scatter-point"><title>${p.title} · ${p.date} · ${formatNumber(p.trainingHours28,1)} h · ${formatNumber(p.percentile,0)} %</title></circle></a>`).join('')}
-      `;
-    };
 
     const render = (key) => {
       const data = chartData[key];
@@ -537,8 +874,6 @@ const maxStatusDays = Math.max(
 
       document.querySelector('#activity-subtitle').textContent =
         key === 'all' ? 'Andel av träningstiden för hela perioden.' : `Andel av träningstiden under ${key}.`;
-      renderScatter(key);
-
       document.querySelector('#activity-chart').innerHTML = data.activities.slice(0, 10).map((item, index) => `
         <div class="training-activity-row">
           <div class="training-activity-label"><span>${item.activity}</span><strong>${formatHours(item.seconds)}</strong></div>
@@ -548,7 +883,6 @@ const maxStatusDays = Math.max(
     };
 
     select?.addEventListener('change', (event) => render(event.currentTarget.value));
-    renderScatter(String(select?.value ?? 'all'));
   </script>
 
   <style is:global>
@@ -595,14 +929,33 @@ const maxStatusDays = Math.max(
     .injured { background:#c44767; }
     .rest { background:#5d75b8; }
 
-    .training-scatter-wrap { width:100%; overflow-x:auto; }
-    .training-scatter { width:100%; min-width:720px; height:auto; display:block; }
-    .training-scatter :global(.scatter-grid) { stroke:rgba(255,255,255,.10); stroke-width:1; }
-    .training-scatter :global(.scatter-label) { fill:#a0a0a0; font-size:13px; }
-    .training-scatter :global(.scatter-axis-title) { fill:#b8b8b8; font-size:14px; }
-    .training-scatter :global(.scatter-point) { fill:#ff7a00; stroke:#171717; stroke-width:2; opacity:.82; transition:opacity .15s, r .15s; }
-    .training-scatter :global(.scatter-point:hover) { opacity:1; r:8; }
-    .training-scatter-note { display:flex; justify-content:space-between; gap:1rem; color:var(--muted,#a0a0a0); font-size:.75rem; margin-top:.5rem; }
+    .training-analysis-intro { max-width:850px; margin:.4rem 0 0; color:var(--muted,#a0a0a0); font-size:.82rem; }
+    .training-analysis-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .analysis-bars { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); align-items:end; gap:.7rem; min-height:255px; padding-top:1.5rem; }
+    .analysis-bars-two { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:520px; margin:0 auto; width:100%; }
+    .analysis-bar-item { min-width:0; display:grid; grid-template-rows:190px auto auto; gap:.35rem; text-align:center; }
+    .analysis-bar-chart { position:relative; display:flex; align-items:flex-end; justify-content:center; border-bottom:1px solid rgba(255,255,255,.12); }
+    .analysis-bar-chart > strong { position:absolute; top:.15rem; left:50%; transform:translateX(-50%); white-space:nowrap; font-size:.82rem; z-index:2; }
+    .analysis-bar-fill { width:min(62px,72%); min-height:3px; border-radius:7px 7px 2px 2px; background:#ff7a00; }
+    .analysis-bar-fill.orientering { background:#f3b24b; }
+    .analysis-bar-fill.mistake { background:#dd5f38; }
+    .analysis-bar-fill.sprint { background:#c44767; }
+    .analysis-bar-fill.recovery { background:#965b9e; }
+    .analysis-bar-fill.sick-analysis { background:#dd5f38; }
+    .analysis-bar-fill.injury-analysis { background:#c44767; }
+    .analysis-bar-item > span { font-size:.78rem; font-weight:700; }
+    .analysis-bar-item > small { color:var(--muted,#a0a0a0); font-size:.68rem; line-height:1.3; }
+    .year-comparison-chart { display:flex; gap:.55rem; height:330px; padding-top:2rem; overflow-x:auto; }
+    .year-comparison-column { flex:1 0 46px; min-width:46px; display:grid; grid-template-rows:1fr auto; gap:.55rem; text-align:center; color:var(--muted,#a0a0a0); font-size:.7rem; }
+    .year-comparison-plot { position:relative; display:flex; align-items:flex-end; justify-content:center; border-bottom:1px solid rgba(255,255,255,.12); }
+    .year-training-bar { width:70%; min-height:2px; border-radius:5px 5px 1px 1px; background:rgba(255,122,0,.78); position:relative; }
+    .year-training-bar span { position:absolute; top:-1.25rem; left:50%; transform:translateX(-50%); color:#d0d0d0; font-size:.62rem; white-space:nowrap; }
+    .year-result-dot { position:absolute; left:50%; transform:translate(-50%,50%); width:100%; border-top:1px solid rgba(255,255,255,.14); }
+    .year-result-dot i { display:block; width:9px; height:9px; border-radius:50%; background:#f5f5f5; border:2px solid #171717; margin:-5px auto 0; }
+    .year-comparison-legend { display:flex; justify-content:center; gap:1.4rem; flex-wrap:wrap; margin-top:1rem; color:var(--muted,#a0a0a0); font-size:.75rem; }
+    .year-comparison-legend span { display:flex; align-items:center; gap:.4rem; }
+    .year-comparison-legend i.training { width:.75rem; height:.55rem; background:#ff7a00; border-radius:2px; }
+    .year-comparison-legend i.result { width:.6rem; height:.6rem; background:#f5f5f5; border-radius:50%; }
     .training-race-table-wrap { overflow-x:auto; }
     .training-race-table { width:100%; border-collapse:collapse; font-size:.78rem; }
     .training-race-table th, .training-race-table td { padding:.7rem .6rem; text-align:left; border-bottom:1px solid rgba(255,255,255,.08); white-space:nowrap; }
@@ -619,6 +972,9 @@ const maxStatusDays = Math.max(
       .training-metric-grid, .training-chart-grid { grid-template-columns:1fr; }
       .training-chart-wide { grid-column:auto; }
       .training-metric-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .training-analysis-grid { grid-template-columns:1fr; }
+      .analysis-bars { min-height:220px; }
+      .analysis-bar-item { grid-template-rows:155px auto auto; }
       .training-bars { height:245px; }
     }
   </style>
