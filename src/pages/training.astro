@@ -1,6 +1,7 @@
 ---
 import fs from 'node:fs';
 import path from 'node:path';
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const csvPath = path.join(process.cwd(), 'src', 'data', 'training', 'attackpoint.csv');
@@ -79,6 +80,10 @@ const formatNumber = (value, decimals = 0) =>
 
 const formatHours = (seconds) =>
   `${formatNumber(seconds / 3600, seconds >= 360000 ? 0 : 1)} h`;
+
+const races = (await getCollection('races')).sort(
+  (a, b) => a.data.date.getTime() - b.data.date.getTime()
+);
 
 const rawRows = parseCsv(csvText);
 
@@ -208,6 +213,82 @@ const latestMonthly = chartData[latestYear]?.monthly ?? [];
 const maxLatestMonthSeconds = Math.max(1, ...latestMonthly.map((item) => item.seconds));
 const latestActivities = chartData[latestYear]?.activities ?? [];
 
+
+const dateOnly = (date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
+const raceArchiveUrl = (race) => {
+  const id = String(race.id ?? '').replace(/^\/+|\/+$/g, '');
+  return `/races/${id}/`;
+};
+
+const percentileForRace = (race) => {
+  const position = race.data.position ?? 0;
+  const starters = race.data.starters ?? 0;
+  if (starters < 2 || position < 1 || position > starters) return null;
+  return ((starters - position) / (starters - 1)) * 100;
+};
+
+const trainingBeforeRace = (raceDate, days = 28) => {
+  const end = new Date(raceDate);
+  end.setHours(23, 59, 59, 999);
+  const start = new Date(raceDate);
+  start.setDate(start.getDate() - days);
+  start.setHours(0, 0, 0, 0);
+
+  // Tävlingsdagen räknas inte in i träningsbelastningen före loppet.
+  const raceDay = dateOnly(raceDate);
+  const rows = trainingRows.filter((row) => {
+    const date = new Date(`${row.date}T12:00:00`);
+    return row.date !== raceDay && date >= start && date <= end && row.seconds > 0;
+  });
+
+  return {
+    seconds: rows.reduce((sum, row) => sum + row.seconds, 0),
+    distanceKm: rows.reduce((sum, row) => sum + row.distanceKm, 0),
+    orienteeringSeconds: rows
+      .filter((row) => row.activity === 'Orientering')
+      .reduce((sum, row) => sum + row.seconds, 0),
+    sessions: rows.length
+  };
+};
+
+const raceTrainingLinks = races
+  .map((race) => {
+    const percentile = percentileForRace(race);
+    if (percentile === null) return null;
+    const load = trainingBeforeRace(race.data.date, 28);
+    const sameDayAttackpoint = trainingRows.filter((row) => row.date === dateOnly(race.data.date));
+    return {
+      id: race.id,
+      title: race.data.title ?? race.data.name ?? String(race.id),
+      date: dateOnly(race.data.date),
+      year: race.data.date.getFullYear(),
+      discipline: race.data.discipline ?? '—',
+      position: race.data.position,
+      starters: race.data.starters,
+      percentile,
+      trainingHours28: load.seconds / 3600,
+      trainingKm28: load.distanceKm,
+      orienteeringHours28: load.orienteeringSeconds / 3600,
+      sessions28: load.sessions,
+      hasAttackpointSameDay: sameDayAttackpoint.some((row) => row.seconds > 0),
+      url: raceArchiveUrl(race)
+    };
+  })
+  .filter(Boolean);
+
+const raceTrainingByYear = Object.fromEntries(
+  years.map((year) => [year, raceTrainingLinks.filter((item) => item.year === year)])
+);
+raceTrainingByYear.all = raceTrainingLinks;
+
+const latestLinkedRaces = [...raceTrainingLinks].reverse().slice(0, 12);
+
 const statusByYear = yearly.map((item) => ({
   year: item.year,
   sickDays: item.sickDays,
@@ -326,12 +407,63 @@ const maxStatusDays = Math.max(
       </div>
     </section>
 
+
+    <section class="training-section">
+      <div class="training-section-heading">
+        <div>
+          <p class="eyebrow">TRÄNING × RESULTAT</p>
+          <h2>Träning före tävling</h2>
+        </div>
+      </div>
+
+      <div class="training-chart-grid">
+        <article class="panel training-chart-panel training-chart-wide">
+          <div class="training-chart-heading">
+            <h3>Träningstid senaste 28 dagarna → resultatpercentil</h3>
+            <p>Varje punkt är ett lopp. Träningen på själva tävlingsdagen räknas inte med. Högre resultatpercentil är bättre.</p>
+          </div>
+          <div class="training-scatter-wrap">
+            <svg id="race-training-scatter" class="training-scatter" viewBox="0 0 1000 430" role="img" aria-label="Träningstid 28 dagar före tävling mot resultatpercentil"></svg>
+          </div>
+          <div class="training-scatter-note">
+            <span id="race-training-count">{raceTrainingByYear[latestYear]?.length ?? 0} lopp med komplett resultatdata</span>
+            <span>28 dagar före loppet</span>
+          </div>
+        </article>
+
+        <article class="panel training-chart-panel training-chart-wide">
+          <div class="training-chart-heading">
+            <h3>Senaste kopplade tävlingarna</h3>
+            <p>Kontroll av kopplingen mellan Kartarkivet och Attackpoint. ✓ betyder att Attackpoint har ett träningspass på samma datum.</p>
+          </div>
+          <div class="training-race-table-wrap">
+            <table class="training-race-table">
+              <thead><tr><th>Tävling</th><th>Datum</th><th>Disciplin</th><th>28 d</th><th>28 d km</th><th>Resultat</th><th>AP</th></tr></thead>
+              <tbody>
+                {latestLinkedRaces.map((race) => (
+                  <tr>
+                    <td><a href={race.url}>{race.title}</a></td>
+                    <td>{race.date}</td>
+                    <td>{race.discipline}</td>
+                    <td>{formatNumber(race.trainingHours28, 1)} h</td>
+                    <td>{formatNumber(race.trainingKm28, 0)} km</td>
+                    <td>{formatNumber(race.percentile, 0)} %</td>
+                    <td>{race.hasAttackpointSameDay ? '✓' : '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <p class="training-update-note">
       Källa: Attackpoint-export. Senaste datum i filen: {trainingRows.at(-1)?.date ?? '—'}.
     </p>
   </main>
 
-  <script define:vars={{ chartData, activityColors }}>
+  <script define:vars={{ chartData, activityColors, raceTrainingByYear }}>
     const select = document.querySelector('#training-year');
     const formatNumber = (value, decimals = 0) =>
       Number(value || 0).toLocaleString('sv-SE', {
@@ -340,6 +472,35 @@ const maxStatusDays = Math.max(
       });
     const formatHours = (seconds) =>
       `${formatNumber(seconds / 3600, seconds >= 360000 ? 0 : 1)} h`;
+
+    const renderScatter = (key) => {
+      const svg = document.querySelector('#race-training-scatter');
+      const count = document.querySelector('#race-training-count');
+      const points = raceTrainingByYear[key] ?? [];
+      if (!svg) return;
+
+      count.textContent = `${points.length} lopp med komplett resultatdata`;
+
+      const W = 1000, H = 430;
+      const left = 72, right = 24, top = 24, bottom = 56;
+      const plotW = W - left - right;
+      const plotH = H - top - bottom;
+      const maxXRaw = Math.max(1, ...points.map((p) => p.trainingHours28));
+      const maxX = Math.ceil(maxXRaw / 10) * 10;
+      const x = (value) => left + (value / maxX) * plotW;
+      const y = (value) => top + ((100 - value) / 100) * plotH;
+
+      const gridY = [0, 25, 50, 75, 100];
+      const gridX = Array.from({length: 6}, (_, i) => (maxX / 5) * i);
+
+      svg.innerHTML = `
+        ${gridY.map((v) => `<line x1="${left}" y1="${y(v)}" x2="${W-right}" y2="${y(v)}" class="scatter-grid"/><text x="${left-14}" y="${y(v)+5}" text-anchor="end" class="scatter-label">${v}%</text>`).join('')}
+        ${gridX.map((v) => `<line x1="${x(v)}" y1="${top}" x2="${x(v)}" y2="${H-bottom}" class="scatter-grid"/><text x="${x(v)}" y="${H-bottom+28}" text-anchor="middle" class="scatter-label">${formatNumber(v,0)} h</text>`).join('')}
+        <text x="${left + plotW/2}" y="${H-8}" text-anchor="middle" class="scatter-axis-title">Träningstid senaste 28 dagarna</text>
+        <text x="18" y="${top + plotH/2}" text-anchor="middle" transform="rotate(-90 18 ${top + plotH/2})" class="scatter-axis-title">Resultatpercentil</text>
+        ${points.map((p) => `<a href="${p.url}"><circle cx="${x(p.trainingHours28)}" cy="${y(p.percentile)}" r="6" class="scatter-point"><title>${p.title} · ${p.date} · ${formatNumber(p.trainingHours28,1)} h · ${formatNumber(p.percentile,0)} %</title></circle></a>`).join('')}
+      `;
+    };
 
     const render = (key) => {
       const data = chartData[key];
@@ -376,6 +537,8 @@ const maxStatusDays = Math.max(
 
       document.querySelector('#activity-subtitle').textContent =
         key === 'all' ? 'Andel av träningstiden för hela perioden.' : `Andel av träningstiden under ${key}.`;
+      renderScatter(key);
+
       document.querySelector('#activity-chart').innerHTML = data.activities.slice(0, 10).map((item, index) => `
         <div class="training-activity-row">
           <div class="training-activity-label"><span>${item.activity}</span><strong>${formatHours(item.seconds)}</strong></div>
@@ -385,6 +548,7 @@ const maxStatusDays = Math.max(
     };
 
     select?.addEventListener('change', (event) => render(event.currentTarget.value));
+    renderScatter(String(select?.value ?? 'all'));
   </script>
 
   <style>
@@ -430,6 +594,23 @@ const maxStatusDays = Math.max(
     .sick { background:#dd5f38; }
     .injured { background:#c44767; }
     .rest { background:#5d75b8; }
+
+    .training-scatter-wrap { width:100%; overflow-x:auto; }
+    .training-scatter { width:100%; min-width:720px; height:auto; display:block; }
+    .training-scatter :global(.scatter-grid) { stroke:rgba(255,255,255,.10); stroke-width:1; }
+    .training-scatter :global(.scatter-label) { fill:#a0a0a0; font-size:13px; }
+    .training-scatter :global(.scatter-axis-title) { fill:#b8b8b8; font-size:14px; }
+    .training-scatter :global(.scatter-point) { fill:#ff7a00; stroke:#171717; stroke-width:2; opacity:.82; transition:opacity .15s, r .15s; }
+    .training-scatter :global(.scatter-point:hover) { opacity:1; r:8; }
+    .training-scatter-note { display:flex; justify-content:space-between; gap:1rem; color:var(--muted,#a0a0a0); font-size:.75rem; margin-top:.5rem; }
+    .training-race-table-wrap { overflow-x:auto; }
+    .training-race-table { width:100%; border-collapse:collapse; font-size:.78rem; }
+    .training-race-table th, .training-race-table td { padding:.7rem .6rem; text-align:left; border-bottom:1px solid rgba(255,255,255,.08); white-space:nowrap; }
+    .training-race-table th { color:var(--muted,#a0a0a0); font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; }
+    .training-race-table td:first-child { width:100%; white-space:normal; }
+    .training-race-table a { color:#f4f4f4; text-decoration:none; }
+    .training-race-table a:hover { color:#ff7a00; }
+
     .training-update-note { margin-top:2rem; color:var(--muted,#a0a0a0); font-size:.75rem; text-align:center; }
     [hidden] { display:none !important; }
     @media (max-width:760px) {
