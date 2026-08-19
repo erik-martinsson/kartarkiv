@@ -81,6 +81,14 @@ const formatNumber = (value, decimals = 0) =>
 const formatHours = (seconds) =>
   `${formatNumber(seconds / 3600, seconds >= 360000 ? 0 : 1)} h`;
 
+
+const formatCompactDuration = (seconds) => {
+  const rounded = Math.max(0, Math.round(Number(seconds) || 0));
+  const minutes = Math.floor(rounded / 60);
+  const remainingSeconds = rounded % 60;
+  return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
+};
+
 const races = (await getCollection('races')).sort(
   (a, b) => a.data.date.getTime() - b.data.date.getTime()
 );
