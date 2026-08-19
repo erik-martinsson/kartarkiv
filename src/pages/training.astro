@@ -1,0 +1,444 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const csvPath = path.join(process.cwd(), 'src', 'data', 'training', 'attackpoint.csv');
+const csvText = fs.readFileSync(csvPath, 'utf8').replace(/^\uFEFF/, '');
+
+const parseCsv = (text) => {
+  const rows = [];
+  let row = [];
+  let field = '';
+  let quoted = false;
+
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
+
+    if (quoted) {
+      if (char === '"' && text[i + 1] === '"') {
+        field += '"';
+        i += 1;
+      } else if (char === '"') {
+        quoted = false;
+      } else {
+        field += char;
+      }
+      continue;
+    }
+
+    if (char === '"') {
+      quoted = true;
+    } else if (char === ',') {
+      row.push(field);
+      field = '';
+    } else if (char === '\n') {
+      row.push(field.replace(/\r$/, ''));
+      rows.push(row);
+      row = [];
+      field = '';
+    } else {
+      field += char;
+    }
+  }
+
+  if (field.length > 0 || row.length > 0) {
+    row.push(field.replace(/\r$/, ''));
+    rows.push(row);
+  }
+
+  const [headers, ...body] = rows.filter((item) => item.some((value) => value !== ''));
+  return body.map((values) =>
+    Object.fromEntries(headers.map((header, index) => [header, values[index] ?? '']))
+  );
+};
+
+const toNumber = (value) => {
+  const normalized = String(value ?? '').trim().replace(',', '.');
+  if (!normalized) return 0;
+  const parsed = Number(normalized);
+  return Number.isFinite(parsed) ? parsed : 0;
+};
+
+const timeToSeconds = (value) => {
+  const parts = String(value ?? '').trim().split(':').map(Number);
+  if (parts.length < 2 || parts.some(Number.isNaN)) return 0;
+  return parts.reduce((total, part) => total * 60 + part, 0);
+};
+
+const isFlag = (value) => {
+  const normalized = String(value ?? '').trim().toLowerCase();
+  return normalized !== '' && normalized !== '0' && normalized !== 'false' && normalized !== 'no';
+};
+
+const formatNumber = (value, decimals = 0) =>
+  Number(value || 0).toLocaleString('sv-SE', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  });
+
+const formatHours = (seconds) =>
+  `${formatNumber(seconds / 3600, seconds >= 360000 ? 0 : 1)} h`;
+
+const rawRows = parseCsv(csvText);
+
+const trainingRows = rawRows
+  .filter((row) => /^\d{4}-\d{2}-\d{2}$/.test(row.date ?? ''))
+  .map((row) => {
+    const date = new Date(`${row.date}T12:00:00`);
+    return {
+      date: row.date,
+      year: date.getFullYear(),
+      month: date.getMonth() + 1,
+      activity: (row.activity ?? '').trim() || 'Övrigt',
+      seconds: timeToSeconds(row.time),
+      distanceKm: toNumber(row['distance(km)']),
+      climbM: toNumber(row['climb(m)']),
+      sick: isFlag(row.sick),
+      injured: isFlag(row.injured),
+      restday: isFlag(row.restday)
+    };
+  });
+
+const years = [...new Set(trainingRows.map((row) => row.year))].sort((a, b) => b - a);
+const latestYear = years[0] ?? new Date().getFullYear();
+
+const activityOrder = [
+  'Running',
+  'Orientering',
+  'Löpning terräng',
+  'Skidor',
+  'Rullskidor',
+  'Styrka',
+  'Cykel',
+  'SkiErg'
+];
+
+const activityColors = [
+  '#ff7a00',
+  '#f3b24b',
+  '#dd5f38',
+  '#c44767',
+  '#965b9e',
+  '#5d75b8',
+  '#3f8b9c',
+  '#4f9b78'
+];
+
+const buildSummary = (rows) => {
+  const active = rows.filter((row) => row.seconds > 0);
+  const uniqueFlagDates = (key) =>
+    new Set(rows.filter((row) => row[key]).map((row) => row.date)).size;
+
+  return {
+    seconds: active.reduce((sum, row) => sum + row.seconds, 0),
+    distanceKm: active.reduce((sum, row) => sum + row.distanceKm, 0),
+    climbM: active.reduce((sum, row) => sum + row.climbM, 0),
+    orienteeringSeconds: active
+      .filter((row) => row.activity === 'Orientering')
+      .reduce((sum, row) => sum + row.seconds, 0),
+    sessions: active.length,
+    sickDays: uniqueFlagDates('sick'),
+    injuredDays: uniqueFlagDates('injured'),
+    restDays: uniqueFlagDates('restday')
+  };
+};
+
+const summariesByYear = Object.fromEntries(
+  years.map((year) => [year, buildSummary(trainingRows.filter((row) => row.year === year))])
+);
+const allSummary = buildSummary(trainingRows);
+
+const yearly = [...years].reverse().map((year) => ({
+  year,
+  ...summariesByYear[year]
+}));
+
+const maxYearSeconds = Math.max(1, ...yearly.map((item) => item.seconds));
+
+const activityStatsFor = (rows) => {
+  const map = new Map();
+  for (const row of rows) {
+    if (row.seconds <= 0) continue;
+    map.set(row.activity, (map.get(row.activity) ?? 0) + row.seconds);
+  }
+
+  const total = [...map.values()].reduce((sum, value) => sum + value, 0);
+  return [...map.entries()]
+    .map(([activity, seconds]) => ({
+      activity,
+      seconds,
+      share: total > 0 ? (seconds / total) * 100 : 0
+    }))
+    .sort((a, b) => b.seconds - a.seconds);
+};
+
+const monthlyForYear = (year) => {
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
+  const rows = trainingRows.filter((row) => row.year === year);
+  return monthNames.map((label, index) => ({
+    label,
+    seconds: rows
+      .filter((row) => row.month === index + 1)
+      .reduce((sum, row) => sum + row.seconds, 0)
+  }));
+};
+
+const chartData = Object.fromEntries(
+  years.map((year) => {
+    const rows = trainingRows.filter((row) => row.year === year);
+    return [
+      year,
+      {
+        summary: summariesByYear[year],
+        monthly: monthlyForYear(year),
+        activities: activityStatsFor(rows)
+      }
+    ];
+  })
+);
+
+chartData.all = {
+  summary: allSummary,
+  monthly: [],
+  activities: activityStatsFor(trainingRows)
+};
+
+const latestMonthly = chartData[latestYear]?.monthly ?? [];
+const maxLatestMonthSeconds = Math.max(1, ...latestMonthly.map((item) => item.seconds));
+const latestActivities = chartData[latestYear]?.activities ?? [];
+
+const statusByYear = yearly.map((item) => ({
+  year: item.year,
+  sickDays: item.sickDays,
+  injuredDays: item.injuredDays,
+  restDays: item.restDays
+}));
+const maxStatusDays = Math.max(
+  1,
+  ...statusByYear.flatMap((item) => [item.sickDays, item.injuredDays, item.restDays])
+);
+---
+
+<BaseLayout title="Training · Erik Martinssons Kartarkiv">
+  <main class="archive-page page-shell training-page">
+    <header class="training-header">
+      <div>
+        <p class="eyebrow">KARTARKIV</p>
+        <h1>Training</h1>
+        <p>Träningsstatistik från Attackpoint. Rådata läses vid build och exponeras inte som en publik CSV-fil.</p>
+      </div>
+
+      <label class="training-year-picker">
+        <span>Period</span>
+        <select id="training-year">
+          {years.map((year) => <option value={String(year)} selected={year === latestYear}>{year}</option>)}
+          <option value="all">Alla år</option>
+        </select>
+      </label>
+    </header>
+
+    <section class="training-section">
+      <div class="training-section-heading">
+        <div><p class="eyebrow">ÖVERSIKT</p><h2 id="overview-title">{latestYear}</h2></div>
+      </div>
+
+      <div class="training-metric-grid">
+        <article class="training-metric"><span>◷</span><small>Träningstid</small><strong id="metric-hours">{formatHours(summariesByYear[latestYear]?.seconds ?? 0)}</strong></article>
+        <article class="training-metric"><span>↔</span><small>Distans</small><strong id="metric-distance">{formatNumber(summariesByYear[latestYear]?.distanceKm ?? 0, 0)} km</strong></article>
+        <article class="training-metric"><span>↗</span><small>Höjdmeter</small><strong id="metric-climb">{formatNumber(summariesByYear[latestYear]?.climbM ?? 0, 0)} m</strong></article>
+        <article class="training-metric"><span>⌖</span><small>Orientering</small><strong id="metric-orienteering">{formatHours(summariesByYear[latestYear]?.orienteeringSeconds ?? 0)}</strong></article>
+        <article class="training-metric"><span>+</span><small>Antal pass</small><strong id="metric-sessions">{formatNumber(summariesByYear[latestYear]?.sessions ?? 0)}</strong></article>
+        <article class="training-metric"><span>●</span><small>Sjuk / skadad</small><strong id="metric-status">{summariesByYear[latestYear]?.sickDays ?? 0} / {summariesByYear[latestYear]?.injuredDays ?? 0} d</strong></article>
+      </div>
+    </section>
+
+    <section class="training-section">
+      <div class="training-section-heading"><div><p class="eyebrow">UTVECKLING</p><h2>Träningsmängd</h2></div></div>
+
+      <div class="training-chart-grid">
+        <article class="panel training-chart-panel training-chart-wide" id="monthly-panel">
+          <div class="training-chart-heading"><h3>Träningstid per månad</h3><p id="monthly-subtitle">Total registrerad träningstid per månad under {latestYear}.</p></div>
+          <div class="training-bars" id="monthly-chart">
+            {latestMonthly.map((item) => (
+              <div class="training-bar-column">
+                <div class="training-bar-track">
+                  <div class="training-bar-stack" style={`height:${(item.seconds / maxLatestMonthSeconds) * 100}%`}>
+                    <div class="training-bar-value">{formatNumber(item.seconds / 3600, 0)}</div>
+                    <div class="training-bar-fill"></div>
+                  </div>
+                </div>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article class="panel training-chart-panel training-chart-wide">
+          <div class="training-chart-heading"><h3>Träningstid per år</h3><p>Total registrerad träningstid i Attackpoint.</p></div>
+          <div class="training-bars training-bars-years">
+            {yearly.map((item) => (
+              <div class="training-bar-column">
+                <div class="training-bar-track">
+                  <div class="training-bar-stack" style={`height:${(item.seconds / maxYearSeconds) * 100}%`}>
+                    <div class="training-bar-value">{formatNumber(item.seconds / 3600, 0)}</div>
+                    <div class="training-bar-fill"></div>
+                  </div>
+                </div>
+                <span>{item.year}</span>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article class="panel training-chart-panel">
+          <div class="training-chart-heading"><h3>Träningsfördelning</h3><p id="activity-subtitle">Andel av träningstiden under {latestYear}.</p></div>
+          <div class="training-activity-list" id="activity-chart">
+            {latestActivities.slice(0, 10).map((item, index) => (
+              <div class="training-activity-row">
+                <div class="training-activity-label"><span>{item.activity}</span><strong>{formatHours(item.seconds)}</strong></div>
+                <div class="training-activity-track"><div class="training-activity-fill" style={`width:${item.share}%;background:${activityColors[index % activityColors.length]}`}></div></div>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article class="panel training-chart-panel">
+          <div class="training-chart-heading"><h3>Sjukdom, skada & vila</h3><p>Antal markerade dagar per år. Statusarna kan överlappa.</p></div>
+          <div class="training-status-legend">
+            <span><i class="sick"></i>Sjuk</span>
+            <span><i class="injured"></i>Skadad</span>
+            <span><i class="rest"></i>Vila</span>
+          </div>
+          <div class="training-status-chart">
+            {statusByYear.map((item) => (
+              <div class="training-status-row">
+                <span>{item.year}</span>
+                <div class="training-status-bars">
+                  <i class="sick" style={`width:${(item.sickDays / maxStatusDays) * 100}%`} title={`${item.sickDays} sjukdagar`}></i>
+                  <i class="injured" style={`width:${(item.injuredDays / maxStatusDays) * 100}%`} title={`${item.injuredDays} skadedagar`}></i>
+                  <i class="rest" style={`width:${(item.restDays / maxStatusDays) * 100}%`} title={`${item.restDays} vilodagar`}></i>
+                </div>
+              </div>
+            ))}
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p class="training-update-note">
+      Källa: Attackpoint-export. Senaste datum i filen: {trainingRows.at(-1)?.date ?? '—'}.
+    </p>
+  </main>
+
+  <script define:vars={{ chartData, activityColors }}>
+    const select = document.querySelector('#training-year');
+    const formatNumber = (value, decimals = 0) =>
+      Number(value || 0).toLocaleString('sv-SE', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      });
+    const formatHours = (seconds) =>
+      `${formatNumber(seconds / 3600, seconds >= 360000 ? 0 : 1)} h`;
+
+    const render = (key) => {
+      const data = chartData[key];
+      if (!data) return;
+      const summary = data.summary;
+
+      document.querySelector('#overview-title').textContent = key === 'all' ? 'Alla år' : key;
+      document.querySelector('#metric-hours').textContent = formatHours(summary.seconds);
+      document.querySelector('#metric-distance').textContent = `${formatNumber(summary.distanceKm, 0)} km`;
+      document.querySelector('#metric-climb').textContent = `${formatNumber(summary.climbM, 0)} m`;
+      document.querySelector('#metric-orienteering').textContent = formatHours(summary.orienteeringSeconds);
+      document.querySelector('#metric-sessions').textContent = formatNumber(summary.sessions);
+      document.querySelector('#metric-status').textContent = `${summary.sickDays} / ${summary.injuredDays} d`;
+
+      const monthlyPanel = document.querySelector('#monthly-panel');
+      monthlyPanel.hidden = key === 'all';
+
+      if (key !== 'all') {
+        document.querySelector('#monthly-subtitle').textContent =
+          `Total registrerad träningstid per månad under ${key}.`;
+        const max = Math.max(1, ...data.monthly.map((item) => item.seconds));
+        document.querySelector('#monthly-chart').innerHTML = data.monthly.map((item) => `
+          <div class="training-bar-column">
+            <div class="training-bar-track">
+              <div class="training-bar-stack" style="height:${(item.seconds / max) * 100}%">
+                <div class="training-bar-value">${formatNumber(item.seconds / 3600, 0)}</div>
+                <div class="training-bar-fill"></div>
+              </div>
+            </div>
+            <span>${item.label}</span>
+          </div>
+        `).join('');
+      }
+
+      document.querySelector('#activity-subtitle').textContent =
+        key === 'all' ? 'Andel av träningstiden för hela perioden.' : `Andel av träningstiden under ${key}.`;
+      document.querySelector('#activity-chart').innerHTML = data.activities.slice(0, 10).map((item, index) => `
+        <div class="training-activity-row">
+          <div class="training-activity-label"><span>${item.activity}</span><strong>${formatHours(item.seconds)}</strong></div>
+          <div class="training-activity-track"><div class="training-activity-fill" style="width:${item.share}%;background:${activityColors[index % activityColors.length]}"></div></div>
+        </div>
+      `).join('');
+    };
+
+    select?.addEventListener('change', (event) => render(event.currentTarget.value));
+  </script>
+
+  <style>
+    .training-page { padding-bottom: 4rem; }
+    .training-header { display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; margin-bottom:3rem; }
+    .training-header h1 { margin:.1rem 0 .5rem; font-size:clamp(2.4rem,7vw,5.6rem); line-height:.95; }
+    .training-header p { max-width:760px; color:var(--muted,#a0a0a0); }
+    .training-year-picker { display:grid; gap:.45rem; min-width:150px; color:var(--muted,#a0a0a0); font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+    .training-year-picker select { appearance:none; border:1px solid rgba(255,255,255,.14); border-radius:10px; background:#171717; color:#f5f5f5; padding:.8rem 2.4rem .8rem .9rem; font:inherit; font-size:.9rem; letter-spacing:0; text-transform:none; }
+    .training-section { margin-top:2.8rem; }
+    .training-section-heading { margin-bottom:1.1rem; }
+    .training-section-heading h2 { margin:.12rem 0 0; font-size:clamp(1.5rem,3vw,2.2rem); }
+    .training-metric-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+    .training-metric { min-height:145px; display:flex; flex-direction:column; padding:1.15rem; border:1px solid rgba(255,255,255,.08); border-radius:14px; background:rgba(255,255,255,.025); }
+    .training-metric > span { color:#ff7a00; font-size:1.15rem; }
+    .training-metric small { margin-top:auto; color:var(--muted,#a0a0a0); font-size:.82rem; }
+    .training-metric strong { margin-top:.2rem; font-size:clamp(1.6rem,4vw,2.5rem); line-height:1; }
+    .training-chart-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .training-chart-panel { padding:1.2rem; min-width:0; }
+    .training-chart-wide { grid-column:1/-1; }
+    .training-chart-heading { margin-bottom:1rem; }
+    .training-chart-heading h3 { margin:0 0 .25rem; font-size:1.05rem; }
+    .training-chart-heading p { margin:0; color:var(--muted,#a0a0a0); font-size:.82rem; }
+    .training-bars { display:flex; align-items:stretch; gap:.55rem; height:290px; padding-top:2rem; overflow-x:auto; }
+    .training-bar-column { flex:1 0 42px; min-width:42px; display:grid; grid-template-rows:1fr auto; gap:.55rem; text-align:center; color:var(--muted,#a0a0a0); font-size:.72rem; }
+    .training-bars-years .training-bar-column { min-width:34px; }
+    .training-bar-track { display:flex; align-items:flex-end; height:100%; border-bottom:1px solid rgba(255,255,255,.1); }
+    .training-bar-stack { width:100%; min-height:2px; display:flex; flex-direction:column; justify-content:flex-end; position:relative; }
+    .training-bar-value { position:absolute; left:50%; top:-1.35rem; transform:translateX(-50%); color:#d8d8d8; font-size:.68rem; }
+    .training-bar-fill { height:100%; min-height:2px; border-radius:5px 5px 1px 1px; background:#ff7a00; }
+    .training-activity-list { display:grid; gap:.85rem; }
+    .training-activity-label { display:flex; justify-content:space-between; gap:1rem; margin-bottom:.35rem; font-size:.82rem; }
+    .training-activity-label strong { font-variant-numeric:tabular-nums; }
+    .training-activity-track { height:8px; overflow:hidden; border-radius:999px; background:rgba(255,255,255,.08); }
+    .training-activity-fill { height:100%; border-radius:inherit; }
+    .training-status-legend { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem; color:var(--muted,#a0a0a0); font-size:.76rem; }
+    .training-status-legend span { display:flex; align-items:center; gap:.35rem; }
+    .training-status-legend i { width:.65rem; height:.65rem; border-radius:2px; }
+    .training-status-chart { display:grid; gap:.5rem; max-height:390px; overflow:auto; padding-right:.35rem; }
+    .training-status-row { display:grid; grid-template-columns:42px 1fr; align-items:center; gap:.6rem; color:var(--muted,#a0a0a0); font-size:.7rem; }
+    .training-status-bars { display:grid; gap:2px; }
+    .training-status-bars i { display:block; height:5px; min-width:1px; border-radius:999px; }
+    .sick { background:#dd5f38; }
+    .injured { background:#c44767; }
+    .rest { background:#5d75b8; }
+    .training-update-note { margin-top:2rem; color:var(--muted,#a0a0a0); font-size:.75rem; text-align:center; }
+    [hidden] { display:none !important; }
+    @media (max-width:760px) {
+      .training-header { align-items:stretch; flex-direction:column; }
+      .training-year-picker { width:100%; }
+      .training-metric-grid, .training-chart-grid { grid-template-columns:1fr; }
+      .training-chart-wide { grid-column:auto; }
+      .training-metric-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .training-bars { height:245px; }
+    }
+  </style>
+</BaseLayout>
